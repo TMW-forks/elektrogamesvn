@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<animetedtile>
+	<imageset name="rampa" src="graphics/animetile/rampa.png" start="0" end="3" v="20" />
+</animetedtile>

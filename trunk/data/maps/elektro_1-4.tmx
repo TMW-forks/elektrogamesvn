@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
+<map version="1.0" orientation="orthogonal" width="40" height="30" tilewidth="32" tileheight="32">
+ <tileset name="zemin" firstgid="1" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/zemin_metalik.png"/>
+ </tileset>
+ <tileset name="Untitled" firstgid="49" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/bilgisayar_dolap.png"/>
+ </tileset>
+ <tileset name="x" firstgid="97" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision.png"/>
+ </tileset>
+ <tileset name="golge" firstgid="99" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/golge.png"/>
+ </tileset>
+ <layer name="Layer 0" width="40" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO1WMW7DMAzU4iaL0yx2uqT2xv//sBxCgLmerAsKSCiQ4WDfSaBo6UhrKqV8OE6Os2PqxJnOtNlxcXw6rh0505m2OFbHzfHVkTOdaXfHt2Nz7B0505nWy2//zX9qfqP8p9bHKP+p9THKf2p9vP3HuZrfKP+p9THKf2p9jPKfWh9v/3Gu5jfKf2p9hGYJ8+OZ5x2NG4kRuDZ4jnNUMwa6yo3EtQo34Bj3qGbiW0I3mMfGM89xjfA8P8ZxHeaFfEZZV7mRuEa4kXEWF/PLZ4D+anH0X4vX/Bf5sPqIvQ2tNu+Isz7P+gSCxcH6iBjZo6/2XHaf28j6O9Fa/w/U1J6NZ8S0Jb1nD60w75X+rN4Zsm8uRMs5b+XZe9Ev9kYuNU05W9yTW/m9f6zOo3axN7f+H1lTvG3kvabNladyv2Ia+wYE7lVeG/NYKk/s8eqdi33DX3AnUL32A8TVEtHAEgAA
+  </data>
+ </layer>
+ <layer name="Layer 1" width="40" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3MOwoAIBADUe/mB7RV0EbvfwxTbmEvC/NgijQJAQAAwJepltlRJbOzKh//tjqqq6Gqao/96w8AAMCbC/EsFBzAEgAA
+  </data>
+ </layer>
+ <layer name="Layer 2" width="40" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3NOQqAMBgF4VzMpXcBvYLR+x/BaQSxcIEYLeaDKX4ILyFIkqTcGmof3Ln3BhppoZkKKnd3RfWNne19qr2jjvqT+0qkKeHeG+LH/0uSJP3BCkitKAzAEgAA
+  </data>
+ </layer>
+ <layer name="Layer 3" width="40" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3MsQkAAAgEsZ/V/YdwBQtBhASuvQQAgE017OoHAPBNA42uXqDAEgAA
+  </data>
+ </layer>
+</map>

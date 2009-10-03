@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<skills>
+    <set name="Basic">
+        <skill id="1" name="Basic" fixed="0"/>
+    </set>
+    <set name="Magic">
+        <skill id="340" name="Magic"/>
+        <skill id="341" name="Life Magic"/>
+        <skill id="342" name="War Magic"/>
+        <skill id="343" name="Transmutation Magic"/>
+        <skill id="344" name="Nature Magic"/>
+        <skill id="345" name="Astral Magic"/>
+    </set>
+</skills>

@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<animetedtile>
+	<imageset name="teleport" src="graphics/animetile/transfer_noktasi.png" start="0" end="9" v="10" />
+</animetedtile>

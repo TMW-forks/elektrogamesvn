@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="All" />
+	<File name="src\being.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="2022" topLine="88" />
+	</File>
+	<File name="src\being.h" open="0" top="0" tabpos="0">
+		<Cursor position="7092" topLine="247" />
+	</File>
+	<File name="src\beingmanager.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="2716" topLine="91" />
+	</File>
+	<File name="src\commandhandler.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="1054" topLine="10" />
+	</File>
+	<File name="src\elektro\Diode.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="52" topLine="0" />
+	</File>
+	<File name="src\elektro\bitbutton.cpp" open="0" top="0" tabpos="10">
+		<Cursor position="2107" topLine="47" />
+	</File>
+	<File name="src\elektro\circuitwindow.cpp" open="0" top="0" tabpos="2">
+		<Cursor position="2392" topLine="72" />
+	</File>
+	<File name="src\elektro\circuitwindow.h" open="0" top="0" tabpos="0">
+		<Cursor position="448" topLine="7" />
+	</File>
+	<File name="src\elektro\component.cpp" open="0" top="0" tabpos="3">
+		<Cursor position="386" topLine="9" />
+	</File>
+	<File name="src\elektro\component.h" open="0" top="0" tabpos="4">
+		<Cursor position="894" topLine="39" />
+	</File>
+	<File name="src\elektro\hesapmak.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="5560" topLine="198" />
+	</File>
+	<File name="src\elektro\hesapmak.h" open="0" top="0" tabpos="0">
+		<Cursor position="193" topLine="0" />
+	</File>
+	<File name="src\elektro\hitabe.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="1722" topLine="42" />
+	</File>
+	<File name="src\elektro\hitabe.h" open="0" top="0" tabpos="3">
+		<Cursor position="1428" topLine="15" />
+	</File>
+	<File name="src\elektro\instanthelp.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="2640" topLine="42" />
+	</File>
+	<File name="src\elektro\instanthelp.h" open="0" top="0" tabpos="0">
+		<Cursor position="142" topLine="0" />
+	</File>
+	<File name="src\elektro\lamp.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="51" topLine="0" />
+	</File>
+	<File name="src\elektro\node.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="3707" topLine="115" />
+	</File>
+	<File name="src\elektro\rescolorwindow.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="6357" topLine="194" />
+	</File>
+	<File name="src\elektro\rescolorwindow.h" open="0" top="0" tabpos="0">
+		<Cursor position="1422" topLine="57" />
+	</File>
+	<File name="src\elektro\resistance.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="57" topLine="0" />
+	</File>
+	<File name="src\elektro\testwindow.cpp" open="0" top="0" tabpos="9">
+		<Cursor position="36704" topLine="1063" />
+	</File>
+	<File name="src\elektro\testwindow.h" open="0" top="0" tabpos="0">
+		<Cursor position="898" topLine="24" />
+	</File>
+	<File name="src\elektro\typedef.h" open="0" top="0" tabpos="0">
+		<Cursor position="101" topLine="0" />
+	</File>
+	<File name="src\elektro\wire.cpp" open="0" top="0" tabpos="2">
+		<Cursor position="182" topLine="0" />
+	</File>
+	<File name="src\game.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="3331" topLine="96" />
+	</File>
+	<File name="src\graphics.h" open="0" top="0" tabpos="0">
+		<Cursor position="999" topLine="21" />
+	</File>
+	<File name="src\gui\buy.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="1170" topLine="3" />
+	</File>
+	<File name="src\gui\buy.h" open="0" top="0" tabpos="0">
+		<Cursor position="991" topLine="9" />
+	</File>
+	<File name="src\gui\debugwindow.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="1093" topLine="17" />
+	</File>
+	<File name="src\gui\gui.cpp" open="0" top="0" tabpos="6">
+		<Cursor position="1673" topLine="39" />
+	</File>
+	<File name="src\gui\gui.h" open="0" top="0" tabpos="7">
+		<Cursor position="3468" topLine="112" />
+	</File>
+	<File name="src\gui\inventorywindow.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="2968" topLine="73" />
+	</File>
+	<File name="src\gui\login.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="1238" topLine="12" />
+	</File>
+	<File name="src\gui\login.h" open="0" top="0" tabpos="0">
+		<Cursor position="0" topLine="9" />
+	</File>
+	<File name="src\gui\npcdialog.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="3597" topLine="75" />
+	</File>
+	<File name="src\gui\npcdialog.h" open="0" top="0" tabpos="0">
+		<Cursor position="1621" topLine="166" />
+	</File>
+	<File name="src\gui\npcpostdialog.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="3106" topLine="72" />
+	</File>
+	<File name="src\gui\register.cpp" open="0" top="0" tabpos="9">
+		<Cursor position="7951" topLine="217" />
+	</File>
+	<File name="src\gui\viewport.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="6401" topLine="189" />
+	</File>
+	<File name="src\gui\widgets\button.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="3859" topLine="135" />
+	</File>
+	<File name="src\gui\widgets\layout.h" open="0" top="0" tabpos="0">
+		<Cursor position="0" topLine="54" />
+	</File>
+	<File name="src\gui\widgets\window.h" open="0" top="0" tabpos="0">
+		<Cursor position="11053" topLine="335" />
+	</File>
+	<File name="src\inventory.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="923" topLine="110" />
+	</File>
+	<File name="src\item.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="1255" topLine="13" />
+	</File>
+	<File name="src\main.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="43177" topLine="1338" />
+	</File>
+	<File name="src\map.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="7614" topLine="272" />
+	</File>
+	<File name="src\net\ea\beinghandler.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="2504" topLine="64" />
+	</File>
+	<File name="src\net\ea\charserverhandler.cpp" open="0" top="0" tabpos="5">
+		<Cursor position="8966" topLine="217" />
+	</File>
+	<File name="src\net\ea\loginhandler.cpp" open="0" top="0" tabpos="7">
+		<Cursor position="7610" topLine="197" />
+	</File>
+	<File name="src\net\ea\network.cpp" open="0" top="0" tabpos="4">
+		<Cursor position="8431" topLine="314" />
+	</File>
+	<File name="src\net\ea\npchandler.cpp" open="1" top="1" tabpos="3">
+		<Cursor position="2273" topLine="63" />
+	</File>
+	<File name="src\net\ea\npchandler.h" open="0" top="0" tabpos="4">
+		<Cursor position="856" topLine="0" />
+	</File>
+	<File name="src\net\ea\protocol.h" open="0" top="0" tabpos="8">
+		<Cursor position="1491" topLine="39" />
+	</File>
+	<File name="src\net\messagein.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="886" topLine="48" />
+	</File>
+	<File name="src\net\net.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="880" topLine="87" />
+	</File>
+	<File name="src\net\tmwserv\beinghandler.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="3918" topLine="117" />
+	</File>
+	<File name="src\net\tmwserv\loginhandler.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="8046" topLine="241" />
+	</File>
+	<File name="src\net\tmwserv\npchandler.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="3220" topLine="102" />
+	</File>
+	<File name="src\npc.h" open="0" top="0" tabpos="0">
+		<Cursor position="1183" topLine="3" />
+	</File>
+	<File name="src\player.cpp" open="0" top="0" tabpos="6">
+		<Cursor position="1975" topLine="51" />
+	</File>
+	<File name="src\player.h" open="0" top="0" tabpos="0">
+		<Cursor position="1382" topLine="80" />
+	</File>
+	<File name="src\resources\image.h" open="0" top="0" tabpos="4">
+		<Cursor position="1942" topLine="51" />
+	</File>
+	<File name="src\resources\itemdb.cpp" open="0" top="0" tabpos="7">
+		<Cursor position="8817" topLine="258" />
+	</File>
+	<File name="src\resources\itemdb.h" open="0" top="0" tabpos="0">
+		<Cursor position="1116" topLine="39" />
+	</File>
+	<File name="src\resources\iteminfo.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="1994" topLine="58" />
+	</File>
+	<File name="src\resources\iteminfo.h" open="0" top="0" tabpos="0">
+		<Cursor position="3377" topLine="123" />
+	</File>
+	<File name="src\resources\resource.h" open="0" top="0" tabpos="3">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="src\resources\resourcemanager.h" open="0" top="0" tabpos="0">
+		<Cursor position="5946" topLine="156" />
+	</File>
+	<File name="src\resources\spritedef.h" open="0" top="0" tabpos="2">
+		<Cursor position="1053" topLine="6" />
+	</File>
+	<File name="src\tmw.rc" open="0" top="0" tabpos="2">
+		<Cursor position="748" topLine="0" />
+	</File>
+	<File name="src\utils\gettext.h" open="0" top="0" tabpos="0">
+		<Cursor position="1005" topLine="6" />
+	</File>
+	<File name="src\utils\stringutils.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="792" topLine="6" />
+	</File>
+	<File name="src\winver.h" open="0" top="0" tabpos="3">
+		<Cursor position="90" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>

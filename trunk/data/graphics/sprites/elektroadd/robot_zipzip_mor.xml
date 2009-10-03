@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<sprite>
+
+	<imageset name="base" src="graphics/sprites/robot_zipzip_mor.png" width="55" height="55" />
+
+	<action name="stand" imageset="base">
+		<animation direction="down">
+		  <frame index="0" />
+		</animation>
+		<animation direction="left">
+		  <frame index="11" />
+		</animation>
+		<animation direction="up">
+		  <frame index="22" />
+		</animation>
+		<animation direction="right">
+		  <frame index="33" />
+		</animation>
+	</action>
+
+	<action name="walk" imageset="base">
+		<animation direction="down">
+			<sequence start="1" end="5" delay="75" />
+		</animation>
+		<animation direction="left">
+			<sequence start="12" end="16" delay="75" />
+		</animation>
+		<animation direction="up">
+			<sequence start="23" end="27" delay="75" />
+		</animation>
+		<animation direction="right">
+			<sequence start="34" end="38" delay="75" />
+		</animation>
+	</action>
+
+	<action name="dead" imageset="base">
+		<animation direction="down">
+		  <frame index="10" />
+		</animation>
+		<animation direction="left">
+		  <frame index="21" />
+		</animation>
+		<animation direction="up">
+		  <frame index="32" />
+		</animation>
+		<animation direction="right">
+		  <frame index="43" />
+		</animation>
+	</action>
+
+	<action name="attack" imageset="base">
+		<animation direction="down">
+			<sequence start="6" end="9" delay="50" />
+		  	<end />
+		</animation>
+		<animation direction="left">
+			<sequence start="16" end="20" delay="50" />
+		  	<end />
+		</animation>
+		<animation direction="up">
+			<sequence start="27" end="31" delay="50" />
+		  	<end />
+		</animation>
+		<animation direction="right">
+			<sequence start="38" end="42" delay="50" />
+		  	<end />
+		</animation>
+	</action>
+
+</sprite>

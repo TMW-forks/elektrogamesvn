@@ -125,7 +125,7 @@
         max-per-slot="10"/>
     <item id="503"
         image="generic-casinocoins.png|G:#ff2222"
-        name="Casino Coins"
+        name="Jeton"
         description="Just some casino coins."
         effect=""
         type="generic"

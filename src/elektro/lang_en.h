@@ -1,0 +1,280 @@
+#ifndef _TMW_LANG_EN_H
+#define _TMW_LANG_EN_H
+
+#define CANTCREATEHOMEDIR " can't be created, but it doesn't exist! Exiting."
+#define SDLINIT "Initializing SDL..."
+#define SDLCANTINIT "Could not initialize SDL: "
+#define CANTSETHOME " couldn't be set as home directory! Exiting."
+#define CANTSETUPDATES "can't be made, but it doesn't exist! Exiting."
+#define CANTFINDRESOURCE "Can't find Resources directory\n"
+#define INITCONFIG "Initializing configuration..."
+#define CANTCRATECONFIGPATH "Can't create " << configPath << ". Using Defaults."
+#define VIDEOMODEERR "Couldn't set " << width << "x" << height << "x" << bpp << " video mode: "
+#define WARNINGS "Warning: %s"
+#define HS0 "tmw" << std::endl << std::endl
+#define HS1         << "Options: " << std::endl
+#define HS2         << "  -h --help       : Display this help" << std::endl
+#define HS3         << "  -v --version    : Display the version" << std::endl
+#define HS4         << "  -u --skipupdate : Skip the update process" << std::endl
+#define HS5         << "  -U --username   : Login with this username" << std::endl
+#define HS6         << "  -P --password   : Login with this password" << std::endl
+#define HS7         << "  -D --default    : Bypass the login process with default settings" << std::endl
+#define HS8         << "  -p --playername : Login with this player" << std::endl
+#define HS9         << "  -C --configfile : Configuration file to use"
+#define HELPSCREEN HSO HS1 HS2 HS3 HS4 HS5 HS6 HS7 HS8 HS9
+#define TMWVERSION "The Mana World version "
+#define TRYACCSERV "Trying to connect to account server..."
+#define USERNAMES "Username is %s"
+#define TRYCHARSERV "Trying to connect to char server..."
+#define MEMOCHAR "Memorizing selected character %s"
+#define TRYMAPSERV "Trying to connect to map server..."
+#define MAPS "Map: %s"
+#define DISCONNECT "Got disconnected from server!"
+#define STATELOADDATA "State: LOADDATA"
+#define STATELOGIN "State: LOGIN"
+#define STATEREGISTER "State: REGISTER"
+#define STATECHARSERVER "State: CHAR_SERVER"
+#define STATECHARSELECT "State: CHAR_SELECT"
+#define STATEGAME "State: GAME"
+#define STATEUPDATE "State: UPDATE"
+#define STATEERROR "State: ERROR"
+#define ERROR "Error"
+#define STATECONNECT "State: CONNECTING"
+#define CONNECTMAP "Connecting to map server..."
+#define CONNECTCHAR "Connecting to character server..."
+#define CONNECTACCOUNT "Connecting to account server..."
+#define STATEEXIT "State: EXIT"
+#define NOCONFIGFILE "Warning: No configuration file (%s)"
+#define CONFOPENERR "Configuration::write() couldn't open %s for writing"
+#define CONFCREATEERR "Configuration::write() error while creating writer"
+#define CONFWRITE "Configuration::write() writing configuration..."
+#define SCREENSAVE "Screenshot saved to "
+#define SCREENSAVEERR "Saving screenshot failed!"
+#define QUIT "Quit"
+#define SUREQUIT "Are you sure you want to quit?"
+#define GUICHANERR "Warning: guichan input exception: %s"
+#define SETVIDEOMODE "Setting video mode %dx%d %s",w, h, fs ? "fullscreen" : "windowed"
+#define USEVIDEODRVS "Using video driver: %s"
+#define USEVIDEODRVNON "Using video driver: unkown"
+#define VIHWAVAILABLE "Possible to create hardware surfaces: %s",((vi->hw_available) ? "yes" : "no")
+#define VIVMAVAILABLE "Window manager available: %s",((vi->wm_available) ? "yes" : "no")
+#define VIBLITHW "Accelerated hardware to hardware blits: %s",((vi->blit_hw) ? "yes" : "no")
+#define VIBLITHWCC "Accelerated hardware to hardware colorkey blits: %s", ((vi->blit_hw_CC) ? "yes" : "no")
+#define VIBLITHWA "Accelerated hardware to hardware alpha blits: %s",((vi->blit_hw_A) ? "yes" : "no")
+#define VILITSW "Accelerated software to hardware blits: %s",((vi->blit_sw) ? "yes" : "no")
+#define VIBLITSWCC "Accelerated software to hardware colorkey blits: %s",((vi->blit_sw_CC) ? "yes" : "no")
+#define VIBLITSWA "Accelerated software to hardware alpha blits: %s",((vi->blit_sw_A) ? "yes" : "no")
+#define VIBLITFILL "Accelerated color fills: %s",((vi->blit_fill) ? "yes" : "no")
+#define VIVIDEOMEM "Available video memory: %d", vi->video_mem
+#define LOGOPENERR "Warning: error while opening " << logFilename <<" for writing.\n"
+#define BTNOK "OK"
+#define BTNYES "Yes"
+#define BTNNO "No"
+#define BTNCLOSE "Close"
+#define BTNCANCEL "Cancel"
+#define CONFIRM "Confirm"
+#define DELETECHAR "Are you sure you want to delete this character?"
+#define BTNNEW "New"
+#define BTNDELETE "Delete"
+#define BTNPREV "Previous"
+#define BTNNEXT "Next"
+#define LBLNAME "Name"
+#define LBLLEVEL "Level"
+#define LBLLEVEL2 "Level:"
+#define LBLJOBL "Job Level"
+#define LBLMONEY "Money"
+#define LBLLEVEL2 "Level: "
+#define LBLJOBL2 "Job Level: "
+#define LBLMONEY2 "Gold: "
+#define LBLNAME2 "Name: "
+#define CREATECHAR "Create Character"
+#define HAIRCOLOR "Hair Color:"
+#define HAIRSTYLE "Hair Style:"
+#define BTNCREATE "Create"
+#define NAME4CHAR "Your name needs to be at least 4 characters."
+#define LBLPASS2 "Password:"
+#define LBLSERVER2 "Server:"
+#define BTNREGISTER "Register"
+#define LBLCONFIRM2 "Confirm:"
+#define BTNMALE "Male"
+#define BTNFEMALE "Female"
+#define ERRSHORTUSERNAME "The username needs to be at least " << LEN_MIN_USERNAME << " characters long."
+#define ERRLONGUSERNAME "The username needs to be less than " << LEN_MAX_USERNAME << " characters long."
+#define ERRSHORTPASS "The password needs to be at least " << LEN_MIN_PASSWORD << " characters long."
+#define ERRLONGPASS "The password needs to be less than " << LEN_MAX_PASSWORD << " characters long."
+#define ERRPASSMATCH "Passwords do not match."
+#define LBLCONNECTING "Connecting..."
+#define BTNPLAY "Play"
+#define LBLCOMPLETED "Completed"
+#define ERRACCESSDENIED "Access denied"
+#define ERRNONID "Cannot use this ID"
+#define ERRUNKNOWN "Unknown failure to select character"
+#define ERRNAMEALREADDY "Failed to create character. Most likely the name is already taken."
+#define INFO "Info"
+#define PLAYERDELETED "Player deleted"
+#define PlAYERCANTDELETE "Failed to delete character."
+#define MAPSERVEROFF "Map server offline"
+#define SPEEDHACK "Speed hack detected"
+#define DUPLICATEDLOGIN "Duplicated login"
+#define UNKNOWN081 "Unknown error with 0x0081"
+#define UNREGISTEREDID "Unregistered ID"
+#define WRONGPASS "Wrong password"
+#define ACCOUNTEXPIRED "Account expired"
+#define REJECTEDSERVER "Rejected from server"
+#define YOUBLOCKED "You have been blocked by the GM Team"
+#define YOUBANNED "You have been banned for 5 minutes"
+#define NAMEALREADYTAKEN "This user name is already taken"
+#define UNKNOWNERR "Unknown error"
+#define LBLPRICE "Price : 0 GP / 0 GP"
+#define BTNBUY "Buy"
+#define LBLDESC2 "Description:"
+#define LBLDESC "Description"
+#define LBLEFFECT2 "Effect:"
+#define LBLEFFECT "Effect"
+#define UPDATING "Updating..."
+#define BUY "Buy"
+#define PRICEGP "Price: 0 GP / " + toString(mMoney)  + " GP"
+#define PRICEGP2 "Price: " + toString(price)  + " GP / " \
+                                + toString(mMoney) + " GP"
+#define SHOP "Shop"
+#define BTNSELL "sell"
+#define SELECTCHARACTER "Select Character"
+#define SELECTSERVER "Select Server"
+#define CHATLOGHELP "-- Help --"
+#define CHATLOG1 "/help : Display this help."
+#define CHATLOG2 "/announce : Global announcement (GM only)"
+#define CHATLOG3 "/where : Display map name"
+#define CHATLOG4 "/who : Display number of online users"
+#define CHATLOGUN "Unknown command"
+#define MSGBSKILL_TRADE "Trade failed!"
+#define MSGBSKILL_EMOTE "Emote failed!"
+#define MSGBSKILL_SIT "Sit failed!"
+#define MSGBSKILL_CREATECHAT "Chat creating failed!"
+#define MSGBSKILL_JOINPARTY "Could not join party!"
+#define MSGBSKILL_SHOUT "Cannot shout!"
+#define MSGRFAIL_SKILLDEP " You have not yet reached a high enough lvl!"
+#define MSGRFAIL_INSUFHP " Insufficient HP!"
+#define MSGRFAIL_INSUFSP " Insufficient SP!"
+#define MSGRFAIL_NOMEMO " You have no memos!"
+#define MSGRFAIL_SKILLDELAY " You cannot do that right now!"
+#define MSGRFAIL_ZENY " Seems you need more Zeny... ;-)"
+#define MSGRFAIL_WEAPON " You cannot use this skill with that kind of weapon!"
+#define MSGRFAIL_REDGEM " You need another red gem!"
+#define MSGRFAIL_BLUEGEM " You need another blue gem!"
+#define MSGRFAIL_OVERWEIGHT " You're carrying to much to do this!"
+#define MSGDEF " Huh? What's that?"
+#define MSGSKILL_WARP "Warp failed..."
+#define MSGSKILL_STEAL "Could not steal anything..."
+#define MSGSKILL_ENVENOM "Poison had no effect..."
+#define DEBUG "Debug"
+#define DBGMUSICFILE "Music File: "
+#define DBGMINIMAP "Mini-Map File: "
+#define DBGPARTICLE "[Particle count: 0]"
+#define EQUIPMENT "Equipment"
+#define HELP "Help"
+#define BTNUSE "Use"
+#define BTNDROPE "Drope"
+#define TOTALMAXWEIGHT "Total Weight: - Maximum Weight: "
+#define TOTALWEIGHT "Total Weight: "
+#define MAXWEIGHT "Maximum Weight: "
+#define SELECTAMOUNTITEMDROP "Select amount of items to drop."
+#define SELECTAMOUNTITEMTRADE "Select amount of items to trade."
+#define LOGIN "Login"
+#define MINIMAP "MiniMap"
+#define LBLNPC "NPC"
+#define MONEYTOTAL "Money: 0 GP / Total: 0 GP"
+#define MONEYPLAYER "Money: 0 GP / Total: "+ toString(mPlayerMoney) + " GP"
+#define MONEYPLAYER2 "Money: " + toString(price) + " GP / Total: " + toString(price + mPlayerMoney) + " GP"
+#define LBLSETUP "Setup"
+#define BTNAPPLY "Apply"
+#define BTNRESETWINDOWS "Reset Windows"
+#define LBLVIDEO "Video"
+#define LBLAUDIO "Audio"
+#define LBLJOYSTICK "Joystick"
+#define LBLSFXVOLUME "Sfx volume"
+#define LBLMUSICVOLUME "Music volume"
+#define LBLSOUND "Sound"
+#define LBLSTARTCALIB "Press the button to start calibration"
+#define BTNCALIBRATE "Calibrate"
+#define LBLANABLEJOYSTICK "Enable joystick"
+#define LBLSTOP "Stop"
+#define LBLROTATESTICK "Rotate the stick"
+#define LBLFULLSCREEN "Full screen"
+#define LBLCUSTOMCURSOR "Custom cursor"
+#define LBLFPSLIMIT2 "FPS Limit: "
+#define LBLSCROLLLAZINESS "ScrollLaziness"
+#define LBLGUIOPACITY "Gui opacity"
+#define LBLSCROLLRADIUS "Scroll radius"
+#define LBLAMBIENTFX "Ambient FX"
+#define LBLOFF "off"
+#define LBLLOW "low"
+#define LBLHIGH "high"
+#define LBLSKILLS "Skills"
+#define LBLSKILLPOINT2 "Skill Points:"
+#define LBLSKILLPOINT2i "Skill Points:%i"
+#define BTNUP "Up"
+#define BTNUSE "Use"
+#define LBLSTATUS "Status"
+#define LBLMONEY22 "Money:"
+#define LBLHP2 "HP:"
+#define LBLEXP2 "Exp:"
+#define LBLMP2 "MP:"
+#define LBLJOB2 "Job:"
+#define LBLSTATS "Stats"
+#define LBLTOTAL "Total"
+#define LBLCOST "Cost"
+#define LBLATTACK "Attack:"
+#define LBLDEFENSE "Defense:"
+#define LBLMATTACK "M.Attack:"
+#define LBLMDEFENSE "M.Defense:"
+#define LBLACCURACY "% Accuracy:"
+#define LBLEVADE "% Evade:"
+#define LBLREFLEX "% Reflex:"
+#define LBLREMAININGSTATUS "Remaining Status Points: "
+#define LBLSTRENGTH "Strength"
+#define LBLAGILITY "Agility"
+#define LBLVITALITY "Vitality"
+#define LBLINTELLIGENCE "Intelligence"
+#define LBLDEXTERITY "Dexterity"
+#define LBLLUCK "Luck"
+#define LBLTRADEYOU "Trade: You"
+#define BTNADD "Add"
+#define BTNTRADE "Trade"
+#define LBLYOUGET "You get: 0z"
+#define LBLYOUGIVE "You give:"
+#define LBLYOUGET2 "You get:
+#define FAILEDADDING "Failed adding item. You can not "\
+                    "overlap one kind of item on the window."
+#define INVENTORY "Inventory"
+#define BTNCHECK "Check it"
+#define BTNREMOVE "Remove"
+#define LBLCALCULATOR "Calculator"
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+#define
+
+
+
+
+
+
+
+
+#endif

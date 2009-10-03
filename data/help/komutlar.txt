@@ -1,0 +1,38 @@
+ <- @@index|Indekse geri don@@
+ 
+ 
+##3                            === Kisa Yollar ===
+ 
+  Hareket etmek icin yon tuslarini kullanin. 
+ 
+##3  Diger kisayollar :
+ 
+     ##2Ctrl##P               saldir
+     ##2F1##P                 yardim 
+     ##2F2##P                 durum penceresi
+     ##2F3##P                 alet penceresi
+     ##2F4##P                 ekipman penceresi
+     ##2F5##P                 huner penceresi
+     ##2F7##P                 sohbet penceresi
+     ##2F9##P                 ayar penceresi
+     ##2F10##P                hata ayiklama penceresi
+     ##2TAB##P                mini harita
+     ##2Alt + 0-9##P          duygulari goster
+     ##2Alt + S##P            otur / kalk
+     ##2Alt + F##P            toggle debug pathfinding feature
+     ##2Alt + P##P            ekran goruntusu yakala
+     ##2A##P                  yakindaki canavarlari goster
+     ##2H##P                  tum pencereleri gizle
+     ##2G yada Z##P             nesneleri topla
+     ##2Enter##P              mesaj gonder
+     ##2Shift##P              saldiriya ugradiginda otomatik cevap ver.
+     ##21##P             	  Hýzlý yardým penceresini aç.
+                       
+ 
+
+##2     MOUSE:
+
+     Sol klikle yuruyebilir, robotlara saldirabilirsin.Yalniz
+     robotlara saldirirken ayaklarini hedef almaya dikkat et!!!!
+     Sag klik ise konteks menuyu gosterir.
+

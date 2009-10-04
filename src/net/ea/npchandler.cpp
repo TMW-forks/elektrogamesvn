@@ -54,6 +54,9 @@ Net::NpcHandler *npcHandler;
 extern TestDialog *testDialog;
 namespace EAthena {
 
+std::string temp;
+static std::stringstream npcText;
+
 NpcHandler::NpcHandler()
 {
     static const Uint16 _messages[] = {
@@ -89,7 +92,6 @@ void NpcHandler::handleMessage(MessageIn &msg)
 
 
             being = beingManager->findBeing(current_npc);
-            localChatTab->chatLog("11 Current NPC id "+toString(current_npc));
             localChatTab->chatLog("11 Current NPC job "+toString(being->getJob()));
 
             break;
@@ -98,12 +100,13 @@ void NpcHandler::handleMessage(MessageIn &msg)
             msg.readInt16();  // length
             current_npc = msg.readInt32();
             being = beingManager->findBeing(current_npc);
-            localChatTab->chatLog("22 Current NPC id "+toString(current_npc));
             localChatTab->chatLog("22 Current NPC job "+toString(being->getJob()));
             npcDialog->setNpc(current_npc);
-            npcDialog->addText(msg.readString(msg.getLength() - 8));
+            temp = msg.readString(msg.getLength() - 8);
+            npcDialog->addText(temp);
             npcDialog->setVisible(true);
             resetPlayer = true;
+            npcText<<temp;
             if (being->getJob()==100)
             {
                 npcDialog->setVisible(false);
@@ -125,7 +128,6 @@ void NpcHandler::handleMessage(MessageIn &msg)
             // If we're talking to that NPC, show the close button
 
             being = beingManager->findBeing(current_npc);
-            localChatTab->chatLog("33 Current NPC id "+toString(current_npc));
             localChatTab->chatLog("33 Current NPC job "+toString(being->getJob()));
 
             if (id == current_npc)
@@ -142,7 +144,6 @@ void NpcHandler::handleMessage(MessageIn &msg)
             id = msg.readInt32();
             // If we're talking to that NPC, show the next button
             being = beingManager->findBeing(current_npc);
-            localChatTab->chatLog("44 Current NPC id "+toString(current_npc));
             localChatTab->chatLog("44 Current NPC job "+toString(being->getJob()));
 
             if (id == current_npc)

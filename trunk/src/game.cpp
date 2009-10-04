@@ -95,6 +95,7 @@
 #include <physfs.h>
 #include <sstream>
 #include <string>
+
 #include "elektro/circuitwindow.h"
 #include "elektro/testwindow.h"
 

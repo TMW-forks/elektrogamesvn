@@ -42,13 +42,15 @@ TestDialog::TestDialog():
     Window(LBLNPC)
 {
     setContentSize(350, 275);
+    setSize(350,350);
+    setPosition(100,100);
 
     cancelButton = new Button(BTNCANCEL, "cancel", this);
     mEvaluate = new Button("Deðerlendir!","ok",this);
     mFinishClose = new Button("Pencereyi kapat","startcancel",this);
 
     ResourceManager *resman = ResourceManager::getInstance();
-    testinfo = resman->getImage("graphics/gui/testtoolbar.png");
+    testinfo = resman->getImage("graphics/elektrik/testtoolbar.png");
     mStartBox = new BrowserBox();
     mStartBox->setOpaque(false);
 

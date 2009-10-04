@@ -60,7 +60,7 @@ Hitabe::Hitabe():
 
     Button *closeButton = new Button(_("close"),"close",this);
     closeButton->setPosition(320,370);
-    setSize(700,440);
+    setSize(200,440);
     setPosition(50,50);
     add(closeButton);
 }

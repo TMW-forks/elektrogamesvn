@@ -208,7 +208,7 @@ void GeneralHandler::guiWindowsLoaded()
     statusWindow->addAttribute(STR, _("Strength"), true);
     statusWindow->addAttribute(AGI, _("Agility"), true);
     statusWindow->addAttribute(VIT, _("Vitality"), true);
-    statusWindow->addAttribute(INT, _("Intelligence"), true);
+    statusWindow->addAttribute(INTT, _("Intelligence"), true);
     statusWindow->addAttribute(DEX, _("Dexterity"), true);
     statusWindow->addAttribute(LUK, _("Luck"), true);
 

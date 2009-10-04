@@ -382,9 +382,9 @@ void PlayerHandler::handleMessage(MessageIn &msg)
                 statusWindow->setPointsNeeded(VIT, msg.readInt8());
 
                 val = msg.readInt8();
-                player_node->setAttributeEffective(INT, val + ATTR_BONUS(INT));
-                player_node->setAttributeBase(INT, val);
-                statusWindow->setPointsNeeded(INT, msg.readInt8());
+                player_node->setAttributeEffective(INTT, val + ATTR_BONUS(INTT));
+                player_node->setAttributeBase(INTT, val);
+                statusWindow->setPointsNeeded(INTT, msg.readInt8());
 
                 val = msg.readInt8();
                 player_node->setAttributeEffective(DEX, val + ATTR_BONUS(DEX));
@@ -446,7 +446,7 @@ void PlayerHandler::handleMessage(MessageIn &msg)
                     statusWindow->setPointsNeeded(VIT, msg.readInt8());
                     break;
                 case 0x0023:
-                    statusWindow->setPointsNeeded(INT, msg.readInt8());
+                    statusWindow->setPointsNeeded(INTT, msg.readInt8());
                     break;
                 case 0x0024:
                     statusWindow->setPointsNeeded(DEX, msg.readInt8());

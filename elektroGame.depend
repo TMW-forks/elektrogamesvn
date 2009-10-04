@@ -9750,3 +9750,4746 @@
 	"wire.h"
 	"utils/stringutils.h"
 
+1254603188 source:d:\elektro_svn\src\animatedsprite.cpp
+	"animatedsprite.h"
+	"graphics.h"
+	"log.h"
+	"resources/action.h"
+	"resources/animation.h"
+	"resources/image.h"
+	"resources/resourcemanager.h"
+	"utils/xml.h"
+	<cassert>
+
+1254603188 d:\elektro_svn\src\animatedsprite.h
+	"resources/spritedef.h"
+	<map>
+	<string>
+
+1254603188 d:\elektro_svn\src\resources\spritedef.h
+	"resources/resource.h"
+	<map>
+	<string>
+	<libxml/tree.h>
+
+1254603188 d:\elektro_svn\src\resources\resource.h
+	<ctime>
+	<string>
+
+1254603513 d:\elektro_svn\libraries\include\libxml2\libxml\tree.h
+	<stdio.h>
+	<libxml/xmlversion.h>
+	<libxml/xmlstring.h>
+	<libxml/xmlregexp.h>
+	<libxml/xmlmemory.h>
+
+1254603513 d:\elektro_svn\libraries\include\libxml2\libxml\xmlversion.h
+	<libxml/xmlexports.h>
+	<ansidecl.h>
+
+1254603513 d:\elektro_svn\libraries\include\libxml2\libxml\xmlexports.h
+
+1254603513 d:\elektro_svn\libraries\include\libxml2\libxml\xmlstring.h
+	<stdarg.h>
+	<libxml/xmlversion.h>
+
+1254603513 d:\elektro_svn\libraries\include\libxml2\libxml\xmlregexp.h
+	<libxml/xmlversion.h>
+	<libxml/tree.h>
+	<libxml/dict.h>
+
+1254603513 d:\elektro_svn\libraries\include\libxml2\libxml\dict.h
+	<libxml/xmlversion.h>
+	<libxml/tree.h>
+
+1254603513 d:\elektro_svn\libraries\include\libxml2\libxml\xmlmemory.h
+	<stdio.h>
+	<libxml/xmlversion.h>
+	<libxml/threads.h>
+	<libxml/globals.h>
+
+1254603513 d:\elektro_svn\libraries\include\libxml2\libxml\threads.h
+	<libxml/xmlversion.h>
+	<libxml/globals.h>
+
+1254603513 d:\elektro_svn\libraries\include\libxml2\libxml\globals.h
+	<libxml/xmlversion.h>
+	<libxml/parser.h>
+	<libxml/xmlerror.h>
+	<libxml/SAX.h>
+	<libxml/SAX2.h>
+	<libxml/xmlmemory.h>
+	<libxml/threads.h>
+
+1254603513 d:\elektro_svn\libraries\include\libxml2\libxml\parser.h
+	<stdarg.h>
+	<libxml/xmlversion.h>
+	<libxml/tree.h>
+	<libxml/dict.h>
+	<libxml/hash.h>
+	<libxml/valid.h>
+	<libxml/entities.h>
+	<libxml/xmlerror.h>
+	<libxml/xmlstring.h>
+	<libxml/encoding.h>
+	<libxml/xmlIO.h>
+	<libxml/globals.h>
+
+1254603513 d:\elektro_svn\libraries\include\libxml2\libxml\hash.h
+	<libxml/xmlversion.h>
+	<libxml/parser.h>
+	<libxml/dict.h>
+
+1254603513 d:\elektro_svn\libraries\include\libxml2\libxml\valid.h
+	<libxml/xmlversion.h>
+	<libxml/xmlerror.h>
+	<libxml/tree.h>
+	<libxml/list.h>
+	<libxml/xmlautomata.h>
+	<libxml/xmlregexp.h>
+
+1254603513 d:\elektro_svn\libraries\include\libxml2\libxml\xmlerror.h
+	<libxml/parser.h>
+
+1254603513 d:\elektro_svn\libraries\include\libxml2\libxml\list.h
+	<libxml/xmlversion.h>
+
+1254603513 d:\elektro_svn\libraries\include\libxml2\libxml\xmlautomata.h
+	<libxml/xmlversion.h>
+	<libxml/tree.h>
+	<libxml/xmlregexp.h>
+
+1254603513 d:\elektro_svn\libraries\include\libxml2\libxml\entities.h
+	<libxml/xmlversion.h>
+	<libxml/tree.h>
+
+1254603513 d:\elektro_svn\libraries\include\libxml2\libxml\encoding.h
+	<libxml/xmlversion.h>
+	<iconv.h>
+	<libxml/tree.h>
+
+1254603516 d:\elektro_svn\libraries\include\iconv.h
+	"iconv.h"
+	<stddef.h>
+	<errno.h>
+
+1254603513 d:\elektro_svn\libraries\include\libxml2\libxml\xmlio.h
+	<stdio.h>
+	<libxml/xmlversion.h>
+	<libxml/globals.h>
+	<libxml/tree.h>
+	<libxml/parser.h>
+	<libxml/encoding.h>
+
+1254603513 d:\elektro_svn\libraries\include\libxml2\libxml\sax.h
+	<stdio.h>
+	<stdlib.h>
+	<libxml/xmlversion.h>
+	<libxml/parser.h>
+	<libxml/xlink.h>
+
+1254603513 d:\elektro_svn\libraries\include\libxml2\libxml\xlink.h
+	<libxml/xmlversion.h>
+	<libxml/tree.h>
+
+1254603513 d:\elektro_svn\libraries\include\libxml2\libxml\sax2.h
+	<stdio.h>
+	<stdlib.h>
+	<libxml/xmlversion.h>
+	<libxml/parser.h>
+	<libxml/xlink.h>
+
+1254603188 d:\elektro_svn\src\graphics.h
+	<guichan/sdl/sdlgraphics.hpp>
+
+1254603514 d:\elektro_svn\libraries\include\guichan\sdl\sdlgraphics.hpp
+	"SDL.h"
+	"guichan/color.hpp"
+	"guichan/graphics.hpp"
+	"guichan/platform.hpp"
+
+1254603509 d:\elektro_svn\libraries\include\sdl\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_audio.h"
+	"SDL_cdrom.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_loadso.h"
+	"SDL_mutex.h"
+	"SDL_rwops.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_video.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1254603508 d:\elektro_svn\libraries\include\sdl\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+	"begin_code.h"
+	"close_code.h"
+
+1254603508 d:\elektro_svn\libraries\include\sdl\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<iconv.h>
+	"begin_code.h"
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	"close_code.h"
+
+1254603509 d:\elektro_svn\libraries\include\sdl\sdl_config.h
+	"SDL_platform.h"
+	<stdarg.h>
+
+1254603509 d:\elektro_svn\libraries\include\sdl\sdl_platform.h
+
+1254603508 d:\elektro_svn\libraries\include\sdl\begin_code.h
+
+1254603508 d:\elektro_svn\libraries\include\sdl\close_code.h
+
+1254603508 d:\elektro_svn\libraries\include\sdl\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1254603508 d:\elektro_svn\libraries\include\sdl\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1254603508 d:\elektro_svn\libraries\include\sdl\sdl_endian.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1254603508 d:\elektro_svn\libraries\include\sdl\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1254603508 d:\elektro_svn\libraries\include\sdl\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	"close_code.h"
+
+1254603508 d:\elektro_svn\libraries\include\sdl\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1254603509 d:\elektro_svn\libraries\include\sdl\sdl_cdrom.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1254603508 d:\elektro_svn\libraries\include\sdl\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1254603508 d:\elektro_svn\libraries\include\sdl\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_active.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_quit.h"
+	"begin_code.h"
+	"close_code.h"
+
+1254603508 d:\elektro_svn\libraries\include\sdl\sdl_active.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1254603508 d:\elektro_svn\libraries\include\sdl\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keysym.h"
+	"begin_code.h"
+	"close_code.h"
+
+1254603509 d:\elektro_svn\libraries\include\sdl\sdl_keysym.h
+
+1254603508 d:\elektro_svn\libraries\include\sdl\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1254603508 d:\elektro_svn\libraries\include\sdl\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1254603508 d:\elektro_svn\libraries\include\sdl\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1254603509 d:\elektro_svn\libraries\include\sdl\sdl_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1254603509 d:\elektro_svn\libraries\include\sdl\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1254603508 d:\elektro_svn\libraries\include\sdl\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1254603508 d:\elektro_svn\libraries\include\sdl\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1254603516 d:\elektro_svn\libraries\include\guichan\color.hpp
+	"guichan/platform.hpp"
+	<iostream>
+
+1254603516 d:\elektro_svn\libraries\include\guichan\platform.hpp
+
+1254603516 d:\elektro_svn\libraries\include\guichan\graphics.hpp
+	<iosfwd>
+	<stack>
+	"guichan/cliprectangle.hpp"
+	"guichan/platform.hpp"
+
+1254603516 d:\elektro_svn\libraries\include\guichan\cliprectangle.hpp
+	"guichan/rectangle.hpp"
+	"guichan/platform.hpp"
+
+1254603516 d:\elektro_svn\libraries\include\guichan\rectangle.hpp
+	"guichan/platform.hpp"
+	<iostream>
+
+1254603188 d:\elektro_svn\src\log.h
+	<fstream>
+
+1254603187 d:\elektro_svn\src\resources\action.h
+	<map>
+	<libxml/tree.h>
+
+1254603188 d:\elektro_svn\src\resources\animation.h
+	<vector>
+	<libxml/tree.h>
+
+1254603188 d:\elektro_svn\src\resources\image.h
+	"main.h"
+	"resources/resource.h"
+	<SDL.h>
+	<SDL_opengl.h>
+
+1254603188 d:\elektro_svn\src\main.h
+	<string>
+	"../config.h"
+	"winver.h"
+
+1254603188 d:\elektro_svn\src\winver.h
+
+1254603508 d:\elektro_svn\libraries\include\sdl\sdl_opengl.h
+	"SDL_config.h"
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<gl.h>
+	<glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<windows.h>
+	<stddef.h>
+
+1254603188 d:\elektro_svn\src\resources\resourcemanager.h
+	<ctime>
+	<map>
+	<string>
+	<vector>
+
+1254603187 d:\elektro_svn\src\utils\xml.h
+	<libxml/tree.h>
+	<string>
+
+1254603188 source:d:\elektro_svn\src\animationparticle.cpp
+	"animationparticle.h"
+	"graphics.h"
+	"simpleanimation.h"
+
+1254603188 d:\elektro_svn\src\animationparticle.h
+	<libxml/tree.h>
+	"imageparticle.h"
+
+1254603188 d:\elektro_svn\src\imageparticle.h
+	"particle.h"
+
+1254603188 d:\elektro_svn\src\particle.h
+	<list>
+	<string>
+	"guichanfwd.h"
+	"sprite.h"
+	"vector.h"
+
+1254603188 d:\elektro_svn\src\guichanfwd.h
+
+1254603188 d:\elektro_svn\src\sprite.h
+
+1254603188 d:\elektro_svn\src\vector.h
+	<math.h>
+	<iostream>
+
+1254603188 d:\elektro_svn\src\simpleanimation.h
+	"utils/xml.h"
+
+1254603188 source:d:\elektro_svn\src\being.cpp
+	"being.h"
+	"animatedsprite.h"
+	"configuration.h"
+	"effectmanager.h"
+	"game.h"
+	"graphics.h"
+	"localplayer.h"
+	"log.h"
+	"map.h"
+	"particle.h"
+	"simpleanimation.h"
+	"sound.h"
+	"text.h"
+	"statuseffect.h"
+	"gui/speechbubble.h"
+	"resources/colordb.h"
+	"resources/emotedb.h"
+	"resources/image.h"
+	"resources/itemdb.h"
+	"resources/iteminfo.h"
+	"resources/resourcemanager.h"
+	"gui/gui.h"
+	"gui/palette.h"
+	"gui/speechbubble.h"
+	"utils/dtor.h"
+	"utils/stringutils.h"
+	"utils/xml.h"
+	<cassert>
+	<cmath>
+
+1254603188 d:\elektro_svn\src\being.h
+	<guichan/color.hpp>
+	<SDL_types.h>
+	<set>
+	<string>
+	<vector>
+	"configlistener.h"
+	"map.h"
+	"particlecontainer.h"
+	"position.h"
+	"sprite.h"
+	"vector.h"
+	"resources/spritedef.h"
+
+1254603509 d:\elektro_svn\libraries\include\sdl\sdl_types.h
+	"SDL_stdinc.h"
+
+1254603188 d:\elektro_svn\src\configlistener.h
+	<string>
+
+1254603188 d:\elektro_svn\src\map.h
+	<list>
+	<vector>
+	"position.h"
+	"properties.h"
+
+1254603188 d:\elektro_svn\src\position.h
+	<list>
+	<iostream>
+
+1254603188 d:\elektro_svn\src\properties.h
+	<map>
+	<sstream>
+	<string>
+
+1254603188 d:\elektro_svn\src\particlecontainer.h
+	<list>
+	<vector>
+
+1254603188 d:\elektro_svn\src\configuration.h
+	"utils/stringutils.h"
+	<libxml/xmlwriter.h>
+	<cassert>
+	<list>
+	<map>
+	<string>
+
+1254603187 d:\elektro_svn\src\utils\stringutils.h
+	<string>
+	<sstream>
+
+1254603513 d:\elektro_svn\libraries\include\libxml2\libxml\xmlwriter.h
+	<libxml/xmlversion.h>
+	<stdarg.h>
+	<libxml/xmlIO.h>
+	<libxml/list.h>
+	<libxml/xmlstring.h>
+
+1254603188 d:\elektro_svn\src\effectmanager.h
+	<list>
+	<string>
+
+1254603188 d:\elektro_svn\src\game.h
+	"SDL.h"
+	"configlistener.h"
+
+1254603188 d:\elektro_svn\src\localplayer.h
+	<memory>
+	<vector>
+	"player.h"
+	"gui/palette.h"
+
+1254603188 d:\elektro_svn\src\player.h
+	"being.h"
+
+1254603184 d:\elektro_svn\src\gui\palette.h
+	<cstdlib>
+	<string>
+	<vector>
+	<guichan/listmodel.hpp>
+	<guichan/color.hpp>
+
+1254603516 d:\elektro_svn\libraries\include\guichan\listmodel.hpp
+	<string>
+	"guichan/platform.hpp"
+
+1254603188 d:\elektro_svn\src\sound.h
+	<SDL_mixer/SDL_mixer.h>
+	<SDL_mixer.h>
+	<string>
+
+1254603508 d:\elektro_svn\libraries\include\sdl\sdl_mixer.h
+	"SDL_types.h"
+	"SDL_rwops.h"
+	"SDL_audio.h"
+	"SDL_byteorder.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1254603508 d:\elektro_svn\libraries\include\sdl\sdl_byteorder.h
+	"SDL_endian.h"
+
+1254603188 d:\elektro_svn\src\text.h
+	<guichan/color.hpp>
+	"graphics.h"
+	"guichanfwd.h"
+
+1254603188 d:\elektro_svn\src\statuseffect.h
+	"resources/animation.h"
+	"particle.h"
+	"animatedsprite.h"
+	"sound.h"
+
+1254603184 d:\elektro_svn\src\gui\speechbubble.h
+	"gui/palette.h"
+	"gui/widgets/popup.h"
+
+1254603183 d:\elektro_svn\src\gui\widgets\popup.h
+	"gui/widgets/container.h"
+	"configuration.h"
+	"guichanfwd.h"
+
+1254603183 d:\elektro_svn\src\gui\widgets\container.h
+	<guichan/widgets/container.hpp>
+
+1254603515 d:\elektro_svn\libraries\include\guichan\widgets\container.hpp
+	<list>
+	"guichan/basiccontainer.hpp"
+	"guichan/graphics.hpp"
+	"guichan/platform.hpp"
+
+1254603516 d:\elektro_svn\libraries\include\guichan\basiccontainer.hpp
+	<list>
+	"guichan/deathlistener.hpp"
+	"guichan/platform.hpp"
+	"guichan/widget.hpp"
+
+1254603516 d:\elektro_svn\libraries\include\guichan\deathlistener.hpp
+	<string>
+	"guichan/event.hpp"
+	"guichan/platform.hpp"
+
+1254603516 d:\elektro_svn\libraries\include\guichan\event.hpp
+	"guichan/platform.hpp"
+
+1254603516 d:\elektro_svn\libraries\include\guichan\widget.hpp
+	<list>
+	<string>
+	"guichan/color.hpp"
+	"guichan/rectangle.hpp"
+
+1254603188 d:\elektro_svn\src\resources\colordb.h
+	<map>
+	<string>
+
+1254603187 d:\elektro_svn\src\resources\emotedb.h
+	<list>
+	<map>
+	<string>
+
+1254603187 d:\elektro_svn\src\resources\itemdb.h
+	<list>
+	<map>
+	<string>
+
+1254603187 d:\elektro_svn\src\resources\iteminfo.h
+	"resources/spritedef.h"
+	"player.h"
+	<map>
+	<string>
+	<vector>
+
+1254603184 d:\elektro_svn\src\gui\gui.h
+	<guichan/gui.hpp>
+	"guichanfwd.h"
+
+1254603516 d:\elektro_svn\libraries\include\guichan\gui.hpp
+	<list>
+	<deque>
+	"guichan/keyevent.hpp"
+	"guichan/mouseevent.hpp"
+	"guichan/mouseinput.hpp"
+	"guichan/platform.hpp"
+
+1254603516 d:\elektro_svn\libraries\include\guichan\keyevent.hpp
+	"guichan/inputevent.hpp"
+	"guichan/key.hpp"
+	"guichan/platform.hpp"
+
+1254603516 d:\elektro_svn\libraries\include\guichan\inputevent.hpp
+	"guichan/event.hpp"
+	"guichan/platform.hpp"
+
+1254603516 d:\elektro_svn\libraries\include\guichan\key.hpp
+	"guichan/platform.hpp"
+
+1254603516 d:\elektro_svn\libraries\include\guichan\mouseevent.hpp
+	"guichan/inputevent.hpp"
+	"guichan/platform.hpp"
+
+1254603516 d:\elektro_svn\libraries\include\guichan\mouseinput.hpp
+	"guichan/platform.hpp"
+
+1254603187 d:\elektro_svn\src\utils\dtor.h
+	<algorithm>
+	<functional>
+	<utility>
+
+1254603188 source:d:\elektro_svn\src\beingmanager.cpp
+	"beingmanager.h"
+	"localplayer.h"
+	"monster.h"
+	"npc.h"
+	"player.h"
+	"net/tmwserv/protocol.h"
+	"utils/dtor.h"
+	<cassert>
+
+1254603188 d:\elektro_svn\src\beingmanager.h
+	"being.h"
+
+1254603188 d:\elektro_svn\src\monster.h
+	"being.h"
+
+1254603188 d:\elektro_svn\src\npc.h
+	"player.h"
+
+1254603187 d:\elektro_svn\src\net\tmwserv\protocol.h
+
+1254603188 source:d:\elektro_svn\src\channel.cpp
+	"channel.h"
+	"gui/widgets/channeltab.h"
+
+1254603188 d:\elektro_svn\src\channel.h
+	<string>
+
+1254603183 d:\elektro_svn\src\gui\widgets\channeltab.h
+	"chattab.h"
+
+1254603183 d:\elektro_svn\src\gui\widgets\chattab.h
+	"gui/widgets/tab.h"
+	"gui/chat.h"
+
+1254603183 d:\elektro_svn\src\gui\widgets\tab.h
+	<guichan/widgets/tab.hpp>
+
+1254603515 d:\elektro_svn\libraries\include\guichan\widgets\tab.hpp
+	<map>
+	<string>
+	"guichan/basiccontainer.hpp"
+	"guichan/mouselistener.hpp"
+	"guichan/platform.hpp"
+
+1254603516 d:\elektro_svn\libraries\include\guichan\mouselistener.hpp
+	"guichan/mouseevent.hpp"
+	"guichan/platform.hpp"
+
+1254603184 d:\elektro_svn\src\gui\chat.h
+	"gui/widgets/window.h"
+	<guichan/actionlistener.hpp>
+	<guichan/keylistener.hpp>
+	<guichan/widget.hpp>
+	<guichan/widgetlistener.hpp>
+	<list>
+	<string>
+	<map>
+
+1254603183 d:\elektro_svn\src\gui\widgets\window.h
+	"graphics.h"
+	"guichanfwd.h"
+	<guichan/widgetlistener.hpp>
+	<guichan/widgets/window.hpp>
+
+1254603516 d:\elektro_svn\libraries\include\guichan\widgetlistener.hpp
+	<string>
+	"guichan/event.hpp"
+	"guichan/platform.hpp"
+
+1254603515 d:\elektro_svn\libraries\include\guichan\widgets\window.hpp
+	<string>
+	"guichan/mouselistener.hpp"
+	"guichan/platform.hpp"
+	"guichan/widgets/container.hpp"
+
+1254603516 d:\elektro_svn\libraries\include\guichan\actionlistener.hpp
+	<string>
+	"guichan/actionevent.hpp"
+	"guichan/platform.hpp"
+
+1254603516 d:\elektro_svn\libraries\include\guichan\actionevent.hpp
+	"guichan/event.hpp"
+	"guichan/platform.hpp"
+	<string>
+
+1254603516 d:\elektro_svn\libraries\include\guichan\keylistener.hpp
+	"guichan/keyevent.hpp"
+	"guichan/platform.hpp"
+
+1254603188 source:d:\elektro_svn\src\channelmanager.cpp
+	"channelmanager.h"
+	"channel.h"
+	"utils/dtor.h"
+
+1254603188 d:\elektro_svn\src\channelmanager.h
+	<list>
+	<string>
+
+1254603188 source:d:\elektro_svn\src\commandhandler.cpp
+	"commandhandler.h"
+	"channelmanager.h"
+	"channel.h"
+	"game.h"
+	"localplayer.h"
+	"playerrelations.h"
+	"gui/widgets/channeltab.h"
+	"gui/widgets/chattab.h"
+	"gui/chat.h"
+	"net/adminhandler.h"
+	"net/chathandler.h"
+	"net/maphandler.h"
+	"net/net.h"
+	"net/partyhandler.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+
+1254603188 d:\elektro_svn\src\commandhandler.h
+	<string>
+
+1254603188 d:\elektro_svn\src\playerrelations.h
+	<list>
+	<map>
+	<string>
+	<vector>
+
+1254603187 d:\elektro_svn\src\net\adminhandler.h
+	<iosfwd>
+
+1254603187 d:\elektro_svn\src\net\chathandler.h
+	<iosfwd>
+
+1254603187 d:\elektro_svn\src\net\maphandler.h
+	"logindata.h"
+	<iosfwd>
+
+1254603187 d:\elektro_svn\src\net\logindata.h
+	<string>
+	"player.h"
+
+1254603187 d:\elektro_svn\src\net\net.h
+
+1254603187 d:\elektro_svn\src\net\partyhandler.h
+	<string>
+
+1254603187 d:\elektro_svn\src\utils\gettext.h
+	"config.h"
+	<libintl.h>
+
+1254603516 d:\elektro_svn\libraries\include\libintl.h
+	<locale.h>
+	<stdio.h>
+	<stddef.h>
+	<stdarg.h>
+	<varargs.h>
+
+1254603188 source:d:\elektro_svn\src\configuration.cpp
+	"configlistener.h"
+	"configuration.h"
+	"log.h"
+	"utils/stringutils.h"
+	"utils/xml.h"
+
+1254603188 source:d:\elektro_svn\src\effectmanager.cpp
+	"being.h"
+	"effectmanager.h"
+	"log.h"
+	"particle.h"
+	"sound.h"
+	"utils/xml.h"
+
+1254603182 source:d:\elektro_svn\src\elektro\diode.cpp
+	"diode.h"
+	"../utils/stringutils.h"
+
+1254603182 d:\elektro_svn\src\elektro\diode.h
+	"component.h"
+	"../resources/image.h"
+	"../resources/resourcemanager.h"
+	"../resources/imageset.h"
+	"../graphics.h"
+
+1254603182 d:\elektro_svn\src\elektro\component.h
+	<guichan/widgets/window.hpp>
+	<guichan/actionlistener.hpp>
+	<guichan/graphics.hpp>
+	"../simpleanimation.h"
+	"../resources/animation.h"
+	"../resources/image.h"
+	"../resources/resourcemanager.h"
+	"../resources/imageset.h"
+	"bitbutton.h"
+	"node.h"
+
+1254603188 d:\elektro_svn\src\resources\imageset.h
+	"resources/resource.h"
+	<vector>
+
+1254603182 d:\elektro_svn\src\elektro\bitbutton.h
+	<iosfwd>
+	<guichan/widgets/button.hpp>
+	"guichan/mouseevent.hpp"
+	"guichan/platform.hpp"
+	"guichan/widget.hpp"
+	"guichan/keylistener.hpp"
+	"../resources/imageset.h"
+
+1254603515 d:\elektro_svn\libraries\include\guichan\widgets\button.hpp
+	<string>
+	"guichan/focuslistener.hpp"
+	"guichan/graphics.hpp"
+	"guichan/keylistener.hpp"
+	"guichan/mouseevent.hpp"
+	"guichan/mouselistener.hpp"
+	"guichan/platform.hpp"
+	"guichan/widget.hpp"
+
+1254603516 d:\elektro_svn\libraries\include\guichan\focuslistener.hpp
+	<string>
+	"guichan/event.hpp"
+	"guichan/platform.hpp"
+
+1254603182 d:\elektro_svn\src\elektro\node.h
+	<vector>
+	<guichan/graphics.hpp>
+	"../graphics.h"
+	"bitbutton.h"
+	"component.h"
+
+1254603182 source:d:\elektro_svn\src\elektro\battery.cpp
+	"battery.h"
+
+1254603182 d:\elektro_svn\src\elektro\battery.h
+	"component.h"
+	"../resources/image.h"
+	"../resources/resourcemanager.h"
+	"../resources/imageset.h"
+	"../graphics.h"
+
+1254603182 source:d:\elektro_svn\src\elektro\bitbutton.cpp
+	"bitbutton.h"
+	<guichan/exception.hpp>
+	<guichan/graphics.hpp>
+	<guichan/imagefont.hpp>
+	"guichan/mouseevent.hpp"
+	"guichan/mouselistener.hpp"
+	"../graphics.h"
+	"../resources/image.h"
+	"../resources/resourcemanager.h"
+	"../utils/dtor.h"
+	"../utils/stringutils.h"
+	"../log.h"
+
+1254603516 d:\elektro_svn\libraries\include\guichan\exception.hpp
+	<string>
+	"guichan/platform.hpp"
+
+1254603516 d:\elektro_svn\libraries\include\guichan\imagefont.hpp
+	<string>
+	"guichan/font.hpp"
+	"guichan/platform.hpp"
+	"guichan/rectangle.hpp"
+
+1254603516 d:\elektro_svn\libraries\include\guichan\font.hpp
+	<string>
+	"guichan/platform.hpp"
+
+1254603182 source:d:\elektro_svn\src\elektro\circuitwindow.cpp
+	"circuitwindow.h"
+	<SDL_mouse.h>
+	<SDL_draw.h>
+	<guichan/widgets/label.hpp>
+	<math.h>
+	"gui/widgets/button.h"
+	"bitbutton.h"
+	"gui/gui.h"
+	"gui/viewport.h"
+	"../graphics.h"
+	"../game.h"
+	"../engine.h"
+	"../particle.h"
+	"../map.h"
+	"../log.h"
+	"../item.h"
+	"../gui/chat.h"
+	"elektro/lang_tr.h"
+	"utils/stringutils.h"
+	"../utils/xml.h"
+	<libxml/xmlwriter.h>
+	"net/ea/npchandler.h"
+	"../npc.h"
+	"gsl/gsl_linalg.h"
+	"gsl/gsl_vector.h"
+
+1254603182 d:\elektro_svn\src\elektro\circuitwindow.h
+	<guichan/actionlistener.hpp>
+	"window_iki.h"
+	"gui/widgets/button.h"
+	"testwindow.h"
+	"gui/widgets/browserbox.h"
+	"gui/widgets/scrollarea.h"
+	"gui/widgets/textbox.h"
+	"resources/animation.h"
+	"resources/imageset.h"
+	"resources/iteminfo.h"
+	"resources/itemdb.h"
+	"node.h"
+	"component.h"
+	"resistance.h"
+	"diode.h"
+	"lamp.h"
+	"switch.h"
+	"battery.h"
+	"wire.h"
+	"typedef.h"
+
+1254603182 d:\elektro_svn\src\elektro\window_iki.h
+	<guichan/widgets/window.hpp>
+	<guichan/actionlistener.hpp>
+	"../guichanfwd.h"
+	"../gui/widgets/button.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+
+1254603183 d:\elektro_svn\src\gui\widgets\button.h
+	<guichan/widgets/button.hpp>
+
+1254603182 d:\elektro_svn\src\elektro\testwindow.h
+	<iosfwd>
+	<vector>
+	<map>
+	<list>
+	<string>
+	"../resources/animation.h"
+	"../resources/imageset.h"
+	"../simpleanimation.h"
+	"../guichanfwd.h"
+	<guichan/actionlistener.hpp>
+	<guichan/listmodel.hpp>
+	<guichan/widgets/label.hpp>
+	"gui/widgets/button.h"
+	"gui/widgets/textbox.h"
+	"gui/widgets/scrollarea.h"
+	"gui/widgets/browserbox.h"
+	"gui/widgets/checkbox.h"
+	"gui/widgets/window.h"
+	"utils/xml.h"
+	<libxml/xmlwriter.h>
+	"gui/gui.h"
+	"typedef.h"
+
+1254603515 d:\elektro_svn\libraries\include\guichan\widgets\label.hpp
+	<string>
+	"guichan/graphics.hpp"
+	"guichan/platform.hpp"
+	"guichan/widget.hpp"
+
+1254603183 d:\elektro_svn\src\gui\widgets\textbox.h
+	<guichan/widgets/textbox.hpp>
+
+1254603515 d:\elektro_svn\libraries\include\guichan\widgets\textbox.hpp
+	<ctime>
+	<string>
+	<vector>
+	"guichan/keylistener.hpp"
+	"guichan/mouselistener.hpp"
+	"guichan/platform.hpp"
+	"guichan/widget.hpp"
+
+1254603183 d:\elektro_svn\src\gui\widgets\scrollarea.h
+	<guichan/widgets/scrollarea.hpp>
+	<guichan/widgetlistener.hpp>
+
+1254603515 d:\elektro_svn\libraries\include\guichan\widgets\scrollarea.hpp
+	<string>
+	"guichan/basiccontainer.hpp"
+	"guichan/mouselistener.hpp"
+	"guichan/platform.hpp"
+
+1254603183 d:\elektro_svn\src\gui\widgets\browserbox.h
+	<list>
+	<vector>
+	<guichan/mouselistener.hpp>
+	<guichan/widget.hpp>
+
+1254603183 d:\elektro_svn\src\gui\widgets\checkbox.h
+	<guichan/widgets/checkbox.hpp>
+
+1254603515 d:\elektro_svn\libraries\include\guichan\widgets\checkbox.hpp
+	<string>
+	"guichan/keylistener.hpp"
+	"guichan/mouselistener.hpp"
+	"guichan/platform.hpp"
+	"guichan/widget.hpp"
+
+1254603182 d:\elektro_svn\src\elektro\typedef.h
+	"node.h"
+	"component.h"
+	"gui/widgets/radiobutton.h"
+
+1254603183 d:\elektro_svn\src\gui\widgets\radiobutton.h
+	<guichan/widgets/radiobutton.hpp>
+
+1254603515 d:\elektro_svn\libraries\include\guichan\widgets\radiobutton.hpp
+	<map>
+	<string>
+	"guichan/keylistener.hpp"
+	"guichan/mouselistener.hpp"
+	"guichan/platform.hpp"
+	"guichan/widget.hpp"
+
+1254603182 d:\elektro_svn\src\elektro\resistance.h
+	"component.h"
+	"../resources/image.h"
+	"../resources/resourcemanager.h"
+	"../resources/imageset.h"
+	"../graphics.h"
+
+1254603182 d:\elektro_svn\src\elektro\lamp.h
+	"component.h"
+	"../resources/image.h"
+	"../resources/resourcemanager.h"
+	"../resources/imageset.h"
+	"../graphics.h"
+
+1254603182 d:\elektro_svn\src\elektro\switch.h
+	"component.h"
+	"../resources/image.h"
+	"../resources/resourcemanager.h"
+	"../resources/imageset.h"
+	"../graphics.h"
+
+1254603182 d:\elektro_svn\src\elektro\wire.h
+	"component.h"
+	"../resources/image.h"
+	"../resources/resourcemanager.h"
+	"../resources/imageset.h"
+	"../graphics.h"
+
+1254603508 d:\elektro_svn\libraries\include\sdl\sdl_draw.h
+	"SDL.h"
+	"begin_code.h"
+	"close_code.h"
+
+1254603184 d:\elektro_svn\src\gui\viewport.h
+	"gui/widgets/windowcontainer.h"
+	"configlistener.h"
+	"position.h"
+	<guichan/mouselistener.hpp>
+
+1254603183 d:\elektro_svn\src\gui\widgets\windowcontainer.h
+	"gui/widgets/container.h"
+
+1254603188 d:\elektro_svn\src\engine.h
+	<string>
+
+1254603188 d:\elektro_svn\src\item.h
+	"resources/itemdb.h"
+
+1254603182 d:\elektro_svn\src\elektro\lang_tr.h
+
+1254603186 d:\elektro_svn\src\net\ea\npchandler.h
+	"net/messagehandler.h"
+	"net/net.h"
+	"net/npchandler.h"
+
+1254603187 d:\elektro_svn\src\net\messagehandler.h
+	<SDL_types.h>
+	<memory>
+
+1254603187 d:\elektro_svn\src\net\npchandler.h
+	<iosfwd>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_linalg.h
+	<gsl/gsl_mode.h>
+	<gsl/gsl_permutation.h>
+	<gsl/gsl_vector.h>
+	<gsl/gsl_matrix.h>
+	<gsl/gsl_types.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_mode.h
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_permutation.h
+	<stdlib.h>
+	<gsl/gsl_types.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_check_range.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_types.h
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_errno.h
+	<stdio.h>
+	<errno.h>
+	<gsl/gsl_types.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_check_range.h
+	<stdlib.h>
+	<gsl/gsl_types.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_vector.h
+	<gsl/gsl_vector_complex_long_double.h>
+	<gsl/gsl_vector_complex_double.h>
+	<gsl/gsl_vector_complex_float.h>
+	<gsl/gsl_vector_long_double.h>
+	<gsl/gsl_vector_double.h>
+	<gsl/gsl_vector_float.h>
+	<gsl/gsl_vector_ulong.h>
+	<gsl/gsl_vector_long.h>
+	<gsl/gsl_vector_uint.h>
+	<gsl/gsl_vector_int.h>
+	<gsl/gsl_vector_ushort.h>
+	<gsl/gsl_vector_short.h>
+	<gsl/gsl_vector_uchar.h>
+	<gsl/gsl_vector_char.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_vector_complex_long_double.h
+	<stdlib.h>
+	<gsl/gsl_types.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_complex.h>
+	<gsl/gsl_check_range.h>
+	<gsl/gsl_vector_long_double.h>
+	<gsl/gsl_vector_complex.h>
+	<gsl/gsl_block_complex_long_double.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_complex.h
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_vector_long_double.h
+	<stdlib.h>
+	<gsl/gsl_types.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_check_range.h>
+	<gsl/gsl_block_long_double.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_block_long_double.h
+	<stdlib.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_types.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_vector_complex.h
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_block_complex_long_double.h
+	<stdlib.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_types.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_vector_complex_double.h
+	<stdlib.h>
+	<gsl/gsl_types.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_complex.h>
+	<gsl/gsl_check_range.h>
+	<gsl/gsl_vector_double.h>
+	<gsl/gsl_vector_complex.h>
+	<gsl/gsl_block_complex_double.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_vector_double.h
+	<stdlib.h>
+	<gsl/gsl_types.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_check_range.h>
+	<gsl/gsl_block_double.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_block_double.h
+	<stdlib.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_types.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_block_complex_double.h
+	<stdlib.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_types.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_vector_complex_float.h
+	<stdlib.h>
+	<gsl/gsl_types.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_complex.h>
+	<gsl/gsl_check_range.h>
+	<gsl/gsl_vector_float.h>
+	<gsl/gsl_vector_complex.h>
+	<gsl/gsl_block_complex_float.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_vector_float.h
+	<stdlib.h>
+	<gsl/gsl_types.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_check_range.h>
+	<gsl/gsl_block_float.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_block_float.h
+	<stdlib.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_types.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_block_complex_float.h
+	<stdlib.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_types.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_vector_ulong.h
+	<stdlib.h>
+	<gsl/gsl_types.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_check_range.h>
+	<gsl/gsl_block_ulong.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_block_ulong.h
+	<stdlib.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_types.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_vector_long.h
+	<stdlib.h>
+	<gsl/gsl_types.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_check_range.h>
+	<gsl/gsl_block_long.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_block_long.h
+	<stdlib.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_types.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_vector_uint.h
+	<stdlib.h>
+	<gsl/gsl_types.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_check_range.h>
+	<gsl/gsl_block_uint.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_block_uint.h
+	<stdlib.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_types.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_vector_int.h
+	<stdlib.h>
+	<gsl/gsl_types.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_check_range.h>
+	<gsl/gsl_block_int.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_block_int.h
+	<stdlib.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_types.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_vector_ushort.h
+	<stdlib.h>
+	<gsl/gsl_types.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_check_range.h>
+	<gsl/gsl_block_ushort.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_block_ushort.h
+	<stdlib.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_types.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_vector_short.h
+	<stdlib.h>
+	<gsl/gsl_types.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_check_range.h>
+	<gsl/gsl_block_short.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_block_short.h
+	<stdlib.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_types.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_vector_uchar.h
+	<stdlib.h>
+	<gsl/gsl_types.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_check_range.h>
+	<gsl/gsl_block_uchar.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_block_uchar.h
+	<stdlib.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_types.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_vector_char.h
+	<stdlib.h>
+	<gsl/gsl_types.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_check_range.h>
+	<gsl/gsl_block_char.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_block_char.h
+	<stdlib.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_types.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_matrix.h
+	<gsl/gsl_matrix_complex_long_double.h>
+	<gsl/gsl_matrix_complex_double.h>
+	<gsl/gsl_matrix_complex_float.h>
+	<gsl/gsl_matrix_long_double.h>
+	<gsl/gsl_matrix_double.h>
+	<gsl/gsl_matrix_float.h>
+	<gsl/gsl_matrix_ulong.h>
+	<gsl/gsl_matrix_long.h>
+	<gsl/gsl_matrix_uint.h>
+	<gsl/gsl_matrix_int.h>
+	<gsl/gsl_matrix_ushort.h>
+	<gsl/gsl_matrix_short.h>
+	<gsl/gsl_matrix_uchar.h>
+	<gsl/gsl_matrix_char.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_matrix_complex_long_double.h
+	<stdlib.h>
+	<gsl/gsl_types.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_complex.h>
+	<gsl/gsl_check_range.h>
+	<gsl/gsl_vector_complex_long_double.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_matrix_complex_double.h
+	<stdlib.h>
+	<gsl/gsl_types.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_complex.h>
+	<gsl/gsl_check_range.h>
+	<gsl/gsl_vector_complex_double.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_matrix_complex_float.h
+	<stdlib.h>
+	<gsl/gsl_types.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_complex.h>
+	<gsl/gsl_check_range.h>
+	<gsl/gsl_vector_complex_float.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_matrix_long_double.h
+	<stdlib.h>
+	<gsl/gsl_types.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_check_range.h>
+	<gsl/gsl_vector_long_double.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_matrix_double.h
+	<stdlib.h>
+	<gsl/gsl_types.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_check_range.h>
+	<gsl/gsl_vector_double.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_matrix_float.h
+	<stdlib.h>
+	<gsl/gsl_types.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_check_range.h>
+	<gsl/gsl_vector_float.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_matrix_ulong.h
+	<stdlib.h>
+	<gsl/gsl_types.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_check_range.h>
+	<gsl/gsl_vector_ulong.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_matrix_long.h
+	<stdlib.h>
+	<gsl/gsl_types.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_check_range.h>
+	<gsl/gsl_vector_long.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_matrix_uint.h
+	<stdlib.h>
+	<gsl/gsl_types.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_check_range.h>
+	<gsl/gsl_vector_uint.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_matrix_int.h
+	<stdlib.h>
+	<gsl/gsl_types.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_check_range.h>
+	<gsl/gsl_vector_int.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_matrix_ushort.h
+	<stdlib.h>
+	<gsl/gsl_types.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_check_range.h>
+	<gsl/gsl_vector_ushort.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_matrix_short.h
+	<stdlib.h>
+	<gsl/gsl_types.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_check_range.h>
+	<gsl/gsl_vector_short.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_matrix_uchar.h
+	<stdlib.h>
+	<gsl/gsl_types.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_check_range.h>
+	<gsl/gsl_vector_uchar.h>
+
+1254603512 d:\elektro_svn\libraries\include\gsl\gsl_matrix_char.h
+	<stdlib.h>
+	<gsl/gsl_types.h>
+	<gsl/gsl_errno.h>
+	<gsl/gsl_check_range.h>
+	<gsl/gsl_vector_char.h>
+
+1254603182 source:d:\elektro_svn\src\elektro\component.cpp
+	"component.h"
+	<SDL_types.h>
+	<guichan/sdl/sdlinput.hpp>
+	"../resources/image.h"
+	"../resources/resourcemanager.h"
+	"../resources/imageset.h"
+	"../graphics.h"
+	"../log.h"
+	"../game.h"
+	"circuitwindow.h"
+	"utils/stringutils.h"
+	<cmath>
+
+1254603514 d:\elektro_svn\libraries\include\guichan\sdl\sdlinput.hpp
+	<queue>
+	"SDL.h"
+	"guichan/input.hpp"
+	"guichan/keyinput.hpp"
+	"guichan/mouseinput.hpp"
+	"guichan/platform.hpp"
+
+1254603516 d:\elektro_svn\libraries\include\guichan\input.hpp
+	"guichan/platform.hpp"
+
+1254603516 d:\elektro_svn\libraries\include\guichan\keyinput.hpp
+	"guichan/key.hpp"
+	"guichan/platform.hpp"
+
+1254603182 source:d:\elektro_svn\src\elektro\hesapmak.cpp
+	"hesapmak.h"
+	<guichan/widgets/label.hpp>
+	<string>
+	"gui/widgets/button.h"
+	"gui/widgets/listbox.h"
+	"gui/widgets/scrollarea.h"
+	"gui/widgets/windowcontainer.h"
+	"gui/gui.h"
+	"../localplayer.h"
+	"../utils/dtor.h"
+	"utils/stringutils.h"
+	"elektro/lang_tr.h"
+
+1254603182 d:\elektro_svn\src\elektro\hesapmak.h
+	<guichan/actionlistener.hpp>
+	<guichan/widgets/label.hpp>
+	"gui/widgets/button.h"
+	"gui/widgets/window.h"
+
+1254603183 d:\elektro_svn\src\gui\widgets\listbox.h
+	<guichan/widgets/listbox.hpp>
+
+1254603515 d:\elektro_svn\libraries\include\guichan\widgets\listbox.hpp
+	<list>
+	"guichan/keylistener.hpp"
+	"guichan/listmodel.hpp"
+	"guichan/mouselistener.hpp"
+	"guichan/platform.hpp"
+	"guichan/widget.hpp"
+
+1254663868 source:d:\elektro_svn\src\elektro\hitabe.cpp
+	"hitabe.h"
+	"gui/gui.h"
+	"gui/viewport.h"
+	"game.h"
+	"engine.h"
+	"graphics.h"
+	"resources/image.h"
+	"utils/stringutils.h"
+	"npc.h"
+	"sound.h"
+
+1254603182 d:\elektro_svn\src\elektro\hitabe.h
+	<iosfwd>
+	<guichan/widgets/label.hpp>
+	<guichan/actionlistener.hpp>
+	"../resources/imageset.h"
+	"../resources/resourcemanager.h"
+	"window_iki.h"
+	"gui/widgets/button.h"
+	"gui/widgets/window.h"
+	"../guichanfwd.h"
+	"net/ea/npchandler.h"
+
+1254603182 source:d:\elektro_svn\src\elektro\instanthelp.cpp
+	"instanthelp.h"
+	<SDL_mouse.h>
+	<guichan/widgets/label.hpp>
+	"gui/widgets/button.h"
+	"gui/gui.h"
+	"gui/viewport.h"
+	"elektro/bitbutton.h"
+	"../game.h"
+	"../engine.h"
+	"../particle.h"
+	"../map.h"
+	"utils/stringutils.h"
+	"elektro/lang_tr.h"
+	"../resources/resourcemanager.h"
+	"../graphics.h"
+	"../resources/image.h"
+
+1254603182 d:\elektro_svn\src\elektro\instanthelp.h
+	<iosfwd>
+	<guichan/actionlistener.hpp>
+	"gui/widgets/window.h"
+	"../resources/image.h"
+	"../guichanfwd.h"
+	"bitbutton.h"
+
+1254603182 source:d:\elektro_svn\src\elektro\lamp.cpp
+	"lamp.h"
+	"utils/stringutils.h"
+
+1254603182 source:d:\elektro_svn\src\elektro\node.cpp
+	"node.h"
+	<sstream>
+	"../resources/image.h"
+	"../resources/resourcemanager.h"
+	"../resources/imageset.h"
+	"../game.h"
+	"elektro/circuitwindow.h"
+	"gui/chat.h"
+	"../log.h"
+	"utils/stringutils.h"
+
+1254603182 source:d:\elektro_svn\src\elektro\rescolorwindow.cpp
+	"rescolorwindow.h"
+	"gui/gui.h"
+	"gui/viewport.h"
+	"game.h"
+	"engine.h"
+	"particle.h"
+	"map.h"
+	"graphics.h"
+	"resources/image.h"
+	<guichan/listmodel.hpp>
+	"gui/widgets/scrollarea.h"
+	"utils/stringutils.h"
+	"elektro/lang_tr.h"
+	"../npc.h"
+	"net/ea/npchandler.h"
+
+1254603182 d:\elektro_svn\src\elektro\rescolorwindow.h
+	<iosfwd>
+	<guichan/actionlistener.hpp>
+	<guichan/widgets/label.hpp>
+	"gui/widgets/listbox.h"
+	"../resources/imageset.h"
+	"../resources/resourcemanager.h"
+	"gui/widgets/window.h"
+	"gui/widgets/button.h"
+	"../guichanfwd.h"
+
+1254603182 source:d:\elektro_svn\src\elektro\resistance.cpp
+	"resistance.h"
+	"utils/stringutils.h"
+
+1254603182 source:d:\elektro_svn\src\elektro\switch.cpp
+	"switch.h"
+
+1254603182 source:d:\elektro_svn\src\elektro\wire.cpp
+	"wire.h"
+	"utils/stringutils.h"
+
+1254603188 source:d:\elektro_svn\src\emoteshortcut.cpp
+	"emoteshortcut.h"
+	"configuration.h"
+	"localplayer.h"
+	"utils/stringutils.h"
+
+1254603188 d:\elektro_svn\src\emoteshortcut.h
+
+1254603188 source:d:\elektro_svn\src\engine.cpp
+	"beingmanager.h"
+	"engine.h"
+	"flooritemmanager.h"
+	"game.h"
+	"localplayer.h"
+	"log.h"
+	"map.h"
+	"particle.h"
+	"sound.h"
+	"gui/gui.h"
+	"gui/minimap.h"
+	"gui/okdialog.h"
+	"gui/viewport.h"
+	"net/maphandler.h"
+	"net/net.h"
+	"resources/mapreader.h"
+	"resources/monsterdb.h"
+	"resources/resourcemanager.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+
+1254603188 d:\elektro_svn\src\flooritemmanager.h
+	<list>
+
+1254603184 d:\elektro_svn\src\gui\minimap.h
+	"gui/widgets/window.h"
+
+1254603184 d:\elektro_svn\src\gui\okdialog.h
+	"gui/widgets/window.h"
+	<guichan/actionlistener.hpp>
+
+1254603188 d:\elektro_svn\src\resources\mapreader.h
+	<libxml/tree.h>
+
+1254603187 d:\elektro_svn\src\resources\monsterdb.h
+	<map>
+
+1254603188 source:d:\elektro_svn\src\equipment.cpp
+	"equipment.h"
+	"item.h"
+	<algorithm>
+
+1254603188 d:\elektro_svn\src\equipment.h
+
+1254603188 source:d:\elektro_svn\src\flooritem.cpp
+	"flooritem.h"
+	"graphics.h"
+	"item.h"
+	"map.h"
+	"resources/image.h"
+
+1254603188 d:\elektro_svn\src\flooritem.h
+	<list>
+	"map.h"
+	"sprite.h"
+
+1254603188 source:d:\elektro_svn\src\flooritemmanager.cpp
+	"flooritemmanager.h"
+	"flooritem.h"
+	"utils/dtor.h"
+
+1254603188 source:d:\elektro_svn\src\graphics.cpp
+	<cassert>
+	"graphics.h"
+	"log.h"
+	"resources/image.h"
+	"resources/imageloader.h"
+
+1254603187 d:\elektro_svn\src\resources\imageloader.h
+	<guichan/image.hpp>
+	<guichan/imageloader.hpp>
+	<string>
+
+1254603516 d:\elektro_svn\libraries\include\guichan\image.hpp
+	<string>
+	"guichan/platform.hpp"
+
+1254603516 d:\elektro_svn\libraries\include\guichan\imageloader.hpp
+	<iosfwd>
+	"guichan/platform.hpp"
+
+1254603184 source:d:\elektro_svn\src\gui\buy.cpp
+	"gui/buy.h"
+	"gui/widgets/button.h"
+	"gui/widgets/label.h"
+	"gui/widgets/layout.h"
+	"gui/widgets/scrollarea.h"
+	"gui/widgets/slider.h"
+	"gui/setup.h"
+	"gui/shop.h"
+	"gui/shoplistbox.h"
+	"npc.h"
+	"shopitem.h"
+	"units.h"
+	"net/net.h"
+	"net/npchandler.h"
+	"resources/iteminfo.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+
+1254603184 d:\elektro_svn\src\gui\buy.h
+	"gui/widgets/window.h"
+	"guichanfwd.h"
+	<guichan/actionlistener.hpp>
+	<guichan/selectionlistener.hpp>
+
+1254603516 d:\elektro_svn\libraries\include\guichan\selectionlistener.hpp
+	<string>
+	"guichan/selectionevent.hpp"
+	"guichan/platform.hpp"
+
+1254603516 d:\elektro_svn\libraries\include\guichan\selectionevent.hpp
+	"guichan/event.hpp"
+	"guichan/platform.hpp"
+
+1254603183 d:\elektro_svn\src\gui\widgets\label.h
+	<guichan/widgets/label.hpp>
+
+1254603183 d:\elektro_svn\src\gui\widgets\layout.h
+	<guichan/widgets/container.hpp>
+	<vector>
+
+1254603183 d:\elektro_svn\src\gui\widgets\slider.h
+	<guichan/widgets/slider.hpp>
+
+1254603515 d:\elektro_svn\libraries\include\guichan\widgets\slider.hpp
+	"guichan/keylistener.hpp"
+	"guichan/mouselistener.hpp"
+	"guichan/platform.hpp"
+	"guichan/widget.hpp"
+
+1254603184 d:\elektro_svn\src\gui\setup.h
+	"gui/widgets/window.h"
+	"guichanfwd.h"
+	<guichan/actionlistener.hpp>
+	<list>
+
+1254603184 d:\elektro_svn\src\gui\shop.h
+	<guichan/listmodel.hpp>
+	<string>
+	<vector>
+
+1254603184 d:\elektro_svn\src\gui\shoplistbox.h
+	"gui/widgets/listbox.h"
+
+1254603188 d:\elektro_svn\src\shopitem.h
+	<stack>
+	"item.h"
+
+1254603188 d:\elektro_svn\src\units.h
+	<string>
+
+1254603184 source:d:\elektro_svn\src\gui\buysell.cpp
+	"buysell.h"
+	"npc.h"
+	"gui/widgets/button.h"
+	"gui/setup.h"
+	"net/net.h"
+	"net/npchandler.h"
+	"utils/gettext.h"
+
+1254603184 d:\elektro_svn\src\gui\buysell.h
+	"gui/widgets/window.h"
+	<guichan/actionlistener.hpp>
+
+1254603184 source:d:\elektro_svn\src\gui\changepassworddialog.cpp
+	"changepassworddialog.h"
+	"main.h"
+	"log.h"
+	"gui/register.h"
+	"gui/okdialog.h"
+	"gui/widgets/button.h"
+	"gui/widgets/passwordfield.h"
+	"gui/widgets/textfield.h"
+	"gui/widgets/label.h"
+	"gui/widgets/layout.h"
+	"net/logindata.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+	<string>
+	<sstream>
+
+1254603184 d:\elektro_svn\src\gui\changepassworddialog.h
+	"gui/widgets/window.h"
+	"guichanfwd.h"
+	<guichan/actionlistener.hpp>
+
+1254603184 d:\elektro_svn\src\gui\register.h
+	"gui/widgets/window.h"
+	<guichan/actionlistener.hpp>
+	<guichan/keylistener.hpp>
+	<string>
+
+1254603183 d:\elektro_svn\src\gui\widgets\passwordfield.h
+	"textfield.h"
+
+1254603183 d:\elektro_svn\src\gui\widgets\textfield.h
+	<guichan/widgets/textfield.hpp>
+
+1254603515 d:\elektro_svn\libraries\include\guichan\widgets\textfield.hpp
+	"guichan/keylistener.hpp"
+	"guichan/mouselistener.hpp"
+	"guichan/platform.hpp"
+	"guichan/widget.hpp"
+	<string>
+
+1254603184 source:d:\elektro_svn\src\gui\charcreatedialog.cpp
+	"gui/charcreatedialog.h"
+	"gui/charselectdialog.h"
+	"gui/confirmdialog.h"
+	"gui/okdialog.h"
+	"gui/playerbox.h"
+	"gui/widgets/button.h"
+	"gui/widgets/label.h"
+	"gui/widgets/radiobutton.h"
+	"gui/widgets/slider.h"
+	"gui/widgets/textfield.h"
+	"gui/widgets/layout.h"
+	"game.h"
+	"localplayer.h"
+	"main.h"
+	"units.h"
+	"net/charhandler.h"
+	"net/messageout.h"
+	"net/net.h"
+	"resources/colordb.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+	<guichan/font.hpp>
+
+1254603184 d:\elektro_svn\src\gui\charcreatedialog.h
+	"player.h"
+	"guichanfwd.h"
+	"lockedarray.h"
+	"gui/widgets/window.h"
+	<guichan/actionlistener.hpp>
+	<string>
+	<vector>
+
+1254603188 d:\elektro_svn\src\lockedarray.h
+	<algorithm>
+
+1254603184 d:\elektro_svn\src\gui\charselectdialog.h
+	"gui/widgets/window.h"
+	"player.h"
+	"guichanfwd.h"
+	"lockedarray.h"
+	<guichan/actionlistener.hpp>
+
+1254603184 d:\elektro_svn\src\gui\confirmdialog.h
+	"gui/widgets/window.h"
+	<guichan/actionlistener.hpp>
+
+1254603184 d:\elektro_svn\src\gui\playerbox.h
+	<guichan/widgets/scrollarea.hpp>
+
+1254603187 d:\elektro_svn\src\net\charhandler.h
+	"localplayer.h"
+	"lockedarray.h"
+	"logindata.h"
+	<iosfwd>
+	<vector>
+
+1254603187 d:\elektro_svn\src\net\messageout.h
+	<iosfwd>
+	<SDL_types.h>
+
+1254603185 source:d:\elektro_svn\src\gui\charselectdialog.cpp
+	"gui/charselectdialog.h"
+	"gui/charcreatedialog.h"
+	"gui/confirmdialog.h"
+	"gui/okdialog.h"
+	"gui/playerbox.h"
+	"gui/changepassworddialog.h"
+	"net/logindata.h"
+	"gui/widgets/radiobutton.h"
+	"gui/widgets/slider.h"
+	"gui/unregisterdialog.h"
+	"gui/changeemaildialog.h"
+	"net/tmwserv/accountserver/account.h"
+	"net/ea/protocol.h"
+	"gui/widgets/button.h"
+	"gui/widgets/label.h"
+	"gui/widgets/layout.h"
+	"gui/widgets/textfield.h"
+	"game.h"
+	"localplayer.h"
+	"main.h"
+	"units.h"
+	"net/charhandler.h"
+	"net/messageout.h"
+	"net/net.h"
+	"resources/colordb.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+	<guichan/font.hpp>
+	<string>
+
+1254603184 d:\elektro_svn\src\gui\unregisterdialog.h
+	"gui/widgets/window.h"
+	"guichanfwd.h"
+	<guichan/actionlistener.hpp>
+
+1254603184 d:\elektro_svn\src\gui\changeemaildialog.h
+	"gui/widgets/window.h"
+	"guichanfwd.h"
+	<guichan/actionlistener.hpp>
+
+1254603186 d:\elektro_svn\src\net\tmwserv\accountserver\account.h
+	<iosfwd>
+
+1254661002 d:\elektro_svn\src\net\ea\protocol.h
+
+1254603184 source:d:\elektro_svn\src\gui\chat.cpp
+	"chat.h"
+	"gui/itemlinkhandler.h"
+	"gui/recorder.h"
+	"gui/setup.h"
+	"gui/sdlinput.h"
+	"gui/widgets/chattab.h"
+	"gui/widgets/scrollarea.h"
+	"gui/widgets/tabbedarea.h"
+	"gui/widgets/textfield.h"
+	"gui/widgets/whispertab.h"
+	"beingmanager.h"
+	"configuration.h"
+	"localplayer.h"
+	"net/chathandler.h"
+	"net/net.h"
+	"utils/dtor.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+	<guichan/focushandler.hpp>
+	<guichan/focuslistener.hpp>
+	<sstream>
+
+1254603184 d:\elektro_svn\src\gui\itemlinkhandler.h
+	"linkhandler.h"
+
+1254603184 d:\elektro_svn\src\gui\linkhandler.h
+	<string>
+	<string>
+
+1254603184 d:\elektro_svn\src\gui\recorder.h
+	"gui/widgets/window.h"
+	"utils/gettext.h"
+	<guichan/actionlistener.hpp>
+	<fstream>
+	<string>
+
+1254603184 d:\elektro_svn\src\gui\sdlinput.h
+	<queue>
+	<SDL/SDL.h>
+	<guichan/input.hpp>
+	<guichan/keyinput.hpp>
+	<guichan/mouseinput.hpp>
+	<guichan/platform.hpp>
+
+1254603183 d:\elektro_svn\src\gui\widgets\tabbedarea.h
+	<guichan/widget.hpp>
+	<guichan/widgetlistener.hpp>
+	<guichan/widgets/container.hpp>
+	<guichan/widgets/tabbedarea.hpp>
+	<string>
+
+1254603515 d:\elektro_svn\libraries\include\guichan\widgets\tabbedarea.hpp
+	<map>
+	<string>
+	<vector>
+	"guichan/actionlistener.hpp"
+	"guichan/basiccontainer.hpp"
+	"guichan/keylistener.hpp"
+	"guichan/mouselistener.hpp"
+	"guichan/platform.hpp"
+
+1254603183 d:\elektro_svn\src\gui\widgets\whispertab.h
+	"chattab.h"
+
+1254603516 d:\elektro_svn\libraries\include\guichan\focushandler.hpp
+	<vector>
+	"guichan/event.hpp"
+	"guichan/platform.hpp"
+
+1254603184 source:d:\elektro_svn\src\gui\confirmdialog.cpp
+	"gui/confirmdialog.h"
+	"gui/widgets/button.h"
+	"gui/widgets/textbox.h"
+	"gui/gui.h"
+	"utils/gettext.h"
+	<guichan/font.hpp>
+
+1254603184 source:d:\elektro_svn\src\gui\connectiondialog.cpp
+	"connectiondialog.h"
+	"gui/widgets/button.h"
+	"gui/widgets/label.h"
+	"gui/widgets/progressbar.h"
+	"main.h"
+	"log.h"
+	"utils/gettext.h"
+
+1254603184 d:\elektro_svn\src\gui\connectiondialog.h
+	"gui/widgets/window.h"
+	"main.h"
+	<guichan/actionlistener.hpp>
+
+1254603183 d:\elektro_svn\src\gui\widgets\progressbar.h
+	<string>
+	<guichan/widget.hpp>
+
+1254603184 source:d:\elektro_svn\src\gui\debugwindow.cpp
+	"gui/debugwindow.h"
+	"gui/setup.h"
+	"gui/viewport.h"
+	"gui/widgets/label.h"
+	"gui/widgets/layout.h"
+	"engine.h"
+	"game.h"
+	"particle.h"
+	"map.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+
+1254603184 d:\elektro_svn\src\gui\debugwindow.h
+	"gui/widgets/window.h"
+
+1254603184 source:d:\elektro_svn\src\gui\emotepopup.cpp
+	"gui/emotepopup.h"
+	"animatedsprite.h"
+	"configuration.h"
+	"emoteshortcut.h"
+	"graphics.h"
+	"localplayer.h"
+	"log.h"
+	"resources/emotedb.h"
+	"resources/image.h"
+	"resources/iteminfo.h"
+	"resources/resourcemanager.h"
+	"utils/dtor.h"
+	<guichan/mouseinput.hpp>
+	<guichan/selectionlistener.hpp>
+
+1254603184 d:\elektro_svn\src\gui\emotepopup.h
+	"gui/widgets/popup.h"
+	<guichan/mouselistener.hpp>
+	<list>
+	<vector>
+
+1254603184 source:d:\elektro_svn\src\gui\emoteshortcutcontainer.cpp
+	"gui/emoteshortcutcontainer.h"
+	"gui/palette.h"
+	"animatedsprite.h"
+	"configuration.h"
+	"emoteshortcut.h"
+	"graphics.h"
+	"inventory.h"
+	"item.h"
+	"itemshortcut.h"
+	"keyboardconfig.h"
+	"localplayer.h"
+	"log.h"
+	"resources/emotedb.h"
+	"resources/image.h"
+	"resources/resourcemanager.h"
+	"utils/dtor.h"
+
+1254603184 d:\elektro_svn\src\gui\emoteshortcutcontainer.h
+	<vector>
+	"shortcutcontainer.h"
+
+1254603184 d:\elektro_svn\src\gui\shortcutcontainer.h
+	<guichan/mouselistener.hpp>
+	<guichan/widget.hpp>
+	<guichan/widgetlistener.hpp>
+
+1254603188 d:\elektro_svn\src\inventory.h
+
+1254603188 d:\elektro_svn\src\itemshortcut.h
+
+1254603188 d:\elektro_svn\src\keyboardconfig.h
+	<SDL_types.h>
+	<string>
+
+1254603184 source:d:\elektro_svn\src\gui\equipmentwindow.cpp
+	"gui/widgets/button.h"
+	"gui/equipmentwindow.h"
+	"gui/itempopup.h"
+	"gui/palette.h"
+	"gui/playerbox.h"
+	"gui/setup.h"
+	"gui/viewport.h"
+	"equipment.h"
+	"graphics.h"
+	"inventory.h"
+	"item.h"
+	"localplayer.h"
+	"net/inventoryhandler.h"
+	"net/net.h"
+	"resources/image.h"
+	"resources/iteminfo.h"
+	"resources/resourcemanager.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+	<guichan/font.hpp>
+
+1254603184 d:\elektro_svn\src\gui\equipmentwindow.h
+	"gui/widgets/window.h"
+	"equipment.h"
+	"guichanfwd.h"
+	<guichan/actionlistener.hpp>
+
+1254603184 d:\elektro_svn\src\gui\itempopup.h
+	"gui/widgets/popup.h"
+	"resources/iteminfo.h"
+	<guichan/mouselistener.hpp>
+
+1254603187 d:\elektro_svn\src\net\inventoryhandler.h
+	"item.h"
+	<iosfwd>
+
+1254603184 source:d:\elektro_svn\src\gui\focushandler.cpp
+	"focushandler.h"
+
+1254603184 d:\elektro_svn\src\gui\focushandler.h
+	<list>
+	<guichan/focushandler.hpp>
+
+1254603184 source:d:\elektro_svn\src\gui\gui.cpp
+	"gui/gui.h"
+	"gui/focushandler.h"
+	"gui/palette.h"
+	"gui/sdlinput.h"
+	"gui/skin.h"
+	"gui/truetypefont.h"
+	"gui/viewport.h"
+	"gui/widgets/window.h"
+	"gui/widgets/windowcontainer.h"
+	"configlistener.h"
+	"configuration.h"
+	"graphics.h"
+	"log.h"
+	"resources/image.h"
+	"resources/imageset.h"
+	"resources/imageloader.h"
+	"resources/resourcemanager.h"
+	<guichan/exception.hpp>
+	<guichan/image.hpp>
+
+1254603184 d:\elektro_svn\src\gui\skin.h
+	"graphics.h"
+	<map>
+	<string>
+
+1254603184 d:\elektro_svn\src\gui\truetypefont.h
+	<list>
+	<string>
+	<guichan/font.hpp>
+	<SDL_ttf/SDL_ttf.h>
+	<SDL/SDL_ttf.h>
+	<SDL_ttf.h>
+
+1254603508 d:\elektro_svn\libraries\include\sdl\sdl_ttf.h
+	"SDL.h"
+	"begin_code.h"
+	"close_code.h"
+
+1254603184 source:d:\elektro_svn\src\gui\help.cpp
+	"gui/help.h"
+	"gui/widgets/button.h"
+	"gui/widgets/browserbox.h"
+	"gui/widgets/layout.h"
+	"gui/widgets/scrollarea.h"
+	"gui/setup.h"
+	"resources/resourcemanager.h"
+	"utils/gettext.h"
+
+1254603185 d:\elektro_svn\src\gui\help.h
+	"gui/linkhandler.h"
+	"gui/widgets/window.h"
+	<guichan/actionlistener.hpp>
+
+1254603184 source:d:\elektro_svn\src\gui\inventorywindow.cpp
+	"gui/inventorywindow.h"
+	"gui/itemamount.h"
+	"gui/itemcontainer.h"
+	"gui/setup.h"
+	"gui/sdlinput.h"
+	"gui/viewport.h"
+	"gui/widgets/button.h"
+	"gui/widgets/label.h"
+	"gui/widgets/layout.h"
+	"gui/widgets/progressbar.h"
+	"gui/widgets/scrollarea.h"
+	"inventory.h"
+	"item.h"
+	"localplayer.h"
+	"units.h"
+	"net/inventoryhandler.h"
+	"net/net.h"
+	"resources/iteminfo.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+	<guichan/font.hpp>
+	<guichan/mouseinput.hpp>
+	<string>
+
+1254603184 d:\elektro_svn\src\gui\inventorywindow.h
+	"gui/widgets/window.h"
+	"inventory.h"
+	<guichan/actionlistener.hpp>
+	<guichan/keylistener.hpp>
+	<guichan/selectionlistener.hpp>
+
+1254603184 d:\elektro_svn\src\gui\itemamount.h
+	"gui/widgets/window.h"
+	<guichan/keylistener.hpp>
+	<guichan/actionlistener.hpp>
+
+1254603184 d:\elektro_svn\src\gui\itemcontainer.h
+	<guichan/keylistener.hpp>
+	<guichan/mouselistener.hpp>
+	<guichan/widget.hpp>
+	<guichan/widgetlistener.hpp>
+	<list>
+
+1254603184 source:d:\elektro_svn\src\gui\itemamount.cpp
+	"gui/itemamount.h"
+	"gui/storagewindow.h"
+	"gui/trade.h"
+	"gui/itempopup.h"
+	"gui/viewport.h"
+	"gui/widgets/button.h"
+	"gui/widgets/inttextfield.h"
+	"gui/widgets/layout.h"
+	"gui/widgets/slider.h"
+	"gui/widgets/icon.h"
+	"item.h"
+	"net/inventoryhandler.h"
+	"net/net.h"
+	"utils/gettext.h"
+
+1254603184 d:\elektro_svn\src\gui\storagewindow.h
+	"gui/widgets/window.h"
+	"inventory.h"
+	<guichan/actionlistener.hpp>
+	<guichan/selectionlistener.hpp>
+
+1254603184 d:\elektro_svn\src\gui\trade.h
+	"gui/widgets/window.h"
+	"guichanfwd.h"
+	<guichan/actionlistener.hpp>
+	<guichan/selectionlistener.hpp>
+	<memory>
+
+1254603183 d:\elektro_svn\src\gui\widgets\inttextfield.h
+	"textfield.h"
+
+1254603183 d:\elektro_svn\src\gui\widgets\icon.h
+	<guichan/widget.hpp>
+
+1254603184 source:d:\elektro_svn\src\gui\itemcontainer.cpp
+	"gui/itemcontainer.h"
+	"gui/chat.h"
+	"gui/itempopup.h"
+	"gui/outfitwindow.h"
+	"gui/palette.h"
+	"gui/sdlinput.h"
+	"gui/viewport.h"
+	"net/net.h"
+	"net/inventoryhandler.h"
+	"graphics.h"
+	"inventory.h"
+	"item.h"
+	"itemshortcut.h"
+	"log.h"
+	"resources/image.h"
+	"resources/iteminfo.h"
+	"resources/resourcemanager.h"
+	"utils/stringutils.h"
+	<guichan/mouseinput.hpp>
+	<guichan/selectionlistener.hpp>
+
+1254603184 d:\elektro_svn\src\gui\outfitwindow.h
+	"gui/widgets/window.h"
+	<guichan/actionlistener.hpp>
+
+1254603184 source:d:\elektro_svn\src\gui\itemlinkhandler.cpp
+	<sstream>
+	<string>
+	"itemlinkhandler.h"
+	"itempopup.h"
+	"viewport.h"
+	"../resources/iteminfo.h"
+	"../resources/itemdb.h"
+
+1254603184 source:d:\elektro_svn\src\gui\itempopup.cpp
+	"gui/itempopup.h"
+	"gui/gui.h"
+	"gui/palette.h"
+	"gui/widgets/textbox.h"
+	"graphics.h"
+	"units.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+	<guichan/font.hpp>
+	<guichan/widgets/label.hpp>
+
+1254603184 source:d:\elektro_svn\src\gui\itemshortcutcontainer.cpp
+	"gui/itemshortcutcontainer.h"
+	"gui/inventorywindow.h"
+	"gui/itempopup.h"
+	"gui/palette.h"
+	"gui/viewport.h"
+	"configuration.h"
+	"graphics.h"
+	"inventory.h"
+	"item.h"
+	"itemshortcut.h"
+	"keyboardconfig.h"
+	"localplayer.h"
+	"resources/image.h"
+	"resources/iteminfo.h"
+	"resources/resourcemanager.h"
+	"utils/stringutils.h"
+
+1254603184 d:\elektro_svn\src\gui\itemshortcutcontainer.h
+	<guichan/mouselistener.hpp>
+	"shortcutcontainer.h"
+
+1254603184 source:d:\elektro_svn\src\gui\login.cpp
+	"gui/login.h"
+	"gui/okdialog.h"
+	"gui/widgets/button.h"
+	"gui/widgets/checkbox.h"
+	"gui/widgets/dropdown.h"
+	"gui/widgets/label.h"
+	"gui/widgets/layout.h"
+	"gui/widgets/passwordfield.h"
+	"gui/widgets/textfield.h"
+	"net/logindata.h"
+	"main.h"
+	"configuration.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+
+1254603184 d:\elektro_svn\src\gui\login.h
+	"gui/widgets/window.h"
+	<guichan/actionlistener.hpp>
+	<guichan/keylistener.hpp>
+	<guichan/listmodel.hpp>
+	<string>
+	<vector>
+
+1254603183 d:\elektro_svn\src\gui\widgets\dropdown.h
+	<guichan/widgets/dropdown.hpp>
+
+1254603515 d:\elektro_svn\libraries\include\guichan\widgets\dropdown.hpp
+	"guichan/actionlistener.hpp"
+	"guichan/basiccontainer.hpp"
+	"guichan/deathlistener.hpp"
+	"guichan/focushandler.hpp"
+	"guichan/focuslistener.hpp"
+	"guichan/keylistener.hpp"
+	"guichan/listmodel.hpp"
+	"guichan/mouselistener.hpp"
+	"guichan/platform.hpp"
+	"guichan/selectionlistener.hpp"
+	"guichan/widgets/listbox.hpp"
+	"guichan/widgets/scrollarea.hpp"
+
+1254603185 source:d:\elektro_svn\src\gui\minimap.cpp
+	"gui/minimap.h"
+	"being.h"
+	"beingmanager.h"
+	"configuration.h"
+	"graphics.h"
+	"localplayer.h"
+	"log.h"
+	"map.h"
+	"player.h"
+	"gui/palette.h"
+	"gui/setup.h"
+	"resources/image.h"
+	"resources/resourcemanager.h"
+	"utils/gettext.h"
+	<guichan/font.hpp>
+
+1254603184 source:d:\elektro_svn\src\gui\ministatus.cpp
+	"gui/ministatus.h"
+	"gui/gui.h"
+	"gui/statuswindow.h"
+	"gui/widgets/progressbar.h"
+	"animatedsprite.h"
+	"configuration.h"
+	"graphics.h"
+	"localplayer.h"
+	"utils/stringutils.h"
+
+1254603184 d:\elektro_svn\src\gui\ministatus.h
+	"gui/widgets/popup.h"
+	<vector>
+
+1254603184 d:\elektro_svn\src\gui\statuswindow.h
+	"gui/widgets/window.h"
+	"guichanfwd.h"
+	<guichan/actionlistener.hpp>
+	<map>
+
+1254603184 source:d:\elektro_svn\src\gui\npcdialog.cpp
+	"gui/npcdialog.h"
+	"gui/widgets/button.h"
+	"gui/widgets/inttextfield.h"
+	"gui/widgets/layout.h"
+	"gui/widgets/listbox.h"
+	"gui/widgets/scrollarea.h"
+	"gui/widgets/textbox.h"
+	"gui/widgets/textfield.h"
+	"gui/setup.h"
+	"npc.h"
+	"net/net.h"
+	"net/npchandler.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+	<guichan/font.hpp>
+
+1254603184 d:\elektro_svn\src\gui\npcdialog.h
+	"gui/widgets/window.h"
+	"npc.h"
+	<guichan/actionlistener.hpp>
+	<guichan/listmodel.hpp>
+	<string>
+	<vector>
+
+1254603184 source:d:\elektro_svn\src\gui\npcpostdialog.cpp
+	"gui/npcpostdialog.h"
+	"gui/widgets/button.h"
+	"gui/widgets/chattab.h"
+	"gui/widgets/label.h"
+	"gui/widgets/textbox.h"
+	"gui/widgets/textfield.h"
+	"gui/widgets/scrollarea.h"
+	"npc.h"
+	"net/net.h"
+	"net/npchandler.h"
+	"utils/gettext.h"
+
+1254603184 d:\elektro_svn\src\gui\npcpostdialog.h
+	"gui/widgets/window.h"
+	<guichan/actionlistener.hpp>
+
+1254603184 source:d:\elektro_svn\src\gui\okdialog.cpp
+	"gui/okdialog.h"
+	"gui/gui.h"
+	"gui/widgets/button.h"
+	"gui/widgets/textbox.h"
+	"utils/gettext.h"
+	<guichan/font.hpp>
+
+1254603184 source:d:\elektro_svn\src\gui\outfitwindow.cpp
+	"outfitwindow.h"
+	"configuration.h"
+	"localplayer.h"
+	"graphics.h"
+	"inventory.h"
+	"equipment.h"
+	"item.h"
+	"gui/widgets/button.h"
+	"gui/widgets/checkbox.h"
+	"gui/widgets/label.h"
+	"gui/widgets/layout.h"
+	"net/inventoryhandler.h"
+	"net/net.h"
+	"resources/image.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+	<vector>
+
+1254603184 source:d:\elektro_svn\src\gui\palette.cpp
+	"palette.h"
+	"configuration.h"
+	"game.h"
+	"gui/gui.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+	<math.h>
+
+1254603184 source:d:\elektro_svn\src\gui\partywindow.cpp
+	"gui/partywindow.h"
+	"gui/widgets/chattab.h"
+	"gui/setup.h"
+	"beingmanager.h"
+	"player.h"
+	"net/net.h"
+	"net/partyhandler.h"
+	"utils/dtor.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+
+1254603184 d:\elektro_svn\src\gui\partywindow.h
+	"gui/confirmdialog.h"
+	"gui/widgets/avatar.h"
+	"gui/widgets/window.h"
+	<guichan/actionevent.hpp>
+	<guichan/actionlistener.hpp>
+	<string>
+	<map>
+
+1254603183 d:\elektro_svn\src\gui\widgets\avatar.h
+	"guichanfwd.h"
+	"gui/widgets/container.h"
+	<string>
+
+1254603184 source:d:\elektro_svn\src\gui\playerbox.cpp
+	"playerbox.h"
+	"../animatedsprite.h"
+	"../configuration.h"
+	"../graphics.h"
+	"../player.h"
+	"../resources/image.h"
+	"../resources/resourcemanager.h"
+	"../utils/dtor.h"
+
+1254603185 source:d:\elektro_svn\src\gui\popupmenu.cpp
+	"gui/popupmenu.h"
+	"gui/chat.h"
+	"gui/inventorywindow.h"
+	"gui/storagewindow.h"
+	"gui/itemamount.h"
+	"gui/widgets/browserbox.h"
+	"being.h"
+	"beingmanager.h"
+	"flooritem.h"
+	"graphics.h"
+	"item.h"
+	"localplayer.h"
+	"log.h"
+	"npc.h"
+	"playerrelations.h"
+	"net/adminhandler.h"
+	"net/inventoryhandler.h"
+	"net/net.h"
+	"net/partyhandler.h"
+	"net/tradehandler.h"
+	"resources/itemdb.h"
+	"resources/iteminfo.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+	<cassert>
+
+1254603184 d:\elektro_svn\src\gui\popupmenu.h
+	"gui/linkhandler.h"
+	"gui/widgets/popup.h"
+
+1254603187 d:\elektro_svn\src\net\tradehandler.h
+	"being.h"
+	<iosfwd>
+
+1254603184 source:d:\elektro_svn\src\gui\recorder.cpp
+	"gui/recorder.h"
+	"gui/chat.h"
+	"gui/widgets/button.h"
+	"gui/widgets/chattab.h"
+	"gui/widgets/layout.h"
+	"gui/widgets/windowcontainer.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+	<physfs.h>
+
+1254603516 d:\elektro_svn\libraries\include\physfs.h
+
+1254603184 source:d:\elektro_svn\src\gui\register.cpp
+	"gui/register.h"
+	"configuration.h"
+	"log.h"
+	"main.h"
+	"gui/login.h"
+	"gui/okdialog.h"
+	"gui/widgets/button.h"
+	"gui/widgets/checkbox.h"
+	"gui/widgets/label.h"
+	"gui/widgets/layout.h"
+	"gui/widgets/passwordfield.h"
+	"gui/widgets/radiobutton.h"
+	"gui/widgets/textfield.h"
+	"net/logindata.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+
+1254603184 source:d:\elektro_svn\src\gui\sdlinput.cpp
+	"sdlinput.h"
+	<guichan/exception.hpp>
+
+1254603184 source:d:\elektro_svn\src\gui\sell.cpp
+	"gui/sell.h"
+	"gui/setup.h"
+	"gui/shop.h"
+	"gui/shoplistbox.h"
+	"gui/widgets/button.h"
+	"gui/widgets/label.h"
+	"gui/widgets/layout.h"
+	"gui/widgets/scrollarea.h"
+	"gui/widgets/slider.h"
+	"npc.h"
+	"shopitem.h"
+	"units.h"
+	"net/net.h"
+	"net/npchandler.h"
+	"resources/iteminfo.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+
+1254603184 d:\elektro_svn\src\gui\sell.h
+	"gui/widgets/window.h"
+	<guichan/actionlistener.hpp>
+	<guichan/selectionlistener.hpp>
+	<SDL_types.h>
+
+1254603184 source:d:\elektro_svn\src\gui\serverselectdialog.cpp
+	"gui/serverselectdialog.h"
+	"gui/widgets/button.h"
+	"gui/widgets/listbox.h"
+	"gui/widgets/scrollarea.h"
+	"net/logindata.h"
+	"net/serverinfo.h"
+	"main.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+
+1254603184 d:\elektro_svn\src\gui\serverselectdialog.h
+	"gui/widgets/window.h"
+	"main.h"
+	<guichan/actionlistener.hpp>
+	<guichan/listmodel.hpp>
+
+1254603187 d:\elektro_svn\src\net\serverinfo.h
+	<string>
+
+1254603184 source:d:\elektro_svn\src\gui\setup.cpp
+	"setup.h"
+	"main.h"
+	"gui/setup_audio.h"
+	"gui/setup_colors.h"
+	"gui/setup_joystick.h"
+	"gui/setup_keyboard.h"
+	"gui/setup_players.h"
+	"gui/setup_video.h"
+	"gui/widgets/button.h"
+	"gui/widgets/label.h"
+	"gui/widgets/tabbedarea.h"
+	"utils/dtor.h"
+	"utils/gettext.h"
+
+1254603184 d:\elektro_svn\src\gui\setup_audio.h
+	"guichanfwd.h"
+	"gui/setuptab.h"
+	<guichan/actionlistener.hpp>
+
+1254603184 d:\elektro_svn\src\gui\setuptab.h
+	"gui/widgets/container.h"
+	<string>
+
+1254603184 d:\elektro_svn\src\gui\setup_colors.h
+	"gui/setuptab.h"
+	"guichanfwd.h"
+	<guichan/actionlistener.hpp>
+	<guichan/selectionlistener.hpp>
+	<string>
+
+1254603184 d:\elektro_svn\src\gui\setup_joystick.h
+	"guichanfwd.h"
+	"gui/setuptab.h"
+	<guichan/actionlistener.hpp>
+
+1254603184 d:\elektro_svn\src\gui\setup_keyboard.h
+	<string>
+	<guichan/actionlistener.hpp>
+	"gui/setuptab.h"
+	"guichanfwd.h"
+
+1254603184 d:\elektro_svn\src\gui\setup_players.h
+	"guichanfwd.h"
+	"gui/setuptab.h"
+	"playerrelations.h"
+	<guichan/actionlistener.hpp>
+
+1254603184 d:\elektro_svn\src\gui\setup_video.h
+	"being.h"
+	"guichanfwd.h"
+	"gui/setuptab.h"
+	<guichan/actionlistener.hpp>
+	<guichan/keylistener.hpp>
+
+1254603184 source:d:\elektro_svn\src\gui\setup_audio.cpp
+	"gui/setup_audio.h"
+	"gui/okdialog.h"
+	"gui/widgets/checkbox.h"
+	"gui/widgets/label.h"
+	"gui/widgets/layouthelper.h"
+	"gui/widgets/slider.h"
+	"configuration.h"
+	"log.h"
+	"sound.h"
+	"utils/gettext.h"
+
+1254603183 d:\elektro_svn\src\gui\widgets\layouthelper.h
+	"gui/widgets/layout.h"
+	<guichan/widgetlistener.hpp>
+
+1254603184 source:d:\elektro_svn\src\gui\setup_colors.cpp
+	"gui/setup_colors.h"
+	"gui/gui.h"
+	"gui/itemlinkhandler.h"
+	"gui/palette.h"
+	"gui/widgets/browserbox.h"
+	"gui/widgets/label.h"
+	"gui/widgets/layouthelper.h"
+	"gui/widgets/listbox.h"
+	"gui/widgets/scrollarea.h"
+	"gui/widgets/slider.h"
+	"gui/widgets/textfield.h"
+	"gui/widgets/textpreview.h"
+	"configuration.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+	<string>
+	<cmath>
+
+1254603183 d:\elektro_svn\src\gui\widgets\textpreview.h
+	<guichan/color.hpp>
+	<guichan/font.hpp>
+	<guichan/widget.hpp>
+
+1254603184 source:d:\elektro_svn\src\gui\setup_joystick.cpp
+	"gui/setup_joystick.h"
+	"gui/widgets/button.h"
+	"gui/widgets/checkbox.h"
+	"gui/widgets/label.h"
+	"gui/widgets/layouthelper.h"
+	"configuration.h"
+	"joystick.h"
+	"utils/gettext.h"
+
+1254603188 d:\elektro_svn\src\joystick.h
+	<SDL.h>
+
+1254603184 source:d:\elektro_svn\src\gui\setup_keyboard.cpp
+	"gui/setup_keyboard.h"
+	"gui/okdialog.h"
+	"gui/widgets/button.h"
+	"gui/widgets/layouthelper.h"
+	"gui/widgets/listbox.h"
+	"gui/widgets/scrollarea.h"
+	"keyboardconfig.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+	<SDL_keyboard.h>
+	<guichan/listmodel.hpp>
+
+1254603184 source:d:\elektro_svn\src\gui\setup_players.cpp
+	"gui/setup_players.h"
+	"gui/okdialog.h"
+	"gui/table.h"
+	"gui/widgets/button.h"
+	"gui/widgets/checkbox.h"
+	"gui/widgets/dropdown.h"
+	"gui/widgets/label.h"
+	"gui/widgets/layouthelper.h"
+	"gui/widgets/scrollarea.h"
+	"configuration.h"
+	"log.h"
+	"utils/gettext.h"
+	<string>
+	<vector>
+
+1254603184 d:\elektro_svn\src\gui\table.h
+	"tablemodel.h"
+	<guichan/keylistener.hpp>
+	<guichan/mouselistener.hpp>
+	<guichan/widget.hpp>
+	<vector>
+
+1254603184 d:\elektro_svn\src\gui\tablemodel.h
+	<guichanfwd.h>
+	<set>
+	<vector>
+
+1254603184 source:d:\elektro_svn\src\gui\setup_video.cpp
+	"gui/setup_video.h"
+	"gui/okdialog.h"
+	"gui/widgets/checkbox.h"
+	"gui/widgets/label.h"
+	"gui/widgets/layouthelper.h"
+	"gui/widgets/listbox.h"
+	"gui/widgets/scrollarea.h"
+	"gui/widgets/slider.h"
+	"gui/widgets/textfield.h"
+	"gui/widgets/dropdown.h"
+	"configuration.h"
+	"engine.h"
+	"graphics.h"
+	"localplayer.h"
+	"log.h"
+	"main.h"
+	"particle.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+	<guichan/key.hpp>
+	<guichan/listmodel.hpp>
+	<SDL.h>
+	<string>
+	<vector>
+
+1254603184 source:d:\elektro_svn\src\gui\setuptab.cpp
+	"gui/setuptab.h"
+
+1254603184 source:d:\elektro_svn\src\gui\shop.cpp
+	"gui/shop.h"
+	"shopitem.h"
+	"utils/dtor.h"
+
+1254603184 source:d:\elektro_svn\src\gui\shoplistbox.cpp
+	"gui/palette.h"
+	"gui/shop.h"
+	"gui/shoplistbox.h"
+	"configuration.h"
+	"graphics.h"
+	"shopitem.h"
+	<guichan/font.hpp>
+	<guichan/listmodel.hpp>
+
+1254603184 source:d:\elektro_svn\src\gui\shortcutcontainer.cpp
+	"shortcutcontainer.h"
+	"../configuration.h"
+	"../resources/image.h"
+	"../utils/stringutils.h"
+
+1254603184 source:d:\elektro_svn\src\gui\shortcutwindow.cpp
+	"gui/shortcutwindow.h"
+	"gui/shortcutcontainer.h"
+	"gui/widgets/layout.h"
+	"gui/widgets/scrollarea.h"
+	"gui/setup.h"
+	"configuration.h"
+
+1254603184 d:\elektro_svn\src\gui\shortcutwindow.h
+	"gui/widgets/window.h"
+
+1254603184 source:d:\elektro_svn\src\gui\skilldialog.cpp
+	"gui/skilldialog.h"
+	"gui/widgets/button.h"
+	"gui/widgets/container.h"
+	"gui/widgets/icon.h"
+	"gui/widgets/label.h"
+	"gui/widgets/layouthelper.h"
+	"gui/widgets/listbox.h"
+	"gui/widgets/progressbar.h"
+	"gui/widgets/scrollarea.h"
+	"gui/widgets/tab.h"
+	"gui/widgets/tabbedarea.h"
+	"gui/widgets/vertcontainer.h"
+	"gui/widgets/windowcontainer.h"
+	"gui/setup.h"
+	"localplayer.h"
+	"log.h"
+	"net/net.h"
+	"net/playerhandler.h"
+	"utils/dtor.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+	"utils/xml.h"
+	<string>
+
+1254603184 d:\elektro_svn\src\gui\skilldialog.h
+	"gui/widgets/window.h"
+	"guichanfwd.h"
+	<guichan/actionlistener.hpp>
+	<map>
+
+1254603183 d:\elektro_svn\src\gui\widgets\vertcontainer.h
+	"gui/widgets/container.h"
+	<guichan/widgetlistener.hpp>
+
+1254603187 d:\elektro_svn\src\net\playerhandler.h
+	"being.h"
+	"flooritem.h"
+	"localplayer.h"
+
+1254603184 source:d:\elektro_svn\src\gui\skin.cpp
+	"gui/skin.h"
+	"configuration.h"
+	"configlistener.h"
+	"log.h"
+	"resources/image.h"
+	"resources/resourcemanager.h"
+	"utils/dtor.h"
+	"utils/stringutils.h"
+	"utils/xml.h"
+	<algorithm>
+
+1254603184 source:d:\elektro_svn\src\gui\specialswindow.cpp
+	"gui/specialswindow.h"
+	"gui/widgets/button.h"
+	"gui/widgets/container.h"
+	"gui/widgets/icon.h"
+	"gui/widgets/label.h"
+	"gui/widgets/layouthelper.h"
+	"gui/widgets/listbox.h"
+	"gui/widgets/progressbar.h"
+	"gui/widgets/scrollarea.h"
+	"gui/widgets/tab.h"
+	"gui/widgets/tabbedarea.h"
+	"gui/widgets/flowcontainer.h"
+	"gui/widgets/windowcontainer.h"
+	"gui/setup.h"
+	"localplayer.h"
+	"log.h"
+	"net/net.h"
+	"net/specialhandler.h"
+	"utils/dtor.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+	"utils/xml.h"
+	<string>
+
+1254603184 d:\elektro_svn\src\gui\specialswindow.h
+	<vector>
+	"gui/widgets/window.h"
+	"guichanfwd.h"
+	<guichan/actionlistener.hpp>
+	<map>
+
+1254603183 d:\elektro_svn\src\gui\widgets\flowcontainer.h
+	"container.h"
+	<guichan/widgetlistener.hpp>
+
+1254603187 d:\elektro_svn\src\net\specialhandler.h
+	<iosfwd>
+
+1254603184 source:d:\elektro_svn\src\gui\speechbubble.cpp
+	"gui/speechbubble.h"
+	"gui/gui.h"
+	"gui/widgets/textbox.h"
+	"graphics.h"
+	<guichan/font.hpp>
+	<guichan/widgets/label.hpp>
+
+1254603184 source:d:\elektro_svn\src\gui\statuswindow.cpp
+	"gui/statuswindow.h"
+	"gui/widgets/button.h"
+	"gui/widgets/label.h"
+	"gui/widgets/layouthelper.h"
+	"gui/widgets/progressbar.h"
+	"gui/widgets/scrollarea.h"
+	"gui/widgets/vertcontainer.h"
+	"gui/widgets/windowcontainer.h"
+	"gui/ministatus.h"
+	"gui/setup.h"
+	"localplayer.h"
+	"units.h"
+	"net/net.h"
+	"net/playerhandler.h"
+	"net/ea/protocol.h"
+	"utils/gettext.h"
+	"utils/mathutils.h"
+	"utils/stringutils.h"
+
+1254603187 d:\elektro_svn\src\utils\mathutils.h
+
+1254603184 source:d:\elektro_svn\src\gui\storagewindow.cpp
+	"gui/storagewindow.h"
+	"gui/inventorywindow.h"
+	"gui/itemamount.h"
+	"gui/itemcontainer.h"
+	"gui/setup.h"
+	"gui/viewport.h"
+	"gui/widgets/button.h"
+	"gui/widgets/label.h"
+	"gui/widgets/layout.h"
+	"gui/widgets/progressbar.h"
+	"gui/widgets/scrollarea.h"
+	"inventory.h"
+	"item.h"
+	"localplayer.h"
+	"units.h"
+	"net/net.h"
+	"net/ea/inventoryhandler.h"
+	"resources/iteminfo.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+	<guichan/font.hpp>
+	<guichan/mouseinput.hpp>
+	<string>
+
+1254603186 d:\elektro_svn\src\net\ea\inventoryhandler.h
+	"net/inventoryhandler.h"
+	"net/messagehandler.h"
+	"net/net.h"
+
+1254603184 source:d:\elektro_svn\src\gui\table.cpp
+	"gui/palette.h"
+	"gui/table.h"
+	"gui/sdlinput.h"
+	"configuration.h"
+	"utils/dtor.h"
+	<guichan/actionlistener.hpp>
+	<guichan/graphics.hpp>
+	<guichan/key.hpp>
+
+1254603184 source:d:\elektro_svn\src\gui\tablemodel.cpp
+	"tablemodel.h"
+	"utils/dtor.h"
+	<guichan/widget.hpp>
+
+1254603184 source:d:\elektro_svn\src\gui\trade.cpp
+	"gui/trade.h"
+	"inventory.h"
+	"item.h"
+	"localplayer.h"
+	"units.h"
+	"gui/inventorywindow.h"
+	"gui/itemamount.h"
+	"gui/itemcontainer.h"
+	"gui/setup.h"
+	"gui/widgets/button.h"
+	"gui/widgets/chattab.h"
+	"gui/widgets/label.h"
+	"gui/widgets/scrollarea.h"
+	"gui/widgets/textfield.h"
+	"gui/widgets/layout.h"
+	"net/net.h"
+	"net/tradehandler.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+	<sstream>
+	<guichan/font.hpp>
+
+1254603184 source:d:\elektro_svn\src\gui\truetypefont.cpp
+	"gui/truetypefont.h"
+	"graphics.h"
+	"resources/image.h"
+	<guichan/exception.hpp>
+
+1254603184 source:d:\elektro_svn\src\gui\updatewindow.cpp
+	"gui/updatewindow.h"
+	"gui/widgets/browserbox.h"
+	"gui/widgets/button.h"
+	"gui/widgets/label.h"
+	"gui/widgets/layout.h"
+	"gui/widgets/progressbar.h"
+	"gui/widgets/scrollarea.h"
+	"configuration.h"
+	"log.h"
+	"main.h"
+	"resources/resourcemanager.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+	<iostream>
+	<SDL.h>
+	<SDL_thread.h>
+	<zlib.h>
+	<curl/curl.h>
+
+1254603184 d:\elektro_svn\src\gui\updatewindow.h
+	"gui/widgets/window.h"
+	"utils/mutex.h"
+	<guichan/actionlistener.hpp>
+	<string>
+	<vector>
+
+1254603187 d:\elektro_svn\src\utils\mutex.h
+	"log.h"
+	<SDL_thread.h>
+
+1254603516 d:\elektro_svn\libraries\include\zlib.h
+	"zconf.h"
+
+1254603516 d:\elektro_svn\libraries\include\zconf.h
+	<windows.h>
+	<sys/types.h>
+	<unistd.h>
+	<unixio.h>
+
+1254603512 d:\elektro_svn\libraries\include\curl\curl.h
+	"curlver.h"
+	<stdio.h>
+	<limits.h>
+	<types.h>
+	<time.h>
+	<sys/types.h>
+	<time.h>
+	<winsock2.h>
+	<sys/select.h>
+	<sys/socket.h>
+	<sys/time.h>
+	<sys/types.h>
+	<support/SupportDefs.h>
+	"easy.h"
+	"multi.h"
+
+1254603512 d:\elektro_svn\libraries\include\curl\curlver.h
+
+1254603512 d:\elektro_svn\libraries\include\curl\types.h
+
+1254603512 d:\elektro_svn\libraries\include\curl\easy.h
+
+1254603512 d:\elektro_svn\libraries\include\curl\multi.h
+	"curl.h"
+
+1254603184 source:d:\elektro_svn\src\gui\viewport.cpp
+	"gui/viewport.h"
+	"gui/gui.h"
+	"gui/ministatus.h"
+	"gui/popupmenu.h"
+	"beingmanager.h"
+	"configuration.h"
+	"flooritemmanager.h"
+	"game.h"
+	"graphics.h"
+	"keyboardconfig.h"
+	"localplayer.h"
+	"map.h"
+	"monster.h"
+	"npc.h"
+	"textmanager.h"
+	"resources/monsterinfo.h"
+	"resources/resourcemanager.h"
+	"utils/stringutils.h"
+
+1254603188 d:\elektro_svn\src\textmanager.h
+	<list>
+	"guichanfwd.h"
+
+1254603187 d:\elektro_svn\src\resources\monsterinfo.h
+	"being.h"
+	<list>
+	<map>
+	<string>
+	<vector>
+
+1254603183 source:d:\elektro_svn\src\gui\widgets\avatar.cpp
+	"gui/widgets/avatar.h"
+	"localplayer.h"
+	"gui/gui.h"
+	"gui/widgets/icon.h"
+	"gui/widgets/label.h"
+	"resources/image.h"
+	"resources/resourcemanager.h"
+	<sstream>
+
+1254603183 source:d:\elektro_svn\src\gui\widgets\browserbox.cpp
+	"gui/widgets/browserbox.h"
+	"gui/linkhandler.h"
+	"gui/palette.h"
+	<guichan/graphics.hpp>
+	<guichan/font.hpp>
+	<algorithm>
+
+1254603183 source:d:\elektro_svn\src\gui\widgets\button.cpp
+	"gui/widgets/button.h"
+	"gui/palette.h"
+	"configuration.h"
+	"graphics.h"
+	"resources/image.h"
+	"resources/resourcemanager.h"
+	"gui/skin.h"
+	"utils/dtor.h"
+	<guichan/exception.hpp>
+	<guichan/font.hpp>
+
+1254603183 source:d:\elektro_svn\src\gui\widgets\channeltab.cpp
+	"channeltab.h"
+	"channel.h"
+	"net/chathandler.h"
+	"net/net.h"
+	"utils/gettext.h"
+
+1254603183 source:d:\elektro_svn\src\gui\widgets\chattab.cpp
+	"gui/widgets/chattab.h"
+	"commandhandler.h"
+	"configuration.h"
+	"localplayer.h"
+	"gui/widgets/browserbox.h"
+	"gui/widgets/scrollarea.h"
+	"gui/itemlinkhandler.h"
+	"gui/recorder.h"
+	"net/chathandler.h"
+	"net/net.h"
+	"resources/iteminfo.h"
+	"resources/itemdb.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+	<guichan/widgets/tabbedarea.hpp>
+
+1254603183 source:d:\elektro_svn\src\gui\widgets\checkbox.cpp
+	"gui/widgets/checkbox.h"
+	"gui/palette.h"
+	"configuration.h"
+	"graphics.h"
+	"resources/image.h"
+	"resources/resourcemanager.h"
+	"gui/skin.h"
+
+1254603183 source:d:\elektro_svn\src\gui\widgets\container.cpp
+	"gui/widgets/container.h"
+
+1254603183 source:d:\elektro_svn\src\gui\widgets\desktop.cpp
+	"gui/widgets/desktop.h"
+	"gui/palette.h"
+	"gui/widgets/label.h"
+	"resources/image.h"
+	"resources/resourcemanager.h"
+	"resources/wallpaper.h"
+	"graphics.h"
+	"log.h"
+	"main.h"
+
+1254603183 d:\elektro_svn\src\gui\widgets\desktop.h
+	"gui/widgets/container.h"
+	"guichanfwd.h"
+	<guichan/widgetlistener.hpp>
+
+1254603188 d:\elektro_svn\src\resources\wallpaper.h
+	<string>
+
+1254603183 source:d:\elektro_svn\src\gui\widgets\dropdown.cpp
+	"gui/widgets/dropdown.h"
+	"gui/widgets/listbox.h"
+	"gui/widgets/scrollarea.h"
+	"gui/palette.h"
+	"gui/sdlinput.h"
+	"configuration.h"
+	"graphics.h"
+	"resources/image.h"
+	"resources/resourcemanager.h"
+	"gui/skin.h"
+	"utils/dtor.h"
+	<algorithm>
+
+1254603183 source:d:\elektro_svn\src\gui\widgets\flowcontainer.cpp
+	"flowcontainer.h"
+
+1254603183 source:d:\elektro_svn\src\gui\widgets\icon.cpp
+	"gui/widgets/icon.h"
+	"graphics.h"
+	"resources/image.h"
+	"resources/resourcemanager.h"
+
+1254603183 source:d:\elektro_svn\src\gui\widgets\inttextfield.cpp
+	"gui/widgets/inttextfield.h"
+	"gui/sdlinput.h"
+	"utils/stringutils.h"
+
+1254603183 source:d:\elektro_svn\src\gui\widgets\label.cpp
+	"gui/widgets/label.h"
+	"gui/palette.h"
+
+1254603183 source:d:\elektro_svn\src\gui\widgets\layout.cpp
+	"gui/widgets/layout.h"
+	<cassert>
+
+1254603183 source:d:\elektro_svn\src\gui\widgets\layouthelper.cpp
+	"gui/widgets/layouthelper.h"
+
+1254603183 source:d:\elektro_svn\src\gui\widgets\listbox.cpp
+	"gui/widgets/listbox.h"
+	"gui/palette.h"
+	"gui/sdlinput.h"
+	"configuration.h"
+	"gui/skin.h"
+	<guichan/font.hpp>
+	<guichan/graphics.hpp>
+	<guichan/key.hpp>
+	<guichan/listmodel.hpp>
+
+1254603183 source:d:\elektro_svn\src\gui\widgets\passwordfield.cpp
+	"passwordfield.h"
+
+1254603183 source:d:\elektro_svn\src\gui\widgets\popup.cpp
+	"gui/widgets/popup.h"
+	"gui/widgets/windowcontainer.h"
+	"gui/skin.h"
+	"configuration.h"
+	"graphics.h"
+	"log.h"
+	"resources/image.h"
+	<guichan/exception.hpp>
+
+1254603183 source:d:\elektro_svn\src\gui\widgets\progressbar.cpp
+	"gui/widgets/progressbar.h"
+	"gui/gui.h"
+	"gui/palette.h"
+	"gui/textrenderer.h"
+	"configuration.h"
+	"graphics.h"
+	"resources/image.h"
+	"resources/resourcemanager.h"
+	"gui/skin.h"
+	"utils/dtor.h"
+	<guichan/font.hpp>
+
+1254603184 d:\elektro_svn\src\gui\textrenderer.h
+	"graphics.h"
+	"palette.h"
+
+1254603183 source:d:\elektro_svn\src\gui\widgets\radiobutton.cpp
+	"gui/widgets/radiobutton.h"
+	"configuration.h"
+	"graphics.h"
+	"resources/image.h"
+	"resources/resourcemanager.h"
+
+1254603183 source:d:\elektro_svn\src\gui\widgets\resizegrip.cpp
+	"gui/widgets/resizegrip.h"
+	"configuration.h"
+	"graphics.h"
+	"resources/image.h"
+	"resources/resourcemanager.h"
+	<guichan/graphics.hpp>
+
+1254603183 d:\elektro_svn\src\gui\widgets\resizegrip.h
+	<guichan/widget.hpp>
+
+1254603183 source:d:\elektro_svn\src\gui\widgets\scrollarea.cpp
+	"gui/widgets/scrollarea.h"
+	"configuration.h"
+	"graphics.h"
+	"resources/image.h"
+	"resources/resourcemanager.h"
+	"gui/skin.h"
+	"utils/dtor.h"
+
+1254603183 source:d:\elektro_svn\src\gui\widgets\slider.cpp
+	"gui/widgets/slider.h"
+	"configuration.h"
+	"graphics.h"
+	"resources/image.h"
+	"resources/resourcemanager.h"
+	"gui/skin.h"
+
+1254603183 source:d:\elektro_svn\src\gui\widgets\tab.cpp
+	"gui/widgets/tab.h"
+	"gui/widgets/tabbedarea.h"
+	"gui/palette.h"
+	"configuration.h"
+	"graphics.h"
+	"resources/image.h"
+	"resources/resourcemanager.h"
+	"gui/skin.h"
+	"utils/dtor.h"
+	<guichan/widgets/label.hpp>
+
+1254603183 source:d:\elektro_svn\src\gui\widgets\tabbedarea.cpp
+	"gui/widgets/tabbedarea.h"
+	"gui/widgets/tab.h"
+	<guichan/widgets/container.hpp>
+
+1254603183 source:d:\elektro_svn\src\gui\widgets\textbox.cpp
+	"gui/widgets/textbox.h"
+	"gui/palette.h"
+	<guichan/font.hpp>
+	<sstream>
+
+1254603183 source:d:\elektro_svn\src\gui\widgets\textfield.cpp
+	"gui/widgets/textfield.h"
+	"gui/palette.h"
+	"gui/sdlinput.h"
+	"configuration.h"
+	"graphics.h"
+	"resources/image.h"
+	"resources/resourcemanager.h"
+	"gui/skin.h"
+	"utils/dtor.h"
+	<guichan/font.hpp>
+
+1254603183 source:d:\elektro_svn\src\gui\widgets\textpreview.cpp
+	"gui/widgets/textpreview.h"
+	"gui/gui.h"
+	"gui/palette.h"
+	"gui/textrenderer.h"
+	"gui/truetypefont.h"
+	"configuration.h"
+	<typeinfo>
+
+1254603183 source:d:\elektro_svn\src\gui\widgets\vertcontainer.cpp
+	"gui/widgets/vertcontainer.h"
+
+1254603183 source:d:\elektro_svn\src\gui\widgets\whispertab.cpp
+	"whispertab.h"
+	"commandhandler.h"
+	"localplayer.h"
+	"gui/palette.h"
+	"net/chathandler.h"
+	"net/net.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+
+1254603183 source:d:\elektro_svn\src\gui\widgets\window.cpp
+	"gui/widgets/window.h"
+	"gui/widgets/layout.h"
+	"gui/widgets/resizegrip.h"
+	"gui/widgets/windowcontainer.h"
+	"gui/gui.h"
+	"gui/palette.h"
+	"gui/skin.h"
+	"configuration.h"
+	"log.h"
+	"resources/image.h"
+	<guichan/exception.hpp>
+
+1254603183 source:d:\elektro_svn\src\gui\widgets\windowcontainer.cpp
+	"gui/widgets/windowcontainer.h"
+	"utils/dtor.h"
+
+1254603184 source:d:\elektro_svn\src\gui\windowmenu.cpp
+	"gui/windowmenu.h"
+	"gui/emotepopup.h"
+	"gui/widgets/button.h"
+	"gui/widgets/window.h"
+	"gui/widgets/windowcontainer.h"
+	"graphics.h"
+	"net/net.h"
+	"net/playerhandler.h"
+	"utils/gettext.h"
+	<string>
+
+1254603184 d:\elektro_svn\src\gui\windowmenu.h
+	"gui/widgets/container.h"
+	<guichan/actionlistener.hpp>
+	<guichan/selectionlistener.hpp>
+
+1254603188 source:d:\elektro_svn\src\imageparticle.cpp
+	"imageparticle.h"
+	"graphics.h"
+	"resources/image.h"
+
+1254603188 source:d:\elektro_svn\src\inventory.cpp
+	<algorithm>
+	"inventory.h"
+	"item.h"
+	"log.h"
+
+1254603188 source:d:\elektro_svn\src\item.cpp
+	"item.h"
+	"resources/image.h"
+	"resources/iteminfo.h"
+	"resources/resourcemanager.h"
+
+1254603188 source:d:\elektro_svn\src\itemshortcut.cpp
+	"configuration.h"
+	"inventory.h"
+	"item.h"
+	"itemshortcut.h"
+	"localplayer.h"
+	"net/inventoryhandler.h"
+	"net/net.h"
+	"utils/stringutils.h"
+
+1254603188 source:d:\elektro_svn\src\joystick.cpp
+	"configuration.h"
+	"joystick.h"
+	"log.h"
+	<cassert>
+
+1254603188 source:d:\elektro_svn\src\keyboardconfig.cpp
+	"configuration.h"
+	"keyboardconfig.h"
+	"log.h"
+	"gui/sdlinput.h"
+	"gui/setup_keyboard.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+
+1254603188 source:d:\elektro_svn\src\localplayer.cpp
+	"localplayer.h"
+	"configuration.h"
+	"equipment.h"
+	"flooritem.h"
+	"game.h"
+	"graphics.h"
+	"inventory.h"
+	"item.h"
+	"log.h"
+	"map.h"
+	"monster.h"
+	"particle.h"
+	"simpleanimation.h"
+	"sound.h"
+	"statuseffect.h"
+	"text.h"
+	"gui/gui.h"
+	"gui/ministatus.h"
+	"gui/palette.h"
+	"gui/skilldialog.h"
+	"gui/statuswindow.h"
+	"gui/storagewindow.h"
+	"gui/widgets/chattab.h"
+	"net/inventoryhandler.h"
+	"net/net.h"
+	"net/partyhandler.h"
+	"net/playerhandler.h"
+	"net/specialhandler.h"
+	"net/tradehandler.h"
+	"effectmanager.h"
+	"guild.h"
+	"net/tmwserv/chatserver/guild.h"
+	"resources/animation.h"
+	"resources/imageset.h"
+	"resources/iteminfo.h"
+	"resources/resourcemanager.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+	<cassert>
+
+1254603188 d:\elektro_svn\src\guild.h
+	<guichan/listmodel.hpp>
+	<string>
+	<vector>
+
+1254603187 d:\elektro_svn\src\net\tmwserv\chatserver\guild.h
+	<iosfwd>
+
+1254603188 source:d:\elektro_svn\src\log.cpp
+	<iostream>
+	<sstream>
+	<sys/time.h>
+	<windows.h>
+	<Carbon/Carbon.h>
+	"log.h"
+	"gui/widgets/chattab.h"
+
+1254664087 source:d:\elektro_svn\src\main.cpp
+	"main.h"
+	"configuration.h"
+	"emoteshortcut.h"
+	"game.h"
+	"graphics.h"
+	"itemshortcut.h"
+	"keyboardconfig.h"
+	"localplayer.h"
+	"lockedarray.h"
+	"log.h"
+	"openglgraphics.h"
+	"playerrelations.h"
+	"sound.h"
+	"statuseffect.h"
+	"units.h"
+	"gui/widgets/button.h"
+	"gui/widgets/desktop.h"
+	"gui/widgets/label.h"
+	"gui/widgets/progressbar.h"
+	"gui/charselectdialog.h"
+	"gui/gui.h"
+	"gui/skin.h"
+	"gui/login.h"
+	"gui/okdialog.h"
+	"gui/palette.h"
+	"gui/register.h"
+	"gui/sdlinput.h"
+	"gui/serverselectdialog.h"
+	"gui/setup.h"
+	"gui/connectiondialog.h"
+	"gui/quitdialog.h"
+	"gui/serverdialog.h"
+	"gui/updatewindow.h"
+	"net/charhandler.h"
+	"net/generalhandler.h"
+	"net/logindata.h"
+	"net/loginhandler.h"
+	"net/maphandler.h"
+	"net/net.h"
+	"net/serverinfo.h"
+	"net/tmwserv/charserverhandler.h"
+	"net/tmwserv/connection.h"
+	"net/tmwserv/generalhandler.h"
+	"net/tmwserv/loginhandler.h"
+	"net/tmwserv/logouthandler.h"
+	"net/tmwserv/network.h"
+	"net/ea/generalhandler.h"
+	"net/ea/network.h"
+	"net/tmwserv/accountserver/accountserver.h"
+	"net/tmwserv/accountserver/account.h"
+	"net/tmwserv/chatserver/chatserver.h"
+	"net/tmwserv/gameserver/gameserver.h"
+	"resources/colordb.h"
+	"resources/emotedb.h"
+	"resources/image.h"
+	"resources/itemdb.h"
+	"resources/monsterdb.h"
+	"resources/npcdb.h"
+	"resources/resourcemanager.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+	<SDL_image.h>
+	<guichan/actionlistener.hpp>
+	<libxml/parser.h>
+	<getopt.h>
+	<iostream>
+	<physfs.h>
+	<unistd.h>
+	<vector>
+	<CoreFoundation/CFBundle.h>
+	<windows.h>
+	<SDL_syswm.h>
+	<cerrno>
+	<sys/stat.h>
+
+1254603188 d:\elektro_svn\src\openglgraphics.h
+	"graphics.h"
+
+1254603184 d:\elektro_svn\src\gui\quitdialog.h
+	"gui/widgets/window.h"
+	"guichanfwd.h"
+	"main.h"
+	<guichan/actionlistener.hpp>
+
+1254603184 d:\elektro_svn\src\gui\serverdialog.h
+	"gui/widgets/window.h"
+	"guichanfwd.h"
+	"net/tmwserv/network.h"
+	<guichan/actionlistener.hpp>
+	<guichan/listmodel.hpp>
+	<string>
+	<vector>
+
+1254603187 d:\elektro_svn\src\net\tmwserv\network.h
+	<iosfwd>
+
+1254603187 d:\elektro_svn\src\net\generalhandler.h
+
+1254603187 d:\elektro_svn\src\net\loginhandler.h
+	"logindata.h"
+	<iosfwd>
+
+1254603187 d:\elektro_svn\src\net\tmwserv\charserverhandler.h
+	"net/charhandler.h"
+	"net/messagehandler.h"
+
+1254603187 d:\elektro_svn\src\net\tmwserv\connection.h
+	<iosfwd>
+	<enet/enet.h>
+
+1254603512 d:\elektro_svn\libraries\include\enet\enet.h
+	<stdlib.h>
+	"enet/win32.h"
+	"enet/unix.h"
+	"enet/types.h"
+	"enet/protocol.h"
+	"enet/list.h"
+	"enet/callbacks.h"
+
+1254603512 d:\elektro_svn\libraries\include\enet\win32.h
+	<stdlib.h>
+	<winsock2.h>
+
+1254603512 d:\elektro_svn\libraries\include\enet\unix.h
+	<stdlib.h>
+	<sys/types.h>
+	<netinet/in.h>
+
+1254603512 d:\elektro_svn\libraries\include\enet\types.h
+
+1254603512 d:\elektro_svn\libraries\include\enet\protocol.h
+	"enet/types.h"
+
+1254603512 d:\elektro_svn\libraries\include\enet\list.h
+	<stdlib.h>
+
+1254603512 d:\elektro_svn\libraries\include\enet\callbacks.h
+	<stdlib.h>
+
+1254603187 d:\elektro_svn\src\net\tmwserv\generalhandler.h
+	"net/generalhandler.h"
+	"net/net.h"
+	"net/messagehandler.h"
+
+1254603187 d:\elektro_svn\src\net\tmwserv\loginhandler.h
+	"net/loginhandler.h"
+	"net/messagehandler.h"
+
+1254603187 d:\elektro_svn\src\net\tmwserv\logouthandler.h
+	"net/logouthandler.h"
+	"net/messagehandler.h"
+	<string>
+
+1254603187 d:\elektro_svn\src\net\logouthandler.h
+	"logindata.h"
+	<iosfwd>
+
+1254603186 d:\elektro_svn\src\net\ea\generalhandler.h
+	"net/generalhandler.h"
+	"net/messagehandler.h"
+	"net/net.h"
+
+1254603186 d:\elektro_svn\src\net\ea\network.h
+	<SDL_net.h>
+	<SDL_thread.h>
+	<map>
+	<string>
+
+1254603508 d:\elektro_svn\libraries\include\sdl\sdl_net.h
+	"SDL.h"
+	"SDL_endian.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1254603186 d:\elektro_svn\src\net\tmwserv\accountserver\accountserver.h
+	<iosfwd>
+
+1254603187 d:\elektro_svn\src\net\tmwserv\chatserver\chatserver.h
+	<iosfwd>
+
+1254603186 d:\elektro_svn\src\net\tmwserv\gameserver\gameserver.h
+	<iosfwd>
+
+1254603188 d:\elektro_svn\src\resources\npcdb.h
+	<list>
+	<map>
+	<string>
+
+1254603509 d:\elektro_svn\libraries\include\sdl\sdl_image.h
+	"SDL.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1254603509 d:\elektro_svn\libraries\include\sdl\sdl_syswm.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_version.h"
+	"begin_code.h"
+	<X11/Xlib.h>
+	<X11/Xatom.h>
+	<microwin/nano-X.h>
+	<windows.h>
+	<sys/neutrino.h>
+	<Ph.h>
+	"close_code.h"
+
+1254603188 source:d:\elektro_svn\src\map.cpp
+	<queue>
+	"beingmanager.h"
+	"configuration.h"
+	"game.h"
+	"graphics.h"
+	"map.h"
+	"particle.h"
+	"simpleanimation.h"
+	"sprite.h"
+	"tileset.h"
+	"resources/ambientoverlay.h"
+	"resources/image.h"
+	"resources/resourcemanager.h"
+	"utils/dtor.h"
+	"utils/stringutils.h"
+
+1254603188 d:\elektro_svn\src\tileset.h
+	"resources/imageset.h"
+
+1254603188 d:\elektro_svn\src\resources\ambientoverlay.h
+
+1254603188 source:d:\elektro_svn\src\monster.cpp
+	"animatedsprite.h"
+	"game.h"
+	"localplayer.h"
+	"monster.h"
+	"particle.h"
+	"sound.h"
+	"text.h"
+	"gui/palette.h"
+	"resources/monsterdb.h"
+	"resources/monsterinfo.h"
+
+1254603186 source:d:\elektro_svn\src\net\ea\adminhandler.cpp
+	"net/ea/adminhandler.h"
+	"net/ea/chathandler.h"
+	"net/ea/protocol.h"
+	"net/messagein.h"
+	"net/messageout.h"
+	"being.h"
+	"beingmanager.h"
+	"game.h"
+	"playerrelations.h"
+	"gui/widgets/chattab.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+	<string>
+
+1254603186 d:\elektro_svn\src\net\ea\adminhandler.h
+	"net/adminhandler.h"
+	"net/messagehandler.h"
+	"net/net.h"
+
+1254603186 d:\elektro_svn\src\net\ea\chathandler.h
+	"net/chathandler.h"
+	"net/messagehandler.h"
+	"net/net.h"
+
+1254603187 d:\elektro_svn\src\net\messagein.h
+	<SDL_types.h>
+	<string>
+
+1254603186 source:d:\elektro_svn\src\net\ea\beinghandler.cpp
+	"net/ea/beinghandler.h"
+	"net/ea/protocol.h"
+	"net/messagein.h"
+	"net/messageout.h"
+	"being.h"
+	"beingmanager.h"
+	"effectmanager.h"
+	"game.h"
+	"localplayer.h"
+	"log.h"
+	"npc.h"
+	"playerrelations.h"
+	"gui/partywindow.h"
+	"resources/colordb.h"
+	<iostream>
+
+1254603186 d:\elektro_svn\src\net\ea\beinghandler.h
+	"net/messagehandler.h"
+
+1254603186 source:d:\elektro_svn\src\net\ea\buysellhandler.cpp
+	"net/ea/buysellhandler.h"
+	"net/ea/protocol.h"
+	"net/messagein.h"
+	"beingmanager.h"
+	"inventory.h"
+	"item.h"
+	"localplayer.h"
+	"npc.h"
+	"gui/buy.h"
+	"gui/buysell.h"
+	"gui/sell.h"
+	"gui/widgets/chattab.h"
+	"utils/gettext.h"
+
+1254603186 d:\elektro_svn\src\net\ea\buysellhandler.h
+	"net/messagehandler.h"
+
+1254603186 source:d:\elektro_svn\src\net\ea\charserverhandler.cpp
+	"net/ea/charserverhandler.h"
+	"net/ea/network.h"
+	"net/ea/protocol.h"
+	"net/logindata.h"
+	"net/messagein.h"
+	"net/messageout.h"
+	"game.h"
+	"log.h"
+	"main.h"
+	"gui/charcreatedialog.h"
+	"gui/okdialog.h"
+	"resources/colordb.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+
+1254603186 d:\elektro_svn\src\net\ea\charserverhandler.h
+	"net/messagehandler.h"
+	"net/charhandler.h"
+
+1254603186 source:d:\elektro_svn\src\net\ea\chathandler.cpp
+	"net/ea/chathandler.h"
+	"net/ea/protocol.h"
+	"net/messagein.h"
+	"net/messageout.h"
+	"being.h"
+	"beingmanager.h"
+	"game.h"
+	"localplayer.h"
+	"playerrelations.h"
+	"gui/widgets/chattab.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+	<string>
+
+1254603186 source:d:\elektro_svn\src\net\ea\equipmenthandler.cpp
+	"net/ea/equipmenthandler.h"
+	"net/ea/protocol.h"
+	"net/messagein.h"
+	"equipment.h"
+	"inventory.h"
+	"item.h"
+	"localplayer.h"
+	"log.h"
+	"gui/widgets/chattab.h"
+	"utils/gettext.h"
+
+1254603186 d:\elektro_svn\src\net\ea\equipmenthandler.h
+	"net/messagehandler.h"
+
+1254660583 source:d:\elektro_svn\src\net\ea\generalhandler.cpp
+	"net/ea/generalhandler.h"
+	"gui/inventorywindow.h"
+	"gui/skilldialog.h"
+	"gui/statuswindow.h"
+	"net/ea/network.h"
+	"net/ea/protocol.h"
+	"net/ea/adminhandler.h"
+	"net/ea/beinghandler.h"
+	"net/ea/buysellhandler.h"
+	"net/ea/chathandler.h"
+	"net/ea/charserverhandler.h"
+	"net/ea/equipmenthandler.h"
+	"net/ea/inventoryhandler.h"
+	"net/ea/itemhandler.h"
+	"net/ea/loginhandler.h"
+	"net/ea/logouthandler.h"
+	"net/ea/maphandler.h"
+	"net/ea/npchandler.h"
+	"net/ea/playerhandler.h"
+	"net/ea/partyhandler.h"
+	"net/ea/tradehandler.h"
+	"net/ea/specialhandler.h"
+	"net/ea/gui/partytab.h"
+	"net/messagein.h"
+	"net/messageout.h"
+	"resources/itemdb.h"
+	"configuration.h"
+	"log.h"
+	"main.h"
+	"utils/gettext.h"
+	<list>
+
+1254603186 d:\elektro_svn\src\net\ea\itemhandler.h
+	"net/messagehandler.h"
+
+1254603186 d:\elektro_svn\src\net\ea\loginhandler.h
+	"net/loginhandler.h"
+	"net/messagehandler.h"
+	<string>
+
+1254603186 d:\elektro_svn\src\net\ea\logouthandler.h
+	"net/logouthandler.h"
+	"net/messagehandler.h"
+	<string>
+
+1254603186 d:\elektro_svn\src\net\ea\maphandler.h
+	"net/maphandler.h"
+	"net/messagehandler.h"
+	"net/net.h"
+
+1254603186 d:\elektro_svn\src\net\ea\playerhandler.h
+	"net/messagehandler.h"
+	"net/net.h"
+	"net/playerhandler.h"
+
+1254603186 d:\elektro_svn\src\net\ea\partyhandler.h
+	"net/messagehandler.h"
+	"net/net.h"
+	"net/partyhandler.h"
+
+1254603186 d:\elektro_svn\src\net\ea\tradehandler.h
+	"net/messagehandler.h"
+	"net/net.h"
+	"net/tradehandler.h"
+
+1254603186 d:\elektro_svn\src\net\ea\specialhandler.h
+	"net/messagehandler.h"
+	"net/net.h"
+	"net/specialhandler.h"
+
+1254603185 d:\elektro_svn\src\net\ea\gui\partytab.h
+	"gui/widgets/chattab.h"
+
+1254603185 source:d:\elektro_svn\src\net\ea\gui\partytab.cpp
+	"partytab.h"
+	"commandhandler.h"
+	"gui/palette.h"
+	"net/net.h"
+	"net/partyhandler.h"
+	"resources/iteminfo.h"
+	"resources/itemdb.h"
+	"utils/dtor.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+
+1254603186 source:d:\elektro_svn\src\net\ea\inventoryhandler.cpp
+	"net/ea/inventoryhandler.h"
+	"net/ea/equipmenthandler.h"
+	"net/ea/protocol.h"
+	"net/messagein.h"
+	"net/messageout.h"
+	"configuration.h"
+	"equipment.h"
+	"inventory.h"
+	"item.h"
+	"itemshortcut.h"
+	"localplayer.h"
+	"log.h"
+	"gui/storagewindow.h"
+	"gui/widgets/chattab.h"
+	"resources/iteminfo.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+	<SDL_types.h>
+
+1254603186 source:d:\elektro_svn\src\net\ea\itemhandler.cpp
+	"net/ea/itemhandler.h"
+	"net/ea/protocol.h"
+	"net/messagein.h"
+	"engine.h"
+	"flooritemmanager.h"
+
+1254603186 source:d:\elektro_svn\src\net\ea\loginhandler.cpp
+	"net/ea/loginhandler.h"
+	"net/ea/protocol.h"
+	"net/logindata.h"
+	"net/messagein.h"
+	"net/messageout.h"
+	"net/serverinfo.h"
+	"log.h"
+	"main.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+
+1254603186 source:d:\elektro_svn\src\net\ea\logouthandler.cpp
+	"net/ea/logouthandler.h"
+	"net/ea/protocol.h"
+	"net/logindata.h"
+	"net/messagein.h"
+	"net/messageout.h"
+	"net/serverinfo.h"
+	"log.h"
+	"main.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+
+1254603186 source:d:\elektro_svn\src\net\ea\maphandler.cpp
+	"net/ea/maphandler.h"
+	"net/ea/network.h"
+	"net/ea/protocol.h"
+	"net/messagein.h"
+	"net/messageout.h"
+	"game.h"
+	"localplayer.h"
+	"log.h"
+	"main.h"
+	"gui/widgets/chattab.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+	<fstream>
+
+1254603186 source:d:\elektro_svn\src\net\ea\network.cpp
+	"net/ea/network.h"
+	"net/messagehandler.h"
+	"net/messagein.h"
+	"log.h"
+	"utils/stringutils.h"
+	<sstream>
+
+1254603186 source:d:\elektro_svn\src\net\ea\partyhandler.cpp
+	"net/ea/partyhandler.h"
+	"beingmanager.h"
+	"localplayer.h"
+	"log.h"
+	"gui/chat.h"
+	"gui/partywindow.h"
+	"net/messagein.h"
+	"net/messageout.h"
+	"net/ea/protocol.h"
+	"net/ea/gui/partytab.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+
+1254660699 source:d:\elektro_svn\src\net\ea\playerhandler.cpp
+	"net/ea/playerhandler.h"
+	"net/ea/protocol.h"
+	"net/messagein.h"
+	"net/messageout.h"
+	"engine.h"
+	"localplayer.h"
+	"log.h"
+	"npc.h"
+	"units.h"
+	"gui/buy.h"
+	"gui/buysell.h"
+	"gui/gui.h"
+	"gui/okdialog.h"
+	"gui/sell.h"
+	"gui/statuswindow.h"
+	"gui/storagewindow.h"
+	"gui/viewport.h"
+	"gui/widgets/chattab.h"
+	"utils/stringutils.h"
+	"utils/gettext.h"
+
+1254603186 source:d:\elektro_svn\src\net\ea\specialhandler.cpp
+	"net/ea/specialhandler.h"
+	"net/ea/protocol.h"
+	"net/messagein.h"
+	"net/messageout.h"
+	"localplayer.h"
+	"log.h"
+	"gui/skilldialog.h"
+	"gui/widgets/chattab.h"
+	"utils/gettext.h"
+
+1254603186 source:d:\elektro_svn\src\net\ea\tradehandler.cpp
+	"net/ea/tradehandler.h"
+	"net/ea/protocol.h"
+	"net/inventoryhandler.h"
+	"net/messagein.h"
+	"net/messageout.h"
+	"inventory.h"
+	"item.h"
+	"localplayer.h"
+	"playerrelations.h"
+	"gui/confirmdialog.h"
+	"gui/trade.h"
+	"gui/widgets/chattab.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+
+1254603187 source:d:\elektro_svn\src\net\messagehandler.cpp
+	"net/messagehandler.h"
+	"net/tmwserv/network.h"
+	"net/ea/network.h"
+	<cassert>
+
+1254603187 source:d:\elektro_svn\src\net\messagein.cpp
+	"net/messagein.h"
+	<enet/enet.h>
+	<SDL.h>
+	<SDL_endian.h>
+
+1254603187 source:d:\elektro_svn\src\net\messageout.cpp
+	"net/messageout.h"
+	<enet/enet.h>
+	"net/ea/network.h"
+	<SDL.h>
+	<SDL_endian.h>
+	<cstring>
+	<string>
+
+1254603187 source:d:\elektro_svn\src\net\net.cpp
+	"net/net.h"
+	"net/adminhandler.h"
+	"net/charhandler.h"
+	"net/chathandler.h"
+	"net/generalhandler.h"
+	"net/guildhandler.h"
+	"net/inventoryhandler.h"
+	"net/loginhandler.h"
+	"net/logouthandler.h"
+	"net/maphandler.h"
+	"net/npchandler.h"
+	"net/partyhandler.h"
+	"net/playerhandler.h"
+	"net/specialhandler.h"
+	"net/tradehandler.h"
+
+1254603187 d:\elektro_svn\src\net\guildhandler.h
+	<iosfwd>
+
+1254603188 source:d:\elektro_svn\src\npc.cpp
+	"animatedsprite.h"
+	"beingmanager.h"
+	"npc.h"
+	"particle.h"
+	"text.h"
+	"gui/palette.h"
+	"net/net.h"
+	"net/ea/npchandler.h"
+	"resources/npcdb.h"
+
+1254603188 source:d:\elektro_svn\src\openglgraphics.cpp
+	<SDL.h>
+	"log.h"
+	"openglgraphics.h"
+	"resources/image.h"
+	<OpenGL/OpenGL.h>
+
+1254603188 source:d:\elektro_svn\src\particle.cpp
+	<algorithm>
+	<cmath>
+	<guichan/color.hpp>
+	"animationparticle.h"
+	"configuration.h"
+	"imageparticle.h"
+	"log.h"
+	"map.h"
+	"particle.h"
+	"particleemitter.h"
+	"rotationalparticle.h"
+	"textparticle.h"
+	"resources/resourcemanager.h"
+	"utils/dtor.h"
+	"utils/mathutils.h"
+	"utils/xml.h"
+
+1254603188 d:\elektro_svn\src\particleemitter.h
+	<list>
+	"utils/xml.h"
+	"particleemitterprop.h"
+	"resources/animation.h"
+
+1254603188 d:\elektro_svn\src\particleemitterprop.h
+	<cmath>
+
+1254603188 d:\elektro_svn\src\rotationalparticle.h
+	<libxml/tree.h>
+	"imageparticle.h"
+
+1254603188 d:\elektro_svn\src\textparticle.h
+	"guichanfwd.h"
+	"particle.h"
+
+1254603188 source:d:\elektro_svn\src\particlecontainer.cpp
+	<cassert>
+	"particle.h"
+	"particlecontainer.h"
+
+1254603188 source:d:\elektro_svn\src\particleemitter.cpp
+	<cmath>
+	"animationparticle.h"
+	"imageparticle.h"
+	"log.h"
+	"particle.h"
+	"particleemitter.h"
+	"rotationalparticle.h"
+	"resources/image.h"
+	"resources/imageset.h"
+	"resources/resourcemanager.h"
+
+1254603188 source:d:\elektro_svn\src\player.cpp
+	"animatedsprite.h"
+	"configuration.h"
+	"game.h"
+	"guild.h"
+	"localplayer.h"
+	"particle.h"
+	"player.h"
+	"text.h"
+	"gui/palette.h"
+	"resources/colordb.h"
+	"resources/itemdb.h"
+	"resources/iteminfo.h"
+	"utils/stringutils.h"
+
+1254603188 source:d:\elektro_svn\src\playerrelations.cpp
+	<algorithm>
+	"being.h"
+	"beingmanager.h"
+	"configuration.h"
+	"graphics.h"
+	"player.h"
+	"playerrelations.h"
+	"utils/dtor.h"
+	"utils/gettext.h"
+
+1254603188 source:d:\elektro_svn\src\position.cpp
+	"position.h"
+
+1254603188 source:d:\elektro_svn\src\resources\action.cpp
+	"resources/action.h"
+	"resources/animation.h"
+	"utils/dtor.h"
+
+1254603188 source:d:\elektro_svn\src\resources\ambientoverlay.cpp
+	"resources/ambientoverlay.h"
+	"resources/image.h"
+	"resources/resourcemanager.h"
+	"graphics.h"
+
+1254603188 source:d:\elektro_svn\src\resources\animation.cpp
+	"resources/animation.h"
+	"utils/dtor.h"
+
+1254603187 source:d:\elektro_svn\src\resources\colordb.cpp
+	"resources/colordb.h"
+	"log.h"
+	"utils/xml.h"
+	<libxml/tree.h>
+
+1254603187 source:d:\elektro_svn\src\resources\dye.cpp
+	"resources/dye.h"
+	"log.h"
+	<sstream>
+
+1254603188 d:\elektro_svn\src\resources\dye.h
+	<string>
+	<vector>
+
+1254603188 source:d:\elektro_svn\src\resources\emotedb.cpp
+	"resources/emotedb.h"
+	"animatedsprite.h"
+	"log.h"
+	"utils/xml.h"
+
+1254603188 source:d:\elektro_svn\src\resources\image.cpp
+	"resources/image.h"
+	"resources/dye.h"
+	"log.h"
+	<SDL_image.h>
+	"resources/sdlrescalefacility.h"
+
+1254603187 d:\elektro_svn\src\resources\sdlrescalefacility.h
+	<SDL.h>
+	"image.h"
+
+1254603188 source:d:\elektro_svn\src\resources\imageloader.cpp
+	"resources/imageloader.h"
+	"resources/image.h"
+	"resources/resourcemanager.h"
+	<guichan/color.hpp>
+	<guichan/sdl/sdlpixel.hpp>
+	<cassert>
+
+1254603514 d:\elektro_svn\libraries\include\guichan\sdl\sdlpixel.hpp
+	"SDL.h"
+	"guichan/color.hpp"
+
+1254603187 source:d:\elektro_svn\src\resources\imageset.cpp
+	"resources/imageset.h"
+	"resources/image.h"
+	"log.h"
+	"utils/dtor.h"
+
+1254603188 source:d:\elektro_svn\src\resources\imagewriter.cpp
+	"resources/imagewriter.h"
+	"log.h"
+	<png.h>
+	<SDL.h>
+	<string>
+
+1254603187 d:\elektro_svn\src\resources\imagewriter.h
+	<iosfwd>
+
+1254603516 d:\elektro_svn\libraries\include\png.h
+	"zlib.h"
+	"pngconf.h"
+	<crtdbg.h>
+
+1254603516 d:\elektro_svn\libraries\include\pngconf.h
+	"pngusr.h"
+	"config.h"
+	<windows.h>
+	<stdio.h>
+	<stdio.h>
+	<sys/types.h>
+	<setjmp.h>
+	<strings.h>
+	<string.h>
+	<stdlib.h>
+	<fp.h>
+	<math.h>
+	<m68881.h>
+	<mem.h>
+	<alloc.h>
+	<malloc.h>
+	<time.h>
+	<dos.h>
+
+1254603188 source:d:\elektro_svn\src\resources\itemdb.cpp
+	"resources/itemdb.h"
+	"resources/iteminfo.h"
+	"resources/resourcemanager.h"
+	"log.h"
+	"utils/dtor.h"
+	"utils/gettext.h"
+	"utils/stringutils.h"
+	"utils/xml.h"
+	<libxml/tree.h>
+	<cassert>
+
+1254603188 source:d:\elektro_svn\src\resources\iteminfo.cpp
+	"resources/iteminfo.h"
+	"resources/itemdb.h"
+
+1254603187 source:d:\elektro_svn\src\resources\mapreader.cpp
+	"resources/animation.h"
+	"resources/image.h"
+	"resources/mapreader.h"
+	"resources/resourcemanager.h"
+	"log.h"
+	"map.h"
+	"tileset.h"
+	"utils/base64.h"
+	"utils/stringutils.h"
+	"utils/xml.h"
+	<cassert>
+	<iostream>
+	<zlib.h>
+
+1254603187 d:\elektro_svn\src\utils\base64.h
+
+1254603188 source:d:\elektro_svn\src\resources\monsterdb.cpp
+	"resources/monsterdb.h"
+	"resources/monsterinfo.h"
+	"log.h"
+	"utils/dtor.h"
+	"utils/gettext.h"
+	"utils/xml.h"
+
+1254603188 source:d:\elektro_svn\src\resources\monsterinfo.cpp
+	"resources/monsterinfo.h"
+	"utils/dtor.h"
+
+1254603187 source:d:\elektro_svn\src\resources\music.cpp
+	"resources/music.h"
+	"log.h"
+
+1254603188 d:\elektro_svn\src\resources\music.h
+	"resources/resource.h"
+	<SDL_mixer/SDL_mixer.h>
+	<SDL_mixer.h>
+
+1254603188 source:d:\elektro_svn\src\resources\npcdb.cpp
+	"resources/npcdb.h"
+	"log.h"
+	"utils/xml.h"
+
+1254603188 source:d:\elektro_svn\src\resources\resource.cpp
+	"resources/resource.h"
+	"resources/resourcemanager.h"
+	<cassert>
+
+1254603188 source:d:\elektro_svn\src\resources\resourcemanager.cpp
+	"resources/resourcemanager.h"
+	"resources/dye.h"
+	"resources/image.h"
+	"resources/imageset.h"
+	"resources/music.h"
+	"resources/soundeffect.h"
+	"resources/spritedef.h"
+	"log.h"
+	<cassert>
+	<physfs.h>
+	<SDL_image.h>
+	<sstream>
+	<sys/time.h>
+
+1254603187 d:\elektro_svn\src\resources\soundeffect.h
+	"resources/resource.h"
+	<SDL_mixer/SDL_mixer.h>
+	<SDL_mixer.h>
+
+1254603188 source:d:\elektro_svn\src\resources\sdlrescalefacility.cpp
+	"sdlrescalefacility.h"
+
+1254603188 source:d:\elektro_svn\src\resources\soundeffect.cpp
+	"resources/soundeffect.h"
+	"log.h"
+
+1254603188 source:d:\elektro_svn\src\resources\spritedef.cpp
+	"resources/spritedef.h"
+	"resources/action.h"
+	"resources/animation.h"
+	"resources/dye.h"
+	"resources/image.h"
+	"resources/imageset.h"
+	"resources/resourcemanager.h"
+	"log.h"
+	"utils/xml.h"
+	<set>
+
+1254603188 source:d:\elektro_svn\src\resources\wallpaper.cpp
+	"resources/wallpaper.h"
+	"log.h"
+	"utils/stringutils.h"
+	<algorithm>
+	<cstring>
+	<vector>
+	<physfs.h>
+
+1254603188 source:d:\elektro_svn\src\rotationalparticle.cpp
+	"rotationalparticle.h"
+	"graphics.h"
+	"simpleanimation.h"
+
+1254603188 source:d:\elektro_svn\src\shopitem.cpp
+	"shopitem.h"
+	"units.h"
+	"resources/iteminfo.h"
+
+1254603188 source:d:\elektro_svn\src\simpleanimation.cpp
+	"graphics.h"
+	"log.h"
+	"simpleanimation.h"
+	"resources/animation.h"
+	"resources/image.h"
+	"resources/imageset.h"
+	"resources/resourcemanager.h"
+
+1254603188 source:d:\elektro_svn\src\sound.cpp
+	<SDL.h>
+	"log.h"
+	"sound.h"
+	"resources/resourcemanager.h"
+	"resources/soundeffect.h"
+
+1254603188 source:d:\elektro_svn\src\statuseffect.cpp
+	<map>
+	"statuseffect.h"
+	"log.h"
+	"gui/widgets/chattab.h"
+	"utils/xml.h"
+
+1254603188 source:d:\elektro_svn\src\text.cpp
+	"text.h"
+	<guichan/font.hpp>
+	"configuration.h"
+	"textmanager.h"
+	"resources/resourcemanager.h"
+	"resources/image.h"
+	"gui/gui.h"
+	"gui/palette.h"
+	"gui/textrenderer.h"
+
+1254603188 source:d:\elektro_svn\src\textmanager.cpp
+	"textmanager.h"
+	<cstring>
+	"text.h"
+
+1254603188 source:d:\elektro_svn\src\textparticle.cpp
+	<guichan/color.hpp>
+	"textparticle.h"
+	"gui/textrenderer.h"
+
+1254603188 source:d:\elektro_svn\src\tmw.rc
+	<windows.h>
+	"winver.h"
+
+1254603188 source:d:\elektro_svn\src\units.cpp
+	"units.h"
+	"log.h"
+	"utils/stringutils.h"
+	"utils/xml.h"
+	<cmath>
+	<climits>
+	<vector>
+
+1254603187 source:d:\elektro_svn\src\utils\base64.cpp
+	"utils/base64.h"
+	<stdlib.h>
+	<string.h>
+
+1254603187 source:d:\elektro_svn\src\utils\stringutils.cpp
+	"utils/stringutils.h"
+	<algorithm>
+	<cstdarg>
+	<cstdio>
+
+1254603187 source:d:\elektro_svn\src\utils\xml.cpp
+	"utils/xml.h"
+	"log.h"
+	"resources/resourcemanager.h"
+
+1254603188 source:d:\elektro_svn\src\vector.cpp
+	"vector.h"
+
+1254663318 source:d:\elektro_svn\src\elektro\testwindow.cpp
+	"testwindow.h"
+	<sstream>
+	<istream>
+	<vector>
+	<math.h>
+	<guichan/widgets/label.hpp>
+	"gui/widgets/button.h"
+	"gui/widgets/chattab.h"
+	"gui/widgets/scrollarea.h"
+	"gui/widgets/listbox.h"
+	"gui/widgets/textbox.h"
+	"gui/widgets/radiobutton.h"
+	"log.h"
+	"elektro/lang_tr.h"
+	"../resources/resourcemanager.h"
+	"../graphics.h"
+	"../particle.h"
+	"../sound.h"
+	"../npc.h"
+	"net/ea/npchandler.h"
+	"utils/stringutils.h"
+	"../localplayer.h"
+	"elektro/typedef.h"
+	"../beingmanager.h"
+
+1254660480 source:d:\elektro_svn\src\game.cpp
+	"beingmanager.h"
+	"channelmanager.h"
+	"commandhandler.h"
+	"configuration.h"
+	"effectmanager.h"
+	"emoteshortcut.h"
+	"engine.h"
+	"flooritemmanager.h"
+	"game.h"
+	"graphics.h"
+	"itemshortcut.h"
+	"joystick.h"
+	"keyboardconfig.h"
+	"localplayer.h"
+	"log.h"
+	"main.h"
+	"map.h"
+	"npc.h"
+	"particle.h"
+	"playerrelations.h"
+	"sound.h"
+	"gui/widgets/chattab.h"
+	"gui/buy.h"
+	"gui/buysell.h"
+	"gui/chat.h"
+	"gui/confirmdialog.h"
+	"gui/debugwindow.h"
+	"gui/emoteshortcutcontainer.h"
+	"gui/equipmentwindow.h"
+	"gui/gui.h"
+	"gui/help.h"
+	"gui/inventorywindow.h"
+	"gui/shortcutwindow.h"
+	"gui/itemshortcutcontainer.h"
+	"gui/minimap.h"
+	"gui/ministatus.h"
+	"gui/npcdialog.h"
+	"gui/okdialog.h"
+	"gui/outfitwindow.h"
+	"gui/sdlinput.h"
+	"gui/sell.h"
+	"gui/setup.h"
+	"gui/skilldialog.h"
+	"gui/statuswindow.h"
+	"gui/trade.h"
+	"gui/viewport.h"
+	"gui/windowmenu.h"
+	"gui/partywindow.h"
+	"gui/buddywindow.h"
+	"gui/guildwindow.h"
+	"gui/quitdialog.h"
+	"gui/npcpostdialog.h"
+	"gui/specialswindow.h"
+	"gui/storagewindow.h"
+	"net/generalhandler.h"
+	"net/maphandler.h"
+	"net/net.h"
+	"net/tmwserv/inventoryhandler.h"
+	"net/ea/inventoryhandler.h"
+	"resources/imagewriter.h"
+	"utils/gettext.h"
+	<guichan/exception.hpp>
+	<guichan/focushandler.hpp>
+	<fstream>
+	<physfs.h>
+	<sstream>
+	<string>
+	"elektro/circuitwindow.h"
+	"elektro/testwindow.h"
+
+1254603184 d:\elektro_svn\src\gui\buddywindow.h
+	"gui/widgets/window.h"
+	<guichan/actionlistener.hpp>
+	<guichan/actionevent.hpp>
+
+1254603184 d:\elektro_svn\src\gui\guildwindow.h
+	"gui/widgets/window.h"
+	"guichanfwd.h"
+	<guichan/actionlistener.hpp>
+	<guichan/widgets/listbox.hpp>
+	<iosfwd>
+	<map>
+	<vector>
+
+1254603187 d:\elektro_svn\src\net\tmwserv\inventoryhandler.h
+	"net/inventoryhandler.h"
+	"net/messagehandler.h"
+
+1254663701 source:d:\elektro_svn\src\net\ea\npchandler.cpp
+	"net/ea/npchandler.h"
+	"net/ea/protocol.h"
+	"net/messagein.h"
+	"net/messageout.h"
+	"net/net.h"
+	"net/npchandler.h"
+	"beingmanager.h"
+	"localplayer.h"
+	"npc.h"
+	"gui/npcdialog.h"
+	"gui/chat.h"
+	"gui/widgets/chattab.h"
+	"utils/stringutils.h"
+	<SDL_types.h>
+	"elektro/hitabe.h"
+	"elektro/testwindow.h"
+

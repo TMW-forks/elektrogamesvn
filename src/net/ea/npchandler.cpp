@@ -41,6 +41,7 @@
 #include <SDL_types.h>
 
 #include "elektro/hitabe.h"
+#include "elektro/testwindow.h"
 
 //NPC id:
 //0-13 test
@@ -50,7 +51,7 @@
 //56- makinalar
 
 Net::NpcHandler *npcHandler;
-
+extern TestDialog *testDialog;
 namespace EAthena {
 
 NpcHandler::NpcHandler()
@@ -85,19 +86,30 @@ void NpcHandler::handleMessage(MessageIn &msg)
             npcDialog->parseListItems(msg.readString(msg.getLength() - 8));
             npcDialog->setVisible(true);
             resetPlayer = true;
+
+
+            being = beingManager->findBeing(current_npc);
+            localChatTab->chatLog("11 Current NPC id "+toString(current_npc));
+            localChatTab->chatLog("11 Current NPC job "+toString(being->getJob()));
+
             break;
 
         case SMSG_NPC_MESSAGE:
             msg.readInt16();  // length
             current_npc = msg.readInt32();
             being = beingManager->findBeing(current_npc);
-//            being->setId(current_npc);
-            localChatTab->chatLog("Current NPC id "+toString(current_npc));
-            localChatTab->chatLog("Current NPC id "+toString(being->getJob()));
+            localChatTab->chatLog("22 Current NPC id "+toString(current_npc));
+            localChatTab->chatLog("22 Current NPC job "+toString(being->getJob()));
             npcDialog->setNpc(current_npc);
             npcDialog->addText(msg.readString(msg.getLength() - 8));
             npcDialog->setVisible(true);
             resetPlayer = true;
+            if (being->getJob()==100)
+            {
+                npcDialog->setVisible(false);
+                testDialog->setVisible(true);
+
+            }else
             if (being->getJob()==143)
                 {
                     npcDialog->setVisible(false);
@@ -111,6 +123,11 @@ void NpcHandler::handleMessage(MessageIn &msg)
          case SMSG_NPC_CLOSE:
             id = msg.readInt32();
             // If we're talking to that NPC, show the close button
+
+            being = beingManager->findBeing(current_npc);
+            localChatTab->chatLog("33 Current NPC id "+toString(current_npc));
+            localChatTab->chatLog("33 Current NPC job "+toString(being->getJob()));
+
             if (id == current_npc)
             {
                 npcDialog->showCloseButton();
@@ -124,6 +141,10 @@ void NpcHandler::handleMessage(MessageIn &msg)
         case SMSG_NPC_NEXT:
             id = msg.readInt32();
             // If we're talking to that NPC, show the next button
+            being = beingManager->findBeing(current_npc);
+            localChatTab->chatLog("44 Current NPC id "+toString(current_npc));
+            localChatTab->chatLog("44 Current NPC job "+toString(being->getJob()));
+
             if (id == current_npc)
             {
                 npcDialog->showNextButton();

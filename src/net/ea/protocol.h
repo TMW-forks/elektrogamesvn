@@ -28,7 +28,7 @@ enum {
     STR = 0xd,
     AGI,
     VIT,
-    INT,
+    INTT, //minGW ile çakýþtýðý için T eklendi.
     DEX,
     LUK,
 

@@ -116,8 +116,8 @@
         max-per-slot="10"/>
     <item id="502"
         image="use-potion-a.png|G:#ff2222"
-        name="Cactus Potion"
-        description="A fresh potion."
+        name="Kızılcık Şerbeti"
+        description="Mis gibi kızılcık şerbeti."
         effect="+25 HP"
         type="usable"
         hp="25"

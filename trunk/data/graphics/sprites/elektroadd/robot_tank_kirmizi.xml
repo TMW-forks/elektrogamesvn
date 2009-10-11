@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <sprite>
 
-	<imageset name="base" src="graphics/sprites/robot_tank_kirmizi.png" width="50" height="55" />
+	<imageset name="base" src="graphics/sprites/elektroadd/robot_tank_kirmizi.png" width="50" height="55" />
 
 	<action name="stand" imageset="base">
 		<animation direction="down">

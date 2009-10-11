@@ -102,8 +102,8 @@
             />
     </monster>
 
-    <monster id="2" name="Red Scorpion">
-        <sprite>monster-scorpion.xml|#791d0a,cd5d27,f28d54,ffffff</sprite>
+    <monster id="2" name="robot-guguk">
+        <sprite>elektroadd/robot-guguk.xml|#791d0a,cd5d27,f28d54,ffffff</sprite>
         <sound event="hit">monsters/scorpion/scorpion-hit1.ogg</sound>
         <sound event="hit">monsters/scorpion/scorpion-hit2.ogg</sound>
         <sound event="hit">monsters/scorpion/scorpion-hit3.ogg</sound>
@@ -149,8 +149,8 @@
             />
     </monster>
 
-    <monster id="3" name="Green Slime">
-        <sprite>monster-slime.xml|#72982c,ffffff</sprite>
+    <monster id="3" name="Robot Tiji">
+        <sprite>elektroadd/robot_tiji.xml|#72982c,ffffff</sprite>
         <sound event="hit">monsters/slime/slime-hit1.ogg</sound>
         <drop item="502" percent="2"/>
         <drop item="513" percent="1"/>
@@ -184,8 +184,8 @@
             />
     </monster>
 
-    <monster id="4" name="Giant Maggot" targetCursor="large">
-        <sprite>monster-maggot-giant.xml</sprite>
+    <monster id="4" name="Robot Zuzu" targetCursor="large">
+        <sprite>elektroadd/robot_zuzu.xml</sprite>
         <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
         <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
         <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
@@ -212,8 +212,8 @@
             />
     </monster>
 
-    <monster id="5" name="Yellow Slime">
-        <sprite>monster-slime.xml|#b47f00,ffffff</sprite>
+    <monster id="5" name="Robot Zipzip Mor">
+        <sprite>elektroadd/robot_zipzip_mor.xml|#b47f00,ffffff</sprite>
         <sound event="hit">monsters/slime/slime-hit1.ogg</sound>
         <drop item="534" percent="2"/>
         <drop item="519" percent="1"/>
@@ -235,8 +235,8 @@
             />
     </monster>
 
-    <monster id="6" name="Red Slime">
-        <sprite>monster-slime.xml|#7e0000,ffffff</sprite>
+    <monster id="6" name="Robot Zipzip">
+        <sprite>elektroadd/robot_zipzip.xml|#7e0000,ffffff</sprite>
         <sound event="hit">monsters/slime/slime-hit1.ogg</sound>
         <drop item="1201" percent="3"/>
         <drop item="509" percent="1.1"/>
@@ -261,8 +261,8 @@
             />
     </monster>
 
-    <monster id="7" name="Black Scorpion">
-        <sprite>monster-scorpion.xml|#0d1313,435a5a,879999,ffffff</sprite>
+    <monster id="7" name="Robot Yagot Bordo">
+        <sprite>elektroadd/robot_yagot_bordo.xml|#0d1313,435a5a,879999,ffffff</sprite>
         <sound event="hit">monsters/scorpion/scorpion-hit1.ogg</sound>
         <sound event="hit">monsters/scorpion/scorpion-hit2.ogg</sound>
         <sound event="hit">monsters/scorpion/scorpion-hit3.ogg</sound>
@@ -286,8 +286,8 @@
             />
     </monster>
 
-    <monster id="8" name="Snake">
-        <sprite>monster-snake.xml|#664d28,a6673a,dbbc86,ffffff</sprite>
+    <monster id="8" name="Robot Zuzu Yesil">
+        <sprite>elektroadd/robot_zuzu_yesil.xml|#664d28,a6673a,dbbc86,ffffff</sprite>
         <attributes
             hp="20"
             size="4"
@@ -303,8 +303,8 @@
             />
     </monster>
 
-    <monster id="9" name="Fire Goblin">
-        <sprite>monster-goblin-fire.xml</sprite>
+    <monster id="9" name="Robot Yagot">
+        <sprite>elektroadd/robot_yagot.xml</sprite>
         <sound event="hit">monsters/fire-goblin/fire-goblin-hit1.ogg</sound>
         <sound event="hit">monsters/fire-goblin/fire-goblin-hit2.ogg</sound>
         <sound event="miss">monsters/fire-goblin/fire-goblin-miss1.ogg</sound>
@@ -351,8 +351,8 @@
             />
     </monster>
 
-    <monster id="10" name="Spider">
-        <sprite>monster-spider.xml</sprite>
+    <monster id="10" name="Robot Tiji Mor">
+        <sprite>elektroadd/robot_tiji_mor.xml</sprite>
         <drop item="537" percent="5"/>
         <drop item="535" percent="1"/>
         <attributes
@@ -370,8 +370,8 @@
             />
     </monster>
 
-    <monster id="11" name="Evil Mushroom">
-        <sprite>monster-mushroom-red.xml</sprite>
+    <monster id="11" name="Robot Tank Kırmızı">
+        <sprite>elektroadd/robot_tank_kirmizi.xml</sprite>
         <sound event="hit">monsters/shroom/shroom-hit1.ogg</sound>
         <drop item="535" percent="5"/>
         <drop item="540" percent="0.1"/>
@@ -392,8 +392,8 @@
             />
     </monster>
 
-    <monster id="12" name="Flower">
-        <sprite>monster-flower.xml</sprite>
+    <monster id="12" name="Robot Tank">
+        <sprite>elektroadd/robot_tank.xml</sprite>
         <sound event="hit">monsters/flower/flower-hit1.ogg</sound>
         <sound event="hit">monsters/flower/flower-hit2.ogg</sound>
         <sound event="miss">monsters/flower/flower-miss1.ogg</sound>
@@ -426,8 +426,8 @@
             />
     </monster>
 
-    <monster id="13" name="Santa Slime">
-        <sprite>monster-slime-santa.xml</sprite>
+    <monster id="13" name="Robot Pitircik Siyah">
+        <sprite>elektroadd/robot_pitircik_siyah.xml</sprite>
         <drop item="512" percent="8"/>
         <drop item="513" percent="7"/>
         <drop item="514" percent="6"/>
@@ -449,8 +449,8 @@
             />
     </monster>
 
-    <monster id="14" name="Rudolph Slime">
-        <sprite>monster-slime-rudolph.xml</sprite>
+    <monster id="14" name="Robot Pitircik">
+        <sprite>elektroadd/robot_pitircik.xml</sprite>
         <drop item="504" percent="8"/>
         <drop item="506" percent="5"/>
         <drop item="508" percent="2"/>
@@ -473,8 +473,8 @@
             />
     </monster>
 
-    <monster id="15" name="Bat">
-        <sprite>monster-bat.xml</sprite>
+    <monster id="15" name="Robot Pasli Yesil">
+        <sprite>elektroadd/robot_pasli_yesil.xml</sprite>
         <sound event="die">monsters/bat/bat-dying1.ogg</sound>
         <sound event="hit">monsters/bat/bat-hit1.ogg</sound>
         <drop item="505" percent="8"/>
@@ -498,8 +498,8 @@
             />
     </monster>
 
-    <monster id="16" name="Pinkie" targetCursor="small">
-        <sprite>monster-pinkie.xml</sprite>
+    <monster id="16" name="Robot Mini Göz" targetCursor="small">
+        <sprite>elektroadd/robot_mini_goz.xml</sprite>
         <sound event="hit">monsters/pinkie/pinkie-hit1.ogg</sound>
         <sound event="miss">monsters/pinkie/pinkie-miss1.ogg</sound>
         <drop item="614" percent="8"/>
@@ -518,8 +518,8 @@
             />
     </monster>
 
-    <monster id="17" name="Spiky Mushroom">
-        <sprite>monster-mushroom-spiky.xml</sprite>
+    <monster id="17" name="Robot Goz Mavi">
+        <sprite>elektroadd/robot_goz_mavi.xml</sprite>
         <sound event="hit">monsters/shroom/shroom-hit1.ogg</sound>
         <drop item="567" percent="8"/>
         <drop item="501" percent="1.5"/>
@@ -540,8 +540,9 @@
             />
     </monster>
 
-    <monster id="18" name="Fluffy">
-        <sprite>monster-fluffy.xml</sprite>
+    <monster id="18" name="Robot Buyuk Goz">
+        <sprite>elektroadd/robot_buyuk_goz.xml</sprite>
+        <sprite>elektroadd/robot_buyuk_goz.xml</sprite>
         <sound event="hit">monsters/fluffy/fluffy-hit1.ogg</sound>
         <sound event="hit">monsters/fluffy/fluffy-hit2.ogg</sound>
         <sound event="hit">monsters/fluffy/fluffy-hit3.ogg</sound>
@@ -565,8 +566,8 @@
             />
     </monster>
 
-    <monster id="19" name="Cave Snake">
-        <sprite>monster-snake-cave.xml</sprite>
+    <monster id="19" name="Robot Afacan Yesil">
+        <sprite>elektroadd/robot_afacan_yesil.xml</sprite>
         <drop item="612" percent="8"/>
         <drop item="610" percent="0.1"/>
         <attributes
@@ -584,8 +585,8 @@
             />
     </monster>
 
-    <monster id="20" name="Jack O">
-        <sprite>monster-ghost-pumpkin.xml</sprite>
+    <monster id="20" name="Robot Afacan Sari">
+        <sprite>elektroadd/robot_afacan_sari.xml</sprite>
         <attributes
             hp="20"
             size="4"

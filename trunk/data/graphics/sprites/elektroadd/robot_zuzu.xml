@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <sprite>
 
-	<imageset name="base" src="graphics/sprites/robot_zuzu.png" width="60" height="72" />
+	<imageset name="base" src="graphics/sprites/elektroadd/robot_zuzu.png" width="60" height="72" />
 
 	<action name="stand" imageset="base">
 		<animation direction="down">

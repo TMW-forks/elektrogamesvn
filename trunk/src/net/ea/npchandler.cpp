@@ -56,7 +56,6 @@ namespace EAthena {
 
 std::string temp;
 static std::stringstream npcText;
-
 NpcHandler::NpcHandler()
 {
     static const Uint16 _messages[] = {
@@ -84,15 +83,18 @@ void NpcHandler::handleMessage(MessageIn &msg)
         case SMSG_NPC_CHOICE:
             msg.readInt16();  // length
             current_npc = msg.readInt32();
+            being = beingManager->findBeing(current_npc);
+            if (being->getJob()>=114 && being->getJob()<=127)
+            {
             npcDialog->setNpc(current_npc);
             npcDialog->choiceRequest();
             npcDialog->parseListItems(msg.readString(msg.getLength() - 8));
             npcDialog->setVisible(true);
             resetPlayer = true;
-
-
-            being = beingManager->findBeing(current_npc);
-            localChatTab->chatLog("11 Current NPC job "+toString(being->getJob()));
+            }
+//
+//            being = beingManager->findBeing(current_npc);
+//            localChatTab->chatLog("11 Current NPC job "+toString(being->getJob()));
 
             break;
 
@@ -103,23 +105,47 @@ void NpcHandler::handleMessage(MessageIn &msg)
             localChatTab->chatLog("22 Current NPC job "+toString(being->getJob()));
             npcDialog->setNpc(current_npc);
             temp = msg.readString(msg.getLength() - 8);
-            npcDialog->addText(temp);
-            npcDialog->setVisible(true);
+//            npcDialog->addText(temp);
+//            npcDialog->setVisible(true);
             resetPlayer = true;
             npcText<<temp;
-            if (being->getJob()==100)
+            if (being->getJob()>=100 && being->getJob()<=113)
             {
-                npcDialog->setVisible(false);
-                testDialog->setVisible(true);
+//                npcDialog->setVisible(false);
+//                npcPostDialog->setVisible(false);
+//    localChatTab->chatLog(toString(npcText.str()));
 
-            }else
-            if (being->getJob()==143)
+                if (temp=="</test>")
+                    {
+//                    TestDialog *testDialog= new TestDialog();
+                     testDialog->setVisible(true);
+                     testDialog->setDoc(npcText.str());
+                     testDialog->parse();
+                     npcText.str("");
+                    }
+            }
+            else if (being->getJob()>=114 && being->getJob()<=127)
+            {
+                npcDialog->addText(npcText.str());
+                npcDialog->setVisible(true);
+            }
+            else if (being->getJob()>=128 && being->getJob()<=141)
+            {
+
+            }
+            else if (being->getJob()>=142 && being->getJob()<=155)
+            {
+                if (being->getJob()==143)
                 {
                     npcDialog->setVisible(false);
                     Hitabe *hitabe = new Hitabe();
                     hitabe->setVisible(true);
                     //npcText.str("");
                 }
+            }
+            else if (being->getJob()>=156)
+            {
+            }
 
             break;
 
@@ -128,7 +154,7 @@ void NpcHandler::handleMessage(MessageIn &msg)
             // If we're talking to that NPC, show the close button
 
             being = beingManager->findBeing(current_npc);
-            localChatTab->chatLog("33 Current NPC job "+toString(being->getJob()));
+            localChatTab->chatLog("77 Current NPC job "+toString(being->getJob()));
 
             if (id == current_npc)
             {

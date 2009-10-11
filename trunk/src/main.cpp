@@ -1426,7 +1426,7 @@ int main(int argc, char *argv[])
     Þifreyi geç
 */
 // user þifresini burada belirtin
-        loginData.password = "123456";
+        //loginData.password = "123456";
                     if (!loginData.password.empty())
                     {
                         loginData.registerLogin = false;

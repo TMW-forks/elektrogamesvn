@@ -29,6 +29,8 @@
 #include "../localplayer.h"
 #include "elektro/typedef.h"
 #include "../beingmanager.h"
+#include "utils/stringutils.h"
+#include "utils/gettext.h"
 
 extern std::stringstream mQuestion;
 extern int sira;
@@ -39,14 +41,14 @@ const int padY = 50;
 
 gcn::Label *mTimeLabel = new gcn::Label("time label");
 TestDialog::TestDialog():
-    Window(LBLNPC)
+    Window(_("Soran Ãœstat"))
 {
     setContentSize(350, 275);
     setSize(350,350);
     setPosition(100,100);
 
     cancelButton = new Button(BTNCANCEL, "cancel", this);
-    mEvaluate = new Button("Değerlendir!","ok",this);
+    mEvaluate = new Button(toTurkish("DeÄŸerlendir!"),"ok",this);
     mFinishClose = new Button("Pencereyi kapat","startcancel",this);
 
     ResourceManager *resman = ResourceManager::getInstance();
@@ -89,8 +91,8 @@ TestDialog::TestDialog():
                            getHeight()-mMessageOk->getHeight()-10);
     add(mMessageOk);
 
-    mStartOk = new Button("Hemen Başla","startok",this);
-    mStartCancel = new Button("Yok Almayım","startcancel",this);
+    mStartOk = new Button("Hemen BaÅŸla","startok",this);
+    mStartCancel = new Button("Yok AlmayÄ±m","startcancel",this);
 
     mStartCancel->setWidth(mStartOk->getWidth());
     mStartCancel->setHeight(mStartOk->getHeight());
@@ -306,20 +308,25 @@ TestDialog::start()
             showInfoLabels();
             showQuestion();
             break;
+        case ONEQ_START_STATE:
+            gecenZaman=0;
+            mBasla=true;
+            action(gcn::ActionEvent(NULL, "startok"));
+            break;
         case MANYQ_START_SATATE:
             hideInfoLabels();
             gecenZaman=0;
             mBasla = false;
             mStartBox->clearRows();
             mStartBox->addRow("##3==========================================");
-            mStartBox->addRow("               ##1Teste Hoşgeldin!");
+            mStartBox->addRow("               ##1Teste HoÅŸgeldin!");
             mStartBox->addRow("##3==========================================");
             mStartBox->addRow("");
-            mStartBox->addRow("  ##2Soru Sayısı     :##6"+toString(mTotalQuestion));
-            mStartBox->addRow("  ##2Toplam Süre     :##6"+toString(mTotalTime)+"##2 saniye");
-            mStartBox->addRow("  ##2Başarı Sınırı   :##6"+toString(mSuccessLimit)+"##2 soru");
-            mStartBox->addRow("  ##2Soru Başına Süre:##6"+toString(mTotalTime/mTotalQuestion)+"##2 saniye");
-            mStartBox->addRow("  ##2Ödül            :##6"+toString(mAward));
+            mStartBox->addRow("  ##2Soru SayÄ±sÄ±     :##6"+toString(mTotalQuestion));
+            mStartBox->addRow("  ##2Toplam SÃ¼re     :##6"+toString(mTotalTime)+"##2 saniye");
+            mStartBox->addRow("  ##2BaÅŸarÄ± SÄ±nÄ±rÄ±   :##6"+toString(mSuccessLimit)+"##2 soru");
+            mStartBox->addRow("  ##2Soru BaÅŸÄ±na SÃ¼re:##6"+toString(mTotalTime/mTotalQuestion)+"##2 saniye");
+            mStartBox->addRow("  ##2Ã–dÃ¼l            :##6"+toString(mAward));
             mStartBox->addRow("  ##2Ceza            :##6"+toString(mPunish));
             mStartBox->addRow("##7=========================================");
             mStartBox->addRow("##8      ============================       ");
@@ -358,6 +365,7 @@ TestDialog::start()
             mBasla = false;
             reset();
             current_npc=0;
+            NPC::isTalking = false;
             break;
         case SHOW_RESULT_STATE:
             reset();
@@ -542,7 +550,7 @@ TestDialog::deleteQuestionButtons()
         miButton != mvButton.end();
         ++miButton)
     {
-        delete(*miButton); //eski buttonları sil
+        delete(*miButton); //eski buttonlarÄ± sil
     }
     mvButton.clear();
 }
@@ -646,7 +654,7 @@ TestDialog::action(const gcn::ActionEvent &event)
         {
             if(mType=="radio")
             {
-                int answer=1;  //boş bırakılmışsa yanlış kabul et
+                int answer=1;  //boÅŸ bÄ±rakÄ±lmÄ±ÅŸsa yanlÄ±ÅŸ kabul et
                 for (miRadio = mvRadio.begin();
                     miRadio != mvRadio.end();
                     ++miRadio)
@@ -654,14 +662,13 @@ TestDialog::action(const gcn::ActionEvent &event)
                     if (miRadio->radio->isSelected()) answer = miRadio->value +1 ;  //
                 }
                 Net::getNpcHandler()->listInput(current_npc, answer);
-                Net::getNpcHandler()->nextDialog(current_npc);
                 testState = TEST_FINISHED_STATE;
             }
             else if(mType=="check")
             {
                 testState = TEST_FINISHED_STATE;
                 //yeni checkbox sisteminde gereksiz
-//                int tru=0;  //boş bırakılmışsa yanlış kabul et
+//                int tru=0;  //boÅŸ bÄ±rakÄ±lmÄ±ÅŸsa yanlÄ±ÅŸ kabul et
 //                int sayac=0;
 //                for (miCheck = mvCheck.begin();
 //                        miCheck != mvCheck.end();
@@ -682,29 +689,29 @@ TestDialog::action(const gcn::ActionEvent &event)
 //                        }
 //                }
 //                chatWindow->chatLog("Sonuc = "+toString(tru), BY_SERVER);
-//// tru + i->size() diyerek her yanlis sayısına göre değerlendirme yapılabilir
+//// tru + i->size() diyerek her yanlis sayÄ±sÄ±na gÃ¶re deÄŸerlendirme yapÄ±labilir
 //                tru<0 ? tru=0: tru++;
                 Net::getNpcHandler()->listInput(current_npc, 1);
-                Net::getNpcHandler()->nextDialog(current_npc);            }
+//                Net::getNpcHandler()->nextDialog(current_npc);
+            }
         }
-        else  //çok sorulu
+        else  //Ã§ok sorulu
         {
         testState = SHOW_RESULT_STATE;
         Net::getNpcHandler()->listInput(current_npc, 2);
-        Net::getNpcHandler()->nextDialog(current_npc);
+//        Net::getNpcHandler()->nextDialog(current_npc);
         }
         start();
     }else if (event.getId() == "radiocheck"&&mTotalQuestion>1)
     {
-        int answer=2;  //boş bırakılmışsa yanlış kabul et
+        int answer=2;  //boÅŸ bÄ±rakÄ±lmÄ±ÅŸsa yanlÄ±ÅŸ kabul et
         for (miRadio = mvRadio.begin();
             miRadio != mvRadio.end();
             ++miRadio)
         {
             if (miRadio->radio->isSelected()) answer=miRadio->value;
         }
-//!!!!!!!!!!!!!!!!!!
-//        Net::getNpcHandler().listInput(current_npc, mTotalQuestion+answer+2);
+    Net::getNpcHandler()->listInput(current_npc, mTotalQuestion+answer+2);
     }
     else if (event.getId().substr(0,13) == "checkboxcheck" && mTotalQuestion == 1)
     {
@@ -712,9 +719,7 @@ TestDialog::action(const gcn::ActionEvent &event)
         std::istringstream tempstr(tempstr2);
         int answer;
         tempstr >> answer;
-//        chatWindow->chatLog(tempstr2, BY_SERVER);
-//!!!!!!!!!!!!!!!!!!!!!!!!!!
-//        current_npc->dialogChoice(answer + 1);
+        Net::getNpcHandler()->listInput(current_npc, answer + 1);
     }
     else if (event.getId() == "cancel")
     {
@@ -722,15 +727,15 @@ TestDialog::action(const gcn::ActionEvent &event)
         Net::getNpcHandler()->nextDialog(current_npc);
         current_npc = 0;
         setVisible(false);
+        NPC::isTalking = false;
         reset();
     }
     else if (ch.substr(0,4)=="goto")
     {
         int i= atoi(ch.substr(5,4).c_str());
-//!!!!!!!!!!!!!!!!!!
-//        current_npc->dialogChoice(i+2); //iptal ve değerlendir'i geçmek için +2
-        Net::getNpcHandler()->nextDialog(current_npc);
+        Net::getNpcHandler()->listInput(current_npc, i+2);
         current_npc=0;
+        NPC::isTalking = false;
         reset();
     }
     else if (ch=="go_prev")
@@ -738,9 +743,9 @@ TestDialog::action(const gcn::ActionEvent &event)
         if (mQuestionNumber>1)
         {
 //!!!!!!!!!!!!!!!!!!!!!!!!
-//        current_npc->dialogChoice(mQuestionNumber+1); //iptal ve değerlendir'i geçmek için +2-1
-        Net::getNpcHandler()->nextDialog(current_npc);
+        Net::getNpcHandler()->listInput(current_npc, mQuestionNumber+1);//iptal ve deÄŸerlendir'i geÃ§mek iÃ§in +2-1
         current_npc=0;
+        NPC::isTalking = false;
         reset();
         }
     }    else if (ch=="go_next")
@@ -748,27 +753,26 @@ TestDialog::action(const gcn::ActionEvent &event)
         if (mQuestionNumber<mTotalQuestion)
         {
 //!!!!!!!!!!!!!!!!!!
-//        current_npc->dialogChoice(mQuestionNumber+3); //iptal ve değerlendir'i geçmek için +2+1
-        Net::getNpcHandler()->nextDialog(current_npc);
+        Net::getNpcHandler()->listInput(current_npc, mQuestionNumber+3); //iptal ve biÅŸeyleri geÃ§mek iÃ§in +3
         current_npc=0;
+        NPC::isTalking = false;
         reset();
         }
     }
     else if (event.getId()=="startcancel")
     {
-//!!!!!!!!!!!!!!!!!!!!
-//        current_npc->dialogChoice(1); //CANCEL'e git
-        Net::getNpcHandler()->nextDialog(current_npc);
+        Net::getNpcHandler()->listInput(current_npc, 1);
         setVisible(false);
         reset();
         current_npc=0;
+        NPC::isTalking = false;
     }
     else if (event.getId()=="startok")
     {
         mBasla = true;
         hideStart();
         showQuestion();
-//        current_npc->dialogChoice(2);   //ilk menü
+        Net::getNpcHandler()->listInput(current_npc, 2); //ilk menÃ¼
         mEvaluate->setVisible(true);
     }
     else if (event.getId()=="mesajok")
@@ -805,7 +809,7 @@ TestDialog::parse()
 
     for_each_xml_child_node(node, rootNode)
     {
-        // Testten önce gösterilen mesaj
+        // Testten Ã¶nce gÃ¶sterilen mesaj
         if (xmlStrEqual(node->name, BAD_CAST "mesaj"))
         {
             testState = MESSAGE_STATE;
@@ -828,8 +832,7 @@ TestDialog::parse()
         }
         else if (xmlStrEqual(node->name, BAD_CAST "starter"))
         {
-            // teste başlarken yapılması gerekenleri burada yap
-            testState = MANYQ_START_SATATE;
+            // teste baÅŸlarken yapÄ±lmasÄ± gerekenleri burada yap
             mQuestionNumber = 0;
             mBitti = false;
             mFinishScroll->setVisible(false);
@@ -855,11 +858,13 @@ TestDialog::parse()
                     mSuccessLimit = XML::getProperty(subnode, "successlimit", 0);
                     mPunish = XML::getProperty(subnode, "punish", 0);
                     mAward = XML::getProperty(subnode, "award", 0);
-                    //todo: dereceli odul  ceza için buraya ekleme yapılacak
-                    if (mTotalQuestion==1) ;//!!!!!!!!!!!!!!!!!!!!!!! current_npc->dialogChoice(2);
+                    //todo: dereceli odul  ceza iÃ§in buraya ekleme yapÄ±lacak
+                    if (mTotalQuestion==1)  testState = ONEQ_START_STATE;
+                    else testState = MANYQ_START_SATATE;
+
                 }
             }
-            setupPositionInfoLabels();
+             setupPositionInfoLabels();
         }
         else if (xmlStrEqual(node->name, BAD_CAST "question"))
         {
@@ -943,8 +948,8 @@ TestDialog::parse()
             temp.visible = false;
             mvAnim.push_back(temp);
         }
-// iki sütundan birisini seçerek yapılan karşılaştırma soruları eklenebilir
-// xml'e grup değeri eklemek yeterli olur
+// iki sÃ¼tundan birisini seÃ§erek yapÄ±lan karÅŸÄ±laÅŸtÄ±rma sorularÄ± eklenebilir
+// xml'e grup deÄŸeri eklemek yeterli olur
         else if (xmlStrEqual(node->name, BAD_CAST "radio"))
         {
             SmRadio temp;
@@ -1028,12 +1033,12 @@ TestDialog::parse()
             hideEverything();
             mFinishScroll->setX((getWidth()-mFinishScroll->getWidth())/2);
             mFinishText->clearRows();
-            mFinishText->addRow("    ##1      -= Test BİTTİ! =-");
+            mFinishText->addRow("    ##1      -= Test BÄ°TTÄ°! =-");
             mFinishText->addRow("##2----------------------------------");
-            mFinishText->addRow("Doğru Cevap:"+toString(mDogru));
+            mFinishText->addRow("DoÄŸru Cevap:"+toString(mDogru));
             mFinishText->addRow("Mesaj      :"+mmMesaj);
             mFinishText->addRow("##2----------------------------------");
-            mFinishText->addRow("##3   SN     Doğru C.    Sizin C.   ");
+            mFinishText->addRow("##3   SN     DoÄŸru C.    Sizin C.   ");
             mFinishText->addRow("##2  ----    --------    --------   ");
             for_each_xml_child_node(subnode, node)
             {
@@ -1090,51 +1095,51 @@ std::string TestDialog::toTurkish(std::string str)
     std::string temp = str;
     for(int pos = 0; pos<str.length(); pos++)
     {
-        if ((str.at(pos) == 'Ã') && (str.at(pos+1)=='¼')) temp = str.replace(pos, 2, "ü");
-        if ((str.at(pos) == 'Å') && (str.at(pos+1)=='Ÿ')) temp = str.replace(pos, 2, "ş");
-        if ((str.at(pos) == 'Ä') && (str.at(pos+1)=='Ÿ')) temp = str.replace(pos, 2, "ğ");
-        if ((str.at(pos) == 'Ä') && (str.at(pos+1)=='±')) temp = str.replace(pos, 2, "ı");
-        if ((str.at(pos) == 'Ã') && (str.at(pos+1)=='§')) temp = str.replace(pos, 2, "ç");
-        if ((str.at(pos) == 'Ã') && (str.at(pos+1)=='¶')) temp = str.replace(pos, 2, "ö");
+        if ((str.at(pos) == 'Ãƒ') && (str.at(pos+1)=='Â¼')) temp = str.replace(pos, 2, "Ã¼");
+        if ((str.at(pos) == 'Ã…') && (str.at(pos+1)=='Å¸')) temp = str.replace(pos, 2, "ÅŸ");
+        if ((str.at(pos) == 'Ã„') && (str.at(pos+1)=='Å¸')) temp = str.replace(pos, 2, "ÄŸ");
+        if ((str.at(pos) == 'Ã„') && (str.at(pos+1)=='Â±')) temp = str.replace(pos, 2, "Ä±");
+        if ((str.at(pos) == 'Ãƒ') && (str.at(pos+1)=='Â§')) temp = str.replace(pos, 2, "Ã§");
+        if ((str.at(pos) == 'Ãƒ') && (str.at(pos+1)=='Â¶')) temp = str.replace(pos, 2, "Ã¶");
 
-        if ((str.at(pos) == 'Ã') && (str.at(pos+1)=='œ')) temp = str.replace(pos, 2, "Ü");
-        if ((str.at(pos) == 'Ä') && (str.at(pos+1)=='')) temp = str.replace(pos, 2, "Ğ");
-        if ((str.at(pos) == 'Ä') && (str.at(pos+1)=='°')) temp = str.replace(pos, 2, "İ");
-        if ((str.at(pos) == 'Å') && (str.at(pos+1)=='')) temp = str.replace(pos, 2, "Ş");
-        if ((str.at(pos) == 'Ã') && (str.at(pos+1)=='‡')) temp = str.replace(pos, 2, "Ç");
-        if ((str.at(pos) == 'Ã') && (str.at(pos+1)=='–')) temp = str.replace(pos, 2, "Ö");
+        if ((str.at(pos) == 'Ãƒ') && (str.at(pos+1)=='Å“')) temp = str.replace(pos, 2, "Ãœ");
+        if ((str.at(pos) == 'Ã„') && (str.at(pos+1)=='Â')) temp = str.replace(pos, 2, "Ä");
+        if ((str.at(pos) == 'Ã„') && (str.at(pos+1)=='Â°')) temp = str.replace(pos, 2, "Ä°");
+        if ((str.at(pos) == 'Ã…') && (str.at(pos+1)=='Â')) temp = str.replace(pos, 2, "Å");
+        if ((str.at(pos) == 'Ãƒ') && (str.at(pos+1)=='â€¡')) temp = str.replace(pos, 2, "Ã‡");
+        if ((str.at(pos) == 'Ãƒ') && (str.at(pos+1)=='â€“')) temp = str.replace(pos, 2, "Ã–");
 
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='0')) temp = str.replace(pos, 3, "á");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='1')) temp = str.replace(pos, 3, "Á");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='2')) temp = str.replace(pos, 3, "é");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='3')) temp = str.replace(pos, 3, "É");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='4')) temp = str.replace(pos, 3, "í");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='5')) temp = str.replace(pos, 3, "Í");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='6')) temp = str.replace(pos, 3, "ó");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='7')) temp = str.replace(pos, 3, "Ó");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='8')) temp = str.replace(pos, 3, "ú");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='9')) temp = str.replace(pos, 3, "Ú");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='0')) temp = str.replace(pos, 3, "Ã¡");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='1')) temp = str.replace(pos, 3, "Ã");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='2')) temp = str.replace(pos, 3, "Ã©");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='3')) temp = str.replace(pos, 3, "Ã‰");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='4')) temp = str.replace(pos, 3, "Ã­");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='5')) temp = str.replace(pos, 3, "Ã");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='6')) temp = str.replace(pos, 3, "Ã³");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='7')) temp = str.replace(pos, 3, "Ã“");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='8')) temp = str.replace(pos, 3, "Ãº");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='9')) temp = str.replace(pos, 3, "Ãš");
 
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='0')) temp = str.replace(pos, 3, "ë");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='1')) temp = str.replace(pos, 3, "¥");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='2')) temp = str.replace(pos, 3, "£");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='3')) temp = str.replace(pos, 3, "¢");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='4')) temp = str.replace(pos, 3, "¡");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='5')) temp = str.replace(pos, 3, "¿");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='6')) temp = str.replace(pos, 3, "à");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='7')) temp = str.replace(pos, 3, "ã");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='8')) temp = str.replace(pos, 3, "õ");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='9')) temp = str.replace(pos, 3, "ê");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='0')) temp = str.replace(pos, 3, "Ã«");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='1')) temp = str.replace(pos, 3, "Â¥");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='2')) temp = str.replace(pos, 3, "Â£");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='3')) temp = str.replace(pos, 3, "Â¢");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='4')) temp = str.replace(pos, 3, "Â¡");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='5')) temp = str.replace(pos, 3, "Â¿");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='6')) temp = str.replace(pos, 3, "Ã ");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='7')) temp = str.replace(pos, 3, "Ã£");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='8')) temp = str.replace(pos, 3, "Ãµ");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='9')) temp = str.replace(pos, 3, "Ãª");
 
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='1')) temp = str.replace(pos, 3, "ñ");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='2')) temp = str.replace(pos, 3, "Ñ");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='3')) temp = str.replace(pos, 3, "ä");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='4')) temp = str.replace(pos, 3, "Ä");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='5')) temp = str.replace(pos, 3, "ß");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='6')) temp = str.replace(pos, 3, "ø");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='7')) temp = str.replace(pos, 3, "è");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='8')) temp = str.replace(pos, 3, "È");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='9')) temp = str.replace(pos, 3, "å");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='1')) temp = str.replace(pos, 3, "Ã±");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='2')) temp = str.replace(pos, 3, "Ã‘");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='3')) temp = str.replace(pos, 3, "Ã¤");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='4')) temp = str.replace(pos, 3, "Ã„");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='5')) temp = str.replace(pos, 3, "ÃŸ");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='6')) temp = str.replace(pos, 3, "Ã¸");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='7')) temp = str.replace(pos, 3, "Ã¨");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='8')) temp = str.replace(pos, 3, "Ãˆ");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='9')) temp = str.replace(pos, 3, "Ã¥");
 
     }
    return temp;

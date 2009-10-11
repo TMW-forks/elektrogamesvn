@@ -54,6 +54,11 @@ class Hitabe : public Window, public gcn::ActionListener
         Hitabe();
 
         /**
+         * Deconstructor.
+         */
+        ~Hitabe();
+
+        /**
          * Logic (updates components' size and infos)
          */
         void logic();

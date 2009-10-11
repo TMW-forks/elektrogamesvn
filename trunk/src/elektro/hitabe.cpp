@@ -59,9 +59,9 @@ Hitabe::Hitabe():
     sound.playMusic("mars.ogg");
 
     Button *closeButton = new Button(_("close"),"close",this);
-    closeButton->setPosition(320,370);
-    setSize(200,440);
-    setPosition(50,50);
+    closeButton->setPosition(320,360);
+    setSize(700,420);
+    setPosition((getWidth()-mBase->getWidth())/2,(getHeight()-mBase->getHeight())/2);
     add(closeButton);
 }
 
@@ -71,13 +71,20 @@ Hitabe::logic()
 //
 }
 
+Hitabe::~Hitabe()
+{
+    ResourceManager *resman = ResourceManager::getInstance();
+    resman->release(mBase);
+//
+}
+
 void
 Hitabe::draw(gcn::Graphics *graphics)
 {
     Window::draw(graphics);
 
     Graphics *g = static_cast<Graphics*>(graphics);
-    g->drawImage(mBase,10,10);
+    g->drawImage(mBase,25,25);
 }
 
 void

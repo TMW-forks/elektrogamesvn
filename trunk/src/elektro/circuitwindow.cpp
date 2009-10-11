@@ -99,7 +99,7 @@ CircuitWindow::CircuitWindow():
     mHint->adjustSize();
     add(mHint);
 
-//    gcn::Label *mHint1 = new gcn::Label("Hüseyin Merhaba DÜNYA ÇÖÝÞÜÐçöiþüð <>,~");
+//    gcn::Label *mHint1 = new gcn::Label("HÃ¼seyin Merhaba DÃœNYA Ã‡Ã–Ä°ÅžÃœÄžÃ§Ã¶iÅŸÃ¼ÄŸ <>,~");
 //    mHint1->setPosition(100,10);
 //    mHint1->setFont(verdana14);
 //    mHint1->setBaseColor(gcn::Color(255,0,0));
@@ -352,7 +352,7 @@ CircuitWindow::mousePressed(gcn::MouseEvent &event)
     Window::mousePressed(event);
     Uint8* keys;
     keys = SDL_GetKeyState(NULL);
-    if (!isVisible()) //kapat düðmesine basýlýnca
+    if (!isVisible()) //kapat dÃ¼ÄŸmesine basÄ±lÄ±nca
     {
         setVisible(false);
         if (current_npc) Net::getNpcHandler()->nextDialog(current_npc);
@@ -392,7 +392,7 @@ CircuitWindow::mousePressed(gcn::MouseEvent &event)
     mvImage.clear();
     mvAnim.clear();
 }
-   //shifte basýlýyken týklanýrsa yeni node oluþtur
+   //shifte basÄ±lÄ±yken tÄ±klanÄ±rsa yeni node oluÅŸtur
    else if (event.getButton() == gcn::MouseEvent::LEFT &&
             (keys[SDLK_LSHIFT] || keys[SDLK_RSHIFT]) &&
             mNodeCreate)
@@ -457,7 +457,7 @@ CircuitWindow::findConnectedNodeId()
     }
 }
 
-//mvConnectedNodeId içinden komþu node'larý bul.
+//mvConnectedNodeId iÃ§inden komÅŸu node'larÄ± bul.
 TmvInt
 CircuitWindow::getConnectedNodeId(int target, int prev)
 {
@@ -474,7 +474,7 @@ CircuitWindow::getConnectedNodeId(int target, int prev)
 void
 CircuitWindow::showConnectedNodeId()
 {
-    mSb->addRow("~~~~~~ Node'un komþularý ~~~~~~");
+    mSb->addRow("~~~~~~ Node'un komÅŸularÄ± ~~~~~~");
     for(miConnectedNodeId = mvConnectedNodeId.begin(); miConnectedNodeId != mvConnectedNodeId.end(); miConnectedNodeId++)
     {
         std::stringstream b;
@@ -522,8 +522,8 @@ CircuitWindow::showMesh()
 void
 CircuitWindow::winnowMesh()
 {
-    logger->log("ilmek olmayanlarý temizle");
-    //birbirinin aynýsý olanlarý temizle
+    logger->log("ilmek olmayanlarÄ± temizle");
+    //birbirinin aynÄ±sÄ± olanlarÄ± temizle
     miMesh=mvMesh.begin();
     while(miMesh != mvMesh.end())
     {
@@ -548,7 +548,7 @@ CircuitWindow::winnowMesh()
         miMesh++;
     }
 
-    //uzun düðümleri temizle
+    //uzun dÃ¼ÄŸÃ¼mleri temizle
     miMesh=mvMesh.begin();
     while(miMesh != mvMesh.end())
     {
@@ -578,12 +578,12 @@ CircuitWindow::addLoopToMesh()
 
     TmvInt ust;
     TmiInt teki, i;
-    TmiIntMatris miLoop = mvNodeLoop.begin();  // ilmek denemelerindeki her bir satýr
+    TmiIntMatris miLoop = mvNodeLoop.begin();  // ilmek denemelerindeki her bir satÄ±r
     int prevNodeId = 0; // bu node gelmeye sebep olan node'un id'si
     int cevsinir = mvNodeLoop.size();
     bool dugumvar = false;
 
-    //eðer eleman sayýsý node sayýsýna eþitse kontrol etmeye en baþtan baþla
+    //eÄŸer eleman sayÄ±sÄ± node sayÄ±sÄ±na eÅŸitse kontrol etmeye en baÅŸtan baÅŸla
     if (mvNodeLoop.size() == mvNode.size())
     {
         miLoop = mvNodeLoop.begin();
@@ -591,10 +591,10 @@ CircuitWindow::addLoopToMesh()
 
     while(miLoop!=mvNodeLoop.end())
     {
-        ust = miLoop->second;   // map'in ikinci elemaný loop denemelerini tutan int vector
-        if (ust.size() < 2)     // 2'den azsa loop eleman sayýsý çevrim olamaz
+        ust = miLoop->second;   // map'in ikinci elemanÄ± loop denemelerini tutan int vector
+        if (ust.size() < 2)     // 2'den azsa loop eleman sayÄ±sÄ± Ã§evrim olamaz
             prevNodeId = 0;
-        else                    // deðilse kendisinden öncekiyle birlikte komþu bulma fonk'una yolla
+        else                    // deÄŸilse kendisinden Ã¶ncekiyle birlikte komÅŸu bulma fonk'una yolla
             prevNodeId = ust.at(ust.size() - 2);
         TmvInt alt = getConnectedNodeId(ust.back(), prevNodeId);
         for (i = alt.begin(); i != alt.end(); i++)
@@ -603,7 +603,7 @@ CircuitWindow::addLoopToMesh()
             TmiInt sin = ust.begin();
             sin++;
             for(teki = sin; teki != ust.end(); teki++)
-              if (*teki == *i ) kiv = true;     //kývrým bulununca yaz : ayný node tekrar ediyorsa ilmek olamaz
+              if (*teki == *i ) kiv = true;     //kÄ±vrÄ±m bulununca yaz : aynÄ± node tekrar ediyorsa ilmek olamaz
             if (!kiv)
             {
                 if (( *i) == ust.front())       //ilmek bulununca yaz  ilk == son
@@ -647,10 +647,10 @@ CircuitWindow::makeMatris()
 {
     if (mvMesh.size() == 0)
     {
-//      mSb->addRow("ilmek bulunamadý.");
+//      mSb->addRow("ilmek bulunamadÄ±.");
         turnoffAllLamp();
     }
-    else if (mvMesh.size() == 1)  // lineer denklem çözülünce gerek kalmayabilir
+    else if (mvMesh.size() == 1)  // lineer denklem Ã§Ã¶zÃ¼lÃ¼nce gerek kalmayabilir
     {
 //        mSb->addRow("tek denklem");
         miMesh = mvMesh.begin();
@@ -662,7 +662,7 @@ CircuitWindow::makeMatris()
         for (ni = nodes.begin() ; ni != nodes.end(); ni++)
         {
             //ni sadece nodun id'si
-            //node'un kendisini bulup döndürecek fonksiyon yaz
+            //node'un kendisini bulup dÃ¶ndÃ¼recek fonksiyon yaz
             Node *niNode = findNode((*ni));
             Component *own;
             if (niNode->getOwner())
@@ -690,7 +690,7 @@ CircuitWindow::makeMatris()
             for (ni = nodes.begin() ; ni != nodes.end(); ni++)
             {
                 //ni sadece nodun id'si
-                //node'un kendisini bulup döndürecek fonksiyon yaz
+                //node'un kendisini bulup dÃ¶ndÃ¼recek fonksiyon yaz
                 Node *niNode = findNode((*ni));
                 Component *own;
                 if (niNode->getOwner())
@@ -708,7 +708,7 @@ CircuitWindow::makeMatris()
             for (ni = nodes.begin() ; ni != nodes.end(); ni++)
             {
                 //ni sadece nodun id'si
-                //node'un kendisini bulup döndürecek fonksiyon yaz
+                //node'un kendisini bulup dÃ¶ndÃ¼recek fonksiyon yaz
                 Node *niNode = findNode((*ni));
                 Component *own;
                 if (niNode->getOwner())
@@ -732,11 +732,11 @@ CircuitWindow::makeMatris()
              miMesh != mvMesh.end();
              miMesh++)
         {
-            TmvComponentMatris resistanceCompMatris(mvMesh.size());  //bulunan ilmek sayýsý kadar elemaný olsun
-            TmvComponentMatris batteryCompMatris(1);                 //tek sutunlu olacakmýþ!!!
-                                                                     //dirençlerin adresini saklamak için
-            TmvInt nodes = miMesh->second;                           //ilmeði oluþturan node'lar
-            TmvComponent resistanceComp;                             //ilmekte bulunan direnç
+            TmvComponentMatris resistanceCompMatris(mvMesh.size());  //bulunan ilmek sayÄ±sÄ± kadar elemanÄ± olsun
+            TmvComponentMatris batteryCompMatris(1);                 //tek sutunlu olacakmÄ±ÅŸ!!!
+                                                                     //direnÃ§lerin adresini saklamak iÃ§in
+            TmvInt nodes = miMesh->second;                           //ilmeÄŸi oluÅŸturan node'lar
+            TmvComponent resistanceComp;                             //ilmekte bulunan direnÃ§
             TmvComponent batteryComp;                                //ilmekte bulunan pil
 
             for (TmiInt ni = nodes.begin() ;
@@ -744,7 +744,7 @@ CircuitWindow::makeMatris()
                  ni++)
             {
                 Node *niNode = findNode((*ni));                       //ilmekte id'si verilen nodun adresini bul
-                Component *own = niNode->getOwner();                  //node'un sahibi olan component için
+                Component *own = niNode->getOwner();                  //node'un sahibi olan component iÃ§in
                 if (own)                                              //node'un sahibi varsa
                 {
                     if (isBattery(own))
@@ -777,10 +777,10 @@ CircuitWindow::makeMatris()
             dugsirasi++;
         }
 
-        // matrisin diðer sütunlarýný ekle
+        // matrisin diÄŸer sÃ¼tunlarÄ±nÄ± ekle
         for(TmatrisIter matIt = resistanceCompDeter.begin();
              matIt != resistanceCompDeter.end();
-             matIt++)  // ana matris döngüsü
+             matIt++)  // ana matris dÃ¶ngÃ¼sÃ¼
         {
             int satir = matIt->first;
             TmvComponentMatris matSat = matIt->second;
@@ -810,7 +810,7 @@ CircuitWindow::makeMatris()
                 }
                 if (str1 != stn1)
                 {
-//    mSb->addRow(" >> eþit deðil>>> str1: " +toString(str1)+ " :stn1 "+toString(stn1));
+//    mSb->addRow(" >> eÅŸit deÄŸil>>> str1: " +toString(str1)+ " :stn1 "+toString(stn1));
 
                     deger *= ara;
                 }
@@ -861,7 +861,7 @@ gsl_linalg_LU_solve (&r.matrix, p, &v.vector, x);
 //gsl_vector_fprintf (stdout, x, "%g");
 for(int i=0; i<resistanceMatris.size(); i++)
 {
-       mSb->addRow("akým =" +toString(gsl_vector_get (x, i)));
+       mSb->addRow("akÄ±m =" +toString(gsl_vector_get (x, i)));
 }
 gsl_permutation_free (p);
 }
@@ -1129,7 +1129,7 @@ if (isVisible())
 {
     trashMeshMem();
     findConnectedNodeId();
-    //mvNodeLoop için node id'lerini ekle: kontrol için hazýrlýk
+    //mvNodeLoop iÃ§in node id'lerini ekle: kontrol iÃ§in hazÄ±rlÄ±k
     for (TmiNode nn = mvNode.begin(); nn<mvNode.end() ; nn++)
     {
         mvNodeLoop[mvNodeLoop.size()].push_back((*nn)->getId());
@@ -1142,7 +1142,7 @@ if (isVisible())
     showMesh();
     makeMatris();
 
-    logger->log("************ analiz yapýldý ****************");
+    logger->log("************ analiz yapÄ±ldÄ± ****************");
 }
 }
 
@@ -1211,7 +1211,7 @@ CircuitWindow::action(const gcn::ActionEvent &event)
     {
         devreAnaliz();
     }
-    else if (event.getId() == "close")  //kapanýrken mousepresse ile ayný olmalý
+    else if (event.getId() == "close")  //kapanÄ±rken mousepresse ile aynÄ± olmalÄ±
     {
         setVisible(false);
         deleteWidgets();
@@ -1287,7 +1287,7 @@ CircuitWindow::action(const gcn::ActionEvent &event)
 //            creatorNode->clearConnect();
             mvNode.push_back(tempNode);
             add(tempNode);
-//yukarda yapýldý
+//yukarda yapÄ±ldÄ±
 //            tempNode->nodeConnect(creatorNode);
 //            creatorNode->nodeConnect(tempNode);
 
@@ -1376,7 +1376,7 @@ CircuitWindow::action(const gcn::ActionEvent &event)
         tempComponent->setItemId(transItemId);
         tempComponent->setMovable(1);
         tempComponent->setSelectable(1);
-// art yok!! yerine biþey bul
+// art yok!! yerine biÅŸey bul
 //        tempComponent->setValue(tempItem.getArt());
         tempComponent->setBounce(tempComponent->getX(),tempComponent->getY(),40,40);
 
@@ -1591,7 +1591,7 @@ CircuitWindow::circuitFromXML(std::string mDoc)
             int c_firstn=XML::getProperty(node, "firstn", 0);
             int c_secondn=XML::getProperty(node, "secondn", 0);
             bool found=false;
-logger->log("baðlantý id : %d", c_id);
+logger->log("baÄŸlantÄ± id : %d", c_id);
 
         if (c_firstn>0)
             for(miComponent=mvComponent.begin(); miComponent<mvComponent.end(); miComponent++)
@@ -1746,7 +1746,7 @@ mRefresh = true;
 int
 CircuitWindow::findEmptyId()
 {
-    // kullanýlmayan bir nod id'si bul
+    // kullanÄ±lmayan bir nod id'si bul
     int sonnode = 0;
     bool bulundu;
     do{
@@ -1853,51 +1853,51 @@ std::string CircuitWindow::toTurkish(std::string str)
     std::string temp = str;
     for(unsigned int pos = 0; pos<str.length(); pos++)
     {
-        if ((str.at(pos) == 'Ã') && (str.at(pos+1)=='¼')) temp = str.replace(pos, 2, "ü");
-        if ((str.at(pos) == 'Å') && (str.at(pos+1)=='Ÿ')) temp = str.replace(pos, 2, "þ");
-        if ((str.at(pos) == 'Ä') && (str.at(pos+1)=='Ÿ')) temp = str.replace(pos, 2, "ð");
-        if ((str.at(pos) == 'Ä') && (str.at(pos+1)=='±')) temp = str.replace(pos, 2, "ý");
-        if ((str.at(pos) == 'Ã') && (str.at(pos+1)=='§')) temp = str.replace(pos, 2, "ç");
-        if ((str.at(pos) == 'Ã') && (str.at(pos+1)=='¶')) temp = str.replace(pos, 2, "ö");
+        if ((str.at(pos) == 'Ãƒ') && (str.at(pos+1)=='Â¼')) temp = str.replace(pos, 2, "Ã¼");
+        if ((str.at(pos) == 'Ã…') && (str.at(pos+1)=='Å¸')) temp = str.replace(pos, 2, "ÅŸ");
+        if ((str.at(pos) == 'Ã„') && (str.at(pos+1)=='Å¸')) temp = str.replace(pos, 2, "ÄŸ");
+        if ((str.at(pos) == 'Ã„') && (str.at(pos+1)=='Â±')) temp = str.replace(pos, 2, "Ä±");
+        if ((str.at(pos) == 'Ãƒ') && (str.at(pos+1)=='Â§')) temp = str.replace(pos, 2, "Ã§");
+        if ((str.at(pos) == 'Ãƒ') && (str.at(pos+1)=='Â¶')) temp = str.replace(pos, 2, "Ã¶");
 
-        if ((str.at(pos) == 'Ã') && (str.at(pos+1)=='œ')) temp = str.replace(pos, 2, "Ü");
-        if ((str.at(pos) == 'Ä') && (str.at(pos+1)=='ž')) temp = str.replace(pos, 2, "Ð");
-        if ((str.at(pos) == 'Ä') && (str.at(pos+1)=='°')) temp = str.replace(pos, 2, "Ý");
-        if ((str.at(pos) == 'Å') && (str.at(pos+1)=='ž')) temp = str.replace(pos, 2, "Þ");
-        if ((str.at(pos) == 'Ã') && (str.at(pos+1)=='‡')) temp = str.replace(pos, 2, "Ç");
-        if ((str.at(pos) == 'Ã') && (str.at(pos+1)=='–')) temp = str.replace(pos, 2, "Ö");
+        if ((str.at(pos) == 'Ãƒ') && (str.at(pos+1)=='Å“')) temp = str.replace(pos, 2, "Ãœ");
+        if ((str.at(pos) == 'Ã„') && (str.at(pos+1)=='Âž')) temp = str.replace(pos, 2, "Äž");
+        if ((str.at(pos) == 'Ã„') && (str.at(pos+1)=='Â°')) temp = str.replace(pos, 2, "Ä°");
+        if ((str.at(pos) == 'Ã…') && (str.at(pos+1)=='Âž')) temp = str.replace(pos, 2, "Åž");
+        if ((str.at(pos) == 'Ãƒ') && (str.at(pos+1)=='â€¡')) temp = str.replace(pos, 2, "Ã‡");
+        if ((str.at(pos) == 'Ãƒ') && (str.at(pos+1)=='â€“')) temp = str.replace(pos, 2, "Ã–");
 
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='0')) temp = str.replace(pos, 3, "á");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='1')) temp = str.replace(pos, 3, "Á");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='2')) temp = str.replace(pos, 3, "é");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='3')) temp = str.replace(pos, 3, "É");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='4')) temp = str.replace(pos, 3, "í");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='5')) temp = str.replace(pos, 3, "Í");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='6')) temp = str.replace(pos, 3, "ó");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='7')) temp = str.replace(pos, 3, "Ó");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='8')) temp = str.replace(pos, 3, "ú");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='9')) temp = str.replace(pos, 3, "Ú");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='0')) temp = str.replace(pos, 3, "Ã¡");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='1')) temp = str.replace(pos, 3, "Ã");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='2')) temp = str.replace(pos, 3, "Ã©");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='3')) temp = str.replace(pos, 3, "Ã‰");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='4')) temp = str.replace(pos, 3, "Ã­");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='5')) temp = str.replace(pos, 3, "Ã");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='6')) temp = str.replace(pos, 3, "Ã³");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='7')) temp = str.replace(pos, 3, "Ã“");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='8')) temp = str.replace(pos, 3, "Ãº");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='9')) temp = str.replace(pos, 3, "Ãš");
 
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='0')) temp = str.replace(pos, 3, "ë");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='1')) temp = str.replace(pos, 3, "¥");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='2')) temp = str.replace(pos, 3, "£");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='3')) temp = str.replace(pos, 3, "¢");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='4')) temp = str.replace(pos, 3, "¡");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='5')) temp = str.replace(pos, 3, "¿");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='6')) temp = str.replace(pos, 3, "à");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='7')) temp = str.replace(pos, 3, "ã");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='8')) temp = str.replace(pos, 3, "õ");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='9')) temp = str.replace(pos, 3, "ê");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='0')) temp = str.replace(pos, 3, "Ã«");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='1')) temp = str.replace(pos, 3, "Â¥");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='2')) temp = str.replace(pos, 3, "Â£");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='3')) temp = str.replace(pos, 3, "Â¢");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='4')) temp = str.replace(pos, 3, "Â¡");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='5')) temp = str.replace(pos, 3, "Â¿");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='6')) temp = str.replace(pos, 3, "Ã ");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='7')) temp = str.replace(pos, 3, "Ã£");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='8')) temp = str.replace(pos, 3, "Ãµ");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='9')) temp = str.replace(pos, 3, "Ãª");
 
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='1')) temp = str.replace(pos, 3, "ñ");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='2')) temp = str.replace(pos, 3, "Ñ");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='3')) temp = str.replace(pos, 3, "ä");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='4')) temp = str.replace(pos, 3, "Ä");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='5')) temp = str.replace(pos, 3, "ß");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='6')) temp = str.replace(pos, 3, "ø");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='7')) temp = str.replace(pos, 3, "è");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='8')) temp = str.replace(pos, 3, "È");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='9')) temp = str.replace(pos, 3, "å");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='1')) temp = str.replace(pos, 3, "Ã±");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='2')) temp = str.replace(pos, 3, "Ã‘");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='3')) temp = str.replace(pos, 3, "Ã¤");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='4')) temp = str.replace(pos, 3, "Ã„");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='5')) temp = str.replace(pos, 3, "ÃŸ");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='6')) temp = str.replace(pos, 3, "Ã¸");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='7')) temp = str.replace(pos, 3, "Ã¨");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='8')) temp = str.replace(pos, 3, "Ãˆ");
+        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='9')) temp = str.replace(pos, 3, "Ã¥");
 
     }
    return temp;

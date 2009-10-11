@@ -54,11 +54,11 @@ BitButton::BitButton(const std::string& caption,const std::string& hint,
     {
         // Load the skin
         ResourceManager *resman = ResourceManager::getInstance();
-        if (resman->exists("graphics/elektrik/"+caption))
-            logger->log ("resim vardý ama yükledim");
+
         Image *temp = resman->getImage("graphics/elektrik/"+caption);
-        mImageSet = resman->getImageSet("graphics/elektrik/"+caption,temp->getWidth()/4,temp->getHeight());
         resman->release(temp);
+
+        mImageSet = resman->getImageSet("graphics/elektrik/"+caption,temp->getWidth()/4,temp->getHeight());
         setSize(temp->getWidth()/4,temp->getHeight());
     }
 

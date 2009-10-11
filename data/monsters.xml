@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <monsters>
 
-    <monster id="0" name="Maggot" targetCursor="small">
-        <sprite>monster-maggot.xml</sprite>
+    <monster id="0" name="Afacan Kırmızı Robot" targetCursor="small">
+        <sprite>elektroadd/robot_afacan_kirmizi.xml</sprite>
         <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
         <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
         <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
@@ -48,8 +48,8 @@
             />
     </monster>
 
-    <monster id="1" name="Scorpion">
-        <sprite>monster-scorpion.xml|#4d422d,826242,d8c282,ffffff</sprite>
+    <monster id="1" name="Afacan Mavi Robot">
+        <sprite>elektroadd/robot_afacan_mavi.xml|#4d422d,826242,d8c282,ffffff</sprite>
         <sound event="hit">monsters/scorpion/scorpion-hit1.ogg</sound>
         <sound event="hit">monsters/scorpion/scorpion-hit2.ogg</sound>
         <sound event="hit">monsters/scorpion/scorpion-hit3.ogg</sound>

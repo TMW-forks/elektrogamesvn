@@ -56,7 +56,6 @@ TestDialog::TestDialog():
     mStartBox = new BrowserBox();
     mStartBox->setOpaque(false);
 
-
     mStartScroll = new ScrollArea(mStartBox);
     mStartScroll->setHorizontalScrollPolicy(gcn::ScrollArea::SHOW_NEVER);
     mStartScroll->setVerticalScrollPolicy(gcn::ScrollArea::SHOW_NEVER);

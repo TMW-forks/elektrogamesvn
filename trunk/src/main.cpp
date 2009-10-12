@@ -1425,12 +1425,6 @@ int main(int argc, char *argv[])
 /**
     Þifreyi geç
 */
-// user þifresini burada belirtin
-<<<<<<< .mine
-//        loginData.password = "123456";
-=======
-        //loginData.password = "123456";
->>>>>>> .r15
                     if (!loginData.password.empty())
                     {
                         loginData.registerLogin = false;

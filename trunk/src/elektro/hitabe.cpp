@@ -45,12 +45,12 @@ extern int current_npc;
 Hitabe::Hitabe():
     Window("Uclu Set")
 {
-    setWindowName("Uclu Set");
+    setWindowName("Üçlü Set");
     setCloseButton(false);
 
     setResizable(false);
 //!
-//i�e yaram�yor
+//işe yaramıyor
 //    setDefaultSize(10, 10, 718, 410);
 
     ResourceManager *resman = ResourceManager::getInstance();

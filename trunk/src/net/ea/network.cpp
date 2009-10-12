@@ -302,9 +302,9 @@ MessageIn Network::getNextMessage()
     if (len == -1)
         len = readWord(2);
 
-#ifdef DEBUG
-    logger->log("Received packet 0x%x of length %d", msgId, len);
-#endif
+//#ifdef DEBUG
+//    logger->log("Received packet 0x%x of length %d", msgId, len);
+//#endif
 
     MessageIn msg(mInBuffer, len);
     SDL_mutexV(mMutex);

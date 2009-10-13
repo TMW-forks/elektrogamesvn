@@ -15,15 +15,15 @@
 #include "resources/iteminfo.h"
 #include "resources/itemdb.h"
 
-#include "node.h"
-#include "component.h"
-#include "resistance.h"
-#include "diode.h"
-#include "lamp.h"
-#include "switch.h"
-#include "battery.h"
-#include "wire.h"
-#include "typedef.h"
+#include "./node.h"
+#include "./component.h"
+#include "./resistance.h"
+#include "./diode.h"
+#include "./lamp.h"
+#include "./switch.h"
+#include "./battery.h"
+#include "./wire.h"
+#include "./typedef.h"
 
 class BrowserBox;
 class ScrollArea;

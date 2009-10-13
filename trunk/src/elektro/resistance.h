@@ -15,6 +15,7 @@ class Resistance : public Component
         Resistance(gcn::ActionListener *listener, Node *n1, Node *n2);
         virtual ~Resistance();
         void draw(gcn::Graphics *graphics);
+        void nodesCalc();
     protected:
     private:
 };

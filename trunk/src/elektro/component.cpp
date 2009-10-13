@@ -34,7 +34,7 @@ Component::Component(gcn::ActionListener *listener, Node *n1, Node *n2):
 
     ResourceManager *resman = ResourceManager::getInstance();
     ImageSet *mHalkaImages;
-    mHalkaImages = resman->getImageSet("graphics/gui/target-cursor-blue.png", 44, 35);
+    mHalkaImages = resman->getImageSet("graphics/gui/target-cursor-blue-m.png", 44, 35);
     Animation *mHalkaAnime = new Animation();
     for (unsigned int i = 0; i < mHalkaImages->size(); ++i)
          mHalkaAnime->addFrame(mHalkaImages->get(i), 75, 0, 0);
@@ -443,3 +443,8 @@ void Component::mouseExited(gcn::MouseEvent &event)
 {
      gui->setCursorType(0);
 }
+
+ void Component::action(const gcn::ActionEvent &event)
+ {
+
+ }

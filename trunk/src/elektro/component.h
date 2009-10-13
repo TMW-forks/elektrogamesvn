@@ -126,17 +126,19 @@ class Component : public gcn::Window, public gcn::ActionListener
 
         void setActionListener (gcn::ActionListener *listener);
 
-        virtual void draw(gcn::Graphics *graphics);
+        void action(const gcn::ActionEvent &event);
 
-        virtual void mousePressed(gcn::MouseEvent &event);
+        void draw(gcn::Graphics *graphics);
 
-        virtual void mouseDragged(gcn::MouseEvent &event);
+        void mousePressed(gcn::MouseEvent &event);
 
-        virtual void mouseReleased(gcn::MouseEvent &event);
+        void mouseDragged(gcn::MouseEvent &event);
 
-        virtual void mouseEntered(gcn::MouseEvent &event);
+        void mouseReleased(gcn::MouseEvent &event);
 
-        virtual void mouseExited(gcn::MouseEvent &event);
+        void mouseEntered(gcn::MouseEvent &event);
+
+        void mouseExited(gcn::MouseEvent &event);
 
         void setAngel(int a);
 
@@ -145,7 +147,7 @@ class Component : public gcn::Window, public gcn::ActionListener
         /**
          * Nodelarýn yerini hesapla
          */
-        virtual void nodesCalc();
+        void nodesCalc();
 
         void setValue(float v);
 

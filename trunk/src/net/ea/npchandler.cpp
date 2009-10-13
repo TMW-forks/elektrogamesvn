@@ -42,6 +42,7 @@
 
 #include "elektro/hitabe.h"
 #include "elektro/testwindow.h"
+#include "elektro/circuitwindow.h"
 
 //NPC id:
 //0-13 test
@@ -52,6 +53,7 @@
 
 Net::NpcHandler *npcHandler;
 extern TestDialog *testDialog;
+extern CircuitWindow *circuitWindow;
 namespace EAthena {
 
 std::string temp;
@@ -136,14 +138,19 @@ void NpcHandler::handleMessage(MessageIn &msg)
             {
                 if (being->getJob()==143)
                 {
-                    npcDialog->setVisible(false);
                     Hitabe *hitabe = new Hitabe();
                     hitabe->setVisible(true);
-                    //npcText.str("");
+                    npcText.str("");
                 }
             }
             else if (being->getJob()>=156)
             {
+                circuitWindow->setVisible(true);
+                circuitWindow->requestMoveToTop();
+                 if (temp=="</circuit>"){
+                    circuitWindow->circuitFromXML(npcText.str());
+                    npcText.str("");
+                 }
             }
 
             break;

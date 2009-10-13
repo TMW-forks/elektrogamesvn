@@ -102,7 +102,6 @@ void NpcHandler::handleMessage(MessageIn &msg)
             msg.readInt16();  // length
             current_npc = msg.readInt32();
             being = beingManager->findBeing(current_npc);
-            localChatTab->chatLog("22 Current NPC job "+toString(being->getJob()));
             npcDialog->setNpc(current_npc);
             temp = msg.readString(msg.getLength() - 8);
 //            npcDialog->addText(temp);
@@ -154,7 +153,6 @@ void NpcHandler::handleMessage(MessageIn &msg)
             // If we're talking to that NPC, show the close button
 
             being = beingManager->findBeing(current_npc);
-            localChatTab->chatLog("77 Current NPC job "+toString(being->getJob()));
 
             if (id == current_npc)
             {
@@ -170,8 +168,6 @@ void NpcHandler::handleMessage(MessageIn &msg)
             id = msg.readInt32();
             // If we're talking to that NPC, show the next button
             being = beingManager->findBeing(current_npc);
-            localChatTab->chatLog("44 Current NPC job "+toString(being->getJob()));
-
             if (id == current_npc)
             {
                 npcDialog->showNextButton();

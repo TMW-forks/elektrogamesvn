@@ -62,10 +62,13 @@ TestDialog::TestDialog():
     mStartScroll->setVisible(false);
     mStartScroll->setWidth(250);
     mStartScroll->setHeight(200);
-    mStartScroll->setY(50);
+    mStartScroll->setY(10);
+    mStartScroll->setX(50);
 
 
     mFinishText = new BrowserBox();
+    mFinishText->setOpaque(false);
+    mFinishText->addRow("MERHABA");
     mFinishScroll = new ScrollArea(mFinishText);
     mFinishScroll->setWidth(250);
     mFinishScroll->setHeight(285);
@@ -333,6 +336,7 @@ TestDialog::start()
 
             mStartScroll->setX((getWidth()-mStartScroll->getWidth())/2);
             mStartScroll->setVisible(true);
+            mStartBox->setVisible(true);
 
             mStartOk->setPosition(getWidth()/2-mStartOk->getWidth()-5,
                                   mStartScroll->getY()+mStartScroll->getHeight()+20);
@@ -468,6 +472,7 @@ TestDialog::showFinishMessage()
     setWidth (400);
     setHeight(430);
     setPosition( (1024 - getWidth() ) /2 , (768 - getHeight()) / 2);
+    mFinishText->setVisible(true);
     mFinishScroll->setVisible(true);
     mFinishClose->setX((getWidth() - mFinishClose->getWidth())/2);
     mFinishClose->setY(getHeight()- mFinishClose->getHeight() - 80);
@@ -794,6 +799,7 @@ void
 TestDialog::parse()
 {
     ResourceManager *resman = ResourceManager::getInstance();
+    logger->log(mDoc.c_str());
     mxmlDoc=xmlParseMemory(mDoc.c_str(),mDoc.size());
     if (!mxmlDoc)
     {
@@ -1027,14 +1033,26 @@ TestDialog::parse()
         else if (xmlStrEqual(node->name, BAD_CAST "report"))
         {
             testState = SHOW_RESULT_STATE;
-            int mDogru = XML::getProperty(node, "ok", 0);
-            std::string mmMesaj = XML::getProperty(node, "mesaj", "aa");
+            std::string mmMesaj;
+            int mDogru = XML::getProperty(node, "numcorrectanswer", 0);
+            int mYanlis = XML::getProperty(node, "numwronganswer", 0);
+            int mBos = XML::getProperty(node, "numblankanswer", 0);
+        logger->log("dogru : %d, yanlis:%d", mDogru,mYanlis);
+            for_each_xml_child_node(subnode, node)
+            {
+                if (xmlStrEqual(subnode->name, BAD_CAST "reportmesaj"))
+                {
+                    mmMesaj = XML::getProperty(node, "mesaj", "");
+                }
+            }
             hideEverything();
             mFinishScroll->setX((getWidth()-mFinishScroll->getWidth())/2);
             mFinishText->clearRows();
             mFinishText->addRow("    ##1      -= Test BİTTİ! =-");
             mFinishText->addRow("##2----------------------------------");
-            mFinishText->addRow("Doğru Cevap:"+toString(mDogru));
+            mFinishText->addRow("Doğru Yanıt :"+toString(mDogru));
+            mFinishText->addRow("Yanlış Yanıt:"+toString(mYanlis));
+            mFinishText->addRow("Boş Yanıt   :"+toString(mBos));
             mFinishText->addRow("Mesaj      :"+mmMesaj);
             mFinishText->addRow("##2----------------------------------");
             mFinishText->addRow("##3   SN     Doğru C.    Sizin C.   ");
@@ -1049,7 +1067,7 @@ TestDialog::parse()
                     ss<<"   ##8"<< qn;
                     if (qn<10) ss << " ";
                     ss<<"         ##9";
-                    ss<<sh.at(XML::getProperty(subnode, "trueanswer", 0));
+                    ss<<sh.at(XML::getProperty(subnode, "correctanswer", 0));
                     ss<<"           ##6";
                     ss<<sh.at(XML::getProperty(subnode, "studentanswer", 0));
                     mFinishText->addRow(ss.str());

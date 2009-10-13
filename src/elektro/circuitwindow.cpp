@@ -36,6 +36,8 @@
 extern int current_npc;
 extern std::string globalHint;
 
+class Resistance;
+
 CircuitWindow::CircuitWindow():
     Window("Devre Penceresi"),
     collisionCheck(false),
@@ -524,6 +526,7 @@ CircuitWindow::winnowMesh()
 {
     logger->log("ilmek olmayanları temizle");
     //birbirinin aynısı olanları temizle
+    if (mvMesh.size() == 0) return;
     miMesh=mvMesh.begin();
     while(miMesh != mvMesh.end())
     {
@@ -632,6 +635,7 @@ CircuitWindow::findNode(int id)
 void
 CircuitWindow::turnoffAllLamp()
 {
+    if (mvComponent.size() == 0) return;
     for ( miComponent = mvComponent.begin();
           miComponent != mvComponent.end();
           miComponent++)
@@ -645,13 +649,18 @@ CircuitWindow::turnoffAllLamp()
 void
 CircuitWindow::makeMatris()
 {
+    logger->log("________________ 4 _____________________");
+
     if (mvMesh.size() == 0)
     {
 //      mSb->addRow("ilmek bulunamadı.");
         turnoffAllLamp();
+        return;
     }
     else if (mvMesh.size() == 1)  // lineer denklem çözülünce gerek kalmayabilir
     {
+        logger->log("________________ 5 _____________________");
+
 //        mSb->addRow("tek denklem");
         miMesh = mvMesh.begin();
         TmvInt nodes =miMesh->second;
@@ -725,6 +734,8 @@ CircuitWindow::makeMatris()
     }
     else
     {
+        logger->log("________________ 6 _____________________");
+
 //        mSb->addRow("birden fazla denklem");
         int dugsirasi = 0;
 
@@ -1138,10 +1149,12 @@ if (isVisible())
 //    showConnectedNodeId();
 //    showNodeLoop();
 //    showMesh();
+logger->log("________________ 1 _____________________");
     winnowMesh();
+logger->log("________________ 2 _____________________");
     showMesh();
+logger->log("________________ 3 _____________________");
     makeMatris();
-
     logger->log("************ analiz yapıldı ****************");
 }
 }
@@ -1359,14 +1372,14 @@ CircuitWindow::action(const gcn::ActionEvent &event)
 //        chatWindow->chatLog(tempType,BY_SERVER);
         Component *tempComponent;
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//        if (tempType=="Direnc") tempComponent = new Resistance (this, tempNode1, tempNode2);
-//        else if (tempType=="Lamba") tempComponent = new Lamp (this, tempNode1, tempNode2);
-//        else if (tempType=="Yesil Led") tempComponent = new Diode (this, tempNode1, tempNode2);
-//        else if (tempType=="Kirmizi Led") tempComponent = new Diode (this, tempNode1, tempNode2);
-//        else if (tempType=="Beyaz Led") tempComponent = new Diode (this, tempNode1, tempNode2);
-//        else if (tempType=="Sari Led") tempComponent = new Diode (this, tempNode1, tempNode2);
-//        else if (tempType=="Uretec") tempComponent = new Battery (this, tempNode1, tempNode2);
-//        else if (tempType=="Anahtar") tempComponent = new Switch (this, tempNode1, tempNode2);
+        if (tempType=="Direnc") tempComponent = new Resistance (this, tempNode1, tempNode2);
+        else if (tempType=="Lamba") tempComponent = new Lamp (this, tempNode1, tempNode2);
+        else if (tempType=="Yesil Led") tempComponent = new Diode (this, tempNode1, tempNode2);
+        else if (tempType=="Kirmizi Led") tempComponent = new Diode (this, tempNode1, tempNode2);
+        else if (tempType=="Beyaz Led") tempComponent = new Diode (this, tempNode1, tempNode2);
+        else if (tempType=="Sari Led") tempComponent = new Diode (this, tempNode1, tempNode2);
+        else if (tempType=="Uretec") tempComponent = new Battery (this, tempNode1, tempNode2);
+        else if (tempType=="Anahtar") tempComponent = new Switch (this, tempNode1, tempNode2);
 
         tempComponent->setId(999);
         tempComponent->setX(120);//+QALeftPad);
@@ -1454,19 +1467,22 @@ CircuitWindow::moveComponents(int x, int y)
 void
 CircuitWindow::circuitFromXML(std::string mDoc)
 {
+    logger->log("________________ a _____________________");
     if (mDoc=="") return;
+logger->log("________________ a1 _____________________");
     xmlDocPtr mxmlDoc;
-
     mxmlDoc=  xmlParseMemory(mDoc.c_str(), mDoc.size());
+logger->log("________________ a2 _____________________");
     if (!mxmlDoc)
     {
+        logger->log("________________ a3 _____________________");
         logger->error("circuitwindow.cpp: Error while parsing item database (from npc.xml)!"+mDoc);
     }
-
+logger->log("________________ b _____________________");
     xmlNodePtr rootNode = xmlDocGetRootElement(mxmlDoc);
-    if (!rootNode || !xmlStrEqual(rootNode->name, BAD_CAST "soru"))
+    if (!rootNode || !xmlStrEqual(rootNode->name, BAD_CAST "circuit"))
     {
-        logger->error("circuitwindow.cpp: from npc.xml is not a valid database file!"+mDoc);
+        logger->error("circuitwindow.cpp: rootNode not circuit!"+mDoc);
     }
    for_each_xml_child_node(node, rootNode)
     {
@@ -1490,6 +1506,7 @@ CircuitWindow::circuitFromXML(std::string mDoc)
         }
         else if (xmlStrEqual(node->name, BAD_CAST "node"))
         {
+            logger->log("________________ c _____________________");
                 Node *tempNode = new Node("com_node_btn.png","Hint", "com_node",this);
                 tempNode->setId(XML::getProperty(node, "id", 0));
                 tempNode->setX(XML::getProperty(node, "x", 0));//+QALeftPad);
@@ -1507,6 +1524,7 @@ CircuitWindow::circuitFromXML(std::string mDoc)
         }
         else if (xmlStrEqual(node->name, BAD_CAST "component"))
         {
+            logger->log("________________ d _____________________");
             std::string tempType = XML::getProperty(node, "type", "");
 
             Node *tempNode1 = new Node("com_node_btn.png","Hint", "com_node",this);
@@ -1523,7 +1541,7 @@ CircuitWindow::circuitFromXML(std::string mDoc)
             tempNode1->setFromLink(XML::getProperty(node, "fromlink1", 1));
             mvNode.push_back(tempNode1);
             add(tempNode1);
-
+logger->log("________________ e _____________________");
             Node *tempNode2 = new Node("com_node_btn.png","Hint", "com_node",this);
             tempNode2->setId(findEmptyId());
             tempNode2->setX(20);//+QALeftPad);
@@ -1541,16 +1559,16 @@ CircuitWindow::circuitFromXML(std::string mDoc)
 
 //            tempNode1->nodeConnect(tempNode2);
 //            tempNode2->nodeConnect(tempNode1);
-
+logger->log("________________ f _____________________");
             Component *tempComponent;
 //!!!!!!!!!!!!!!!!!!!!!
-//            if (tempType=="resistance") tempComponent = new Resistance (this, tempNode1, tempNode2);
-//            else if (tempType=="lamp") tempComponent = new Lamp (this, tempNode1, tempNode2);
-//            else if (tempType=="diode") tempComponent = new Diode (this, tempNode1, tempNode2);
-//            else if (tempType=="battery") tempComponent = new Battery (this, tempNode1, tempNode2);
-//            else if (tempType=="switch") tempComponent = new Switch (this, tempNode1, tempNode2);
-//            else return;
-
+            if (tempType=="resistance") tempComponent = new Resistance (this, tempNode1, tempNode2);
+            else if (tempType=="lamp") tempComponent = new Lamp (this, tempNode1, tempNode2);
+            else if (tempType=="diode") tempComponent = new Diode (this, tempNode1, tempNode2);
+            else if (tempType=="battery") tempComponent = new Battery (this, tempNode1, tempNode2);
+            else if (tempType=="switch") tempComponent = new Switch (this, tempNode1, tempNode2);
+            else return;
+logger->log("________________ g _____________________");
             tempComponent->setId(XML::getProperty(node, "id", 0));
             tempComponent->setX(XML::getProperty(node, "x", 0));//+QALeftPad);
             tempComponent->setY(XML::getProperty(node, "y", 0));//+QATopPad);
@@ -1566,7 +1584,7 @@ CircuitWindow::circuitFromXML(std::string mDoc)
             tempNode1->setOwner (tempComponent);
             tempNode2->setOwner (tempComponent);
 
-
+logger->log("________________ h _____________________");
             mvComponent.push_back(tempComponent);
 
             ConnectList *c=new ConnectList;
@@ -1575,7 +1593,7 @@ CircuitWindow::circuitFromXML(std::string mDoc)
             c->active=true;
             c->draw=false;
             conList.push_back(c);
-
+logger->log("________________ j _____________________");
             add(tempComponent);
             for (miNode = mvNode.begin(); miNode < mvNode.end(); miNode++)
                 (*miNode)->requestMoveToTop();

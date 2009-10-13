@@ -24,3 +24,8 @@ void Resistance::draw(gcn::Graphics *graphics)
     g->drawImage(res->get(mAngel),4,4);
     Component::draw(graphics);
 }
+
+ void Resistance::nodesCalc()
+ {
+     Component::nodesCalc();
+ }

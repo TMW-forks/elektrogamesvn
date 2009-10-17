@@ -37,7 +37,8 @@ enum Status {
      PLUS,
      PLUS2};
 
-class Component : public gcn::Window, public gcn::ActionListener
+class Component : public gcn::Window,
+                  public gcn::ActionListener
 {
     public:
         /**

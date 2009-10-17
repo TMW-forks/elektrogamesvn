@@ -25,7 +25,7 @@ Component::Component(gcn::ActionListener *listener, Node *n1, Node *n2):
     mInterval =10;
     mDead = false;
     mDeletable =true;
-//    setBorderSize(0);
+    setFrameSize(0);
     setPadding(0);
     setTitleBarHeight(0);
     setMovable(true);
@@ -34,7 +34,7 @@ Component::Component(gcn::ActionListener *listener, Node *n1, Node *n2):
 
     ResourceManager *resman = ResourceManager::getInstance();
     ImageSet *mHalkaImages;
-    mHalkaImages = resman->getImageSet("graphics/gui/target-cursor-blue-m.png", 44, 35);
+    mHalkaImages = resman->getImageSet("graphics/gui/target-cursor-blue-s.png", 44, 35);
     Animation *mHalkaAnime = new Animation();
     for (unsigned int i = 0; i < mHalkaImages->size(); ++i)
          mHalkaAnime->addFrame(mHalkaImages->get(i), 75, 0, 0);
@@ -212,6 +212,7 @@ void Component::mousePressed(gcn::MouseEvent &event)
             mFirstY=event.getY();
         }
     }
+   logger->log("Mouse PRESSED");
    nodesCalc();
 
 }
@@ -239,6 +240,7 @@ void Component::mouseReleased(gcn::MouseEvent &event)
             setSelected(true);
         }
    }
+   logger->log("Mouse SERBEST");
    nodesCalc();
 }
 
@@ -254,15 +256,15 @@ void Component::mouseDragged(gcn::MouseEvent &event)
             if (event.getY()-mFirstY>mInterval)
             {
                 const std::string &actionEventId="com_rotate_y-";
-                setActionEventId(actionEventId);
                 mFirstY = event.getY();
+                setActionEventId(actionEventId);
 //                generateAction();
             }
             if (event.getY()-mFirstY<-mInterval)
             {
                 const std::string &actionEventId="com_rotate_y+";
-                setActionEventId(actionEventId);
                 mFirstY = event.getY();
+                setActionEventId(actionEventId);
 //                generateAction();
             }
         }
@@ -274,6 +276,7 @@ void Component::mouseDragged(gcn::MouseEvent &event)
             if (getX()>(circuitWindow->getWidth()-getW()-45)) setX(circuitWindow->getWidth()-45-getW());
             if (getY()>(circuitWindow->getHeight()-getH()-75)) setY(circuitWindow->getHeight()-getH()-75);
         }
+           logger->log("Mouse DRAGGED");
         nodesCalc();
 }
 
@@ -446,5 +449,5 @@ void Component::mouseExited(gcn::MouseEvent &event)
 
  void Component::action(const gcn::ActionEvent &event)
  {
-
+    logger->log(" ++++++++++++++++ ACT ++++++++++++++++++++");
  }

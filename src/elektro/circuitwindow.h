@@ -27,7 +27,8 @@
 
 class BrowserBox;
 class ScrollArea;
-class CircuitWindow : public Window, public gcn::ActionListener
+class CircuitWindow : public Window,
+                      public gcn::ActionListener
 {
     public:
         CircuitWindow();

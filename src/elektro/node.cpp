@@ -22,6 +22,7 @@ Node::Node(const std::string& caption,const std::string& hint,
     setDead(false);
     setMoving (false);
     setOwner(NULL);
+    setFrameSize(0);
 }
 
 Node::~Node()

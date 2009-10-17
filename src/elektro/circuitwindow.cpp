@@ -1214,6 +1214,7 @@ void CircuitWindow::deleteWidgets()
 void
 CircuitWindow::action(const gcn::ActionEvent &event)
 {
+    logger->log("CIRCUIT ACTION");
     mHint->setCaption(event.getId());
     mHint->adjustSize();
     if (event.getId() == "clear")
@@ -1580,6 +1581,9 @@ logger->log("________________ g _____________________");
             tempComponent->setValue(XML::getProperty(node, "value", 0));
             tempComponent->setDeletable(XML::getProperty(node, "deletable", 0));
             tempComponent->setBounce(tempComponent->getX(),tempComponent->getY(),40,40);
+            tempComponent->setSelectable(1);
+            tempComponent->setMovable(1);
+            tempComponent->setDeletable(1);
 
             tempNode1->setOwner (tempComponent);
             tempNode2->setOwner (tempComponent);

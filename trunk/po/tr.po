@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: themanaworld-devel@lists.sourceforge.net\n"
 "POT-Creation-Date: 2009-06-09 21:24+0200\n"
-"PO-Revision-Date: 2009-09-15 16:13+0200\n"
+"PO-Revision-Date: 2009-10-17 11:03+0200\n"
 "Last-Translator: Mehmet Emin KORKUSUZ <ekorkusuz@hotmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -1062,268 +1062,268 @@ msgstr "%s seni onların partisine katılman için davet etti."
 #: src/gui/partywindow.cpp:185
 #, c-format
 msgid "%s has invited you to join the %s party."
-msgstr ""
+msgstr "%s seni onların partisine katılman için davet etti."
 
 #: src/gui/partywindow.cpp:191
 msgid "Accept Party Invite"
-msgstr ""
+msgstr "Parti Davetini Kabul et"
 
 #: src/gui/partywindow.cpp:204
 #, c-format
 msgid "Accepted invite from %s."
-msgstr ""
+msgstr "%s den Davet Kabul Edildi"
 
 #: src/gui/partywindow.cpp:211
 #, c-format
 msgid "Rejected invite from %s."
-msgstr ""
+msgstr "%s den Davet Reddedildi"
 
 #: src/gui/popupmenu.cpp:77
 msgid "@@name|Add name to chat@@"
-msgstr ""
+msgstr "@@name|İsmi sohbete ekle@@"
 
 #: src/gui/popupmenu.cpp:89
 #, c-format
 msgid "@@trade|Trade With %s@@"
-msgstr ""
+msgstr "@@trade|%s ile Takas yap@@"
 
 #: src/gui/popupmenu.cpp:90
 #: src/gui/popupmenu.cpp:138
 #, c-format
 msgid "@@attack|Attack %s@@"
-msgstr ""
+msgstr "@@attack|%s ye saldır@@"
 
 #: src/gui/popupmenu.cpp:96
 #, c-format
 msgid "@@friend|Befriend %s@@"
-msgstr ""
+msgstr "@@friend|%s ile arkadaş ol@@"
 
 #: src/gui/popupmenu.cpp:99
 #, c-format
 msgid "@@disregard|Disregard %s@@"
-msgstr ""
+msgstr "@@disregard|%s yi sayma@@"
 
 #: src/gui/popupmenu.cpp:100
 #, c-format
 msgid "@@ignore|Ignore %s@@"
-msgstr ""
+msgstr "@@ignore|%s yi yoksay@@"
 
 #: src/gui/popupmenu.cpp:104
 #: src/gui/popupmenu.cpp:109
 #, c-format
 msgid "@@unignore|Un-Ignore %s@@"
-msgstr ""
+msgstr "@@unignore|%s yi yoksayma"
 
 #: src/gui/popupmenu.cpp:105
 #, c-format
 msgid "@@ignore|Completely ignore %s@@"
-msgstr ""
+msgstr "@@ignore|%s yi tamamen yoksay@@"
 
 #: src/gui/popupmenu.cpp:116
 #, c-format
 msgid "@@guild|Invite %s to join your guild@@"
-msgstr ""
+msgstr "@@guild|%s yi loncana katılması için davet et@@"
 
 #: src/gui/popupmenu.cpp:119
 #, c-format
 msgid "@@party|Invite %s to join your party@@"
-msgstr ""
+msgstr "@@party|%s yi partine katılması için davet et@@"
 
 #: src/gui/popupmenu.cpp:124
 msgid "@@admin-kick|Kick player@@"
-msgstr ""
+msgstr "@@admin-kick|Oyuncuyu at@@"
 
 #: src/gui/popupmenu.cpp:132
 #, c-format
 msgid "@@talk|Talk To %s@@"
-msgstr ""
+msgstr "@@talk|%s ile konuş@@"
 
 #: src/gui/popupmenu.cpp:141
 msgid "@@admin-kick|Kick monster@@"
-msgstr ""
+msgstr "@@admin-kick|Canavarı at@@"
 
 #: src/gui/popupmenu.cpp:152
 #: src/gui/popupmenu.cpp:170
 #: src/gui/popupmenu.cpp:383
 msgid "@@cancel|Cancel@@"
-msgstr ""
+msgstr "@@cancel|İptal@@"
 
 #: src/gui/popupmenu.cpp:165
 #, c-format
 msgid "@@pickup|Pick up %s@@"
-msgstr ""
+msgstr "@@pickup|%s yi kaldır@@"
 
 #: src/gui/popupmenu.cpp:166
 #: src/gui/popupmenu.cpp:381
 msgid "@@chat|Add to chat@@"
-msgstr ""
+msgstr "@@chat|Sohbete ekle@@"
 
 #: src/gui/popupmenu.cpp:356
 msgid "@@use|Unequip@@"
-msgstr ""
+msgstr "@@use|Donatma@@"
 
 #: src/gui/popupmenu.cpp:358
 msgid "@@use|Equip@@"
-msgstr ""
+msgstr "@@use|Donat@@"
 
 #: src/gui/popupmenu.cpp:361
 msgid "@@use|Use@@"
-msgstr ""
+msgstr "@@use|Kullan@@"
 
 #: src/gui/popupmenu.cpp:363
 msgid "@@drop|Drop@@"
-msgstr ""
+msgstr "@@drop|Düşür@@"
 
 #: src/gui/popupmenu.cpp:367
 msgid "@@split|Split@@"
-msgstr ""
+msgstr "@@split|Böl@@"
 
 #: src/gui/popupmenu.cpp:372
 msgid "@@store|Store@@"
-msgstr ""
+msgstr "@@store|Depola@@"
 
 #: src/gui/popupmenu.cpp:379
 msgid "@@retrieve|Retrieve@@"
-msgstr ""
+msgstr "@@retrieve|Geri al@@"
 
 #: src/gui/quitdialog.cpp:37
 msgid "Switch server"
-msgstr ""
+msgstr "Sunucu değiştir"
 
 #: src/gui/quitdialog.cpp:38
 msgid "Switch character"
-msgstr ""
+msgstr "Karakter değiştir"
 
 #: src/gui/recorder.cpp:87
 msgid "Finishing recording."
-msgstr ""
+msgstr "Kayıt bitiyor."
 
 #: src/gui/recorder.cpp:91
 msgid "Not currently recording."
-msgstr ""
+msgstr "Şu anda kayıtta değil."
 
 #: src/gui/recorder.cpp:96
 msgid "Already recording."
-msgstr ""
+msgstr "Zaten kayıtta."
 
 #: src/gui/recorder.cpp:104
 msgid "Starting to record..."
-msgstr ""
+msgstr "Kaydetmeye başla."
 
 #: src/gui/recorder.cpp:113
 msgid "Failed to start recording."
-msgstr ""
+msgstr "Kayıt başlatılamadı."
 
 #: src/gui/recorder.h:39
 msgid "Recording..."
-msgstr ""
+msgstr "Kaydediyor..."
 
 #: src/gui/recorder.h:40
 msgid "Stop recording"
-msgstr ""
+msgstr "Kaydı durdur"
 
 #: src/gui/register.cpp:62
 msgid "Confirm:"
-msgstr ""
+msgstr "Onayla:"
 
 #: src/gui/register.cpp:67
 msgid "Email:"
-msgstr ""
+msgstr "e-posta"
 
 #: src/gui/register.cpp:170
 #, c-format
 msgid "The username needs to be at least %d characters long."
-msgstr ""
+msgstr "Kullanıcı adı en az %d karakter uzunluğunda olmalıdır."
 
 #: src/gui/register.cpp:178
 #, c-format
 msgid "The username needs to be less than %d characters long."
-msgstr ""
+msgstr "Kullanıcı adı %d karakterden daha kısa olmalı."
 
 #: src/gui/register.cpp:186
 #, c-format
 msgid "The password needs to be at least %d characters long."
-msgstr ""
+msgstr "Şifre en az %d karakterden uzunluğunda olmalıdır."
 
 #: src/gui/register.cpp:194
 #, c-format
 msgid "The password needs to be less than %d characters long."
-msgstr ""
+msgstr "Şifre %d karakterden daha kısa olmalıdır."
 
 #: src/gui/register.cpp:201
 msgid "Passwords do not match."
-msgstr ""
+msgstr "Şifre eşleşmedi."
 
 #: src/gui/serverdialog.cpp:74
 msgid "Choose your server"
-msgstr ""
+msgstr "Sunucunu seç"
 
 #: src/gui/serverdialog.cpp:164
 msgid "Please type both the address and the port of a server."
-msgstr ""
+msgstr "Lütfen her iki adresi ve sunucu portunu girin."
 
 #: src/gui/serverselectdialog.cpp:59
 msgid "Select Server"
-msgstr ""
+msgstr "Sunuc seçin"
 
 #: src/gui/setup.cpp:65
 #: src/gui/windowmenu.cpp:69
 #: src/main.cpp:939
 msgid "Setup"
-msgstr ""
+msgstr "Kur"
 
 #: src/gui/setup.cpp:73
 msgid "Apply"
-msgstr ""
+msgstr "Uygula"
 
 #: src/gui/setup.cpp:73
 msgid "Reset Windows"
-msgstr ""
+msgstr "Pencereleri yeniden başlat"
 
 #: src/gui/setup_audio.cpp:41
 msgid "Sound"
-msgstr ""
+msgstr "Melodi"
 
 #: src/gui/setup_audio.cpp:45
 msgid "Audio"
-msgstr ""
+msgstr "Ses"
 
 #: src/gui/setup_audio.cpp:48
 msgid "Sfx volume"
-msgstr ""
+msgstr "Sfx sesi"
 
 #: src/gui/setup_audio.cpp:49
 msgid "Music volume"
-msgstr ""
+msgstr "Müzik sesi"
 
 #: src/gui/setup_colors.cpp:45
 msgid "This is what the color looks like"
-msgstr ""
+msgstr "Bu renk buna benzer"
 
 #: src/gui/setup_colors.cpp:50
 msgid "Colors"
-msgstr ""
+msgstr "Renkler"
 
 #: src/gui/setup_colors.cpp:71
 msgid "Type: "
-msgstr ""
+msgstr "Tip:"
 
 #: src/gui/setup_colors.cpp:82
 #: src/gui/setup_colors.cpp:430
 msgid "Static"
-msgstr ""
+msgstr "Sabit"
 
 #: src/gui/setup_colors.cpp:84
 #: src/gui/setup_colors.cpp:85
 #: src/gui/setup_colors.cpp:431
 msgid "Pulse"
-msgstr ""
+msgstr "Vuruş"
 
 #: src/gui/setup_colors.cpp:86
 #: src/gui/setup_colors.cpp:87
 #: src/gui/setup_colors.cpp:432
 msgid "Rainbow"
-msgstr ""
+msgstr "Gökkuşağı"
 
 #: src/gui/setup_colors.cpp:88
 #: src/gui/setup_colors.cpp:89
@@ -1333,611 +1333,611 @@ msgstr ""
 
 #: src/gui/setup_colors.cpp:93
 msgid "Delay: "
-msgstr ""
+msgstr "Gecikme:"
 
 #: src/gui/setup_colors.cpp:108
 msgid "Red: "
-msgstr ""
+msgstr "Kırmızı:"
 
 #: src/gui/setup_colors.cpp:123
 msgid "Green: "
-msgstr ""
+msgstr "Yeşil:"
 
 #: src/gui/setup_colors.cpp:138
 msgid "Blue: "
-msgstr ""
+msgstr "Mavi:"
 
 #: src/gui/setup_joystick.cpp:37
 #: src/gui/setup_joystick.cpp:78
 msgid "Press the button to start calibration"
-msgstr ""
+msgstr "Ayarlama işlemini başlatmak için düğmeye bas"
 
 #: src/gui/setup_joystick.cpp:38
 #: src/gui/setup_joystick.cpp:76
 msgid "Calibrate"
-msgstr ""
+msgstr "Ayarlamak"
 
 #: src/gui/setup_joystick.cpp:39
 msgid "Enable joystick"
-msgstr ""
+msgstr "joystick'e izin ver"
 
 #: src/gui/setup_joystick.cpp:41
 msgid "Joystick"
-msgstr ""
+msgstr "Joystick"
 
 #: src/gui/setup_joystick.cpp:83
 msgid "Stop"
-msgstr ""
+msgstr "Dur"
 
 #: src/gui/setup_joystick.cpp:84
 msgid "Rotate the stick"
-msgstr ""
+msgstr "Çubuğu döndür"
 
 #: src/gui/setup_keyboard.cpp:77
 msgid "Keyboard"
-msgstr ""
+msgstr "Kalvye"
 
 #: src/gui/setup_keyboard.cpp:86
 msgid "Assign"
-msgstr ""
+msgstr "Ata"
 
 #: src/gui/setup_keyboard.cpp:90
 msgid "Default"
-msgstr ""
+msgstr "Varsayılan"
 
 #: src/gui/setup_keyboard.cpp:119
 msgid "Key Conflict(s) Detected."
-msgstr ""
+msgstr "Anahtar Çatışması(ları) Algılandı."
 
 #: src/gui/setup_keyboard.cpp:120
 msgid "Resolve them, or gameplay may result in strange behaviour."
-msgstr ""
+msgstr "Onları çöz, veya oyun tuhaf davranışara neden olabilir."
 
 #: src/gui/setup_players.cpp:56
 msgid "Name"
-msgstr ""
+msgstr "İsim"
 
 #: src/gui/setup_players.cpp:57
 msgid "Relation"
-msgstr ""
+msgstr "İlişki"
 
 #: src/gui/setup_players.cpp:62
 msgid "Neutral"
-msgstr ""
+msgstr "Tarafsız"
 
 #: src/gui/setup_players.cpp:63
 msgid "Friend"
-msgstr ""
+msgstr "Arkadaş"
 
 #: src/gui/setup_players.cpp:64
 msgid "Disregarded"
-msgstr ""
+msgstr "İhmal edilmiş"
 
 #: src/gui/setup_players.cpp:65
 msgid "Ignored"
-msgstr ""
+msgstr "Yok sayılmış"
 
 #: src/gui/setup_players.cpp:207
 #: src/gui/setup_video.cpp:131
 msgid "???"
-msgstr ""
+msgstr "???"
 
 #: src/gui/setup_players.cpp:224
 msgid "Allow trading"
-msgstr ""
+msgstr "Takasa izin ver"
 
 #: src/gui/setup_players.cpp:226
 msgid "Allow whispers"
-msgstr ""
+msgstr "Fısıldamaya izin ver"
 
 #: src/gui/setup_players.cpp:230
 msgid "Put all whispers in tabs"
-msgstr ""
+msgstr "Tüm fısıldamaları sekmeye koy"
 
 #: src/gui/setup_players.cpp:232
 msgid "Players"
-msgstr ""
+msgstr "Oyuncular"
 
 #: src/gui/setup_players.cpp:257
 msgid "When ignoring:"
-msgstr ""
+msgstr "Yok saydığında:"
 
 #: src/gui/setup_video.cpp:112
 msgid "Tiny"
-msgstr ""
+msgstr "Ufacık"
 
 #: src/gui/setup_video.cpp:113
 msgid "Small"
-msgstr ""
+msgstr "Küçük"
 
 #: src/gui/setup_video.cpp:114
 msgid "Medium"
-msgstr ""
+msgstr "Orta"
 
 #: src/gui/setup_video.cpp:115
 msgid "Large"
-msgstr ""
+msgstr "Büyük"
 
 #: src/gui/setup_video.cpp:141
 msgid "No text"
-msgstr ""
+msgstr "Metin yok"
 
 #: src/gui/setup_video.cpp:143
 msgid "Bubbles, no names"
-msgstr ""
+msgstr "Kabarcıklar, isimler yok"
 
 #: src/gui/setup_video.cpp:144
 msgid "Bubbles with names"
-msgstr ""
+msgstr "Kabarcıklar ile isimler"
 
 #: src/gui/setup_video.cpp:153
 msgid "off"
-msgstr ""
+msgstr "Kapalı"
 
 #: src/gui/setup_video.cpp:154
 #: src/gui/setup_video.cpp:164
 msgid "low"
-msgstr ""
+msgstr "Düşük"
 
 #: src/gui/setup_video.cpp:155
 #: src/gui/setup_video.cpp:166
 msgid "high"
-msgstr ""
+msgstr "Yüksek"
 
 #: src/gui/setup_video.cpp:165
 msgid "medium"
-msgstr ""
+msgstr "Orta"
 
 #: src/gui/setup_video.cpp:167
 msgid "max"
-msgstr ""
+msgstr "maximum"
 
 #: src/gui/setup_video.cpp:187
 msgid "Full screen"
-msgstr ""
+msgstr "Tam ekran"
 
 #: src/gui/setup_video.cpp:188
 msgid "OpenGL"
-msgstr ""
+msgstr "OpenGL"
 
 #: src/gui/setup_video.cpp:189
 msgid "Custom cursor"
-msgstr ""
+msgstr "Özel imleç"
 
 #: src/gui/setup_video.cpp:191
 msgid "Visible names"
-msgstr ""
+msgstr "Görünür isimler"
 
 #: src/gui/setup_video.cpp:193
 msgid "Particle effects"
-msgstr ""
+msgstr "Parçacık efektleri"
 
 #: src/gui/setup_video.cpp:195
 msgid "Show name"
-msgstr ""
+msgstr "İsmi göster"
 
 #: src/gui/setup_video.cpp:196
 msgid "Show pickup notification"
-msgstr ""
+msgstr "Kaldırma bildirimini göster"
 
 #: src/gui/setup_video.cpp:197
 msgid "in chat"
-msgstr ""
+msgstr "Sohbet de"
 
 #: src/gui/setup_video.cpp:198
 msgid "as particle"
-msgstr ""
+msgstr "Parçacık olarak"
 
 #: src/gui/setup_video.cpp:203
 msgid "FPS Limit:"
-msgstr ""
+msgstr "FPS Sınırı:"
 
 #: src/gui/setup_video.cpp:214
 msgid "Video"
-msgstr ""
+msgstr "Video"
 
 #: src/gui/setup_video.cpp:219
 msgid "Overhead text"
-msgstr ""
+msgstr "Tepegöz metin"
 
 #: src/gui/setup_video.cpp:220
 msgid "Gui opacity"
-msgstr ""
+msgstr "Gui şeffaflığı"
 
 #: src/gui/setup_video.cpp:221
 msgid "Ambient FX"
-msgstr ""
+msgstr "Çevre FX"
 
 #: src/gui/setup_video.cpp:222
 msgid "Particle Detail"
-msgstr ""
+msgstr "Parçacık Detayı"
 
 #: src/gui/setup_video.cpp:223
 msgid "Font size"
-msgstr ""
+msgstr "Yazı boyutu"
 
 #: src/gui/setup_video.cpp:356
 msgid "Failed to switch to "
-msgstr ""
+msgstr "Başarısız geçiş"
 
 #: src/gui/setup_video.cpp:357
 msgid "windowed"
-msgstr ""
+msgstr "Pencereli"
 
 #: src/gui/setup_video.cpp:357
 msgid "fullscreen"
-msgstr ""
+msgstr "tamekran"
 
 #: src/gui/setup_video.cpp:358
 msgid "mode and restoration of old mode also failed!"
-msgstr ""
+msgstr "mod ve eski modu düzeltme başarısız oldu!"
 
 #: src/gui/setup_video.cpp:367
 msgid "Switching to full screen"
-msgstr ""
+msgstr "Tam ekrana geçiş"
 
 #: src/gui/setup_video.cpp:368
 msgid "Restart needed for changes to take effect."
-msgstr ""
+msgstr "Değişikliklerin geçerli olması için yeniden başlatmak gerekli."
 
 #: src/gui/setup_video.cpp:380
 msgid "Changing OpenGL"
-msgstr ""
+msgstr "OpenGL değiştirme"
 
 #: src/gui/setup_video.cpp:381
 msgid "Applying change to OpenGL requires restart."
-msgstr ""
+msgstr "Değişiklikleri uygulamak OpenGL'i yeniden başlatmayı gerektiri."
 
 #: src/gui/setup_video.cpp:442
 msgid "Screen resolution changed"
-msgstr ""
+msgstr "Ekran çözünürlüğü değiştirildi"
 
 #: src/gui/setup_video.cpp:443
 msgid "Restart your client for the change to take effect."
-msgstr ""
+msgstr "Değişikliklerin geçerşi olması için istemcini yeniden başlat."
 
 #: src/gui/setup_video.cpp:467
 msgid "Particle effect settings changed."
-msgstr ""
+msgstr "Parçacık efekti ayarları değiştirildi"
 
 #: src/gui/setup_video.cpp:468
 msgid "Changes will take effect on map change."
-msgstr ""
+msgstr "Değişiklikler harita değiştiğinde etkili olacak."
 
 #: src/gui/skill.cpp:53
 msgid "Mystery Skill"
-msgstr ""
+msgstr "Gizli Beceri"
 
 #: src/gui/skill.cpp:129
 #: src/gui/skilldialog.cpp:99
 #: src/gui/windowmenu.cpp:62
 msgid "Skills"
-msgstr ""
+msgstr "Beceriler"
 
 #: src/gui/skill.cpp:148
 #: src/gui/skill.cpp:200
 #, c-format
 msgid "Skill points: %d"
-msgstr ""
+msgstr "Beceri puanları: %d"
 
 #: src/gui/skill.cpp:149
 msgid "Up"
-msgstr ""
+msgstr "Yukarı"
 
 #: src/gui/skilldialog.cpp:113
 msgid "Weapons"
-msgstr ""
+msgstr "Silahlar"
 
 #: src/gui/skilldialog.cpp:121
 msgid "Crafts"
-msgstr ""
+msgstr "Hünerler"
 
 #: src/gui/status.cpp:56
 #: src/gui/status.cpp:177
 #, c-format
 msgid "Job: %d"
-msgstr ""
+msgstr "Meslek: %d"
 
 #: src/gui/status.cpp:60
 msgid "HP:"
-msgstr ""
+msgstr "HP:"
 
 #: src/gui/status.cpp:63
 msgid "Exp:"
-msgstr ""
+msgstr "Exp:"
 
 #: src/gui/status.cpp:66
 msgid "MP:"
-msgstr ""
+msgstr "MP:"
 
 #: src/gui/status.cpp:69
 msgid "Job:"
-msgstr ""
+msgstr "Meslek:"
 
 #: src/gui/status.cpp:77
 msgid "Stats"
-msgstr ""
+msgstr "İstatistikler"
 
 #: src/gui/status.cpp:78
 msgid "Total"
-msgstr ""
+msgstr "Toplam"
 
 #: src/gui/status.cpp:79
 msgid "Cost"
-msgstr ""
+msgstr "Maliyet"
 
 #: src/gui/status.cpp:83
 msgid "Attack:"
-msgstr ""
+msgstr "Saldırı:"
 
 #: src/gui/status.cpp:84
 msgid "Defense:"
-msgstr ""
+msgstr "Defans:"
 
 #: src/gui/status.cpp:85
 msgid "M.Attack:"
-msgstr ""
+msgstr "M.Saldırı:"
 
 #: src/gui/status.cpp:86
 msgid "M.Defense:"
-msgstr ""
+msgstr "M.Defans:"
 
 #: src/gui/status.cpp:88
 #, no-c-format
 msgid "% Accuracy:"
-msgstr ""
+msgstr "% Doğruluk:"
 
 #: src/gui/status.cpp:90
 #, no-c-format
 msgid "% Evade:"
-msgstr ""
+msgstr "% Savuşturma:"
 
 #: src/gui/status.cpp:92
 #, no-c-format
 msgid "% Reflex:"
-msgstr ""
+msgstr "% Refleks:"
 
 #: src/gui/status.cpp:198
 msgid "Strength"
-msgstr ""
+msgstr "Kuvvet"
 
 #: src/gui/status.cpp:199
 msgid "Agility"
-msgstr ""
+msgstr "Çeviklik"
 
 #: src/gui/status.cpp:200
 msgid "Vitality"
-msgstr ""
+msgstr "Can"
 
 #: src/gui/status.cpp:201
 msgid "Intelligence"
-msgstr ""
+msgstr "Zeka"
 
 #: src/gui/status.cpp:202
 msgid "Dexterity"
-msgstr ""
+msgstr "El çabukluğu"
 
 #: src/gui/status.cpp:203
 msgid "Luck"
-msgstr ""
+msgstr "Şans"
 
 #: src/gui/status.cpp:221
 #, c-format
 msgid "Remaining Status Points: %d"
-msgstr ""
+msgstr "Kalan Puan Durumu:"
 
 #: src/gui/status.cpp:384
 msgid "Max level"
-msgstr ""
+msgstr "Maksimum Seviye"
 
 #: src/gui/storagewindow.cpp:54
 msgid "Storage"
-msgstr ""
+msgstr "Depo"
 
 #: src/gui/storagewindow.cpp:65
 msgid "Store"
-msgstr ""
+msgstr "Depola"
 
 #: src/gui/storagewindow.cpp:66
 msgid "Retrieve"
-msgstr ""
+msgstr "Geri al"
 
 #: src/gui/trade.cpp:51
 msgid "Propose trade"
-msgstr ""
+msgstr "Takas teklifi"
 
 #: src/gui/trade.cpp:52
 msgid "Confirmed. Waiting..."
-msgstr ""
+msgstr "Onaylandı.BEkliyor..."
 
 #: src/gui/trade.cpp:53
 msgid "Agree trade"
-msgstr ""
+msgstr "Takası kabul et"
 
 #: src/gui/trade.cpp:54
 msgid "Agreed. Waiting..."
-msgstr ""
+msgstr "Kabul edildi.Bekliyor..."
 
 #: src/gui/trade.cpp:57
 msgid "Trade: You"
-msgstr ""
+msgstr "Takas:Sen"
 
 #: src/gui/trade.cpp:70
 #: src/gui/trade.cpp:71
 msgid "Trade"
-msgstr ""
+msgstr "Takas"
 
 #: src/gui/trade.cpp:73
 msgid "Add"
-msgstr ""
+msgstr "Ekle"
 
 #: src/gui/trade.cpp:95
 #: src/gui/trade.cpp:131
 #, c-format
 msgid "You get %s."
-msgstr ""
+msgstr "%s olsun"
 
 #: src/gui/trade.cpp:96
 msgid "You give:"
-msgstr ""
+msgstr "Size:"
 
 #: src/gui/trade.cpp:100
 msgid "Change"
-msgstr ""
+msgstr "Değiştir"
 
 #: src/gui/trade.cpp:268
 msgid "Failed adding item. You can not overlap one kind of item on the window."
-msgstr ""
+msgstr "Nesne ekleme başarısız oldu. Bir tür nesneyi pencerede üst üste bindiremezsin."
 
 #: src/gui/trade.cpp:311
 msgid "You don't have enough money."
-msgstr ""
+msgstr "Yeterli paran yok."
 
 #: src/gui/updatewindow.cpp:91
 msgid "Updating..."
-msgstr ""
+msgstr "Güncelliyor"
 
 #: src/gui/updatewindow.cpp:113
 msgid "Play"
-msgstr ""
+msgstr "Oyna"
 
 #: src/gui/updatewindow.cpp:325
 msgid "curl error "
-msgstr ""
+msgstr "Sarmal hatası"
 
 #: src/gui/updatewindow.cpp:326
 msgid " host: "
-msgstr ""
+msgstr " host:"
 
 #: src/gui/updatewindow.cpp:449
 msgid "##1  The update process is incomplete."
-msgstr ""
+msgstr "##1  Güncelleme işlemi tamamlanmıştır."
 
 #: src/gui/updatewindow.cpp:450
 msgid "##1  It is strongly recommended that"
-msgstr ""
+msgstr "##1 Şiddetle tavsiye edilir ki"
 
 #: src/gui/updatewindow.cpp:451
 msgid "##1  you try again later"
-msgstr ""
+msgstr "##1 Sonra dene"
 
 #: src/gui/updatewindow.cpp:518
 msgid "Completed"
-msgstr ""
+msgstr "Tamamlandı"
 
 #: src/gui/widgets/channeltab.cpp:49
 msgid "/users > Lists the users in the current channel"
-msgstr ""
+msgstr "/users > Mevcut kanalldaki kullanıcları listeler"
 
 #: src/gui/widgets/channeltab.cpp:50
 msgid "/topic > Set the topic of the current channel"
-msgstr ""
+msgstr "/topic > Geçerli kanalın konusunu ayarla"
 
 #: src/gui/widgets/channeltab.cpp:51
 msgid "/quit > Leave a channel"
-msgstr ""
+msgstr "/quit > Kanaldan çık"
 
 #: src/gui/widgets/channeltab.cpp:52
 msgid "/op > Make a user a channel operator"
-msgstr ""
+msgstr "/op > Bir kullanıcıyı operatör yap"
 
 #: src/gui/widgets/channeltab.cpp:53
 msgid "/kick > Kick a user from the channel"
-msgstr ""
+msgstr "/kick > Kanaldan bir kullanıcı at"
 
 #: src/gui/widgets/channeltab.cpp:63
 msgid "Command: /users"
-msgstr ""
+msgstr "Komut: /uers"
 
 #: src/gui/widgets/channeltab.cpp:64
 msgid "This command shows the users in this channel."
-msgstr ""
+msgstr "Bu komut kanaldaki kullanıcıları gösterir."
 
 #: src/gui/widgets/channeltab.cpp:68
 msgid "Command: /topic <message>"
-msgstr ""
+msgstr "Komut: /topic <mesaj>"
 
 #: src/gui/widgets/channeltab.cpp:69
 msgid "This command sets the topic to <message>."
-msgstr ""
+msgstr "Bu komut konu başlığını ayarlar <mesaj>."
 
 #: src/gui/widgets/channeltab.cpp:73
 msgid "Command: /quit"
-msgstr ""
+msgstr "Komut: /quit"
 
 #: src/gui/widgets/channeltab.cpp:74
 msgid "This command leaves the current channel."
-msgstr ""
+msgstr "Bu komut mevcut kanaldan ayrılır."
 
 #: src/gui/widgets/channeltab.cpp:75
 msgid "If you're the last person in the channel, it will be deleted."
-msgstr ""
+msgstr "Eğer kanaldaki son kişi isen, o silinecek."
 
 #: src/gui/widgets/channeltab.cpp:79
 msgid "Command: /op <nick>"
-msgstr ""
+msgstr "Komut: /op <nick>"
 
 #: src/gui/widgets/channeltab.cpp:80
 msgid "This command makes <nick> a channel operator."
-msgstr ""
+msgstr "Bu komut <nick>'i kanal operatörü yapar."
 
 #: src/gui/widgets/channeltab.cpp:83
 msgid "Channel operators can kick and op other users from the channel."
-msgstr ""
+msgstr "Kanal operatörleri kullanıcıları kanaldan atabilir ve işlem yapabilir."
 
 #: src/gui/widgets/channeltab.cpp:88
 msgid "Command: /kick <nick>"
-msgstr ""
+msgstr "Komut: /kick <nick>"
 
 #: src/gui/widgets/channeltab.cpp:89
 msgid "This command makes <nick> leave the channel."
-msgstr ""
+msgstr "Bu komut <nick>'i kanaldan atar"
 
 #: src/gui/widgets/channeltab.cpp:118
 msgid "Need a user to op!"
-msgstr ""
+msgstr "Bir kullanıcı işlemi gerekli!"
 
 #: src/gui/widgets/channeltab.cpp:125
 msgid "Need a user to kick!"
-msgstr ""
+msgstr "Bir kullanıcının atılması gerekli!"
 
 #: src/gui/widgets/chattab.cpp:114
 msgid "Global announcement:"
-msgstr ""
+msgstr "Genel duyuru:"
 
 #: src/gui/widgets/chattab.cpp:120
 #, c-format
 msgid "Global announcement from %s:"
-msgstr ""
+msgstr "%s den genel duyuru:"
 
 #: src/gui/widgets/chattab.cpp:146
 #, c-format
 msgid "%s whispers: "
-msgstr ""
+msgstr "%s fısıldar:"
 
 #: src/gui/widgets/whispertab.cpp:49
 msgid "Cannot send empty chat!"
-msgstr ""
+msgstr "Boş konuşma gönderilemez!"
 
 #: src/gui/widgets/whispertab.cpp:68
 msgid "/close > Close the whisper tab"
-msgstr ""
+msgstr "/close > Fısıldama sekmesini kapat"
 
 #: src/gui/widgets/whispertab.cpp:78
 msgid "Command: /close"
-msgstr ""
+msgstr "Komut: /close"
 
 #: src/gui/widgets/whispertab.cpp:79
 msgid "This command closes the current whisper tab."
-msgstr ""
+msgstr "Bu komut geçerli fısıldama sekmesini kapatır."
 
 #: src/gui/windowmenu.cpp:59
 msgid "Status"
-msgstr ""
+msgstr "Durum"
 
 #: src/gui/windowmenu.cpp:65
 msgid "Guilds"
-msgstr ""
+msgstr "Loncalar"
 
 #: src/gui/windowmenu.cpp:66
 msgid "Buddys"
@@ -1945,79 +1945,79 @@ msgstr ""
 
 #: src/gui/windowmenu.cpp:68
 msgid "Shortcut"
-msgstr ""
+msgstr "Kısayol"
 
 #: src/keyboardconfig.cpp:41
 msgid "Move Up"
-msgstr ""
+msgstr "Yukarı taşı"
 
 #: src/keyboardconfig.cpp:42
 msgid "Move Down"
-msgstr ""
+msgstr "Aşağı tşı"
 
 #: src/keyboardconfig.cpp:43
 msgid "Move Left"
-msgstr ""
+msgstr "Sola taşı"
 
 #: src/keyboardconfig.cpp:44
 msgid "Move Right"
-msgstr ""
+msgstr "Sağa taşı"
 
 #: src/keyboardconfig.cpp:45
 msgid "Attack"
-msgstr ""
+msgstr "Saldır"
 
 #: src/keyboardconfig.cpp:46
 msgid "Target & Attack"
-msgstr ""
+msgstr "Hedef & Saldır"
 
 #: src/keyboardconfig.cpp:47
 msgid "Smilie"
-msgstr ""
+msgstr "Gülümseme"
 
 #: src/keyboardconfig.cpp:48
 msgid "Talk"
-msgstr ""
+msgstr "Konuş"
 
 #: src/keyboardconfig.cpp:49
 msgid "Stop Attack"
-msgstr ""
+msgstr "Saldırıyı kes"
 
 #: src/keyboardconfig.cpp:50
 msgid "Target Closest"
-msgstr ""
+msgstr "Hedef yakın"
 
 #: src/keyboardconfig.cpp:51
 msgid "Target NPC"
-msgstr ""
+msgstr "Hedef NPC"
 
 #: src/keyboardconfig.cpp:52
 msgid "Target Player"
-msgstr ""
+msgstr "Hedef Oyuncu"
 
 #: src/keyboardconfig.cpp:53
 msgid "Pickup"
-msgstr ""
+msgstr "Topla"
 
 #: src/keyboardconfig.cpp:54
 msgid "Hide Windows"
-msgstr ""
+msgstr "Pencereleri Gizle"
 
 #: src/keyboardconfig.cpp:55
 msgid "Sit"
-msgstr ""
+msgstr "Otur"
 
 #: src/keyboardconfig.cpp:56
 msgid "Screenshot"
-msgstr ""
+msgstr "Ekrangörüntüsü"
 
 #: src/keyboardconfig.cpp:57
 msgid "Enable/Disable Trading"
-msgstr ""
+msgstr "Ticaret aktif/pasif"
 
 #: src/keyboardconfig.cpp:58
 msgid "Find Path to Mouse"
-msgstr ""
+msgstr "Fareye yol bul"
 
 #: src/keyboardconfig.cpp:59
 #: src/keyboardconfig.cpp:60
@@ -2033,55 +2033,55 @@ msgstr ""
 #: src/keyboardconfig.cpp:70
 #, c-format
 msgid "Item Shortcut %d"
-msgstr ""
+msgstr "Nesne Kısayolu %d"
 
 #: src/keyboardconfig.cpp:71
 msgid "Help Window"
-msgstr ""
+msgstr "Yardım Penceresi"
 
 #: src/keyboardconfig.cpp:72
 msgid "Status Window"
-msgstr ""
+msgstr "Durum Penceresi"
 
 #: src/keyboardconfig.cpp:73
 msgid "Inventory Window"
-msgstr ""
+msgstr "Envanter Penceresi"
 
 #: src/keyboardconfig.cpp:74
 msgid "Equipment Window"
-msgstr ""
+msgstr "Araç-Gereç Penceresi"
 
 #: src/keyboardconfig.cpp:75
 msgid "Skill Window"
-msgstr ""
+msgstr "Beceri Penceresi"
 
 #: src/keyboardconfig.cpp:76
 msgid "Minimap Window"
-msgstr ""
+msgstr "Ufak Harita Penceresi"
 
 #: src/keyboardconfig.cpp:77
 msgid "Chat Window"
-msgstr ""
+msgstr "Sohbet Penceresi"
 
 #: src/keyboardconfig.cpp:78
 msgid "Item Shortcut Window"
-msgstr ""
+msgstr "Nesne Kısayol Penceresi"
 
 #: src/keyboardconfig.cpp:79
 msgid "Setup Window"
-msgstr ""
+msgstr "Kur Penceresi"
 
 #: src/keyboardconfig.cpp:80
 msgid "Debug Window"
-msgstr ""
+msgstr "Debug Penceresi"
 
 #: src/keyboardconfig.cpp:81
 msgid "Party Window"
-msgstr ""
+msgstr "Parti Penceresi"
 
 #: src/keyboardconfig.cpp:82
 msgid "Emote Shortcut Window"
-msgstr ""
+msgstr "Duygu Kısayol Penceresi"
 
 #: src/keyboardconfig.cpp:83
 #: src/keyboardconfig.cpp:84
@@ -2097,112 +2097,112 @@ msgstr ""
 #: src/keyboardconfig.cpp:94
 #, c-format
 msgid "Emote Shortcut %d"
-msgstr ""
+msgstr "Duygu Kısayolu %d"
 
 #: src/keyboardconfig.cpp:95
 msgid "Toggle Chat"
-msgstr ""
+msgstr "Bir işlemden diğerine geçme penceresi"
 
 #: src/keyboardconfig.cpp:96
 msgid "Scroll Chat Up"
-msgstr ""
+msgstr "Sohbeti yukarı kaydır"
 
 #: src/keyboardconfig.cpp:97
 msgid "Scroll Chat Down"
-msgstr ""
+msgstr "Sohbeti aşağı kaydır"
 
 #: src/keyboardconfig.cpp:98
 msgid "Previous Chat Tab"
-msgstr ""
+msgstr "Önceki Sohbet Sekmesi"
 
 #: src/keyboardconfig.cpp:99
 msgid "Next Chat Tab"
-msgstr ""
+msgstr "Sonraki Sohbet Sekmesi"
 
 #: src/keyboardconfig.cpp:100
 msgid "Select OK"
-msgstr ""
+msgstr "Tamam seçeneği"
 
 #: src/keyboardconfig.cpp:102
 msgid "Ignore input 1"
-msgstr ""
+msgstr "Giriş 1 yoksay"
 
 #: src/keyboardconfig.cpp:103
 msgid "Ignore input 2"
-msgstr ""
+msgstr "Giriş 2 yoksay"
 
 #: src/localplayer.cpp:760
 msgid "Unarmed"
-msgstr ""
+msgstr "Silahsız"
 
 #: src/localplayer.cpp:761
 msgid "Knife"
-msgstr ""
+msgstr "Bıçak"
 
 #: src/localplayer.cpp:762
 msgid "Sword"
-msgstr ""
+msgstr "Kılıç"
 
 #: src/localplayer.cpp:763
 msgid "Polearm"
-msgstr ""
+msgstr "Mızrak"
 
 #: src/localplayer.cpp:764
 msgid "Staff"
-msgstr ""
+msgstr "Sopa"
 
 #: src/localplayer.cpp:765
 msgid "Whip"
-msgstr ""
+msgstr "Kırbaç"
 
 #: src/localplayer.cpp:766
 msgid "Bow"
-msgstr ""
+msgstr "Yay"
 
 #: src/localplayer.cpp:767
 msgid "Shooting"
-msgstr ""
+msgstr "Atış"
 
 #: src/localplayer.cpp:768
 msgid "Mace"
-msgstr ""
+msgstr "Asa"
 
 #: src/localplayer.cpp:769
 msgid "Axe"
-msgstr ""
+msgstr "Balta"
 
 #: src/localplayer.cpp:770
 msgid "Thrown"
-msgstr ""
+msgstr "Atılmış"
 
 #: src/localplayer.cpp:772
 msgid "Craft"
-msgstr ""
+msgstr "Hüner"
 
 #: src/localplayer.cpp:773
 msgid "Unknown Skill"
-msgstr ""
+msgstr "Bilinmeyen Beceri"
 
 #: src/main.cpp:263
 msgid "Invalid update host: "
-msgstr ""
+msgstr "Geçersiz host güncellemesi:"
 
 #: src/main.cpp:296
 #: src/main.cpp:302
 msgid "Error creating updates directory!"
-msgstr ""
+msgstr "Hata oluşturma güncellemeleri listesi!"
 
 #: src/main.cpp:339
 msgid " can't be created, but it doesn't exist! Exiting."
-msgstr ""
+msgstr "oluşturulamaz, fakat o yok! Çıkış."
 
 #: src/main.cpp:492
 msgid "Couldn't set "
-msgstr ""
+msgstr "Ayarlanamadı"
 
 #: src/main.cpp:493
 msgid " video mode: "
-msgstr ""
+msgstr "Video mod:"
 
 #: src/main.cpp:575
 msgid "tmw"
@@ -2210,168 +2210,168 @@ msgstr ""
 
 #: src/main.cpp:576
 msgid "Options:"
-msgstr ""
+msgstr "Seçenekler:"
 
 #: src/main.cpp:577
 msgid "  -C --config-file : Configuration file to use"
-msgstr ""
+msgstr "  -C --config-file : Yapılandırma dosyası kullan"
 
 #: src/main.cpp:578
 msgid "  -d --data        : Directory to load game data from"
-msgstr ""
+msgstr "  -d --data        : Dizinden oyun verilerini yüklemek için"
 
 #: src/main.cpp:579
 msgid "  -D --default     : Choose default character server and character"
-msgstr ""
+msgstr "  -D --default     : Varsayılan karakter sunucu ve karakter seç"
 
 #: src/main.cpp:581
 msgid "  -h --help        : Display this help"
-msgstr ""
+msgstr "  -h --help        : Bu hatayı göster"
 
 #: src/main.cpp:582
 msgid "  -S --home-dir    : Directory to use as home directory"
-msgstr ""
+msgstr "  -S --home-dir    : Dizini ev dizini olarak kullan"
 
 #: src/main.cpp:583
 msgid "  -H --update-host : Use this update host"
-msgstr ""
+msgstr "  -H --update-host : Bu güncellemek hostunu kullan"
 
 #: src/main.cpp:584
 msgid "  -P --password    : Login with this password"
-msgstr ""
+msgstr "  -P --password    : Bu şifre ile oturum aç"
 
 #: src/main.cpp:585
 msgid "  -c --character   : Login with this character"
-msgstr ""
+msgstr "  -c --character   : Bu karakter ile oturum aç"
 
 #: src/main.cpp:586
 msgid "  -p --port        : Login server port"
-msgstr ""
+msgstr "  -p --port        : Sunucu giriş portu"
 
 #: src/main.cpp:587
 msgid "  -s --server      : Login server name or IP"
-msgstr ""
+msgstr "  -s --server      : Sunucu giriş adı veya IP si"
 
 #: src/main.cpp:588
 msgid "  -u --skip-update : Skip the update downloads"
-msgstr ""
+msgstr " -u --skip-update : Güncellemeleri atla"
 
 #: src/main.cpp:589
 msgid "  -U --username    : Login with this username"
-msgstr ""
+msgstr "  -U --username    : Bu kullanıcı adı ile oturum aç"
 
 #: src/main.cpp:591
 msgid "  -O --no-opengl   : Disable OpenGL for this session"
-msgstr ""
+msgstr "  -O --no-opengl   : Bu oturum için OpenGL'i pasif yap"
 
 #: src/main.cpp:593
 msgid "  -v --version     : Display the version"
-msgstr ""
+msgstr "  -v --version     : Versiyonu göster"
 
 #: src/main.cpp:1528
 msgid "Connecting to map server..."
-msgstr ""
+msgstr "Harita sunucusuna bağlanılıyoru..."
 
 #: src/main.cpp:1536
 msgid "Connecting to character server..."
-msgstr ""
+msgstr "Karakter sunucusuna bağlanılıyoru..."
 
 #: src/main.cpp:1544
 msgid "Connecting to account server..."
-msgstr ""
+msgstr "Hesap sunucusuna bağlanılıyoru..."
 
 #: src/net/ea/adminhandler.cpp:66
 msgid "Kick failed!"
-msgstr ""
+msgstr "Atma başarısız!"
 
 #: src/net/ea/adminhandler.cpp:68
 msgid "Kick succeeded!"
-msgstr ""
+msgstr "Atma başarıldı!"
 
 #: src/net/ea/buysellhandler.cpp:111
 msgid "Nothing to sell."
-msgstr ""
+msgstr "Satılacak hiçbir şey yok."
 
 #: src/net/ea/buysellhandler.cpp:119
 msgid "Thanks for buying."
-msgstr ""
+msgstr "Satın aldığınız için teşekkürler."
 
 #: src/net/ea/buysellhandler.cpp:126
 msgid "Unable to buy."
-msgstr ""
+msgstr "Satın alınamaz."
 
 #: src/net/ea/buysellhandler.cpp:132
 msgid "Thanks for selling."
-msgstr ""
+msgstr "Satış için teşekkürler."
 
 #: src/net/ea/buysellhandler.cpp:134
 msgid "Unable to sell."
-msgstr ""
+msgstr "Satış yapılamaz."
 
 #: src/net/ea/charserverhandler.cpp:95
 msgid "Access denied"
-msgstr ""
+msgstr "Erişim engellendi"
 
 #: src/net/ea/charserverhandler.cpp:98
 msgid "Cannot use this ID"
-msgstr ""
+msgstr "Bu ID kullanılmaz"
 
 #: src/net/ea/charserverhandler.cpp:101
 msgid "Unknown failure to select character"
-msgstr ""
+msgstr "Karakter seçiminde bilinmeyen hata"
 
 #: src/net/ea/charserverhandler.cpp:123
 msgid "Failed to create character. Most likely the name is already taken."
-msgstr ""
+msgstr "Karakter oluşturulamadı. Büyük olasılıkla isim zaten kullanımda."
 
 #: src/net/ea/charserverhandler.cpp:135
 msgid "Info"
-msgstr ""
+msgstr "Bilgi"
 
 #: src/net/ea/charserverhandler.cpp:135
 msgid "Character deleted."
-msgstr ""
+msgstr "Karakter silindi."
 
 #: src/net/ea/charserverhandler.cpp:140
 msgid "Failed to delete character."
-msgstr ""
+msgstr "Karakter silinemedi."
 
 #: src/net/ea/charserverhandler.cpp:224
 #: src/net/tmwserv/charserverhandler.cpp:253
 msgid "Strength:"
-msgstr ""
+msgstr "Güç:"
 
 #: src/net/ea/charserverhandler.cpp:225
 #: src/net/tmwserv/charserverhandler.cpp:254
 msgid "Agility:"
-msgstr ""
+msgstr "Çeviklik:"
 
 #: src/net/ea/charserverhandler.cpp:226
 #: src/net/tmwserv/charserverhandler.cpp:256
 msgid "Vitality:"
-msgstr ""
+msgstr "Can:"
 
 #: src/net/ea/charserverhandler.cpp:227
 #: src/net/tmwserv/charserverhandler.cpp:257
 msgid "Intelligence:"
-msgstr ""
+msgstr "Zeka:"
 
 #: src/net/ea/charserverhandler.cpp:228
 #: src/net/tmwserv/charserverhandler.cpp:255
 msgid "Dexterity:"
-msgstr ""
+msgstr "El çabukluğu:"
 
 #: src/net/ea/charserverhandler.cpp:229
 msgid "Luck:"
-msgstr ""
+msgstr "Şans:"
 
 #: src/net/ea/chathandler.cpp:78
 msgid "Whisper could not be sent, user is offline."
-msgstr ""
+msgstr "Fısıltı gönderilemedi, kullanıcı çevrimdışı."
 
 #: src/net/ea/chathandler.cpp:82
 msgid "Whisper could not be sent, ignored by user."
-msgstr ""
+msgstr "Fısıltı gönderilemedi, kullanıcı tarafından yoksayıldı."
 
 #: src/net/ea/chathandler.cpp:202
 #: src/net/ea/chathandler.cpp:208
@@ -2382,146 +2382,146 @@ msgstr ""
 #: src/net/ea/chathandler.cpp:233
 #: src/net/ea/chathandler.cpp:238
 msgid "Channels are not supported!"
-msgstr ""
+msgstr "Kanal desteksiz!"
 
 #: src/net/ea/equipmenthandler.cpp:111
 msgid "Unable to equip."
-msgstr ""
+msgstr "Donanım giyilemiyor."
 
 #: src/net/ea/equipmenthandler.cpp:152
 msgid "Unable to unequip."
-msgstr ""
+msgstr "Donanım kaldırılamıyor."
 
 #: src/net/ea/generalhandler.cpp:91
 #: src/net/tmwserv/generalhandler.cpp:82
 #, c-format
 msgid "Strength %+d"
-msgstr ""
+msgstr "Güç %+d"
 
 #: src/net/ea/generalhandler.cpp:92
 #: src/net/tmwserv/generalhandler.cpp:83
 #, c-format
 msgid "Agility %+d"
-msgstr ""
+msgstr "Çeviklik %+d"
 
 #: src/net/ea/generalhandler.cpp:93
 #: src/net/tmwserv/generalhandler.cpp:85
 #, c-format
 msgid "Vitality %+d"
-msgstr ""
+msgstr "Can %+d"
 
 #: src/net/ea/generalhandler.cpp:94
 #: src/net/tmwserv/generalhandler.cpp:86
 #, c-format
 msgid "Intelligence %+d"
-msgstr ""
+msgstr "Zeka %+d"
 
 #: src/net/ea/generalhandler.cpp:95
 #: src/net/tmwserv/generalhandler.cpp:84
 #, c-format
 msgid "Dexterity %+d"
-msgstr ""
+msgstr "El çabukluğu %+d"
 
 #: src/net/ea/generalhandler.cpp:96
 #, c-format
 msgid "Luck %+d"
-msgstr ""
+msgstr "Şans %+d"
 
 #: src/net/ea/generalhandler.cpp:118
 msgid "Authentication failed"
-msgstr ""
+msgstr "Kimlik doğrulama başarısız"
 
 #: src/net/ea/generalhandler.cpp:121
 msgid "No servers available"
-msgstr ""
+msgstr "Sunucular kullanılmaz"
 
 #: src/net/ea/generalhandler.cpp:125
 msgid "Someone else is trying to use this account"
-msgstr ""
+msgstr "Başkası bu hesabı kullanmayı deniyor."
 
 #: src/net/ea/generalhandler.cpp:128
 msgid "This account is already logged in"
-msgstr ""
+msgstr "Bu hesap zaten kayıtlı"
 
 #: src/net/ea/generalhandler.cpp:131
 msgid "Speed hack detected"
-msgstr ""
+msgstr "Speed Hack tespit edildi."
 
 #: src/net/ea/generalhandler.cpp:134
 msgid "Duplicated login"
-msgstr ""
+msgstr "Kopyalanmış giriş"
 
 #: src/net/ea/generalhandler.cpp:137
 msgid "Unknown connection error"
-msgstr ""
+msgstr "Bilinmeyen bağlantı hatası"
 
 #: src/net/ea/generalhandler.cpp:194
 msgid "Got disconnected from server!"
-msgstr ""
+msgstr "Sunucudan bağlantı kesildi!"
 
 #: src/net/ea/gui/partytab.cpp:55
 msgid "/help > Display this help."
-msgstr ""
+msgstr "/help > Bu yardımı göster"
 
 #: src/net/ea/gui/partytab.cpp:56
 msgid "/create > Create a new party"
-msgstr ""
+msgstr "/create > Yeni parti oluştur"
 
 #: src/net/ea/gui/partytab.cpp:57
 msgid "/new > Alias of create"
-msgstr ""
+msgstr "/new > Oluşturulmuş başka ad"
 
 #: src/net/ea/gui/partytab.cpp:58
 msgid "/invite > Invite a player to your party"
-msgstr ""
+msgstr "/invite > Partine oyuncu davet et"
 
 #: src/net/ea/gui/partytab.cpp:59
 msgid "/leave > Leave the party you are in"
-msgstr ""
+msgstr "/leave > Partiden ayrıl"
 
 #: src/net/ea/gui/partytab.cpp:60
 msgid "/kick > Kick some one from the party you are in"
-msgstr ""
+msgstr "/kick > Partiden birini at"
 
 #: src/net/ea/gui/partytab.cpp:61
 msgid "/item > Show/change party item sharing options"
-msgstr ""
+msgstr "/item >  Parti nesne paylaşım seçeneklerini Göster/Değiştir "
 
 #: src/net/ea/gui/partytab.cpp:62
 msgid "/exp > Show/change party experience sharing options"
-msgstr ""
+msgstr "/exp > Parti exp paylaşım seçeneklerini Göster/Gizle"
 
 #: src/net/ea/gui/partytab.cpp:71
 msgid "Command: /new <party-name>"
-msgstr ""
+msgstr "Komut: /new <parti_ismi>"
 
 #: src/net/ea/gui/partytab.cpp:72
 msgid "Command: /create <party-name>"
-msgstr ""
+msgstr "Komut: /create <parti_ismi>"
 
 #: src/net/ea/gui/partytab.cpp:73
 msgid "These commands create a new party called <party-name>."
-msgstr ""
+msgstr "Bu komutlar yeni parti çağrımı oluşturur"
 
 #: src/net/ea/gui/partytab.cpp:77
 msgid "Command: /invite <nick>"
-msgstr ""
+msgstr "Komut: /invite <nick>"
 
 #: src/net/ea/gui/partytab.cpp:84
 msgid "Command: /leave"
-msgstr ""
+msgstr "Komut: /leave"
 
 #: src/net/ea/gui/partytab.cpp:85
 msgid "This command causes the player to leave the party."
-msgstr ""
+msgstr "Bu komutlar oyuncunun partiden ayrılmasına neden olur."
 
 #: src/net/ea/gui/partytab.cpp:89
 msgid "Command: /item <policy>"
-msgstr ""
+msgstr "Komut: /item <kural>"
 
 #: src/net/ea/gui/partytab.cpp:90
 msgid "This command changes the party's item sharing policy."
-msgstr ""
+msgstr "Bu komut parti nesne paylaşım kuralını değiştirir"
 
 #: src/net/ea/gui/partytab.cpp:91
 msgid "<policy> can be one of \"1\", \"yes\", \"true\" to enable item sharing, or \"0\", \"no\", \"false\" to disable item sharing."
@@ -2529,19 +2529,19 @@ msgstr ""
 
 #: src/net/ea/gui/partytab.cpp:94
 msgid "Command: /item"
-msgstr ""
+msgstr "Komut: /item"
 
 #: src/net/ea/gui/partytab.cpp:95
 msgid "This command displays the party's current item sharing policy."
-msgstr ""
+msgstr "Bu komut partinin mevcut nesne paylaşım kuralını gösterir."
 
 #: src/net/ea/gui/partytab.cpp:99
 msgid "Command: /exp <policy>"
-msgstr ""
+msgstr "Komut: /exp <kural>"
 
 #: src/net/ea/gui/partytab.cpp:100
 msgid "This command changes the party's experience sharing policy."
-msgstr ""
+msgstr "Bu komut partinin exp paylaşım kuralını değiştirir."
 
 #: src/net/ea/gui/partytab.cpp:101
 msgid "<policy> can be one of \"1\", \"yes\", \"true\" to enable experience sharing, or \"0\", \"no\", \"false\" to disable experience sharing."
@@ -2549,77 +2549,77 @@ msgstr ""
 
 #: src/net/ea/gui/partytab.cpp:104
 msgid "Command: /exp"
-msgstr ""
+msgstr "Komut: /exp"
 
 #: src/net/ea/gui/partytab.cpp:105
 msgid "This command displays the party's current experience sharing policy."
-msgstr ""
+msgstr "Bu komut partinin mevcut exp paylaşım kuralını gösterir."
 
 #: src/net/ea/gui/partytab.cpp:113
 msgid "Party name is missing."
-msgstr ""
+msgstr "Parti ismi eksik"
 
 #: src/net/ea/gui/partytab.cpp:136
 #: src/net/ea/partyhandler.cpp:194
 msgid "Item sharing enabled."
-msgstr ""
+msgstr "Nesne paylaşımı aktif."
 
 #: src/net/ea/gui/partytab.cpp:139
 #: src/net/ea/partyhandler.cpp:200
 msgid "Item sharing disabled."
-msgstr ""
+msgstr "Nesne paylaşımı pasif."
 
 #: src/net/ea/gui/partytab.cpp:142
 #: src/net/ea/partyhandler.cpp:206
 msgid "Item sharing not possible."
-msgstr ""
+msgstr "Nesne paylaşımı mümkün değil."
 
 #: src/net/ea/gui/partytab.cpp:168
 #: src/net/ea/partyhandler.cpp:171
 msgid "Experience sharing enabled."
-msgstr ""
+msgstr "Exp paylaşımı aktif."
 
 #: src/net/ea/gui/partytab.cpp:171
 #: src/net/ea/partyhandler.cpp:177
 msgid "Experience sharing disabled."
-msgstr ""
+msgstr "Exp paylaşımı pasif."
 
 #: src/net/ea/gui/partytab.cpp:174
 #: src/net/ea/partyhandler.cpp:183
 msgid "Experience sharing not possible."
-msgstr ""
+msgstr "Exp paylaşımı mümkün değil."
 
 #: src/net/ea/inventoryhandler.cpp:185
 msgid "Unable to pick up item."
-msgstr ""
+msgstr "Nesne toplamak olanaksız"
 
 #. TRANSLATORS: Used as in "You picked up a ...", when
 #. picking up only one item.
 #: src/net/ea/inventoryhandler.cpp:195
 msgid "a"
-msgstr ""
+msgstr "a"
 
 #: src/net/ea/inventoryhandler.cpp:199
 #, c-format
 msgid "You picked up %s [@@%d|%s@@]."
-msgstr ""
+msgstr "Sen %s [@@%d|%s@@] topladın."
 
 #: src/net/ea/inventoryhandler.cpp:245
 msgid "Failed to use item."
-msgstr ""
+msgstr "Nesne kullanılamaz."
 
 #: src/net/ea/loginhandler.cpp:76
 msgid "Account was not found. Please re-login."
-msgstr ""
+msgstr "Hesap bulunamadı lütfen tekrar oturum açın."
 
 #: src/net/ea/loginhandler.cpp:79
 #: src/net/tmwserv/loginhandler.cpp:113
 msgid "Old password incorrect"
-msgstr ""
+msgstr "Eski şifre yanlış"
 
 #: src/net/ea/loginhandler.cpp:82
 msgid "New password too short"
-msgstr ""
+msgstr "Yeni şifre çok kısa"
 
 #: src/net/ea/loginhandler.cpp:85
 #: src/net/ea/loginhandler.cpp:169
@@ -2629,148 +2629,148 @@ msgstr ""
 #: src/net/tmwserv/loginhandler.cpp:188
 #: src/net/tmwserv/loginhandler.cpp:220
 msgid "Unknown error"
-msgstr ""
+msgstr "Bilinmeyen hata"
 
 #: src/net/ea/loginhandler.cpp:142
 msgid "Unregistered ID"
-msgstr ""
+msgstr "Kayıt dışı ID"
 
 #: src/net/ea/loginhandler.cpp:145
 msgid "Wrong password"
-msgstr ""
+msgstr "Yanlış şifre"
 
 #: src/net/ea/loginhandler.cpp:148
 msgid "Account expired"
-msgstr ""
+msgstr "Hesap kullanım süresi doldu"
 
 #: src/net/ea/loginhandler.cpp:151
 msgid "Rejected from server"
-msgstr ""
+msgstr "Sunucudan reddedildi"
 
 #: src/net/ea/loginhandler.cpp:155
 msgid "You have been permanently banned from the game. Please contact the GM Team."
-msgstr ""
+msgstr "Kalıcı olarak oyundan men edilmektesin lütfen GM ekibi ile irtibata geç."
 
 #: src/net/ea/loginhandler.cpp:159
 #, c-format
 msgid ""
 "You have been temporarily banned from the game until %s.\n"
 "Please contact the GM team via the forums."
-msgstr ""
+msgstr "%s'e kadar oyundan men edilmektesin. Lütfen GM ekibi ile irtibata geç."
 
 #: src/net/ea/loginhandler.cpp:166
 msgid "This user name is already taken"
-msgstr ""
+msgstr "Bu kullanıcı adı zaten kullanımda"
 
 #: src/net/ea/partyhandler.cpp:77
 msgid "Could not create party."
-msgstr ""
+msgstr "Parti oluşturulamadı."
 
 #: src/net/ea/partyhandler.cpp:80
 msgid "Party successfully created."
-msgstr ""
+msgstr "Parti başarılı bir şekilde oluşturuldu."
 
 #: src/net/ea/partyhandler.cpp:115
 #, c-format
 msgid "%s is already a member of a party."
-msgstr ""
+msgstr "+s zaten partinin bir üyesi."
 
 #: src/net/ea/partyhandler.cpp:119
 #, c-format
 msgid "%s refused your invitation."
-msgstr ""
+msgstr "%s davetinizi reddetti."
 
 #: src/net/ea/partyhandler.cpp:123
 #, c-format
 msgid "%s is now a member of your party."
-msgstr ""
+msgstr "%s şimdi senin partinde."
 
 #: src/net/ea/partyhandler.cpp:127
 #, c-format
 msgid "Unknown invite response for %s."
-msgstr ""
+msgstr "%s için davet yanıtı bilinmiyor."
 
 #: src/net/ea/partyhandler.cpp:234
 msgid "You have left the party."
-msgstr ""
+msgstr "Partiden ayrıldın."
 
 #: src/net/ea/partyhandler.cpp:238
 #, c-format
 msgid "%s has left your party."
-msgstr ""
+msgstr "%s partinden ayrıldı."
 
 #: src/net/ea/partyhandler.cpp:273
 #, c-format
 msgid "An unknown member tried to say: %s"
-msgstr ""
+msgstr "Bilimeyen bir üye söylemeyi denedi: %s"
 
 #: src/net/ea/partyhandler.cpp:299
 msgid "Inviting like this isn't supported at the moment."
-msgstr ""
+msgstr "Bunun gibi bir davet şu anda desteklenmiyor."
 
 #: src/net/ea/partyhandler.cpp:328
 #, c-format
 msgid "%s is not in your party!"
-msgstr ""
+msgstr "%s partinde değil!"
 
 #: src/net/ea/playerhandler.cpp:96
 #: src/net/tmwserv/beinghandler.cpp:312
 msgid "You are dead."
-msgstr ""
+msgstr "Öldün."
 
 #: src/net/ea/playerhandler.cpp:97
 #: src/net/tmwserv/beinghandler.cpp:313
 msgid "We regret to inform you that your character was killed in battle."
-msgstr ""
+msgstr "Sizi haberdar etmekten üzüntü duyuyoruz fakat karakteriniz savaş da öldürüldü."
 
 #: src/net/ea/playerhandler.cpp:99
 #: src/net/tmwserv/beinghandler.cpp:314
 msgid "You are not that alive anymore."
-msgstr ""
+msgstr "O artık hayyatta değil."
 
 #: src/net/ea/playerhandler.cpp:100
 #: src/net/tmwserv/beinghandler.cpp:315
 msgid "The cold hands of the grim reaper are grabbing for your soul."
-msgstr ""
+msgstr "Azrailin sağuk elleri senin ruhun için kapışıyor."
 
 #: src/net/ea/playerhandler.cpp:101
 #: src/net/tmwserv/beinghandler.cpp:316
 msgid "Game Over!"
-msgstr ""
+msgstr "Oyun Bitti!"
 
 #: src/net/ea/playerhandler.cpp:102
 msgid "Insert coin to continue."
-msgstr ""
+msgstr "Devam etmek için para ekle."
 
 #: src/net/ea/playerhandler.cpp:103
 #: src/net/tmwserv/beinghandler.cpp:317
 msgid "No, kids. Your character did not really die. It... err... went to a better place."
-msgstr ""
+msgstr "Hayır çocuklar. Sizin karakteriniz ölmedi. Eeee o daha iyi bir yere gitti."
 
 #: src/net/ea/playerhandler.cpp:105
 #: src/net/tmwserv/beinghandler.cpp:318
 msgid "Your plan of breaking your enemies weapon by bashing it with your throat failed."
-msgstr ""
+msgstr "Sopa tarafından boğazın ile düşmanlarının silahlarını kırma planın başarısız oldu."
 
 #: src/net/ea/playerhandler.cpp:107
 #: src/net/tmwserv/beinghandler.cpp:319
 msgid "I guess this did not run too well."
-msgstr ""
+msgstr "Sanırım bu çok iyi çalıştırılmadı."
 
 #: src/net/ea/playerhandler.cpp:109
 #: src/net/tmwserv/beinghandler.cpp:320
 msgid "Do you want your possessions identified?"
-msgstr ""
+msgstr "Senin eşyalarının tespit edilmesini istermisin?"
 
 #: src/net/ea/playerhandler.cpp:111
 #: src/net/tmwserv/beinghandler.cpp:321
 msgid "Sadly, no trace of you was ever found..."
-msgstr ""
+msgstr "Ne yazıkki hiç iz yok..."
 
 #: src/net/ea/playerhandler.cpp:113
 #: src/net/tmwserv/beinghandler.cpp:322
 msgid "Annihilated."
-msgstr ""
+msgstr "İmha edildi."
 
 #: src/net/ea/playerhandler.cpp:115
 #: src/net/tmwserv/beinghandler.cpp:323
@@ -2780,15 +2780,15 @@ msgstr ""
 #: src/net/ea/playerhandler.cpp:117
 #: src/net/tmwserv/beinghandler.cpp:324
 msgid "You screwed up again, dump your body down the tubes and get you another one."
-msgstr ""
+msgstr "Tekrar berbat ettin. Tüpler başından aşağı döküldü ve başka biri olsun."
 
 #: src/net/ea/playerhandler.cpp:120
 msgid "You're not dead yet. You're just resting."
-msgstr ""
+msgstr "Sen henüz ölmedin. Sadece dinleniyorsun."
 
 #: src/net/ea/playerhandler.cpp:121
 msgid "You are no more."
-msgstr ""
+msgstr "Sen daha fazla değilsin."
 
 #: src/net/ea/playerhandler.cpp:122
 msgid "You have ceased to be."
@@ -2796,324 +2796,324 @@ msgstr ""
 
 #: src/net/ea/playerhandler.cpp:123
 msgid "You've expired and gone to meet your maker."
-msgstr ""
+msgstr "Süren doldu ve yapımcınla buluşmaya gittin."
 
 #: src/net/ea/playerhandler.cpp:124
 msgid "You're a stiff."
-msgstr ""
+msgstr "Sert bir konum"
 
 #: src/net/ea/playerhandler.cpp:125
 msgid "Bereft of life, you rest in peace."
-msgstr ""
+msgstr "Yoksun bir hayat, barış içinde yaşarken."
 
 #: src/net/ea/playerhandler.cpp:126
 msgid "If you weren't so animated, you'd be pushing up the daisies."
-msgstr ""
+msgstr "Eğer bu kadar hareketli olmasaydın, ölmüş olabilirdin."
 
 #: src/net/ea/playerhandler.cpp:127
 msgid "Your metabolic processes are now history."
-msgstr ""
+msgstr "Sizin metabolik süreçleriniz artık bir tarih."
 
 #: src/net/ea/playerhandler.cpp:128
 msgid "You're off the twig."
-msgstr ""
+msgstr "Sürgün bitti."
 
 #: src/net/ea/playerhandler.cpp:129
 msgid "You've kicked the bucket."
-msgstr ""
+msgstr "Kovaya atıldı."
 
 #: src/net/ea/playerhandler.cpp:130
 msgid "You've shuffled off your mortal coil, run down the curtain and joined the bleedin' choir invisibile."
-msgstr ""
+msgstr "Sorumluluklarını üstünden attın,kahrolası görünmez koroya katıldın"
 
 #: src/net/ea/playerhandler.cpp:132
 msgid "You are an ex-player."
-msgstr ""
+msgstr "Sen eski bir oyuncusun."
 
 #: src/net/ea/playerhandler.cpp:133
 msgid "You're pining for the fjords."
-msgstr ""
+msgstr "Fjords için ümit ediyorsun."
 
 #: src/net/ea/playerhandler.cpp:246
 #: src/net/ea/playerhandler.cpp:270
 msgid "Message"
-msgstr ""
+msgstr "Mesaj"
 
 #: src/net/ea/playerhandler.cpp:247
 msgid "You are carrying more than half your weight. You are unable to regain health."
-msgstr ""
+msgstr "Sen ağırlığının yarısından fazlasını taşıyorsun. Sağlığını yeniden kazanman olanaksız."
 
 #: src/net/ea/playerhandler.cpp:290
 msgid "You picked up "
-msgstr ""
+msgstr "Sen aldın"
 
 #: src/net/ea/playerhandler.cpp:413
 msgid "Equip arrows first."
-msgstr ""
+msgstr "Donanım oklar ilk."
 
 #: src/net/ea/skillhandler.cpp:139
 msgid "Trade failed!"
-msgstr ""
+msgstr "Takas başarısız!"
 
 #: src/net/ea/skillhandler.cpp:142
 msgid "Emote failed!"
-msgstr ""
+msgstr "Duyguları gösterme başarısız!"
 
 #: src/net/ea/skillhandler.cpp:145
 msgid "Sit failed!"
-msgstr ""
+msgstr "Oturma başarısız!"
 
 #: src/net/ea/skillhandler.cpp:148
 msgid "Chat creating failed!"
-msgstr ""
+msgstr "Sogbet oluşturma başarısız!"
 
 #: src/net/ea/skillhandler.cpp:151
 msgid "Could not join party!"
-msgstr ""
+msgstr "Partiye katılınamazdı!"
 
 #: src/net/ea/skillhandler.cpp:154
 msgid "Cannot shout!"
-msgstr ""
+msgstr "Bağrılamaz!"
 
 #: src/net/ea/skillhandler.cpp:163
 msgid "You have not yet reached a high enough lvl!"
-msgstr ""
+msgstr "Henüz yeterince yüksek bir seviyeye ulaşmadın!"
 
 #: src/net/ea/skillhandler.cpp:166
 msgid "Insufficient HP!"
-msgstr ""
+msgstr "Yetersiz HP!"
 
 #: src/net/ea/skillhandler.cpp:169
 msgid "Insufficient SP!"
-msgstr ""
+msgstr "Yetersiz SP!"
 
 #: src/net/ea/skillhandler.cpp:172
 msgid "You have no memos!"
-msgstr ""
+msgstr "Hiç kısa mesaj yok!"
 
 #: src/net/ea/skillhandler.cpp:175
 msgid "You cannot do that right now!"
-msgstr ""
+msgstr "Bunu şimdi doğru yapamazsın!"
 
 #: src/net/ea/skillhandler.cpp:178
 msgid "Seems you need more money... ;-)"
-msgstr ""
+msgstr "Daha fazla paraya ihtiyacın varmı gibi görünüyor... ;-)ş"
 
 #: src/net/ea/skillhandler.cpp:181
 msgid "You cannot use this skill with that kind of weapon!"
-msgstr ""
+msgstr "Bu beceriyi bu tür bir silahla kullanamazsın!"
 
 #: src/net/ea/skillhandler.cpp:184
 msgid "You need another red gem!"
-msgstr ""
+msgstr "Başak bir kırmızı taşa ihtiyacın var!"
 
 #: src/net/ea/skillhandler.cpp:187
 msgid "You need another blue gem!"
-msgstr ""
+msgstr "Başak bir mavi taşa ihtiyacın var!"
 
 #: src/net/ea/skillhandler.cpp:190
 msgid "You're carrying to much to do this!"
-msgstr ""
+msgstr "Bunu yapmak için çok fazla taşıyorsun!"
 
 #: src/net/ea/skillhandler.cpp:193
 msgid "Huh? What's that?"
-msgstr ""
+msgstr "Yuh? Bu da ne?"
 
 #: src/net/ea/skillhandler.cpp:202
 msgid "Warp failed..."
-msgstr ""
+msgstr "Çarpılma hatası!"
 
 #: src/net/ea/skillhandler.cpp:205
 msgid "Could not steal anything..."
-msgstr ""
+msgstr "Hiçbir şey çalınamadı..."
 
 #: src/net/ea/skillhandler.cpp:208
 msgid "Poison had no effect..."
-msgstr ""
+msgstr "Zehir etkili olmadı..."
 
 #: src/net/ea/tradehandler.cpp:103
 #: src/net/tmwserv/tradehandler.cpp:114
 msgid "Request for Trade"
-msgstr ""
+msgstr "Takas isteği"
 
 #: src/net/ea/tradehandler.cpp:104
 #: src/net/tmwserv/tradehandler.cpp:115
 #, c-format
 msgid "%s wants to trade with you, do you accept?"
-msgstr ""
+msgstr "%s seninle takas yapmak istiyor, kabul ediyormusun?"
 
 #: src/net/ea/tradehandler.cpp:119
 msgid "Trading isn't possible. Trade partner is too far away."
-msgstr ""
+msgstr "Takas yapılamaz. Takas ortağın çok uzak."
 
 #: src/net/ea/tradehandler.cpp:123
 msgid "Trading isn't possible. Character doesn't exist."
-msgstr ""
+msgstr "Takas yapılamaz. Karakter yok."
 
 #: src/net/ea/tradehandler.cpp:127
 msgid "Trade cancelled due to an unknown reason."
-msgstr ""
+msgstr "Takas bilinmeyen bir sebebten iptal edildi."
 
 #: src/net/ea/tradehandler.cpp:132
 #, c-format
 msgid "Trade: You and %s"
-msgstr ""
+msgstr "Takas: Sen ve %s"
 
 #: src/net/ea/tradehandler.cpp:139
 #, c-format
 msgid "Trade with %s cancelled."
-msgstr ""
+msgstr "%s ile takas iptal edildi."
 
 #: src/net/ea/tradehandler.cpp:148
 msgid "Unhandled trade cancel packet."
-msgstr ""
+msgstr "İşlenmeyen takas paket iptal."
 
 #: src/net/ea/tradehandler.cpp:198
 msgid "Failed adding item. Trade partner is over weighted."
-msgstr ""
+msgstr "Nesne ekleme başarısız. Takas ortağın fazla ağır."
 
 #: src/net/ea/tradehandler.cpp:203
 msgid "Failed adding item. Trade partner has no free slot."
-msgstr ""
+msgstr "Nesne ekleme başarısız. Takas ortağının hiç boş yeri yok."
 
 #: src/net/ea/tradehandler.cpp:207
 msgid "Failed adding item for unknown reason."
-msgstr ""
+msgstr "Takas bilinmeyen bir sebepten ötürü başarısız oldu."
 
 #: src/net/ea/tradehandler.cpp:220
 #: src/net/tmwserv/tradehandler.cpp:147
 msgid "Trade canceled."
-msgstr ""
+msgstr "Takas iptal oldu."
 
 #: src/net/ea/tradehandler.cpp:227
 #: src/net/tmwserv/tradehandler.cpp:154
 msgid "Trade completed."
-msgstr ""
+msgstr "Takas tamamlandı."
 
 #: src/net/tmwserv/beinghandler.cpp:328
 msgid " Press OK to respawn"
-msgstr ""
+msgstr "Tekrar canlanmak için TAMAM düğmesine bas."
 
 #: src/net/tmwserv/beinghandler.cpp:329
 msgid "You died"
-msgstr ""
+msgstr "Öldün"
 
 #: src/net/tmwserv/charserverhandler.cpp:219
 msgid "No gameservers are available."
-msgstr ""
+msgstr "Müsait oyun sunucusu yok."
 
 #: src/net/tmwserv/charserverhandler.cpp:258
 msgid "Willpower:"
-msgstr ""
+msgstr "İrade:"
 
 #: src/net/tmwserv/chathandler.cpp:158
 #: src/net/tmwserv/guildhandler.cpp:250
 #, c-format
 msgid "Topic: %s"
-msgstr ""
+msgstr "Konu: %s"
 
 #: src/net/tmwserv/generalhandler.cpp:87
 #, c-format
 msgid "Willpower %+d"
-msgstr ""
+msgstr "İrade %+d"
 
 #: src/net/tmwserv/guildhandler.cpp:74
 msgid "Guild created."
-msgstr ""
+msgstr "Lonca oluşturuldu."
 
 #: src/net/tmwserv/guildhandler.cpp:79
 msgid "Error creating guild."
-msgstr ""
+msgstr "Lonca oluşturma hatası."
 
 #: src/net/tmwserv/guildhandler.cpp:89
 msgid "Invite sent."
-msgstr ""
+msgstr "Davet gönder."
 
 #: src/net/tmwserv/guildhandler.cpp:194
 msgid "Member was promoted successfully."
-msgstr ""
+msgstr "Üye başarı ile terfi ettirildi."
 
 #: src/net/tmwserv/guildhandler.cpp:199
 msgid "Failed to promote member."
-msgstr ""
+msgstr "Üyer terfi ed"
 
 #: src/net/tmwserv/loginhandler.cpp:80
 msgid "Wrong magic_token"
-msgstr ""
+msgstr "Yanlış magic_token"
 
 #: src/net/tmwserv/loginhandler.cpp:83
 #: src/net/tmwserv/loginhandler.cpp:182
 msgid "Already logged in"
-msgstr ""
+msgstr "Zaten giriş yapıldı"
 
 #: src/net/tmwserv/loginhandler.cpp:86
 #: src/net/tmwserv/loginhandler.cpp:185
 msgid "Server is full"
-msgstr ""
+msgstr "Sunucu dolu"
 
 #: src/net/tmwserv/loginhandler.cpp:110
 msgid "New password incorrect"
-msgstr ""
+msgstr "Yeni şifre yanlış"
 
 #: src/net/tmwserv/loginhandler.cpp:116
 #: src/net/tmwserv/loginhandler.cpp:146
 msgid "Account not connected. Please login first."
-msgstr ""
+msgstr "Hesaba bağlanılamadı. Lütfen önce giriş yapın."
 
 #: src/net/tmwserv/loginhandler.cpp:140
 msgid "New email address incorrect"
-msgstr ""
+msgstr "Yeni e-posta adresi yanlış"
 
 #: src/net/tmwserv/loginhandler.cpp:143
 msgid "Old email address incorrect"
-msgstr ""
+msgstr "Eski e-posta adresi yanlış"
 
 #: src/net/tmwserv/loginhandler.cpp:149
 msgid "The new Email Address already exists."
-msgstr ""
+msgstr "Yeni e-posta adresi zaten kullanımda"
 
 #: src/net/tmwserv/loginhandler.cpp:176
 #: src/net/tmwserv/loginhandler.cpp:208
 msgid "Client version is too old"
-msgstr ""
+msgstr "İstemci versiyonu çok eski"
 
 #: src/net/tmwserv/loginhandler.cpp:179
 msgid "Wrong username or password"
-msgstr ""
+msgstr "Yanlış kullanıcı adı ve şifre"
 
 #: src/net/tmwserv/loginhandler.cpp:211
 msgid "Wrong username, password or email address"
-msgstr ""
+msgstr "Yanlış kullanıcı adı, şifre ve e-posta adresi"
 
 #: src/net/tmwserv/loginhandler.cpp:214
 msgid "Username already exists"
-msgstr ""
+msgstr "Kullanıcı adı zaten kullanımda"
 
 #: src/net/tmwserv/loginhandler.cpp:217
 msgid "Email address already exists"
-msgstr ""
+msgstr "E-posta adresi zaten kullanımda"
 
 #: src/net/tmwserv/partyhandler.cpp:86
 msgid "Joined party."
-msgstr ""
+msgstr "Partiye katıl"
 
 #: src/net/tmwserv/partyhandler.cpp:103
 #, c-format
 msgid "%s joined the party."
-msgstr ""
+msgstr "%s partiye katıldı."
 
 #: src/net/tmwserv/tradehandler.cpp:93
 msgid "Accepting incoming trade requests."
-msgstr ""
+msgstr "Gelen takas isteklerini kabul et."
 
 #: src/net/tmwserv/tradehandler.cpp:95
 msgid "Ignoring incoming trade requests."
-msgstr ""
+msgstr "Gelen takas isteklerini yok say."
 
 #: src/net/tmwserv/tradehandler.cpp:133
 #, c-format
 msgid "Trading with %s"
-msgstr ""
+msgstr "%s ile takas"
 
 #: src/resources/itemdb.cpp:52
 #, c-format

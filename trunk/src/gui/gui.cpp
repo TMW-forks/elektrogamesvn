@@ -51,6 +51,31 @@ SDLInput *guiInput = 0;
 
 // Bolded font
 gcn::Font *boldFont = 0;
+gcn::Font *font_bas_1 = 0;
+gcn::Font *font_bas_2 = 0;
+gcn::Font *font_bas_3 = 0;
+gcn::Font *font_bas_4 = 0;
+gcn::Font *font_bas_5 = 0;
+gcn::Font *font_bas_b_1 = 0;
+gcn::Font *font_bas_b_2 = 0;
+gcn::Font *font_el_1 = 0;
+gcn::Font *font_el_2 = 0;
+gcn::Font *font_el_3 = 0;
+gcn::Font *font_el_b_1 = 0;
+gcn::Font *font_el_b_2 = 0;
+gcn::Font *font_txt_1 = 0;
+gcn::Font *font_txt_2 = 0;
+gcn::Font *font_txt_3 = 0;
+gcn::Font *font_txt_4 = 0;
+gcn::Font *font_txt_5 = 0;
+gcn::Font *font_txt_6 = 0;
+gcn::Font *font_txt_b_1 = 0;
+gcn::Font *font_txt_b_2 = 0;
+gcn::Font *font_txt_b_3 = 0;
+gcn::Font *font_calibri = 0;
+gcn::Font *font_i_calibri = 0;
+gcn::Font *font_b_calibri = 0;
+gcn::Font *font_b_i_calibri = 0;
 
 class GuiConfigListener : public ConfigListener
 {
@@ -131,6 +156,298 @@ Gui::Gui(Graphics *graphics):
         logger->error(std::string("Unable to load '") + fontFile +
                       std::string("': ") + e.getMessage());
     }
+/* ***************************************************** */
+/*                    ELEKTRO FONT                       */
+/*********************************************************/
+    fontFile = "fonts/bas-1.ttf";
+    path = resman->getPath(fontFile);
+    try
+    {
+        font_bas_1 = new TrueTypeFont(path, fontSize);
+    }
+    catch (gcn::Exception e)
+    {
+        logger->error(std::string("Unable to load '") + fontFile +
+                      std::string("': ") + e.getMessage());
+    }
+    fontFile = "fonts/bas-2.ttf";
+    path = resman->getPath(fontFile);
+    try
+    {
+        font_bas_2 = new TrueTypeFont(path, fontSize);
+    }
+    catch (gcn::Exception e)
+    {
+        logger->error(std::string("Unable to load '") + fontFile +
+                      std::string("': ") + e.getMessage());
+    }
+    fontFile = "fonts/bas-3.ttf";
+    path = resman->getPath(fontFile);
+    try
+    {
+        font_bas_3 = new TrueTypeFont(path, fontSize);
+    }
+    catch (gcn::Exception e)
+    {
+        logger->error(std::string("Unable to load '") + fontFile +
+                      std::string("': ") + e.getMessage());
+    }
+    fontFile = "fonts/bas-4.ttf";
+    path = resman->getPath(fontFile);
+    try
+    {
+        font_bas_4 = new TrueTypeFont(path, fontSize);
+    }
+    catch (gcn::Exception e)
+    {
+        logger->error(std::string("Unable to load '") + fontFile +
+                      std::string("': ") + e.getMessage());
+    }
+    fontFile = "fonts/bas-5.ttf";
+    path = resman->getPath(fontFile);
+    try
+    {
+        font_bas_5 = new TrueTypeFont(path, fontSize);
+    }
+    catch (gcn::Exception e)
+    {
+        logger->error(std::string("Unable to load '") + fontFile +
+                      std::string("': ") + e.getMessage());
+    }
+
+    //---------------------------------------------------
+
+    fontFile = "fonts/bas-b-2.ttf";
+    path = resman->getPath(fontFile);
+    try
+    {
+        font_bas_b_1 = new TrueTypeFont(path, fontSize);
+    }
+    catch (gcn::Exception e)
+    {
+        logger->error(std::string("Unable to load '") + fontFile +
+                      std::string("': ") + e.getMessage());
+    }
+    fontFile = "fonts/bas-b-2.ttf";
+    path = resman->getPath(fontFile);
+    try
+    {
+        font_bas_b_2 = new TrueTypeFont(path, fontSize);
+    }
+    catch (gcn::Exception e)
+    {
+        logger->error(std::string("Unable to load '") + fontFile +
+                      std::string("': ") + e.getMessage());
+    }
+
+    //-------------------------------------------------
+
+    fontFile = "fonts/el-1.ttf";
+    path = resman->getPath(fontFile);
+    try
+    {
+        font_el_1 = new TrueTypeFont(path, fontSize);
+    }
+    catch (gcn::Exception e)
+    {
+        logger->error(std::string("Unable to load '") + fontFile +
+                      std::string("': ") + e.getMessage());
+    }
+    fontFile = "fonts/el-2.ttf";
+    path = resman->getPath(fontFile);
+    try
+    {
+        font_el_2 = new TrueTypeFont(path, fontSize);
+    }
+    catch (gcn::Exception e)
+    {
+        logger->error(std::string("Unable to load '") + fontFile +
+                      std::string("': ") + e.getMessage());
+    }
+    fontFile = "fonts/el-3.ttf";
+    path = resman->getPath(fontFile);
+    try
+    {
+        font_el_3 = new TrueTypeFont(path, fontSize);
+    }
+    catch (gcn::Exception e)
+    {
+        logger->error(std::string("Unable to load '") + fontFile +
+                      std::string("': ") + e.getMessage());
+    }
+    //----------------------------------------------------------
+    fontFile = "fonts/el-b-1.ttf";
+    path = resman->getPath(fontFile);
+    try
+    {
+        font_el_b_1 = new TrueTypeFont(path, fontSize);
+    }
+    catch (gcn::Exception e)
+    {
+        logger->error(std::string("Unable to load '") + fontFile +
+                      std::string("': ") + e.getMessage());
+    }
+    fontFile = "fonts/el-b-2.ttf";
+    path = resman->getPath(fontFile);
+    try
+    {
+        font_el_b_2 = new TrueTypeFont(path, fontSize);
+    }
+    catch (gcn::Exception e)
+    {
+        logger->error(std::string("Unable to load '") + fontFile +
+                      std::string("': ") + e.getMessage());
+    }
+    //---------------------------------------------------------
+    fontFile = "fonts/txt-1.ttf";
+    path = resman->getPath(fontFile);
+    try
+    {
+        font_txt_1 = new TrueTypeFont(path, fontSize);
+    }
+    catch (gcn::Exception e)
+    {
+        logger->error(std::string("Unable to load '") + fontFile +
+                      std::string("': ") + e.getMessage());
+    }
+    fontFile = "fonts/txt-2.ttf";
+    path = resman->getPath(fontFile);
+    try
+    {
+        font_txt_2 = new TrueTypeFont(path, fontSize);
+    }
+    catch (gcn::Exception e)
+    {
+        logger->error(std::string("Unable to load '") + fontFile +
+                      std::string("': ") + e.getMessage());
+    }
+    fontFile = "fonts/txt-3.ttf";
+    path = resman->getPath(fontFile);
+    try
+    {
+        font_txt_3 = new TrueTypeFont(path, fontSize);
+    }
+    catch (gcn::Exception e)
+    {
+        logger->error(std::string("Unable to load '") + fontFile +
+                      std::string("': ") + e.getMessage());
+    }
+    fontFile = "fonts/txt-4.ttf";
+    path = resman->getPath(fontFile);
+    try
+    {
+        font_txt_4 = new TrueTypeFont(path, fontSize);
+    }
+    catch (gcn::Exception e)
+    {
+        logger->error(std::string("Unable to load '") + fontFile +
+                      std::string("': ") + e.getMessage());
+    }
+    fontFile = "fonts/txt-5.ttf";
+    path = resman->getPath(fontFile);
+    try
+    {
+        font_txt_5 = new TrueTypeFont(path, fontSize);
+    }
+    catch (gcn::Exception e)
+    {
+        logger->error(std::string("Unable to load '") + fontFile +
+                      std::string("': ") + e.getMessage());
+    }
+    fontFile = "fonts/txt-6.ttf";
+    path = resman->getPath(fontFile);
+    try
+    {
+        font_txt_6 = new TrueTypeFont(path, fontSize);
+    }
+    catch (gcn::Exception e)
+    {
+        logger->error(std::string("Unable to load '") + fontFile +
+                      std::string("': ") + e.getMessage());
+    }
+    //-------------------------------------------------------
+    fontFile = "fonts/txt-b-1.ttf";
+    path = resman->getPath(fontFile);
+    try
+    {
+        font_txt_b_1 = new TrueTypeFont(path, fontSize);
+    }
+    catch (gcn::Exception e)
+    {
+        logger->error(std::string("Unable to load '") + fontFile +
+                      std::string("': ") + e.getMessage());
+    }
+    fontFile = "fonts/txt-b-2.ttf";
+    path = resman->getPath(fontFile);
+    try
+    {
+        font_txt_b_2 = new TrueTypeFont(path, fontSize);
+    }
+    catch (gcn::Exception e)
+    {
+        logger->error(std::string("Unable to load '") + fontFile +
+                      std::string("': ") + e.getMessage());
+    }
+    fontFile = "fonts/txt-b-3.ttf";
+    path = resman->getPath(fontFile);
+    try
+    {
+        font_txt_b_3 = new TrueTypeFont(path, fontSize);
+    }
+    catch (gcn::Exception e)
+    {
+        logger->error(std::string("Unable to load '") + fontFile +
+                      std::string("': ") + e.getMessage());
+    }
+    //-------------------------------------------------------------
+    fontFile = "fonts/txt-calibri.ttf";
+    path = resman->getPath(fontFile);
+    try
+    {
+        font_calibri = new TrueTypeFont(path, fontSize);
+    }
+    catch (gcn::Exception e)
+    {
+        logger->error(std::string("Unable to load '") + fontFile +
+                      std::string("': ") + e.getMessage());
+    }
+    fontFile = "fonts/txt-b-calibri.ttf";
+    path = resman->getPath(fontFile);
+    try
+    {
+        font_b_calibri = new TrueTypeFont(path, fontSize);
+    }
+    catch (gcn::Exception e)
+    {
+        logger->error(std::string("Unable to load '") + fontFile +
+                      std::string("': ") + e.getMessage());
+    }
+    fontFile = "fonts/txt-i-calibri.ttf";
+    path = resman->getPath(fontFile);
+    try
+    {
+        font_i_calibri = new TrueTypeFont(path, fontSize);
+    }
+    catch (gcn::Exception e)
+    {
+        logger->error(std::string("Unable to load '") + fontFile +
+                      std::string("': ") + e.getMessage());
+    }
+    fontFile = "fonts/txt-b-i-calibri.ttf";
+    path = resman->getPath(fontFile);
+    try
+    {
+        font_b_i_calibri = new TrueTypeFont(path, fontSize);
+    }
+    catch (gcn::Exception e)
+    {
+        logger->error(std::string("Unable to load '") + fontFile +
+                      std::string("': ") + e.getMessage());
+    }
+
+/* ***************************************************** */
+
+
 
     gcn::Widget::setGlobalFont(mGuiFont);
 

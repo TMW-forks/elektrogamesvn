@@ -132,5 +132,31 @@ extern SDLInput *guiInput;                    /**< GUI input */
  * Bolded text font
  */
 extern gcn::Font *boldFont;
+extern gcn::Font *font_bas_1;
+extern gcn::Font *font_bas_2;
+extern gcn::Font *font_bas_3;
+extern gcn::Font *font_bas_4;
+extern gcn::Font *font_bas_5;
+extern gcn::Font *font_bas_b_1;
+extern gcn::Font *font_bas_b_2;
+extern gcn::Font *font_el_1;
+extern gcn::Font *font_el_2;
+extern gcn::Font *font_el_3;
+extern gcn::Font *font_el_b_1;
+extern gcn::Font *font_el_b_2;
+extern gcn::Font *font_txt_1;
+extern gcn::Font *font_txt_2;
+extern gcn::Font *font_txt_3;
+extern gcn::Font *font_txt_4;
+extern gcn::Font *font_txt_5;
+extern gcn::Font *font_txt_6;
+extern gcn::Font *font_txt_b_1;
+extern gcn::Font *font_txt_b_2;
+extern gcn::Font *font_txt_b_3;
+extern gcn::Font *font_calibri;
+extern gcn::Font *font_i_calibri;
+extern gcn::Font *font_b_calibri;
+extern gcn::Font *font_b_i_calibri;
+
 
 #endif // GUI_H

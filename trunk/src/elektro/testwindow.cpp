@@ -55,6 +55,7 @@ TestDialog::TestDialog():
     testinfo = resman->getImage("graphics/elektrik/testtoolbar.png");
     mStartBox = new BrowserBox();
     mStartBox->setOpaque(false);
+    mStartBox->setFont(font_txt_5);
 
     mStartScroll = new ScrollArea(mStartBox);
     mStartScroll->setHorizontalScrollPolicy(gcn::ScrollArea::SHOW_NEVER);
@@ -68,7 +69,7 @@ TestDialog::TestDialog():
 
     mFinishText = new BrowserBox();
     mFinishText->setOpaque(false);
-    mFinishText->addRow("MERHABA");
+    mFinishText->setFont(font_txt_5);
     mFinishScroll = new ScrollArea(mFinishText);
     mFinishScroll->setWidth(250);
     mFinishScroll->setHeight(285);
@@ -906,14 +907,36 @@ TestDialog::parse()
             b = XML::getProperty(node, "bcolorb", 0);
             if (r!=0 && g!=0 && b!=0) templabel->setBackgroundColor(gcn::Color(r,g,b));
 
-            std::string font = XML::getProperty(node, "font", "");
-            if (font=="speechFont") templabel->setFont(boldFont);
-             else if (font=="hitRedFont") templabel->setFont(boldFont);
-             else if (font=="hitBlueFont") templabel->setFont(boldFont);
-             else if (font=="hitYellowFont") templabel->setFont(boldFont);
+            std::string font = XML::getProperty(node, "font", "boldFont");
+            if (font=="boldFont") templabel->setFont(boldFont);
+             else if (font=="bas_1") templabel->setFont(font_bas_1);
+             else if (font=="bas_2") templabel->setFont(font_bas_2);
+             else if (font=="bas_3") templabel->setFont(font_bas_3);
+             else if (font=="bas_4") templabel->setFont(font_bas_4);
+             else if (font=="bas_5") templabel->setFont(font_bas_5);
+             else if (font=="bas_b_1") templabel->setFont(font_bas_b_1);
+             else if (font=="bas_b_2") templabel->setFont(font_bas_b_2);
+             else if (font=="el_1") templabel->setFont(font_el_1);
+             else if (font=="el_2") templabel->setFont(font_el_2);
+             else if (font=="el_3") templabel->setFont(font_el_3);
+             else if (font=="el_b_1") templabel->setFont(font_el_b_1);
+             else if (font=="el_b_2") templabel->setFont(font_el_b_2);
+             else if (font=="txt_1") templabel->setFont(font_txt_1);
+             else if (font=="txt_2") templabel->setFont(font_txt_2);
+             else if (font=="txt_3") templabel->setFont(font_txt_3);
+             else if (font=="txt_4") templabel->setFont(font_txt_4);
+             else if (font=="txt_5") templabel->setFont(font_txt_5);
+             else if (font=="txt_6") templabel->setFont(font_txt_6);
+             else if (font=="txt_b_1") templabel->setFont(font_txt_b_1);
+             else if (font=="txt_b_2") templabel->setFont(font_txt_b_2);
+             else if (font=="txt_b_3") templabel->setFont(font_txt_b_3);
+             else if (font=="txt_cal") templabel->setFont(font_calibri);
+             else if (font=="txt_cal_i") templabel->setFont(font_i_calibri);
+             else if (font=="txt_cal_b") templabel->setFont(font_b_calibri);
+             else if (font=="txt_cal_bi") templabel->setFont(font_b_i_calibri);
              else templabel->setFont(boldFont);
 
-//            templabel->setBorderSize(XML::getProperty(node, "bordersize", 0));
+            templabel->setFrameSize(XML::getProperty(node, "bordersize", 0));
             templabel->setVisible(false);
             templabel->adjustSize();
             add(templabel);

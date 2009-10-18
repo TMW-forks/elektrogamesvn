@@ -160,8 +160,8 @@ Status Component::getStatus ()
 
 void Component::draw(gcn::Graphics *graphics)
 {
-//    graphics->setColor(gcn::Color(0xff0000));
-//    graphics->drawRectangle(gcn::Rectangle(0,0,getWidth(),getHeight()));
+    graphics->setColor(gcn::Color(0xff0000));
+    graphics->drawRectangle(gcn::Rectangle(0,0,getWidth(),getHeight()));
     Graphics *g = static_cast<Graphics*>(graphics);
     ResourceManager *resman = ResourceManager::getInstance();
     if (getSelected())
@@ -212,9 +212,7 @@ void Component::mousePressed(gcn::MouseEvent &event)
             mFirstY=event.getY();
         }
     }
-   logger->log("Mouse PRESSED");
    nodesCalc();
-
 }
 
 void Component::mouseReleased(gcn::MouseEvent &event)
@@ -225,7 +223,7 @@ void Component::mouseReleased(gcn::MouseEvent &event)
    {
         const std::string &actionEventId="com_close";
         setActionEventId(actionEventId);
-//        generateAction();
+        distributeActionEvent();
    }
    else if (!keys[SDLK_LCTRL] && !keys[SDLK_RCTRL])
    {
@@ -240,7 +238,6 @@ void Component::mouseReleased(gcn::MouseEvent &event)
             setSelected(true);
         }
    }
-   logger->log("Mouse SERBEST");
    nodesCalc();
 }
 
@@ -258,25 +255,30 @@ void Component::mouseDragged(gcn::MouseEvent &event)
                 const std::string &actionEventId="com_rotate_y-";
                 mFirstY = event.getY();
                 setActionEventId(actionEventId);
-//                generateAction();
+                distributeActionEvent();
             }
             if (event.getY()-mFirstY<-mInterval)
             {
                 const std::string &actionEventId="com_rotate_y+";
                 mFirstY = event.getY();
                 setActionEventId(actionEventId);
-//                generateAction();
+                distributeActionEvent();
             }
         }
         else
         {
-            gcn::Window::mouseDragged(event);
-            if (getX()<40) setX(40);
-            if (getY()<50) setY(50);
-            if (getX()>(circuitWindow->getWidth()-getW()-45)) setX(circuitWindow->getWidth()-45-getW());
-            if (getY()>(circuitWindow->getHeight()-getH()-75)) setY(circuitWindow->getHeight()-getH()-75);
+//        circuitWindow->mHint->setCaption(toString(event.getX())+" - "+toString(event.getX()));
+//        circuitWindow->mHint->adjustSize();
+            requestMoveToTop();
+            int mouseX, mouseY;
+            SDL_GetMouseState(&mouseX, &mouseY);
+            setX(mouseX-circuitWindow->getX()-getWidth()/2);
+            setY(mouseY-circuitWindow->getY()-circuitWindow->getTitleBarHeight()-getHeight()/2);
+        if (getX()<20) setX(20);
+        if (getY()<50) setY(50);
+        if (getX()>(circuitWindow->getWidth()-getWidth()-15)) setX(circuitWindow->getWidth()-15-getWidth());
+        if (getY()>(circuitWindow->getHeight()-getHeight()-60)) setY(circuitWindow->getHeight()-getHeight()-60);
         }
-           logger->log("Mouse DRAGGED");
         nodesCalc();
 }
 

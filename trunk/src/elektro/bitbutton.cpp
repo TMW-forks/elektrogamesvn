@@ -165,7 +165,7 @@ void BitButton::mousePressed(gcn::MouseEvent& mouseEvent)
         firstX = mouseEvent.getX();
         firstY = mouseEvent.getY();
         setActionEventId(mAction);
-//        generateAction();
+        distributeActionEvent();
         gcn::Button::mousePressed(mouseEvent);
 }
 
@@ -177,7 +177,7 @@ void BitButton::mouseDragged(gcn::MouseEvent& mouseEvent)
             {
                 const std::string &actionEventId=mAction+"_y-";
                 setActionEventId(actionEventId);
-//                generateAction();
+                distributeActionEvent();
                 firstY = mouseEvent.getY();
             }
 
@@ -185,21 +185,21 @@ void BitButton::mouseDragged(gcn::MouseEvent& mouseEvent)
             {
                 const std::string &actionEventId=mAction+"_y+";
                 setActionEventId(actionEventId);
-//                generateAction();
+                distributeActionEvent();
                 firstY = mouseEvent.getY();
             }
         if (mouseEvent.getX()-firstX<-getInterval())
             {
                 const std::string &actionEventId=mAction+"_x-";
                 setActionEventId(actionEventId);
-//                generateAction();
+                distributeActionEvent();
                 firstX = mouseEvent.getX();
             }
         if (mouseEvent.getX()-firstX>getInterval())
             {
                 const std::string &actionEventId=mAction+"_x+";
                 setActionEventId(actionEventId);
-//                generateAction();
+                distributeActionEvent();
                 firstX = mouseEvent.getX();
             }
         setActionEventId("");

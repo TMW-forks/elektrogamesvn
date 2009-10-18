@@ -62,6 +62,7 @@ void Node::mouseDragged(gcn::MouseEvent& mouseEvent)
             const std::string &actionEventId="node_shift";
             mCreator = true;
             setActionEventId(actionEventId);
+            distributeActionEvent();
         }
         else if(mMovable && mSelectable)
         {
@@ -92,9 +93,9 @@ void Node::mouseReleased(gcn::MouseEvent& mouseEvent)
     {
         mRightClick =false;
         mDead = true;
-//        const std::string &actionEventId="node_close";
-//        setActionEventId(actionEventId);
-//        generateAction();
+        const std::string &actionEventId="node_close";
+        setActionEventId(actionEventId);
+        distributeActionEvent();
     }
     BitButton::mouseReleased(mouseEvent);
 }

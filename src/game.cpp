@@ -98,6 +98,7 @@
 
 #include "elektro/circuitwindow.h"
 #include "elektro/testwindow.h"
+#include "elektro/slaytwindow.h"
 
 std::string map_path;
 std::string globalHint;
@@ -155,8 +156,14 @@ EffectManager *effectManager = NULL;
 
 ChatTab *localChatTab = NULL;
 
+/*********************************************************/
+/*************** ELEKTROADD ******************************/
+/*********************************************************/
+
 CircuitWindow *circuitWindow;
 TestDialog *testDialog;
+SlaytWindow *slaytWindow;
+
 
 const int MAX_TIME = 10000;
 
@@ -218,6 +225,8 @@ static void createGuiWindows()
     // Create dialogs
     circuitWindow = new CircuitWindow;
     testDialog = new TestDialog;
+    slaytWindow = new SlaytWindow;
+
     chatWindow = new ChatWindow;
     buyDialog = new BuyDialog;
     sellDialog = new SellDialog;
@@ -292,6 +301,10 @@ static void destroyGuiWindows()
     delete storageWindow;
     delete outfitWindow;
     delete specialsWindow;
+
+    delete testDialog;
+    delete circuitWindow;
+    delete slaytWindow;
 }
 
 Game::Game():
@@ -855,7 +868,7 @@ void Game::handleInput()
                         requestedWindow = debugWindow;
                         break;
                     case KeyboardConfig::KEY_WINDOW_PARTY:
-                        requestedWindow = partyWindow;
+                        requestedWindow = slaytWindow; // partyWindow; //deneme amacıyla kapatıldı. düzeltilecek!!!!
                         break;
                     case KeyboardConfig::KEY_WINDOW_EMOTE_SHORTCUT:
                         requestedWindow = emoteShortcutWindow;

@@ -221,7 +221,7 @@ Gui::Gui(Graphics *graphics):
     path = resman->getPath(fontFile);
     try
     {
-        font_bas_b_1 = new TrueTypeFont(path, fontSize);
+        font_bas_b_1 = new TrueTypeFont(path, 16);
     }
     catch (gcn::Exception e)
     {
@@ -232,7 +232,7 @@ Gui::Gui(Graphics *graphics):
     path = resman->getPath(fontFile);
     try
     {
-        font_bas_b_2 = new TrueTypeFont(path, fontSize);
+        font_bas_b_2 = new TrueTypeFont(path, 14);
     }
     catch (gcn::Exception e)
     {

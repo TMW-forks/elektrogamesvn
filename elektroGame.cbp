@@ -104,6 +104,8 @@
 		<Unit filename="src\elektro\rescolorwindow.h" />
 		<Unit filename="src\elektro\resistance.cpp" />
 		<Unit filename="src\elektro\resistance.h" />
+		<Unit filename="src\elektro\slaytwindow.cpp" />
+		<Unit filename="src\elektro\slaytwindow.h" />
 		<Unit filename="src\elektro\switch.cpp" />
 		<Unit filename="src\elektro\switch.h" />
 		<Unit filename="src\elektro\testwindow.cpp" />

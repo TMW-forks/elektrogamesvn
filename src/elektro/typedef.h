@@ -4,6 +4,7 @@
 #include "node.h"
 #include "component.h"
 #include "gui/widgets/radiobutton.h"
+#include "gui/widgets/checkbox.h"
 
 
 /**

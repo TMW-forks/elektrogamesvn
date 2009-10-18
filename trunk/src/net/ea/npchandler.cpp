@@ -43,17 +43,19 @@
 #include "elektro/hitabe.h"
 #include "elektro/testwindow.h"
 #include "elektro/circuitwindow.h"
+#include "elektro/slaytwindow.h"
 
 //NPC id:
-//0-13 test
-//14-27 açýklama yapanlar
-//28-41 güzel söz vs
-//42-55 öðretenler
-//56- makinalar
+//100-113 test
+//114-127 açýklama yapanlar
+//128-141 güzel söz vs
+//142-155 öðretenler
+//156- makinalar
 
 Net::NpcHandler *npcHandler;
 extern TestDialog *testDialog;
 extern CircuitWindow *circuitWindow;
+extern SlaytWindow *slaytWindow;
 namespace EAthena {
 
 std::string temp;
@@ -141,6 +143,14 @@ void NpcHandler::handleMessage(MessageIn &msg)
                     Hitabe *hitabe = new Hitabe();
                     hitabe->setVisible(true);
                     npcText.str("");
+                }
+                else if (being->getJob()==144)
+                {
+                    if (temp=="</presentation>")
+                    {
+                        slaytWindow->parseXML(npcText.str());
+                        npcText.str("");
+                    }
                 }
             }
             else if (being->getJob()>=156)

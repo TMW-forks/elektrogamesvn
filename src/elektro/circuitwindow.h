@@ -126,11 +126,12 @@ class CircuitWindow : public Window,
         std::vector<ConnectList*>::iterator conListIter;
 
         int transItemId;
+        gcn::Label *mHint;
+
     private:
         BrowserBox *mSb;
         ScrollArea *mSs;
 
-        gcn::Label *mHint;
         gcn::Label *mX;
         gcn::Label *mY;
 

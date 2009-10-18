@@ -85,7 +85,7 @@ CircuitWindow::CircuitWindow():
     add(toolValue);
 
     closeButton = new BitButton("dugme.png", "Degerlendir", "close",this);
-    closeButton->setPosition(250,getHeight()-60);
+    closeButton->setPosition(10,120);
     add(closeButton);
 
     solveButton = new BitButton("com_close_btn.png", "Degerlendir", "solve",this);
@@ -93,11 +93,11 @@ CircuitWindow::CircuitWindow():
     add(solveButton);
 
     clearButton = new BitButton("com_rotate_btn.png", "Degerlendir", "clear",this);
-    clearButton->setPosition(260,getHeight()-10);
+    clearButton->setPosition(10,100);
     add(clearButton);
 
     mHint = new gcn::Label("");
-    mHint->setPosition(30,30);
+    mHint->setPosition(10,10);
     mHint->adjustSize();
     add(mHint);
 
@@ -118,7 +118,7 @@ CircuitWindow::CircuitWindow():
     mSs = new ScrollArea(mSb);
     mSs->setHorizontalScrollPolicy(gcn::ScrollArea::SHOW_ALWAYS);
     mSs->setVerticalScrollPolicy(gcn::ScrollArea::SHOW_ALWAYS);
-    mSs->setVisible(true);
+    mSs->setVisible(false);
     mSs->setWidth(350);
     mSs->setHeight(200);
     mSs->setY(350);
@@ -401,8 +401,8 @@ CircuitWindow::mousePressed(gcn::MouseEvent &event)
    {
         Node *tempNode = new Node("com_node_btn.png","Hint", "com_node",this);
         tempNode->setId(findEmptyId());
-        tempNode->setX(event.getX()+8);//+QALeftPad);
-        tempNode->setY(event.getY()+8);//+QATopPad);
+        tempNode->setX(event.getX());//+QALeftPad);
+        tempNode->setY(event.getY());//+QATopPad);
         tempNode->setEnabled(true);
         tempNode->setScroll(true);
         tempNode->setMovable(true);
@@ -1232,6 +1232,8 @@ CircuitWindow::action(const gcn::ActionEvent &event)
         trashMeshMem();
         if (current_npc) Net::getNpcHandler()->nextDialog(current_npc);
         current_npc = 0;
+//         Net::getNpcHandler()->closeDialog(current_npc);
+        NPC::isTalking = false;;
     }
 
     else if (event.getId() == "com_close")
@@ -1409,7 +1411,7 @@ CircuitWindow::action(const gcn::ActionEvent &event)
 
     }
 //!!!!!!!!!!!!!!!!!!!!!!!!!!
-//    ActionListener::action(event);
+//    Window::action(event);
 }
 
 int
@@ -1453,8 +1455,6 @@ CircuitWindow::moveComponents(int x, int y)
         mHint->setCaption(toString(x)+" - "+toString(y));
         mHint->adjustSize();
 
-
-
     for(miComponent=mvComponent.begin(); miComponent<mvComponent.end(); miComponent++)
     {
         if ((*miComponent)->getSelected())
@@ -1468,18 +1468,13 @@ CircuitWindow::moveComponents(int x, int y)
 void
 CircuitWindow::circuitFromXML(std::string mDoc)
 {
-    logger->log("________________ a _____________________");
     if (mDoc=="") return;
-logger->log("________________ a1 _____________________");
     xmlDocPtr mxmlDoc;
     mxmlDoc=  xmlParseMemory(mDoc.c_str(), mDoc.size());
-logger->log("________________ a2 _____________________");
     if (!mxmlDoc)
     {
-        logger->log("________________ a3 _____________________");
         logger->error("circuitwindow.cpp: Error while parsing item database (from npc.xml)!"+mDoc);
     }
-logger->log("________________ b _____________________");
     xmlNodePtr rootNode = xmlDocGetRootElement(mxmlDoc);
     if (!rootNode || !xmlStrEqual(rootNode->name, BAD_CAST "circuit"))
     {
@@ -1507,7 +1502,6 @@ logger->log("________________ b _____________________");
         }
         else if (xmlStrEqual(node->name, BAD_CAST "node"))
         {
-            logger->log("________________ c _____________________");
                 Node *tempNode = new Node("com_node_btn.png","Hint", "com_node",this);
                 tempNode->setId(XML::getProperty(node, "id", 0));
                 tempNode->setX(XML::getProperty(node, "x", 0));//+QALeftPad);
@@ -1525,7 +1519,6 @@ logger->log("________________ b _____________________");
         }
         else if (xmlStrEqual(node->name, BAD_CAST "component"))
         {
-            logger->log("________________ d _____________________");
             std::string tempType = XML::getProperty(node, "type", "");
 
             Node *tempNode1 = new Node("com_node_btn.png","Hint", "com_node",this);
@@ -1542,7 +1535,6 @@ logger->log("________________ b _____________________");
             tempNode1->setFromLink(XML::getProperty(node, "fromlink1", 1));
             mvNode.push_back(tempNode1);
             add(tempNode1);
-logger->log("________________ e _____________________");
             Node *tempNode2 = new Node("com_node_btn.png","Hint", "com_node",this);
             tempNode2->setId(findEmptyId());
             tempNode2->setX(20);//+QALeftPad);
@@ -1560,7 +1552,6 @@ logger->log("________________ e _____________________");
 
 //            tempNode1->nodeConnect(tempNode2);
 //            tempNode2->nodeConnect(tempNode1);
-logger->log("________________ f _____________________");
             Component *tempComponent;
 //!!!!!!!!!!!!!!!!!!!!!
             if (tempType=="resistance") tempComponent = new Resistance (this, tempNode1, tempNode2);
@@ -1569,7 +1560,6 @@ logger->log("________________ f _____________________");
             else if (tempType=="battery") tempComponent = new Battery (this, tempNode1, tempNode2);
             else if (tempType=="switch") tempComponent = new Switch (this, tempNode1, tempNode2);
             else return;
-logger->log("________________ g _____________________");
             tempComponent->setId(XML::getProperty(node, "id", 0));
             tempComponent->setX(XML::getProperty(node, "x", 0));//+QALeftPad);
             tempComponent->setY(XML::getProperty(node, "y", 0));//+QATopPad);
@@ -1588,7 +1578,6 @@ logger->log("________________ g _____________________");
             tempNode1->setOwner (tempComponent);
             tempNode2->setOwner (tempComponent);
 
-logger->log("________________ h _____________________");
             mvComponent.push_back(tempComponent);
 
             ConnectList *c=new ConnectList;
@@ -1597,7 +1586,6 @@ logger->log("________________ h _____________________");
             c->active=true;
             c->draw=false;
             conList.push_back(c);
-logger->log("________________ j _____________________");
             add(tempComponent);
             for (miNode = mvNode.begin(); miNode < mvNode.end(); miNode++)
                 (*miNode)->requestMoveToTop();

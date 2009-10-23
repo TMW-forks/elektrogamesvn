@@ -55,9 +55,9 @@ LoginDialog::LoginDialog(LoginData *loginData):
     gcn::Label *portLabel = new Label(_("Port:"));
     gcn::Label *dropdownLabel = new Label(_("Recent:"));
     std::vector<std::string> dfltServer;
-    dfltServer.push_back("server.themanaworld.org");
+    dfltServer.push_back("server.elektrogame.net");
     std::vector<std::string> dfltPort;
-    dfltPort.push_back("6901");
+    dfltPort.push_back("9601");
     mServerList = new DropDownList("MostRecent00", dfltServer, dfltPort,
                                    MAX_SERVER_LIST_SIZE);
 #endif

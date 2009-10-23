@@ -24,6 +24,8 @@ SlaytWindow::SlaytWindow()
 
     mDropDown = new DropDown(slideListModel);
     mDropDown->setVisible(false);
+    mDropDown->setActionEventId("changeSelection");
+    mDropDown->addActionListener(this);
 
     mStart = new Button("Başla", "Slide_Start",this);
     mCancel = new Button ("Daha Sonra", "Slide_Cancel",this);
@@ -77,6 +79,7 @@ SlaytWindow::nextPrevPosition()
 void
 SlaytWindow::action(const gcn::ActionEvent &event)
 {
+    logger->log("%s",event.getId().c_str());
     if (event.getId() == "Slide_Cancel")
     {
        Net::getNpcHandler()->listInput(current_npc, 1);
@@ -90,7 +93,7 @@ SlaytWindow::action(const gcn::ActionEvent &event)
     }
     else if (event.getId() == "Slide_Next")
     {
-        if (mCurrentSlide<mTotalSlides);
+        if (mCurrentSlide < mTotalSlides)
            Net::getNpcHandler()->listInput(current_npc, mCurrentSlide+2+1);
     }
     else if (event.getId() == "Slide_Prev")
@@ -98,12 +101,39 @@ SlaytWindow::action(const gcn::ActionEvent &event)
         if (mCurrentSlide>1)
            Net::getNpcHandler()->listInput(current_npc, mCurrentSlide+2-1);
     }
+    else if (event.getId() == "changeSelection")
+    {
+           Net::getNpcHandler()->listInput(current_npc, mDropDown->getSelected()+2);
+           logger->log("%d : ",mDropDown->getSelected()+2);
+    }
 }
 
 void
 SlaytWindow::draw(gcn::Graphics *graphics)
 {
+    Graphics *g = static_cast<Graphics*>(graphics);
+
     Window::draw(graphics);
+    for (miImage = mvImage.begin();
+            miImage != mvImage.end();
+            ++miImage)
+    {
+         if (miImage->visible)
+            g->drawImage(miImage->img,miImage->x,miImage->y);
+    }
+
+     for (miAnim = mvAnim.begin();
+           miAnim != mvAnim.end();
+           ++miAnim)
+     {
+        if (miAnim->visible)
+        {
+            Image *mImage1 = miAnim->anim->getCurrentImage();
+            g->drawImage(mImage1,miAnim->x,miAnim->y);
+            miAnim->anim->update(miAnim->v);
+        }
+     }
+    drawChildren(graphics);
 }
 
 void
@@ -140,20 +170,36 @@ SlaytWindow::clearOldSlide()
         delete(*miLabel); //eski buttonları sil
     }
     mvLabel.clear();
+
+    for (miTextBox = mvTextBox.begin();
+            miTextBox != mvTextBox.end();++miTextBox)
+    {
+          delete(*miTextBox);
+    }
+    mvTextBox.clear();
+
+    for (miScrollArea = mvScrollArea.begin();
+            miScrollArea != mvScrollArea.end();++miScrollArea)
+    {
+        delete(*miScrollArea);
+    }
+    mvScrollArea.clear();
+
+    for (miImage = mvImage.begin(); miImage<mvImage.end(); miImage++)
+    {
+        ResourceManager *resman = ResourceManager::getInstance();
+        resman->release((*miImage).img);
+    }
+
+    mvImage.clear();
+
+    mvAnim.clear();
 }
 
 void
 SlaytWindow::parseXML(std::string mDoc)
 {
-//    /******/
-//mDoc ="<?xml version=\"1.0\" encoding=\"utf-8\" ?> \
-//        <presentation> \
-//        <presentationpro x =\"50\" y=\" 50\" w=\"400\" h=\"300\" totalslides=\"5\"> \
-//        </presentation>";
-//
-//
-//    /*******/
-logger->log("Slayt parse işlemi başladı");
+    logger->log("Slayt parse işlemi başladı");
     ResourceManager *resman = ResourceManager::getInstance();
     logger->log(mDoc.c_str());
     mxmlDoc = xmlParseMemory(mDoc.c_str(),mDoc.size());
@@ -181,12 +227,20 @@ logger->log("Slayt parse işlemi başladı");
             setPosition (x,y);
             setSize(w,h);
             mTotalSlides = XML::getProperty(node, "totalslides", 0);
+            slideListModel->temizle();
+            for (int i = 1; i <= mTotalSlides; i++)
+            {
+                slideListModel->ekle(toString(i));
+            }
         }
         else if (xmlStrEqual(node->name, BAD_CAST "slide"))
         {
             slideState = SLIDE_NEW_STATE;
             clearOldSlide();
             mCurrentSlide = XML::getProperty(node, "slideid", 1);
+            std::string slidename =  XML::getProperty(node, "name", "slayt :"+toString(mCurrentSlide));
+            slideListModel->degistir(slidename, mCurrentSlide-1);
+            mDropDown->setSelected(mCurrentSlide-1);
             for_each_xml_child_node(subnode, node)
             {
                 if (xmlStrEqual(subnode->name, BAD_CAST "label"))
@@ -245,10 +299,40 @@ logger->log("Slayt parse işlemi başladı");
                     templabel->setVisible(false);
                     templabel->adjustSize();
                     add(templabel);
-//                    gcn::Label *t;
-//                    t =templabel;
                     mvLabel.push_back(templabel);
                 }
+                else if (xmlStrEqual(subnode->name, BAD_CAST "image"))
+                {
+                    SmImage temp;
+                    temp.img = resman->getImage(XML::getProperty(subnode, "src", "garphics/images/help1.png"));
+//                    temp.img = resman->getImage("data/garphics/images/help1.png");
+                    temp.x   =  XML::getProperty(subnode, "x", 0)+padX;
+                    temp.y   =  XML::getProperty(subnode, "y", 0)+padY;
+                    temp.visible = true;
+                    mvImage.push_back(temp);
+                }
+
+                else if (xmlStrEqual(subnode->name, BAD_CAST "simpleanim"))
+                {
+                    SmAnim temp;
+                    ImageSet *mImageSet = resman->getImageSet(XML::getProperty(subnode, "src",""),
+                                                    XML::getProperty(subnode, "width", 0),
+                                                    XML::getProperty(subnode, "height", 0));
+
+                    Animation *mAnimation = new Animation();
+
+                    for (unsigned int i = 0; i < mImageSet->size(); ++i)
+                    {
+                        mAnimation->addFrame(mImageSet->get(i), 75, 0, 0);
+                    }
+                    temp.anim = new SimpleAnimation(mAnimation);
+                    temp.x   =  XML::getProperty(subnode, "x", 0)+padX;
+                    temp.y   =  XML::getProperty(subnode, "y", 0)+padY;
+                    temp.v   =  XML::getProperty(subnode, "v", 0);
+                    temp.visible = true;
+                    mvAnim.push_back(temp);
+                }
+
 
             }
         }

@@ -59,6 +59,10 @@ public:
     {
         SLIDE_SIZE.push_back(slaytname);
     }
+    virtual void degistir(std::string slaytname, int yer)
+    {
+        SLIDE_SIZE.at(yer) = slaytname;
+    }
     virtual void temizle()
     {
         SLIDE_SIZE.clear();
@@ -108,6 +112,7 @@ class SlaytWindow: public Window, public gcn::ActionListener
 
         TmvBrowserBox mvTextBox;
         TmiBrowserBox miTextBox;
+
 
 
 };

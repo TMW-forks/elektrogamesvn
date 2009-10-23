@@ -867,7 +867,6 @@ TestDialog::parse()
                     //todo: dereceli odul  ceza için buraya ekleme yapılacak
                     if (mTotalQuestion==1)  testState = ONEQ_START_STATE;
                     else testState = MANYQ_START_SATATE;
-
                 }
             }
              setupPositionInfoLabels();
@@ -940,11 +939,7 @@ TestDialog::parse()
             templabel->setVisible(false);
             templabel->adjustSize();
             add(templabel);
-            gcn::Label *t;
-            t =templabel;
-            mvLabel.push_back(t);
-
-            templabel->setCaption(toTurkish(templabel->getCaption()));
+            mvLabel.push_back(templabel);
         }
         else if (xmlStrEqual(node->name, BAD_CAST "image"))
         {

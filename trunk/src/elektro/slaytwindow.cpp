@@ -9,7 +9,6 @@ SlaytWindow::SlaytWindow()
 {
     setWindowName("Slayt Penceresi");
     logger->log("Slayt Window Açılır");
-
     setMinWidth(300);
     setMinHeight(400);
     setResizable(true);
@@ -18,7 +17,7 @@ SlaytWindow::SlaytWindow()
     setPosition(100,100);
     padX = 0;
     padY = 0;
-
+    setCloseButton(false);
     slideListModel = new SlideListModel;
     slideListModel->ekle("eSata");
 
@@ -29,10 +28,14 @@ SlaytWindow::SlaytWindow()
 
     mStart = new Button("Başla", "Slide_Start",this);
     mCancel = new Button ("Daha Sonra", "Slide_Cancel",this);
+
     mStart->setVisible(false);
     mCancel->setVisible(false);
 
     startCancelPosition();
+
+    mClose= new Button ("Kapat", "Slide_Close",this);
+    mClose->setVisible(false);
 
     mNext = new Button ("İleri","Slide_Next",this);
     mPrev = new Button ("Prev","Slide_Prev",this);
@@ -46,6 +49,7 @@ SlaytWindow::SlaytWindow()
     add(mCancel);
     add(mNext);
     add(mPrev);
+    add(mClose);
 }
 
 SlaytWindow::~SlaytWindow()
@@ -55,6 +59,7 @@ SlaytWindow::~SlaytWindow()
     delete mCancel;
     delete mNext;
     delete mPrev;
+    delete mClose;
 }
 
 void
@@ -71,9 +76,12 @@ SlaytWindow::nextPrevPosition()
     mPrev->setX(getWidth()-mNext->getWidth()-mPrev->getWidth()-mDropDown->getWidth()-15);
     mDropDown->setX(mPrev->getX()+mPrev->getWidth()+5);
     mNext->setX(mDropDown->getX()+mDropDown->getWidth()+5);
-    mPrev->setY(0);
-    mNext->setY(0);
-    mDropDown->setY(0);
+    mPrev->setY(25);
+    mNext->setY(25);
+    mDropDown->setY(25);
+    mClose->setX(mDropDown->getX() + (mDropDown->getWidth() - mClose->getWidth())/2);
+//    mClose->setX(150);
+    mClose->setY(0);
 }
 
 void
@@ -103,8 +111,16 @@ SlaytWindow::action(const gcn::ActionEvent &event)
     }
     else if (event.getId() == "changeSelection")
     {
-           Net::getNpcHandler()->listInput(current_npc, mDropDown->getSelected()+2);
-           logger->log("%d : ",mDropDown->getSelected()+2);
+           Net::getNpcHandler()->listInput(current_npc, mDropDown->getSelected()+3);
+    }
+    else if (event.getId() == "Slide_Close")
+    {
+           logger->log("Kapan sunu kapan :%d  ",mDropDown->getSelected());
+           Net::getNpcHandler()->listInput(current_npc, 0xff);
+           current_npc=0;
+           NPC::isTalking =false;
+           setVisible(false);
+           clearOldSlide();
     }
 }
 
@@ -153,6 +169,7 @@ SlaytWindow::slideStateControl()
             nextPrevPosition();
             mNext->setVisible(true);
             mPrev->setVisible(true);
+            mClose->setVisible(true);
             mDropDown->setVisible(true);
             for(TmiLabel it =mvLabel.begin(); it<mvLabel.end(); it++)
                 (*it)->setVisible(true);
@@ -162,6 +179,11 @@ SlaytWindow::slideStateControl()
 void
 SlaytWindow::clearOldSlide()
 {
+    mNext->setVisible(false);
+    mPrev->setVisible(false);
+    mDropDown->setVisible(false);
+    mClose->setVisible(false);
+
     TmiLabel miLabel;
     for(miLabel = mvLabel.begin();
         miLabel != mvLabel.end();

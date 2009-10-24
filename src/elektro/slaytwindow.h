@@ -94,6 +94,7 @@ class SlaytWindow: public Window, public gcn::ActionListener
         Button *mCancel;
         Button *mNext;
         Button *mPrev;
+        Button *mClose;
         DropDown *mDropDown;
 
         xmlDocPtr mxmlDoc;

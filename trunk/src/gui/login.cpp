@@ -34,6 +34,7 @@
 #include "net/logindata.h"
 
 #include "main.h"
+#include "gui.h"
 #include "configuration.h"
 
 #include "utils/gettext.h"
@@ -59,12 +60,23 @@ LoginDialog::LoginDialog(LoginData *loginData):
     gcn::Label *serverLabel = new Label(_("Server:"));
     gcn::Label *portLabel = new Label(_("Port:"));
     gcn::Label *dropdownLabel = new Label(_("Recent:"));
+
     std::vector<std::string> dfltServer;
     dfltServer.push_back("server.elektrogame.net");
     std::vector<std::string> dfltPort;
     dfltPort.push_back("9601");
     mServerList = new DropDownList("MostRecent00", dfltServer, dfltPort,
                                    MAX_SERVER_LIST_SIZE);
+
+    gcn::Label *captionLabel = new gcn::Label(_("-=GİRİŞ=-"));
+    captionLabel->setFont(font_bas_b_1);
+    captionLabel->setPosition(210,150);
+    captionLabel->setForegroundColor(gcn::Color(0xaa,0xbb,0xcc));
+//    captionLabel->setBackgroundColor(gcn::Color(0x00,0xbb,0xcc));
+//    captionLabel->setBaseColor(gcn::Color(0xff,0xff,0xcc));
+    captionLabel->adjustSize();
+    add(captionLabel);
+
 #endif
 
     mUserField = new TextField(mLoginData->username);
@@ -104,14 +116,8 @@ LoginDialog::LoginDialog(LoginData *loginData):
     mKeepCheck->addActionListener(this);
 #endif
 
-    Container *mCont = new Container();
-    mCont->setPosition(100,100);
-    mCont->setSize(250,300);
-    mCont->setBackgroundColor(gcn::Color(100,100,100));
-    add(mCont);
-    setPadding(20);
-    int x = 10;
-    int y = 42;
+    int x = 3;
+    int y = 48;
 
     place(x+0, y+0, userLabel);
     place(x+0, y+1, passLabel);
@@ -131,7 +137,7 @@ LoginDialog::LoginDialog(LoginData *loginData):
     place(x+0, y+6, mRegisterButton).setHAlign(LayoutCell::LEFT);
     place(x+2, y+6, mCancelButton);
     place(x+3, y+6, mOkButton);
-    reflowLayout(250, 0);
+    reflowLayout(340, 0);
 
     center();
     setVisible(true);
@@ -151,6 +157,8 @@ LoginDialog::~LoginDialog()
 #ifdef EATHENA_SUPPORT
     delete mServerList;
 #endif
+//    ResourceManager *resman = ResourceManager::getInstance();
+//    resman->release(mBackGround);
 }
 
 void LoginDialog::action(const gcn::ActionEvent &event)

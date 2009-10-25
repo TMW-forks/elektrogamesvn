@@ -44,6 +44,7 @@
 #include "gui/widgets/label.h"
 #include "gui/widgets/layout.h"
 #include "gui/widgets/textfield.h"
+#include "gui/gui.h"
 
 #include "game.h"
 #include "localplayer.h"
@@ -55,6 +56,7 @@
 #include "net/net.h"
 
 #include "resources/colordb.h"
+#include "resources/resourcemanager.h"
 
 #include "utils/gettext.h"
 #include "utils/stringutils.h"
@@ -102,6 +104,16 @@ CharSelectDialog::CharSelectDialog(LockedArray<LocalPlayer*> *charInfo,
     , mGender(loginData->sex)
 #endif
 {
+    ResourceManager *resman = ResourceManager::getInstance();
+    mBackGround = resman->getImage("graphics/elektrik/gui_login_window.png");
+
+    gcn::Label *girisLabel = new gcn::Label(_("-=KARAKTER SEÇ=-"));
+    girisLabel->setPosition(160,150);
+    girisLabel->setFont(font_bas_b_1);
+    girisLabel->setForegroundColor(gcn::Color(0xaa,0xbb,0xcc));
+    girisLabel->adjustSize();
+    add(girisLabel);
+
     mSelectButton = new Button(_("OK"), "ok", this);
     mCancelButton = new Button(_("Cancel"), "cancel", this);
     mPreviousButton = new Button(_("Previous"), "previous", this);
@@ -125,12 +137,12 @@ CharSelectDialog::CharSelectDialog(LockedArray<LocalPlayer*> *charInfo,
     mPlayerBox->setWidth(74);
 
     ContainerPlacer place;
-    place = getPlacer(0, 0);
+    place = getPlacer(15, 9);
     place(0, 0, mAccountNameLabel);
     place(0, 1, mUnRegisterButton);
     place(0, 2, mChangePasswordButton);
     place(1, 2, mChangeEmailButton);
-    place = getPlacer(0, 1);
+    place = getPlacer(10, 10);
     place(0, 0, mPlayerBox, 1, 5).setPadding(3);
     place(1, 0, mNameLabel, 3);
     place(1, 1, mLevelLabel, 3);
@@ -140,10 +152,10 @@ CharSelectDialog::CharSelectDialog(LockedArray<LocalPlayer*> *charInfo,
     place(1, 4, mNewCharButton);
     place(2, 4, mDelCharButton);
     place.getCell().matchColWidth(1, 2);
-    place = getPlacer(0, 2);
+    place = getPlacer(14, 12);
     place(0, 0, mSelectButton);
     place(1, 0, mCancelButton);
-    reflowLayout(265, 0);
+    reflowLayout(300, 400);
 #else
     mCharInfo->select(0);
     LocalPlayer *pi = mCharInfo->getEntry();
@@ -163,10 +175,10 @@ CharSelectDialog::CharSelectDialog(LockedArray<LocalPlayer*> *charInfo,
     mNewDelCharButton = new Button(tempString, "newdel", this);
 
     ContainerPlacer place;
-    place = getPlacer(0, 0);
+    place = getPlacer(12, 20);
     place(0, 0, mAccountNameLabel);
     place(0, 1, mChangePasswordButton);
-    place = getPlacer(0, 1);
+    place = getPlacer(12, 21);
     place(0, 0, mPlayerBox, 1, 6).setPadding(3);
     place(1, 0, mNameLabel, 5);
     place(1, 1, mLevelLabel, 5);
@@ -174,14 +186,15 @@ CharSelectDialog::CharSelectDialog(LockedArray<LocalPlayer*> *charInfo,
     place(1, 3, mMoneyLabel, 5);
     place(1, 4, mNewDelCharButton);
     place.getCell().matchColWidth(1, 4);
-    place = getPlacer(0, 2);
+    place = getPlacer(12, 22);
     place(0, 0, mPreviousButton);
     place(1, 0, mNextButton);
     place(4, 0, mCancelButton);
     place(5, 0, mSelectButton);
 
-    reflowLayout(270, 0);
+    reflowLayout(320, 380);
 #endif
+    setSize(573,507);
 
     center();
     setVisible(true);
@@ -332,6 +345,16 @@ void CharSelectDialog::updatePlayerInfo()
     }
 
     mPlayerBox->setPlayer(pi);
+}
+
+
+void
+CharSelectDialog::draw(gcn::Graphics *graphics)
+{
+    Graphics *g = static_cast<Graphics*>(graphics);
+    g->drawImage(mBackGround,0,0);
+
+    drawChildren(graphics);
 }
 
 void CharSelectDialog::attemptCharDelete()

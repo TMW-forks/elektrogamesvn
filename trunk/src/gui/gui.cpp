@@ -156,7 +156,7 @@ Gui::Gui(Graphics *graphics):
         logger->error(std::string("Unable to load '") + fontFile +
                       std::string("': ") + e.getMessage());
     }
-/* ***************************************************** */
+/*********************************************************/
 /*                    ELEKTRO FONT                       */
 /*********************************************************/
     fontFile = "fonts/bas-1.ttf";
@@ -246,7 +246,7 @@ Gui::Gui(Graphics *graphics):
     path = resman->getPath(fontFile);
     try
     {
-        font_el_1 = new TrueTypeFont(path, fontSize);
+        font_el_1 = new TrueTypeFont(path, 14);
     }
     catch (gcn::Exception e)
     {

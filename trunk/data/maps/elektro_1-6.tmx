@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
+<map version="1.0" orientation="orthogonal" width="53" height="37" tilewidth="32" tileheight="32">
+ <tileset name="siyah" firstgid="1" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/siyah.png"/>
+ </tileset>
+ <tileset name="kapi" firstgid="2" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/kapi.png"/>
+ </tileset>
+ <tileset name="duvar" firstgid="8" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/oda_platform.png"/>
+ </tileset>
+ <tileset name="pencere" firstgid="178" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/pencere.png"/>
+ </tileset>
+ <tileset name="kaplama" firstgid="194" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/kaplamalar.png"/>
+ </tileset>
+ <tileset name="kapick" firstgid="212" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/kapiacik.png"/>
+ </tileset>
+ <tileset name="araba" firstgid="218" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/arabalaryan.png"/>
+ </tileset>
+ <tileset name="karatahta" firstgid="298" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/karatahta.png"/>
+ </tileset>
+ <tileset name="yangýn" firstgid="304" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/yangin_musluk.png"/>
+ </tileset>
+ <layer name="Ground" width="53" height="37">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3POw6AMAwEUft+fO7OiXDaFDQ4rLFmpVegSMjjZuZAUVvYwxHOj7/nt6ymqxCaaPpzU7V1bBqjiSbVaKJJtW5Nb3v84T+q0bS2KeOW1WjS35vdpb6Tpn5NAAAAqO8GQJ5cJqQeAAA=
+  </data>
+ </layer>
+ <layer name="Fringe" width="53" height="37">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3BMQEAAADCoPVPbQsvoAAAAAAAAADgYwXm2VukHgAA
+  </data>
+ </layer>
+ <layer name="Top" width="53" height="37">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO2WSU4DMRBFKzfgCmyBQMINgG2AmzBPWZGAxLRikphWTBLTEiS4B+Nt+EZtRTKOseGjbkF96UmusuNUtdtfLaJSFVOVvAtwVCXs0UnYgylGPf2eXFdJpBv0lL7+fcramPWMnnx7lPF/vaAvos6UtTHrf+uc8hSjniHCHkwx6vkvHpGn/tK7V8k8g1FPB2EPhqpZT4xzKtp9YpwT47mY76saGAYjYNQZu3OheJBQD8s7x8EEmART34jtuE6ox9ynmnx+dinfkuasG+AW3IFlT/wInsBSFts5N974WTsfanefUt5Jc9Zb4B48gF1P/AxewE4W2zk3PkruIL72lJ7MWZ+AU3AGzj3xK3gLzNvxTXIH8bWn3LOieedAIB/yJ7ZXMTUWyLveNA1mwCyYA/NgQThexdRiIN8ATWl5k/WuFbAK1sC6cLyKqc1A3njXtrS8yXrXHtgHB+BQOF7F1HEg3867LsAluALXwvEqlUqlUqlUKpXK6h1/OuDepB4AAA==
+  </data>
+ </layer>
+ <layer name="Collision" width="53" height="37" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3BMQEAAADCoPVPbQsvoAAAAAAAAADgYwXm2VukHgAA
+  </data>
+ </layer>
+ <layer name="Objects" width="53" height="37" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3BMQEAAADCoPVPbQsvoAAAAAAAAADgYwXm2VukHgAA
+  </data>
+ </layer>
+</map>

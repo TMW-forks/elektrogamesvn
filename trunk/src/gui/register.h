@@ -78,6 +78,8 @@ class RegisterDialog : public Window, public gcn::ActionListener,
          */
         void keyPressed(gcn::KeyEvent &keyEvent);
 
+        void draw(gcn::Graphics *graphics);
+
     private:
         /**
          * Returns whether submit can be enabled. This is true in the register
@@ -85,7 +87,7 @@ class RegisterDialog : public Window, public gcn::ActionListener,
          */
         bool canSubmit() const;
 
-#ifdef EATHENA_SUPPORT 
+#ifdef EATHENA_SUPPORT
         /**
          * Function to decide whether string is an unsigned short or not
          *
@@ -108,7 +110,7 @@ class RegisterDialog : public Window, public gcn::ActionListener,
         gcn::TextField *mUserField;
         gcn::TextField *mPasswordField;
         gcn::TextField *mConfirmField;
-#ifdef EATHENA_SUPPORT 
+#ifdef EATHENA_SUPPORT
         gcn::TextField *mServerField;
         gcn::TextField *mPortField;
 #else
@@ -117,7 +119,7 @@ class RegisterDialog : public Window, public gcn::ActionListener,
 
         gcn::Button *mRegisterButton;
         gcn::Button *mCancelButton;
-#ifdef EATHENA_SUPPORT 
+#ifdef EATHENA_SUPPORT
         gcn::RadioButton *mMaleButton;
         gcn::RadioButton *mFemaleButton;
 #endif
@@ -125,6 +127,8 @@ class RegisterDialog : public Window, public gcn::ActionListener,
         WrongDataNoticeListener *mWrongDataNoticeListener;
 
         LoginData *mLoginData;
+
+        Image *mBackGround;
 };
 
 #endif

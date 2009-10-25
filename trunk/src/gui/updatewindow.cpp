@@ -20,6 +20,7 @@
  */
 
 #include "gui/updatewindow.h"
+#include "gui/gui.h"
 
 #include "gui/widgets/browserbox.h"
 #include "gui/widgets/button.h"
@@ -64,6 +65,8 @@ static unsigned long fadler32(FILE *file)
     return adler;
 }
 
+
+
 /**
  * Load the given file into a vector of strings.
  */
@@ -105,6 +108,16 @@ UpdaterWindow::UpdaterWindow(const std::string &updateHost,
 {
     mCurlError[0] = 0;
 
+    ResourceManager *resman = ResourceManager::getInstance();
+    mBackGround = resman->getImage("graphics/elektrik/gui_login_window.png");
+
+    gcn::Label *girisLabel = new gcn::Label(_("-=GÜNCELLEME=-"));
+    girisLabel->setPosition(180,150);
+    girisLabel->setFont(font_bas_b_1);
+    girisLabel->setForegroundColor(gcn::Color(0xaa,0xbb,0xcc));
+    girisLabel->adjustSize();
+    add(girisLabel);
+
     mBrowserBox = new BrowserBox;
     mScrollArea = new ScrollArea(mBrowserBox);
     mLabel = new Label(_("Connecting..."));
@@ -116,7 +129,7 @@ UpdaterWindow::UpdaterWindow(const std::string &updateHost,
     mPlayButton->setEnabled(false);
 
     ContainerPlacer place;
-    place = getPlacer(0, 0);
+    place = getPlacer(1, 2);
 
     place(0, 0, mScrollArea, 5, 3).setPadding(3);
     place(0, 3, mLabel, 5);
@@ -124,17 +137,19 @@ UpdaterWindow::UpdaterWindow(const std::string &updateHost,
     place(3, 5, mCancelButton);
     place(4, 5, mPlayButton);
 
-    reflowLayout(320, 240);
+    reflowLayout(380, 380);
 
     Layout &layout = getLayout();
     layout.setRowHeight(0, Layout::AUTO_SET);
 
-    center();
     setVisible(true);
     mCancelButton->requestFocus();
 
     // Try to download the updates list
     download();
+
+    setSize(573,507);
+    center();
 }
 
 UpdaterWindow::~UpdaterWindow()
@@ -148,6 +163,15 @@ UpdaterWindow::~UpdaterWindow()
     ::remove((mUpdatesDir + "/download.temp").c_str());
 
     delete[] mCurlError;
+}
+
+void
+UpdaterWindow::draw(gcn::Graphics *graphics)
+{
+    Graphics *g = static_cast<Graphics*>(graphics);
+    g->drawImage(mBackGround,0,0);
+
+    drawChildren(graphics);
 }
 
 void UpdaterWindow::setProgress(float p)

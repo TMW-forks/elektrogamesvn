@@ -66,6 +66,8 @@ class CharCreateDialog : public Window, public gcn::ActionListener
 
         void setFixedGender(bool fixed, Gender gender = GENDER_FEMALE);
 
+        void draw(gcn::Graphics *graphics);
+
     private:
         int getDistributedPoints() const;
 
@@ -113,6 +115,7 @@ class CharCreateDialog : public Window, public gcn::ActionListener
         int mHairColor;
 
         int mSlot;
+        Image *mBackGround;
 };
 
 #endif // CHAR_CREATE_H

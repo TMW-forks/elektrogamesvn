@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
+<map version="1.0" orientation="orthogonal" width="26" height="27" tilewidth="32" tileheight="32">
+ <tileset name="S?YAH" firstgid="1"/>
+ <tileset name="S?YAH" firstgid="1" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/siyah.png"/>
+ </tileset>
+ <tileset name="DUVAR" firstgid="2" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/tas_bina.png"/>
+ </tileset>
+ <tileset name="kap?" firstgid="172" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/kapi.png"/>
+ </tileset>
+ <tileset name="kaplama" firstgid="178" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/kaplamalar.png"/>
+ </tileset>
+ <tileset name="kapc" firstgid="196" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/kapiacik.png"/>
+ </tileset>
+ <tileset name="pen" firstgid="202" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/pencere.png"/>
+ </tileset>
+ <tileset name="karatahta" firstgid="218" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/karatahta.png"/>
+ </tileset>
+ <layer name="Ground" width="26" height="27">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAGNkYGBgHMWjeARhEHADYncg9gBiTzQ+MpuBQnv2EIlH7RkYe0gBo/aQZxc97KHEjuFozygexaMYNwYA0mXPV/gKAAA=
+  </data>
+ </layer>
+ <layer name="Fringe" width="26" height="27" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3BAQ0AAADCoPdPbQ8HFAAA/Bu6lPpf+AoAAA==
+  </data>
+ </layer>
+ <layer name="Top" width="26" height="27" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3ROQrCUBRG4ezDHZjsQG017sQhzpUTWFipEQSt4gBOK3EEBd2Rp7BKEZDLQ9B74CseXPiLZ1ma9l/FP7i1BTuOodtwKUO339qJGboN92v/k0AGLrJIR7yTgp0c8iigCA8llFFBFTXU0RDsNNFCGx10ccARPdxwf2/1BTsDDDGCjzFOOGOCB56YYibYCTDHAkuscMEVa2ywxQ57wY6madG9AKAlh8z4CgAA
+  </data>
+ </layer>
+ <layer name="Collision" width="26" height="27" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3BAQ0AAADCoPdPbQ8HFAAA/Bu6lPpf+AoAAA==
+  </data>
+ </layer>
+ <layer name="Objects" width="26" height="27" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3BAQ0AAADCoPdPbQ8HFAAA/Bu6lPpf+AoAAA==
+  </data>
+ </layer>
+</map>

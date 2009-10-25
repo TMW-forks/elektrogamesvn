@@ -20,6 +20,7 @@
  */
 
 #include "gui/register.h"
+#include "gui/gui.h"
 
 #include "configuration.h"
 #include "log.h"
@@ -41,6 +42,8 @@
 #include "utils/gettext.h"
 #include "utils/stringutils.h"
 
+#include "resources/resourcemanager.h"
+
 void WrongDataNoticeListener::setTarget(gcn::TextField *textField)
 {
     mTarget = textField;
@@ -57,6 +60,18 @@ RegisterDialog::RegisterDialog(LoginData *loginData):
     mWrongDataNoticeListener(new WrongDataNoticeListener),
     mLoginData(loginData)
 {
+
+    ResourceManager *resman = ResourceManager::getInstance();
+    mBackGround = resman->getImage("graphics/elektrik/gui_login_window.png");
+
+    gcn::Label *girisLabel = new gcn::Label(_("-=KAYIT=-"));
+    girisLabel->setPosition(200,150);
+    girisLabel->setFont(font_bas_b_1);
+    girisLabel->setForegroundColor(gcn::Color(0xaa,0xbb,0xcc));
+    girisLabel->adjustSize();
+    add(girisLabel);
+
+
     gcn::Label *userLabel = new Label(_("Name:"));
     gcn::Label *passwordLabel = new Label(_("Password:"));
     gcn::Label *confirmLabel = new Label(_("Confirm:"));
@@ -81,7 +96,8 @@ RegisterDialog::RegisterDialog(LoginData *loginData):
     mCancelButton = new Button(_("Cancel"), "cancel", this);
 
     ContainerPlacer place;
-    place = getPlacer(0, 0);
+
+    place = getPlacer(10, 44);
     place(0, 0, userLabel);
     place(0, 1, passwordLabel);
     place(0, 2, confirmLabel);
@@ -102,10 +118,10 @@ RegisterDialog::RegisterDialog(LoginData *loginData):
 #else
     place(1, 3, mEmailField, 3).setPadding(2);
 #endif
-    place = getPlacer(0, 2);
+    place = getPlacer(10, 46);
     place(1, 0, mRegisterButton);
     place(2, 0, mCancelButton);
-    reflowLayout(250, 0);
+    reflowLayout(330, 0);
 
     mUserField->addKeyListener(this);
     mPasswordField->addKeyListener(this);
@@ -142,11 +158,25 @@ RegisterDialog::RegisterDialog(LoginData *loginData):
     mUserField->setCaretPosition(mUserField->getText().length());
 
     mRegisterButton->setEnabled(canSubmit());
+
+    setSize(573,507);
 }
 
 RegisterDialog::~RegisterDialog()
 {
     delete mWrongDataNoticeListener;
+//    ResourceManager *resman = ResourceManager::getInstance();
+//    resman->release(mBackGround);
+
+}
+
+void
+RegisterDialog::draw(gcn::Graphics *graphics)
+{
+    Graphics *g = static_cast<Graphics*>(graphics);
+    g->drawImage(mBackGround,0,0);
+
+    drawChildren(graphics);
 }
 
 void RegisterDialog::action(const gcn::ActionEvent &event)

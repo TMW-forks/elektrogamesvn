@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
+<map version="1.0" orientation="orthogonal" width="46" height="46" tilewidth="32" tileheight="32">
+ <tileset name="syh" firstgid="1" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/siyah.png"/>
+ </tileset>
+ <tileset name="duvar" firstgid="2" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/askeriye.png"/>
+ </tileset>
+ <tileset name="kapla" firstgid="72" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/kaplamalar.png"/>
+ </tileset>
+ <tileset name="pen" firstgid="90" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/pencere.png"/>
+ </tileset>
+ <layer name="Ground" width="46" height="46">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3Ouw3AMAzEULnNZ7PsP0+cAdzYAuUAPIC49rWIaGZmNuzqHb0T/DvB/e2BC926QXfFdLPTzU43O93sdLNbdVfZdbPTzS7DnZlu3brrnTPuauOsvdqne4/+6jYzs/VesUjmURAhAAA=
+  </data>
+ </layer>
+ <layer name="Fringe" width="46" height="46">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3OIQqAUBRFwV8Eu2AX7B/sgvtflRu45ZWH4Ew86YwBAAAA8C1LaGv7Rd0W2t5+UXeEdrZf1M3QrvaLuju0p3sCAADgB14Ces4xECEAAA==
+  </data>
+ </layer>
+ <layer name="Top" width="46" height="46">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO2V12oDMRBFl1QnIc3pPU7vlfRO/v+fcgQ7IIy06GEisckcOCyMjDXcB92qMgzDMP4idy2981vhP0rcWSJvjb1L5K2RleWdjuWdl7bmbe93XizvvPznvKdwAseVvpMJd2rkPYBDOIwjOIod7zsYOY/NU3bSyHsGuziH87iAi9531jtfxpW+uczk9yk7aeS9idu4imvefB03cKs+7+EBHuKeN5fZbj1P2Vsj7zO8wCM89uYneIrn9fklXuE13jTMU7LUyPsZX/EeH7z5Iz7hS33+hu/4gZ8N81x5a5Mrb21yvSfa5HpPtGlr3q5/mzrVOV1suzj9/Rvq1bFi28Vx/Ssd6vo31KtLxbaL4/pXOnSnCvfqfqnlGpD+lR4N9eptse3iSP9Kj4Z69avYdoZhGMZv8wNUCRM7ECEAAA==
+  </data>
+ </layer>
+ <layer name="Collsion" width="46" height="46">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3BAQ0AAADCoPdPbQ8HFAAAAAAAAADAlwG38bQVECEAAA==
+  </data>
+ </layer>
+ <layer name="Objects" width="46" height="46">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3BAQ0AAADCoPdPbQ8HFAAAAAAAAADAlwG38bQVECEAAA==
+  </data>
+ </layer>
+</map>

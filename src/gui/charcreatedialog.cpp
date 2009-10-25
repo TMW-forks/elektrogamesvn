@@ -33,6 +33,7 @@
 #include "gui/widgets/textfield.h"
 
 #include "gui/widgets/layout.h"
+#include "gui/gui.h"
 
 #include "game.h"
 #include "localplayer.h"
@@ -44,6 +45,7 @@
 #include "net/net.h"
 
 #include "resources/colordb.h"
+#include "resources/resourcemanager.h"
 
 #include "utils/gettext.h"
 #include "utils/stringutils.h"
@@ -56,6 +58,16 @@ CharCreateDialog::CharCreateDialog(Window *parent, int slot):
 {
     mPlayer = new Player(0, 0, NULL);
     mPlayer->setGender(GENDER_MALE);
+
+    ResourceManager *resman = ResourceManager::getInstance();
+    mBackGround = resman->getImage("graphics/elektrik/gui_login_window.png");
+
+    gcn::Label *girisLabel = new gcn::Label(_("-=KARAKTER OLUŞTUR=-"));
+    girisLabel->setPosition(150,140);
+    girisLabel->setFont(font_bas_b_1);
+    girisLabel->setForegroundColor(gcn::Color(0xaa,0xbb,0xcc));
+    girisLabel->adjustSize();
+    add(girisLabel);
 
     int numberOfHairColors = ColorDB::size();
 
@@ -100,28 +112,28 @@ CharCreateDialog::CharCreateDialog(Window *parent, int slot):
 
     int w = 200;
     int h = 330;
-    setContentSize(w, h);
-    mPlayerBox->setDimension(gcn::Rectangle(80, 30, 110, 85));
-    mNameLabel->setPosition(5, 5);
+
+    mPlayerBox->setDimension(gcn::Rectangle(215, 190, 80, 85));
+    mNameLabel->setPosition(150, 160);
     mNameField->setDimension(
-            gcn::Rectangle(45, 5, w - 45 - 7, mNameField->getHeight()));
-    mPrevHairColorButton->setPosition(90, 35);
-    mNextHairColorButton->setPosition(165, 35);
-    mHairColorLabel->setPosition(5, 40);
-    mPrevHairStyleButton->setPosition(90, 64);
-    mNextHairStyleButton->setPosition(165, 64);
-    mHairStyleLabel->setPosition(5, 70);
-    mAttributesLeft->setPosition(15, 280);
-    updateSliders();
+            gcn::Rectangle(195, 160, 120, mNameField->getHeight()));
+    mPrevHairColorButton->setPosition(189, 195);
+    mNextHairColorButton->setPosition(305, 195);
+    mHairColorLabel->setPosition(115, 200);
+    mPrevHairStyleButton->setPosition(189, 224);
+    mNextHairStyleButton->setPosition(305, 224);
+    mHairStyleLabel->setPosition(115, 225);
+    mAttributesLeft->setPosition(105, 480);
+//    updateSliders();
     mCancelButton->setPosition(
-            w - 5 - mCancelButton->getWidth(),
-            h - 5 - mCancelButton->getHeight());
+            300 - 5 - mCancelButton->getWidth(),
+            400);
     mCreateButton->setPosition(
             mCancelButton->getX() - 5 - mCreateButton->getWidth(),
-            h - 5 - mCancelButton->getHeight());
+            400);
 
-    mMale->setPosition(30, 120);
-    mFemale->setPosition(100, 120);
+    mMale->setPosition(190, 280);
+    mFemale->setPosition(260, 280);
 
     add(mPlayerBox);
     add(mNameField);
@@ -139,6 +151,7 @@ CharCreateDialog::CharCreateDialog(Window *parent, int slot):
     add(mMale);
     add(mFemale);
 
+    setSize(573,507);
     center();
     setVisible(true);
     mNameField->requestFocus();
@@ -150,6 +163,16 @@ CharCreateDialog::~CharCreateDialog()
 
     // Make sure the char server handler knows that we're gone
     Net::getCharHandler()->setCharCreateDialog(0);
+}
+
+
+void
+CharCreateDialog::draw(gcn::Graphics *graphics)
+{
+    Graphics *g = static_cast<Graphics*>(graphics);
+    g->drawImage(mBackGround,0,0);
+
+    drawChildren(graphics);
 }
 
 void CharCreateDialog::action(const gcn::ActionEvent &event)
@@ -201,7 +224,7 @@ void CharCreateDialog::action(const gcn::ActionEvent &event)
         updateHair();
     }
     else if (event.getId() == "statslider") {
-        updateSliders();
+        //updateSliders();
     }
     else if (event.getId() == "gender"){
         if (mMale->isSelected()) {
@@ -271,7 +294,7 @@ int CharCreateDialog::getDistributedPoints() const
 void CharCreateDialog::setAttributes(std::vector<std::string> labels,
                                      int available, int min, int max)
 {
-    mMaxPoints = available;
+/*    mMaxPoints = available;
 
     for (unsigned i = 0; i < mAttributeLabel.size(); i++)
     {
@@ -294,29 +317,30 @@ void CharCreateDialog::setAttributes(std::vector<std::string> labels,
     {
         mAttributeLabel[i] = new Label(labels[i]);
         mAttributeLabel[i]->setWidth(70);
-        mAttributeLabel[i]->setPosition(5, 140 + i*20);
+        mAttributeLabel[i]->setPosition(105, 290 + i*20);
         add(mAttributeLabel[i]);
 
         mAttributeSlider[i] = new Slider(min, max);
-        mAttributeSlider[i]->setDimension(gcn::Rectangle(75, 140 + i*20, 100, 10));
+        mAttributeSlider[i]->setDimension(gcn::Rectangle(175, 290 + i*20, 100, 10));
         mAttributeSlider[i]->setActionEventId("statslider");
         mAttributeSlider[i]->addActionListener(this);
         add(mAttributeSlider[i]);
 
         mAttributeValue[i] = new Label(toString(min));
-        mAttributeValue[i]->setPosition(180, 140 + i*20);
+        mAttributeValue[i]->setPosition(280, 290 + i*20);
         add(mAttributeValue[i]);
     }
 
-    mAttributesLeft->setPosition(15, 280);
-    updateSliders();
+    mAttributesLeft->setPosition(105, 480);
+//    updateSliders();
 
     mCancelButton->setPosition(
-            w - 5 - mCancelButton->getWidth(),
-            h - 5 - mCancelButton->getHeight());
+            300 - 5 - mCancelButton->getWidth(),
+            440 - 5 - mCancelButton->getHeight());
     mCreateButton->setPosition(
             mCancelButton->getX() - 5 - mCreateButton->getWidth(),
-            h - 5 - mCancelButton->getHeight());
+            440 - 5 - mCancelButton->getHeight());
+*/
 }
 
 void CharCreateDialog::setFixedGender(bool fixed, Gender gender)

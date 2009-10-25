@@ -57,7 +57,10 @@ class CharSelectDialog : public Window, public gcn::ActionListener
 
         bool selectByName(const std::string &name);
 
+        void draw(gcn::Graphics *graphics);
+
     private:
+        Image *mBackGround;
         LockedArray<LocalPlayer*> *mCharInfo;
 
         gcn::Button *mSelectButton;

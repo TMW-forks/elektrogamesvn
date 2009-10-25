@@ -88,6 +88,8 @@ class UpdaterWindow : public Window, public gcn::ActionListener
 
     int updateState;
 
+    void draw(gcn::Graphics *graphics);
+
 private:
     void download();
 
@@ -172,6 +174,9 @@ private:
     ProgressBar *mProgressBar;    /**< Update progress bar. */
     BrowserBox *mBrowserBox;      /**< Box to display news. */
     ScrollArea *mScrollArea;      /**< Used to scroll news box. */
+
+    Image *mBackGround;
+
 };
 
 #endif

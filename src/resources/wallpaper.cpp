@@ -31,8 +31,8 @@
 
 #include <physfs.h>
 
-#define WALLPAPER_FOLDER "graphics/images/"
-#define WALLPAPER_BASE   "login_wallpaper.png"
+#define WALLPAPER_FOLDER "graphics/elektrik/"
+#define WALLPAPER_BASE   "gui_login_wall.png "
 
 struct WallpaperData
 {
@@ -117,7 +117,7 @@ std::string Wallpaper::getWallpaper(int width, int height)
         {
           // Return randomly a wallpaper between vector[0] and
           // vector[vector.size() - 1]
-          srand((unsigned)time(0)); 
+          srand((unsigned)time(0));
           return wallPaperVector
           [int(wallPaperVector.size() * rand() / (RAND_MAX + 1.0))];
         }

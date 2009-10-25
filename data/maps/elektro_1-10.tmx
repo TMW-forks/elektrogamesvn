@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
+<map version="1.0" orientation="orthogonal" width="41" height="31" tilewidth="32" tileheight="32">
+ <tileset name="syh" firstgid="1" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/siyah.png"/>
+ </tileset>
+ <tileset name="duvar" firstgid="2" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/hastehane.png"/>
+ </tileset>
+ <tileset name="kaplama" firstgid="86" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/kaplamalar.png"/>
+ </tileset>
+ <layer name="Ground" width="41" height="31">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO2QsQ3AIAwEzVJMQEHCHtl/hHgCaP4Rxv/SyYWb0xUzK0IIcRiv051ncme/1R0Ax+Z8RFoAxxrAEdGxBunIHKojc1k6sofoyG6L6LijbVZHpCfLT465HIUQ4nZ+GMDEeNwTAAA=
+  </data>
+ </layer>
+ <layer name="Fringe" width="41" height="31">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3BAQ0AAADCoPdPbQ43oAAAAACARwOpX1EW3BMAAA==
+  </data>
+ </layer>
+ <layer name="Top" width="41" height="31">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO2QyQoCMRBEG3dv4noTlfHmrnNxHfUk6v//jiXpYNSWAckwiP3g0Uk6h6KIFEVRFEVRlF/hJHhONdE7GZiDeZ6ldOOIVGAV1ng24YXkfr/x6iFjG3Zgl2dApkvbbQEW+S0b8y7tyx4yDuAIjnnOyHRpu63DBj137U7799O+5SHjEq7hhmdEpssFDGHPOduu3XsQs+97yChx7/IAj3DinIdkurb36ctfaT9PKGNEj263cMdvq5h3ab9PKKOiKMo/cANPUs583BMAAA==
+  </data>
+ </layer>
+ <layer name="Collision" width="41" height="31">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3BAQ0AAADCoPdPbQ43oAAAAACARwOpX1EW3BMAAA==
+  </data>
+ </layer>
+ <layer name="Objects" width="41" height="31">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3BAQ0AAADCoPdPbQ43oAAAAACARwOpX1EW3BMAAA==
+  </data>
+ </layer>
+</map>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
+<map version="1.0" orientation="orthogonal" width="61" height="46" tilewidth="32" tileheight="32">
+ <tileset name="syh" firstgid="1" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/syh.png"/>
+ </tileset>
+ <tileset name="Untitled" firstgid="2" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/oda_platform.png"/>
+ </tileset>
+ <tileset name="Untitled" firstgid="172" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/kaplamalar.png"/>
+ </tileset>
+ <tileset name="kapiack" firstgid="190" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/kapiacik.png"/>
+ </tileset>
+ <tileset name="Untitled" firstgid="196" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/pencere.png"/>
+ </tileset>
+ <layer name="Ground" width="61" height="46">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3QuRGAMAxFQbk5jnLpEJERERlsMftnXmBl6xYRTZIkleramm3Zni0Tvu+36GQ+CsXMzPxsrjZmZmZm5lpjZmb+z18wMzMzM9dyMzPPEDMzMzNzLfMb7tGer82jLczMkvp3ArL9pEbYKwAA
+  </data>
+ </layer>
+ <layer name="Fringe" width="61" height="46">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3BMQEAAADCoPVPbQwfoAAAAAAAAAAAAACAtwEUf/fE2CsAAA==
+  </data>
+ </layer>
+ <layer name="Top" width="61" height="46">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO2XR04EMRBFveYK3AC4AWJLuAk5rshDWJHjihyPQZRAgkvxvLDGatH00Cp7bKme9IS6bVmFXNX6Y4yiKIqiKLnR1e4C/km3wBmdAmfERKLeHoEzYiJRb5/AGTGRqLdD4IyYSNSr85w+Os/10HlOH53neuTW2xLznFtvS9xRbr0tcUe92I8D3t9BI/P7JQQh7yjVOQ+ZJ1Kd85B3keqch7yLVDNpyLvwv2dDvzyXvS8+S38LQ97FMI7gKI7hOE7gJE5VrE3jDM4a+V4MOc/zuIAf+InLuIKr+ITPuIhL3prbu4bruGHkezHkPG/hNn7hN+7hPh7gC77iDu56a27vER7jiZHvxZDzfIbneIGXeIXXeINv+F6ydot3eI8PRv5/TvXb6iM9f6lmJR/p+Us1K/lIz1+qWclHev5y6G3pGnPobVtjVVb7a634nENv2zzXSl5rNdfNxS2/FjbP+XnNZbWGaeY1965qn811mzGLr4nNc35ec1nt0DTzmntXtc/mutO45dfC5rlW8lpZ5ivue4xZvKIobecHjIaTNNgrAAA=
+  </data>
+ </layer>
+ <layer name="Collision" width="61" height="46" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3BMQEAAADCoPVPbQwfoAAAAAAAAAAAAACAtwEUf/fE2CsAAA==
+  </data>
+ </layer>
+ <layer name="Objects" width="61" height="46" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3BMQEAAADCoPVPbQwfoAAAAAAAAAAAAACAtwEUf/fE2CsAAA==
+  </data>
+ </layer>
+</map>

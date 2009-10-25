@@ -61,6 +61,8 @@ class LoginDialog : public Window, public gcn::ActionListener,
          */
         void keyPressed(gcn::KeyEvent &keyEvent);
 
+        void draw(gcn::Graphics *graphics);
+
     private:
         /**
          * Returns whether submit can be enabled. This is true in the login
@@ -68,6 +70,7 @@ class LoginDialog : public Window, public gcn::ActionListener,
          */
         bool canSubmit();
 
+        Image *mBackGround;
 #ifdef EATHENA_SUPPORT
         /**
          * Function to decide whether string is an unsigned short or not

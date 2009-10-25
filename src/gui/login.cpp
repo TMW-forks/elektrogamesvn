@@ -39,15 +39,20 @@
 #include "utils/gettext.h"
 #include "utils/stringutils.h"
 
+#include "resources/resourcemanager.h"
+
 static const int MAX_SERVER_LIST_SIZE = 5;
-static const int LOGIN_DIALOG_WIDTH = 220;
-static const int LOGIN_DIALOG_HEIGHT = 140;
+static const int LOGIN_DIALOG_WIDTH = 573;
+static const int LOGIN_DIALOG_HEIGHT = 550;
 static const int FIELD_WIDTH = LOGIN_DIALOG_WIDTH - 70;
 
 LoginDialog::LoginDialog(LoginData *loginData):
     Window(_("Login")),
     mLoginData(loginData)
 {
+
+    ResourceManager *resman = ResourceManager::getInstance();
+    mBackGround = resman->getImage("graphics/elektrik/gui_login_window.png");
     gcn::Label *userLabel = new Label(_("Name:"));
     gcn::Label *passLabel = new Label(_("Password:"));
 #ifdef EATHENA_SUPPORT
@@ -99,24 +104,33 @@ LoginDialog::LoginDialog(LoginData *loginData):
     mKeepCheck->addActionListener(this);
 #endif
 
-    place(0, 0, userLabel);
-    place(0, 1, passLabel);
+    Container *mCont = new Container();
+    mCont->setPosition(100,100);
+    mCont->setSize(250,300);
+    mCont->setBackgroundColor(gcn::Color(100,100,100));
+    add(mCont);
+    setPadding(20);
+    int x = 10;
+    int y = 42;
+
+    place(x+0, y+0, userLabel);
+    place(x+0, y+1, passLabel);
 #ifdef EATHENA_SUPPORT
-    place(0, 2, serverLabel);
-    place(0, 3, portLabel);
-    place(0, 4, dropdownLabel);
+    place(x+0, y+2, serverLabel);
+    place(x+0, y+3, portLabel);
+    place(x+0, y+4, dropdownLabel);
 #endif
-    place(1, 0, mUserField, 3).setPadding(1);
-    place(1, 1, mPassField, 3).setPadding(1);
+    place(x+1, y+0, mUserField, 3).setPadding(1);
+    place(x+1, y+1, mPassField, 3).setPadding(1);
 #ifdef EATHENA_SUPPORT
-    place(1, 2, mServerField, 3).setPadding(1);
-    place(1, 3, mPortField, 3).setPadding(1);
-    place(1, 4, mServerDropDown, 3).setPadding(1);
+    place(x+1, y+2, mServerField, 3).setPadding(1);
+    place(x+1, y+3, mPortField, 3).setPadding(1);
+    place(x+1, y+4, mServerDropDown, 3).setPadding(1);
 #endif
-    place(0, 5, mKeepCheck, 4);
-    place(0, 6, mRegisterButton).setHAlign(LayoutCell::LEFT);
-    place(2, 6, mCancelButton);
-    place(3, 6, mOkButton);
+    place(x+0, y+5, mKeepCheck, 4);
+    place(x+0, y+6, mRegisterButton).setHAlign(LayoutCell::LEFT);
+    place(x+2, y+6, mCancelButton);
+    place(x+3, y+6, mOkButton);
     reflowLayout(250, 0);
 
     center();
@@ -128,6 +142,8 @@ LoginDialog::LoginDialog(LoginData *loginData):
         mPassField->requestFocus();
 
     mOkButton->setEnabled(canSubmit());
+    setWidth(573);
+    setHeight(507);
 }
 
 LoginDialog::~LoginDialog()
@@ -184,7 +200,7 @@ void LoginDialog::action(const gcn::ActionEvent &event)
         if (isUShort(mPortField->getText()))
             mLoginData->port = getUShort(mPortField->getText());
         else
-            mLoginData->port = 6901;
+            mLoginData->port = 9601;
 #endif
 
         mLoginData->username = mUserField->getText();
@@ -242,6 +258,16 @@ unsigned short LoginDialog::getUShort(const std::string &str)
     }
     return static_cast<unsigned short>(l);
 }
+
+void
+LoginDialog::draw(gcn::Graphics *graphics)
+{
+    Graphics *g = static_cast<Graphics*>(graphics);
+    g->drawImage(mBackGround,0,0);
+
+    drawChildren(graphics);
+}
+
 
 /**
  * LoginDialog::DropDownList
@@ -327,6 +353,7 @@ std::string LoginDialog::DropDownList::getServerAt(int i)
 
     return mServers.at(i);
 }
+
 
 std::string LoginDialog::DropDownList::getPortAt(int i)
 {

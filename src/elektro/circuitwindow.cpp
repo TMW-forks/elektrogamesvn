@@ -1469,6 +1469,7 @@ void
 CircuitWindow::circuitFromXML(std::string mDoc)
 {
     if (mDoc=="") return;
+//    logger->log("%s",mDoc.c_str());
     xmlDocPtr mxmlDoc;
     mxmlDoc=  xmlParseMemory(mDoc.c_str(), mDoc.size());
     if (!mxmlDoc)

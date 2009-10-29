@@ -123,8 +123,8 @@ CharCreateDialog::CharCreateDialog(Window *parent, int slot):
     mPrevHairStyleButton->setPosition(189, 224);
     mNextHairStyleButton->setPosition(305, 224);
     mHairStyleLabel->setPosition(115, 225);
-    mAttributesLeft->setPosition(105, 480);
-//    updateSliders();
+    mAttributesLeft->setPosition(105, 300);
+    updateSliders();
     mCancelButton->setPosition(
             300 - 5 - mCancelButton->getWidth(),
             400);
@@ -185,11 +185,16 @@ void CharCreateDialog::action(const gcn::ActionEvent &event)
             mCreateButton->setEnabled(false);
 
             std::vector<int> atts;
-            for (unsigned i = 0; i < mAttributeSlider.size(); i++)
-            {
-                atts.push_back((int) mAttributeSlider[i]->getValue());
-            }
-
+//            for (unsigned i = 0; i < mAttributeSlider.size(); i++)
+//            {
+//                atts.push_back((int) mAttributeSlider[i]->getValue());
+//            }
+atts.push_back(9);
+atts.push_back(9);
+atts.push_back(9);
+atts.push_back(1);
+atts.push_back(1);
+atts.push_back(1);
             Net::getCharHandler()->newCharacter(getName(), mSlot,
                                 mFemale->isSelected(), mHairStyle,
                                 mHairColor, atts);
@@ -224,7 +229,7 @@ void CharCreateDialog::action(const gcn::ActionEvent &event)
         updateHair();
     }
     else if (event.getId() == "statslider") {
-        //updateSliders();
+        updateSliders();
     }
     else if (event.getId() == "gender"){
         if (mMale->isSelected()) {
@@ -244,35 +249,35 @@ std::string CharCreateDialog::getName() const
 
 void CharCreateDialog::updateSliders()
 {
-    for (unsigned i = 0; i < mAttributeSlider.size(); i++)
-    {
-        // Update captions
-        mAttributeValue[i]->setCaption(
-                toString((int) (mAttributeSlider[i]->getValue())));
-        mAttributeValue[i]->adjustSize();
-    }
-
-    // Update distributed points
-    int pointsLeft = mMaxPoints - getDistributedPoints();
-    if (pointsLeft == 0)
-    {
-        mAttributesLeft->setCaption(_("Character stats OK"));
-        mCreateButton->setEnabled(true);
-    }
-    else
-    {
-        mCreateButton->setEnabled(false);
-        if (pointsLeft > 0)
-        {
-            mAttributesLeft->setCaption(strprintf(_("Please distribute %d points"), pointsLeft));
-        }
-        else
-        {
-            mAttributesLeft->setCaption(strprintf(_("Please remove %d points"), -pointsLeft));
-        }
-    }
-
-    mAttributesLeft->adjustSize();
+//    for (unsigned i = 0; i < mAttributeSlider.size(); i++)
+//    {
+//        // Update captions
+//        mAttributeValue[i]->setCaption(
+//                toString((int) (mAttributeSlider[i]->getValue())));
+//        mAttributeValue[i]->adjustSize();
+//    }
+//
+//    // Update distributed points
+//    int pointsLeft = mMaxPoints - getDistributedPoints();
+//    if (pointsLeft == 0)
+//    {
+//        mAttributesLeft->setCaption(_("Character stats OK"));
+//        mCreateButton->setEnabled(true);
+//    }
+//    else
+//    {
+//        mCreateButton->setEnabled(false);
+//        if (pointsLeft > 0)
+//        {
+//            mAttributesLeft->setCaption(strprintf(_("Please distribute %d points"), pointsLeft));
+//        }
+//        else
+//        {
+//            mAttributesLeft->setCaption(strprintf(_("Please remove %d points"), -pointsLeft));
+//        }
+//    }
+//
+//    mAttributesLeft->adjustSize();
 }
 
 void CharCreateDialog::unlock()
@@ -294,45 +299,45 @@ int CharCreateDialog::getDistributedPoints() const
 void CharCreateDialog::setAttributes(std::vector<std::string> labels,
                                      int available, int min, int max)
 {
-/*    mMaxPoints = available;
+    mMaxPoints = available;
 
-    for (unsigned i = 0; i < mAttributeLabel.size(); i++)
-    {
-        remove(mAttributeLabel[i]);
-        delete mAttributeLabel[i];
-        remove(mAttributeSlider[i]);
-        delete mAttributeSlider[i];
-        remove(mAttributeValue[i]);
-        delete mAttributeValue[i];
-    }
+//    for (unsigned i = 0; i < mAttributeLabel.size(); i++)
+//    {
+//        remove(mAttributeLabel[i]);
+//        delete mAttributeLabel[i];
+//        remove(mAttributeSlider[i]);
+//        delete mAttributeSlider[i];
+//        remove(mAttributeValue[i]);
+//        delete mAttributeValue[i];
+//    }
+//
+//    mAttributeLabel.resize(labels.size());
+//    mAttributeSlider.resize(labels.size());
+//    mAttributeValue.resize(labels.size());
+//
+//    int w = 200;
+//    int h = 330;
 
-    mAttributeLabel.resize(labels.size());
-    mAttributeSlider.resize(labels.size());
-    mAttributeValue.resize(labels.size());
+//    for (unsigned i = 0; i < labels.size(); i++)
+//    {
+//        mAttributeLabel[i] = new Label(labels[i]);
+//        mAttributeLabel[i]->setWidth(70);
+//        mAttributeLabel[i]->setPosition(105, 290 + i*20);
+//        add(mAttributeLabel[i]);
+//
+//        mAttributeSlider[i] = new Slider(min, max);
+//        mAttributeSlider[i]->setDimension(gcn::Rectangle(175, 290 + i*20, 100, 10));
+//        mAttributeSlider[i]->setActionEventId("statslider");
+//        mAttributeSlider[i]->addActionListener(this);
+//        add(mAttributeSlider[i]);
+//
+//        mAttributeValue[i] = new Label(toString(min));
+//        mAttributeValue[i]->setPosition(280, 290 + i*20);
+//        add(mAttributeValue[i]);
+//    }
 
-    int w = 200;
-    int h = 330;
-
-    for (unsigned i = 0; i < labels.size(); i++)
-    {
-        mAttributeLabel[i] = new Label(labels[i]);
-        mAttributeLabel[i]->setWidth(70);
-        mAttributeLabel[i]->setPosition(105, 290 + i*20);
-        add(mAttributeLabel[i]);
-
-        mAttributeSlider[i] = new Slider(min, max);
-        mAttributeSlider[i]->setDimension(gcn::Rectangle(175, 290 + i*20, 100, 10));
-        mAttributeSlider[i]->setActionEventId("statslider");
-        mAttributeSlider[i]->addActionListener(this);
-        add(mAttributeSlider[i]);
-
-        mAttributeValue[i] = new Label(toString(min));
-        mAttributeValue[i]->setPosition(280, 290 + i*20);
-        add(mAttributeValue[i]);
-    }
-
-    mAttributesLeft->setPosition(105, 480);
-//    updateSliders();
+//    mAttributesLeft->setPosition(105, 480);
+    updateSliders();
 
     mCancelButton->setPosition(
             300 - 5 - mCancelButton->getWidth(),
@@ -340,7 +345,7 @@ void CharCreateDialog::setAttributes(std::vector<std::string> labels,
     mCreateButton->setPosition(
             mCancelButton->getX() - 5 - mCreateButton->getWidth(),
             440 - 5 - mCancelButton->getHeight());
-*/
+
 }
 
 void CharCreateDialog::setFixedGender(bool fixed, Gender gender)

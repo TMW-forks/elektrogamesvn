@@ -943,7 +943,7 @@ int main(int argc, char *argv[])
 
     if (loginData.hostname.empty()) {
         loginData.hostname = branding.getValue("defaultServer",
-                                               "server.elektrogame.net").c_str();
+                                               "guncelle.elektrogame.net").c_str();
     }
     if (options.serverPort == 0) {
         loginData.port = (short) branding.getValue("defaultPort", DEFAULT_PORT);

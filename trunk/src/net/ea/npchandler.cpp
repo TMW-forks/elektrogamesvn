@@ -44,6 +44,7 @@
 #include "elektro/testwindow.h"
 #include "elektro/circuitwindow.h"
 #include "elektro/slaytwindow.h"
+#include "elektro/similasyonpenceresi.h"
 
 //NPC id:
 //100-113 test
@@ -90,11 +91,11 @@ void NpcHandler::handleMessage(MessageIn &msg)
             being = beingManager->findBeing(current_npc);
             if (being->getJob()>=114 && being->getJob()<=127)
             {
-            npcDialog->setNpc(current_npc);
-            npcDialog->choiceRequest();
-            npcDialog->parseListItems(msg.readString(msg.getLength() - 8));
-            npcDialog->setVisible(true);
-            resetPlayer = true;
+                npcDialog->setNpc(current_npc);
+                npcDialog->choiceRequest();
+                npcDialog->parseListItems(msg.readString(msg.getLength() - 8));
+                npcDialog->setVisible(true);
+                resetPlayer = true;
             }
 //
 //            being = beingManager->findBeing(current_npc);
@@ -150,6 +151,18 @@ void NpcHandler::handleMessage(MessageIn &msg)
                     {
                         slaytWindow->parseXML(npcText.str());
                         npcText.str("");
+                    }
+                }
+                //Similasyon Penceresi
+                else if (being->getJob()==145)
+                {
+                    if(temp == "</similasyon>")
+                    {
+                        SimilasyonPenceresi *similasyonPenceresi = new SimilasyonPenceresi();
+                        //Serverdaki npc nin xml dosyasýndan gelen veri
+                        //similasyon nesnesine gönderiliyor
+                        similasyonPenceresi->parseXML(npcText.str());
+                        similasyonPenceresi->setVisible(true);
                     }
                 }
             }

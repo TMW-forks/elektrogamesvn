@@ -20,5 +20,5 @@ void BesKiloGram::draw(gcn::Graphics *graphics)
     ImageSet *res = resman->getImageSet(ss,32,32);
     g->drawImage(res->get(0),4,4);
     Kutle::draw(graphics);
-    logger->log("draw˝n iÁi");
+    logger->log("draw√Ωn i√ßi");
 }

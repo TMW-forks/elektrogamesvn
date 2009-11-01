@@ -1,14 +1,22 @@
 #include "kutle.h"
+#include "similasyonpenceresi.h"
 
-Kutle::Kutle(gcn::ActionListener *listener)
+#include <SDL_types.h>
+#include <guichan/sdl/sdlinput.hpp>
+
+#include "../graphics.h"
+#include "../log.h"
+#include "../game.h"
+
+extern SimilasyonPenceresi *similasyonPenceresi;
+
+Kutle::Kutle(gcn::ActionListener *listener) : mListener(listener)
 {
-    ResourceManager *resman = ResourceManager::getInstance();
-    ImageSet *mHalkaImages;
-    mHalkaImages = resman->getImageSet("graphics/gui/target-cursor-blue-s.png", 44, 35);
-    Animation *mHalkaAnime = new Animation();
-    for (unsigned int i = 0; i < mHalkaImages->size(); ++i)
-         mHalkaAnime->addFrame(mHalkaImages->get(i), 75, 0, 0);
-    mSelectedAnime = new SimpleAnimation(mHalkaAnime);
+
+    if (mListener)
+    {
+        addActionListener(mListener);
+    }
 }
 
 Kutle::~Kutle()
@@ -18,49 +26,43 @@ Kutle::~Kutle()
 
 void Kutle::draw(gcn::Graphics *graphics)
 {
-    graphics->setColor(gcn::Color(0xff0000));
-    //graphics->drawRectangle(gcn::Rectangle(0,0,getWidth(),getHeight()));
-    Graphics *g = static_cast<Graphics*>(graphics);
-    //ResourceManager *resman = ResourceManager::getInstance();
 
-    if (true) //if (getSelected())
-    {
-        mSelectedAnime->update(10);
-        Image* targetCursor=mSelectedAnime->getCurrentImage();
-        g->drawImage(targetCursor, -2, 2);
-    }
     drawChildren(graphics);
 }
 
-bool Kutle::getSelected ()
-{
-    return mSelected;
-}
 void Kutle::mousePressed(gcn::MouseEvent &event)
 {
     gcn::Window::mousePressed(event);
 
     if (event.getButton() == gcn::MouseEvent::LEFT)
     {
-        const int x = event.getX();
-        const int y = event.getY();
-
-//     //Handle close button
-//        gcn::Rectangle closeButtonRect(getWidth() - 40,getPadding(),50,50);
-//
-//        if (closeButtonRect.isPointInRect(x, y))
-//        {
-//            close();
-//        }
+        Uint8* keys;
+        keys = SDL_GetKeyState(NULL);
+        tempX = event.getX();
+        tempY = event.getY();
+        setSelected(true);
     }
-
-        // Handle window resizing
-        //fareResize = getResizeHandles(event);
 }
 void Kutle::mouseDragged(gcn::MouseEvent &event)
 {
-
+    if (getSelected())
+    {
+        //requestMoveToTop();
+        int mouseX, mouseY;
+        SDL_GetMouseState(&mouseX, &mouseY);
+        setX(mouseX-similasyonPenceresi->getX()-getWidth()/2);
+        setY(mouseY-similasyonPenceresi->getY()-getHeight()/2-13);
+        if (getX()<20)
+            setX(20);
+        if (getY()<50)
+            setY(50);
+        if (getX()>(similasyonPenceresi->getWidth()-getWidth()-15))
+            setX(similasyonPenceresi->getWidth()-15-getWidth());
+        if (getY()>(similasyonPenceresi->getHeight()-getHeight()-60))
+            setY(similasyonPenceresi->getHeight()-getHeight()-60);
+    }
 }
+
 void Kutle::mouseReleased(gcn::MouseEvent &event)
 {
 
@@ -73,36 +75,15 @@ void Kutle::mouseExited(gcn::MouseEvent &event)
 {
 
 }
-
-void Kutle::setW(int w)
+void Kutle::setSelected (bool durum)
 {
-    mW=w;
+    mSelected = durum;
 }
-void Kutle::setH(int h)
+bool Kutle::getSelected ()
 {
-    mH= h;
-}
-
-void Kutle::setKoordinat(int x,int y)
-{
-    mX=x;
-    mY=y;
-}
-
-int Kutle::getW()
-{
-    return mW;
-}
-int Kutle::getH()
-{
-    return mH;
-}
-void Kutle::getKoordinat(int &x,int &y)
-{
-    x = getX();
-    y = getY();
+    return mSelected;
 }
 void Kutle::action(const gcn::ActionEvent &event)
- {
+{
 
- }
+}

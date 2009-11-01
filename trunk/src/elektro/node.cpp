@@ -48,7 +48,6 @@ void Node::mousePressed(gcn::MouseEvent& mouseEvent)
         mMoving = true;
     } else
     BitButton::mousePressed(mouseEvent);
-
 }
 
 void Node::mouseDragged(gcn::MouseEvent& mouseEvent)

@@ -44,6 +44,10 @@ struct SmLabel{
      gcn::Label *label;
      std::string value;
 };
+struct SmTextBox{
+    BrowserBox *browserbox;
+    ScrollArea *scrollarea;
+};
 
 //Devre penceresinde iki node arasýndaki baðlantýnýn özelliklerini saklamak için
 struct ConnectList {

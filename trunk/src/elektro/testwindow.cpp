@@ -27,7 +27,8 @@
 #include "net/ea/npchandler.h"
 #include "utils/stringutils.h"
 #include "../localplayer.h"
-#include "elektro/typedef.h"
+#include "typedef.h"
+#include "elektrowidget.h"
 #include "../beingmanager.h"
 #include "utils/stringutils.h"
 #include "utils/gettext.h"
@@ -38,6 +39,7 @@ extern int sure;
 int TestDialog::gecenZaman=0;
 const int padX = 50;
 const int padY = 50;
+extern ElektroWidget *elektroWidget;
 
 gcn::Label *mTimeLabel = new gcn::Label("time label");
 TestDialog::TestDialog():
@@ -48,7 +50,7 @@ TestDialog::TestDialog():
     setPosition(100,100);
 
     cancelButton = new Button(BTNCANCEL, "cancel", this);
-    mEvaluate = new Button(toTurkish("Değerlendir!"),"ok",this);
+    mEvaluate = new Button(_("Değerlendir!"),"ok",this);
     mFinishClose = new Button("Pencereyi kapat","startcancel",this);
 
     ResourceManager *resman = ResourceManager::getInstance();
@@ -825,7 +827,7 @@ TestDialog::parse()
             {
                 if (xmlStrEqual(subnode->name, BAD_CAST "addrow"))
                 {
-                    mMessageText->addRow(toTurkish(XML::getProperty(subnode, "text", "\n")));
+                    mMessageText->addRow(XML::getProperty(subnode, "text", "\n"));
                 }
                 else if (xmlStrEqual(subnode->name, BAD_CAST "effect"))
                 {
@@ -885,168 +887,37 @@ TestDialog::parse()
         }
         else if (xmlStrEqual(node->name, BAD_CAST "label"))
         {
-            gcn::Label *templabel=new gcn::Label("");
-            templabel->setCaption(XML::getProperty(node, "text", "label"));
-            templabel->setX(XML::getProperty(node, "x", 0)+padX);
-            templabel->setY(XML::getProperty(node, "y", 0)+padY);
-            int w=XML::getProperty(node, "width", 0);
-            int h=XML::getProperty(node, "height", 0);
-            if (w==0||h==0)
-                templabel->adjustSize();
-              else
-                templabel->setSize(w,h);
-
-            int r = XML::getProperty(node, "fcolorr", 0);
-            int g = XML::getProperty(node, "fcolorg", 0);
-            int b = XML::getProperty(node, "fcolorb", 0);
-            if (r!=0 && g!=0 && b!=0) templabel->setForegroundColor(gcn::Color(r,g,b));
-
-            r = XML::getProperty(node, "bcolorr", 0);
-            g = XML::getProperty(node, "bcolorg", 0);
-            b = XML::getProperty(node, "bcolorb", 0);
-            if (r!=0 && g!=0 && b!=0) templabel->setBackgroundColor(gcn::Color(r,g,b));
-
-            std::string font = XML::getProperty(node, "font", "boldFont");
-            if (font=="boldFont") templabel->setFont(boldFont);
-             else if (font=="bas_1") templabel->setFont(font_bas_1);
-             else if (font=="bas_2") templabel->setFont(font_bas_2);
-             else if (font=="bas_3") templabel->setFont(font_bas_3);
-             else if (font=="bas_4") templabel->setFont(font_bas_4);
-             else if (font=="bas_5") templabel->setFont(font_bas_5);
-             else if (font=="bas_b_1") templabel->setFont(font_bas_b_1);
-             else if (font=="bas_b_2") templabel->setFont(font_bas_b_2);
-             else if (font=="el_1") templabel->setFont(font_el_1);
-             else if (font=="el_2") templabel->setFont(font_el_2);
-             else if (font=="el_3") templabel->setFont(font_el_3);
-             else if (font=="el_b_1") templabel->setFont(font_el_b_1);
-             else if (font=="el_b_2") templabel->setFont(font_el_b_2);
-             else if (font=="txt_1") templabel->setFont(font_txt_1);
-             else if (font=="txt_2") templabel->setFont(font_txt_2);
-             else if (font=="txt_3") templabel->setFont(font_txt_3);
-             else if (font=="txt_4") templabel->setFont(font_txt_4);
-             else if (font=="txt_5") templabel->setFont(font_txt_5);
-             else if (font=="txt_6") templabel->setFont(font_txt_6);
-             else if (font=="txt_b_1") templabel->setFont(font_txt_b_1);
-             else if (font=="txt_b_2") templabel->setFont(font_txt_b_2);
-             else if (font=="txt_b_3") templabel->setFont(font_txt_b_3);
-             else if (font=="txt_cal") templabel->setFont(font_calibri);
-             else if (font=="txt_cal_i") templabel->setFont(font_i_calibri);
-             else if (font=="txt_cal_b") templabel->setFont(font_b_calibri);
-             else if (font=="txt_cal_bi") templabel->setFont(font_b_i_calibri);
-             else templabel->setFont(boldFont);
-
-            templabel->setFrameSize(XML::getProperty(node, "bordersize", 0));
-            templabel->setVisible(false);
-            templabel->adjustSize();
+            gcn::Label *templabel = elektroWidget->addLabel(node);
             add(templabel);
             mvLabel.push_back(templabel);
         }
         else if (xmlStrEqual(node->name, BAD_CAST "image"))
         {
-            SmImage temp;
-            temp.img = resman->getImage(XML::getProperty(node, "src", ""));
-            temp.x   =  XML::getProperty(node, "x", 0)+padX;
-            temp.y   =  XML::getProperty(node, "y", 0)+padY;
-            temp.visible = false;
+            SmImage temp = elektroWidget->addImage(node);
             mvImage.push_back(temp);
         }
-
         else if (xmlStrEqual(node->name, BAD_CAST "simpleanim"))
         {
-            SmAnim temp;
-            ImageSet *mImageSet = resman->getImageSet(XML::getProperty(node, "src",""),
-                                            XML::getProperty(node, "width", 0),
-                                            XML::getProperty(node, "height", 0));
-
-            Animation *mAnimation = new Animation();
-
-            for (unsigned int i = 0; i < mImageSet->size(); ++i)
-            {
-                mAnimation->addFrame(mImageSet->get(i), 75, 0, 0);
-            }
-            temp.anim = new SimpleAnimation(mAnimation);
-            temp.x   =  XML::getProperty(node, "x", 0)+padX;
-            temp.y   =  XML::getProperty(node, "y", 0)+padY;
-            temp.v   =  XML::getProperty(node, "v", 0);
-            temp.visible = false;
+            SmAnim temp = elektroWidget->addAnim(node);
             mvAnim.push_back(temp);
+        }else if (xmlStrEqual(node->name, BAD_CAST "textbox"))
+        {
+            SmTextBox temp = elektroWidget->addTextBox(this,node);
+            add(temp.scrollarea);
+            mvScrollArea.push_back(temp.scrollarea);
+            mvTextBox.push_back(temp.browserbox);
         }
-// iki sütundan birisini seçerek yapılan karşılaştırma soruları eklenebilir
-// xml'e grup değeri eklemek yeterli olur
         else if (xmlStrEqual(node->name, BAD_CAST "radio"))
         {
-            SmRadio temp;
-            std::string text = XML::getProperty(node, "text", "");
-            text = toTurkish(text);
-            int x = XML::getProperty(node, "x", 0)+padX;
-            int y = XML::getProperty(node, "y", 0)+padY;
-
-            gcn::RadioButton *mRadio = new RadioButton(text,"1",false);
-            mRadio->setPosition(x, y);
-            mRadio->setVisible(false);
-            mRadio->addActionListener(this);
-            const std::string &olayId = "radiocheck";
-            mRadio->setActionEventId(olayId);
-            add(mRadio);
-
-            temp.value = XML::getProperty(node, "value", 0);
-            if (temp.value==mSelected) mRadio->setSelected(true);
-            temp.radio = mRadio;
+            SmRadio temp = elektroWidget->addRadio(this, node, mSelected);
+            add(temp.radio);
             mvRadio.push_back(temp);
         }
         else if (xmlStrEqual(node->name, BAD_CAST "check"))
         {
-            SmCheck temp;
-            std::string text = XML::getProperty(node, "text", "");
-            text = toTurkish(text);
-            int x = XML::getProperty(node, "x", 0)+padX;
-            int y = XML::getProperty(node, "y", 0)+padY;
-
-            CheckBox *mCheck = new CheckBox(text,false);
-            mCheck->setPosition(x, y);
-            mCheck->setVisible(false);
-
-            temp.value = XML::getProperty(node, "value", "2");
-            int sayi = XML::getProperty(node, "checked", -1);
-            if (sayi==-1)
-                mCheck->setSelected(false);
-            else
-                mCheck->setSelected(true);
-            mCheck->addActionListener(this);
-            const std::string &olayId = "checkboxcheck"+ temp.value;
-            mCheck->setActionEventId(olayId);
-            add(mCheck);
-
-            temp.check = mCheck;
+            SmCheck temp = elektroWidget->addCheck(this, node);
+            add(temp.check);
             mvCheck.push_back(temp);
-        }
-        else if (xmlStrEqual(node->name, BAD_CAST "textbox"))
-        {
-            BrowserBox *mBrowserBox = new BrowserBox();
-            ScrollArea *mScrollArea = new ScrollArea(mBrowserBox);
-//            mScrollArea->setVerticalScrollPolicy(XML::getProperty(node, "scrollv",2));
-//            mScrollArea->setHorizontalScrollPolicy(XML::getProperty(node, "scrollh",2));
-            mScrollArea->setVerticalScrollPolicy(gcn::ScrollArea::SHOW_ALWAYS);
-            mScrollArea->setHorizontalScrollPolicy(gcn::ScrollArea::SHOW_ALWAYS);
-            int w =  XML::getProperty(node, "width", 350);
-            int h =  XML::getProperty(node, "height", 275);
-            int l =  XML::getProperty(node, "x", (800-getWidth())/2);
-            int t =  XML::getProperty(node, "y", (600-getHeight())/2);
-            mScrollArea->setOpaque(XML::getProperty(node, "opaque", true));
-            mBrowserBox->setOpaque(XML::getProperty(node, "opaque", true));
-            mScrollArea->setDimension(gcn::Rectangle(l, t, w, h ));
-            for_each_xml_child_node(subnode, node)
-            {
-                if (xmlStrEqual(subnode->name, BAD_CAST "addrow"))
-                {
-                    std::string temprow = XML::getProperty(subnode, "text", "\n");
-                    temprow = toTurkish(temprow);
-                    mBrowserBox->addRow(temprow);
-                }
-            }
-            add(mScrollArea);
-            mvScrollArea.push_back(mScrollArea);
-            mvTextBox.push_back(mBrowserBox);
         }
         else if (xmlStrEqual(node->name, BAD_CAST "report"))
         {
@@ -1055,7 +926,6 @@ TestDialog::parse()
             int mDogru = XML::getProperty(node, "numcorrectanswer", 0);
             int mYanlis = XML::getProperty(node, "numwronganswer", 0);
             int mBos = XML::getProperty(node, "numblankanswer", 0);
-        logger->log("dogru : %d, yanlis:%d", mDogru,mYanlis);
             for_each_xml_child_node(subnode, node)
             {
                 if (xmlStrEqual(subnode->name, BAD_CAST "reportmesaj"))
@@ -1123,60 +993,3 @@ void TestDialog::makeEffect(std::string type,std::string name, std::string ssoun
     }
 
 }
-
-
-std::string TestDialog::toTurkish(std::string str)
-{
-    std::string temp = str;
-    for(int pos = 0; pos<str.length(); pos++)
-    {
-        if ((str.at(pos) == 'Ã') && (str.at(pos+1)=='¼')) temp = str.replace(pos, 2, "ü");
-        if ((str.at(pos) == 'Å') && (str.at(pos+1)=='Ÿ')) temp = str.replace(pos, 2, "ş");
-        if ((str.at(pos) == 'Ä') && (str.at(pos+1)=='Ÿ')) temp = str.replace(pos, 2, "ğ");
-        if ((str.at(pos) == 'Ä') && (str.at(pos+1)=='±')) temp = str.replace(pos, 2, "ı");
-        if ((str.at(pos) == 'Ã') && (str.at(pos+1)=='§')) temp = str.replace(pos, 2, "ç");
-        if ((str.at(pos) == 'Ã') && (str.at(pos+1)=='¶')) temp = str.replace(pos, 2, "ö");
-
-        if ((str.at(pos) == 'Ã') && (str.at(pos+1)=='œ')) temp = str.replace(pos, 2, "Ü");
-        if ((str.at(pos) == 'Ä') && (str.at(pos+1)=='')) temp = str.replace(pos, 2, "Ğ");
-        if ((str.at(pos) == 'Ä') && (str.at(pos+1)=='°')) temp = str.replace(pos, 2, "İ");
-        if ((str.at(pos) == 'Å') && (str.at(pos+1)=='')) temp = str.replace(pos, 2, "Ş");
-        if ((str.at(pos) == 'Ã') && (str.at(pos+1)=='‡')) temp = str.replace(pos, 2, "Ç");
-        if ((str.at(pos) == 'Ã') && (str.at(pos+1)=='–')) temp = str.replace(pos, 2, "Ö");
-
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='0')) temp = str.replace(pos, 3, "á");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='1')) temp = str.replace(pos, 3, "Á");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='2')) temp = str.replace(pos, 3, "é");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='3')) temp = str.replace(pos, 3, "É");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='4')) temp = str.replace(pos, 3, "í");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='5')) temp = str.replace(pos, 3, "Í");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='6')) temp = str.replace(pos, 3, "ó");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='7')) temp = str.replace(pos, 3, "Ó");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='8')) temp = str.replace(pos, 3, "ú");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='$')&& (str.at(pos+2)=='9')) temp = str.replace(pos, 3, "Ú");
-
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='0')) temp = str.replace(pos, 3, "ë");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='1')) temp = str.replace(pos, 3, "¥");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='2')) temp = str.replace(pos, 3, "£");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='3')) temp = str.replace(pos, 3, "¢");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='4')) temp = str.replace(pos, 3, "¡");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='5')) temp = str.replace(pos, 3, "¿");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='6')) temp = str.replace(pos, 3, "à");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='7')) temp = str.replace(pos, 3, "ã");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='8')) temp = str.replace(pos, 3, "õ");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='!')&& (str.at(pos+2)=='9')) temp = str.replace(pos, 3, "ê");
-
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='1')) temp = str.replace(pos, 3, "ñ");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='2')) temp = str.replace(pos, 3, "Ñ");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='3')) temp = str.replace(pos, 3, "ä");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='4')) temp = str.replace(pos, 3, "Ä");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='5')) temp = str.replace(pos, 3, "ß");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='6')) temp = str.replace(pos, 3, "ø");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='7')) temp = str.replace(pos, 3, "è");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='8')) temp = str.replace(pos, 3, "È");
-        if ((str.at(pos) == '$') && (str.at(pos+1)=='%')&& (str.at(pos+2)=='9')) temp = str.replace(pos, 3, "å");
-
-    }
-   return temp;
-}
-

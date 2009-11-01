@@ -237,7 +237,7 @@ static void setUpdatesDir()
     if (updateHost.empty())
     {
         updateHost =
-            config.getValue("updatehost", "http://updates.elektrogame.net/");
+            config.getValue("updatehost", "http://guncelle.elektrogame.net/");
     }
 
     // Remove any trailing slash at the end of the update host
@@ -320,7 +320,7 @@ static void initHomeDir(const Options &options)
             branding.getValue("appName", "elektrOGame");
 #else
         homeDir = std::string(PHYSFS_getUserDir()) +
-            "/." + branding.getValue("appShort", "elektrogame");
+            "." + branding.getValue("appShort", "elektrogame");
 #endif
     }
 #if defined WIN32
@@ -363,7 +363,7 @@ static void initConfiguration(const Options &options)
     config.setValue("musicVolume", 60);
     config.setValue("fpslimit", 60);
     std::string defaultUpdateHost = branding.getValue("defaultUpdateHost",
-        "http://updates.elektrogame.net");
+        "http://guncelle.elektrogame.net");
     config.setValue("updatehost", defaultUpdateHost);
     config.setValue("customcursor", true);
     config.setValue("ChatLogLength", 128);
@@ -673,10 +673,9 @@ static void parseOptions(int argc, char *argv[], Options &options)
 static void loadUpdates()
 {
     if (updatesDir.empty()) return;
-    const std::string updatesFile = "/" + updatesDir + "/resources2.txt";
+    const std::string updatesFile = "" + updatesDir + "/resources2.txt";
     ResourceManager *resman = ResourceManager::getInstance();
     std::vector<std::string> lines = resman->loadTextFile(updatesFile);
-
     for (unsigned int i = 0; i < lines.size(); ++i)
     {
         std::stringstream line(lines[i]);
@@ -1348,7 +1347,7 @@ int main(int argc, char *argv[])
             switch (oldstate)
             {
                 case STATE_UPDATE:
-                    //loadUpdates();
+                    loadUpdates();
                     break;
 
                 // Those states don't cause a network disconnect

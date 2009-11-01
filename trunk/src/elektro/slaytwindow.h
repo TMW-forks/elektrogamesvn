@@ -97,6 +97,19 @@ class SlaytWindow: public Window, public gcn::ActionListener
         Button *mClose;
         DropDown *mDropDown;
 
+        int mNextX;
+        int mNextY;
+        bool mNextVisible;
+        int mPrevX;
+        int mPrevY;
+        bool mPrevVisible;
+        int mCloseX;
+        int mCloseY;
+        bool mCloseVisible;
+        int mDropDownX;
+        int mDropDownY;
+        bool mDropDownVisible;
+        bool mButtonsDefault;
         xmlDocPtr mxmlDoc;
 
         TmvLabel mvLabel;
@@ -114,7 +127,8 @@ class SlaytWindow: public Window, public gcn::ActionListener
         TmvBrowserBox mvTextBox;
         TmiBrowserBox miTextBox;
 
-
+        TmvBrowserBox mvBrowserBox;     //BrowserBox vector
+        TmiBrowserBox miBrowserBox;     //BrowserBox iter
 
 };
 

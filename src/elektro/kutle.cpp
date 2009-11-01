@@ -10,9 +10,10 @@
 
 extern SimilasyonPenceresi *similasyonPenceresi;
 
-Kutle::Kutle(gcn::ActionListener *listener) : mListener(listener)
+Kutle::Kutle(gcn::ActionListener *listener) :
+    mListener(listener),
+    Window(_("Kütle"))
 {
-
     if (mListener)
     {
         addActionListener(mListener);

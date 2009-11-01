@@ -129,7 +129,7 @@ void Being::setPosition(const Vector &pos)
 
     if (mText)
         mText->adviseXY(mPx,
-                        mPy - getHeight() - mText->getHeight() - 6);
+                        mPy - mText->getHeight() + 6);
 }
 
 #ifdef EATHENA_SUPPORT
@@ -880,7 +880,7 @@ void Being::updateCoords()
 {
     if (mDispName)
     {
-        mDispName->adviseXY(getPixelX(), getPixelY());
+        mDispName->adviseXY(getPixelX(), getPixelY()-getHeight()-6);
     }
 }
 

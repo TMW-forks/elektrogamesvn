@@ -7,9 +7,9 @@
 extern int current_npc;
 extern ElektroWidget *elektroWidget;
 
-SlaytWindow::SlaytWindow()
+SlaytWindow::SlaytWindow():
+    Window(_("Slayt"))
 {
-    setWindowName("Slayt Penceresi");
     logger->log("Slayt Window Açılır");
     setMinWidth(300);
     setMinHeight(400);
@@ -56,7 +56,7 @@ SlaytWindow::SlaytWindow()
 
 SlaytWindow::~SlaytWindow()
 {
-    delete mDropDown;
+    //delete mDropDown;
     delete mStart;
     delete mCancel;
     delete mNext;

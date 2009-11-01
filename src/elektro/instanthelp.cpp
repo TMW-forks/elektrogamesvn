@@ -22,10 +22,8 @@
 #include "../resources/image.h"
 
 InstantHelp::InstantHelp():
-    Window("Yardým")
+    Window("YardÄ±m")
 {
-    setWindowName("Yardým");
-
     setResizable(false);
     setDefaultSize(1010-220, 754-420, 210, 410);
     loadWindowState();

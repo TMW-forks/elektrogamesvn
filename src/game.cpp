@@ -101,6 +101,7 @@
 #include "elektro/slaytwindow.h"
 #include "elektro/similasyonpenceresi.h"
 #include "elektro/elektrowidget.h"
+#include "elektro/instanthelp.h"
 
 std::string map_path;
 std::string globalHint;
@@ -167,6 +168,7 @@ TestDialog *testDialog;
 SlaytWindow *slaytWindow;
 SimilasyonPenceresi *similasyonPenceresi;
 ElektroWidget *elektroWidget;
+InstantHelp *instantHelp;
 
 const int MAX_TIME = 10000;
 
@@ -231,6 +233,7 @@ static void createGuiWindows()
     slaytWindow = new SlaytWindow;
     similasyonPenceresi = new SimilasyonPenceresi;
     elektroWidget = new ElektroWidget;
+    instantHelp = new InstantHelp;
 
     chatWindow = new ChatWindow;
     buyDialog = new BuyDialog;
@@ -311,6 +314,7 @@ static void destroyGuiWindows()
     delete circuitWindow;
     delete slaytWindow;
     delete similasyonPenceresi;
+    delete instantHelp;
 }
 
 Game::Game():

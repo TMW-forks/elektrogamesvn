@@ -99,6 +99,7 @@
 #include "elektro/circuitwindow.h"
 #include "elektro/testwindow.h"
 #include "elektro/slaytwindow.h"
+#include "elektro/similasyonpenceresi.h"
 #include "elektro/elektrowidget.h"
 
 std::string map_path;
@@ -164,6 +165,7 @@ ChatTab *localChatTab = NULL;
 CircuitWindow *circuitWindow;
 TestDialog *testDialog;
 SlaytWindow *slaytWindow;
+SimilasyonPenceresi *similasyonPenceresi;
 ElektroWidget *elektroWidget;
 
 const int MAX_TIME = 10000;
@@ -227,6 +229,7 @@ static void createGuiWindows()
     circuitWindow = new CircuitWindow;
     testDialog = new TestDialog;
     slaytWindow = new SlaytWindow;
+    similasyonPenceresi = new SimilasyonPenceresi;
     elektroWidget = new ElektroWidget;
 
     chatWindow = new ChatWindow;
@@ -307,6 +310,7 @@ static void destroyGuiWindows()
     delete testDialog;
     delete circuitWindow;
     delete slaytWindow;
+    delete similasyonPenceresi;
 }
 
 Game::Game():

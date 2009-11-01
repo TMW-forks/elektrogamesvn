@@ -72,8 +72,6 @@ LoginDialog::LoginDialog(LoginData *loginData):
     captionLabel->setFont(font_bas_b_1);
     captionLabel->setPosition(210,150);
     captionLabel->setForegroundColor(gcn::Color(0xaa,0xbb,0xcc));
-//    captionLabel->setBackgroundColor(gcn::Color(0x00,0xbb,0xcc));
-//    captionLabel->setBaseColor(gcn::Color(0xff,0xff,0xcc));
     captionLabel->adjustSize();
     add(captionLabel);
 

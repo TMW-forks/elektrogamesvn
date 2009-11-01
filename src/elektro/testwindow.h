@@ -130,12 +130,6 @@ class TestDialog : public Window, public gcn::ActionListener
         start();
 
         /**
-         * correct Turkish char
-         */
-        std::string
-        toTurkish(std::string str);
-
-        /**
          * make an effect
          */
         void
@@ -217,6 +211,8 @@ class TestDialog : public Window, public gcn::ActionListener
 
         TmvBrowserBox mvTextBox;
         TmiBrowserBox miTextBox;
+
+
 
         /**
          * Soru numarasý tutan buttonlarý sil

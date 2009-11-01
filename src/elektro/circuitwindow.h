@@ -94,11 +94,6 @@ class CircuitWindow : public Window,
         void swapNode(Node *find, Node *target);
 
         /**
-         * Turkce karakter donusumu icin
-         */
-        std::string toTurkish(std::string str);
-
-        /**
          * hint penceresindeki açýklamalar için
          */
         gcn::Label *toolCaption;

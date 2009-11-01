@@ -3,7 +3,9 @@
 #include "log.h"
 #include "net/ea/npchandler.h"
 #include "../npc.h"
+#include "elektrowidget.h"
 extern int current_npc;
+extern ElektroWidget *elektroWidget;
 
 SlaytWindow::SlaytWindow()
 {
@@ -38,7 +40,7 @@ SlaytWindow::SlaytWindow()
     mClose->setVisible(false);
 
     mNext = new Button ("İleri","Slide_Next",this);
-    mPrev = new Button ("Prev","Slide_Prev",this);
+    mPrev = new Button ("Geri","Slide_Prev",this);
     mNext->setVisible(false);
     mPrev->setVisible(false);
 
@@ -73,15 +75,32 @@ SlaytWindow::startCancelPosition()
 void
 SlaytWindow::nextPrevPosition()
 {
-    mPrev->setX(getWidth()-mNext->getWidth()-mPrev->getWidth()-mDropDown->getWidth()-15);
-    mDropDown->setX(mPrev->getX()+mPrev->getWidth()+5);
-    mNext->setX(mDropDown->getX()+mDropDown->getWidth()+5);
-    mPrev->setY(25);
-    mNext->setY(25);
-    mDropDown->setY(25);
-    mClose->setX(mDropDown->getX() + (mDropDown->getWidth() - mClose->getWidth())/2);
-//    mClose->setX(150);
-    mClose->setY(0);
+    if (mButtonsDefault)
+    {
+        mPrev->setX(getWidth()-mNext->getWidth()-mPrev->getWidth()-mDropDown->getWidth()-15);
+        mDropDown->setX(mPrev->getX()+mPrev->getWidth()+5);
+        mNext->setX(mDropDown->getX()+mDropDown->getWidth()+5);
+        mPrev->setY(25);
+        mNext->setY(25);
+        mDropDown->setY(25);
+        mClose->setX(mDropDown->getX() + (mDropDown->getWidth() - mClose->getWidth())/2);
+        mClose->setY(0);
+        mNext->setVisible(true);
+        mPrev->setVisible(true);
+        mClose->setVisible(true);
+        mDropDown->setVisible(true);
+    }
+    else
+    {
+        mPrev->setPosition(mPrevX, mPrevY);
+        mNext->setPosition(mNextX, mNextY);
+        mClose->setPosition(mCloseX, mCloseY);
+        mDropDown->setPosition(mDropDownX, mDropDownY);
+        mNext->setVisible(mNextVisible);
+        mPrev->setVisible(mPrevVisible);
+        mClose->setVisible(mCloseVisible);
+        mDropDown->setVisible(mDropDownVisible);
+    }
 }
 
 void
@@ -167,10 +186,6 @@ SlaytWindow::slideStateControl()
             mStart->setVisible(false);
             mCancel->setVisible(false);
             nextPrevPosition();
-            mNext->setVisible(true);
-            mPrev->setVisible(true);
-            mClose->setVisible(true);
-            mDropDown->setVisible(true);
             for(TmiLabel it =mvLabel.begin(); it<mvLabel.end(); it++)
                 (*it)->setVisible(true);
             break;
@@ -221,9 +236,8 @@ SlaytWindow::clearOldSlide()
 void
 SlaytWindow::parseXML(std::string mDoc)
 {
-    logger->log("Slayt parse işlemi başladı");
+    logger->log("Slayt parse işlemi başladı : \n %s", mDoc.c_str());
     ResourceManager *resman = ResourceManager::getInstance();
-    logger->log(mDoc.c_str());
     mxmlDoc = xmlParseMemory(mDoc.c_str(),mDoc.size());
     if (!mxmlDoc)
     {
@@ -241,6 +255,7 @@ SlaytWindow::parseXML(std::string mDoc)
         // Testten önce gösterilen mesaj
         if (xmlStrEqual(node->name, BAD_CAST "presentationpro"))
         {
+            clearOldSlide();
             slideState = SLIDE_MESSAGE_STATE;
             int x = XML::getProperty(node, "x", 50);
             int y = XML::getProperty(node, "y", 50);
@@ -254,7 +269,66 @@ SlaytWindow::parseXML(std::string mDoc)
             {
                 slideListModel->ekle(toString(i));
             }
-        }
+            mButtonsDefault = true;
+         }
+         if (xmlStrEqual(node->name, BAD_CAST "slidebutton"))
+         {
+            mButtonsDefault = false;
+            int x = XML::getProperty(node, "x", 0);
+            int y = XML::getProperty(node, "y", 0);
+            std::string visi = XML::getProperty(node, "visible", "show");
+            bool visib;
+            visib = (visi=="show" ? true: false);
+            std::string obj = XML::getProperty(node, "object", "next");
+            logger->log("%s -> %d - %d -%d", obj.c_str(),x, y, visib);
+            if(obj=="next")
+            {
+                mNextX = x;
+                mNextY = y;
+                mNextVisible = visib;
+            }
+            else if(obj=="prev")
+            {
+                mPrevX = x;
+                mPrevY = y;
+                mPrevVisible = visib;
+            }
+            else if(obj=="close")
+            {
+                mCloseX = x;
+                mCloseY = y;
+                mCloseVisible = visib;
+            }
+            else if(obj=="combo")
+            {
+                mDropDownX = x;
+                mDropDownY = y;
+                mDropDownVisible = visib;
+            }
+         }
+         else if (xmlStrEqual(node->name, BAD_CAST "label"))
+         {
+            gcn::Label *templabel = elektroWidget->addLabel(node);
+            add(templabel);
+            mvLabel.push_back(templabel);
+         }
+         else if (xmlStrEqual(node->name, BAD_CAST "image"))
+         {
+             SmImage temp = elektroWidget->addImage(node);
+             mvImage.push_back(temp);
+         }
+         else if (xmlStrEqual(node->name, BAD_CAST "simpleanim"))
+         {
+             SmAnim temp = elektroWidget->addAnim(node);
+             mvAnim.push_back(temp);
+         }else if (xmlStrEqual(node->name, BAD_CAST "textbox"))
+         {
+             SmTextBox temp = elektroWidget->addTextBox(this,node);
+             add(temp.scrollarea);
+             mvScrollArea.push_back(temp.scrollarea);
+             mvBrowserBox.push_back(temp.browserbox);
+         }
+
         else if (xmlStrEqual(node->name, BAD_CAST "slide"))
         {
             slideState = SLIDE_NEW_STATE;
@@ -263,103 +337,7 @@ SlaytWindow::parseXML(std::string mDoc)
             std::string slidename =  XML::getProperty(node, "name", "slayt :"+toString(mCurrentSlide));
             slideListModel->degistir(slidename, mCurrentSlide-1);
             mDropDown->setSelected(mCurrentSlide-1);
-            for_each_xml_child_node(subnode, node)
-            {
-                if (xmlStrEqual(subnode->name, BAD_CAST "label"))
-                {
-                    gcn::Label *templabel=new gcn::Label("");
-                    templabel->setCaption(XML::getProperty(subnode, "text", "label"));
-                    templabel->setX(XML::getProperty(subnode, "x", 0)+padX);
-                    templabel->setY(XML::getProperty(subnode, "y", 0)+padY);
-                    int w=XML::getProperty(subnode, "width", 0);
-                    int h=XML::getProperty(subnode, "height", 0);
-                    if (w==0||h==0)
-                        templabel->adjustSize();
-                      else
-                        templabel->setSize(w,h);
-
-                    int r = XML::getProperty(subnode, "fcolorr", 0);
-                    int g = XML::getProperty(subnode, "fcolorg", 0);
-                    int b = XML::getProperty(subnode, "fcolorb", 0);
-                    if (r!=0 && g!=0 && b!=0) templabel->setForegroundColor(gcn::Color(r,g,b));
-
-                    r = XML::getProperty(subnode, "bcolorr", 0);
-                    g = XML::getProperty(subnode, "bcolorg", 0);
-                    b = XML::getProperty(subnode, "bcolorb", 0);
-                    if (r!=0 && g!=0 && b!=0) templabel->setBackgroundColor(gcn::Color(r,g,b));
-
-                    std::string font = XML::getProperty(subnode, "font", "boldFont");
-                    if (font=="boldFont") templabel->setFont(boldFont);
-                     else if (font=="bas_1") templabel->setFont(font_bas_1);
-                     else if (font=="bas_2") templabel->setFont(font_bas_2);
-                     else if (font=="bas_3") templabel->setFont(font_bas_3);
-                     else if (font=="bas_4") templabel->setFont(font_bas_4);
-                     else if (font=="bas_5") templabel->setFont(font_bas_5);
-                     else if (font=="bas_b_1") templabel->setFont(font_bas_b_1);
-                     else if (font=="bas_b_2") templabel->setFont(font_bas_b_2);
-                     else if (font=="el_1") templabel->setFont(font_el_1);
-                     else if (font=="el_2") templabel->setFont(font_el_2);
-                     else if (font=="el_3") templabel->setFont(font_el_3);
-                     else if (font=="el_b_1") templabel->setFont(font_el_b_1);
-                     else if (font=="el_b_2") templabel->setFont(font_el_b_2);
-                     else if (font=="txt_1") templabel->setFont(font_txt_1);
-                     else if (font=="txt_2") templabel->setFont(font_txt_2);
-                     else if (font=="txt_3") templabel->setFont(font_txt_3);
-                     else if (font=="txt_4") templabel->setFont(font_txt_4);
-                     else if (font=="txt_5") templabel->setFont(font_txt_5);
-                     else if (font=="txt_6") templabel->setFont(font_txt_6);
-                     else if (font=="txt_b_1") templabel->setFont(font_txt_b_1);
-                     else if (font=="txt_b_2") templabel->setFont(font_txt_b_2);
-                     else if (font=="txt_b_3") templabel->setFont(font_txt_b_3);
-                     else if (font=="txt_cal") templabel->setFont(font_calibri);
-                     else if (font=="txt_cal_i") templabel->setFont(font_i_calibri);
-                     else if (font=="txt_cal_b") templabel->setFont(font_b_calibri);
-                     else if (font=="txt_cal_bi") templabel->setFont(font_b_i_calibri);
-                     else templabel->setFont(boldFont);
-
-                    templabel->setFrameSize(XML::getProperty(subnode, "bordersize", 0));
-                    templabel->setVisible(false);
-                    templabel->adjustSize();
-                    add(templabel);
-                    mvLabel.push_back(templabel);
-                }
-                else if (xmlStrEqual(subnode->name, BAD_CAST "image"))
-                {
-                    SmImage temp;
-                    temp.img = resman->getImage(XML::getProperty(subnode, "src", "garphics/images/help1.png"));
-//                    temp.img = resman->getImage("data/garphics/images/help1.png");
-                    temp.x   =  XML::getProperty(subnode, "x", 0)+padX;
-                    temp.y   =  XML::getProperty(subnode, "y", 0)+padY;
-                    temp.visible = true;
-                    mvImage.push_back(temp);
-                }
-
-                else if (xmlStrEqual(subnode->name, BAD_CAST "simpleanim"))
-                {
-                    SmAnim temp;
-                    ImageSet *mImageSet = resman->getImageSet(XML::getProperty(subnode, "src",""),
-                                                    XML::getProperty(subnode, "width", 0),
-                                                    XML::getProperty(subnode, "height", 0));
-
-                    Animation *mAnimation = new Animation();
-
-                    for (unsigned int i = 0; i < mImageSet->size(); ++i)
-                    {
-                        mAnimation->addFrame(mImageSet->get(i), 75, 0, 0);
-                    }
-                    temp.anim = new SimpleAnimation(mAnimation);
-                    temp.x   =  XML::getProperty(subnode, "x", 0)+padX;
-                    temp.y   =  XML::getProperty(subnode, "y", 0)+padY;
-                    temp.v   =  XML::getProperty(subnode, "v", 0);
-                    temp.visible = true;
-                    mvAnim.push_back(temp);
-                }
-
-
-            }
         }
-
-
      }
      slideStateControl();
 }

@@ -315,9 +315,9 @@ int UpdaterWindow::downloadThread(void *ptr)
             }
 
 #ifdef PACKAGE_VERSION
-            curl_easy_setopt(curl, CURLOPT_USERAGENT, "TMW/" PACKAGE_VERSION);
+            curl_easy_setopt(curl, CURLOPT_USERAGENT, "elektrogame/" PACKAGE_VERSION);
 #else
-            curl_easy_setopt(curl, CURLOPT_USERAGENT, "TMW");
+            curl_easy_setopt(curl, CURLOPT_USERAGENT, "elektrogame");
 #endif
             curl_easy_setopt(curl, CURLOPT_ERRORBUFFER, uw->mCurlError);
             curl_easy_setopt(curl, CURLOPT_URL, url.c_str());

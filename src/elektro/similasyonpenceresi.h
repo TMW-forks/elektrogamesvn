@@ -7,6 +7,7 @@
 #include <guichan/widgets/label.hpp>
 //#include <guichan/widgets/textfield.hpp>
 #include <libxml/xmlwriter.h>
+#include <vector>
 
 #include "simpleanimation.h"
 
@@ -32,6 +33,8 @@
 #include "utils/gettext.h"
 #include "./typedef.h"
 #include "./bitbutton.h"
+#include "beskilogram.h"
+
 
 
 class SimilasyonPenceresi : public Window, public gcn::ActionListener
@@ -43,15 +46,26 @@ class SimilasyonPenceresi : public Window, public gcn::ActionListener
         void draw(gcn::Graphics *graphics);
         void nesneleriAyarla();
         void parseXML(std::string mDoc);
+
+        void clearComponent();
     protected:
     private:
+        bool startCancelDurum;
         Button *mCancel;
         Button *mStart;
         BrowserBox *mSoru;
         ScrollArea *mSoruArea;
 
+        std::vector<Kutle*> mvKutle;
+        std::vector<Kutle*>::iterator miKutle;
+
         xmlDocPtr mxmlDoc;
         xmlNodePtr rootNode;
-};
 
+        bool nesneDurum;
+
+
+
+
+};
 #endif // SIMILASYONPENCERESI_H

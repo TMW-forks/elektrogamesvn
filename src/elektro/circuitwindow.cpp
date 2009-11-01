@@ -318,20 +318,20 @@ Window::draw(graphics);
     {
         if ((*conListIter)->draw)
         {
-        int x1,y1,x2,y2;
-        (*conListIter)->firstCon->getAbsolutePosition(x1,y1);
-        (*conListIter)->secondCon->getAbsolutePosition(x2,y2);
-        x1 -= getX();
-        x2 -= getX();
-        y1 -= getY();
-        y2 -= getY();
-        drawLine(graphics,x1+4,
-                          y1+4,
-                          x2+4,
-                          y2+4,1);
+            int x1,y1,x2,y2;
+            (*conListIter)->firstCon->getAbsolutePosition(x1,y1);
+            (*conListIter)->secondCon->getAbsolutePosition(x2,y2);
+            x1 -= getX();
+            x2 -= getX();
+            y1 -= getY();
+            y2 -= getY();
+            drawLine(graphics,x1+4,
+                              y1+4,
+                              x2+4,
+                              y2+4,1);
         }
     }
-        for (miImage=mvImage.begin();miImage!=mvImage.end();++miImage)
+    for (miImage=mvImage.begin();miImage!=mvImage.end();++miImage)
     {
          if (miImage->visible)
             g->drawImage(miImage->img,miImage->x,miImage->y);
@@ -362,40 +362,40 @@ CircuitWindow::mousePressed(gcn::MouseEvent &event)
         if (current_npc) Net::getNpcHandler()->nextDialog(current_npc);
         current_npc = 0;
 
-    for(miComponent=mvComponent.begin(); miComponent<mvComponent.end(); miComponent++)
-        (*miComponent)->mDead=true;
+        for(miComponent=mvComponent.begin(); miComponent<mvComponent.end(); miComponent++)
+            (*miComponent)->mDead=true;
 
-    for(miNode=mvNode.begin(); miNode<mvNode.end(); miNode++)
-        (*miNode)->setDead(true);
-    conList.clear();
+        for(miNode=mvNode.begin(); miNode<mvNode.end(); miNode++)
+            (*miNode)->setDead(true);
+        conList.clear();
 
-    miBrowserBox = mvBrowserBox.begin();
-    while (miBrowserBox != mvBrowserBox.end())
-    {
-        delete (*miBrowserBox);
-        miBrowserBox++;
+        miBrowserBox = mvBrowserBox.begin();
+        while (miBrowserBox != mvBrowserBox.end())
+        {
+            delete (*miBrowserBox);
+            miBrowserBox++;
+        }
+
+        miScrollArea = mvScrollArea.begin();
+        while (miScrollArea != mvScrollArea.end())
+        {
+            delete (*miScrollArea);
+            miScrollArea++;
+        }
+
+        mvScrollArea.clear();
+        mvBrowserBox.clear();
+
+        miLabel = mvLabel.begin();
+        while (miLabel != mvLabel.end())
+        {
+            delete (*miLabel);
+            miLabel++;
+        }
+        mvLabel.clear();
+        mvImage.clear();
+        mvAnim.clear();
     }
-
-    miScrollArea = mvScrollArea.begin();
-    while (miScrollArea != mvScrollArea.end())
-    {
-        delete (*miScrollArea);
-        miScrollArea++;
-    }
-
-    mvScrollArea.clear();
-    mvBrowserBox.clear();
-
-    miLabel = mvLabel.begin();
-    while (miLabel != mvLabel.end())
-    {
-        delete (*miLabel);
-        miLabel++;
-    }
-    mvLabel.clear();
-    mvImage.clear();
-    mvAnim.clear();
-}
    //shifte basılıyken tıklanırsa yeni node oluştur
    else if (event.getButton() == gcn::MouseEvent::LEFT &&
             (keys[SDLK_LSHIFT] || keys[SDLK_RSHIFT]) &&
@@ -1229,7 +1229,9 @@ CircuitWindow::action(const gcn::ActionEvent &event)
         setVisible(false);
         deleteWidgets();
         trashMeshMem();
-        if (current_npc) Net::getNpcHandler()->nextDialog(current_npc);
+        if (current_npc)
+            Net::getNpcHandler()->nextDialog(current_npc);
+
         current_npc = 0;
         NPC::isTalking = false;;
     }

@@ -21,14 +21,8 @@ class Kutle: public Window, public gcn::ActionListener
 
         void action(const gcn::ActionEvent &event);
         void draw(gcn::Graphics *graphics);
+        void setSelected (bool durum);
         bool getSelected ();
-        void setKoordinat(int x,int y);
-        void setW(int w);
-        void setH(int h);
-
-        int getW();
-        int getH();
-        void getKoordinat(int &x,int &y);
 
         void mousePressed(gcn::MouseEvent &event);
         void mouseDragged(gcn::MouseEvent &event);
@@ -38,12 +32,12 @@ class Kutle: public Window, public gcn::ActionListener
     protected:
     private:
         gcn::ActionListener *mListener;
-        SimpleAnimation *mSelectedAnime;
+        int tempX;
+        int tempY;
         int mX;
         int mY;
         int mW;
         int mH;
-        static int fareResize;
 
         bool mSelected;
 };

@@ -1,27 +1,22 @@
 #include "similasyonpenceresi.h"
-#include "beskilogram.h"
-
 #include "log.h"
 #include "npc.h"
 #include "net/ea/npchandler.h"
 
 extern int current_npc;
 
-SimilasyonPenceresi::SimilasyonPenceresi()
+SimilasyonPenceresi::SimilasyonPenceresi():Window("Similasyon Penceresi")
 {
-    setWindowName("Similasyon Penceresi");
-    logger->log("Similasyon Window Açılır");
+    setWindowName("SimilasyonPenceresi");
+//logger->log("Similasyon Window Açılır");
     setMinWidth(300);
     setMinHeight(400);
     setResizable(true);
     setVisible(false);
 
-    //Nesneler
     mCancel =new Button("Kapat","Sim_Cancel",this);
     mStart =new Button("Başla","Sim_Start",this);
-
     nesneleriAyarla();
-
     add(mCancel);
     add(mStart);
 }
@@ -43,9 +38,12 @@ SimilasyonPenceresi::action(const gcn::ActionEvent &event)
         current_npc=0;
         NPC::isTalking = false;
         setVisible(false);
+        //Pencere kapatıldığında nesneleri bellekten siler
+        clearComponent();
     }
     else if (event.getId() == "Sim_Start");
     {
+        mStart->setVisible(false);
         Net::getNpcHandler()->listInput(current_npc,2);
     }
 }
@@ -62,14 +60,27 @@ SimilasyonPenceresi::draw(gcn::Graphics *graphics)
 void
 SimilasyonPenceresi::parseXML(std::string mDoc)
 {
-    mxmlDoc=  xmlParseMemory(mDoc.c_str(), mDoc.size());
+    mxmlDoc = xmlParseMemory(mDoc.c_str(), mDoc.size());
     rootNode = xmlDocGetRootElement(mxmlDoc);
+    if (mDoc=="") return;
+//    logger->log("%s",mDoc.c_str());
+
+    if (!mxmlDoc)
+    {
+        logger->error("circuitwindow.cpp: Error while parsing item database (from npc.xml)!"+mDoc);
+    }
+    if (!rootNode || !xmlStrEqual(rootNode->name, BAD_CAST "similasyon"))
+    {
+        logger->error("circuitwindow.cpp: rootNode not similasyon!"+mDoc);
+    }
+
 
     //npchandler dan gelen veri parse ediliyor
     for_each_xml_child_node(node, rootNode)
     {
         if (xmlStrEqual(node->name, BAD_CAST "window"))
         {
+            nesneleriAyarla();
             int w =  XML::getProperty(node, "width", 0);
             int h =  XML::getProperty(node, "height", 0);
             int x =  XML::getProperty(node, "left", 0);
@@ -77,21 +88,7 @@ SimilasyonPenceresi::parseXML(std::string mDoc)
             setContentSize(w, h);
             setPosition(x,y);
         }
-        else if (xmlStrEqual(node->name, BAD_CAST "component"))
-        {
-            int x = XML::getProperty(node, "x", 50);
-            int y = XML::getProperty(node, "y", 50);
-            int w = XML::getProperty(node, "width", 50);
-            int h = XML::getProperty(node, "height", 50);
-            BesKiloGram *nesne = new BesKiloGram(this);
-            nesne->setX(x);
-            nesne->setY(y);
-            nesne->setWidth(w);
-            nesne->setHeight(h);
-            nesne->setVisible(true);
-            add(nesne);
-            logger->log("nesne eklendi");
-        }
+
         else if (xmlStrEqual(node->name, BAD_CAST "text"))
         {
             mSoru = new BrowserBox();
@@ -119,17 +116,50 @@ SimilasyonPenceresi::parseXML(std::string mDoc)
 
             add(mSoruArea);
         }
+        else if (xmlStrEqual(node->name, BAD_CAST "component"))
+        {
+            Kutle *nesne;
+            int x = XML::getProperty(node, "x", 50);
+            int y = XML::getProperty(node, "y", 50);
+            int w = XML::getProperty(node, "width", 50);
+            int h = XML::getProperty(node, "height", 50);
+
+            nesne = new BesKiloGram(this);
+            nesne->setX(x);
+            nesne->setY(y);
+            nesne->setWidth(w);
+            nesne->setHeight(h);
+            nesne->setVisible(true);
+            mvKutle.push_back(nesne);
+            add(nesne);
+        }
     }
+//logger->log("parse bitti");
 }
 
 void
 SimilasyonPenceresi::nesneleriAyarla()
 {
-    mCancel->setX(150);
-    mCancel->setY(getHeight()-150);
+    mCancel->setX(250);
+    mCancel->setY(500);
     mCancel->setVisible(true);
 
-    mStart->setX(250);
-    mStart->setY(getHeight()-150);
+    mStart->setX(200);
+    mStart->setY(500);
     mStart->setVisible(true);
+}
+
+void
+SimilasyonPenceresi::clearComponent()
+{
+    miKutle = mvKutle.begin();
+
+    while(miKutle!=mvKutle.end())
+    {
+        delete (*miKutle);
+        miKutle = mvKutle.erase(miKutle);
+    }
+
+    delete mSoru;
+    delete mSoruArea;
 }

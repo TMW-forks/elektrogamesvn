@@ -168,6 +168,7 @@ SlaytWindow::draw(gcn::Graphics *graphics)
             miAnim->anim->update(miAnim->v);
         }
      }
+
     drawChildren(graphics);
 }
 

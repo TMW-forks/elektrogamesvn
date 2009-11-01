@@ -101,7 +101,8 @@ static KeyData const keyData[KeyboardConfig::KEY_TOTAL] = {
     {"keyOK", SDLK_SPACE, _("Select OK")},
     {"keyQuit", SDLK_ESCAPE, _("Quit")},
     {"keyIgnoreInput1", SDLK_LSUPER, _("Ignore input 1")},
-    {"keyIgnoreInput2", SDLK_RSUPER, _("Ignore input 2")}
+    {"keyIgnoreInput2", SDLK_RSUPER, _("Ignore input 2")},
+    {"keyInstantHelp", SDLK_l, _("Instant Help")}
 };
 
 void KeyboardConfig::init()

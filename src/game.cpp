@@ -886,6 +886,9 @@ void Game::handleInput()
                     case KeyboardConfig::KEY_WINDOW_OUTFIT:
                         requestedWindow = outfitWindow;
                         break;
+                    case KeyboardConfig::KEY_INSTANT_HELP:
+                        requestedWindow = instantHelp;
+                        break;
                     case KeyboardConfig::KEY_SCREENSHOT:
                         // Screenshot (picture, hence the p)
                         saveScreenshot();

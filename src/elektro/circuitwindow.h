@@ -316,7 +316,7 @@ class CircuitWindow : public Window,
       void dugumListResort();
 
       /**
-       * akýmlarýn yönüne göre direnlerin yönünü belirle
+       * akýmlarýn yönüne göre dirençlerin yönünü belirle
        */
       void direncYonBelirle();
 

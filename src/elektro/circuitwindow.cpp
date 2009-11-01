@@ -91,7 +91,7 @@ CircuitWindow::CircuitWindow():
     add(closeButton);
 
     solveButton = new BitButton("com_close_btn.png", "Degerlendir", "solve",this);
-    solveButton->setPosition(260,getHeight()-30);
+    solveButton->setPosition(10,140);
     add(solveButton);
 
     clearButton = new BitButton("com_rotate_btn.png", "Degerlendir", "clear",this);
@@ -103,7 +103,7 @@ CircuitWindow::CircuitWindow():
     mHint->adjustSize();
     add(mHint);
 
-//    gcn::Label *mHint1 = new gcn::Label("Hüseyin Merhaba DÜNYA ÇÖİŞÜĞçöişüğ <>,~");
+//    gcn::Label *mHint1 = new gcn::Label("");
 //    mHint1->setPosition(100,10);
 //    mHint1->setFont(verdana14);
 //    mHint1->setBaseColor(gcn::Color(255,0,0));
@@ -121,10 +121,10 @@ CircuitWindow::CircuitWindow():
     mSs->setHorizontalScrollPolicy(gcn::ScrollArea::SHOW_ALWAYS);
     mSs->setVerticalScrollPolicy(gcn::ScrollArea::SHOW_ALWAYS);
     mSs->setVisible(true);
-    mSs->setWidth(350);
+    mSs->setWidth(250);
     mSs->setHeight(200);
-    mSs->setY(350);
-    mSs->setX(300);
+    mSs->setY(getHeight()- mSs->getHeight()-10);
+    mSs->setX(getWidth()-mSs->getWidth()-10);
 
     add(mSs);
 //***********/
@@ -167,7 +167,7 @@ CircuitWindow::logic()
             compo->mDead = false;
             delete compo;
             i = mvComponent.erase(i);
-//            mRefresh = true;
+            mRefresh = true;
         }
         else {
             i++;
@@ -191,7 +191,7 @@ CircuitWindow::logic()
             nod->setDead(false);
             delete nod;
             j = mvNode.erase(j);
-//            mRefresh = true;
+            mRefresh = true;
         }
         else {
             j++;
@@ -261,7 +261,6 @@ void
 CircuitWindow::draw(gcn::Graphics *graphics)
 {
 Window::draw(graphics);
-//    graphics->setColor(gcn::Color(0xff0000));
 //    graphics->drawRectangle(gcn::Rectangle(20,20,getWidth()-40,getHeight()-40));
     Graphics *g = static_cast<Graphics*>(graphics);
     if (nodeCollision)
@@ -349,7 +348,6 @@ Window::draw(graphics);
         drawChildren(graphics);
  }
 
-
 void
 CircuitWindow::mousePressed(gcn::MouseEvent &event)
 {
@@ -432,7 +430,6 @@ CircuitWindow::swapNode(Node *find, Node *target)
             (*conListIter)->secondCon = target;
         }
     }
-
 }
 
 void
@@ -526,7 +523,7 @@ CircuitWindow::showMesh()
 void
 CircuitWindow::winnowMesh()
 {
-    logger->log("ilmek olmayanları temizle");
+    logger->log("aynı ilmekleri temizle");
     //birbirinin aynısı olanları temizle
     if (mvMesh.size() == 0) return;
     miMesh=mvMesh.begin();
@@ -552,7 +549,7 @@ CircuitWindow::winnowMesh()
         }
         miMesh++;
     }
-
+    logger->log("uzun düğümleri temizle");
     //uzun düğümleri temizle
     miMesh=mvMesh.begin();
     while(miMesh != mvMesh.end())
@@ -574,6 +571,8 @@ CircuitWindow::winnowMesh()
         miMesh++;
     }
     dugumListResort();
+    logger->log("uzun düğümler temizlendi");
+
 }
 
 void
@@ -651,94 +650,20 @@ CircuitWindow::turnoffAllLamp()
 void
 CircuitWindow::makeMatris()
 {
-    logger->log("________________ 4 _____________________");
-
+    logger->log("matrisi hazırla");
     if (mvMesh.size() == 0)
     {
-//      mSb->addRow("ilmek bulunamadı.");
+    #ifdef DEBUG
+      mSb->addRow("ilmek bulunamadı.");
+    #endif
         turnoffAllLamp();
         return;
     }
-    else if (mvMesh.size() == 1)  // lineer denklem çözülünce gerek kalmayabilir
-    {
-        logger->log("________________ 5 _____________________");
-
-//        mSb->addRow("tek denklem");
-        miMesh = mvMesh.begin();
-        TmvInt nodes =miMesh->second;
-        TmiInt ni;
-        float totalV;
-        float totalR;
-        float current;
-        for (ni = nodes.begin() ; ni != nodes.end(); ni++)
-        {
-            //ni sadece nodun id'si
-            //node'un kendisini bulup döndürecek fonksiyon yaz
-            Node *niNode = findNode((*ni));
-            Component *own;
-            if (niNode->getOwner())
-            {
-                own=niNode->getOwner();
-                if (own->getType()==BATTERY)
-                {
-                    totalV += own->getValue();
-                }
-                if (own->getType()==LAMP ||
-                    own->getType()==RESISTANCE)
-                {
-                    totalR += own->getValue();
-                }
-            }
-        }
-        totalV = totalV /2.0;
-        totalR = totalR /2.0;
-        current = totalV / totalR;
-//        mSb->addRow("v : "+toString(totalV));
-//        mSb->addRow("R : "+toString(totalR));
-//        mSb->addRow("i = "+toString(current));
-        if (current != 0)
-        {
-            for (ni = nodes.begin() ; ni != nodes.end(); ni++)
-            {
-                //ni sadece nodun id'si
-                //node'un kendisini bulup döndürecek fonksiyon yaz
-                Node *niNode = findNode((*ni));
-                Component *own;
-                if (niNode->getOwner())
-                {
-                    own=niNode->getOwner();
-                    if (own->getType()==LAMP)
-                    {
-                        own->setStatus(ACTIVE);
-                    }
-                }
-            }
-        }
-        else
-        {
-            for (ni = nodes.begin() ; ni != nodes.end(); ni++)
-            {
-                //ni sadece nodun id'si
-                //node'un kendisini bulup döndürecek fonksiyon yaz
-                Node *niNode = findNode((*ni));
-                Component *own;
-                if (niNode->getOwner())
-                {
-                    own=niNode->getOwner();
-                    if (own->getType()==LAMP)
-                    {
-                        own->setStatus(PASIVE);
-                    }
-                }
-            }
-        }
-
-    }
     else
     {
-        logger->log("________________ 6 _____________________");
-
-//        mSb->addRow("birden fazla denklem");
+        #ifdef DEBUG
+        mSb->addRow("Düğüm bulundu ve çözülecek");
+        #endif
         int dugsirasi = 0;
 
         for (miMesh = mvMesh.begin();
@@ -836,7 +761,10 @@ CircuitWindow::makeMatris()
         direncMatrisYaz();
     }
     calculateBatteryValue();
+
+    #ifdef DEBUG
     showBatteryMatris();
+    #endif
 
     TmvFloat gslDirenc;
 
@@ -855,7 +783,10 @@ CircuitWindow::makeMatris()
     }
 
     double pil[batteryValue.size()];
+    #ifdef DEBUG
          mSb->addRow(" batteryValue SIZE-----: "+toString(batteryValue.size()));
+    #endif
+
     for (int i = 0; i < batteryValue.size(); i++)
     {
         pil[i] = batteryValue[i]*1.0;
@@ -863,20 +794,20 @@ CircuitWindow::makeMatris()
 
     double akim[batteryValue.size()];
 
-TmiFloatMatris a = resistanceMatris.begin();
-gsl_matrix_view r = gsl_matrix_view_array (direnc,resistanceMatris.size(),(*a).size());
-gsl_vector_view v = gsl_vector_view_array (pil, resistanceMatris.size());
-gsl_vector *x = gsl_vector_alloc (resistanceMatris.size());
-int s;
-gsl_permutation * p = gsl_permutation_alloc (resistanceMatris.size());
-gsl_linalg_LU_decomp (&r.matrix, p, &s);
-gsl_linalg_LU_solve (&r.matrix, p, &v.vector, x);
-//gsl_vector_fprintf (stdout, x, "%g");
-for(int i=0; i<resistanceMatris.size(); i++)
-{
-       mSb->addRow("akım =" +toString(gsl_vector_get (x, i)));
-}
-gsl_permutation_free (p);
+    TmiFloatMatris a = resistanceMatris.begin();
+    gsl_matrix_view r = gsl_matrix_view_array (direnc,resistanceMatris.size(),(*a).size());
+    gsl_vector_view v = gsl_vector_view_array (pil, resistanceMatris.size());
+    gsl_vector *x = gsl_vector_alloc (resistanceMatris.size());
+    int s;
+    gsl_permutation * p = gsl_permutation_alloc (resistanceMatris.size());
+    gsl_linalg_LU_decomp (&r.matrix, p, &s);
+    gsl_linalg_LU_solve (&r.matrix, p, &v.vector, x);
+    //gsl_vector_fprintf (stdout, x, "%g");
+    for(int i=0; i<resistanceMatris.size(); i++)
+    {
+        mSb->addRow("akım =" +toString(gsl_vector_get (x, i)));
+    }
+    gsl_permutation_free (p);
 }
 
 void
@@ -901,7 +832,9 @@ CircuitWindow::calculateBatteryValue()
             }
         }
         batteryValue.push_back(pildeger);
+        #ifdef DEBUG
         mSb->addRow("ilmek pil : "+toString(pildeger));
+        #endif
     }
 }
 bool
@@ -1150,7 +1083,7 @@ if (isVisible())
     addLoopToMesh();
 //    showConnectedNodeId();
 //    showNodeLoop();
-    showMesh();
+//    showMesh();
     winnowMesh();
     showMesh();
     makeMatris();
@@ -1490,6 +1423,10 @@ CircuitWindow::circuitFromXML(std::string mDoc)
             setPosition(l,t);
             toolCaption->setPosition(115,h-165);
             toolValue->setPosition(170,h-95);
+            #ifdef DEBUG
+                mSs->setY(getHeight()- mSs->getHeight()-10);
+                mSs->setX(getWidth()-mSs->getWidth()-10);
+            #endif
         }
         if (xmlStrEqual(node->name, BAD_CAST "info"))
         {

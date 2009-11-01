@@ -46,6 +46,8 @@
 #include "elektro/slaytwindow.h"
 #include "elektro/similasyonpenceresi.h"
 
+#include "log.h"
+
 //NPC id:
 //100-113 test
 //114-127 açýklama yapanlar
@@ -57,6 +59,7 @@ Net::NpcHandler *npcHandler;
 extern TestDialog *testDialog;
 extern CircuitWindow *circuitWindow;
 extern SlaytWindow *slaytWindow;
+extern SimilasyonPenceresi *similasyonPenceresi;
 namespace EAthena {
 
 std::string temp;
@@ -110,10 +113,13 @@ void NpcHandler::handleMessage(MessageIn &msg)
             {
                 if (temp=="</test>")
                 {
+//                   TestDialog *testDialog= new TestDialog();
+                {
                      testDialog->setVisible(true);
                      testDialog->setDoc(npcText.str());
                      testDialog->parse();
                      npcText.str("");
+                }
                  }
             }
             else if (being->getJob()>=114 && being->getJob()<=127)
@@ -147,11 +153,11 @@ void NpcHandler::handleMessage(MessageIn &msg)
                 {
                     if(temp == "</similasyon>")
                     {
-                        SimilasyonPenceresi *similasyonPenceresi = new SimilasyonPenceresi();
                         //Serverdaki npc nin xml dosyasýndan gelen veri
                         //similasyon nesnesine gönderiliyor
                         similasyonPenceresi->parseXML(npcText.str());
                         similasyonPenceresi->setVisible(true);
+                        npcText.str("");
                     }
                 }
             }

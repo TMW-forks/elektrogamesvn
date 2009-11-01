@@ -82,6 +82,7 @@
 		<Unit filename="src\elektro\battery.cpp" />
 		<Unit filename="src\elektro\battery.h" />
 		<Unit filename="src\elektro\beskilogram.cpp" />
+		<Unit filename="src\elektro\beskilogram.h" />
 		<Unit filename="src\elektro\bitbutton.cpp" />
 		<Unit filename="src\elektro\bitbutton.h" />
 		<Unit filename="src\elektro\circuitwindow.cpp" />
@@ -89,6 +90,8 @@
 		<Unit filename="src\elektro\component.cpp" />
 		<Unit filename="src\elektro\component.h" />
 		<Unit filename="src\elektro\diode.h" />
+		<Unit filename="src\elektro\elektrowidget.cpp" />
+		<Unit filename="src\elektro\elektrowidget.h" />
 		<Unit filename="src\elektro\hesapmak.cpp" />
 		<Unit filename="src\elektro\hesapmak.h" />
 		<Unit filename="src\elektro\hitabe.cpp" />
@@ -96,6 +99,7 @@
 		<Unit filename="src\elektro\instanthelp.cpp" />
 		<Unit filename="src\elektro\instanthelp.h" />
 		<Unit filename="src\elektro\kutle.cpp" />
+		<Unit filename="src\elektro\kutle.h" />
 		<Unit filename="src\elektro\lamp.cpp" />
 		<Unit filename="src\elektro\lamp.h" />
 		<Unit filename="src\elektro\lang_en.h" />

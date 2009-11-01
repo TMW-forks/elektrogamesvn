@@ -5,10 +5,9 @@
 
 extern int current_npc;
 
-SimilasyonPenceresi::SimilasyonPenceresi():Window("Similasyon Penceresi")
+SimilasyonPenceresi::SimilasyonPenceresi():
+    Window(_("Simulasyon"))
 {
-    setWindowName("SimilasyonPenceresi");
-//logger->log("Similasyon Window Açılır");
     setMinWidth(300);
     setMinHeight(400);
     setResizable(true);
@@ -16,6 +15,8 @@ SimilasyonPenceresi::SimilasyonPenceresi():Window("Similasyon Penceresi")
 
     mCancel =new Button("Kapat","Sim_Cancel",this);
     mStart =new Button("Başla","Sim_Start",this);
+    mSoru = new BrowserBox();
+    mSoruArea = new ScrollArea(mSoru);
     nesneleriAyarla();
     add(mCancel);
     add(mStart);
@@ -91,8 +92,7 @@ SimilasyonPenceresi::parseXML(std::string mDoc)
 
         else if (xmlStrEqual(node->name, BAD_CAST "text"))
         {
-            mSoru = new BrowserBox();
-            mSoruArea = new ScrollArea(mSoru);
+
             int x = XML::getProperty(node, "x", 50);
             int y = XML::getProperty(node, "y", 50);
             int w = XML::getProperty(node, "width", 50);

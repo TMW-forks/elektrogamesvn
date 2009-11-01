@@ -18,7 +18,6 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
-
 #include "gui/ministatus.h"
 
 #include "gui/gui.h"
@@ -32,6 +31,8 @@
 #include "localplayer.h"
 
 #include "utils/stringutils.h"
+#include "utils/gettext.h"
+#include "gui/gui.h"
 
 extern volatile int tick_time;
 
@@ -40,23 +41,42 @@ MiniStatusWindow::MiniStatusWindow():
 {
     mHpBar = new ProgressBar((float) player_node->getHp()
                              / (float) player_node->getMaxHp(),
-                             100, 20, gcn::Color(0, 171, 34));
+                             213, 20, gcn::Color(0, 171, 34));
     mMpBar = new ProgressBar((float) player_node->getMaxMP()
                              / (float) player_node->getMaxMP(),
                              100, 20, gcn::Color(26, 102, 230));
     mXpBar = new ProgressBar((float) player_node->getExp()
                              / player_node->getExpNeeded(),
                              100, 20, gcn::Color(143, 192, 211));
-    mHpBar->setPosition(0, 3);
-    mMpBar->setPosition(mHpBar->getWidth() + 3, 3);
-    mXpBar->setPosition(mMpBar->getX() + mMpBar->getWidth() + 3, 3);
+    mHpBar->setPosition(14, 3);
+    mMpBar->setPosition(14, mHpBar->getHeight()+3);
+    mXpBar->setPosition(mMpBar->getX() + mMpBar->getWidth() + 13, mHpBar->getHeight()+3);
+
+    mHpLabel = new gcn::Label(_("HP"));
+    mMpLabel = new gcn::Label(_("MP"));
+    mXpLabel = new gcn::Label(_("XP"));
+
+    mHpLabel->setForegroundColor(gcn::Color(255, 255, 255));
+    mMpLabel->setForegroundColor(gcn::Color(255, 255, 255));
+    mXpLabel->setForegroundColor(gcn::Color(255, 255, 255));
+
+    mHpLabel->setFont(font_b_calibri);
+    mMpLabel->setFont(font_b_calibri);
+    mXpLabel->setFont(font_b_calibri);
+
+    mHpLabel->setPosition(0,4);
+    mMpLabel->setPosition(0,mMpBar->getY()+3);
+    mXpLabel->setPosition(mXpBar->getX()-12,mMpLabel->getY());
 
     add(mHpBar);
     add(mMpBar);
     add(mXpBar);
+    add(mHpLabel);
+    add(mMpLabel);
+    add(mXpLabel);
 
-    setContentSize(mXpBar->getX() + mXpBar->getWidth(),
-                   mXpBar->getY() + mXpBar->getHeight());
+    setContentSize(mXpBar->getX() + mXpBar->getWidth()+10,
+                   mXpBar->getY() + mXpBar->getHeight()+ mHpBar->getHeight());
 
     setVisible((bool) config.getValue(getPopupName() + "Visible", true));
 }

@@ -1,8 +1,10 @@
 #include "beskilogram.h"
 #include "log.h"
-BesKiloGram::BesKiloGram(gcn::ActionListener *listener): Kutle(listener)
+#include "utils/gettext.h"
+BesKiloGram::BesKiloGram(gcn::ActionListener *listener):
+    Kutle(listener)
 {
-
+    setWindowName(_("Beş kilogram"));
 }
 
 BesKiloGram::~BesKiloGram()
@@ -20,5 +22,5 @@ void BesKiloGram::draw(gcn::Graphics *graphics)
     ImageSet *res = resman->getImageSet(ss,32,32);
     g->drawImage(res->get(0),4,4);
     Kutle::draw(graphics);
-    logger->log("drawýn içi");
+    logger->log("drawın içi");
 }

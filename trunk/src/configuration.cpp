@@ -217,7 +217,7 @@ void Configuration::write()
     logger->log("Configuration::write() writing configuration...");
 
     xmlTextWriterSetIndent(writer, 1);
-    xmlTextWriterStartDocument(writer, NULL, NULL, NULL);
+    xmlTextWriterStartDocument(writer, NULL,"utf-8", NULL);
     xmlTextWriterStartElement(writer, BAD_CAST "configuration");
 
     writeToXML(writer);

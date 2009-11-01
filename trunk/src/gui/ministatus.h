@@ -23,7 +23,7 @@
 #define MINISTATUS_H
 
 #include "gui/widgets/popup.h"
-
+#include "gui/widgets/label.h"
 #include <vector>
 
 class AnimatedSprite;
@@ -63,6 +63,10 @@ class MiniStatusWindow : public Popup
         ProgressBar *mHpBar;
         ProgressBar *mMpBar;
         ProgressBar *mXpBar;
+
+        gcn::Label *mHpLabel;
+        gcn::Label *mMpLabel;
+        gcn::Label *mXpLabel;
 
         std::vector<AnimatedSprite *> mIcons;
 };

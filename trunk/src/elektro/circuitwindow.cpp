@@ -120,7 +120,7 @@ CircuitWindow::CircuitWindow():
     mSs = new ScrollArea(mSb);
     mSs->setHorizontalScrollPolicy(gcn::ScrollArea::SHOW_ALWAYS);
     mSs->setVerticalScrollPolicy(gcn::ScrollArea::SHOW_ALWAYS);
-    mSs->setVisible(false);
+    mSs->setVisible(true);
     mSs->setWidth(350);
     mSs->setHeight(200);
     mSs->setY(350);
@@ -1150,12 +1150,9 @@ if (isVisible())
     addLoopToMesh();
 //    showConnectedNodeId();
 //    showNodeLoop();
-//    showMesh();
-logger->log("________________ 1 _____________________");
-    winnowMesh();
-logger->log("________________ 2 _____________________");
     showMesh();
-logger->log("________________ 3 _____________________");
+    winnowMesh();
+    showMesh();
     makeMatris();
     logger->log("************ analiz yapıldı ****************");
 }
@@ -1227,14 +1224,13 @@ CircuitWindow::action(const gcn::ActionEvent &event)
     {
         devreAnaliz();
     }
-    else if (event.getId() == "close")  //kapanırken mousepresse ile aynı olmalı
+    else if (event.getId() == "close")
     {
         setVisible(false);
         deleteWidgets();
         trashMeshMem();
         if (current_npc) Net::getNpcHandler()->nextDialog(current_npc);
         current_npc = 0;
-//         Net::getNpcHandler()->closeDialog(current_npc);
         NPC::isTalking = false;;
     }
 
@@ -1412,8 +1408,6 @@ CircuitWindow::action(const gcn::ActionEvent &event)
             (*miNode)->requestMoveToTop();
 
     }
-//!!!!!!!!!!!!!!!!!!!!!!!!!!
-//    Window::action(event);
 }
 
 int
@@ -1471,7 +1465,6 @@ void
 CircuitWindow::circuitFromXML(std::string mDoc)
 {
     if (mDoc=="") return;
-//    logger->log("%s",mDoc.c_str());
     xmlDocPtr mxmlDoc;
     mxmlDoc=  xmlParseMemory(mDoc.c_str(), mDoc.size());
     if (!mxmlDoc)
@@ -1604,9 +1597,7 @@ CircuitWindow::circuitFromXML(std::string mDoc)
             int c_firstn=XML::getProperty(node, "firstn", 0);
             int c_secondn=XML::getProperty(node, "secondn", 0);
             bool found=false;
-logger->log("bağlantı id : %d", c_id);
-
-        if (c_firstn>0)
+            if (c_firstn>0)
             for(miComponent=mvComponent.begin(); miComponent<mvComponent.end(); miComponent++)
             {
                 if ((*miComponent)->getId()==c_first)

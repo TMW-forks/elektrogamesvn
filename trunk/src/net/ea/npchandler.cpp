@@ -97,39 +97,28 @@ void NpcHandler::handleMessage(MessageIn &msg)
                 npcDialog->setVisible(true);
                 resetPlayer = true;
             }
-//
-//            being = beingManager->findBeing(current_npc);
-//            localChatTab->chatLog("11 Current NPC job "+toString(being->getJob()));
-
             break;
 
         case SMSG_NPC_MESSAGE:
             msg.readInt16();  // length
             current_npc = msg.readInt32();
             being = beingManager->findBeing(current_npc);
-            npcDialog->setNpc(current_npc);
             temp = msg.readString(msg.getLength() - 8);
-//            npcDialog->addText(temp);
-//            npcDialog->setVisible(true);
             resetPlayer = true;
             npcText<<temp;
             if (being->getJob()>=100 && being->getJob()<=113)
             {
-//                npcDialog->setVisible(false);
-//                npcPostDialog->setVisible(false);
-//    localChatTab->chatLog(toString(npcText.str()));
-
                 if (temp=="</test>")
-                    {
-//                    TestDialog *testDialog= new TestDialog();
+                {
                      testDialog->setVisible(true);
                      testDialog->setDoc(npcText.str());
                      testDialog->parse();
                      npcText.str("");
-                    }
+                 }
             }
             else if (being->getJob()>=114 && being->getJob()<=127)
             {
+                npcDialog->setNpc(current_npc);
                 npcDialog->addText(npcText.str());
                 npcDialog->setVisible(true);
             }
@@ -181,7 +170,7 @@ void NpcHandler::handleMessage(MessageIn &msg)
          case SMSG_NPC_CLOSE:
             id = msg.readInt32();
             // If we're talking to that NPC, show the close button
-
+            npcText.str("");
             being = beingManager->findBeing(current_npc);
 
             if (id == current_npc)

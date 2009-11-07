@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
+<map version="1.0" orientation="orthogonal" width="66" height="36" tilewidth="32" tileheight="32">
+ <tileset name="syh" firstgid="1" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/siyah.png"/>
+ </tileset>
+ <tileset name="duvar" firstgid="2" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/hastehane.png"/>
+ </tileset>
+ <tileset name="arka" firstgid="86" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/kaplamalar.png"/>
+ </tileset>
+ <layer name="Ground" width="66" height="36">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3TwQnAMAwEQbnW9N9DHldC7MiIOdgCNKBVVUuSJGljU8Yh2+HwDIhD5i8yDhmHjEPGIeOQfXWYYsEh45BxyDhkOxxO9te677zBoftGDhxucui+TZIkze4FqqsPQyAlAAA=
+  </data>
+ </layer>
+ <layer name="Fringe" width="66" height="36">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3BAQ0AAADCoPdPbQ8HFAAAAAAAAAAAwKcBBzE/CCAlAAA=
+  </data>
+ </layer>
+ <layer name="Top" width="66" height="36">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO2WyU5DMQxFI4ZSdgwt7GiZdpShhS4Yy7Bg/Ar+/x+4VmJhRS/iKTKhEb7SUXvtqJWt967inMlkMplMJi29gueKeQFvCnuYgs/KmSrs4WkO5piXPdQujRlsD3q/8deyPXjZHrxsD162By+NGd6dv5Pl3ON++tS457WRxh4WwCJYAsugA1YStW6op3qxL/WsafzPGtgX9MT3DbAp/BZYD3CPzvdDL/Y17WHHfc+5C/aEH4Ya+3NwAQahx556Bw1e477bRhp7OAIjcAxOwCk4S9QewKPosad3Ydzga3oeLsEVuAY34BbcJWqzUI97nUDsKYM5M9vkatNnmzMfCnv4TaUyuKtU595qqYEyRRlM7xDnRi/ynLXsOYfl+b6ox9nMve1SA2WKMpjmlrki/dD5HGZP2ToQnjOb63xeZjn1DsuMk61UBo+V6tyblBooU6kMnkX1UaKeOs917t2XGMZkMplMJtO/0xflOcqcICUAAA==
+  </data>
+ </layer>
+ <layer name="Collsion" width="66" height="36">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3OKQ6AQBQE0dGsFgawrAdg7n8yWnyPbBLqJeUrJQAAAAAAAAD4vlZ1UW9+cZrUHC3mF6dDndFlfnG6VXFPAC8qVavGPWI2qFFl94jZqja1u0cAAMCvPDdKQEogJQAA
+  </data>
+ </layer>
+ <layer name="Objects" width="66" height="36">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3BAQ0AAADCoPdPbQ8HFAAAAAAAAAAAwKcBBzE/CCAlAAA=
+  </data>
+ </layer>
+</map>

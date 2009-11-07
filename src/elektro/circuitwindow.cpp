@@ -803,10 +803,14 @@ CircuitWindow::makeMatris()
     gsl_linalg_LU_decomp (&r.matrix, p, &s);
     gsl_linalg_LU_solve (&r.matrix, p, &v.vector, x);
     //gsl_vector_fprintf (stdout, x, "%g");
+#ifdef DEBUG
     for(int i=0; i<resistanceMatris.size(); i++)
     {
         mSb->addRow("akım =" +toString(gsl_vector_get (x, i)));
+
     }
+#endif
+
     gsl_permutation_free (p);
 }
 

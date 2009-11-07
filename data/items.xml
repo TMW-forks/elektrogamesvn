@@ -4074,7 +4074,7 @@
         name="Ampul"
         description="Akkor Lamba"
         effect=""
-        type="generic"
+        type="usable"
         weight="10"
         max-per-slot="10"/>
 	<item id="4002"
@@ -4082,7 +4082,7 @@
         name="Anahtar"
         description="Devre anahtarı"
         effect=""
-        type="generic"
+        type="usable"
         weight="10"
         max-per-slot="10"/>
 	<item id="4003"
@@ -4090,7 +4090,7 @@
         name="Led"
         description="Beyaz Led Işık"
         effect=""
-        type="generic"
+        type="usable"
         weight="10"
         max-per-slot="10"/>
 	<item id="4004"
@@ -4098,7 +4098,7 @@
         name="Direnç"
         description="Direnç 1 ohm"
         effect=""
-        type="generic"
+        type="usable"
         weight="10"
         max-per-slot="10"/>
 	<item id="4005"
@@ -4106,7 +4106,7 @@
         name="Direnç"
         description="Direnç 2 ohm"
         effect=""
-        type="generic"
+        type="usable"
         weight="10"
         max-per-slot="10"/>
 	<item id="4006"
@@ -4114,7 +4114,7 @@
         name="Direnç"
         description="Direnç 3 ohm"
         effect=""
-        type="generic"
+        type="usable"
         weight="10"
         max-per-slot="10"/>
 	<item id="4007"
@@ -4122,7 +4122,7 @@
         name="Direnç"
         description="Direnç 4 ohm"
         effect=""
-        type="generic"
+        type="usable"
         weight="10"
         max-per-slot="10"/>
 	<item id="4008"
@@ -4130,7 +4130,7 @@
         name="Direnç"
         description="Direnç 5 ohm"
         effect=""
-        type="generic"
+        type="usable"
         weight="10"
         max-per-slot="10"/>
 	<item id="4009"
@@ -4138,7 +4138,7 @@
         name="Direnç"
         description="Direnç 6 ohm"
         effect=""
-        type="generic"
+        type="usable"
         weight="10"
         max-per-slot="10"/>
 	<item id="4010"
@@ -4146,7 +4146,7 @@
         name="Direnç"
         description="Direnç 7 ohm"
         effect=""
-        type="generic"
+        type="usable"
         weight="10"
         max-per-slot="10"/>
 	<item id="4011"
@@ -4154,7 +4154,7 @@
         name="Direnç"
         description="Direnç 8 ohm"
         effect=""
-        type="generic"
+        type="usable"
         weight="10"
         max-per-slot="10"/>
 	<item id="4012"
@@ -4162,7 +4162,7 @@
         name="Direnç"
         description="Direnç 9 ohm"
         effect=""
-        type="generic"
+        type="usable"
         weight="10"
         max-per-slot="10"/>
 	<item id="4013"
@@ -4170,7 +4170,7 @@
         name="Direnç"
         description="Direnç 10 ohm"
         effect=""
-        type="generic"
+        type="usable"
         weight="10"
         max-per-slot="10"/>
 	<item id="4014"
@@ -4178,7 +4178,7 @@
         name="Direnç"
         description="Direnç 11 ohm"
         effect=""
-        type="generic"
+        type="usable"
         weight="10"
         max-per-slot="10"/>
 	<item id="4015"
@@ -4186,7 +4186,7 @@
         name="Direnç"
         description="Direnç 12 ohm"
         effect=""
-        type="generic"
+        type="usable"
         weight="10"
         max-per-slot="10"/>
 	<item id="4016"
@@ -4194,7 +4194,7 @@
         name="Direnç"
         description="Direnç 13 ohm"
         effect=""
-        type="generic"
+        type="usable"
         weight="10"
         max-per-slot="10"/>
 	<item id="4017"
@@ -4202,7 +4202,7 @@
         name="Direnç"
         description="Direnç 14 ohm"
         effect=""
-        type="generic"
+        type="usable"
         weight="10"
         max-per-slot="10"/>
 	<item id="4018"
@@ -4210,7 +4210,7 @@
         name="Direnç"
         description="Direnç 15 ohm"
         effect=""
-        type="generic"
+        type="usable"
         weight="10"
         max-per-slot="10"/>
 	<item id="4019"
@@ -4218,7 +4218,7 @@
         name="Direnç"
         description="Direnç 20 ohm"
         effect=""
-        type="generic"
+        type="usable"
         weight="10"
         max-per-slot="10"/>
 	<item id="4020"
@@ -4226,7 +4226,7 @@
         name="Direnç"
         description="Direnç 25 ohm"
         effect=""
-        type="generic"
+        type="usable"
         weight="10"
         max-per-slot="10"/>
 	<item id="4021"
@@ -4234,7 +4234,7 @@
         name="Direnç"
         description="Direnç 30 ohm"
         effect=""
-        type="generic"
+        type="usable"
         weight="10"
         max-per-slot="10"/>
 	<item id="4022"
@@ -4242,15 +4242,15 @@
         name="Direnç"
         description="Direnç 50 ohm"
         effect=""
-        type="generic"
+        type="usable"
         weight="10"
         max-per-slot="10"/>
 	<item id="4023"
         image="/elektrik/item-kled.png"
-        name="Led"
+        name="KLed"
         description="Kırmızı Led"
         effect=""
-        type="generic"
+        type="usable"
         weight="10"
         max-per-slot="10"/>
 	<item id="4024"
@@ -4258,7 +4258,7 @@
         name="Pil"
         description="Pil"
         effect=""
-        type="generic"
+        type="usable"
         weight="10"
         max-per-slot="10"/>
 	<item id="4025"
@@ -4266,15 +4266,15 @@
         name="Led"
         description="Sarı Led"
         effect=""
-        type="generic"
+        type="usable"
         weight="10"
         max-per-slot="10"/>
 	<item id="4026"
         image="/elektrik/item-yled.png"
         name="Led"
         description="Yeşil Led"
-        effect=""
-        type="generic"
+        effect="0HP"
+        type="usable"
         weight="10"
         max-per-slot="10"/>
 </items>

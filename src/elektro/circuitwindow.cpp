@@ -793,7 +793,8 @@ CircuitWindow::makeMatris()
     }
 
     double akim[batteryValue.size()];
-
+    // gsl kullanarak oluşan matrisi çöz
+    // bilinen hata: birbirinden bağımsız iki devre oluşturursan tek devre gibi çözmeye çalışıyor
     TmiFloatMatris a = resistanceMatris.begin();
     gsl_matrix_view r = gsl_matrix_view_array (direnc,resistanceMatris.size(),(*a).size());
     gsl_vector_view v = gsl_vector_view_array (pil, resistanceMatris.size());
@@ -802,6 +803,7 @@ CircuitWindow::makeMatris()
     gsl_permutation * p = gsl_permutation_alloc (resistanceMatris.size());
     gsl_linalg_LU_decomp (&r.matrix, p, &s);
     gsl_linalg_LU_solve (&r.matrix, p, &v.vector, x);
+    // stdout.txt dosyasına yazdırmak gerekirse
     //gsl_vector_fprintf (stdout, x, "%g");
 #ifdef DEBUG
     for(int i=0; i<resistanceMatris.size(); i++)

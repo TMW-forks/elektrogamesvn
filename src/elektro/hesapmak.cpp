@@ -34,25 +34,10 @@ HesapMak::HesapMak():
     mSonuc=0;
     mIslemVar=false;
 
-    s1 = new gcn::Label("1:");
-    s1->setPosition(0,0);
-    s1->adjustSize();
-    add(s1);
-
-    s2 = new gcn::Label("2:");
-    s2->setPosition(40,0);
-    s2->adjustSize();
-    add(s2);
-
-    is = new gcn::Label("I:");
-    is->setPosition(80,0);
-    is->adjustSize();
-    add(is);
-
     mGosterge = new gcn::Label("0");
     mGosterge->setPosition(20,15);
     mGosterge->setSize(150,25);
-    mGosterge->setForegroundColor(gcn::Color(255,255,255));
+    mGosterge->setForegroundColor(gcn::Color(0,0,0));
     mGosterge->setFont(boldFont);
     mGosterge->setAlignment(gcn::Graphics::CENTER);
 
@@ -260,7 +245,7 @@ void HesapMak::action(const gcn::ActionEvent &event)
             if (mIslemVar==false)
                 gecici>> mSayi2;
 
-            mSayi1 = mSayi1-mSayi2;
+            mSayi1 = mSayi1- mSayi2;
             mSonuc = mSayi1;
             mSayi2 = 0;
             mGosterge->setCaption(toString(mSonuc));
@@ -331,7 +316,16 @@ void HesapMak::action(const gcn::ActionEvent &event)
         std::stringstream gecici(mGosterge->getCaption());
         gecici<<mGosterge->getCaption();
         gecici>>mSayi2;
-        mSonuc = mSayi1 + mSayi2;
+
+        if (mIslem == TOPLAMA)
+            mSonuc = mSayi1 + mSayi2;
+        else if (mIslem == CIKARTMA)
+            mSonuc = mSayi1 - mSayi2;
+        else if (mIslem == CARPMA)
+            mSonuc = mSayi1 * mSayi2;
+        else if (mIslem == BOLME)
+            mSonuc = mSayi1 / mSayi2;
+
         gecici<<mSonuc;
         gecici>>mS1;
         mGosterge->setCaption(toString(mSonuc));

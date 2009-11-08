@@ -101,6 +101,7 @@
 #include "elektro/slaytwindow.h"
 #include "elektro/similasyonpenceresi.h"
 #include "elektro/elektrowidget.h"
+#include "elektro/hesapmak.h"
 #include "elektro/instanthelp.h"
 
 std::string map_path;
@@ -168,6 +169,7 @@ TestDialog *testDialog;
 SlaytWindow *slaytWindow;
 SimilasyonPenceresi *similasyonPenceresi;
 ElektroWidget *elektroWidget;
+HesapMak *hesapMakinesi;
 InstantHelp *instantHelp;
 
 const int MAX_TIME = 10000;
@@ -233,6 +235,7 @@ static void createGuiWindows()
     slaytWindow = new SlaytWindow;
     similasyonPenceresi = new SimilasyonPenceresi;
     elektroWidget = new ElektroWidget;
+    hesapMakinesi = new HesapMak;
     instantHelp = new InstantHelp;
 
     chatWindow = new ChatWindow;
@@ -314,6 +317,7 @@ static void destroyGuiWindows()
     delete circuitWindow;
     delete slaytWindow;
     delete similasyonPenceresi;
+    delete hesapMakinesi;
     delete instantHelp;
 }
 
@@ -878,7 +882,7 @@ void Game::handleInput()
                         requestedWindow = debugWindow;
                         break;
                     case KeyboardConfig::KEY_WINDOW_PARTY:
-                        requestedWindow = slaytWindow; // partyWindow; //deneme amacıyla kapatıldı. düzeltilecek!!!!
+                        requestedWindow = hesapMakinesi; //F11 partyWindow; //deneme amacıyla kapatıldı. düzeltilecek!!!!
                         break;
                     case KeyboardConfig::KEY_WINDOW_EMOTE_SHORTCUT:
                         requestedWindow = emoteShortcutWindow;

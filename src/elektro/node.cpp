@@ -104,12 +104,14 @@ void Node::mouseEntered(gcn::MouseEvent &mouseEvent)
     keys = SDL_GetKeyState(NULL);
     //devre penceresinde shiftle yeni node oluþmasýný engelle
     circuitWindow->setNodeCreate(false);
+    circuitWindow->mHint->setCaption(toString(mCurrent));
+    circuitWindow->mHint->adjustSize();
     if (mFromLink && (keys[SDLK_LSHIFT] || keys[SDLK_RSHIFT]))
     {
-        gui->setCursorType(3);
+        gui->setCursorType(5);
     }
     else if (mMovable)
-        gui->setCursorType(1);
+        gui->setCursorType(6);
 
     circuitWindow->toolErase = mDeletable;
     circuitWindow->toolFromRight = mFromLink;

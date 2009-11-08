@@ -136,6 +136,16 @@ class Node : public BitButton
         bool getCreator() { return mCreator; }
 
         /**
+         * Node'un üzerindeki akýmý belirle
+         */
+        void setCurrent(float s) { mCurrent = s; }
+
+        /**
+         * Node'un üzerindeki akýmý ver
+         */
+        float getCurrent() { return mCurrent; }
+
+        /**
          * Sað klik basýlý
          */
         void setRightClick(bool s) { mRightClick = s; }
@@ -192,6 +202,7 @@ class Node : public BitButton
         bool mDeletable;
         bool mToLink;
         bool mFromLink;
+        float mCurrent;                 /**< Node üzerinden geçen akým */
 
         Component *mOwner;              /**< Sahibi olan component varsa gösterir */
         void firstValues();

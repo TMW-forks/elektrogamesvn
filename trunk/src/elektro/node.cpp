@@ -23,6 +23,7 @@ Node::Node(const std::string& caption,const std::string& hint,
     setMoving (false);
     setOwner(NULL);
     setFrameSize(0);
+    setCurrent(0);
 }
 
 Node::~Node()
@@ -104,7 +105,7 @@ void Node::mouseEntered(gcn::MouseEvent &mouseEvent)
     keys = SDL_GetKeyState(NULL);
     //devre penceresinde shiftle yeni node oluþmasýný engelle
     circuitWindow->setNodeCreate(false);
-    circuitWindow->mHint->setCaption(toString(mCurrent));
+    circuitWindow->mHint->setCaption("node:"+toString(mCurrent));
     circuitWindow->mHint->adjustSize();
     if (mFromLink && (keys[SDLK_LSHIFT] || keys[SDLK_RSHIFT]))
     {

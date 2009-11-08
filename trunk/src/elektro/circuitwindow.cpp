@@ -632,6 +632,7 @@ CircuitWindow::findNode(int id)
     TmiNode nit;
     for(nit = mvNode.begin(); nit != mvNode.end(); nit++)
         if ((*nit)->getId() == id) return (*nit);
+    return NULL;
 }
 void
 CircuitWindow::turnoffAllLamp()
@@ -651,7 +652,21 @@ CircuitWindow::turnoffAllLamp()
 bool
 CircuitWindow::hasDoubleNode(Component *comp,TmvInt mesh)
 {
-
+    if (!comp) return false;
+    bool var1 =false, var2=false;
+    for (TmiInt i = mesh.begin(); i != mesh.end(); i++)
+    {
+        if (comp->node1->getId() == *i)
+        {
+            var1 = true;
+        }
+        if (comp->node2->getId() == *i)
+        {
+            var2 = true;
+        }
+    }
+    logger->log("Bakalım bulmuşmu :%d - %d", comp->getId(), var1&&var2);
+    return (var1&&var2);
 }
 
 void
@@ -694,10 +709,11 @@ CircuitWindow::makeMatris()
                 {
                     if (isBattery(own))                               //node'un sahibi pilse
                     {
-                        if(!isExistComponent(own, batteryComp))
+                        if(!isExistComponent(own, batteryComp)
+                            && hasDoubleNode(own, nodes))
                         {
                             Node *nii = own->node1;
-                            Node *nis = own->node2;///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                            Node *nis = own->node2;
                             int yon = elemanYonKontrol(dugsirasi,nii->getId() ,nis->getId() );
                             own->setYon(yon);
                             batteryComp.push_back(own);
@@ -705,7 +721,8 @@ CircuitWindow::makeMatris()
                     }
                     if (isResistance(own))
                     {
-                        if (!isExistComponent(own, resistanceComp))     //Node'un sahibi dirençse ekle ->her iki node'u da listedeyse
+                        if (!isExistComponent(own, resistanceComp)     //Node'un sahibi dirençse ekle ->her iki node'u da listedeyse
+                            && hasDoubleNode(own, nodes))
                             resistanceComp.push_back(own);
                     }
                 }
@@ -818,8 +835,15 @@ CircuitWindow::makeMatris()
         mSb->addRow("akım =" +toString(gsl_vector_get (x, i)));
     }
 #endif
-    for(int i=0; i<resistanceMatris.size(); i++)
-    {
+
+// Bütün node'ların akımını sıfırla
+    for(TmiNode nit = mvNode.begin(); nit != mvNode.end(); nit++)
+        (*nit)->setCurrent(0.0);
+// Bütün comp'ların akımını sıfırla
+    for(TmiComponent cit = mvComponent.begin(); cit != mvComponent.end(); cit++)
+        (*cit)->setCurrent(0.0);
+
+int i = 0;
         for(miMesh=mvMesh.begin(); miMesh != mvMesh.end(); miMesh++)
         {
             std::stringstream b;
@@ -828,12 +852,13 @@ CircuitWindow::makeMatris()
                 Node *ndc = findNode(*uf);
                 ndc->setCurrent(gsl_vector_get (x, i));
                 Component *cmc = ndc->getOwner();
-                if (cmc) cmc->setCurrent(gsl_vector_get (x, i));
-                b<<*uf <<" *";
+                if (cmc && hasDoubleNode(cmc, miMesh->second))
+                    cmc->setCurrent(cmc->getCurrent() + gsl_vector_get (x, i));
+                b<<*uf<<" : "<<gsl_vector_get (x, i) <<" *";
             }
             mSb->addRow(b.str());
+            i++;
         }
-    }
 
     //gsl kaynaklarını geri ver
     gsl_permutation_free (p);
@@ -1115,6 +1140,7 @@ CircuitWindow::devreAnaliz()
     //    showNodeLoop();
     //    showMesh();
         winnowMesh();
+        mSb->addRow("---   ----");
         showMesh();
         makeMatris();
         logger->log("************ analiz yapıldı ****************");

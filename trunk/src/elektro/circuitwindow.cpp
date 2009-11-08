@@ -886,12 +886,20 @@ CircuitWindow::calculateBatteryValue()
                 pildeger += (*matEl)->getValue() * (*matEl)->getYon()* -1;
             }
         }
+        turnonLamps();
         batteryValue.push_back(pildeger);
         #ifdef DEBUG
         mSb->addRow("ilmek pil : "+toString(pildeger));
         #endif
     }
 }
+
+void
+CircuitWindow::turnonLamps()
+{
+
+}
+
 bool
 CircuitWindow::isExistComponent(Component *comp, TmvComponent vect)
 {

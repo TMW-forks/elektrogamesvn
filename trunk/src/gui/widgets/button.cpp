@@ -164,7 +164,8 @@ void Button::draw(gcn::Graphics *graphics)
     if (mode == BUTTON_DISABLED)
         graphics->setColor(guiPalette->getColor(Palette::BUTTON_DISABLED));
     else
-        graphics->setColor(guiPalette->getColor(Palette::BUTTON));
+        graphics->setColor(0x0050ad);
+//        graphics->setColor(guiPalette->getColor(Palette::BUTTON));
 
     int textX;
     int textY = getHeight() / 2 - getFont()->getHeight() / 2;

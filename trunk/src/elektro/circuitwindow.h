@@ -197,6 +197,12 @@ class CircuitWindow : public Window,
         std::vector< float > matrisAkim;    // akýmlar için sayýlardan oluþan vector
         TmvComponentMatris matrisGerilim;    // pillerden oluþan en saðdaki matris <component*>
 
+
+    /**
+     * Üzerinden geçen lambalarýn parlaklýklarýný hesapla ve yak
+     */
+    void turnonLamps();
+
     /**
      * Pilin deðerini yönüyle birlikte hesapla
      */

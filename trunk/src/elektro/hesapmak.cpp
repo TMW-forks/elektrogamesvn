@@ -1,24 +1,31 @@
 #include "hesapmak.h"
 #include <guichan/widgets/label.hpp>
 
-#include <string>
-
 #include "gui/widgets/button.h"
 #include "gui/widgets/listbox.h"
 #include "gui/widgets/scrollarea.h"
 #include "gui/widgets/windowcontainer.h"
 #include "gui/gui.h"
+#include "gui/sdlinput.h"
 
 #include "../localplayer.h"
-
+#include "../log.h"
 #include "../utils/dtor.h"
+
 #include "utils/stringutils.h"
 #include "elektro/lang_tr.h"
+
 
 HesapMak::HesapMak():
         Window(LBLCALCULATOR)
 {
+    logger->log("hesap makinesi");
     setDefaultSize(windowContainer->getWidth() - 255, 25, 230, 200);
+
+    setWidth(230);
+    setHeight(225);
+    setX(100);
+    setY(100);
 
     mOndalik =0;
     mSayi1=0;
@@ -146,11 +153,6 @@ HesapMak::HesapMak():
     add(mButCarp);
     mbutx += mbutw +10;
 
-    mButSayiSil= new Button("CE","SayiSil",this);
-    mButSayiSil->setPosition(mbutx,mbuty);
-    mButSayiSil->setSize(mbutw,mbuth);
-    mButSayiSil->setAlignment(gcn::Graphics::CENTER);
-    add(mButSayiSil);
     mbutx =20;
     mbuty -= mbuth+10;
 
@@ -182,6 +184,7 @@ HesapMak::HesapMak():
     add(mButBol);
     mbutx += mbutw +10;
 
+    mbuty += mbuth + 10;
     mButTumSil= new Button("C","TumSil",this);
     mButTumSil->setPosition(mbutx,mbuty);
     mButTumSil->setSize(mbutw,mbuth);
@@ -213,7 +216,7 @@ HesapMak::~HesapMak() {
     delete mButCarp;
     delete mButBol;
     delete mButEsit;
-    delete mButSayiSil;
+//    delete mButSayiSil;
     delete mButTumSil;
     delete mButGeriSil;
     delete mButIsaret;
@@ -221,119 +224,293 @@ HesapMak::~HesapMak() {
     delete mGosterge;
 }
 
-void HesapMak::action(const gcn::ActionEvent &event) {
-
-}
-void HesapMak::esit(){
-
-}
-
-void HesapMak::tumunuTemizle(){
-
-}
-
-void HesapMak::ekraniTemizle(){
-    /*
-    if (event.getId() == "+"){
+void HesapMak::action(const gcn::ActionEvent &event)
+{
+    if (event.getId() == "+")
+    {
         std::stringstream gecici(mGosterge->getCaption());
-        if (mSonuc==0){
-            if (mIslem==0){
-                gecici>>mSayi1;
-            }
-            else if (mIslem==1){
-                if (mIslemVar==false) gecici>> mSayi2;
-                mSayi1 = mSayi1+mSayi2;
-                mSayi2 = 0;
-                mGosterge->setCaption(toString(mSayi1));
-            }else if (mIslem>1) {esit();}
-
-        }else {
-            std::stringstream gecici(mGosterge->getCaption());
+        if (mIslem == YOK)
+        {
             gecici>>mSayi1;
+            mIslem = TOPLAMA;
+        }
+        else if (mIslem == TOPLAMA)
+        {
+            if (mIslemVar==false)
+                gecici>> mSayi2;
+
+            mSayi1 = mSayi1+mSayi2;
+            mSonuc = mSayi1;
             mSayi2 = 0;
-            mSonuc = 0;
-
+            mGosterge->setCaption(toString(mSonuc));
         }
-        mIslemVar=true;
-        mIslem = 1;
-        mOndalik=0;
-    }
 
-    if (event.getId() == "-"){
+        mIslemVar = true;
+    }
+    else if (event.getId() == "-")
+    {
         std::stringstream gecici(mGosterge->getCaption());
-        if (mSonuc==0){
-            if (mIslem==0){
-                gecici>>mSayi1;
-            }
-            else {
-                if (mIslemVar==false) gecici>> mSayi2;
-                mSayi1 = mSayi1-mSayi2;
-                mSayi2 = 0;
-                mGosterge->setCaption(toString(mSayi1));
-            }
-        }else {
-            std::stringstream gecici(mGosterge->getCaption());
+        if (mIslem == YOK)
+        {
             gecici>>mSayi1;
+            mIslem = CIKARTMA;
+        }
+        else if (mIslem == CIKARTMA)
+        {
+            if (mIslemVar==false)
+                gecici>> mSayi2;
+
+            mSayi1 = mSayi1-mSayi2;
+            mSonuc = mSayi1;
             mSayi2 = 0;
-            mSonuc = 0;
-
+            mGosterge->setCaption(toString(mSonuc));
         }
-        mIslemVar=true;
-        mIslem = 2;
-        mOndalik=0;
-    }
 
-    if (event.getId() == "x"){
+        mIslemVar = true;
+    }
+    else if (event.getId() == "x")
+    {
         std::stringstream gecici(mGosterge->getCaption());
-        if (mSonuc==0){
-            if (mIslem==0){
-                gecici>>mSayi1;
-            }
-            else {
-                if (mIslemVar==false) gecici>> mSayi2;
-                mSayi1 = mSayi1*mSayi2;
-                mSayi2 = 1;
-                mGosterge->setCaption(toString(mSayi1));
-            }
-        }else {
-            std::stringstream gecici(mGosterge->getCaption());
+        if (mIslem == YOK)
+        {
             gecici>>mSayi1;
-            mSayi2 = 1;
-            mSonuc = 0;
-
+            mIslem = CARPMA;
         }
-        mIslemVar=true;
-        mIslem = 3;
-        mOndalik=0;
-    }
+        else if (mIslem == CARPMA)
+        {
+            if (mIslemVar==false)
+                gecici>> mSayi2;
 
-    if (event.getId() == "/"){
+            mSayi1 = mSayi1*mSayi2;
+            mSonuc = mSayi1;
+            mSayi2 = 0;
+            mGosterge->setCaption(toString(mSonuc));
+        }
+
+        mIslemVar = true;
+    }
+    else if (event.getId() == "/")
+    {
         std::stringstream gecici(mGosterge->getCaption());
-        if (mSonuc==0){
-            if (mIslem==0){
-                gecici>>mSayi1;
-            }
-            else {
-                if (mIslemVar==false) gecici>> mSayi2;
-                mSayi1 = mSayi1/mSayi2;
-                mSayi2 = 1;
-                mGosterge->setCaption(toString(mSayi1));
-            }
-        }else {
-            std::stringstream gecici(mGosterge->getCaption());
+        if (mIslem == YOK)
+        {
             gecici>>mSayi1;
-            mSayi2 = 1;
-            mSonuc = 0;
-
+            mIslem = BOLME;
         }
-        mIslemVar=true;
-        mIslem = 4;
-        mOndalik=0;
+        else if (mIslem == BOLME)
+        {
+            if (mIslemVar==false)
+                gecici>> mSayi2;
+
+            mSayi1 = mSayi1/mSayi2;
+            mSonuc = mSayi1;
+            mSayi2 = 0;
+            mGosterge->setCaption(toString(mSonuc));
+        }
+
+        mIslemVar = true;
+    }
+    else if (event.getId()=="+/-")
+    {
+        std::stringstream gecici(mGosterge->getCaption());
+        if (mIslem == YOK)
+        {
+            gecici>>mSayi1;
+            mSayi1 *= -1.0;
+            mGosterge->setCaption(toString(mSayi1));
+        }
+        else
+        {
+            gecici>>mSayi2;
+            mSayi2 *= -1.0;
+            mGosterge->setCaption(toString(mSayi2));
+        }
+    }
+    else if (event.getId()== "=")
+    {
+        std::stringstream gecici(mGosterge->getCaption());
+        gecici<<mGosterge->getCaption();
+        gecici>>mSayi2;
+        mSonuc = mSayi1 + mSayi2;
+        gecici<<mSonuc;
+        gecici>>mS1;
+        mGosterge->setCaption(toString(mSonuc));
+        mIslemVar = true;
+    }
+    else if (event.getId() == "GeriSil")
+    {
+        std::string strSayi = mGosterge->getCaption();
+        if(strSayi.length()>0)
+        {
+            strSayi = strSayi.substr(0,strSayi.length()-1);
+            if (strSayi.length() == 0)
+                mGosterge->setCaption("0");
+            else
+                mGosterge->setCaption(toString(strSayi));
+        }
+    }
+    else if (event.getId() == "TumSil")
+    {
+        mSayi1 = 0;
+        mSayi2 = 0;
+        mSonuc = 0;
+        mGosterge->setCaption(toString(mSonuc));
     }
 
-    if (event.getId() == "="&&mIslem!=0){
-        esit();
+    else if (event.getId()==".")
+    {
+        std::string strSayi = mGosterge->getCaption();
+        if (mIslem == YOK)
+        {
+            strSayi += ".";
+            mGosterge->setCaption(toString(strSayi));
+        }
+        else
+        {
+            strSayi += ".";
+            mGosterge->setCaption(toString(strSayi));
+        }
     }
-
-*/
+    else
+        mGosterge->setCaption(getString(event.getId()));
 }
+
+std::string HesapMak::getString(std::string stringSayi)
+{
+    std::string gosterge = mGosterge->getCaption();
+
+    if (stringSayi=="1")
+    {
+        if((gosterge=="0" && mIslem==YOK) || mIslemVar)
+        {
+            gosterge = "1";
+            mIslemVar = false;
+        }
+        else
+            gosterge +="1";
+    }
+    else if (stringSayi=="2")
+    {
+        if((gosterge=="0" && mIslem==YOK) || mIslemVar)
+        {
+            gosterge = "2";
+            mIslemVar = false;
+        }
+        else
+            gosterge +="2";
+    }
+    else if (stringSayi=="3")
+    {
+        if((gosterge=="0" && mIslem==YOK) || mIslemVar)
+        {
+            gosterge = "3";
+            mIslemVar = false;
+        }
+        else
+            gosterge +="3";
+    }
+    else if (stringSayi=="4")
+    {
+        if((gosterge=="0" && mIslem==YOK) || mIslemVar)
+        {
+            gosterge = "4";
+            mIslemVar = false;
+        }
+        else
+            gosterge +="4";
+    }
+    else if (stringSayi=="5")
+    {
+        if((gosterge=="0" && mIslem==YOK) || mIslemVar)
+        {
+            gosterge = "5";
+            mIslemVar = false;
+        }
+        else
+            gosterge +="5";
+    }
+    else if (stringSayi=="6")
+    {
+        if((gosterge=="0" && mIslem==YOK) || mIslemVar)
+        {
+            gosterge = "6";
+            mIslemVar = false;
+        }
+        else
+            gosterge +="6";
+    }
+    else if (stringSayi=="7")
+    {
+        if((gosterge=="0" && mIslem==YOK) || mIslemVar)
+        {
+            gosterge = "7";
+            mIslemVar = false;
+        }
+        else
+            gosterge +="7";
+    }
+    else if (stringSayi=="8")
+    {
+        if((gosterge=="0" && mIslem==YOK) || mIslemVar)
+        {
+            gosterge = "8";
+            mIslemVar = false;
+        }
+        else
+            gosterge +="8";
+    }
+    else if (stringSayi=="9")
+    {
+        if((gosterge=="0" && mIslem==YOK) || mIslemVar)
+        {
+            gosterge = "9";
+            mIslemVar = false;
+        }
+        else
+            gosterge +="9";
+    }
+    else
+    {
+        if((gosterge=="0" && mIslem==YOK) || mIslemVar)
+        {
+            gosterge = "0";
+            mIslemVar = false;
+        }
+        else
+            gosterge +="0";
+    }
+
+    return gosterge;
+}
+
+//void HesapMak::ekraniTemizle(){
+//
+//    if (event.getId() == "+"){
+//        std::stringstream gecici(mGosterge->getCaption());
+//        if (mSonuc==0){
+//            if (mIslem==0){
+//                gecici>>mSayi1;
+//            }
+//            else if (mIslem==1){
+//                if (mIslemVar==false) gecici>> mSayi2;
+//                mSayi1 = mSayi1+mSayi2;
+//                mSayi2 = 0;
+//                mGosterge->setCaption(toString(mSayi1));
+//            }else if (mIslem>1) {esit();}
+//
+//        }else {
+//            std::stringstream gecici(mGosterge->getCaption());
+//            gecici>>mSayi1;
+//            mSayi2 = 0;
+//            mSonuc = 0;
+//
+//        }
+//        mIslemVar=true;
+//        mIslem = 1;
+//        mOndalik=0;
+//    }
+//    if (event.getId() == "="&&mIslem!=0){
+//        esit();
+//    }
+//
+//}

@@ -1,19 +1,24 @@
 #ifndef _TMW_HESAPMAK_H
 #define _TMW_HESAPMAK_H
 
+#include <sstream>
+#include <string>
 
 #include <guichan/actionlistener.hpp>
+#include <guichan/keylistener.hpp>
+#include <guichan/selectionlistener.hpp>
 #include <guichan/widgets/label.hpp>
 #include "gui/widgets/button.h"
 #include "gui/widgets/window.h"
 
 enum ISLEMLER {YOK,TOPLAMA,CIKARTMA,CARPMA,BOLME};
-class HesapMak : public Window, public gcn::ActionListener
+class HesapMak : public Window, public gcn::ActionListener,public gcn::KeyListener, public gcn::SelectionListener
 {
     public:
         HesapMak();
         virtual ~HesapMak();
         void action(const gcn::ActionEvent &event);
+        std::string getString(std::string stringSayi);
 
     protected:
     private:
@@ -38,13 +43,14 @@ class HesapMak : public Window, public gcn::ActionListener
         Button *mButGeriSil;
         Button *mButIsaret;
         Button *mButOndalik;
-gcn::Label *s1;
-gcn::Label *s2;
-gcn::Label *is;
-       bool mOndalik;
+        gcn::Label *s1;
+        gcn::Label *s2;
+        gcn::Label *is;
+        bool mOndalik;
         bool mIslemVar;
         float mSayi1,mSayi2,mSonuc;
-        //int mIslem;
+        std::string mS1;
+
         ISLEMLER mIslem;
 
                 // 0: yok
@@ -52,9 +58,5 @@ gcn::Label *is;
                 // 2: çýkartma
                 // 3: çarpma
                 // 4: bölme
-void esit();
-void tumunuTemizle();
-void ekraniTemizle();
-
 };
 #endif // _TMW_HESAPMAK_H

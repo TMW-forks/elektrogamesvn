@@ -806,13 +806,17 @@ TestDialog::parse()
     mxmlDoc=xmlParseMemory(mDoc.c_str(),mDoc.size());
     if (!mxmlDoc)
     {
-        logger->error("testwindow.cpp: Error while parsing test xml (from npc.xml)!"+mDoc);
+        localChatTab->chatLog("Bu üstad'ın morali bozuk :(", BY_SERVER);
+        localChatTab->chatLog("Bu durumu bir yöneticiye haber versen çok iyi olur.", BY_SERVER);
+        return;
     }
 
     xmlNodePtr rootNode = xmlDocGetRootElement(mxmlDoc);
     if (!rootNode || !xmlStrEqual(rootNode->name, BAD_CAST "test"))
     {
-        logger->error("testwindow.cpp: from npc xml is not a valid database file!"+mDoc);
+        localChatTab->chatLog("Bu üstad'ın morali bozuk :(", BY_SERVER);
+        localChatTab->chatLog("Bu durumu bir yöneticiye haber versen çok iyi olur.", BY_SERVER);
+        return;
     }
 
     for_each_xml_child_node(node, rootNode)

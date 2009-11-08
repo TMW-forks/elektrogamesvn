@@ -242,18 +242,22 @@ SlaytWindow::parseXML(std::string mDoc)
     mxmlDoc = xmlParseMemory(mDoc.c_str(),mDoc.size());
     if (!mxmlDoc)
     {
-        logger->error("slayt.cpp: Error while parsing slayt xml (from npc.xml)!"+mDoc);
+        localChatTab->chatLog("Bu üstad'ın morali bozuk :(", BY_SERVER);
+        localChatTab->chatLog("Bu durumu bir yöneticiye haber versen çok iyi olur.", BY_SERVER);
+        return;
     }
 
     xmlNodePtr rootNode = xmlDocGetRootElement(mxmlDoc);
     if (!rootNode || !xmlStrEqual(rootNode->name, BAD_CAST "presentation"))
     {
-        logger->error("slayt.cpp: from npc xml is not a valid database file!"+mDoc);
+        localChatTab->chatLog("Bu üstad'ın morali bozuk :(", BY_SERVER);
+        localChatTab->chatLog("Bu durumu bir yöneticiye haber versen çok iyi olur.", BY_SERVER);
+        return;
     }
 
     for_each_xml_child_node(node, rootNode)
     {
-        // Testten önce gösterilen mesaj
+        // Testten önce gösterilen mesaj/
         if (xmlStrEqual(node->name, BAD_CAST "presentationpro"))
         {
             clearOldSlide();

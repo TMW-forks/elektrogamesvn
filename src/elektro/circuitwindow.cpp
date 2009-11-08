@@ -21,6 +21,7 @@
 #include "../log.h"
 #include "../item.h"
 #include "../gui/chat.h"
+#include "gui/widgets/chattab.h"
 
 #include "elektro/lang_tr.h"
 
@@ -862,7 +863,6 @@ int i = 0;
 
     //gsl kaynaklarını geri ver
     gsl_permutation_free (p);
-
 }
 
 void
@@ -1460,12 +1460,20 @@ CircuitWindow::circuitFromXML(std::string mDoc)
     mxmlDoc=  xmlParseMemory(mDoc.c_str(), mDoc.size());
     if (!mxmlDoc)
     {
-        logger->error("circuitwindow.cpp: Error while parsing item database (from npc.xml)!"+mDoc);
+        localChatTab->chatLog("Bu üstad'ın morali bozuk :(", BY_SERVER);
+        localChatTab->chatLog("Bu durumu bir yöneticiye haber versen çok iyi olur.", BY_SERVER);
+        return;
+        //logger->error("circuitwindow.cpp: Error while parsing item database (from npc.xml)!"+mDoc);
+
     }
     xmlNodePtr rootNode = xmlDocGetRootElement(mxmlDoc);
     if (!rootNode || !xmlStrEqual(rootNode->name, BAD_CAST "circuit"))
     {
-        logger->error("circuitwindow.cpp: rootNode not circuit!"+mDoc);
+        localChatTab->chatLog("Bu üstad'ın morali bozuk :(", BY_SERVER);
+        localChatTab->chatLog("Bu durumu bir yöneticiye haber versen çok iyi olur.", BY_SERVER);
+        return;
+//
+//        logger->error("circuitwindow.cpp: rootNode not circuit!"+mDoc);
     }
    for_each_xml_child_node(node, rootNode)
     {

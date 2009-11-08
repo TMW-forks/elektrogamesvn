@@ -12,17 +12,17 @@
  </tileset>
  <layer name="Ground" width="41" height="31">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO2QsQ3AIAwEzVJMQEHCHtl/hHgCaP4Rxv/SyYWb0xUzK0IIcRiv051ncme/1R0Ax+Z8RFoAxxrAEdGxBunIHKojc1k6sofoyG6L6LijbVZHpCfLT465HIUQ4nZ+GMDEeNwTAAA=
+   H4sIAAAAAAAAAO3QuQ3AMAxDUWopT+AixwaG958jmsBpRMBMWDyoUPPBABBmZpu50pHOxV393u5d0NjTJOoCjU2gsWLHJrLjIKrakdn4lx0hsGMI7MhuhBtLVPSxu924f6OZ2dc9H6XWXtwTAAA=
   </data>
  </layer>
- <layer name="Fringe" width="41" height="31">
+ <layer name="Fringe" width="41" height="31" visible="0">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAAO3BAQ0AAADCoPdPbQ43oAAAAACARwOpX1EW3BMAAA==
   </data>
  </layer>
  <layer name="Top" width="41" height="31">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO2QyQoCMRBEG3dv4noTlfHmrnNxHfUk6v//jiXpYNSWAckwiP3g0Uk6h6KIFEVRFEVRlF/hJHhONdE7GZiDeZ6ldOOIVGAV1ng24YXkfr/x6iFjG3Zgl2dApkvbbQEW+S0b8y7tyx4yDuAIjnnOyHRpu63DBj137U7799O+5SHjEq7hhmdEpssFDGHPOduu3XsQs+97yChx7/IAj3DinIdkurb36ctfaT9PKGNEj263cMdvq5h3ab9PKKOiKMo/cANPUs583BMAAA==
+   H4sIAAAAAAAAAO2QyQoCMRBEG3cPLrgeXFAZD+67B9dRT6L+/+9YkgSjExmQGQaxHzw66eRQFBHDMAzDMAzzK5wNXgJN5CQEIzAqZwIuA03kJAtzMC9nCV7J3O833jzIWIcN2JTTItGl6jYG43IXdtmb3pMeZOzDIRzJOSXRpeq2AIv02rU+1d9P72UPMq7gBm7ltEl0OYcL2NLOqmv9bhneUzANM7DtQUYTjy6P8ATH2nlAomt1n7z9Ve8VWIU1OPMpo03PbndwL3drl72aHdiFPXjwKSPDMMw/cAe4AfPO3BMAAA==
   </data>
  </layer>
  <layer name="Collision" width="41" height="31">

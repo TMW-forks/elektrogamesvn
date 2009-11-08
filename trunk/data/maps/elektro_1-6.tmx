@@ -23,9 +23,9 @@
   <image source="../graphics/tiles/elektroadd/arabalaryan.png"/>
  </tileset>
  <tileset name="karatahta" firstgid="298" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/karatahta.png"/>
+  <image source="../graphics/tiles/elektroadd/karatahtalar.png"/>
  </tileset>
- <tileset name="yangýn" firstgid="304" tilewidth="32" tileheight="32">
+ <tileset name="yang?n" firstgid="334" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/yangin_musluk.png"/>
  </tileset>
  <layer name="Ground" width="53" height="37">
@@ -40,10 +40,10 @@
  </layer>
  <layer name="Top" width="53" height="37">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO2WSU4DMRBFKzfgCmyBQMINgG2AmzBPWZGAxLRikphWTBLTEiS4B+Nt+EZtRTKOseGjbkF96UmusuNUtdtfLaJSFVOVvAtwVCXs0UnYgylGPf2eXFdJpBv0lL7+fcramPWMnnx7lPF/vaAvos6UtTHrf+uc8hSjniHCHkwx6vkvHpGn/tK7V8k8g1FPB2EPhqpZT4xzKtp9YpwT47mY76saGAYjYNQZu3OheJBQD8s7x8EEmART34jtuE6ox9ynmnx+dinfkuasG+AW3IFlT/wInsBSFts5N974WTsfanefUt5Jc9Zb4B48gF1P/AxewE4W2zk3PkruIL72lJ7MWZ+AU3AGzj3xK3gLzNvxTXIH8bWn3LOieedAIB/yJ7ZXMTUWyLveNA1mwCyYA/NgQThexdRiIN8ATWl5k/WuFbAK1sC6cLyKqc1A3njXtrS8yXrXHtgHB+BQOF7F1HEg3867LsAluALXwvEqlUqlUqlUKpXK6h1/OuDepB4AAA==
+   H4sIAAAAAAAAAO2WSU4DMRBFnRtwBbaMSRgXgARsQ3IT5nFFAIlpxSQxrSAgMS1Bgnsw3oZv1FYk4zZt+KhbUF96kst2nKqu9lcrJRJlU/m0E7BUIJzRSDiDKUY+RcdcU06pZtCS+/r33djTA3oT7NVqxb420B6zn1GT64w8/q8Aigny7MOefjCQsKYO7OsEXb9Yk6tPaYqRzzDhDKYY+fwXj0hTf+ndK0eewcingXAGQ5WoJkafsnafGH1iPBf9fVUCI6AMKtbYXvPFQ4R8WN45BsbBBJj8RmzGC4R89H0qqc/PLuRbUve6Cm7BHVhxxI/gCSxHsVmz482flfOhuPsU8k7qXm+De/AA9hzxM3gBu1Fs1uz4OLiC5LmH1KR7fQpq4AycO+JX8OZZN+Ob4AqS5x5yz7LmnYOeeZ8/sb2KqVHPvO1NU2AazIBZMAfmFcermFr0zFfBkqp7k/GuVbAG1sGG4ngVU1ueee1dO6ruTca79sEBOARHiuNVTJ145uO86wJcgitwrTheJRKJRCKRSCQSGb0D7XuFKaQeAAA=
   </data>
  </layer>
- <layer name="Collision" width="53" height="37" visible="0">
+ <layer name="Collision" width="53" height="37">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAAO3BMQEAAADCoPVPbQsvoAAAAAAAAADgYwXm2VukHgAA
   </data>

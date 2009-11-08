@@ -4,7 +4,7 @@
  <tileset name="zemin" firstgid="1" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/zemin_metalik.png"/>
  </tileset>
- <tileset name="Untitled" firstgid="49" tilewidth="32" tileheight="32">
+ <tileset name="dolap" firstgid="49" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/bilgisayar_dolap.png"/>
  </tileset>
  <tileset name="x" firstgid="97" tilewidth="32" tileheight="32">

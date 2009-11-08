@@ -43,9 +43,6 @@ class HesapMak : public Window, public gcn::ActionListener,public gcn::KeyListen
         Button *mButGeriSil;
         Button *mButIsaret;
         Button *mButOndalik;
-        gcn::Label *s1;
-        gcn::Label *s2;
-        gcn::Label *is;
         bool mOndalik;
         bool mIslemVar;
         float mSayi1,mSayi2,mSonuc;

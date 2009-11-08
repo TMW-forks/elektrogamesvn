@@ -18,6 +18,7 @@ Kutle::Kutle(gcn::ActionListener *listener) :
     {
         addActionListener(mListener);
     }
+    setFrameSize(0);
 }
 
 Kutle::~Kutle()

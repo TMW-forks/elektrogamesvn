@@ -13,7 +13,7 @@
 #include "../resources/imageset.h"
 
 
-class Kutle: public Window, public gcn::ActionListener
+class Kutle: public gcn::Window, public gcn::ActionListener
 {
     public:
         Kutle(gcn::ActionListener *listener);

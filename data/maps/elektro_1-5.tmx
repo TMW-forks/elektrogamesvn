@@ -15,7 +15,7 @@
  </tileset>
  <layer name="Ground" width="43" height="31">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3OsQkAAAzDsPT/p/tDpkJl0O5JMgCc0eTV68WnNq9evXr16vXTKwCdBTjSvIXUFAAA
+   H4sIAAAAAAAAAO2S0QmAQAzFbgonuF3UDdQN1A3U4X0blFbOguZBoJ+hpJZSKsDH6cUgRsfdJblOYhaL48766yo2sTvurL8e4hSX487qMjKr61ZdRmZ13arLyKyuW3UZmdX1U9c3hyuuuOKKK65/cgUAgBg3knctXdQUAAA=
   </data>
  </layer>
  <layer name="Fringe" width="43" height="31">
@@ -25,7 +25,7 @@
  </layer>
  <layer name="Top" width="43" height="31">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3OuQrCUBBG4bydu7F0j5buSxnXJJ1GBQV9XU/A24RgBAOC/Ae+Zu4wXMtSSimllFJKKfWLcsijgCJKKKOCKmzUUvY+vfFtdTTQRAttdNCFgx6uuCXsmXn8hplHNw44op/BXwcYYoQxJphihjkWuOORsGfm8RtmHt0IccIyg7+6WGGNDbbYYQ8PPoKUvXdvZ1xeN5RS6p96AleN4kvUFAAA
+   H4sIAAAAAAAAAO3QRwrCUBRGYVfhFtyCO7CXob0M7WVoLzMrKOh2PQEzCUGN8RGQ/8A3eXm5PG4opJRS6pvCQT/AQ5GgH+Ah7dVM2quZtFczaa9m0l7NFPX5fwxxJJBECmlkkEUO+Tf3Pp3htwKKKKGMCqqooY4GLri63LPPnTPsc2vGDns0f/DWFtrooIse+hhgiBFuuLvcs8+dM+xza8YBR4x/8NYJpphhjgWWWGGNDbZv7r36dsL5OUMppf6pBxnIZF/UFAAA
   </data>
  </layer>
  <layer name="Collision" width="43" height="31">

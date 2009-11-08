@@ -25,7 +25,7 @@
  <tileset name="toprak" firstgid="231" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/toprak.png"/>
  </tileset>
- <tileset name="altl?k" firstgid="233" tilewidth="32" tileheight="32">
+ <tileset name="altlik" firstgid="233" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/lambaalti.png"/>
  </tileset>
  <tileset name="sokak_lambasi" firstgid="235" tilewidth="32" tileheight="32">
@@ -34,7 +34,7 @@
  <tileset name="teller" firstgid="251" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/teller.png"/>
  </tileset>
- <tileset name="altl?k2" firstgid="259" tilewidth="32" tileheight="32">
+ <tileset name="altlik2" firstgid="259" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/yol2.png"/>
  </tileset>
  <tileset name="agac3" firstgid="268" tilewidth="32" tileheight="32">

@@ -187,6 +187,10 @@ class Component : public gcn::Window,
 
         bool getInterval() {return mInterval; }
 
+        float getCurrent() {return mCurrent; }
+
+        void setCurrent(float s) {mCurrent = s; }
+
         Node *node1;
         Node *node2;
         int mX;     /** center */
@@ -201,6 +205,8 @@ class Component : public gcn::Window,
         int mInterval;
         float mValue;
         int mYon;
+        float mCurrent;     //Nesne üzerinden geçen akým
+
 
         SimpleAnimation *mSelectedAnime;
 

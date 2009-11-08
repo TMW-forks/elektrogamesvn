@@ -328,6 +328,13 @@ class CircuitWindow : public Window,
        */
       TmvInt getConnectedNodeId(int target, int prev);
 
+     /**
+      * Düðüm listesinde componentin her iki node'u da var mý?
+      * @component: kontrol edilecek component
+      * @liste    :
+      */
+      bool hasDoubleNode(Component *comp,TmvInt mesh);
+
       /**
        * Graph : Çizgi çiz
       */

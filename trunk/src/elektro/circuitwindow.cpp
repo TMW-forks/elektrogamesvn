@@ -647,6 +647,13 @@ CircuitWindow::turnoffAllLamp()
         }
     }
 }
+
+bool
+CircuitWindow::hasDoubleNode(Component *comp,TmvInt mesh)
+{
+
+}
+
 void
 CircuitWindow::makeMatris()
 {
@@ -685,12 +692,12 @@ CircuitWindow::makeMatris()
                 Component *own = niNode->getOwner();                  //node'un sahibi olan component için
                 if (own)                                              //node'un sahibi varsa
                 {
-                    if (isBattery(own))
+                    if (isBattery(own))                               //node'un sahibi pilse
                     {
                         if(!isExistComponent(own, batteryComp))
                         {
                             Node *nii = own->node1;
-                            Node *nis = own->node2;
+                            Node *nis = own->node2;///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                             int yon = elemanYonKontrol(dugsirasi,nii->getId() ,nis->getId() );
                             own->setYon(yon);
                             batteryComp.push_back(own);
@@ -698,7 +705,7 @@ CircuitWindow::makeMatris()
                     }
                     if (isResistance(own))
                     {
-                        if (!isExistComponent(own, resistanceComp))
+                        if (!isExistComponent(own, resistanceComp))     //Node'un sahibi dirençse ekle ->her iki node'u da listedeyse
                             resistanceComp.push_back(own);
                     }
                 }
@@ -809,11 +816,28 @@ CircuitWindow::makeMatris()
     for(int i=0; i<resistanceMatris.size(); i++)
     {
         mSb->addRow("akım =" +toString(gsl_vector_get (x, i)));
-
     }
 #endif
+    for(int i=0; i<resistanceMatris.size(); i++)
+    {
+        for(miMesh=mvMesh.begin(); miMesh != mvMesh.end(); miMesh++)
+        {
+            std::stringstream b;
+            for(TmiInt uf= miMesh->second.begin(); uf != miMesh->second.end(); uf++)
+            {
+                Node *ndc = findNode(*uf);
+                ndc->setCurrent(gsl_vector_get (x, i));
+                Component *cmc = ndc->getOwner();
+                if (cmc) cmc->setCurrent(gsl_vector_get (x, i));
+                b<<*uf <<" *";
+            }
+            mSb->addRow(b.str());
+        }
+    }
 
+    //gsl kaynaklarını geri ver
     gsl_permutation_free (p);
+
 }
 
 void
@@ -1077,24 +1101,24 @@ CircuitWindow::showBatteryMatris()
 void
 CircuitWindow::devreAnaliz()
 {
-if (isVisible())
-{
-    trashMeshMem();
-    findConnectedNodeId();
-    //mvNodeLoop için node id'lerini ekle: kontrol için hazırlık
-    for (TmiNode nn = mvNode.begin(); nn<mvNode.end() ; nn++)
+    if (isVisible())
     {
-        mvNodeLoop[mvNodeLoop.size()].push_back((*nn)->getId());
+        trashMeshMem();
+        findConnectedNodeId();
+        //mvNodeLoop için node id'lerini ekle: kontrol için hazırlık
+        for (TmiNode nn = mvNode.begin(); nn<mvNode.end() ; nn++)
+        {
+            mvNodeLoop[mvNodeLoop.size()].push_back((*nn)->getId());
+        }
+        addLoopToMesh();
+    //    showConnectedNodeId();
+    //    showNodeLoop();
+    //    showMesh();
+        winnowMesh();
+        showMesh();
+        makeMatris();
+        logger->log("************ analiz yapıldı ****************");
     }
-    addLoopToMesh();
-//    showConnectedNodeId();
-//    showNodeLoop();
-//    showMesh();
-    winnowMesh();
-    showMesh();
-    makeMatris();
-    logger->log("************ analiz yapıldı ****************");
-}
 }
 
 void CircuitWindow::trashMeshMem()

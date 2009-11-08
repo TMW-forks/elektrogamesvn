@@ -17,8 +17,6 @@ SimilasyonPenceresi::SimilasyonPenceresi():
     mClose = new Button("Kapat","Sim_Close",this);
     mStart = new Button("Başla","Sim_Start",this);
 
-    mSoru = new BrowserBox();
-    mSoruArea = new ScrollArea(mSoru);
     nesneleriAyarla();
     add(mCancel);
     add(mStart);
@@ -55,8 +53,8 @@ SimilasyonPenceresi::action(const gcn::ActionEvent &event)
     {
         mStart->setVisible(false);
         mCancel->setVisible(false);
-        mClose->setX(250);
-        mClose->setY(500);
+        mClose->setX(300);
+        mClose->setY(350);
         mClose->setVisible(true);
         Net::getNpcHandler()->listInput(current_npc,2);
     }
@@ -105,7 +103,8 @@ SimilasyonPenceresi::parseXML(std::string mDoc)
 
         else if (xmlStrEqual(node->name, BAD_CAST "text"))
         {
-
+            mSoru = new BrowserBox();
+            mSoruArea = new ScrollArea(mSoru);
             int x = XML::getProperty(node, "x", 50);
             int y = XML::getProperty(node, "y", 50);
             int w = XML::getProperty(node, "width", 50);
@@ -122,7 +121,6 @@ SimilasyonPenceresi::parseXML(std::string mDoc)
             {
                 if (xmlStrEqual(subNode->name, BAD_CAST "addrow"))
                 {
-                    logger->log("text ekleme");
                     mSoru->addRow(XML::getProperty(subNode, "text", ""));
                 }
             }
@@ -154,12 +152,13 @@ void
 SimilasyonPenceresi::nesneleriAyarla()
 {
     mCancel->setX(250);
-    mCancel->setY(500);
+    mCancel->setY(350);
     mCancel->setVisible(true);
 
     mStart->setX(200);
-    mStart->setY(500);
+    mStart->setY(350);
     mStart->setVisible(true);
+    mClose->setVisible(false);
 }
 
 void

@@ -442,6 +442,8 @@ void Component::mouseEntered(gcn::MouseEvent &event)
     circuitWindow->toolCaption->adjustSize();
     circuitWindow->toolValue->setCaption(toString(mValue));
     circuitWindow->toolValue->adjustSize();
+    circuitWindow->mHint->setCaption("comp:"+toString(mCurrent));
+    circuitWindow->mHint->adjustSize();
 }
 
 void Component::mouseExited(gcn::MouseEvent &event)

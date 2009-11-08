@@ -31,6 +31,7 @@ Component::Component(gcn::ActionListener *listener, Node *n1, Node *n2):
     setMovable(true);
     setVisible(true);
     setYon(0);
+    setCurrent(0);
 
     ResourceManager *resman = ResourceManager::getInstance();
     ImageSet *mHalkaImages;

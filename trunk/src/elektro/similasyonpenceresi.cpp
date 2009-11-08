@@ -13,21 +13,23 @@ SimilasyonPenceresi::SimilasyonPenceresi():
     setResizable(true);
     setVisible(false);
 
-    mCancel =new Button("Kapat","Sim_Cancel",this);
-    mStart =new Button("Başla","Sim_Start",this);
+    mCancel = new Button("İptal","Sim_Cancel",this);
+    mClose = new Button("Kapat","Sim_Close",this);
+    mStart = new Button("Başla","Sim_Start",this);
+
     mSoru = new BrowserBox();
     mSoruArea = new ScrollArea(mSoru);
     nesneleriAyarla();
     add(mCancel);
     add(mStart);
+    add(mClose);
 }
 
 SimilasyonPenceresi::~SimilasyonPenceresi()
 {
     delete  mCancel;
+    delete  mClose;
     delete  mStart;
-    delete  mSoru;
-    delete  mSoruArea;
 }
 
 void
@@ -39,12 +41,23 @@ SimilasyonPenceresi::action(const gcn::ActionEvent &event)
         current_npc=0;
         NPC::isTalking = false;
         setVisible(false);
+    }
+    else if (event.getId()=="Sim_Close")
+    {
+        Net::getNpcHandler()->listInput(current_npc,  0xff);
+        current_npc=0;
+        NPC::isTalking = false;
+        setVisible(false);
         //Pencere kapatıldığında nesneleri bellekten siler
         clearComponent();
     }
     else if (event.getId() == "Sim_Start");
     {
         mStart->setVisible(false);
+        mCancel->setVisible(false);
+        mClose->setX(250);
+        mClose->setY(500);
+        mClose->setVisible(true);
         Net::getNpcHandler()->listInput(current_npc,2);
     }
 }

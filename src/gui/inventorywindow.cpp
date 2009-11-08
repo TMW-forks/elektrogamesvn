@@ -51,6 +51,9 @@
 
 #include <string>
 
+#include "elektro/circuitwindow.h"
+
+extern CircuitWindow *circuitWindow;
 InventoryWindow::InventoryWindow(int invSize):
     Window(_("Inventory")),
     mMaxSlots(invSize),
@@ -185,7 +188,14 @@ void InventoryWindow::action(const gcn::ActionEvent &event)
                 Net::getInventoryHandler()->equipItem(item);
         }
         else
-            Net::getInventoryHandler()->useItem(item);
+        {
+            if (item->getId()>4000 && item->getId()<4100 && circuitWindow->isVisible())
+            {
+//                addActionListener(circuitWindow);
+                Net::getInventoryHandler()->useItem(item);
+                circuitWindow->distributeOlay(item);
+            }
+        }
     }
     else if (event.getId() == "drop")
     {

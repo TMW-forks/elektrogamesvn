@@ -123,6 +123,12 @@ class CircuitWindow : public Window,
         int transItemId;
         gcn::Label *mHint;
 
+    /**
+     * DistrubureActionEvent katatküllisi
+     */
+     void distributeOlay(Item *it);
+
+
     private:
         BrowserBox *mSb;
         ScrollArea *mSs;
@@ -196,7 +202,6 @@ class CircuitWindow : public Window,
 
         std::vector< float > matrisAkim;    // akýmlar için sayýlardan oluþan vector
         TmvComponentMatris matrisGerilim;    // pillerden oluþan en saðdaki matris <component*>
-
 
     /**
      * Üzerinden geçen lambalarýn parlaklýklarýný hesapla ve yak

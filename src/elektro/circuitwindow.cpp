@@ -1331,30 +1331,24 @@ CircuitWindow::action(const gcn::ActionEvent &event)
 
         }
     }
-    else if (event.getId() == "fromInventory")
-    {
-//        chatWindow->chatLog("inventoryden geldim",BY_SERVER);
-        const ItemInfo &tempItem=ItemDB::get(transItemId);
+}
 
-//    mArt=tempItem.getArt();
-//    mType=tempItem.getType();
-//    mWeight=tempItem.getWeight();
-//    mSlot=tempItem.getSlot();
-//    mWidth=tempItem.getWidth();
-//    mHeight=tempItem.getHeight();
-//    mName=tempItem.getName();
-//    mDescription=tempItem.getDescription();
-//    mEffect=tempItem.getEffect();
-        Node *tempNode1 = new Node("com_node_btn.png","Hint", "com_node",this);
-        tempNode1->setId(findEmptyId());
-        tempNode1->setX(20);//+QALeftPad);
-        tempNode1->setY(20);//+QATopPad);
-        tempNode1->setEnabled(true);
-        tempNode1->setScroll(false);
-        tempNode1->setSelectable(false);
-        tempNode1->setFree(false);
-        mvNode.push_back(tempNode1);
-        add(tempNode1);
+void
+CircuitWindow::distributeOlay(Item *it)
+{
+    localChatTab->chatLog("Geldim",BY_SERVER);
+    const ItemInfo &tempItem=ItemDB::get(it->getId());
+
+    Node *tempNode1 = new Node("com_node_btn.png","Hint", "com_node",this);
+    tempNode1->setId(findEmptyId());
+    tempNode1->setX(20);//+QALeftPad);
+    tempNode1->setY(20);//+QATopPad);
+    tempNode1->setEnabled(true);
+    tempNode1->setScroll(false);
+    tempNode1->setSelectable(false);
+    tempNode1->setFree(false);
+    mvNode.push_back(tempNode1);
+    add(tempNode1);
 
         Node *tempNode2 = new Node("com_node_btn.png","Hint", "com_node",this);
         tempNode2->setId(findEmptyId());
@@ -1368,11 +1362,11 @@ CircuitWindow::action(const gcn::ActionEvent &event)
         add(tempNode2);
 
 //        std::string tempType = tempItem.getName();
-        std::string tempType = ItemDB::get(transItemId).getName();
-//        chatWindow->chatLog(tempType,BY_SERVER);
+        std::string tempType = ItemDB::get(it->getId()).getName();
+        localChatTab->chatLog(tempType,BY_SERVER);
         Component *tempComponent;
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        if (tempType=="Direnc") tempComponent = new Resistance (this, tempNode1, tempNode2);
+////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        if (tempType=="Direnç") tempComponent = new Resistance (this, tempNode1, tempNode2);
         else if (tempType=="Lamba") tempComponent = new Lamp (this, tempNode1, tempNode2);
         else if (tempType=="Yesil Led") tempComponent = new Diode (this, tempNode1, tempNode2);
         else if (tempType=="Kirmizi Led") tempComponent = new Diode (this, tempNode1, tempNode2);
@@ -1382,15 +1376,15 @@ CircuitWindow::action(const gcn::ActionEvent &event)
         else if (tempType=="Anahtar") tempComponent = new Switch (this, tempNode1, tempNode2);
 
         tempComponent->setId(999);
-        tempComponent->setX(120);//+QALeftPad);
-        tempComponent->setY(120);//+QATopPad);
+        tempComponent->setX(150);//+QALeftPad);
+        tempComponent->setY(150);//+QATopPad);
         tempComponent->setAngel(0);
         tempComponent->setStatus(0);
         tempComponent->setItemId(transItemId);
         tempComponent->setMovable(1);
         tempComponent->setSelectable(1);
 // art yok!! yerine bişey bul
-//        tempComponent->setValue(tempItem.getArt());
+        tempComponent->setValue(1);
         tempComponent->setBounce(tempComponent->getX(),tempComponent->getY(),40,40);
 
         mvComponent.push_back(tempComponent);
@@ -1405,8 +1399,8 @@ CircuitWindow::action(const gcn::ActionEvent &event)
         add(tempComponent);
         for (miNode = mvNode.begin(); miNode < mvNode.end(); miNode++)
             (*miNode)->requestMoveToTop();
+    localChatTab->chatLog("Gördüm",BY_SERVER);
 
-    }
 }
 
 int

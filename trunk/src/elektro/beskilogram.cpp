@@ -4,7 +4,7 @@
 BesKiloGram::BesKiloGram(gcn::ActionListener *listener):
     Kutle(listener)
 {
-    setWindowName(_("Beş kilogram"));
+
 }
 
 BesKiloGram::~BesKiloGram()

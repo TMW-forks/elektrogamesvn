@@ -857,10 +857,13 @@ int i = 0;
                     cmc->setCurrent(cmc->getCurrent() + gsl_vector_get (x, i));
                 b<<*uf<<" : "<<gsl_vector_get (x, i) <<" *";
             }
-            mSb->addRow(b.str());
+            #ifdef DEBUG
+                mSb->addRow(b.str());
+            #endif
             i++;
         }
-
+    // lambaların parlaklıklarını kontrol et ve yak
+    turnonLamps();
     //gsl kaynaklarını geri ver
     gsl_permutation_free (p);
 }
@@ -897,7 +900,38 @@ CircuitWindow::calculateBatteryValue()
 void
 CircuitWindow::turnonLamps()
 {
-
+    float minCurrent=  99.9;
+    float maxCurrent= -99.9;
+    for (miComponent = mvComponent.begin(); miComponent != mvComponent.end(); miComponent++)
+    {
+        // gerekirse sadece lambalar arası karşılaştırma yapılacak
+        if((*miComponent)->getCurrent() > maxCurrent)
+            maxCurrent = (*miComponent)->getCurrent();
+        if((*miComponent)->getCurrent() < minCurrent)
+            minCurrent = (*miComponent)->getCurrent();
+    }
+    float interval = (maxCurrent - minCurrent) / 3.0;
+    mSb->addRow("minimum :"+toString(minCurrent));
+    mSb->addRow("maximum :"+toString(maxCurrent));
+    mSb->addRow("interval:"+toString(interval));
+    for (miComponent = mvComponent.begin(); miComponent != mvComponent.end(); miComponent++)
+    {
+        // gerekirse sadece lambalar arası karşılaştırma yapılacak
+        if(isLamp(*miComponent))
+        {
+            if ((*miComponent)->getCurrent() == 0)
+                (*miComponent)->setStatus(PASIVE);
+            else if((*miComponent)->getCurrent() >= minCurrent &&
+                (*miComponent)->getCurrent() <= minCurrent + interval)
+                (*miComponent)->setStatus(ACTIVE);
+            else if((*miComponent)->getCurrent() >= minCurrent + interval &&
+                (*miComponent)->getCurrent() < minCurrent + 2*interval)
+                (*miComponent)->setStatus(PLUS);
+            else if((*miComponent)->getCurrent() >= minCurrent + 2*interval &&
+                (*miComponent)->getCurrent() < minCurrent + 3*interval)
+                (*miComponent)->setStatus(PLUS2);
+        }
+    }
 }
 
 bool
@@ -928,11 +962,20 @@ CircuitWindow::isResistance(Component *comp)
         return false;
 }
 
-
 bool
 CircuitWindow::isBattery(Component *comp)
 {
     if (comp->getType() == BATTERY)
+        return true;
+    else
+        return false;
+}
+
+bool
+CircuitWindow::isLamp(Component *comp)
+{
+    if (comp->getType() == LAMP ||
+        comp->getType() == DIODE)
         return true;
     else
         return false;
@@ -1366,6 +1409,8 @@ CircuitWindow::distributeOlay(Item *it)
         localChatTab->chatLog(tempType,BY_SERVER);
         Component *tempComponent;
 ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//* Itemlar isimleriyle değil id'leriyle oluşturulacak
+
         if (tempType=="Direnç") tempComponent = new Resistance (this, tempNode1, tempNode2);
         else if (tempType=="Lamba") tempComponent = new Lamp (this, tempNode1, tempNode2);
         else if (tempType=="Yesil Led") tempComponent = new Diode (this, tempNode1, tempNode2);

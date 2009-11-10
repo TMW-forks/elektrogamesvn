@@ -32,6 +32,7 @@
 #include "gui/widgets/layout.h"
 #include "gui/widgets/progressbar.h"
 #include "gui/widgets/scrollarea.h"
+#include "gui/widgets/chattab.h"
 
 #include "inventory.h"
 #include "item.h"
@@ -189,11 +190,17 @@ void InventoryWindow::action(const gcn::ActionEvent &event)
         }
         else
         {
-            if (item->getId()>4000 && item->getId()<4100 && circuitWindow->isVisible())
+            if (item->getId()>4000 && item->getId()<4100)
             {
-//                addActionListener(circuitWindow);
-                Net::getInventoryHandler()->useItem(item);
-                circuitWindow->distributeOlay(item);
+                if (circuitWindow->isVisible())
+                {
+                    Net::getInventoryHandler()->useItem(item);
+                    circuitWindow->distributeOlay(item);
+                }
+                else
+                {
+                    localChatTab->chatLog("Bu nesneyi sadece devre tamir ederken kullanabilirsin.",BY_SERVER);
+                }
             }
         }
     }

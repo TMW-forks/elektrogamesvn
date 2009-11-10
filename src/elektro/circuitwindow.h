@@ -231,6 +231,11 @@ class CircuitWindow : public Window,
     bool isBattery(Component *comp);
 
     /**
+     * Component lamba türlerinden biri mi
+     */
+    bool isLamp(Component *comp);
+
+    /**
      * Bütün lambalarý kapat
      */
      void turnoffAllLamp();

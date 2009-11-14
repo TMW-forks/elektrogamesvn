@@ -189,6 +189,8 @@ class Node : public BitButton
 
         void mouseExited(gcn::MouseEvent &mouseEvent);
 
+        void mouseMoved(gcn::MouseEvent &event);
+
     protected:
         int mId;                        /**< Her node'a özel kimlik no */
         bool mSelectable;

@@ -99,6 +99,11 @@ void Node::mouseReleased(gcn::MouseEvent& mouseEvent)
     }
     BitButton::mouseReleased(mouseEvent);
 }
+void
+Node::mouseMoved(gcn::MouseEvent &event)
+{
+    //
+}
 
 void Node::mouseEntered(gcn::MouseEvent &mouseEvent)
 {    Uint8* keys;

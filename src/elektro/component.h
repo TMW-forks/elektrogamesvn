@@ -141,6 +141,8 @@ class Component : public gcn::Window,
 
         void mouseExited(gcn::MouseEvent &event);
 
+        void mouseMoved(gcn::MouseEvent &event);
+
         void setAngel(int a);
 
         int getAngel ();

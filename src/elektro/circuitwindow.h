@@ -128,6 +128,7 @@ class CircuitWindow : public Window,
      */
      void distributeOlay(Item *it);
 
+        void mouseMoved(gcn::MouseEvent &event);
 
     private:
         BrowserBox *mSb;

@@ -184,8 +184,8 @@ void Component::mousePressed(gcn::MouseEvent &event)
         requestMoveToTop();
         node1->requestMoveToTop();
         node2->requestMoveToTop();
-        xx = getX();
-        yy = getY();
+        xx = event.getX();
+        yy = event.getY();
         nodesCalc();
 
         if (keys[SDLK_LCTRL] || keys[SDLK_RCTRL])
@@ -273,8 +273,9 @@ void Component::mouseDragged(gcn::MouseEvent &event)
             requestMoveToTop();
             int mouseX, mouseY;
             SDL_GetMouseState(&mouseX, &mouseY);
-            setX(mouseX-circuitWindow->getX()-getWidth()/2);
-            setY(mouseY-circuitWindow->getY()-circuitWindow->getTitleBarHeight()-getHeight()/2);
+            setX(getX()+event.getX()-xx);
+            setY(getY()+event.getY()-yy);
+            logger->log("mouse x: %d     mouse y : %d",event.getX(),event.getY() );
         if (getX()<20) setX(20);
         if (getY()<50) setY(50);
         if (getX()>(circuitWindow->getWidth()-getWidth()-15)) setX(circuitWindow->getWidth()-15-getWidth());
@@ -415,7 +416,11 @@ int Component::getItemId()
     return mItemId;
 }
 
-
+void
+Component::mouseMoved(gcn::MouseEvent &event)
+{
+    //
+}
 void Component::mouseEntered(gcn::MouseEvent &event)
 {
     std::string typeName[]= {
@@ -429,8 +434,8 @@ void Component::mouseEntered(gcn::MouseEvent &event)
 
     Uint8* keys;
     keys = SDL_GetKeyState(NULL);
-    if (isMovable() && ((keys[SDLK_LALT] || keys[SDLK_RALT]))) gui->setCursorType(2);
-    else if (isMovable())  gui->setCursorType(1);
+    if (isMovable() && ((keys[SDLK_LALT] || keys[SDLK_RALT]))) gui->setCursorType(5);
+    else if (isMovable())  gui->setCursorType(6);
     circuitWindow->toolErase = mDeletable;
     circuitWindow->toolFromLeft = node1->getFromLink();
     circuitWindow->toolFromRight = node2->getFromLink();

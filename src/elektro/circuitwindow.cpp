@@ -934,6 +934,12 @@ CircuitWindow::turnonLamps()
     }
 }
 
+void
+CircuitWindow::mouseMoved(gcn::MouseEvent &event)
+{
+
+}
+
 bool
 CircuitWindow::isExistComponent(Component *comp, TmvComponent vect)
 {

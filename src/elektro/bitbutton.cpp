@@ -62,7 +62,6 @@ BitButton::BitButton(const std::string& caption,const std::string& hint,
         setSize(temp->getWidth()/4,temp->getHeight());
     }
 
-
     mInstances++;
     setActionEventId(actionEventId);
     mAction = actionEventId;

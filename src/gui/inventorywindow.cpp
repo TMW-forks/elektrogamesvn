@@ -53,8 +53,10 @@
 #include <string>
 
 #include "elektro/circuitwindow.h"
+#include "elektro/similasyonpenceresi.h"
 
 extern CircuitWindow *circuitWindow;
+extern SimilasyonPenceresi *similasyonPenceresi;
 InventoryWindow::InventoryWindow(int invSize):
     Window(_("Inventory")),
     mMaxSlots(invSize),
@@ -196,6 +198,17 @@ void InventoryWindow::action(const gcn::ActionEvent &event)
                 {
                     Net::getInventoryHandler()->useItem(item);
                     circuitWindow->distributeOlay(item);
+                }
+                else if (similasyonPenceresi->isVisible())
+                {
+                    if(similasyonPenceresi->getPencereDurum())
+                    {
+                        Net::getInventoryHandler()->useItem(item);
+                        similasyonPenceresi->nesneyiAl(item);
+                    }
+                    else
+                        localChatTab->chatLog("Nesneyi kullanabilmek için similasyonu başlatmalısınız!!!",BY_SERVER);
+
                 }
                 else
                 {

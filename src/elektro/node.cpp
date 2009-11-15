@@ -67,10 +67,8 @@ void Node::mouseDragged(gcn::MouseEvent& mouseEvent)
         else if(mMovable && mSelectable)
         {
             requestMoveToTop();
-            int mouseX, mouseY;
-            SDL_GetMouseState(&mouseX, &mouseY);
-            setX(mouseX-circuitWindow->getX()-getWidth());
-            setY(mouseY-circuitWindow->getY()-circuitWindow->getTitleBarHeight()-getHeight());
+            setX(getX()+event.getX()-xx);
+            setY(getY()+event.getY()-yy);
             circuitWindow->collisionCheck = true;
         if (getX()<40) setX(40);
         if (getY()<50) setY(50);

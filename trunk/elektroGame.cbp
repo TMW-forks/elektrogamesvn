@@ -98,6 +98,8 @@
 		<Unit filename="src\elektro\hitabe.h" />
 		<Unit filename="src\elektro\instanthelp.cpp" />
 		<Unit filename="src\elektro\instanthelp.h" />
+		<Unit filename="src\elektro\kaldirac.cpp" />
+		<Unit filename="src\elektro\kaldirac.h" />
 		<Unit filename="src\elektro\kutle.cpp" />
 		<Unit filename="src\elektro\kutle.h" />
 		<Unit filename="src\elektro\lamp.cpp" />

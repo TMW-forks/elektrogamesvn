@@ -68,6 +68,9 @@ class SimilasyonPenceresi : public Window, public gcn::ActionListener
         std::vector<Kutle*> mvKutle;
         std::vector<Kutle*>::iterator miKutle;
 
+        TmvAnim mvAnim;
+        TmiAnim miAnim;
+
         xmlDocPtr mxmlDoc;
         xmlNodePtr rootNode;
 

@@ -9,12 +9,13 @@
 #include <libxml/xmlwriter.h>
 #include <vector>
 
-#include "simpleanimation.h"
+
 
 #include "../resources/animation.h"
 #include "../resources/image.h"
 #include "../resources/resourcemanager.h"
 #include "../resources/imageset.h"
+#include "../resources/iteminfo.h"
 
 #include "gui/gui.h"
 #include "gui/widgets/window.h"
@@ -33,7 +34,11 @@
 #include "utils/gettext.h"
 #include "./typedef.h"
 #include "./bitbutton.h"
+
 #include "beskilogram.h"
+#include "simpleanimation.h"
+#include "kaldirac.h"
+#include "item.h"
 
 
 
@@ -45,7 +50,9 @@ class SimilasyonPenceresi : public Window, public gcn::ActionListener
         void action(const gcn::ActionEvent &event);
         void draw(gcn::Graphics *graphics);
         void nesneleriAyarla();
+        void nesneyiAl(Item *it);
         void parseXML(std::string mDoc);
+        bool getPencereDurum();
 
         void clearComponent();
     protected:
@@ -65,9 +72,6 @@ class SimilasyonPenceresi : public Window, public gcn::ActionListener
         xmlNodePtr rootNode;
 
         bool nesneDurum;
-
-
-
-
+        bool pencereDurum;
 };
 #endif // SIMILASYONPENCERESI_H

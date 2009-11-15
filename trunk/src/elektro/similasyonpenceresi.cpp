@@ -12,6 +12,7 @@ SimilasyonPenceresi::SimilasyonPenceresi():
     setMinHeight(400);
     setResizable(true);
     setVisible(false);
+    pencereDurum= false;
 
     mCancel = new Button("İptal","Sim_Cancel",this);
     mClose = new Button("Kapat","Sim_Close",this);
@@ -53,8 +54,8 @@ SimilasyonPenceresi::action(const gcn::ActionEvent &event)
     {
         mStart->setVisible(false);
         mCancel->setVisible(false);
-        mClose->setX(300);
-        mClose->setY(350);
+        mClose->setX(250);
+        mClose->setY(250);
         mClose->setVisible(true);
         Net::getNpcHandler()->listInput(current_npc,2);
     }
@@ -78,14 +79,10 @@ SimilasyonPenceresi::parseXML(std::string mDoc)
 //    logger->log("%s",mDoc.c_str());
 
     if (!mxmlDoc)
-    {
         logger->error("circuitwindow.cpp: Error while parsing item database (from npc.xml)!"+mDoc);
-    }
-    if (!rootNode || !xmlStrEqual(rootNode->name, BAD_CAST "similasyon"))
-    {
-        logger->error("circuitwindow.cpp: rootNode not similasyon!"+mDoc);
-    }
 
+    if (!rootNode || !xmlStrEqual(rootNode->name, BAD_CAST "similasyon"))
+        logger->error("circuitwindow.cpp: rootNode not similasyon!"+mDoc);
 
     //npchandler dan gelen veri parse ediliyor
     for_each_xml_child_node(node, rootNode)
@@ -135,6 +132,7 @@ SimilasyonPenceresi::parseXML(std::string mDoc)
             int w = XML::getProperty(node, "width", 50);
             int h = XML::getProperty(node, "height", 50);
 
+            pencereDurum = true;
             nesne = new BesKiloGram(this);
             nesne->setX(x);
             nesne->setY(y);
@@ -142,6 +140,24 @@ SimilasyonPenceresi::parseXML(std::string mDoc)
             nesne->setHeight(h);
             nesne->setVisible(true);
             mvKutle.push_back(nesne);
+            add(nesne);
+        }
+        else if (xmlStrEqual(node->name, BAD_CAST "nesne"))
+        {
+            Kaldirac *nesne;
+            int x = XML::getProperty(node, "x", 50);
+            int y = XML::getProperty(node, "y", 50);
+            int w = XML::getProperty(node, "width", 50);
+            int h = XML::getProperty(node, "height", 50);
+
+            //pencereDurum = true;
+            nesne = new Kaldirac(this);
+            nesne->setX(x);
+            nesne->setY(y);
+            nesne->setWidth(w-10);
+            nesne->setHeight(h);
+            nesne->setVisible(true);
+            //mvKutle.push_back(nesne);
             add(nesne);
         }
     }
@@ -175,3 +191,28 @@ SimilasyonPenceresi::clearComponent()
     delete mSoru;
     delete mSoruArea;
 }
+
+bool
+SimilasyonPenceresi::getPencereDurum()
+{
+    return pencereDurum;
+}
+void
+SimilasyonPenceresi::nesneyiAl(Item *it)
+{
+    Kutle *nesne;
+    std::string nesneTipi = ItemDB::get(it->getId()).getName();
+
+    if (nesneTipi=="Direnç")
+    {
+        nesne = new BesKiloGram(this);
+        nesne->setX(100);
+        nesne->setY(150);
+        nesne->setWidth(50);
+        nesne->setHeight(50);
+        nesne->setVisible(true);
+        mvKutle.push_back(nesne);
+        add(nesne);
+    }
+}
+

@@ -62,6 +62,13 @@ void Kutle::mouseDragged(gcn::MouseEvent &event)
             setX(similasyonPenceresi->getWidth()-15-getWidth());
         if (getY()>(similasyonPenceresi->getHeight()-getHeight()-60))
             setY(similasyonPenceresi->getHeight()-getHeight()-60);
+
+        //Nesnenin sürükleme anında istediğim alana yapışması için.
+        if (getX()>200 && getX()<300 && getY()>200 && getY()<300)
+        {
+//            setX(250);
+            setY(250);
+        }
     }
 }
 

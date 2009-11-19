@@ -271,11 +271,8 @@ void Component::mouseDragged(gcn::MouseEvent &event)
 //        circuitWindow->mHint->setCaption(toString(event.getX())+" - "+toString(event.getX()));
 //        circuitWindow->mHint->adjustSize();
             requestMoveToTop();
-            int mouseX, mouseY;
-            SDL_GetMouseState(&mouseX, &mouseY);
             setX(getX()+event.getX()-xx);
             setY(getY()+event.getY()-yy);
-            logger->log("mouse x: %d     mouse y : %d",event.getX(),event.getY() );
         if (getX()<20) setX(20);
         if (getY()<50) setY(50);
         if (getX()>(circuitWindow->getWidth()-getWidth()-15)) setX(circuitWindow->getWidth()-15-getWidth());

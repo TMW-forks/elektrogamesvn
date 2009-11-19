@@ -40,6 +40,8 @@ void Node::mousePressed(gcn::MouseEvent& mouseEvent)
 {
     Uint8* keys;
     keys = SDL_GetKeyState(NULL);
+    xx = mouseEvent.getX();
+    yy = mouseEvent.getY();
     if (mouseEvent.getButton() == gcn::MouseEvent::RIGHT)
     {
         mRightClick = true;
@@ -67,8 +69,8 @@ void Node::mouseDragged(gcn::MouseEvent& mouseEvent)
         else if(mMovable && mSelectable)
         {
             requestMoveToTop();
-            setX(getX()+event.getX()-xx);
-            setY(getY()+event.getY()-yy);
+            setX(getX()+mouseEvent.getX()-xx);
+            setY(getY()+mouseEvent.getY()-yy);
             circuitWindow->collisionCheck = true;
         if (getX()<40) setX(40);
         if (getY()<50) setY(50);

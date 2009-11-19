@@ -205,6 +205,8 @@ class Node : public BitButton
         bool mToLink;
         bool mFromLink;
         float mCurrent;                 /**< Node üzerinden geçen akým */
+        int xx;     //mouse'un ilk kontrol noktasý
+        int yy;
 
         Component *mOwner;              /**< Sahibi olan component varsa gösterir */
         void firstValues();

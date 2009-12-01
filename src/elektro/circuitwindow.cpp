@@ -21,6 +21,7 @@
 #include "../log.h"
 #include "../item.h"
 #include "../gui/chat.h"
+#include "resources/itemdb.h"
 #include "gui/widgets/chattab.h"
 
 #include "elektro/lang_tr.h"
@@ -153,7 +154,7 @@ CircuitWindow::~CircuitWindow(){
 void
 CircuitWindow::logic()
 {
-    if (isVisible() == false) return;
+//    if (isVisible() == false) return;
     std::vector<Component*>::iterator i = mvComponent.begin();
     while (i != mvComponent.end())
     {
@@ -1386,7 +1387,10 @@ void
 CircuitWindow::distributeOlay(Item *it)
 {
     localChatTab->chatLog("Geldim",BY_SERVER);
-    const ItemInfo &tempItem=ItemDB::get(it->getId());
+    ItemInfo tempItem = ItemDB::get(it->getId());
+
+    std::string temp = tempItem.getElektroType();
+
 
     Node *tempNode1 = new Node("com_node_btn.png","Hint", "com_node",this);
     tempNode1->setId(findEmptyId());
@@ -1571,7 +1575,10 @@ CircuitWindow::circuitFromXML(std::string mDoc)
         }
         else if (xmlStrEqual(node->name, BAD_CAST "component"))
         {
-            std::string tempType = XML::getProperty(node, "type", "");
+            int const itemid = XML::getProperty(node, "item_id", 0);
+            ItemInfo tempItem = ItemDB::get(itemid);
+
+            std::string tempType = tempItem.getElektroType();
 
             Node *tempNode1 = new Node("com_node_btn.png","Hint", "com_node",this);
             tempNode1->setId(findEmptyId());
@@ -1605,6 +1612,7 @@ CircuitWindow::circuitFromXML(std::string mDoc)
 //            tempNode1->nodeConnect(tempNode2);
 //            tempNode2->nodeConnect(tempNode1);
             Component *tempComponent;
+
 //!!!!!!!!!!!!!!!!!!!!!
             if (tempType=="resistance") tempComponent = new Resistance (this, tempNode1, tempNode2);
             else if (tempType=="lamp") tempComponent = new Lamp (this, tempNode1, tempNode2);
@@ -1612,15 +1620,16 @@ CircuitWindow::circuitFromXML(std::string mDoc)
             else if (tempType=="battery") tempComponent = new Battery (this, tempNode1, tempNode2);
             else if (tempType=="switch") tempComponent = new Switch (this, tempNode1, tempNode2);
             else return;
+tempComponent->setItemId(itemid);
+            tempComponent->setValue(tempItem.getElektroValue());
             tempComponent->setId(XML::getProperty(node, "id", 0));
             tempComponent->setX(XML::getProperty(node, "x", 0));//+QALeftPad);
             tempComponent->setY(XML::getProperty(node, "y", 0));//+QATopPad);
             tempComponent->setAngel(XML::getProperty(node, "angel", 0));
             tempComponent->setStatus(XML::getProperty(node, "status", 0));
-            tempComponent->setItemId(XML::getProperty(node, "item_id", 0));
             tempComponent->setMovable(XML::getProperty(node, "movable", 1));
             tempComponent->setSelectable(XML::getProperty(node, "selectable", 1));
-            tempComponent->setValue(XML::getProperty(node, "value", 0));
+//            tempComponent->setValue(XML::getProperty(node, "value", 0));
             tempComponent->setDeletable(XML::getProperty(node, "deletable", 0));
             tempComponent->setBounce(tempComponent->getX(),tempComponent->getY(),40,40);
             tempComponent->setSelectable(1);

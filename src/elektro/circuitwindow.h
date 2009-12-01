@@ -130,6 +130,8 @@ class CircuitWindow : public Window,
 
         void mouseMoved(gcn::MouseEvent &event);
 
+    // item bilgisini itemDB'den alabilmek için
+    const ItemInfo &getInfo(int id) const { return ItemDB::get(id); }
     private:
         BrowserBox *mSb;
         ScrollArea *mSs;

@@ -149,6 +149,8 @@ void ItemDB::load()
         std::string description = XML::getProperty(node, "description", "");
         int weaponType = weaponTypeFromString(XML::getProperty(node, "weapon-type", ""));
         int attackRange = XML::getProperty(node, "attack-range", 0);
+        std::string elektrotype = XML::getProperty(node, "elektro-type", "");
+        double elektrovalue = XML::getProperty(node, "elektro-value", 0.0);
 
         ItemInfo *itemInfo = new ItemInfo;
         itemInfo->setId(id);
@@ -160,7 +162,9 @@ void ItemDB::load()
         itemInfo->setWeight(weight);
         itemInfo->setWeaponType(weaponType);
         itemInfo->setAttackRange(attackRange);
-
+        itemInfo->setElektroType(elektrotype);
+        itemInfo->setElektroValue(elektrovalue);
+if (itemInfo->getElektroType() != "") logger->log("ITEM INFO: %d  - %s - %s",id,itemInfo->getElektroType().c_str(),elektrotype.c_str());
         std::string effect;
         for (int i = 0; i < int(sizeof(fields) / sizeof(fields[0])); ++i)
         {

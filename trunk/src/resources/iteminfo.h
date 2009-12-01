@@ -192,7 +192,21 @@ class ItemInfo
 
         const std::string &getSound(EquipmentSoundEvent event) const;
 
+        void setElektroValue(double r)
+        { elektro_value = r; }
+
+        double getElektroValue()
+        { return elektro_value ; }
+
+        void setElektroType(std::string r)
+        { melektro_type = r; }
+
+        std::string getElektroType()
+        { return melektro_type; }
+        std::string melektro_type;
+
     protected:
+        double elektro_value;
         std::string mImageName;      /**< The filename of the icon image. */
         std::string mName;
         std::string mDescription;    /**< Short description. */

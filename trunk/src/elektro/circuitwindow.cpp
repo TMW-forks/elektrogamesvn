@@ -1389,8 +1389,7 @@ CircuitWindow::distributeOlay(Item *it)
     localChatTab->chatLog("Geldim",BY_SERVER);
     ItemInfo tempItem = ItemDB::get(it->getId());
 
-    std::string temp = tempItem.getElektroType();
-
+    std::string tempType = tempItem.getElektroType();
 
     Node *tempNode1 = new Node("com_node_btn.png","Hint", "com_node",this);
     tempNode1->setId(findEmptyId());
@@ -1400,37 +1399,53 @@ CircuitWindow::distributeOlay(Item *it)
     tempNode1->setScroll(false);
     tempNode1->setSelectable(false);
     tempNode1->setFree(false);
+    tempNode1->setMovable(false);
+    tempNode1->setDeletable(false);
+    tempNode1->setToLink(true);
+    tempNode1->setFromLink(true);
+
     mvNode.push_back(tempNode1);
     add(tempNode1);
 
-        Node *tempNode2 = new Node("com_node_btn.png","Hint", "com_node",this);
-        tempNode2->setId(findEmptyId());
-        tempNode2->setX(20);//+QALeftPad);
-        tempNode2->setY(20);//+QATopPad);
-        tempNode2->setEnabled(true);
-        tempNode2->setScroll(false);
-        tempNode2->setSelectable(true);
-        tempNode2->setFree(true);
-        mvNode.push_back(tempNode2);
-        add(tempNode2);
+    Node *tempNode2 = new Node("com_node_btn.png","Hint", "com_node",this);
+    tempNode2->setId(findEmptyId());
+    tempNode2->setX(20);//+QALeftPad);
+    tempNode2->setY(20);//+QATopPad);
+    tempNode2->setEnabled(true);
+    tempNode2->setScroll(false);
+    tempNode2->setSelectable(true);
+    tempNode2->setFree(false);
+    tempNode2->setMovable(false);
+    tempNode2->setDeletable(false);
+    tempNode2->setToLink(true);
+    tempNode2->setFromLink(true);
 
-//        std::string tempType = tempItem.getName();
-        std::string tempType = ItemDB::get(it->getId()).getName();
-        localChatTab->chatLog(tempType,BY_SERVER);
-        Component *tempComponent;
+
+    mvNode.push_back(tempNode2);
+    add(tempNode2);
+
+    localChatTab->chatLog(tempType.c_str(),BY_SERVER);
+    Component *tempComponent;
 ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //* Itemlar isimleriyle değil id'leriyle oluşturulacak
+    if (tempType=="resistance") tempComponent = new Resistance (this, tempNode1, tempNode2);
+    else if (tempType=="lamp") tempComponent = new Lamp (this, tempNode1, tempNode2);
+    else if (tempType=="diode") tempComponent = new Diode (this, tempNode1, tempNode2);
+    else if (tempType=="battery") tempComponent = new Battery (this, tempNode1, tempNode2);
+    else if (tempType=="switch") tempComponent = new Switch (this, tempNode1, tempNode2);
+    else return;
 
-        if (tempType=="Direnç") tempComponent = new Resistance (this, tempNode1, tempNode2);
-        else if (tempType=="Lamba") tempComponent = new Lamp (this, tempNode1, tempNode2);
-        else if (tempType=="Yesil Led") tempComponent = new Diode (this, tempNode1, tempNode2);
-        else if (tempType=="Kirmizi Led") tempComponent = new Diode (this, tempNode1, tempNode2);
-        else if (tempType=="Beyaz Led") tempComponent = new Diode (this, tempNode1, tempNode2);
-        else if (tempType=="Sari Led") tempComponent = new Diode (this, tempNode1, tempNode2);
-        else if (tempType=="Uretec") tempComponent = new Battery (this, tempNode1, tempNode2);
-        else if (tempType=="Anahtar") tempComponent = new Switch (this, tempNode1, tempNode2);
+//        if (tempType=="Direnç") tempComponent = new Resistance (this, tempNode1, tempNode2);
+//        else if (tempType=="Lamba") tempComponent = new Lamp (this, tempNode1, tempNode2);
+//        else if (tempType=="Yesil Led") tempComponent = new Diode (this, tempNode1, tempNode2);
+//        else if (tempType=="Kirmizi Led") tempComponent = new Diode (this, tempNode1, tempNode2);
+//        else if (tempType=="Beyaz Led") tempComponent = new Diode (this, tempNode1, tempNode2);
+//        else if (tempType=="Sari Led") tempComponent = new Diode (this, tempNode1, tempNode2);
+//        else if (tempType=="Uretec") tempComponent = new Battery (this, tempNode1, tempNode2);
+//        else if (tempType=="Anahtar") tempComponent = new Switch (this, tempNode1, tempNode2);
 
-        tempComponent->setId(999);
+        tempComponent->setId(findEmptyId());
+        tempComponent->setValue(tempItem.getElektroValue());
         tempComponent->setX(150);//+QALeftPad);
         tempComponent->setY(150);//+QATopPad);
         tempComponent->setAngel(0);
@@ -1438,8 +1453,6 @@ CircuitWindow::distributeOlay(Item *it)
         tempComponent->setItemId(transItemId);
         tempComponent->setMovable(1);
         tempComponent->setSelectable(1);
-// art yok!! yerine bişey bul
-        tempComponent->setValue(1);
         tempComponent->setBounce(tempComponent->getX(),tempComponent->getY(),40,40);
 
         mvComponent.push_back(tempComponent);
@@ -1620,7 +1633,7 @@ CircuitWindow::circuitFromXML(std::string mDoc)
             else if (tempType=="battery") tempComponent = new Battery (this, tempNode1, tempNode2);
             else if (tempType=="switch") tempComponent = new Switch (this, tempNode1, tempNode2);
             else return;
-tempComponent->setItemId(itemid);
+            tempComponent->setItemId(itemid);
             tempComponent->setValue(tempItem.getElektroValue());
             tempComponent->setId(XML::getProperty(node, "id", 0));
             tempComponent->setX(XML::getProperty(node, "x", 0));//+QALeftPad);

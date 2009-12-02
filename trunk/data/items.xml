@@ -4326,7 +4326,7 @@
         image="/elektrik/item-direnc-1.png"
         name="Direnç 1 Ohm"
         description="Direnç 1 ohm."
-        effect="1"
+        effect=""
         type="usable"
         weight="1"
         max-per-slot="100"
@@ -4601,7 +4601,7 @@
         weight="1"
         max-per-slot="100"
 		elektro-type="diode"
-		elektro-value="1"/>
+		elektro-value="4"/>
 	<item id="1128"
         image="/elektrik/item-kled.png"
         name="Kırmızı Led"
@@ -4620,7 +4620,7 @@
         weight="1"
         max-per-slot="100"
 		elektro-type="diode"
-		elektro-value="1"/>
+		elektro-value="3"/>
 	<item id="1130"
         image="/elektrik/item-yled.png"
         name="Yeşil Led"
@@ -4630,7 +4630,7 @@
         weight="1"
         max-per-slot="100"
 		elektro-type="diode"
-		elektro-value="1"/>
+		elektro-value="2"/>
 	<item id="1131"
         image="/elektrik/item-pil15.png"
         name="Pil 1 V"

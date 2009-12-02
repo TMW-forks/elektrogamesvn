@@ -192,7 +192,7 @@ void InventoryWindow::action(const gcn::ActionEvent &event)
         }
         else
         {
-            if (item->getId()>4000 && item->getId()<4100)
+            if (item->getId()>1099 && item->getId()<1200)
             {
                 if (circuitWindow->isVisible())
                 {

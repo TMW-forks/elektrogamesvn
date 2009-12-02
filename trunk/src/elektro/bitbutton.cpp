@@ -56,7 +56,7 @@ BitButton::BitButton(const std::string& caption,const std::string& hint,
         ResourceManager *resman = ResourceManager::getInstance();
 
         Image *temp = resman->getImage("graphics/elektrik/"+caption);
-        resman->release(temp);
+        //resman->release(temp);
 
         mImageSet = resman->getImageSet("graphics/elektrik/"+caption,temp->getWidth()/4,temp->getHeight());
         setSize(temp->getWidth()/4,temp->getHeight());

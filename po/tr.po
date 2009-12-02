@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: themanaworld-devel@lists.sourceforge.net\n"
 "POT-Creation-Date: 2009-06-09 21:24+0200\n"
-"PO-Revision-Date: 2009-10-17 11:03+0200\n"
+"PO-Revision-Date: 2009-12-02 22:24+0200\n"
 "Last-Translator: Mehmet Emin KORKUSUZ <ekorkusuz@hotmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -118,7 +118,7 @@ msgstr "Komut: /announce <msg>"
 
 #: src/commandhandler.cpp:186
 msgid "*** only available to a GM ***"
-msgstr "***Sadece mevcut GM'e***"
+msgstr "***Sadece GM ulaşabilir***"
 
 #: src/commandhandler.cpp:187
 msgid "This command sends the message <msg> to all players currently online."
@@ -276,7 +276,7 @@ msgstr "Boş fısıltı gönderilemez"
 #: src/commandhandler.cpp:348
 #, c-format
 msgid "Cannot create a whisper tab for nick \"%s\"! It either already exists, or is you."
-msgstr " \"%s\" takma adı için fısıltı sekmesi oluşturulamaz. O zaten var veya "
+msgstr " \"%s\" Takma adı için fısıltı sekmesi oluşturulamaz. O zaten var."
 
 #: src/commandhandler.cpp:362
 #, c-format
@@ -556,12 +556,12 @@ msgstr "TAMAM"
 
 #: src/gui/charselectdialog.cpp:105
 msgid "Previous"
-msgstr "Geri"
+msgstr "Önceki"
 
 #: src/gui/charselectdialog.cpp:106
 #: src/gui/npcdialog.cpp:43
 msgid "Next"
-msgstr "İleri"
+msgstr "Sonraki"
 
 #: src/gui/charselectdialog.cpp:108
 #: src/gui/charselectdialog.cpp:117
@@ -678,7 +678,7 @@ msgstr "Lonca"
 
 #: src/gui/guildwindow.cpp:63
 msgid "Create Guild"
-msgstr "Locan oluştur"
+msgstr "Lonca oluştur"
 
 #: src/gui/guildwindow.cpp:64
 msgid "Invite User"
@@ -743,23 +743,23 @@ msgstr "Hepsi"
 
 #: src/gui/itemamount.cpp:123
 msgid "Select amount of items to trade."
-msgstr "Takas edilecek madde miktarını seç."
+msgstr "Takas edilecek item miktarını seç."
 
 #: src/gui/itemamount.cpp:126
 msgid "Select amount of items to drop."
-msgstr "Düşürülecek madde miktarını seç."
+msgstr "Düşürülecek item miktarını seç."
 
 #: src/gui/itemamount.cpp:129
 msgid "Select amount of items to store."
-msgstr "Depolanacak madde miktarını seç."
+msgstr "Depolanacak item miktarını seç."
 
 #: src/gui/itemamount.cpp:132
 msgid "Select amount of items to retrieve."
-msgstr "Geri alınacak madde miktarını seç."
+msgstr "Geri alınacak item miktarını seç."
 
 #: src/gui/itemamount.cpp:135
 msgid "Select amount of items to split."
-msgstr "Bölünecek madde miktarını seçin."
+msgstr "Bölünecek item miktarını seçin."
 
 #: src/gui/itempopup.cpp:91
 msgid "Weight: "
@@ -831,7 +831,7 @@ msgstr "Teklif"
 #: src/gui/npcdialog.cpp:48
 #: src/gui/npcpostdialog.cpp:39
 msgid "NPC"
-msgstr "NPC"
+msgstr "ÜSTAT"
 
 #: src/gui/npcdialog.cpp:104
 msgid "Reset"
@@ -939,7 +939,7 @@ msgstr "GM isimleri"
 
 #: src/gui/palette.cpp:107
 msgid "NPCs"
-msgstr "NPCs"
+msgstr "Üstatlar"
 
 #: src/gui/palette.cpp:108
 msgid "Monsters"
@@ -1076,7 +1076,7 @@ msgstr "%s den Davet Kabul Edildi"
 #: src/gui/partywindow.cpp:211
 #, c-format
 msgid "Rejected invite from %s."
-msgstr "%s den Davet Reddedildi"
+msgstr "%s den davet reddedildi."
 
 #: src/gui/popupmenu.cpp:77
 msgid "@@name|Add name to chat@@"
@@ -1270,7 +1270,7 @@ msgstr "Sunuc seçin"
 #: src/gui/windowmenu.cpp:69
 #: src/main.cpp:939
 msgid "Setup"
-msgstr "Kur"
+msgstr "Ayarlar"
 
 #: src/gui/setup.cpp:73
 msgid "Apply"
@@ -1290,7 +1290,7 @@ msgstr "Ses"
 
 #: src/gui/setup_audio.cpp:48
 msgid "Sfx volume"
-msgstr "Sfx sesi"
+msgstr "Efekt sesi"
 
 #: src/gui/setup_audio.cpp:49
 msgid "Music volume"
@@ -1612,17 +1612,17 @@ msgstr "Gizli Beceri"
 #: src/gui/skilldialog.cpp:99
 #: src/gui/windowmenu.cpp:62
 msgid "Skills"
-msgstr "Beceriler"
+msgstr "Hünerler"
 
 #: src/gui/skill.cpp:148
 #: src/gui/skill.cpp:200
 #, c-format
 msgid "Skill points: %d"
-msgstr "Beceri puanları: %d"
+msgstr "Hüner puanları: %d"
 
 #: src/gui/skill.cpp:149
 msgid "Up"
-msgstr "Yukarı"
+msgstr "Art"
 
 #: src/gui/skilldialog.cpp:113
 msgid "Weapons"
@@ -1640,19 +1640,19 @@ msgstr "Meslek: %d"
 
 #: src/gui/status.cpp:60
 msgid "HP:"
-msgstr "HP:"
+msgstr "Sağlık Seviyesi:"
 
 #: src/gui/status.cpp:63
 msgid "Exp:"
-msgstr "Exp:"
+msgstr "Tecrübe:"
 
 #: src/gui/status.cpp:66
 msgid "MP:"
-msgstr "MP:"
+msgstr "Enerji Seviyesi:"
 
 #: src/gui/status.cpp:69
 msgid "Job:"
-msgstr "Meslek:"
+msgstr "Uzmanlık:"
 
 #: src/gui/status.cpp:77
 msgid "Stats"
@@ -1660,11 +1660,11 @@ msgstr "İstatistikler"
 
 #: src/gui/status.cpp:78
 msgid "Total"
-msgstr "Toplam"
+msgstr "Total"
 
 #: src/gui/status.cpp:79
 msgid "Cost"
-msgstr "Maliyet"
+msgstr "Ücret"
 
 #: src/gui/status.cpp:83
 msgid "Attack:"
@@ -1672,25 +1672,25 @@ msgstr "Saldırı:"
 
 #: src/gui/status.cpp:84
 msgid "Defense:"
-msgstr "Defans:"
+msgstr "Savunma:"
 
 #: src/gui/status.cpp:85
 msgid "M.Attack:"
-msgstr "M.Saldırı:"
+msgstr "Genel Yetenek:"
 
 #: src/gui/status.cpp:86
 msgid "M.Defense:"
-msgstr "M.Defans:"
+msgstr "Kültür:"
 
 #: src/gui/status.cpp:88
 #, no-c-format
 msgid "% Accuracy:"
-msgstr "% Doğruluk:"
+msgstr "% Teknik:"
 
 #: src/gui/status.cpp:90
 #, no-c-format
 msgid "% Evade:"
-msgstr "% Savuşturma:"
+msgstr "% Tecrübe:"
 
 #: src/gui/status.cpp:92
 #, no-c-format
@@ -1699,7 +1699,7 @@ msgstr "% Refleks:"
 
 #: src/gui/status.cpp:198
 msgid "Strength"
-msgstr "Kuvvet"
+msgstr "Güç"
 
 #: src/gui/status.cpp:199
 msgid "Agility"
@@ -1707,7 +1707,7 @@ msgstr "Çeviklik"
 
 #: src/gui/status.cpp:200
 msgid "Vitality"
-msgstr "Can"
+msgstr "Dayanıklılık"
 
 #: src/gui/status.cpp:201
 msgid "Intelligence"
@@ -1715,7 +1715,7 @@ msgstr "Zeka"
 
 #: src/gui/status.cpp:202
 msgid "Dexterity"
-msgstr "El çabukluğu"
+msgstr "Ustalık"
 
 #: src/gui/status.cpp:203
 msgid "Luck"
@@ -1724,7 +1724,7 @@ msgstr "Şans"
 #: src/gui/status.cpp:221
 #, c-format
 msgid "Remaining Status Points: %d"
-msgstr "Kalan Puan Durumu:"
+msgstr "Kalan Durumu Puanı:"
 
 #: src/gui/status.cpp:384
 msgid "Max level"
@@ -1989,7 +1989,7 @@ msgstr "Hedef yakın"
 
 #: src/keyboardconfig.cpp:51
 msgid "Target NPC"
-msgstr "Hedef NPC"
+msgstr "Hedef Üstat"
 
 #: src/keyboardconfig.cpp:52
 msgid "Target Player"
@@ -2234,7 +2234,7 @@ msgstr "  -S --home-dir    : Dizini ev dizini olarak kullan"
 
 #: src/main.cpp:583
 msgid "  -H --update-host : Use this update host"
-msgstr "  -H --update-host : Bu güncellemek hostunu kullan"
+msgstr "  -H --update-host : Bu güncelleme hostunu kullan"
 
 #: src/main.cpp:584
 msgid "  -P --password    : Login with this password"
@@ -2270,15 +2270,15 @@ msgstr "  -v --version     : Versiyonu göster"
 
 #: src/main.cpp:1528
 msgid "Connecting to map server..."
-msgstr "Harita sunucusuna bağlanılıyoru..."
+msgstr "Harita sunucusuna bağlanılıyor..."
 
 #: src/main.cpp:1536
 msgid "Connecting to character server..."
-msgstr "Karakter sunucusuna bağlanılıyoru..."
+msgstr "Karakter sunucusuna bağlanılıyor..."
 
 #: src/main.cpp:1544
 msgid "Connecting to account server..."
-msgstr "Hesap sunucusuna bağlanılıyoru..."
+msgstr "Hesap sunucusuna bağlanılıyor..."
 
 #: src/net/ea/adminhandler.cpp:66
 msgid "Kick failed!"
@@ -2349,7 +2349,7 @@ msgstr "Çeviklik:"
 #: src/net/ea/charserverhandler.cpp:226
 #: src/net/tmwserv/charserverhandler.cpp:256
 msgid "Vitality:"
-msgstr "Can:"
+msgstr "Dayanıklılık:"
 
 #: src/net/ea/charserverhandler.cpp:227
 #: src/net/tmwserv/charserverhandler.cpp:257
@@ -2359,7 +2359,7 @@ msgstr "Zeka:"
 #: src/net/ea/charserverhandler.cpp:228
 #: src/net/tmwserv/charserverhandler.cpp:255
 msgid "Dexterity:"
-msgstr "El çabukluğu:"
+msgstr "Ustalık:"
 
 #: src/net/ea/charserverhandler.cpp:229
 msgid "Luck:"
@@ -2408,7 +2408,7 @@ msgstr "Çeviklik %+d"
 #: src/net/tmwserv/generalhandler.cpp:85
 #, c-format
 msgid "Vitality %+d"
-msgstr "Can %+d"
+msgstr "Dayanıklılık %+d"
 
 #: src/net/ea/generalhandler.cpp:94
 #: src/net/tmwserv/generalhandler.cpp:86
@@ -2420,7 +2420,7 @@ msgstr "Zeka %+d"
 #: src/net/tmwserv/generalhandler.cpp:84
 #, c-format
 msgid "Dexterity %+d"
-msgstr "El çabukluğu %+d"
+msgstr "Ustalık %+d"
 
 #: src/net/ea/generalhandler.cpp:96
 #, c-format
@@ -2449,7 +2449,7 @@ msgstr "Speed Hack tespit edildi."
 
 #: src/net/ea/generalhandler.cpp:134
 msgid "Duplicated login"
-msgstr "Kopyalanmış giriş"
+msgstr "İkinci giriş"
 
 #: src/net/ea/generalhandler.cpp:137
 msgid "Unknown connection error"
@@ -2641,7 +2641,7 @@ msgstr "Yanlış şifre"
 
 #: src/net/ea/loginhandler.cpp:148
 msgid "Account expired"
-msgstr "Hesap kullanım süresi doldu"
+msgstr "Hesap süresi doldu"
 
 #: src/net/ea/loginhandler.cpp:151
 msgid "Rejected from server"
@@ -2845,7 +2845,7 @@ msgstr "Sen ağırlığının yarısından fazlasını taşıyorsun. Sağlığı
 
 #: src/net/ea/playerhandler.cpp:290
 msgid "You picked up "
-msgstr "Sen aldın"
+msgstr "Aldın"
 
 #: src/net/ea/playerhandler.cpp:413
 msgid "Equip arrows first."
@@ -3123,7 +3123,7 @@ msgstr "Atak %+d"
 #: src/resources/itemdb.cpp:53
 #, c-format
 msgid "Defense %+d"
-msgstr "Defans %+d"
+msgstr "Kültür %+d"
 
 #: src/resources/itemdb.cpp:54
 #, c-format

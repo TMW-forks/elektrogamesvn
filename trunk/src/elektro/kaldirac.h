@@ -23,6 +23,7 @@ class Kaldirac : public gcn::Window, public gcn::ActionListener
     protected:
     private:
         gcn::ActionListener *mListener;
+        Image *resim;
 };
 
 #endif // KALDIRAC_H

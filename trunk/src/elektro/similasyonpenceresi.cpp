@@ -16,6 +16,7 @@ SimilasyonPenceresi::SimilasyonPenceresi():
     setResizable(true);
     setVisible(false);
     pencereDurum= false;
+    startCancelDurum = true;
 
     mCancel = new Button("İptal","Sim_Cancel",this);
     mClose = new Button("Kapat","Sim_Close",this);
@@ -50,17 +51,14 @@ SimilasyonPenceresi::action(const gcn::ActionEvent &event)
         current_npc=0;
         NPC::isTalking = false;
         setVisible(false);
-        //Pencere kapatıldığında nesneleri bellekten siler
-        clearComponent();
+        startCancelDurum = true;
     }
     else if (event.getId() == "Sim_Start");
     {
+        Net::getNpcHandler()->listInput(current_npc,2);
         mStart->setVisible(false);
         mCancel->setVisible(false);
-        mClose->setX(250);
-        mClose->setY(250);
         mClose->setVisible(true);
-        Net::getNpcHandler()->listInput(current_npc,2);
     }
 }
 
@@ -115,6 +113,20 @@ SimilasyonPenceresi::parseXML(std::string mDoc)
             setPosition(x,y);
         }
 
+        else if (xmlStrEqual(node->name, BAD_CAST "simwindow"))
+        {
+            startCancelDurum = false;
+            nesneleriAyarla();
+            clearComponent();
+            int w =  XML::getProperty(node, "width", 0);
+            int h =  XML::getProperty(node, "height", 0);
+            int x =  XML::getProperty(node, "left", 0);
+            int y =  XML::getProperty(node, "top", 0);
+            setContentSize(w, h);
+            setPosition(x,y);
+            pencereDurum = true;
+        }
+
         else if (xmlStrEqual(node->name, BAD_CAST "text"))
         {
             mSoru = new BrowserBox();
@@ -126,6 +138,7 @@ SimilasyonPenceresi::parseXML(std::string mDoc)
             mSoruArea->setWidth(w);
             mSoruArea->setHeight(h);
             mSoruArea->setPosition(x,y);
+
             //Eklenecek yazının arka planını
             //Kendi arka planına uygun hale getirir
             mSoru->setOpaque(false);
@@ -149,7 +162,6 @@ SimilasyonPenceresi::parseXML(std::string mDoc)
             int w = XML::getProperty(node, "width", 50);
             int h = XML::getProperty(node, "height", 50);
 
-            pencereDurum = true;
             nesne = new BesKiloGram(this);
             nesne->setX(x);
             nesne->setY(y);
@@ -167,14 +179,13 @@ SimilasyonPenceresi::parseXML(std::string mDoc)
             int w = XML::getProperty(node, "width", 50);
             int h = XML::getProperty(node, "height", 50);
 
-            //pencereDurum = true;
             nesne = new Kaldirac(this);
             nesne->setX(x);
             nesne->setY(y);
             nesne->setWidth(w-150);
             nesne->setHeight(h+150);
             nesne->setVisible(true);
-            //mvKutle.push_back(nesne);
+            mvKutle.push_back(nesne);
             add(nesne);
         }
         else if (xmlStrEqual(node->name, BAD_CAST "simpleanim"))
@@ -183,20 +194,34 @@ SimilasyonPenceresi::parseXML(std::string mDoc)
             mvAnim.push_back(temp);
         }
     }
+
 //logger->log("parse bitti");
 }
 
 void
 SimilasyonPenceresi::nesneleriAyarla()
 {
-    mCancel->setX(250);
-    mCancel->setY(250);
-    mCancel->setVisible(true);
 
-    mStart->setX(200);
-    mStart->setY(250);
-    mStart->setVisible(true);
-    mClose->setVisible(false);
+    if (startCancelDurum)
+    {
+        mCancel->setX(85);
+        mCancel->setY(150);
+        mCancel->setVisible(true);
+
+        mStart->setX(30);
+        mStart->setY(150);
+        mStart->setVisible(true);
+
+        mClose->setX(500);
+        mClose->setY(10);
+        mClose->setVisible(false);
+    }
+    else
+    {
+        mClose->setVisible(true);
+        mStart->setVisible(false);
+        mCancel->setVisible(false);
+    }
 }
 
 void

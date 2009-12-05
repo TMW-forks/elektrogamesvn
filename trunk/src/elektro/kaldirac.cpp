@@ -16,12 +16,15 @@ Kaldirac::~Kaldirac()
 
 void Kaldirac::draw(gcn::Graphics *graphics)
 {
-    std::string ss="graphics/elektrik/res1set.png";
+    //std::string ss="graphics/sprites/elektroadd/kaldirac.png";
+    ResourceManager *resman = ResourceManager::getInstance();
+    resim = resman->getImage("graphics/sprites/elektroadd/kaldirac.png");
 
     Graphics *g = static_cast<Graphics*>(graphics);
-    ResourceManager *resman = ResourceManager::getInstance();
-    ImageSet *res = resman->getImageSet(ss,32,32);
-    g->drawImage(res->get(0),4,4);
+
+    g->drawImage(resim,25,25);
+//    ImageSet *res = resman->getImageSet(ss,32,32);
+//    g->drawImage(res->get(0),4,4);
     drawChildren(graphics);
 }
 

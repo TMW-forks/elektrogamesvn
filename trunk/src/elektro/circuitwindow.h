@@ -45,6 +45,7 @@ class CircuitWindow : public Window,
 
         /**
          * Pil matrisini yaz
+
          */
          void showBatteryMatris();
 
@@ -132,7 +133,22 @@ class CircuitWindow : public Window,
 
     // item bilgisini itemDB'den alabilmek için
     const ItemInfo &getInfo(int id) const { return ItemDB::get(id); }
+
+    // anahtar açýlýp kapatýldýðýnda connection durumunu deðiþtir
+    void statusChanged(Component *sw , Status st);
+
+    bool mWireRefresh;
+
     private:
+        typedef std::vector < SmPoint *> TTekTel;
+        typedef std::vector < SmPoint *>::iterator TTekTelIter;
+
+//        TTekTel mTekTel;
+        TTekTelIter mTekTelIter;
+
+        std::vector<TTekTel> mTeller;
+        std::vector<TTekTel>::iterator mTellerIter;
+
         BrowserBox *mSb;
         ScrollArea *mSs;
 
@@ -160,6 +176,7 @@ class CircuitWindow : public Window,
         Image *cirToLeft;
         Image *cirErase;
         Image *cirSelect;
+        Image *mWireImage;
 
         int collisionNodeX;
         int collisionNodeY;

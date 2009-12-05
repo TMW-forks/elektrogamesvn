@@ -68,6 +68,7 @@ CircuitWindow::CircuitWindow():
     cirToLeft = resman->getImage("graphics/elektrik/cir_to_left.png");
     cirErase = resman->getImage("graphics/elektrik/cir_erase.png");
     cirSelect = resman->getImage("graphics/elektrik/cir_sel.png");
+    mWireImage = resman->getImage("graphics/elektrik/kablo.png");
 
     toolRotate = false;
     toolMove = false;
@@ -116,7 +117,7 @@ CircuitWindow::CircuitWindow():
 
 //******
     mSb = new BrowserBox();
-    mSb->setOpaque(false);
+    mSb->setOpaque(true);
 
 
     mSs = new ScrollArea(mSb);
@@ -251,6 +252,38 @@ CircuitWindow::logic()
 //        (*miBrowserBox)->logic();
 //    }
 /****************************************************************/
+
+
+//aradaki kabloları çiz
+    if (mWireRefresh || mRefresh)
+    {
+        mWireRefresh = false;
+         for(mTellerIter = mTeller.begin(); mTellerIter != mTeller.end(); mTellerIter++)
+         {
+            for(mTekTelIter = (*mTellerIter).begin(); mTekTelIter != (*mTellerIter).end(); mTekTelIter++)
+            {
+                delete (*mTekTelIter);
+            }
+         }
+        mTeller.clear();
+        for (conListIter=conList.begin();conListIter<conList.end();conListIter ++)
+        {
+            if ((*conListIter)->draw)
+            {
+                int x1,y1,x2,y2;
+                (*conListIter)->firstCon->getAbsolutePosition(x1,y1);
+                (*conListIter)->secondCon->getAbsolutePosition(x2,y2);
+                x1 -= getX();
+                x2 -= getX();
+                y1 -= getY();
+                y2 -= getY();
+                drawLine(graphics,x1+4,
+                                  y1+4,
+                                  x2+4,
+                                  y2+4,1);
+            }
+        }
+    }
     if (mRefresh)
     {
         mRefresh=false;
@@ -314,24 +347,6 @@ Window::draw(graphics);
             }
     }
 
-    graphics->setColor(gcn::Color(0x2299cc));
-    for (conListIter=conList.begin();conListIter<conList.end();conListIter++)
-    {
-        if ((*conListIter)->draw)
-        {
-            int x1,y1,x2,y2;
-            (*conListIter)->firstCon->getAbsolutePosition(x1,y1);
-            (*conListIter)->secondCon->getAbsolutePosition(x2,y2);
-            x1 -= getX();
-            x2 -= getX();
-            y1 -= getY();
-            y2 -= getY();
-            drawLine(graphics,x1+4,
-                              y1+4,
-                              x2+4,
-                              y2+4,1);
-        }
-    }
     for (miImage=mvImage.begin();miImage!=mvImage.end();++miImage)
     {
          if (miImage->visible)
@@ -347,6 +362,19 @@ Window::draw(graphics);
             miAnim->anim->update(miAnim->v);
         }
      }
+     //kabloları çizdir
+     for(mTellerIter = mTeller.begin(); mTellerIter != mTeller.end(); mTellerIter++)
+     {
+//        for(mTekTelIter = (*mTellerIter).begin(); mTekTelIter != (*mTellerIter).end(); mTekTelIter++)
+        for(int z = 0;  z<(*mTellerIter).size(); z += 1)
+        {
+            mTekTelIter = (*mTellerIter).begin()+z;
+            g->drawImage(mWireImage,
+                         (*mTekTelIter)->x -3 ,
+                          (*mTekTelIter)->y -3);
+        }
+     }
+mHint->setCaption(toString(mTeller.size()));
         drawChildren(graphics);
  }
 
@@ -447,11 +475,13 @@ CircuitWindow::findConnectedNodeId()
         TmvInt  tl;
         for (conListIter=conList.begin();conListIter<conList.end();conListIter++)
         {
-             if ((*conListIter)->firstCon->getId()==(*nn)->getId())
+             if ((*conListIter)->firstCon->getId()==(*nn)->getId()
+                 && (*conListIter)->active )
                 {
                     tl.push_back((*conListIter)->secondCon->getId());
                 }
-             if ((*conListIter)->secondCon->getId()==(*nn)->getId())
+             if ((*conListIter)->secondCon->getId()==(*nn)->getId()
+                 && (*conListIter)->active)
               {
                 tl.push_back((*conListIter)->firstCon->getId());
               }
@@ -644,7 +674,7 @@ CircuitWindow::turnoffAllLamp()
           miComponent != mvComponent.end();
           miComponent++)
     {
-        if ((*miComponent)->getType()==LAMP)
+        if ((*miComponent)->getType()==LAMP || (*miComponent)->getType()== DIODE)
         {
             (*miComponent)->setStatus(PASIVE);
         }
@@ -845,6 +875,7 @@ CircuitWindow::makeMatris()
     for(TmiComponent cit = mvComponent.begin(); cit != mvComponent.end(); cit++)
         (*cit)->setCurrent(0.0);
 
+//matris'teki akım değerlerini componentlere aktar
 int i = 0;
         for(miMesh=mvMesh.begin(); miMesh != mvMesh.end(); miMesh++)
         {
@@ -863,6 +894,11 @@ int i = 0;
             #endif
             i++;
         }
+
+// Bütün comp'ların akımını sıfırla
+    for(TmiComponent cit = mvComponent.begin(); cit != mvComponent.end(); cit++)
+        (*cit)->setCurrent((*cit)->getCurrent()/2.0);
+
     // lambaların parlaklıklarını kontrol et ve yak
     turnonLamps();
     //gsl kaynaklarını geri ver
@@ -906,10 +942,13 @@ CircuitWindow::turnonLamps()
     for (miComponent = mvComponent.begin(); miComponent != mvComponent.end(); miComponent++)
     {
         // gerekirse sadece lambalar arası karşılaştırma yapılacak
-        if((*miComponent)->getCurrent() > maxCurrent)
-            maxCurrent = (*miComponent)->getCurrent();
-        if((*miComponent)->getCurrent() < minCurrent)
-            minCurrent = (*miComponent)->getCurrent();
+        if(isLamp(*miComponent))
+        {
+            if((*miComponent)->getCurrent() > maxCurrent)
+                maxCurrent = (*miComponent)->getCurrent();
+            if((*miComponent)->getCurrent() < minCurrent)
+                minCurrent = (*miComponent)->getCurrent();
+        }
     }
     float interval = (maxCurrent - minCurrent) / 3.0;
     mSb->addRow("minimum :"+toString(minCurrent));
@@ -1194,12 +1233,12 @@ CircuitWindow::devreAnaliz()
             mvNodeLoop[mvNodeLoop.size()].push_back((*nn)->getId());
         }
         addLoopToMesh();
-    //    showConnectedNodeId();
+//        showConnectedNodeId();
     //    showNodeLoop();
     //    showMesh();
         winnowMesh();
-        mSb->addRow("---   ----");
-        showMesh();
+//        mSb->addRow("---   ----");
+//        showMesh();
         makeMatris();
         logger->log("************ analiz yapıldı ****************");
     }
@@ -1217,6 +1256,16 @@ void CircuitWindow::trashMeshMem()
     matrisGerilim.clear();
     resistanceMatris.clear();
     rowResistanceValue.clear();
+    mWireRefresh = true;
+     for(mTellerIter = mTeller.begin(); mTellerIter != mTeller.end(); mTellerIter++)
+     {
+        for(mTekTelIter = (*mTellerIter).begin(); mTekTelIter != (*mTellerIter).end(); mTekTelIter++)
+        {
+            delete (*mTekTelIter);
+        }
+     }
+    mTeller.clear();
+
     logger->log("temizlik tamam");
 }
 
@@ -1297,6 +1346,7 @@ CircuitWindow::action(const gcn::ActionEvent &event)
     } //if com_close
     else if (event.getId() == "com_rotate_y+")
     {
+        mWireRefresh = true;
         for (miComponent=mvComponent.begin(); miComponent<mvComponent.end(); miComponent++)
         {
             if ((*miComponent)->getSelected())
@@ -1309,6 +1359,7 @@ CircuitWindow::action(const gcn::ActionEvent &event)
     }
     else if (event.getId() == "com_rotate_y-")
     {
+        mWireRefresh = true;
         for (miComponent=mvComponent.begin(); miComponent<mvComponent.end(); miComponent++)
         {
             if ((*miComponent)->getSelected())
@@ -1322,6 +1373,7 @@ CircuitWindow::action(const gcn::ActionEvent &event)
 
     else if (event.getId() == "node_shift")
     {
+        mWireRefresh = true;
         Node *creatorNode=NULL;
         for (miNode = mvNode.begin(); miNode<mvNode.end(); miNode++)
         {
@@ -1426,8 +1478,7 @@ CircuitWindow::distributeOlay(Item *it)
 
     localChatTab->chatLog(tempType.c_str(),BY_SERVER);
     Component *tempComponent;
-////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//* Itemlar isimleriyle değil id'leriyle oluşturulacak
+
     if (tempType=="resistance") tempComponent = new Resistance (this, tempNode1, tempNode2);
     else if (tempType=="lamp") tempComponent = new Lamp (this, tempNode1, tempNode2);
     else if (tempType=="diode") tempComponent = new Diode (this, tempNode1, tempNode2);
@@ -1435,21 +1486,12 @@ CircuitWindow::distributeOlay(Item *it)
     else if (tempType=="switch") tempComponent = new Switch (this, tempNode1, tempNode2);
     else return;
 
-//        if (tempType=="Direnç") tempComponent = new Resistance (this, tempNode1, tempNode2);
-//        else if (tempType=="Lamba") tempComponent = new Lamp (this, tempNode1, tempNode2);
-//        else if (tempType=="Yesil Led") tempComponent = new Diode (this, tempNode1, tempNode2);
-//        else if (tempType=="Kirmizi Led") tempComponent = new Diode (this, tempNode1, tempNode2);
-//        else if (tempType=="Beyaz Led") tempComponent = new Diode (this, tempNode1, tempNode2);
-//        else if (tempType=="Sari Led") tempComponent = new Diode (this, tempNode1, tempNode2);
-//        else if (tempType=="Uretec") tempComponent = new Battery (this, tempNode1, tempNode2);
-//        else if (tempType=="Anahtar") tempComponent = new Switch (this, tempNode1, tempNode2);
-
         tempComponent->setId(findEmptyId());
         tempComponent->setValue(tempItem.getElektroValue());
         tempComponent->setX(150);//+QALeftPad);
         tempComponent->setY(150);//+QATopPad);
         tempComponent->setAngel(0);
-        tempComponent->setStatus(0);
+        tempComponent->setStatus(PASIVE);
         tempComponent->setItemId(transItemId);
         tempComponent->setMovable(1);
         tempComponent->setSelectable(1);
@@ -1460,7 +1502,9 @@ CircuitWindow::distributeOlay(Item *it)
         ConnectList *c=new ConnectList;
         c->firstCon = tempComponent->node1;
         c->secondCon = tempComponent->node2;
-        c->active=true;
+        c->active = (tempType == "switch" ? false : true);
+        std::string ttt = c->active ?"true":"false";
+        localChatTab->chatLog("connection : "+ttt,BY_GM);
         c->draw=false;
         conList.push_back(c);
 
@@ -1469,6 +1513,34 @@ CircuitWindow::distributeOlay(Item *it)
             (*miNode)->requestMoveToTop();
     localChatTab->chatLog("Gördüm",BY_SERVER);
 
+}
+
+void
+CircuitWindow::statusChanged(Component *sw , Status st)
+{
+    Node *n1 = sw->node1;
+    Node *n2 = sw->node2;
+    bool tmp;
+    if (st == PASIVE || st == ACTIVE || st == PLUS || st == PLUS2)
+        tmp = true;
+    else if (st==BURNED)
+        tmp = false;
+    if (st == PASIVE && sw->getType()==SWITCH)
+        tmp = false;
+    for (conListIter=conList.begin();conListIter<conList.end();conListIter++)
+    {
+         if ((*conListIter)->firstCon->getId()== n1->getId() &&
+             (*conListIter)->secondCon->getId()== n2->getId())
+        {
+            (*conListIter)->active = tmp;
+        }
+        else if ((*conListIter)->firstCon->getId()== n2->getId() &&
+             (*conListIter)->secondCon->getId()== n1->getId())
+        {
+            (*conListIter)->active = tmp;
+        }
+    }
+     mRefresh = true;
 }
 
 int
@@ -1571,20 +1643,20 @@ CircuitWindow::circuitFromXML(std::string mDoc)
         }
         else if (xmlStrEqual(node->name, BAD_CAST "node"))
         {
-                Node *tempNode = new Node("com_node_btn.png","Hint", "com_node",this);
-                tempNode->setId(XML::getProperty(node, "id", 0));
-                tempNode->setX(XML::getProperty(node, "x", 0));//+QALeftPad);
-                tempNode->setY(XML::getProperty(node, "y", 0));//+QATopPad);
-                tempNode->setEnabled(true);
-                tempNode->setScroll(true);
-                tempNode->setMovable(XML::getProperty(node, "movable", 1));
-                tempNode->setSelectable(XML::getProperty(node, "selectable", 1));
-                tempNode->setFree(true);
-                tempNode->setDeletable(XML::getProperty(node, "deletable", 1));
-                tempNode->setToLink(XML::getProperty(node, "tolink", 1));
-                tempNode->setFromLink(XML::getProperty(node, "fromlink", 1));
-                mvNode.push_back(tempNode);
-                add(tempNode);
+            Node *tempNode = new Node("com_node_btn.png","Hint", "com_node",this);
+            tempNode->setId(XML::getProperty(node, "id", 0));
+            tempNode->setX(XML::getProperty(node, "x", 0));//+QALeftPad);
+            tempNode->setY(XML::getProperty(node, "y", 0));//+QATopPad);
+            tempNode->setEnabled(true);
+            tempNode->setScroll(true);
+            tempNode->setMovable(XML::getProperty(node, "movable", 1));
+            tempNode->setSelectable(XML::getProperty(node, "selectable", 1));
+            tempNode->setFree(true);
+            tempNode->setDeletable(XML::getProperty(node, "deletable", 1));
+            tempNode->setToLink(XML::getProperty(node, "tolink", 1));
+            tempNode->setFromLink(XML::getProperty(node, "fromlink", 1));
+            mvNode.push_back(tempNode);
+            add(tempNode);
         }
         else if (xmlStrEqual(node->name, BAD_CAST "component"))
         {
@@ -1639,10 +1711,8 @@ CircuitWindow::circuitFromXML(std::string mDoc)
             tempComponent->setX(XML::getProperty(node, "x", 0));//+QALeftPad);
             tempComponent->setY(XML::getProperty(node, "y", 0));//+QATopPad);
             tempComponent->setAngel(XML::getProperty(node, "angel", 0));
-            tempComponent->setStatus(XML::getProperty(node, "status", 0));
             tempComponent->setMovable(XML::getProperty(node, "movable", 1));
             tempComponent->setSelectable(XML::getProperty(node, "selectable", 1));
-//            tempComponent->setValue(XML::getProperty(node, "value", 0));
             tempComponent->setDeletable(XML::getProperty(node, "deletable", 0));
             tempComponent->setBounce(tempComponent->getX(),tempComponent->getY(),40,40);
             tempComponent->setSelectable(1);
@@ -1661,6 +1731,8 @@ CircuitWindow::circuitFromXML(std::string mDoc)
             c->draw=false;
             conList.push_back(c);
             add(tempComponent);
+            tempComponent->setStatus(XML::getProperty(node, "status", PASIVE)); //herşey bittikten sonra statüyü değiştir
+
             for (miNode = mvNode.begin(); miNode < mvNode.end(); miNode++)
                 (*miNode)->requestMoveToTop();
         }
@@ -1816,6 +1888,7 @@ int p = 3 - 2 * r;
 
 void CircuitWindow::drawLine(gcn::Graphics *g,int a,int b,int c,int d, int t)
 {
+  TTekTel mTekTel;
   long u,s,v,d1x,d1y,d2x,d2y,m,n;
   int  i;
   u   = c-a;
@@ -1835,7 +1908,11 @@ void CircuitWindow::drawLine(gcn::Graphics *g,int a,int b,int c,int d, int t)
   s = (int)(m / 2);
   for (i=0;i<round(m);i++) {
 //    g->drawPoint(a,b);
-    drawCircle(g,a,b,t);
+//    drawCircle(g,a,b,t);
+    SmPoint *point = new SmPoint;
+    point->x = a;
+    point->y = b;
+    mTekTel.push_back(point);
 //Draw_FillCircle(static_cast<SDL_Surface>(g),
 //                        a, b, t,
 //                        0xaabbcc);
@@ -1850,4 +1927,6 @@ void CircuitWindow::drawLine(gcn::Graphics *g,int a,int b,int c,int d, int t)
       b += d2y;
     }
   }
+  mTeller.push_back(mTekTel);
+  mTekTel.clear();
 }

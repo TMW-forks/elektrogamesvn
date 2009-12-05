@@ -50,7 +50,7 @@ TestDialog::TestDialog():
     setPosition(100,100);
 
     cancelButton = new Button(BTNCANCEL, "cancel", this);
-    mEvaluate = new Button(_("Değerlendir!"),"ok",this);
+    mEvaluate = new BitButton ("btn_degerlendir.png", "ok", "ok",this);
     mFinishClose = new Button("Pencereyi kapat","startcancel",this);
 
     ResourceManager *resman = ResourceManager::getInstance();
@@ -176,7 +176,7 @@ TestDialog::TestDialog():
     cancelButton->setVisible(false);
     mFinishClose->setVisible(false);
 
-    mEvaluate->setPosition(50,getHeight()-50);
+//    mEvaluate->setPosition(50,getHeight()-50);
     mEvaluate->setVisible(false);
 
     mBasla = false;
@@ -426,7 +426,7 @@ TestDialog::putPlaceButtons()
     }
 
     int x= firstX;
-    int y= testinfo->getHeight() + 20;
+    int y= getHeight() -prevnextHeight- 50;
 
     //prev button
     Button *but1 = new Button("<","go_prev",this);
@@ -566,10 +566,13 @@ void
 TestDialog::draw(gcn::Graphics *graphics)
 {
     Window::draw(graphics);
+
     Graphics *g = static_cast<Graphics*>(graphics);
     ResourceManager *resman = ResourceManager::getInstance();
     int xx = (getWidth()-testinfo->getWidth())/2;
-    if (mBasla) g->drawImage(testinfo,xx,50);
+    graphics->setColor(gcn::Color(0xaabbcc));
+    if (mBasla) graphics->fillRectangle(gcn::Rectangle(10,120,getWidth()-20,getHeight()-mEvaluate->getY()-10));
+    if (mBasla) g->drawImage(testinfo,xx,10);
     for (miImage = mvImage.begin();
             miImage != mvImage.end();
             ++miImage)
@@ -861,7 +864,8 @@ TestDialog::parse()
                     setContentSize(w, h);
                     setPosition(l,t);
                     mFinishClose->setVisible(false);
-                    mEvaluate->setPosition(40,getHeight()-100);
+                    mEvaluate->setPosition(getWidth()- mEvaluate->getWidth() - 10,
+                                           getHeight() - mEvaluate->getHeight() - 30);
                 }
                 else if (xmlStrEqual(subnode->name, BAD_CAST "testpro"))
                 {
@@ -968,6 +972,7 @@ TestDialog::parse()
         }
     }
     start();
+    requestMoveToTop();
 }
 
 void TestDialog::makeEffect(std::string type,std::string name, std::string ssound)

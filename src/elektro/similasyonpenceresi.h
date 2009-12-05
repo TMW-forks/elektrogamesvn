@@ -58,6 +58,8 @@ class SimilasyonPenceresi : public Window, public gcn::ActionListener
     protected:
     private:
         bool startCancelDurum;
+
+
         Button *mCancel;
         Button *mClose;
         Button *mStart;
@@ -65,9 +67,8 @@ class SimilasyonPenceresi : public Window, public gcn::ActionListener
         ScrollArea *mSoruArea;
         Kutle *nesne;
 
-        std::vector<Kutle*> mvKutle;
-        std::vector<Kutle*>::iterator miKutle;
-
+        std::vector<gcn::Window*> mvKutle;
+        std::vector<gcn::Window*>::iterator miKutle;
         TmvAnim mvAnim;
         TmiAnim miAnim;
 

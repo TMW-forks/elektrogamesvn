@@ -52,22 +52,34 @@ void Kutle::mouseDragged(gcn::MouseEvent &event)
         //requestMoveToTop();
         int mouseX, mouseY;
         SDL_GetMouseState(&mouseX, &mouseY);
-        setX(mouseX-similasyonPenceresi->getX()-getWidth()/2);
-        setY(mouseY-similasyonPenceresi->getY()-getHeight()/2-13);
+        setX(getX()+event.getX()-tempX);
+        setY(getY()+event.getY()-tempY);
         if (getX()<20)
             setX(20);
-        if (getY()<50)
-            setY(50);
+        if (getY()<125)
+            setY(125);
         if (getX()>(similasyonPenceresi->getWidth()-getWidth()-15))
             setX(similasyonPenceresi->getWidth()-15-getWidth());
-        if (getY()>(similasyonPenceresi->getHeight()-getHeight()-60))
-            setY(similasyonPenceresi->getHeight()-getHeight()-60);
+        if (getY()>(similasyonPenceresi->getHeight()-getHeight()-95))
+            setY(similasyonPenceresi->getHeight()-getHeight()-95);
 
         //Nesnenin sürükleme anında istediğim alana yapışması için.
-        if (getX()>200 && getX()<300 && getY()>200 && getY()<300)
+        if (getX()>290 && getX()<320 && getY()>265)
         {
-//            setX(250);
-            setY(250);
+            setX(305);
+            setY(280);
+        }
+
+        if (getX()>320 && getX()<365 && getY()>265)
+        {
+            setX(345);
+            setY(280);
+        }
+
+        if (getX()>365 && getX()<400 && getY()>265)
+        {
+            setX(385);
+            setY(280);
         }
     }
 }

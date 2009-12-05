@@ -34,8 +34,6 @@ class Kutle : public gcn::Window, public gcn::ActionListener
         gcn::ActionListener *mListener;
         int tempX;
         int tempY;
-        int mX;
-        int mY;
         int mW;
         int mH;
 

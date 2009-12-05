@@ -1,4 +1,8 @@
 #include "switch.h"
+#include "circuitwindow.h"
+extern CircuitWindow *circuitWindow;
+extern volatile int tick_time;
+static int first_tick = 0;
 
 Switch::Switch(gcn::ActionListener *listener, Node *n1, Node *n2):
     Component(listener, n1, n2)
@@ -11,7 +15,34 @@ Switch::~Switch()
     //dtor
 }
 
-void Switch::draw(gcn::Graphics *graphics)
+void
+Switch::mousePressed(gcn::MouseEvent &event)
+{
+    bool dbl_click = false;
+
+    if (first_tick ==0)
+    {
+        first_tick = tick_time;
+        dbl_click = false;
+    }else
+    {
+        int delta = abs(tick_time - first_tick);
+        delta>50 ? dbl_click = false: dbl_click = true;
+        circuitWindow->mHint->setCaption(toString(delta)+"-"+toString(event.getClickCount()));
+        first_tick = 0;
+    }
+
+    if (getStatus() !=BURNED && dbl_click)
+    {
+        setStatus(getStatus() == ACTIVE ? PASIVE : ACTIVE);
+        dbl_click = false;
+    }
+    Component::mousePressed(event);
+}
+
+
+void
+Switch::draw(gcn::Graphics *graphics)
 {
     std::string ss="graphics/elektrik/item-anahtar";
 

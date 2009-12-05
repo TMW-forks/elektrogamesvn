@@ -177,7 +177,8 @@ class TestDialog : public Window, public gcn::ActionListener
         xmlDocPtr mxmlDoc;
 
         Button *cancelButton;
-        Button *mEvaluate;
+//        Button *mEvaluate;
+        BitButton *mEvaluate;
 
         gcn::Label *lblAward;
         gcn::Label *lblPunish;

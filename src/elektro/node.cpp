@@ -76,6 +76,8 @@ void Node::mouseDragged(gcn::MouseEvent& mouseEvent)
         if (getY()<50) setY(50);
         if (getX()>(circuitWindow->getWidth()-getWidth()-45)) setX(circuitWindow->getWidth()-45-getWidth());
         if (getY()>(circuitWindow->getHeight()-getHeight()-88)) setY(circuitWindow->getHeight()-getHeight()-88);
+        circuitWindow->mWireRefresh = true;
+
         }
     }
 }

@@ -31,11 +31,11 @@ enum Type {
  * Componentin bulunabileceði durumlar
  */
 enum Status {
-     PASIVE,
-     ACTIVE,
-     BURNED,
-     PLUS,
-     PLUS2};
+     PASIVE, //Kapalý:Lambalar için sönük, anahtar için açýk
+     ACTIVE, //Çalýþýyor:Lambalar için yanýyor, anahtar için kapalý
+     BURNED, //Bozuk
+     PLUS,   //Parlak
+     PLUS2}; //Daha Parlak
 
 class Component : public gcn::Window,
                   public gcn::ActionListener

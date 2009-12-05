@@ -14,6 +14,7 @@ class Switch : public Component
         Switch(gcn::ActionListener *listener, Node *n1, Node *n2);
         virtual ~Switch();
         void draw(gcn::Graphics *graphics);
+        void mousePressed(gcn::MouseEvent &event);
     protected:
     private:
 };

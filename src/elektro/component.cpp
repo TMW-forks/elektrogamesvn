@@ -139,18 +139,23 @@ Type Component::getType ()
 
 void Component::setStatus (Status s)
 {
-    mStatus = s;
+    if (s != mStatus)
+    {
+        mStatus = s;
+        circuitWindow->statusChanged(this, mStatus);
+    }
 }
 
 
 void Component::setStatus (int s)
 {
     switch(s){
-        case 0: mStatus= PASIVE;break;
-        case 1: mStatus=ACTIVE;break;
-        case 2: mStatus=BURNED;break;
-        case 3: mStatus=PLUS;break;
-        case 4: mStatus=PLUS2;break;
+        case 0: setStatus(PASIVE);break;
+        case 1: setStatus(ACTIVE);break;
+        case 2: setStatus(BURNED);break;
+        case 3: setStatus(PLUS);break;
+        case 4: setStatus(PLUS2);break;
+        default:setStatus(PASIVE);break;
     }
 }
 
@@ -317,6 +322,7 @@ void Component::nodesCalc()
     node1->setY(20-yy+getY()-4);
     node2->setX(20+xx+getX()-4);
     node2->setY(20+yy+getY()-4);
+    circuitWindow->mWireRefresh = true;
 }
 
 int Component::sgn (long a)

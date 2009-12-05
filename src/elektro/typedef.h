@@ -13,6 +13,11 @@
     Sm   = Struct
  */
 
+// Nokta koordinatlarýný tutmak için
+struct SmPoint{
+    int x;
+    int y;
+};
 
 //XML'den gelen nesnelerin özelliklerini saklamak için
 struct SmImage{
@@ -57,6 +62,10 @@ struct ConnectList {
     bool draw;
 };
 
+
+    // Devre penceresinde soru labelleri için
+    typedef std::vector< SmPoint *> TTekTel;
+    typedef std::vector< gcn::Label *>::iterator TmiLabel;
 
     // Devre penceresinde soru labelleri için
     typedef std::vector< gcn::Label *> TmvLabel;

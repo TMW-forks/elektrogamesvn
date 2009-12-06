@@ -39,6 +39,7 @@
 #include "simpleanimation.h"
 #include "kaldirac.h"
 #include "item.h"
+#include <map>
 
 
 
@@ -53,22 +54,32 @@ class SimilasyonPenceresi : public Window, public gcn::ActionListener
         void nesneyiAl(Item *it);
         void parseXML(std::string mDoc);
         bool getPencereDurum();
-
         void clearComponent();
+        void kontrolEt();
+        int findEmptyID();
+
+        int kefe1,kefe2,kefe3;
+        std::map<int,int> idKefe;
+        std::map<int,int>::iterator idKefeIt;
     protected:
     private:
         bool startCancelDurum;
-
+        int toplam;
 
         Button *mCancel;
         Button *mClose;
         Button *mStart;
+        Button *mControl;
+
         BrowserBox *mSoru;
         ScrollArea *mSoruArea;
         Kutle *nesne;
 
-        std::vector<gcn::Window*> mvKutle;
-        std::vector<gcn::Window*>::iterator miKutle;
+        std::vector<Kutle*> mvKutle;
+        std::vector<Kutle*>::iterator miKutle;
+        std::vector<Kaldirac*> mvKaldirac;
+        std::vector<Kaldirac*>::iterator miKaldirac;
+
         TmvAnim mvAnim;
         TmiAnim miAnim;
 

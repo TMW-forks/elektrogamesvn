@@ -22,22 +22,23 @@ class Kutle : public gcn::Window, public gcn::ActionListener
         void action(const gcn::ActionEvent &event);
         void draw(gcn::Graphics *graphics);
         void setSelected (bool durum);
+        void setAgirlik(int agirlik);
+        void setID(int id);
+
+        int getID();
         bool getSelected ();
+        int getAgirlik();
 
         void mousePressed(gcn::MouseEvent &event);
         void mouseDragged(gcn::MouseEvent &event);
         void mouseReleased(gcn::MouseEvent &event);
-        void mouseEntered(gcn::MouseEvent &event);
-        void mouseExited(gcn::MouseEvent &event);
     protected:
     private:
         gcn::ActionListener *mListener;
-        int tempX;
-        int tempY;
-        int mW;
-        int mH;
-
+        int tempX,tempY;
+        int mID;
         bool mSelected;
+        int mAgirlik;
 };
 
 #endif // KUTLE_H

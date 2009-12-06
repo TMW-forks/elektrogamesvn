@@ -4,7 +4,7 @@
 BesKiloGram::BesKiloGram(gcn::ActionListener *listener):
     Kutle(listener)
 {
-
+    setAgirlik(5);
 }
 
 BesKiloGram::~BesKiloGram()
@@ -14,9 +14,8 @@ BesKiloGram::~BesKiloGram()
 
 void BesKiloGram::draw(gcn::Graphics *graphics)
 {
-    std::string ss="graphics/elektrik/item-ampul-0";
+    std::string ss="graphics/elektrik/item-ampul-0.png";
 
-    ss += "-b.png";
     Graphics *g = static_cast<Graphics*>(graphics);
     ResourceManager *resman = ResourceManager::getInstance();
     ImageSet *res = resman->getImageSet(ss,32,32);

@@ -4513,7 +4513,7 @@
 		elektro-type="resistance"
 		elektro-value="50"/>
 	<item id="1119"
-        image="/elektrik/item-ampul-0.png"
+        image="/elektrik/item-ampul-2.png"
         name="Sarı Ampul 2 ohm"
         description="Thungsten ile yapılmış akkor lamba."
         effect=""
@@ -4521,9 +4521,9 @@
         weight="1"
         max-per-slot="100"
 		elektro-type="lamp"
-		elektro-value="50"		/>
+		elektro-value="2"		/>
 	<item id="1120"
-        image="/elektrik/item-ampul-0.png"
+        image="/elektrik/item-ampul-5.png"
         name="Mavi Ampul 5 ohm"
         description="Thungsten ile yapılmış akkor lamba."
         effect=""
@@ -4533,7 +4533,7 @@
 		elektro-type="lamp"
 		elektro-value="5"/>
 	<item id="1121"
-        image="/elektrik/item-ampul-0.png"
+        image="/elektrik/item-ampul-10.png"
         name="Yesil Ampul 10 ohm"
         description="Thungsten ile yapılmış akkor lamba."
         effect=""
@@ -4543,7 +4543,7 @@
 		elektro-type="lamp"
 		elektro-value="10"/>
 	<item id="1122"
-        image="/elektrik/item-ampul-0.png"
+        image="/elektrik/item-ampul-20.png"
         name="Kırmızı Ampul 20 ohm"
         description="Thungsten ile yapılmış akkor lamba."
         effect=""
@@ -4553,7 +4553,7 @@
 		elektro-type="lamp"
 		elektro-value="20"/>
 	<item id="1123"
-        image="/elektrik/item-ampul-0.png"
+        image="/elektrik/item-ampul-50.png"
         name="Turuncu Ampul 50 ohm"
         description="Thungsten ile yapılmış akkor lamba."
         effect=""
@@ -4563,7 +4563,7 @@
 		elektro-type="lamp"
 		elektro-value="50"/>
 	<item id="1124"
-        image="/elektrik/item-ampul-0.png"
+        image="/elektrik/item-ampul-1.png"
         name="Beyaz Ampul 1 ohm"
         description="Thungsten ile yapılmış akkor lamba."
         effect=""
@@ -4573,7 +4573,7 @@
 		elektro-type="lamp"
 		elektro-value="1"/>
 	<item id="1125"
-        image="/elektrik/item-ampul-0.png"
+        image="/elektrik/item-ampul-3.png"
         name="Pembe Ampul 3 ohm"
         description="Thungsten ile yapılmış akkor lamba."
         effect=""

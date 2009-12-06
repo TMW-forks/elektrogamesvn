@@ -35,7 +35,8 @@ enum Status {
      ACTIVE, //Çalýþýyor:Lambalar için yanýyor, anahtar için kapalý
      BURNED, //Bozuk
      PLUS,   //Parlak
-     PLUS2}; //Daha Parlak
+     PLUS2  //Daha Parlak
+     };
 
 class Component : public gcn::Window,
                   public gcn::ActionListener

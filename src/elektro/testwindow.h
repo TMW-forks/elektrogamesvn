@@ -172,6 +172,7 @@ class TestDialog : public Window, public gcn::ActionListener
         bool mBitti;
 
         Image *testinfo;
+        Image *mBackgroundPattern;
 
         std::string mDoc;
         xmlDocPtr mxmlDoc;

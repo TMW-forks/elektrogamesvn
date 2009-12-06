@@ -15,12 +15,12 @@ Lamp::~Lamp()
 
 void Lamp::draw(gcn::Graphics *graphics)
 {
-    std::string ss="graphics/elektrik/item-ampul-0";
-
-    if (getStatus()==ACTIVE) ss += "-b";
-    if (getStatus()==PLUS) ss += "-c";
-    if (getStatus()==PLUS2) ss += "-d";
-    if (getStatus()==BURNED) ss += "-e";
+    std::string ss="graphics/elektrik/item-ampul-";
+    ss += toString(getValue());
+    if (getStatus()==ACTIVE) ss += "c";
+    if (getStatus()==PLUS) ss += "d";
+    if (getStatus()==PLUS2) ss += "e";
+    if (getStatus()==BURNED) ss += "f";
 
     ss += ".png";
     Graphics *g = static_cast<Graphics*>(graphics);

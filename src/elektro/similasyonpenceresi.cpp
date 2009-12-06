@@ -1,9 +1,11 @@
+#include <cstdlib>
+#include <ctime>
+
 #include "similasyonpenceresi.h"
+#include "elektrowidget.h"
 #include "log.h"
 #include "npc.h"
 #include "net/ea/npchandler.h"
-
-#include "elektrowidget.h"
 
 extern int current_npc;
 extern ElektroWidget *elektroWidget;
@@ -17,22 +19,26 @@ SimilasyonPenceresi::SimilasyonPenceresi():
     setVisible(false);
     pencereDurum= false;
     startCancelDurum = true;
+    toplam = 0;
 
     mCancel = new Button("İptal","Sim_Cancel",this);
     mClose = new Button("Kapat","Sim_Close",this);
     mStart = new Button("Başla","Sim_Start",this);
+    mControl = new Button("Kontrol Et","Sim_Control",this);
 
     nesneleriAyarla();
     add(mCancel);
     add(mStart);
     add(mClose);
+    add(mControl);
 }
 
 SimilasyonPenceresi::~SimilasyonPenceresi()
 {
-    delete  mCancel;
-    delete  mClose;
-    delete  mStart;
+    delete mCancel;
+    delete mClose;
+    delete mStart;
+    delete mControl;
 }
 
 void
@@ -44,6 +50,7 @@ SimilasyonPenceresi::action(const gcn::ActionEvent &event)
         current_npc=0;
         NPC::isTalking = false;
         setVisible(false);
+        clearComponent();
     }
     else if (event.getId()=="Sim_Close")
     {
@@ -52,13 +59,19 @@ SimilasyonPenceresi::action(const gcn::ActionEvent &event)
         NPC::isTalking = false;
         setVisible(false);
         startCancelDurum = true;
+        clearComponent();
+        idKefe.clear();
     }
-    else if (event.getId() == "Sim_Start");
+    else if (event.getId() == "Sim_Start")
     {
         Net::getNpcHandler()->listInput(current_npc,2);
         mStart->setVisible(false);
         mCancel->setVisible(false);
         mClose->setVisible(true);
+    }
+    else if (event.getId() == "Sim_Control")
+    {
+        kontrolEt();
     }
 }
 
@@ -98,12 +111,13 @@ SimilasyonPenceresi::parseXML(std::string mDoc)
     if (!rootNode || !xmlStrEqual(rootNode->name, BAD_CAST "similasyon"))
         logger->error("similasyonpenceresi.cpp: rootNode not similasyon!"+mDoc);
 
+
     //npchandler dan gelen veri parse ediliyor
     for_each_xml_child_node(node, rootNode)
     {
         if (xmlStrEqual(node->name, BAD_CAST "window"))
         {
-            clearComponent();
+            logger->log("parseXML");
             nesneleriAyarla();
             int w =  XML::getProperty(node, "width", 0);
             int h =  XML::getProperty(node, "height", 0);
@@ -111,6 +125,7 @@ SimilasyonPenceresi::parseXML(std::string mDoc)
             int y =  XML::getProperty(node, "top", 0);
             setContentSize(w, h);
             setPosition(x,y);
+
         }
 
         else if (xmlStrEqual(node->name, BAD_CAST "simwindow"))
@@ -125,6 +140,7 @@ SimilasyonPenceresi::parseXML(std::string mDoc)
             setContentSize(w, h);
             setPosition(x,y);
             pencereDurum = true;
+
         }
 
         else if (xmlStrEqual(node->name, BAD_CAST "text"))
@@ -153,6 +169,7 @@ SimilasyonPenceresi::parseXML(std::string mDoc)
             }
 
             add(mSoruArea);
+
         }
         else if (xmlStrEqual(node->name, BAD_CAST "component"))
         {
@@ -161,13 +178,18 @@ SimilasyonPenceresi::parseXML(std::string mDoc)
             int y = XML::getProperty(node, "y", 50);
             int w = XML::getProperty(node, "width", 50);
             int h = XML::getProperty(node, "height", 50);
+            int id = XML::getProperty(node, "id", 0);
 
             nesne = new BesKiloGram(this);
+            nesne->setID(id);
+            logger->log("IDsi:%d",nesne->getID());
+            idKefe.insert(std::make_pair(nesne->getID(),0));
             nesne->setX(x);
             nesne->setY(y);
             nesne->setWidth(w);
             nesne->setHeight(h);
             nesne->setVisible(true);
+            nesne->setAgirlik(30);
             mvKutle.push_back(nesne);
             add(nesne);
         }
@@ -178,6 +200,10 @@ SimilasyonPenceresi::parseXML(std::string mDoc)
             int y = XML::getProperty(node, "y", 50);
             int w = XML::getProperty(node, "width", 50);
             int h = XML::getProperty(node, "height", 50);
+//
+            kefe1=XML::getProperty(node, "kefe1", 0);
+            kefe2=XML::getProperty(node, "kefe2", 0);
+            kefe3=XML::getProperty(node, "kefe3", 0);
 
             nesne = new Kaldirac(this);
             nesne->setX(x);
@@ -185,7 +211,7 @@ SimilasyonPenceresi::parseXML(std::string mDoc)
             nesne->setWidth(w-150);
             nesne->setHeight(h+150);
             nesne->setVisible(true);
-            mvKutle.push_back(nesne);
+            mvKaldirac.push_back(nesne);
             add(nesne);
         }
         else if (xmlStrEqual(node->name, BAD_CAST "simpleanim"))
@@ -215,10 +241,15 @@ SimilasyonPenceresi::nesneleriAyarla()
         mClose->setX(500);
         mClose->setY(10);
         mClose->setVisible(false);
+
+        mControl->setX(10);
+        mControl->setY(250);
+        mControl->setVisible(false);
     }
     else
     {
         mClose->setVisible(true);
+        mControl->setVisible(true);
         mStart->setVisible(false);
         mCancel->setVisible(false);
     }
@@ -228,11 +259,18 @@ void
 SimilasyonPenceresi::clearComponent()
 {
     miKutle = mvKutle.begin();
+    miKaldirac = mvKaldirac.begin();
 
     while(miKutle!=mvKutle.end())
     {
         delete (*miKutle);
         miKutle = mvKutle.erase(miKutle);
+    }
+
+    while(miKaldirac!=mvKaldirac.end())
+    {
+        delete (*miKaldirac);
+        miKaldirac = mvKaldirac.erase(miKaldirac);
     }
 
     mvAnim.clear();
@@ -250,17 +288,61 @@ SimilasyonPenceresi::nesneyiAl(Item *it)
 {
     Kutle *nesne;
     std::string nesneTipi = ItemDB::get(it->getId()).getName();
+    int itemID = it->getId();
 
-    if (nesneTipi=="Direnç")
+    if (itemID >= 1100)
     {
         nesne = new BesKiloGram(this);
+        nesne->setID(findEmptyID());
+        logger->log("IDsi:%d",nesne->getID());
+        idKefe.insert(std::make_pair(nesne->getID(),0));
         nesne->setX(100);
         nesne->setY(150);
         nesne->setWidth(50);
         nesne->setHeight(50);
         nesne->setVisible(true);
+        nesne->setAgirlik(30);
         mvKutle.push_back(nesne);
         add(nesne);
     }
+}
+
+void
+SimilasyonPenceresi::kontrolEt()
+{
+    toplam =0;
+    int agirlik=0;
+    for (idKefeIt = idKefe.begin();idKefeIt!=idKefe.end();idKefeIt++)
+    {
+        switch((*idKefeIt).first)
+        {
+            case 1:agirlik = 5;break;
+            case 2:agirlik = 20;break;
+            case 3:agirlik = 30;break;
+        }
+        if ((*idKefeIt).second != 0)
+            toplam += agirlik * (*idKefeIt).second;
+    }
+
+    logger->log("Agirlik:%d",agirlik);
+    logger->log("Toplam:%d",toplam);
+}
+
+int
+SimilasyonPenceresi::findEmptyID()
+{
+    srand(time(NULL));
+    int yeniID=0;
+    for (miKutle = mvKutle.begin();miKutle< mvKutle.end();miKutle++)
+    {
+        yeniID = rand()%1000 + 1;
+        if ((*miKutle)->getID()== yeniID)
+        {
+            miKutle--;
+            continue;
+        }
+    }
+
+    return yeniID;
 }
 

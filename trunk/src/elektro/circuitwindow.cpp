@@ -69,6 +69,7 @@ CircuitWindow::CircuitWindow():
     cirErase = resman->getImage("graphics/elektrik/cir_erase.png");
     cirSelect = resman->getImage("graphics/elektrik/cir_sel.png");
     mWireImage = resman->getImage("graphics/elektrik/kablo.png");
+    mBackgroundPattern = resman->getImage("graphics/elektrik/backgroundpattern.png");
 
     toolRotate = false;
     toolMove = false;
@@ -89,7 +90,7 @@ CircuitWindow::CircuitWindow():
     toolValue->setPosition(170,getHeight()-130);
     add(toolValue);
 
-    closeButton = new BitButton("dugme.png", "Degerlendir", "close",this);
+    closeButton = new BitButton("btn_degerlendir.png", "Degerlendir", "close",this);
     closeButton->setPosition(10,120);
     add(closeButton);
 
@@ -123,7 +124,7 @@ CircuitWindow::CircuitWindow():
     mSs = new ScrollArea(mSb);
     mSs->setHorizontalScrollPolicy(gcn::ScrollArea::SHOW_ALWAYS);
     mSs->setVerticalScrollPolicy(gcn::ScrollArea::SHOW_ALWAYS);
-    mSs->setVisible(true);
+    mSs->setVisible(false);
     mSs->setWidth(250);
     mSs->setHeight(200);
     mSs->setY(getHeight()- mSs->getHeight()-10);
@@ -133,11 +134,11 @@ CircuitWindow::CircuitWindow():
 //***********/
 
     mX = new gcn::Label("X:");
-    mX->setPosition(300,80);
+    mX->setPosition(4,5);
     add(mX);
 
     mY = new gcn::Label("Y:");
-    mY->setPosition(350,80);
+    mY->setPosition(4,15);
     add(mY);
     globalHint="hint";
     setLocationRelativeTo(getParent());
@@ -301,40 +302,43 @@ Window::draw(graphics);
     if (nodeCollision)
       g->drawImage(nodeConnectImage,collisionNodeX,collisionNodeY);
 
-    int top = getHeight() - 141;
-    int bottom = getHeight() - 103;
-    int x = 58;
-    int dx = 30;
 
-    g->drawImage(cirToolBar,50,getHeight()-180);
+    g->drawRescaledImage(mBackgroundPattern,
+                         0,0,120,20,
+                         mBackgroundPattern->getWidth(),mBackgroundPattern->getHeight(),
+                         getWidth()-120,getHeight()-35,false);
+
+    g->drawImage(cirToolBar,10,(getHeight()-cirToolBar->getHeight())/2);
+
+
+    int top = (getHeight()-cirToolBar->getHeight())/2 + 43;
+    int x = 45;
+    int dy = 32;
 
     if (toolFromRight)
         g->drawImage(cirFromRight, x, top);
 
     if (toolFromLeft)
-        g->drawImage(cirFromLeft, x, bottom);
-    x += dx;
+        g->drawImage(cirFromLeft, x, top);
+    top  += dy;
     if (toolToRight)
         g->drawImage(cirToRight, x, top + 2);
-
+    top  += dy;
     if (toolToLeft)
-        g->drawImage(cirToLeft, x, bottom + 2);
-    x += dx;
-
+        g->drawImage(cirToLeft, x, top + 2);
+    top  += dy;
     if (toolErase)
         g->drawImage(cirErase, x, top);
-    x += dx;
-
+    top  += dy;
     if (toolSelect)
         g->drawImage(cirSelect, x, top);
-    x += dx;
-
+    top  += dy;
     if (toolRotate)
         g->drawImage(cirRotate, x, top);
-    x += dx;
-
+    top  += dy;
     if (toolMove)
         g->drawImage(cirMove,x , top - 1);
+
 
     for(miComponent=mvComponent.begin(); miComponent<mvComponent.end(); miComponent++)
     {
@@ -374,7 +378,6 @@ Window::draw(graphics);
                           (*mTekTelIter)->y -3);
         }
      }
-mHint->setCaption(toString(mTeller.size()));
         drawChildren(graphics);
  }
 
@@ -666,6 +669,15 @@ CircuitWindow::findNode(int id)
         if ((*nit)->getId() == id) return (*nit);
     return NULL;
 }
+
+Component*
+CircuitWindow::findComponent(int id)
+{
+    TmiComponent cit;
+    for(cit = mvComponent.begin(); cit != mvComponent.end(); cit++)
+        if ((*cit)->getId() == id) return (*cit);
+    return NULL;
+}
 void
 CircuitWindow::turnoffAllLamp()
 {
@@ -676,7 +688,8 @@ CircuitWindow::turnoffAllLamp()
     {
         if ((*miComponent)->getType()==LAMP || (*miComponent)->getType()== DIODE)
         {
-            (*miComponent)->setStatus(PASIVE);
+            if ((*miComponent)->getStatus() != BURNED)
+                (*miComponent)->setStatus(PASIVE);
         }
     }
 }
@@ -1325,6 +1338,20 @@ CircuitWindow::action(const gcn::ActionEvent &event)
         setVisible(false);
         deleteWidgets();
         trashMeshMem();
+        int cevap = 1;
+        localChatTab->chatLog(toString(conLamp.size()),BY_SERVER);
+        for(conLampIter = conLamp.begin(); conLampIter != conLamp.end(); conLampIter++)
+        {
+            Component *tmp = findComponent(*conLampIter);
+            if (tmp->getCurrent()>0)
+                cevap *= 1;
+            else cevap = 0;
+            localChatTab->chatLog(toString(tmp->getId()),BY_SERVER);
+        }
+        std::string mesaj = (cevap ==1? "doğru":"yanlış");
+
+        localChatTab->chatLog(mesaj,BY_SERVER);
+
         if (current_npc)
             Net::getNpcHandler()->nextDialog(current_npc);
 
@@ -1449,7 +1476,7 @@ CircuitWindow::distributeOlay(Item *it)
     tempNode1->setY(20);//+QATopPad);
     tempNode1->setEnabled(true);
     tempNode1->setScroll(false);
-    tempNode1->setSelectable(false);
+    tempNode1->setSelectable(true);
     tempNode1->setFree(false);
     tempNode1->setMovable(false);
     tempNode1->setDeletable(false);
@@ -1471,7 +1498,6 @@ CircuitWindow::distributeOlay(Item *it)
     tempNode2->setDeletable(false);
     tempNode2->setToLink(true);
     tempNode2->setFromLink(true);
-
 
     mvNode.push_back(tempNode2);
     add(tempNode2);
@@ -1503,16 +1529,12 @@ CircuitWindow::distributeOlay(Item *it)
         c->firstCon = tempComponent->node1;
         c->secondCon = tempComponent->node2;
         c->active = (tempType == "switch" ? false : true);
-        std::string ttt = c->active ?"true":"false";
-        localChatTab->chatLog("connection : "+ttt,BY_GM);
         c->draw=false;
         conList.push_back(c);
 
         add(tempComponent);
         for (miNode = mvNode.begin(); miNode < mvNode.end(); miNode++)
             (*miNode)->requestMoveToTop();
-    localChatTab->chatLog("Gördüm",BY_SERVER);
-
 }
 
 void
@@ -1600,6 +1622,8 @@ CircuitWindow::circuitFromXML(std::string mDoc)
     if (mDoc=="") return;
     xmlDocPtr mxmlDoc;
     mxmlDoc=  xmlParseMemory(mDoc.c_str(), mDoc.size());
+    elektroWidget->padX = 120;
+    elektroWidget->padY = 5;
     if (!mxmlDoc)
     {
         localChatTab->chatLog("Bu üstad'ın morali bozuk :(", BY_SERVER);
@@ -1621,32 +1645,39 @@ CircuitWindow::circuitFromXML(std::string mDoc)
     {
         if (xmlStrEqual(node->name, BAD_CAST "window"))
         {
+            //şartları temizle
+            conLamp.clear();
             int w =  XML::getProperty(node, "width", 350);
             int h =  XML::getProperty(node, "height", 275);
             int l =  XML::getProperty(node, "left", (800-getWidth())/2);
             int t =  XML::getProperty(node, "top", (600-getHeight())/2);
             setContentSize(w, h);
             setPosition(l,t);
-            toolCaption->setPosition(115,h-165);
-            toolValue->setPosition(170,h-95);
             #ifdef DEBUG
                 mSs->setY(getHeight()- mSs->getHeight()-10);
                 mSs->setX(getWidth()-mSs->getWidth()-10);
             #endif
+            int top = (getHeight()-cirToolBar->getHeight())/2;
+            toolCaption->setPosition(25 ,top );
+            toolValue->setPosition(25,top + cirToolBar->getHeight() - 20);
+            closeButton->setY(((getHeight()-cirToolBar->getHeight())/2) + cirToolBar->getHeight()-30);
+            solveButton->setY(closeButton->getY()+30);
+            clearButton->setPosition(solveButton->getX()+30, solveButton->getY());
+            localChatTab->chatLog(toString(cirToolBar->getHeight()+"+"+top),BY_SERVER);
+
         }
         if (xmlStrEqual(node->name, BAD_CAST "info"))
         {
             mTotalTime = XML::getProperty(node, "totaltime", 0);
             mPunish = XML::getProperty(node, "punish", 0);
             mAward = XML::getProperty(node, "award", 0);
-
         }
         else if (xmlStrEqual(node->name, BAD_CAST "node"))
         {
             Node *tempNode = new Node("com_node_btn.png","Hint", "com_node",this);
             tempNode->setId(XML::getProperty(node, "id", 0));
-            tempNode->setX(XML::getProperty(node, "x", 0));//+QALeftPad);
-            tempNode->setY(XML::getProperty(node, "y", 0));//+QATopPad);
+            tempNode->setX(XML::getProperty(node, "x", 0)+elektroWidget->padX);
+            tempNode->setY(XML::getProperty(node, "y", 0)+elektroWidget->padY);
             tempNode->setEnabled(true);
             tempNode->setScroll(true);
             tempNode->setMovable(XML::getProperty(node, "movable", 1));
@@ -1667,8 +1698,8 @@ CircuitWindow::circuitFromXML(std::string mDoc)
 
             Node *tempNode1 = new Node("com_node_btn.png","Hint", "com_node",this);
             tempNode1->setId(findEmptyId());
-            tempNode1->setX(20);//+QALeftPad);
-            tempNode1->setY(20);//+QATopPad);
+            tempNode1->setX(20);
+            tempNode1->setY(20);
             tempNode1->setEnabled(true);
             tempNode1->setScroll(false);
             tempNode1->setSelectable(true);
@@ -1681,8 +1712,8 @@ CircuitWindow::circuitFromXML(std::string mDoc)
             add(tempNode1);
             Node *tempNode2 = new Node("com_node_btn.png","Hint", "com_node",this);
             tempNode2->setId(findEmptyId());
-            tempNode2->setX(20);//+QALeftPad);
-            tempNode2->setY(20);//+QATopPad);
+            tempNode2->setX(20);
+            tempNode2->setY(20);
             tempNode2->setEnabled(true);
             tempNode2->setScroll(false);
             tempNode2->setSelectable(true);
@@ -1694,11 +1725,8 @@ CircuitWindow::circuitFromXML(std::string mDoc)
             mvNode.push_back(tempNode2);
             add(tempNode2);
 
-//            tempNode1->nodeConnect(tempNode2);
-//            tempNode2->nodeConnect(tempNode1);
             Component *tempComponent;
 
-//!!!!!!!!!!!!!!!!!!!!!
             if (tempType=="resistance") tempComponent = new Resistance (this, tempNode1, tempNode2);
             else if (tempType=="lamp") tempComponent = new Lamp (this, tempNode1, tempNode2);
             else if (tempType=="diode") tempComponent = new Diode (this, tempNode1, tempNode2);
@@ -1708,16 +1736,14 @@ CircuitWindow::circuitFromXML(std::string mDoc)
             tempComponent->setItemId(itemid);
             tempComponent->setValue(tempItem.getElektroValue());
             tempComponent->setId(XML::getProperty(node, "id", 0));
-            tempComponent->setX(XML::getProperty(node, "x", 0));//+QALeftPad);
-            tempComponent->setY(XML::getProperty(node, "y", 0));//+QATopPad);
+            tempComponent->setX(XML::getProperty(node, "x", 0)+elektroWidget->padX);
+            tempComponent->setY(XML::getProperty(node, "y", 0)+elektroWidget->padY);
             tempComponent->setAngel(XML::getProperty(node, "angel", 0));
             tempComponent->setMovable(XML::getProperty(node, "movable", 1));
             tempComponent->setSelectable(XML::getProperty(node, "selectable", 1));
             tempComponent->setDeletable(XML::getProperty(node, "deletable", 0));
+            tempComponent->setStatus(PASIVE);
             tempComponent->setBounce(tempComponent->getX(),tempComponent->getY(),40,40);
-            tempComponent->setSelectable(1);
-            tempComponent->setMovable(1);
-            tempComponent->setDeletable(1);
 
             tempNode1->setOwner (tempComponent);
             tempNode2->setOwner (tempComponent);
@@ -1727,7 +1753,7 @@ CircuitWindow::circuitFromXML(std::string mDoc)
             ConnectList *c=new ConnectList;
             c->firstCon = tempComponent->node1;
             c->secondCon = tempComponent->node2;
-            c->active=true;
+            c->active=true; //status değişince tekrar kontrol ediliyor
             c->draw=false;
             conList.push_back(c);
             add(tempComponent);
@@ -1735,6 +1761,16 @@ CircuitWindow::circuitFromXML(std::string mDoc)
 
             for (miNode = mvNode.begin(); miNode < mvNode.end(); miNode++)
                 (*miNode)->requestMoveToTop();
+        }
+        else if (xmlStrEqual(node->name, BAD_CAST "circuitcondition"))
+        {
+            std::string type = XML::getProperty(node, "type", "");
+            if(type == "lampturnon")
+            {
+                int componentid = XML::getProperty(node, "componentid", 0);
+                localChatTab->chatLog("lamp turn on :"+toString(componentid),BY_GM);
+                conLamp.push_back(componentid);
+            }
         }
         else if (xmlStrEqual(node->name, BAD_CAST "connect"))
         {

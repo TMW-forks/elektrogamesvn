@@ -15,8 +15,6 @@ ElektroWidget::~ElektroWidget()
 gcn::Label*
 ElektroWidget::addLabel(xmlNodePtr node)
 {
-    int padX = 0;
-    int padY = 0;
     xmlNodePtr subnode  = node;
     gcn::Label *templabel=new gcn::Label("");
     templabel->setCaption(XML::getProperty(subnode, "text", "label"));
@@ -80,8 +78,8 @@ ElektroWidget::addImage(xmlNodePtr node)
     ResourceManager *resman = ResourceManager::getInstance();
     SmImage temp;
     temp.img = resman->getImage(XML::getProperty(node, "src", ""));
-    temp.x   =  XML::getProperty(node, "x", 0);
-    temp.y   =  XML::getProperty(node, "y", 0);
+    temp.x   =  XML::getProperty(node, "x", 0)+padX;
+    temp.y   =  XML::getProperty(node, "y", 0)+padY;
     temp.visible = true;
     return temp;
 }
@@ -102,8 +100,8 @@ ElektroWidget::addAnim(xmlNodePtr node)
         mAnimation->addFrame(mImageSet->get(i), 75, 0, 0);
     }
     temp.anim = new SimpleAnimation(mAnimation);
-    temp.x   =  XML::getProperty(node, "x", 0);
-    temp.y   =  XML::getProperty(node, "y", 0);
+    temp.x   =  XML::getProperty(node, "x", 0)+padX;
+    temp.y   =  XML::getProperty(node, "y", 0)+padY;
     temp.v   =  XML::getProperty(node, "v", 0);
     temp.visible = true;
     return temp;
@@ -115,8 +113,8 @@ ElektroWidget::addTextBox(gcn::Window *w, xmlNodePtr node)
         SmTextBox temp;
         BrowserBox *mBrowserBox = new BrowserBox();
         int h =  XML::getProperty(node, "height", 275);
-        int l =  XML::getProperty(node, "x", (800-w->getWidth())/2);
-        int t =  XML::getProperty(node, "y", (600-w->getHeight())/2);
+        int l =  XML::getProperty(node, "x", (800-w->getWidth())/2)+padX;
+        int t =  XML::getProperty(node, "y", (600-w->getHeight())/2)+padY;
         int ww =  XML::getProperty(node, "width", 350);
 
         ScrollArea *mScrollArea = new ScrollArea(mBrowserBox);
@@ -145,8 +143,6 @@ SmRadio
 ElektroWidget::addRadio(gcn::ActionListener *w, xmlNodePtr node, int selected)
 {
     SmRadio temp;
-    int padX = 0;
-    int padY = 0;
     std::string text = XML::getProperty(node, "text", "");
     int x = XML::getProperty(node, "x", 0)+padX;
     int y = XML::getProperty(node, "y", 0)+padY;
@@ -167,9 +163,6 @@ SmCheck
 ElektroWidget::addCheck(gcn::ActionListener *w, xmlNodePtr node)
 {
     SmCheck temp;
-    int padX = 0;
-    int padY = 0;
-
     std::string text = XML::getProperty(node, "text", "");
     int x = XML::getProperty(node, "x", 0)+padX;
     int y = XML::getProperty(node, "y", 0)+padY;

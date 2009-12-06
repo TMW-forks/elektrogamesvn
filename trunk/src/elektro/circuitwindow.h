@@ -140,6 +140,10 @@ class CircuitWindow : public Window,
     bool mWireRefresh;
 
     private:
+        std::vector<int> conLamp;
+        std::vector<int>::iterator conLampIter;
+
+        //tellerin çizilmesi için vektör
         typedef std::vector < SmPoint *> TTekTel;
         typedef std::vector < SmPoint *>::iterator TTekTelIter;
 
@@ -177,6 +181,7 @@ class CircuitWindow : public Window,
         Image *cirErase;
         Image *cirSelect;
         Image *mWireImage;
+        Image *mBackgroundPattern;
 
         int collisionNodeX;
         int collisionNodeY;
@@ -222,6 +227,11 @@ class CircuitWindow : public Window,
 
         std::vector< float > matrisAkim;    // akýmlar için sayýlardan oluþan vector
         TmvComponentMatris matrisGerilim;    // pillerden oluþan en saðdaki matris <component*>
+
+    /**
+     * id'si verilen componenti geri döndürür.
+     */
+    Component* findComponent(int id);
 
     /**
      * Üzerinden geçen lambalarýn parlaklýklarýný hesapla ve yak

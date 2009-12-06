@@ -30,8 +30,11 @@ class ElektroWidget
         SmTextBox addTextBox(gcn::Window *w, xmlNodePtr node);
         SmRadio addRadio(gcn::ActionListener *w, xmlNodePtr node, int selected);
         SmCheck addCheck(gcn::ActionListener *w, xmlNodePtr node);
+        int padX;
+        int padY;
     protected:
     private:
+
 };
 
 #endif // ELEKTROWIDGET_H

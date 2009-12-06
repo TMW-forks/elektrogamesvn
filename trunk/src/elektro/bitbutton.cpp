@@ -69,6 +69,7 @@ BitButton::BitButton(const std::string& caption,const std::string& hint,
     {
         addActionListener(listener);
     }
+    setFrameSize(0);
 }
 
 BitButton::~BitButton()
@@ -155,6 +156,9 @@ void BitButton::mouseReleased(gcn::MouseEvent& mouseEvent)
 //        globalHint="";
         mDragging=false;
         mHasMouse = false;
+        mIsLogged = false;
+        setActionEventId(mAction);
+        distributeActionEvent();
         gcn::Button::mouseReleased(mouseEvent);
 }
 
@@ -163,8 +167,7 @@ void BitButton::mousePressed(gcn::MouseEvent& mouseEvent)
         mDragging=true;
         firstX = mouseEvent.getX();
         firstY = mouseEvent.getY();
-        setActionEventId(mAction);
-        distributeActionEvent();
+
         gcn::Button::mousePressed(mouseEvent);
 }
 

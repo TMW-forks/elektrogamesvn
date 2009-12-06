@@ -271,7 +271,7 @@ void Being::takeDamage(Being *attacker, int amount, AttackType type)
 {
     gcn::Font *font;
     std::string damage = amount ? toString(amount) : type == FLEE ?
-            "dodge" : "miss";
+            "sıyırdı" : "ıska";
     const gcn::Color *color;
 
     font = gui->getInfoParticleFont();
@@ -333,8 +333,15 @@ void Being::handleAttack(Being *victim, int damage, AttackType type)
             p->setLifetime(1000);
             p->moveBy(Vector(0.0f, 0.0f, 32.0f));
             victim->controlParticle(p);
+            Particle *p2;
+            logger->log("-----%d",mEquippedWeapon->getId());
+if (mEquippedWeapon->getId()==690)
+            p2 = particleEngine->addEffect("graphics/particles/arrow.particle.y.xml", mPx, mPy);
 
-            Particle *p2 = particleEngine->addEffect("graphics/particles/arrow.particle.xml", mPx, mPy);
+if (mEquippedWeapon->getId()==691)
+            p2 = particleEngine->addEffect("graphics/particles/arrow.particle.k.xml", mPx, mPy);
+if (mEquippedWeapon->getId()==692)
+            p2 = particleEngine->addEffect("graphics/particles/arrow.particle.m.xml", mPx, mPy);
             if (p2)
             {
                 p2->setLifetime(900);

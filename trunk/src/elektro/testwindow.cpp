@@ -48,6 +48,7 @@ TestDialog::TestDialog():
     setContentSize(350, 275);
     setSize(350,350);
     setPosition(100,100);
+    setTitleBarHeight(10);
 
     cancelButton = new Button(BTNCANCEL, "cancel", this);
     mEvaluate = new BitButton ("btn_degerlendir.png", "ok", "ok",this);
@@ -55,6 +56,7 @@ TestDialog::TestDialog():
 
     ResourceManager *resman = ResourceManager::getInstance();
     testinfo = resman->getImage("graphics/elektrik/testtoolbar.png");
+    mBackgroundPattern = resman->getImage("graphics/elektrik/backgroundpattern.png");
     mStartBox = new BrowserBox();
     mStartBox->setOpaque(false);
     mStartBox->setFont(font_txt_5);
@@ -102,10 +104,10 @@ TestDialog::TestDialog():
     mStartCancel->setWidth(mStartOk->getWidth());
     mStartCancel->setHeight(mStartOk->getHeight());
 
-    lblCurrentQuestion = new gcn::Label("Soru : 1");
-    lblCurrentQuestion->setPosition(130,25);
-    lblCurrentQuestion->setFont(boldFont);
-    lblCurrentQuestion->setForegroundColor(gcn::Color(50,250,250));
+    lblCurrentQuestion = new gcn::Label("1");
+    lblCurrentQuestion->setPosition(130,10);
+    lblCurrentQuestion->setFont(font_bas_b_1);
+    lblCurrentQuestion->setForegroundColor(gcn::Color(84,116,216));
 
     int x=108, y=52;
 
@@ -178,6 +180,7 @@ TestDialog::TestDialog():
 
 //    mEvaluate->setPosition(50,getHeight()-50);
     mEvaluate->setVisible(false);
+    mEvaluate->setFrameSize(0);
 
     mBasla = false;
     mMesajMod = false;
@@ -202,30 +205,40 @@ void
 TestDialog::setupPositionInfoLabels()
 {
     int x, y;
+
+    //Soru numarası
     x = getWidth()/2.0 - lblCurrentQuestion->getWidth()/2.0;
-    y = 23;
-    lblCurrentQuestion->setPosition(x,y);
+    y = 0;
+    lblCurrentQuestion->setPosition(x+10 ,y);
 
+    //Ödül
     x = getWidth()/2.0 - 79;
-    y = 53;
-    lblTotalQuestion->setPosition(x,y);
-
-    x = getWidth()/2.0 + 12;
+    y = 38;
     lblAward->setPosition(x,y);
 
-    x = getWidth()/2.0 + 102;
-    lblPunish->setPosition(x,y);
-
-    y = 77;
-    x = getWidth()/2.0 - 79;
-    lblSuccessLimit->setPosition(x , y);
-
-    x = getWidth()/2.0 + 12;
-    lblTotalTime->setPosition(x,y);
-
-    x = getWidth()/2.0 + 102;
+    //Kalan süre
+    x = getWidth()/2.0 + 18;
     lblRemainingTime->setPosition(x,y);
 
+    //Limit
+    x = getWidth()/2.0 + 100;
+    lblSuccessLimit->setPosition(x , y);
+
+    y = 71;
+
+    //toplam süre
+    x = getWidth()/2.0 -83;
+    lblTotalTime->setPosition(x,y);
+
+
+    //toplam soru sayısı
+    x = getWidth()/2.0 + 22;
+    lblTotalQuestion->setPosition(x,y);
+
+
+    //ceza
+    x = getWidth()/2.0 + 100;
+    lblPunish->setPosition(x,y);
 }
 
 void
@@ -387,7 +400,7 @@ TestDialog::start()
     lblTotalTime->setCaption(toString(mTotalTime));
     lblRemainingTime->setCaption(toString(mTotalTime-gecenZaman));
     lblTotalQuestion->setCaption(toString(mTotalQuestion));
-    lblCurrentQuestion->setCaption("Soru :"+toString(mQuestionNumber));
+    lblCurrentQuestion->setCaption(toString(mQuestionNumber));
     lblSuccessLimit->setCaption(toString(mSuccessLimit));
 //    iPerReminingQTime->setCaption(toString(mQuestionPerTime));
 
@@ -571,8 +584,12 @@ TestDialog::draw(gcn::Graphics *graphics)
     ResourceManager *resman = ResourceManager::getInstance();
     int xx = (getWidth()-testinfo->getWidth())/2;
     graphics->setColor(gcn::Color(0xaabbcc));
-    if (mBasla) graphics->fillRectangle(gcn::Rectangle(10,120,getWidth()-20,getHeight()-mEvaluate->getY()-10));
+//    if (mBasla) graphics->fillRectangle(gcn::Rectangle(10,120,getWidth()-20,getHeight()-mEvaluate->getY()-10));
+    //if (mBasla) g->drawImagePattern(mBackgroundPattern, 10,120,getWidth()-20,getHeight()-185);
     if (mBasla) g->drawImage(testinfo,xx,10);
+     if (mBasla) g->drawRescaledImage(mBackgroundPattern,0,0,10,120,
+                                    mBackgroundPattern->getWidth(),mBackgroundPattern->getHeight(),
+                                getWidth()-20,getHeight()-185,true);
     for (miImage = mvImage.begin();
             miImage != mvImage.end();
             ++miImage)
@@ -807,6 +824,8 @@ TestDialog::parse()
     ResourceManager *resman = ResourceManager::getInstance();
     logger->log(mDoc.c_str());
     mxmlDoc=xmlParseMemory(mDoc.c_str(),mDoc.size());
+    elektroWidget->padX = 10;
+    elektroWidget->padY = 120;
     if (!mxmlDoc)
     {
         localChatTab->chatLog("Bu üstad'ın morali bozuk :(", BY_SERVER);
@@ -857,6 +876,7 @@ TestDialog::parse()
             {
                 if (xmlStrEqual(subnode->name, BAD_CAST "window"))
                 {
+                    mEvaluate->setEnabled(true);
                     int w =  XML::getProperty(subnode, "width", 350);
                     int h =  XML::getProperty(subnode, "height", 275);
                     int l =  XML::getProperty(subnode, "left", (1024-getWidth())/2);

@@ -23,6 +23,7 @@
 #define NPCDIALOG_H
 
 #include "gui/widgets/window.h"
+#include "gui/widgets/browserbox.h"
 
 #include "npc.h"
 
@@ -160,7 +161,7 @@ class NpcDialog : public Window, public gcn::ActionListener,
 
         // Used for the main input area
         gcn::ScrollArea *mScrollArea;
-        TextBox *mTextBox;
+        BrowserBox *mTextBox;
         std::string mText;
 
         // Used for choice input

@@ -63,8 +63,7 @@ NpcDialog::NpcDialog()
     setDefaultSize(260, 200, ImageRect::CENTER);
 
     // Setup output text box
-    mTextBox = new TextBox;
-    mTextBox->setEditable(false);
+    mTextBox = new BrowserBox;
     mTextBox->setOpaque(false);
 
     mScrollArea = new ScrollArea(mTextBox);
@@ -126,12 +125,15 @@ NpcDialog::~NpcDialog()
 void NpcDialog::setText(const std::string &text)
 {
     mText = text;
-    mTextBox->setTextWrapped(mText, mScrollArea->getWidth() - 15);
+    //mTextBox->clearRows();
+    mTextBox->addRow(text);
+//    mTextBox->setTextWrapped(mText, mScrollArea->getWidth() - 15);
 }
 
 void NpcDialog::addText(const std::string &text)
 {
-    setText(mText + text + "\n");
+//    setText(mText + text + "\n");
+    setText(text);
     mScrollArea->setVerticalScrollAmount(mScrollArea->getVerticalMaxScroll());
     mActionState = NPC_ACTION_WAIT;
     buildLayout();
@@ -157,7 +159,7 @@ void NpcDialog::action(const gcn::ActionEvent &event)
         {
             nextDialog();
             // TRANSLATORS: Please leave the \n sequences intact.
-            addText(_("\n> Next\n"));
+            addText(_(" ##6 ---- DEVAM  ----"));
         }
         else if (mActionState == NPC_ACTION_CLOSE)
         {

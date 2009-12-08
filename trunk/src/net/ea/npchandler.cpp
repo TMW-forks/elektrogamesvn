@@ -122,7 +122,7 @@ void NpcHandler::handleMessage(MessageIn &msg)
             else if (being->getJob()>=114 && being->getJob()<=127)
             {
                 npcDialog->setNpc(current_npc);
-                npcDialog->addText(npcText.str());
+                npcDialog->addText(temp);
                 npcDialog->setVisible(true);
             }
             else if (being->getJob()>=128 && being->getJob()<=141)

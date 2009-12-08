@@ -589,7 +589,7 @@ TestDialog::draw(gcn::Graphics *graphics)
     if (mBasla) g->drawImage(testinfo,xx,10);
      if (mBasla) g->drawRescaledImage(mBackgroundPattern,0,0,10,120,
                                     mBackgroundPattern->getWidth(),mBackgroundPattern->getHeight(),
-                                getWidth()-20,getHeight()-185,true);
+                                getWidth()-20,getHeight()-185,false);
     for (miImage = mvImage.begin();
             miImage != mvImage.end();
             ++miImage)
@@ -808,6 +808,8 @@ TestDialog::action(const gcn::ActionEvent &event)
         setVisible(false);
         hideMessage();
         current_npc=0;
+        NPC::isTalking = false;
+        reset();
     }
 }
 
@@ -881,6 +883,8 @@ TestDialog::parse()
                     int h =  XML::getProperty(subnode, "height", 275);
                     int l =  XML::getProperty(subnode, "left", (1024-getWidth())/2);
                     int t =  XML::getProperty(subnode, "top", (768-getHeight())/2);
+                    if (l==0) l=(1024-getWidth())/2;
+                    if (t==0) t=(768-getHeight())/2;
                     setContentSize(w, h);
                     setPosition(l,t);
                     mFinishClose->setVisible(false);

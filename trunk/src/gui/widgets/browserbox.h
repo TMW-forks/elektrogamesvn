@@ -137,6 +137,7 @@ class BrowserBox : public gcn::Widget, public gcn::MouseListener
             UNDERLINE  = 1,
             BACKGROUND = 2
         };
+    void setMode(unsigned int m) {mMode = m;}
 
     private:
         typedef std::list<std::string> TextRows;

@@ -4,7 +4,6 @@
 #include <guichan/actionlistener.hpp>
 #include <guichan/graphics.hpp>
 #include <guichan/widgets/label.hpp>
-
 #include "gui/gui.h"
 #include "gui/widgets/window.h"
 #include "gui/widgets/button.h"
@@ -14,6 +13,8 @@
 #include "gui/widgets/textbox.h"
 #include "gui/widgets/radiobutton.h"
 #include "gui/widgets/dropdown.h"
+#include <sstream>
+#include <iostream>
 
 #include "utils/xml.h"
 

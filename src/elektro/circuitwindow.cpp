@@ -2,7 +2,6 @@
 
 #include <SDL_mouse.h>
 #include <SDL_draw.h>
-
 #include <guichan/widgets/label.hpp>
 #include <math.h>
 #include "gui/widgets/button.h"
@@ -1706,6 +1705,27 @@ CircuitWindow::circuitFromXML(std::string mDoc)
     }
    for_each_xml_child_node(node, rootNode)
     {
+        // devreden önce gösterilen mesaj
+        if (xmlStrEqual(node->name, BAD_CAST "mesaj"))
+        {
+//            circState = MESSAGE_STATE;
+//            mMessageText->clearRows();
+//
+//            for_each_xml_child_node(subnode, node)
+//            {
+//                if (xmlStrEqual(subnode->name, BAD_CAST "addrow"))
+//                {
+//                    mMessageText->addRow(XML::getProperty(subnode, "text", "\n"));
+//                }
+//                else if (xmlStrEqual(subnode->name, BAD_CAST "effect"))
+//                {
+//                    std::string effecttype= XML::getProperty(subnode, "type", "particle");
+//                    std::string effectname= XML::getProperty(subnode, "name", "dogru1");
+//                    std::string effectsound= XML::getProperty(subnode, "sound", "dogru1");
+//                    makeEffect(effecttype,effectname,effectsound);
+//                }
+//            }
+        }
         if (xmlStrEqual(node->name, BAD_CAST "window"))
         {
             //şartları temizle

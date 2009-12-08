@@ -1,5 +1,6 @@
 #include "elektrowidget.h"
 #include "./gui/widgets/browserbox.h"
+#include <sstream>
 #include "log.h"
 
 ElektroWidget::ElektroWidget()
@@ -130,7 +131,9 @@ SmTextBox
 ElektroWidget::addTextBox(gcn::Window *w, xmlNodePtr node)
 {
         SmTextBox temp;
-        BrowserBox *mBrowserBox = new BrowserBox();
+//        std::vector<std::string> nowraptext;
+        bool mWrap = false;
+        BrowserBox *mBrowserBox = new BrowserBox(0,false);
         int h =  XML::getProperty(node, "height", 275);
         int l =  XML::getProperty(node, "x", (800-w->getWidth())/2)+padX;
         int t =  XML::getProperty(node, "y", (600-w->getHeight())/2)+padY;
@@ -146,10 +149,19 @@ ElektroWidget::addTextBox(gcn::Window *w, xmlNodePtr node)
         mBrowserBox->setOpaque(XML::getProperty(node, "opaque", false));
         for_each_xml_child_node(subnode, node)
         {
+            std::stringstream textcollector;
             if (xmlStrEqual(subnode->name, BAD_CAST "addrow"))
             {
-                mBrowserBox->addRow(XML::getProperty(subnode, "text", ""));
+                std::string aRow = XML::getProperty(subnode, "text", "");
+                if(mWrap)
+                    textcollector<<aRow;
+                else
+                    mBrowserBox->addRow(aRow);
             }
+        }
+        if(mWrap)
+        {
+
         }
         mScrollArea->setVerticalScrollAmount(0);
         mScrollArea->setHorizontalScrollAmount(0);

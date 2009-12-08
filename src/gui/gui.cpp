@@ -281,7 +281,7 @@ Gui::Gui(Graphics *graphics):
     path = resman->getPath(fontFile);
     try
     {
-        font_el_1 = new TrueTypeFont(path, 14);
+        font_el_1 = new TrueTypeFont(path, 24);
     }
     catch (gcn::Exception e)
     {
@@ -338,10 +338,10 @@ Gui::Gui(Graphics *graphics):
     path = resman->getPath(fontFile);
     try
     {
-        font_txt_1_14 = new TrueTypeFont(path, fontSize);
-        font_txt_1_12 = new TrueTypeFont(path, fontSize);
-        font_txt_1_10 = new TrueTypeFont(path, fontSize);
-        font_txt_1_8 = new TrueTypeFont(path, fontSize);
+        font_txt_1_14 = new TrueTypeFont(path, 14);
+        font_txt_1_12 = new TrueTypeFont(path, 12);
+        font_txt_1_10 = new TrueTypeFont(path, 10);
+        font_txt_1_8 = new TrueTypeFont(path, 8);
     }
     catch (gcn::Exception e)
     {

@@ -180,8 +180,28 @@ class CircuitWindow : public Window,
         Image *cirToLeft;
         Image *cirErase;
         Image *cirSelect;
+        Image *cirRotateG;
+        Image *cirMoveG;
+        Image *cirFromRightG;
+        Image *cirFromLeftG;
+        Image *cirToRightG;
+        Image *cirToLeftG;
+        Image *cirEraseG;
+        Image *cirSelectG;
         Image *mWireImage;
         Image *mBackgroundPattern;
+
+        //imleç üzerine gelince popup hint çýkmasý için
+        gcn::Rectangle rectRotate;
+        gcn::Rectangle rectMove;
+        gcn::Rectangle rectFromRight;
+        gcn::Rectangle rectFromLeft;
+        gcn::Rectangle rectErase;
+        gcn::Rectangle rectSelect;
+        gcn::Rectangle rectToRight;
+        gcn::Rectangle rectToLeft;
+
+        TextBox *mPopupLabel;
 
         int collisionNodeX;
         int collisionNodeY;
@@ -218,7 +238,6 @@ class CircuitWindow : public Window,
         TmvIntMatris mvMesh;                 //ilmeklerin listesi ->temizleniyor
         TmiIntMatris miMesh;
 
-
         Tmatris resistanceCompDeter;            // dirençlerden oluþan en soldaki matris için
         Tmatris batteryCompDeter;              // pillerden oluþan en saðdaki matris için
         TmvFloat rowResistanceValue;
@@ -243,7 +262,6 @@ class CircuitWindow : public Window,
      */
     void calculateBatteryValue();
 
-
     /**
      * Gönderilen vector içinde o component var mý?
      */
@@ -253,7 +271,6 @@ class CircuitWindow : public Window,
      * Component direnç türlerinden biri mi
      */
     bool isResistance(Component *comp);
-
 
     /**
      * Component pil türlerinden biri mi

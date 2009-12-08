@@ -106,7 +106,7 @@ TestDialog::TestDialog():
 
     lblCurrentQuestion = new gcn::Label("1");
     lblCurrentQuestion->setPosition(130,10);
-    lblCurrentQuestion->setFont(font_bas_b_1);
+    lblCurrentQuestion->setFont(font_bas_b_1_18);
     lblCurrentQuestion->setForegroundColor(gcn::Color(84,116,216));
 
     int x=108, y=52;

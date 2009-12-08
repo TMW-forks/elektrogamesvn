@@ -1,4 +1,4 @@
- <- @@index|Indekse geri don@@
+ï»¿ <- @@index|Indekse geri don@@
  
  
 ##3                            === Kisa Yollar ===
@@ -26,7 +26,7 @@
      ##2G yada Z##P             nesneleri topla
      ##2Enter##P              mesaj gonder
      ##2Shift##P              saldiriya ugradiginda otomatik cevap ver.
-     ##21##P             	  Hýzlý yardým penceresini aç.
+     ##21##P             	  HÄ±zlÄ± yardÄ±m penceresini aÃ§.
                        
  
 

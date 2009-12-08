@@ -85,7 +85,6 @@ void NpcHandler::handleMessage(MessageIn &msg)
     bool resetPlayer = false;
     Being *being;
 
-
     switch (msg.getId())
     {
         case SMSG_NPC_CHOICE:
@@ -114,13 +113,11 @@ void NpcHandler::handleMessage(MessageIn &msg)
                 if (temp=="</test>")
                 {
 //                   TestDialog *testDialog= new TestDialog();
-                {
                      testDialog->setVisible(true);
                      testDialog->setDoc(npcText.str());
                      testDialog->parse();
                      npcText.str("");
                 }
-                 }
             }
             else if (being->getJob()>=114 && being->getJob()<=127)
             {

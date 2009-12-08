@@ -69,7 +69,7 @@ LoginDialog::LoginDialog(LoginData *loginData):
                                    MAX_SERVER_LIST_SIZE);
 
     gcn::Label *captionLabel = new gcn::Label(_("-=GİRİŞ=-"));
-    captionLabel->setFont(font_bas_b_1);
+    captionLabel->setFont(font_bas_b_1_16);
     captionLabel->setPosition(210,150);
     captionLabel->setForegroundColor(gcn::Color(0xaa,0xbb,0xcc));
     captionLabel->adjustSize();

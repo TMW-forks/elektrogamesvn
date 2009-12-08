@@ -447,9 +447,15 @@ void Component::mouseEntered(gcn::MouseEvent &event)
     circuitWindow->toolMove = mMovable;
     circuitWindow->toolSelect = mSelectable;
     circuitWindow->toolRotate = mMovable;
+    std::string cap;
+    if (mType == 2 || mType == 5)
+        cap = "ohm";
+    else if (mType == 3)
+        cap = "V";
     circuitWindow->toolCaption->setCaption(typeName[mType]+" :"+toString(getId()));
     circuitWindow->toolCaption->adjustSize();
-    circuitWindow->toolValue->setCaption(toString(mValue));
+    circuitWindow->toolCaption->setX(55-circuitWindow->toolCaption->getWidth()/2);
+    circuitWindow->toolValue->setCaption(toString(mValue)+cap);
     circuitWindow->toolValue->adjustSize();
     circuitWindow->mHint->setCaption("comp:"+toString(mCurrent));
     circuitWindow->mHint->adjustSize();

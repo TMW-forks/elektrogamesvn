@@ -1,17 +1,14 @@
- <- @@index|Indekse geri don@@
+ï»¿ <- @@index|Indekse geri don@@
  
  
 ##3                        === GELISTIREN TAKIM ===
 
 
-                          Ögr.Gör. M.Emin KORKUSUZ
-                              Hüseyin Güneþ
-                            Gökhan Kerim Güler
+                          Ã–gr.GÃ¶M.Emin KORKUSUZ
+                              HÃ¼seyin GÃ¼neÅŸ
                                Esat Arslan
-                               Ufuk Þanlý
-                              Mehnet Doðan
-                              Didem Döndü
-                              Emine Aktaþ
-                          Fadime Gamze Zeytin
-                            Hüseyin Gökbay
+                               Ufuk ÅžanlÄ±
+							   Zeynettin Eye
+							 Alper BurmabÄ±yÄ±k
+                              Mehmet DoÄŸan
  

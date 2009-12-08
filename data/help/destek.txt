@@ -1,4 +1,4 @@
- <- @@index|Indekse geri don@@
+﻿ <- @@index|Indekse geri don@@
  
  
 ##3                            === DESTEK ===
@@ -13,5 +13,5 @@
  
 ##2     #themanaworld ##P@##2 irc.freenode.net
  
-##6 Ya da  @@takim|gelistiren takim@@ � inceleyerek onlarla iletisim
+##6 Ya da  @@takim|gelistiren takim@@ ı inceleyerek onlarla iletisim
 ##6 kurmayi deneyebilirsiniz.

@@ -10,8 +10,6 @@
 #include "elektrowidget.h"
 #include "gui/gui.h"
 #include "gui/viewport.h"
-//#include "board.h"
-//#include "windoweleman.h"
 
 #include "../graphics.h"
 #include "../game.h"
@@ -36,6 +34,7 @@
 #include "gsl/gsl_linalg.h"
 #include "gsl/gsl_vector.h"
 
+
 extern int current_npc;
 extern std::string globalHint;
 extern ElektroWidget *elektroWidget;
@@ -56,7 +55,6 @@ CircuitWindow::CircuitWindow():
     setVisible(false);
     setDefaultSize(150, 150, 520, 450);
 
-
     ResourceManager *resman = ResourceManager::getInstance();
     nodeConnectImage = resman->getImage("graphics/elektrik/node_connect.png");
     cirToolBar = resman->getImage("graphics/elektrik/cir_toolbar.png");
@@ -68,8 +66,17 @@ CircuitWindow::CircuitWindow():
     cirToLeft = resman->getImage("graphics/elektrik/cir_to_left.png");
     cirErase = resman->getImage("graphics/elektrik/cir_erase.png");
     cirSelect = resman->getImage("graphics/elektrik/cir_sel.png");
+    cirRotateG = resman->getImage("graphics/elektrik/cir_rot_g.png");
+    cirMoveG = resman->getImage("graphics/elektrik/cir_mov_g.png");
+    cirFromRightG = resman->getImage("graphics/elektrik/cir_from_right_g.png");
+    cirFromLeftG = resman->getImage("graphics/elektrik/cir_from_left_g.png");
+    cirToRightG = resman->getImage("graphics/elektrik/cir_to_right_g.png");
+    cirToLeftG = resman->getImage("graphics/elektrik/cir_to_left_g.png");
+    cirEraseG = resman->getImage("graphics/elektrik/cir_erase_g.png");
+    cirSelectG = resman->getImage("graphics/elektrik/cir_sel_g.png");
     mWireImage = resman->getImage("graphics/elektrik/kablo.png");
     mBackgroundPattern = resman->getImage("graphics/elektrik/backgroundpattern.png");
+
 
     toolRotate = false;
     toolMove = false;
@@ -84,11 +91,25 @@ CircuitWindow::CircuitWindow():
 
     toolCaption = new gcn::Label("");
     toolCaption->setPosition(100,getHeight()-200);
+    toolCaption->setFont(font_bas_1_14);
+    toolCaption->setForegroundColor(gcn::Color(56,84,184));
     add(toolCaption);
 
-    toolValue = new gcn::Label("");
+    toolValue = new gcn::Label();
     toolValue->setPosition(170,getHeight()-130);
+    toolValue->setFont(font_bas_b_1_14);
+    toolValue->setForegroundColor(gcn::Color(56,84,184));
     add(toolValue);
+
+    mPopupLabel = new TextBox();
+    mPopupLabel->setFont(font_bas_3_12);
+    mPopupLabel->setForegroundColor(gcn::Color(56,84,184));
+    mPopupLabel->setBaseColor(gcn::Color(156,184,184));
+    mPopupLabel->setBackgroundColor(gcn::Color(156,184,184));
+    mPopupLabel->setVisible(false);
+    mPopupLabel->setFrameSize(1);
+    mPopupLabel->setOpaque(true);
+    add(mPopupLabel);
 
     closeButton = new BitButton("btn_degerlendir.png", "Degerlendir", "close",this);
     closeButton->setPosition(10,120);
@@ -299,46 +320,67 @@ CircuitWindow::draw(gcn::Graphics *graphics)
 Window::draw(graphics);
 //    graphics->drawRectangle(gcn::Rectangle(20,20,getWidth()-40,getHeight()-40));
     Graphics *g = static_cast<Graphics*>(graphics);
-    if (nodeCollision)
-      g->drawImage(nodeConnectImage,collisionNodeX,collisionNodeY);
-
 
     g->drawRescaledImage(mBackgroundPattern,
                          0,0,120,20,
                          mBackgroundPattern->getWidth(),mBackgroundPattern->getHeight(),
-                         getWidth()-120,getHeight()-35,false);
+                         getWidth()-130,getHeight()-35,false);
 
     g->drawImage(cirToolBar,10,(getHeight()-cirToolBar->getHeight())/2);
 
+    if (nodeCollision)
+      g->drawImage(nodeConnectImage,collisionNodeX,collisionNodeY);
 
     int top = (getHeight()-cirToolBar->getHeight())/2 + 43;
-    int x = 45;
-    int dy = 32;
+    int x = 48;
+    int dy = 30;
 
     if (toolFromRight)
         g->drawImage(cirFromRight, x, top);
+    else
+        g->drawImage(cirFromRightG, x, top);
 
+    top  += dy;
     if (toolFromLeft)
         g->drawImage(cirFromLeft, x, top);
-    top  += dy;
+    else
+        g->drawImage(cirFromLeftG, x, top);
+
+    top  += dy+ 3;
     if (toolToRight)
-        g->drawImage(cirToRight, x, top + 2);
-    top  += dy;
+        g->drawImage(cirToRight, x, top );
+    else
+        g->drawImage(cirToRightG, x, top );
+
+    top  += dy+ 2;
     if (toolToLeft)
-        g->drawImage(cirToLeft, x, top + 2);
+        g->drawImage(cirToLeft, x, top );
+    else
+        g->drawImage(cirToLeftG, x, top);
+
     top  += dy;
     if (toolErase)
         g->drawImage(cirErase, x, top);
+    else
+        g->drawImage(cirEraseG, x, top);
+
     top  += dy;
     if (toolSelect)
         g->drawImage(cirSelect, x, top);
+    else
+        g->drawImage(cirSelectG, x, top);
+
     top  += dy;
     if (toolRotate)
         g->drawImage(cirRotate, x, top);
-    top  += dy;
-    if (toolMove)
-        g->drawImage(cirMove,x , top - 1);
+    else
+        g->drawImage(cirRotateG, x, top);
 
+    top  += dy+2;
+    if (toolMove)
+        g->drawImage(cirMove,x , top );
+    else
+        g->drawImage(cirMoveG,x , top );
 
     for(miComponent=mvComponent.begin(); miComponent<mvComponent.end(); miComponent++)
     {
@@ -378,7 +420,14 @@ Window::draw(graphics);
                           (*mTekTelIter)->y -3);
         }
      }
-        drawChildren(graphics);
+     g->setColor(gcn::Color(10,100,200));
+//     if(mPopupLabel->isVisible())
+//        graphics->fillRectangle(gcn::Rectangle(mPopupLabel->getX()+3,
+//                                               mPopupLabel->getY()+20,
+//                                               mPopupLabel->getWidth(),
+//                                               mPopupLabel->getHeight()));
+     drawChildren(graphics);
+
  }
 
 void
@@ -990,6 +1039,26 @@ CircuitWindow::turnonLamps()
 void
 CircuitWindow::mouseMoved(gcn::MouseEvent &event)
 {
+    int x = event.getX();
+    int y = event.getY();
+    std::string mesaj = "";
+    if(rectFromRight.isPointInRect(x,y)) mesaj = "Sağdan bağlantı yapılabilir";
+    else if(rectFromLeft.isPointInRect(x,y)) mesaj = "Soldan bağlantı yapılabilir";
+    else if(rectToLeft.isPointInRect(x,y)) mesaj = "Sola bağlantı yapılabilir";
+    else if(rectToRight.isPointInRect(x,y)) mesaj = "Sağa bağlantı yapılabilir";
+    else if(rectSelect.isPointInRect(x,y)) mesaj = "Seçilebilir";
+    else if(rectRotate.isPointInRect(x,y)) mesaj = "Döndürülebilir";
+    else if(rectMove.isPointInRect(x,y)) mesaj = "Taşınabilir";
+    else if(rectErase.isPointInRect(x,y)) mesaj = "Silinebilir";
+    if (mesaj != "")
+    {
+        mPopupLabel->setText(mesaj);
+        mPopupLabel->setPosition(x,y);
+        mPopupLabel->setVisible(true);
+        mPopupLabel->requestMoveToTop();
+    }
+    else
+        mPopupLabel->setVisible(false);
 
 }
 
@@ -1339,24 +1408,18 @@ CircuitWindow::action(const gcn::ActionEvent &event)
         deleteWidgets();
         trashMeshMem();
         int cevap = 1;
-        localChatTab->chatLog(toString(conLamp.size()),BY_SERVER);
         for(conLampIter = conLamp.begin(); conLampIter != conLamp.end(); conLampIter++)
         {
             Component *tmp = findComponent(*conLampIter);
             if (tmp->getCurrent()>0)
                 cevap *= 1;
             else cevap = 0;
-            localChatTab->chatLog(toString(tmp->getId()),BY_SERVER);
         }
-        std::string mesaj = (cevap ==1? "doğru":"yanlış");
-
-        localChatTab->chatLog(mesaj,BY_SERVER);
-
         if (current_npc)
             Net::getNpcHandler()->nextDialog(current_npc);
 
         current_npc = 0;
-        NPC::isTalking = false;;
+        NPC::isTalking = false;
     }
 
     else if (event.getId() == "com_close")
@@ -1658,12 +1721,29 @@ CircuitWindow::circuitFromXML(std::string mDoc)
                 mSs->setX(getWidth()-mSs->getWidth()-10);
             #endif
             int top = (getHeight()-cirToolBar->getHeight())/2;
-            toolCaption->setPosition(25 ,top );
-            toolValue->setPosition(25,top + cirToolBar->getHeight() - 20);
+            toolCaption->setPosition(60-toolCaption->getWidth()/2 ,top-3 );
+            toolValue->setPosition(62,top +268 );
             closeButton->setY(((getHeight()-cirToolBar->getHeight())/2) + cirToolBar->getHeight()-30);
             solveButton->setY(closeButton->getY()+30);
             clearButton->setPosition(solveButton->getX()+30, solveButton->getY());
-            localChatTab->chatLog(toString(cirToolBar->getHeight()+"+"+top),BY_SERVER);
+            int left = 40;
+            int dy = 30;
+            top += 38;
+            rectFromRight = gcn::Rectangle(left,top,37,29);
+            top += dy;
+            rectFromLeft= gcn::Rectangle(left,top,37,29);
+            top += dy;
+            rectToRight = gcn::Rectangle(left,top,37,29);
+            top += dy;
+            rectToLeft= gcn::Rectangle(left,top,37,29);
+            top += dy;
+            rectErase = gcn::Rectangle(left,top,37,29);
+            top += dy;
+            rectSelect= gcn::Rectangle(left,top,37,29);
+            top += dy;
+            rectRotate= gcn::Rectangle(left,top,37,29);
+            top += dy;
+            rectMove= gcn::Rectangle(left,top,37,29);
 
         }
         if (xmlStrEqual(node->name, BAD_CAST "info"))

@@ -131,6 +131,7 @@ void Node::mouseEntered(gcn::MouseEvent &mouseEvent)
     circuitWindow->toolSelect = false;
     circuitWindow->toolCaption->setCaption("Baglanti :"+toString(getId()));
     circuitWindow->toolCaption->adjustSize();
+    circuitWindow->toolCaption->setX(55-circuitWindow->toolCaption->getWidth()/2);
 }
 
 void Node::mouseExited(gcn::MouseEvent &mouseEvent)

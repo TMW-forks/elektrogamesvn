@@ -1,4 +1,4 @@
- <- @@index|Indekse geri don@@
+﻿ <- @@index|Indekse geri don@@
  
  
 ##3                         === SON DEGISIKLIKLER ===

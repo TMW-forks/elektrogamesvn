@@ -1,2 +1,2 @@
- <- @@index|Indekse geri don@@
-d�nyalarr
+﻿ <- @@index|Indekse geri don@@
+dünyalar

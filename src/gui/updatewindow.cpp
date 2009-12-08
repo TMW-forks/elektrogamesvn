@@ -113,7 +113,7 @@ UpdaterWindow::UpdaterWindow(const std::string &updateHost,
 
     gcn::Label *girisLabel = new gcn::Label(_("-=GÜNCELLEME=-"));
     girisLabel->setPosition(180,150);
-    girisLabel->setFont(font_bas_b_1);
+    girisLabel->setFont(font_bas_b_1_16);
     girisLabel->setForegroundColor(gcn::Color(0xaa,0xbb,0xcc));
     girisLabel->adjustSize();
     add(girisLabel);

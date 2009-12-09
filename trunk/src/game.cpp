@@ -103,6 +103,7 @@
 #include "elektro/elektrowidget.h"
 #include "elektro/hesapmak.h"
 #include "elektro/instanthelp.h"
+#include "elektro/missionwindow.h"
 
 std::string map_path;
 std::string globalHint;
@@ -171,6 +172,7 @@ SimilasyonPenceresi *similasyonPenceresi;
 ElektroWidget *elektroWidget;
 HesapMak *hesapMakinesi;
 InstantHelp *instantHelp;
+MissionWindow *missionWindow;
 
 const int MAX_TIME = 10000;
 
@@ -237,6 +239,7 @@ static void createGuiWindows()
     elektroWidget = new ElektroWidget;
     hesapMakinesi = new HesapMak;
     instantHelp = new InstantHelp;
+    missionWindow = new MissionWindow;
 
     chatWindow = new ChatWindow;
     buyDialog = new BuyDialog;

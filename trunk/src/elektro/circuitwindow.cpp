@@ -149,7 +149,6 @@ CircuitWindow::CircuitWindow():
     mSs->setHeight(200);
     mSs->setY(getHeight()- mSs->getHeight()-10);
     mSs->setX(getWidth()-mSs->getWidth()-10);
-
     add(mSs);
 //***********/
 

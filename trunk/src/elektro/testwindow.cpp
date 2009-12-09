@@ -58,10 +58,11 @@ TestDialog::TestDialog():
     testinfo = resman->getImage("graphics/elektrik/testtoolbar.png");
     mBackgroundPattern = resman->getImage("graphics/elektrik/backgroundpattern.png");
     mStartBox = new BrowserBox();
-    mStartBox->setOpaque(false);
+    mStartBox->setOpaque(true);
     mStartBox->setFont(font_txt_5);
 
     mStartScroll = new ScrollArea(mStartBox);
+    mStartScroll->setOpaque(true);
     mStartScroll->setHorizontalScrollPolicy(gcn::ScrollArea::SHOW_NEVER);
     mStartScroll->setVerticalScrollPolicy(gcn::ScrollArea::SHOW_NEVER);
     mStartScroll->setVisible(false);
@@ -70,11 +71,11 @@ TestDialog::TestDialog():
     mStartScroll->setY(10);
     mStartScroll->setX(50);
 
-
     mFinishText = new BrowserBox();
     mFinishText->setOpaque(false);
     mFinishText->setFont(font_txt_5);
     mFinishScroll = new ScrollArea(mFinishText);
+    mFinishScroll->setOpaque(false);
     mFinishScroll->setWidth(250);
     mFinishScroll->setHeight(285);
     mFinishScroll->setY(30);
@@ -84,6 +85,7 @@ TestDialog::TestDialog():
     add(mFinishScroll);
 
     mMessageText = new BrowserBox();
+    mMessageText->setOpaque(false);
     mMessageArea = new ScrollArea(mMessageText);
     mMessageArea->setWidth(getWidth()-90);
     mMessageArea->setHeight(getHeight()-70);

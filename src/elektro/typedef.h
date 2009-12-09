@@ -5,6 +5,9 @@
 #include "component.h"
 #include "gui/widgets/radiobutton.h"
 #include "gui/widgets/checkbox.h"
+#include "gui/widgets/browserbox.h"
+#include "gui/widgets/scrollarea.h"
+#include "gui/widgets/button.h"
 
 
 /**
@@ -47,7 +50,7 @@ struct SmCheck{
 
 struct SmLabel{
      gcn::Label *label;
-     std::string value;
+     std::string value; //neden koyduðumu hatýrlamýyorum.  zaten caption var!!!
 };
 struct SmTextBox{
     BrowserBox *browserbox;
@@ -61,7 +64,6 @@ struct ConnectList {
     bool active;
     bool draw;
 };
-
 
     // Devre penceresinde soru labelleri için
     typedef std::vector< SmPoint *> TTekTel;

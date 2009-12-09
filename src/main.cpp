@@ -132,6 +132,7 @@
 #else
 #define DEFAULT_PORT 9601
 #endif
+
 namespace
 {
     struct SetupListener : public gcn::ActionListener
@@ -179,7 +180,6 @@ LoginData loginData;
 LockedArray<LocalPlayer*> charInfo(maxSlot + 1);
 
 Palette *guiPalette;
-
 // This anonymous namespace hides whatever is inside from other modules.
 namespace {
 

@@ -105,6 +105,8 @@
 		<Unit filename="src\elektro\lamp.h" />
 		<Unit filename="src\elektro\lang_en.h" />
 		<Unit filename="src\elektro\lang_tr.h" />
+		<Unit filename="src\elektro\missionwindow.cpp" />
+		<Unit filename="src\elektro\missionwindow.h" />
 		<Unit filename="src\elektro\node.cpp" />
 		<Unit filename="src\elektro\node.h" />
 		<Unit filename="src\elektro\rescolorwindow.cpp" />

@@ -76,13 +76,6 @@ BitButton::~BitButton()
 {
     mInstances--;
 
-    if (mInstances == 0)
-    {
-//        for (int mode = 0; mode < 4; mode++)
-//        {
-//            for_each(button[mode].grid, button[mode].grid + 9, dtor<Image*>());
-//        }
-    }
 }
 
 void

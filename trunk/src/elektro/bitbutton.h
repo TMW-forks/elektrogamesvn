@@ -32,6 +32,7 @@
 #include "guichan/widget.hpp"
 #include "guichan/keylistener.hpp"
 #include "../resources/imageset.h"
+#include "../resources/image.h"
 
 class ImageRect;
 

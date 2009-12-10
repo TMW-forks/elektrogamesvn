@@ -11,6 +11,9 @@
 <npc id="48"><sprite variant="61">npc.xml</sprite></npc><!-- Storage Master -->
 <npc id="49"><sprite variant="49">npc.xml</sprite></npc><!-- Storage Master (desert) -->
 
+<!--   ###############################################################  -->	
+<!--                        TEST NPCLERÝ                                -->
+<!--   ###############################################################  -->	
 <npc id="100"><sprite variant="0">npc.xml</sprite></npc><!-- Desert Barber -->
 <npc id="101"><sprite variant="1">npc.xml</sprite></npc><!-- Oriental trader -->
 <npc id="102"><sprite variant="2">npc.xml</sprite></npc><!-- The Trainer -->
@@ -61,6 +64,11 @@
 <npc id="147"><sprite variant="47">npc.xml</sprite></npc><!-- Mechanic with tool -->
 <npc id="148"><sprite variant="48">npc.xml</sprite></npc><!-- Chef -->
 <npc id="149"><sprite variant="49">npc.xml</sprite></npc><!-- Desert Banker -->
+
+<!--   ###############################################################  -->	
+<!--                        AÇIKLAMA NPCLERÝ                            -->
+<!--   ###############################################################  -->	
+
 <npc id="150"><sprite variant="50">npc.xml</sprite></npc><!-- Investigator -->
 <npc id="151"><sprite variant="51">npc.xml</sprite></npc><!-- Lora Tay -->
 <npc id="152"><sprite variant="52">npc.xml</sprite></npc><!-- Desert Bard -->
@@ -86,11 +94,40 @@
 <npc id="172"><sprite variant="72">npc.xml</sprite></npc><!-- Katze -->
 <npc id="173"><sprite variant="73">npc.xml</sprite></npc><!-- Easter Bunny -->
 <npc id="174"><sprite variant="74">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="175"><sprite variant="75">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="176"><sprite variant="76">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="177"><sprite variant="77">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="178"><sprite variant="78">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="179"><sprite variant="79">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="180"><sprite variant="80">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="181"><sprite variant="81">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="182"><sprite variant="82">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="183"><sprite variant="83">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="184"><sprite variant="84">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="185"><sprite variant="85">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="186"><sprite variant="86">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="187"><sprite variant="87">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="188"><sprite variant="88">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="189"><sprite variant="89">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="190"><sprite variant="90">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="191"><sprite variant="91">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="192"><sprite variant="92">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="193"><sprite variant="93">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="194"><sprite variant="94">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="195"><sprite variant="95">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="196"><sprite variant="96">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="197"><sprite variant="97">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="198"><sprite variant="98">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="199"><sprite variant="99">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
 
+<!--   ###############################################################  -->	
+<!--                        TEST NPCLERÝ                                -->
+<!--   ###############################################################  -->	
 <npc id="200">
    <sprite>npc-test.xml</sprite>
    <particlefx>graphics/particles/circle.particle.xml</particlefx>
 </npc>
+
 <npc id="201">
    <!-- This entry demonstrates that an NPC can be constructed from multiple preexisting
    spritesets. While using the default player sprite and normal player equipment can save
@@ -101,9 +138,53 @@
    <sprite>chest-shorttanktop-female.xml</sprite>
    <sprite>hairstyle11.xml|#bb2222,ffee33</sprite>
 </npc>
+
 <npc id="202">
    <!-- An NPC made only from a particle effect. -->
    <particlefx>graphics/particles/hellblaze.particle.xml</particlefx>
 </npc>
+
+<npc id="203"><sprite variant="103">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="204"><sprite variant="104">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="205"><sprite variant="105">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="206"><sprite variant="106">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="207"><sprite variant="107">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="208"><sprite variant="108">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="209"><sprite variant="109">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="210"><sprite variant="110">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="211"><sprite variant="111">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="212"><sprite variant="112">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="213"><sprite variant="113">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="214"><sprite variant="114">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="215"><sprite variant="115">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="216"><sprite variant="116">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="217"><sprite variant="117">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="218"><sprite variant="118">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="219"><sprite variant="119">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="220"><sprite variant="120">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="221"><sprite variant="121">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="222"><sprite variant="122">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="223"><sprite variant="123">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="224"><sprite variant="124">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="225"><sprite variant="125">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="226"><sprite variant="126">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="227"><sprite variant="127">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="228"><sprite variant="128">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="229"><sprite variant="129">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="230"><sprite variant="130">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="231"><sprite variant="131">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="232"><sprite variant="132">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="233"><sprite variant="133">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="234"><sprite variant="134">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="235"><sprite variant="135">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="236"><sprite variant="136">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="237"><sprite variant="137">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="238"><sprite variant="138">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+<npc id="239"><sprite variant="139">npc.xml</sprite></npc><!-- Aisha, Omar's daughter -->
+
+<!--   ###############################################################  -->	
+<!--                        TEST NPCLERÝ                                -->
+<!--   ###############################################################  -->	
+
 
 </npcs>

@@ -49,11 +49,11 @@
 #include "log.h"
 
 //NPC id:
-//100-113 test
-//114-127 açýklama yapanlar
-//128-141 güzel söz vs
-//142-155 öðretenler
-//156- makinalar
+//100-149 test
+//150-199 açýklama yapanlar
+//200-149 güzel söz vs
+//250-299 öðretenler
+//300-349 makinalar
 
 Net::NpcHandler *npcHandler;
 extern TestDialog *testDialog;
@@ -91,7 +91,7 @@ void NpcHandler::handleMessage(MessageIn &msg)
             msg.readInt16();  // length
             current_npc = msg.readInt32();
             being = beingManager->findBeing(current_npc);
-            if (being->getJob()>=114 && being->getJob()<=127)
+            if (being->getJob()>=150 && being->getJob()<=199)
             {
                 npcDialog->setNpc(current_npc);
                 npcDialog->choiceRequest();
@@ -108,7 +108,7 @@ void NpcHandler::handleMessage(MessageIn &msg)
             temp = msg.readString(msg.getLength() - 8);
             resetPlayer = true;
             npcText<<temp;
-            if (being->getJob()>=100 && being->getJob()<=113)
+            if (being->getJob()>=100 && being->getJob()<=149)
             {
                 if (temp=="</test>")
                 {
@@ -119,17 +119,17 @@ void NpcHandler::handleMessage(MessageIn &msg)
                      npcText.str("");
                 }
             }
-            else if (being->getJob()>=114 && being->getJob()<=127)
+            else if (being->getJob()>=150 && being->getJob()<=199)
             {
                 npcDialog->setNpc(current_npc);
                 npcDialog->addText(temp);
                 npcDialog->setVisible(true);
             }
-            else if (being->getJob()>=128 && being->getJob()<=141)
+            else if (being->getJob()>=200 && being->getJob()<=249)
             {
 
             }
-            else if (being->getJob()>=142 && being->getJob()<=155)
+            else if (being->getJob()>=250 && being->getJob()<=299)
             {
                 if (being->getJob()==143)
                 {
@@ -158,7 +158,7 @@ void NpcHandler::handleMessage(MessageIn &msg)
                     }
                 }
             }
-            else if (being->getJob()>=156)
+            else if (being->getJob()>=300 && being->getJob()<=350 )
             {
                 circuitWindow->setVisible(true);
                 circuitWindow->requestMoveToTop();

@@ -20,6 +20,8 @@
 #include "utils/xml.h"
 #include "utils/stringutils.h"
 #include "utils/gettext.h"
+
+#include "imagewidget.h"
 /**
  * The mission window.
  *
@@ -28,7 +30,7 @@
 struct SmSubMission{
     std::string mainName;
     TextBox *oneTarget;
-    Image *oneImage;
+    BitButton *oneImage;
     BrowserBox *oneExplain;
     int oneStatus;
     bool oneVisible;
@@ -149,9 +151,9 @@ class MissionWindow : public Window, public gcn::ActionListener
         int sayfa ; // gösterilecek resmi seçmek için
         Image *sayfaImg;
         Image *mBackgroundPattern;
-        BitButton *s1;
-        TmvButton missionButtons;
-        TmiButton missionButtonsIter;
+        Button *s1;
+        Container *mContainer;
+        ScrollArea *sa;
 
         //Alt Görev
 //        TSubMissions mSubMissions;

@@ -95,6 +95,8 @@
 		<Unit filename="src\elektro\hesapmak.h" />
 		<Unit filename="src\elektro\hitabe.cpp" />
 		<Unit filename="src\elektro\hitabe.h" />
+		<Unit filename="src\elektro\imagewidget.cpp" />
+		<Unit filename="src\elektro\imagewidget.h" />
 		<Unit filename="src\elektro\instanthelp.cpp" />
 		<Unit filename="src\elektro\instanthelp.h" />
 		<Unit filename="src\elektro\kaldirac.cpp" />

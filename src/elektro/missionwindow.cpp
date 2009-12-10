@@ -8,6 +8,7 @@
 #include "gui/gui.h"
 #include "gui/viewport.h"
 #include "elektro/bitbutton.h"
+#include "elektro/imagewidget.h"
 
 #include "../game.h"
 //#include "../engine.h"
@@ -30,6 +31,11 @@ MissionWindow::MissionWindow():
     sayfaImg = resman->getImage("graphics/images/help1.png");
     sayfa=1;
 
+mContainer = new Container();
+mContainer->setDimension(gcn::Rectangle(150,00,300,400));
+mContainer->setOpaque(false);
+//add(mContainer);
+
     mBackgroundPattern = resman->getImage("graphics/elektrik/backgroundpattern.png");
     setVisible(true);
     addMainMission("Eğitim Odası");
@@ -44,7 +50,7 @@ MissionWindow::MissionWindow():
     tl->setOpaque(true);
     tl->setBackgroundColor(gcn::Color(156,184,184));
     tl->setVisible(false);
-    add(tl);
+    mContainer->add(tl);
 
     TextBox *tl1 = new TextBox();
     tl1->setText("Robot dönüştürme eğitimi noexp");
@@ -52,7 +58,7 @@ MissionWindow::MissionWindow():
     tl1->setOpaque(true);
     tl1->setBackgroundColor(gcn::Color(156,184,184));
     tl1->setVisible(false);
-    add(tl1);
+    mContainer->add(tl1);
 
     TextBox *tl2 = new TextBox();
     tl2->setText("Kablo bağlama");
@@ -60,7 +66,7 @@ MissionWindow::MissionWindow():
     tl2->setOpaque(true);
     tl2->setBackgroundColor(gcn::Color(156,184,184));
     tl2->setVisible(false);
-    add(tl2);
+    mContainer->add(tl2);
 
     TextBox *tl3 = new TextBox();
     tl3->setWidth(100);
@@ -68,7 +74,7 @@ MissionWindow::MissionWindow():
     tl3->setOpaque(true);
     tl3->setBackgroundColor(gcn::Color(156,184,184));
     tl3->setVisible(false);
-    add(tl3);
+    mContainer->add(tl3);
 
     BrowserBox *tt = new BrowserBox();
     tt->addRow("soranCan'a git");
@@ -77,7 +83,7 @@ MissionWindow::MissionWindow():
     tt->addRow("falan filan");
     tt->setDimension(gcn::Rectangle(120,150,100,5));
     tt->setVisible(false);
-    add(tt);
+    mContainer->add(tt);
 
     SmSubMission *ts = new SmSubMission;
     ts->oneTarget =tl;
@@ -99,6 +105,21 @@ MissionWindow::MissionWindow():
     tss->oneExplain = tt;
     addSubMission("Devre Tamamlama", tss);
 
+    s1 = new Button("Deneme","deneme",this);
+    s1->setDimension(gcn::Rectangle(120,0,50,250));
+    s1->showPart(gcn::Rectangle(10,70,10,10));
+
+ImageWidget *im = new ImageWidget("elektrik/dugme.png");
+im->setPosition(120,30);
+mContainer->add(im);
+
+sa = new ScrollArea(mContainer);
+sa->setDimension(gcn::Rectangle(120,10,getWidth()-130,getHeight()-25));
+mContainer->addActionListener(this);
+add(sa);
+
+
+//add(s1);
 hideSubMissions();
 //viewOneMission("Eğitim Odası");
     putSubMission();
@@ -107,7 +128,7 @@ hideSubMissions();
 void
 MissionWindow::logic()
 {
-
+Window::logic();
 }
 
 void
@@ -121,11 +142,12 @@ MissionWindow::draw(gcn::Graphics* graphics)
                      getWidth()-130,getHeight()-25,false);
     drawChildren(graphics);
 }
+
 void
 MissionWindow::action(const gcn::ActionEvent &event)
 {
     //ResourceManager *resman = ResourceManager::getInstance();
-logger->log("action");
+logger->log("action :%s",event.getId().c_str());
     if (event.getId() == "close")
     {
         setVisible(false);
@@ -140,6 +162,7 @@ logger->log("action");
             hideSubMissions();
             if (temp->subMissions.size() != 0)
                 viewOneMission(event.getId());
+                sa->setVerticalScrollAmount(0);
         }
     }
 
@@ -189,6 +212,7 @@ MissionWindow::viewOneMission(std::string one)
     {
         if((*mSubMissionsIter)->oneTarget)
             (*mSubMissionsIter)->oneTarget->setVisible(true);
+//            showWidgetPart((*mSubMissionsIter)->oneTarget,gcn::Rectangle(15,15,50,60));
 //
 //        if((*mSubMissionsIter)->oneExplain)
 //            (*mSubMissionsIter)->oneExplain->setVisible(true);
@@ -239,8 +263,9 @@ MissionWindow::putSubMission()
 
         for(mSubMissionsIter = subtemp.begin(); mSubMissionsIter != subtemp.end(); mSubMissionsIter++)
         {
-                (*mSubMissionsIter)->oneTarget->setPosition(125,y);
+                (*mSubMissionsIter)->oneTarget->setPosition(x,y);
                 (*mSubMissionsIter)->oneTarget->setWidth(150);
+                (*mSubMissionsIter)->oneTarget->showPart(gcn::Rectangle(0,0,100,5));
             y += dy;
         }
     }

@@ -51,7 +51,7 @@
 //NPC id:
 //100-149 test
 //150-199 açýklama yapanlar
-//200-149 güzel söz vs
+//200-249 güzel söz vs
 //250-299 öðretenler
 //300-349 makinalar
 

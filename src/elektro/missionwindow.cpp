@@ -20,6 +20,10 @@
 #include "../graphics.h"
 #include "log.h"
 
+
+#include "utils/xml.h"
+#include <libxml/xmlwriter.h>
+
 MissionWindow::MissionWindow():
     Window("Mission")
 {
@@ -27,16 +31,40 @@ MissionWindow::MissionWindow():
     setDefaultSize(1010-400, 754-300, 400, 300);
     loadWindowState();
     setResizable(true);
+
+    mContainerSub = new Container();
+    mContainerSub->setDimension(gcn::Rectangle(0,0,250,300));
+    mContainerSub->setOpaque(false);
+
+    mContainerMain = new Container();
+    mContainerMain->setDimension(gcn::Rectangle(0,0,145,380));
+    mContainerMain->setOpaque(false);
+
+    mContainerExp = new Container();
+    mContainerExp->setDimension(gcn::Rectangle(0,0,145,100));
+    mContainerExp->setOpaque(false);
+
+    mScrollSub = new ScrollArea(mContainerSub);
+    mScrollSub->setDimension(gcn::Rectangle(130,50,getWidth()-140,getHeight()-180));
+    mScrollSub->setOpaque(false);
+    mContainerSub->addActionListener(this);
+    add(mScrollSub);
+
+    mScrollMain = new ScrollArea(mContainerMain);
+    mScrollMain->setDimension(gcn::Rectangle(0,10,135,getHeight()-50));
+    mScrollMain->setOpaque(false);
+    mContainerMain->addActionListener(this);
+    add(mScrollMain);
+
+    mScrollExp = new ScrollArea(mContainerExp);
+    mScrollExp->setDimension(gcn::Rectangle(130,150,getWidth()-140,getHeight()-250));
+    mScrollExp->setOpaque(false);
+    mContainerExp->addActionListener(this);
+    add(mScrollExp);
+
     ResourceManager *resman = ResourceManager::getInstance();
-    sayfaImg = resman->getImage("graphics/images/help1.png");
-    sayfa=1;
+    mBackgroundPattern = resman->getImage("graphics/elektrik/gorev_background.png");
 
-mContainer = new Container();
-mContainer->setDimension(gcn::Rectangle(150,00,300,400));
-mContainer->setOpaque(false);
-//add(mContainer);
-
-    mBackgroundPattern = resman->getImage("graphics/elektrik/backgroundpattern.png");
     setVisible(true);
     addMainMission("Eğitim Odası");
     addMainMission("Devre Tamamlama");
@@ -50,7 +78,7 @@ mContainer->setOpaque(false);
     tl->setOpaque(true);
     tl->setBackgroundColor(gcn::Color(156,184,184));
     tl->setVisible(false);
-    mContainer->add(tl);
+    mContainerSub->add(tl);
 
     TextBox *tl1 = new TextBox();
     tl1->setText("Robot dönüştürme eğitimi noexp");
@@ -58,7 +86,7 @@ mContainer->setOpaque(false);
     tl1->setOpaque(true);
     tl1->setBackgroundColor(gcn::Color(156,184,184));
     tl1->setVisible(false);
-    mContainer->add(tl1);
+    mContainerSub->add(tl1);
 
     TextBox *tl2 = new TextBox();
     tl2->setText("Kablo bağlama");
@@ -66,7 +94,7 @@ mContainer->setOpaque(false);
     tl2->setOpaque(true);
     tl2->setBackgroundColor(gcn::Color(156,184,184));
     tl2->setVisible(false);
-    mContainer->add(tl2);
+    mContainerSub->add(tl2);
 
     TextBox *tl3 = new TextBox();
     tl3->setWidth(100);
@@ -74,7 +102,7 @@ mContainer->setOpaque(false);
     tl3->setOpaque(true);
     tl3->setBackgroundColor(gcn::Color(156,184,184));
     tl3->setVisible(false);
-    mContainer->add(tl3);
+    mContainerSub->add(tl3);
 
     BrowserBox *tt = new BrowserBox();
     tt->addRow("soranCan'a git");
@@ -83,7 +111,7 @@ mContainer->setOpaque(false);
     tt->addRow("falan filan");
     tt->setDimension(gcn::Rectangle(120,150,100,5));
     tt->setVisible(false);
-    mContainer->add(tt);
+    mContainerSub->add(tt);
 
     SmSubMission *ts = new SmSubMission;
     ts->oneTarget =tl;
@@ -111,13 +139,7 @@ mContainer->setOpaque(false);
 
 ImageWidget *im = new ImageWidget("elektrik/dugme.png");
 im->setPosition(120,30);
-mContainer->add(im);
-
-sa = new ScrollArea(mContainer);
-sa->setDimension(gcn::Rectangle(120,10,getWidth()-130,getHeight()-25));
-mContainer->addActionListener(this);
-add(sa);
-
+mContainerSub->add(im);
 
 //add(s1);
 hideSubMissions();
@@ -137,10 +159,11 @@ MissionWindow::draw(gcn::Graphics* graphics)
 {
     Window::draw(graphics);
     Graphics *g = static_cast<Graphics*>(graphics);
-    g->drawRescaledImage(mBackgroundPattern,
-                     0,0,120,10,
-                     mBackgroundPattern->getWidth(),mBackgroundPattern->getHeight(),
-                     getWidth()-130,getHeight()-25,false);
+//    g->drawRescaledImage(mBackgroundPattern,
+//                     0,0,120,10,
+//                     mBackgroundPattern->getWidth(),mBackgroundPattern->getHeight(),
+//                     getWidth()-130,getHeight()-30,false);
+    g->drawImage(mBackgroundPattern,0,0);
     drawChildren(graphics);
 }
 
@@ -163,7 +186,7 @@ logger->log("action :%s",event.getId().c_str());
             hideSubMissions();
             if (temp->subMissions.size() != 0)
                 viewOneMission(event.getId());
-                sa->setVerticalScrollAmount(0);
+                mScrollSub->setVerticalScrollAmount(0);
         }
     }
 
@@ -296,8 +319,64 @@ MissionWindow::hideSubMissions()
 }
 
 void
-MissionWindow::parse()
+MissionWindow::parse(std::string mDoc)
 {
+    ResourceManager *resman = ResourceManager::getInstance();
+    logger->log(mDoc.c_str());
+
+    xmlDocPtr mxmlDoc;
+    mxmlDoc=xmlParseMemory(mDoc.c_str(),mDoc.size());
+    if (!mxmlDoc)
+    {
+        localChatTab->chatLog("Bu üstad'ın morali bozuk :(", BY_SERVER);
+        localChatTab->chatLog("Bu durumu bir yöneticiye haber versen çok iyi olur.", BY_SERVER);
+        return;
+    }
+
+    xmlNodePtr rootNode = xmlDocGetRootElement(mxmlDoc);
+    if (!rootNode || !xmlStrEqual(rootNode->name, BAD_CAST "mission"))
+    {
+        localChatTab->chatLog("Bu üstad'ın morali bozuk :(", BY_SERVER);
+        localChatTab->chatLog("Bu durumu bir yöneticiye haber versen çok iyi olur.", BY_SERVER);
+        return;
+    }
+
+    for_each_xml_child_node(node, rootNode)
+    {
+//         Ana görev
+        if (xmlStrEqual(node->name, BAD_CAST "mainmission"))
+        {
+            std::string mainMisName = XML::getProperty(node, "name", "Ana Görev");
+            for_each_xml_child_node(subnode, node)
+            {
+                if (xmlStrEqual(subnode->name, BAD_CAST "submission"))
+                {
+                        SmSubMission *tempSub = new SmSubMission;
+                        TextBox *tempText = new TextBox();
+                        tempText->setText(XML::getProperty(subnode, "label", "Alt görev."));
+                        tempText->setWidth(100);
+                        tempText->setOpaque(true);
+                        tempText->setBackgroundColor(gcn::Color(156,184,184));
+                        tempText->setVisible(false);
+                }
+            }
+        }
+    }
+//
+//                }
+//                {
+//                    mMessageText->addRow(XML::getProperty(subnode, "text", "\n"));
+//                }
+//                else if (xmlStrEqual(subnode->name, BAD_CAST "effect"))
+//                {
+//                    std::string effecttype= XML::getProperty(subnode, "type", "particle");
+//                    std::string effectname= XML::getProperty(subnode, "name", "dogru1");
+//                    std::string effectsound= XML::getProperty(subnode, "sound", "dogru1");
+//                    makeEffect(effecttype,effectname,effectsound);
+//                }
+//            }
+//        }
+
 
 }
 

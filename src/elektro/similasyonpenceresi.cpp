@@ -174,6 +174,7 @@ SimilasyonPenceresi::parseXML(std::string mDoc)
         else if (xmlStrEqual(node->name, BAD_CAST "component"))
         {
             Kutle *nesne;
+            std::vector<int> kefeAgirlik;
             int x = XML::getProperty(node, "x", 50);
             int y = XML::getProperty(node, "y", 50);
             int w = XML::getProperty(node, "width", 50);
@@ -182,14 +183,16 @@ SimilasyonPenceresi::parseXML(std::string mDoc)
 
             nesne = new BesKiloGram(this);
             nesne->setID(id);
-            logger->log("IDsi:%d",nesne->getID());
-            idKefe.insert(std::make_pair(nesne->getID(),0));
+            kefeAgirlik.push_back(0);
+            kefeAgirlik.push_back(nesne->getAgirlik());
+logger->log("IDsi:%d",nesne->getID());
+            idKefe.insert(std::make_pair(nesne->getID(),kefeAgirlik));
+
             nesne->setX(x);
             nesne->setY(y);
             nesne->setWidth(w);
             nesne->setHeight(h);
             nesne->setVisible(true);
-            nesne->setAgirlik(30);
             mvKutle.push_back(nesne);
             add(nesne);
         }
@@ -274,6 +277,7 @@ SimilasyonPenceresi::clearComponent()
     }
 
     mvAnim.clear();
+
     delete mSoru;
     delete mSoruArea;
 }
@@ -287,6 +291,7 @@ void
 SimilasyonPenceresi::nesneyiAl(Item *it)
 {
     Kutle *nesne;
+    std::vector<int> kefeAgirlik;
     std::string nesneTipi = ItemDB::get(it->getId()).getName();
     int itemID = it->getId();
 
@@ -294,14 +299,16 @@ SimilasyonPenceresi::nesneyiAl(Item *it)
     {
         nesne = new BesKiloGram(this);
         nesne->setID(findEmptyID());
+        kefeAgirlik.push_back(0);
+        kefeAgirlik.push_back(nesne->getAgirlik());
         logger->log("IDsi:%d",nesne->getID());
-        idKefe.insert(std::make_pair(nesne->getID(),0));
+        idKefe.insert(std::make_pair(nesne->getID(),kefeAgirlik));
+
         nesne->setX(100);
         nesne->setY(150);
         nesne->setWidth(50);
         nesne->setHeight(50);
         nesne->setVisible(true);
-        nesne->setAgirlik(30);
         mvKutle.push_back(nesne);
         add(nesne);
     }
@@ -311,20 +318,15 @@ void
 SimilasyonPenceresi::kontrolEt()
 {
     toplam =0;
-    int agirlik=0;
     for (idKefeIt = idKefe.begin();idKefeIt!=idKefe.end();idKefeIt++)
     {
-        switch((*idKefeIt).first)
-        {
-            case 1:agirlik = 5;break;
-            case 2:agirlik = 20;break;
-            case 3:agirlik = 30;break;
-        }
-        if ((*idKefeIt).second != 0)
-            toplam += agirlik * (*idKefeIt).second;
+        if ((*idKefeIt).second[0] != 0)
+            toplam += (*idKefeIt).second[0] * (*idKefeIt).second[1];
+
+            logger->log("Kefe:%d",(*idKefeIt).second[0]);
+            logger->log("Agirlik:%d",(*idKefeIt).second[1]);
     }
 
-    logger->log("Agirlik:%d",agirlik);
     logger->log("Toplam:%d",toplam);
 }
 
@@ -338,7 +340,7 @@ SimilasyonPenceresi::findEmptyID()
         yeniID = rand()%1000 + 1;
         if ((*miKutle)->getID()== yeniID)
         {
-            miKutle--;
+            miKutle = mvKutle.begin();
             continue;
         }
     }
@@ -346,3 +348,52 @@ SimilasyonPenceresi::findEmptyID()
     return yeniID;
 }
 
+//void
+//SimilasyonPenceresi::autoWrap()
+//{
+//    gcn::Font *font = getFont();
+//    unsigned int y = 0;
+//    unsigned int nextChar;
+//    const char *hyphen = "~";
+//    int hyphenWidth = font->getWidth(hyphen);
+//    int x = 0;
+//
+//    for (TextRowIterator i = mTextRows.begin(); i != mTextRows.end(); i++)
+//    {
+//        std::string row = *i;
+//        for (unsigned int j = 0; j < row.size(); j++)
+//        {
+//            std::string character = row.substr(j, 1);
+//            x += font->getWidth(character);
+//            nextChar = j + 1;
+//
+//            // Wraping between words (at blank spaces)
+//            if ((nextChar < row.size()) && (row.at(nextChar) == ' '))
+//            {
+//                int nextSpacePos = row.find(" ", (nextChar + 1));
+//                if (nextSpacePos <= 0)
+//                {
+//                    nextSpacePos = row.size() - 1;
+//                }
+//                int nextWordWidth = font->getWidth(
+//                        row.substr(nextChar,
+//                            (nextSpacePos - nextChar)));
+//
+//                if ((x + nextWordWidth + 10) > getWidth())
+//                {
+//                    x = 15; // Ident in new line
+//                    y += 1;
+//                    j++;
+//                }
+//            }
+//            // Wrapping looong lines (brutal force)
+//            else if ((x + 2 * hyphenWidth) > getWidth())
+//            {
+//                x = 15; // Ident in new line
+//                y += 1;
+//            }
+//        }
+//    }
+//
+//    setHeight(font->getHeight() * (mTextRows.size() + y));
+//}

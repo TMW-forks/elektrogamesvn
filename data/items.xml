@@ -4232,7 +4232,7 @@
         max-per-slot="1"/>
 	<item id="1021"
         image="/elektroadd/hg/anakart/2.png"
-        name="Anakart"
+        name="Anakart 1"
         description="Anakart yeni."
         effect=""
         type="generic"
@@ -4240,7 +4240,7 @@
         max-per-slot="1"/>
 	<item id="1022"
         image="/elektroadd/hg/anakart/3.png"
-        name="Anakart"
+        name="Anakart 2"
         description="Anakart son teknoloji."
         effect=""
         type="generic"
@@ -4328,7 +4328,7 @@
         max-per-slot="1"/>
 	<item id="1037"
         image="/elektroadd/hg/eglence/1.png"
-        name="Hoparlör"
+        name="Hoparlör 1"
         description="Hoparlör 100W"
         effect=""
         type="generic"
@@ -4344,7 +4344,7 @@
         max-per-slot="1"/>
 	<item id="1039"
         image="/elektroadd/hg/eglence/3.png"
-        name="Hoparlör"
+        name="Hoparlör 2"
         description="2+1 Ses Sistemi"
         effect=""
         type="generic"
@@ -4352,7 +4352,7 @@
         max-per-slot="1"/>
 	<item id="1040"
         image="/elektroadd/hg/eglence/4.png"
-        name="Hoparlör"
+        name="Hoparlör 3"
         description="Hoparlör Güçlü Kolon"
         effect=""
         type="generic"
@@ -4368,7 +4368,7 @@
         max-per-slot="1"/>
 	<item id="1044"
         image="/elektroadd/hg/fare/1.png"
-        name="Fare"
+        name="Fare 1"
         description="Kırmızı Toplu Ergonomik Fare"
         effect=""
         type="generic"
@@ -4376,7 +4376,7 @@
         max-per-slot="1"/>
 	<item id="1045"
         image="/elektroadd/hg/fare/2.png"
-        name="Fare"
+        name="Fare 2"
         description="Çok Tuşlu Fare"
         effect=""
         type="generic"
@@ -4384,7 +4384,7 @@
         max-per-slot="1"/>
 	<item id="1046"
         image="/elektroadd/hg/fare/3.png"
-        name="Fare"
+        name="Fare 3"
         description="Mavi Renkli Fare"
         effect=""
         type="generic"
@@ -4392,7 +4392,7 @@
         max-per-slot="1"/>
 	<item id="1047"
         image="/elektroadd/hg/fare/4.png"
-        name="Fare"
+        name="Fare 4"
         description="Kırmızı Toplu Sıradışı Fare"
         effect=""
         type="generic"
@@ -4400,7 +4400,7 @@
         max-per-slot="1"/>
 	<item id="1048"
         image="/elektroadd/hg/fare/5.png"
-        name="Fare"
+        name="Fare 5"
         description="Siyah Fare"
         effect=""
         type="generic"
@@ -4408,7 +4408,7 @@
         max-per-slot="1"/>
 	<item id="1049"
         image="/elektroadd/hg/fare/6.png"
-        name="Fare"
+        name="Fare 6"
         description="Kırmızı Fare"
         effect=""
         type="generic"
@@ -4416,7 +4416,7 @@
         max-per-slot="1"/>
 	<item id="1050"
         image="/elektroadd/hg/geridonusum/1.png"
-        name="Geri Dönüşüm Kutusu"
+        name="Geri Dönüşüm Kutusu 1"
         description="Teneke Geri Dönüşüm Kutusu"
         effect=""
         type="generic"
@@ -4424,7 +4424,7 @@
         max-per-slot="1"/>
 	<item id="1051"
         image="/elektroadd/hg/geridonusum/2.png"
-        name="Geri Dönüşüm Kutusu"
+        name="Geri Dönüşüm Kutusu 2"
         description="Geri Dönüşüm Kutusu Dolu"
         effect=""
         type="generic"
@@ -4432,7 +4432,7 @@
         max-per-slot="1"/>
 	<item id="1052"
         image="/elektroadd/hg/geridonusum/3.png"
-        name="Geri Dönüşüm Kutusu"
+        name="Geri Dönüşüm Kutusu 3"
         description="Kova Geri Dönüşüm Kutusu"
         effect=""
         type="generic"
@@ -4440,7 +4440,7 @@
         max-per-slot="1"/>
 	<item id="1053"
         image="/elektroadd/hg/geridonusum/4.png"
-        name="Geri Dönüşüm Kutusu"
+        name="Geri Dönüşüm Kutusu 4"
         description="Kova Geri Dönüşüm Kutusu Dolu"
         effect=""
         type="generic"
@@ -4448,7 +4448,7 @@
         max-per-slot="1"/>
 	<item id="1054"
         image="/elektroadd/hg/geridonusum/5.png"
-        name="Geri Dönüşüm Kutusu"
+        name="Geri Dönüşüm Kutusu 5"
         description="Sepet Geri Dönüşüm Kutusu"
         effect=""
         type="generic"
@@ -4456,7 +4456,7 @@
         max-per-slot="1"/>
 	<item id="1055"
         image="/elektroadd/hg/geridonusum/6.png"
-        name="Geri Dönüşüm Kutusu"
+        name="Geri Dönüşüm Kutusu 6"
         description="Sepet Geri Dönüşüm Kutusu Dolu"
         effect=""
         type="generic"
@@ -4464,7 +4464,7 @@
         max-per-slot="1"/>
 	<item id="1057"
         image="/elektroadd/hg/harddisk/1.png"
-        name="Sabit Disk"
+        name="Sabit Disk 1"
         description="500 GB Sabit Disk"
         effect=""
         type="generic"
@@ -4472,7 +4472,7 @@
         max-per-slot="1"/>
 	<item id="1058"
         image="/elektroadd/hg/harddisk/2.png"
-        name="Sabit Disk"
+        name="Sabit Disk 2"
         description="1 TB Sabit Disk"
         effect=""
         type="generic"
@@ -4480,7 +4480,7 @@
         max-per-slot="1"/>
 	<item id="1059"
         image="/elektroadd/hg/harddisk/3.png"
-        name="Sabit Disk"
+        name="Sabit Disk 3"
         description="1 TB Harici Sabit Disk"
         effect=""
         type="generic"
@@ -4488,7 +4488,7 @@
         max-per-slot="1"/>
 	<item id="1060"
         image="/elektroadd/hg/harddisk/4.png"
-        name="Sabit Disk"
+        name="Sabit Disk 4"
         description="1.5 Harici Sabit Disk"
         effect=""
         type="generic"
@@ -4496,7 +4496,7 @@
         max-per-slot="1"/>
 	<item id="1061"
         image="/elektroadd/hg/harddisk/5.png"
-        name="Sabit Disk"
+        name="Sabit Disk 5"
         description="2 TB Harici Sabit Disk"
         effect=""
         type="generic"
@@ -4536,7 +4536,7 @@
         max-per-slot="1"/>
 	<item id="1067"
         image="/elektroadd/hg/islemci/1.png"
-        name="İşlemci"
+        name="İşlemci 1"
         description="AMD Athlon XP 3000 İşlemci"
         effect=""
         type="generic"
@@ -4544,7 +4544,7 @@
         max-per-slot="1"/>
 	<item id="1068"
         image="/elektroadd/hg/islemci/2.png"
-        name="İşlemci"
+        name="İşlemci 2"
         description="İntel Çift Çekirdek İşlemci"
         effect=""
         type="generic"
@@ -4552,7 +4552,7 @@
         max-per-slot="1"/>
 	<item id="1070"
         image="/elektroadd/hg/kamera/1.png"
-        name="Kamera"
+        name="Kamera 1"
         description="El Kamerası"
         effect=""
         type="generic"
@@ -4560,7 +4560,7 @@
         max-per-slot="1"/>
 	<item id="1071"
         image="/elektroadd/hg/kamera/2.png"
-        name="Fotoğraf Makinesi"
+        name="Fotoğraf Makinesi 1"
         description="8 MP F. Makinesi"
         effect=""
         type="generic"
@@ -4568,7 +4568,7 @@
         max-per-slot="1"/>
 	<item id="1072"
         image="/elektroadd/hg/kamera/3.png"
-        name="Fotoğraf Makinesi"
+        name="Fotoğraf Makinesi 2"
         description="12 MP Profesyonel Fotoğraf Makinesi"
         effect=""
         type="generic"
@@ -4584,7 +4584,7 @@
         max-per-slot="1"/>
 	<item id="1074"
         image="/elektroadd/hg/kamera/5.png"
-        name="Kamera"
+        name="Kamera 2"
         description="Basit El Kamerası"
         effect=""
         type="generic"
@@ -4600,7 +4600,7 @@
         max-per-slot="1"/>
 	<item id="1076"
         image="/elektroadd/hg/monitor/1.png"
-        name="Monitör"
+        name="Monitör 1"
         description="LCD Geniş Ekran"
         effect=""
         type="generic"
@@ -4608,7 +4608,7 @@
         max-per-slot="1"/>
 	<item id="1077"
         image="/elektroadd/hg/monitor/2.png"
-        name="Monitör"
+        name="Monitör 2"
         description="LCD Monitör"
         effect=""
         type="generic"
@@ -4616,7 +4616,7 @@
         max-per-slot="1"/>
 	<item id="1078"
         image="/elektroadd/hg/monitor/3.png"
-        name="Monitör"
+        name="Monitör 3"
         description="CRT Monitör"
         effect=""
         type="generic"
@@ -4624,7 +4624,7 @@
         max-per-slot="1"/>
 	<item id="1080"
         image="/elektroadd/hg/mp3calar/1.png"
-        name="MP3 Çalar"
+        name="MP3 Çalar 1"
         description="Yeşil MP3 Çalar"
         effect=""
         type="generic"
@@ -4632,7 +4632,7 @@
         max-per-slot="1"/>
 	<item id="1081"
         image="/elektroadd/hg/mp3calar/2.png"
-        name="MP3 Çalar"
+        name="MP3 Çalar 2"
         description="Siyah MP3 Çalar"
         effect=""
         type="generic"
@@ -4640,7 +4640,7 @@
         max-per-slot="1"/>
 	<item id="1082"
         image="/elektroadd/hg/mp3calar/3.png"
-        name="MP3 Çalar"
+        name="MP3 Çalar 3"
         description="Mavi MP3 Çalar"
         effect=""
         type="generic"
@@ -4648,7 +4648,7 @@
         max-per-slot="1"/>
 	<item id="1083"
         image="/elektroadd/hg/mp3calar/4.png"
-        name="MP3 Çalar"
+        name="MP3 Çalar 4"
         description="Kırmızı MP3 Çalar"
         effect=""
         type="generic"
@@ -4656,7 +4656,7 @@
         max-per-slot="1"/>
 	<item id="1084"
         image="/elektroadd/hg/oyunlar/1.png"
-        name="Oyun"
+        name="Oyun 1"
         description="Satranç Oyunu"
         effect=""
         type="generic"
@@ -4664,7 +4664,7 @@
         max-per-slot="1"/>
 	<item id="1085"
         image="/elektroadd/hg/oyunlar/2.png"
-        name="Oyun"
+        name="Oyun 2"
         description="Futbol Oyunu"
         effect=""
         type="generic"
@@ -4672,7 +4672,7 @@
         max-per-slot="1"/>
 	<item id="1086"
         image="/elektroadd/hg/oyunlar/3.png"
-        name="Oyun"
+        name="Oyun 3"
         description="Aksiyon Oyunu"
         effect=""
         type="generic"
@@ -4680,7 +4680,7 @@
         max-per-slot="1"/>
 	<item id="1087"
         image="/elektroadd/hg/programlar/1.png"
-        name="Program"
+        name="Program 1"
         description="Resim Programı"
         effect=""
         type="generic"
@@ -4688,7 +4688,7 @@
         max-per-slot="1"/>
 	<item id="1088"
         image="/elektroadd/hg/programlar/2.png"
-        name="Program"
+        name="Program 2"
         description="Tablo Programı"
         effect=""
         type="generic"
@@ -4696,7 +4696,7 @@
         max-per-slot="1"/>
 	<item id="1089"
         image="/elektroadd/hg/programlar/3.png"
-        name="Program"
+        name="Program 3"
         description="Yazı Programı"
         effect=""
         type="generic"
@@ -4704,7 +4704,7 @@
         max-per-slot="1"/>
 	<item id="1090"
         image="/elektroadd/hg/ram/1.png"
-        name="Bellek (RAM)"
+        name="Bellek (RAM) 1"
         description="512 MB Bellek"
         effect=""
         type="generic"
@@ -4712,7 +4712,7 @@
         max-per-slot="1"/>
 	<item id="1091"
         image="/elektroadd/hg/ram/2.png"
-        name="Bellek (RAM)"
+        name="Bellek (RAM) 2"
         description="1 GB Bellek"
         effect=""
         type="generic"
@@ -4720,7 +4720,7 @@
         max-per-slot="1"/>
 	<item id="1092"
         image="/elektroadd/hg/ram/3.png"
-        name="Bellek (RAM)"
+        name="Bellek (RAM) 3"
         description="2 GB Bellek"
         effect=""
         type="generic"
@@ -4728,7 +4728,7 @@
         max-per-slot="1"/>
 	<item id="1093"
         image="/elektroadd/hg/usb/1.png"
-        name="USB Bellek"
+        name="USB Bellek 1"
         description="2 GB USB Bellek"
         effect=""
         type="generic"
@@ -4736,7 +4736,7 @@
         max-per-slot="1"/>
 	<item id="1094"
         image="/elektroadd/hg/usb/2.png"
-        name="USB Bellek"
+        name="USB Bellek 2"
         description="4 GB USB Bellek"
         effect=""
         type="generic"
@@ -4744,7 +4744,7 @@
         max-per-slot="1"/>
 	<item id="1095"
         image="/elektroadd/hg/usb/3.png"
-        name="USB Bellek"
+        name="USB Bellek 3"
         description="8 GB USB Bellek"
         effect=""
         type="generic"
@@ -4752,7 +4752,7 @@
         max-per-slot="1"/>
 	<item id="1096"
         image="/elektroadd/hg/usb/4.png"
-        name="USB Bellek"
+        name="USB Bellek 4"
         description="16 GB USB Bellek"
         effect=""
         type="generic"
@@ -4760,7 +4760,7 @@
         max-per-slot="1"/>
 	<item id="1097"
         image="/elektroadd/hg/usb/5.png"
-        name="USB Bellek"
+        name="USB Bellek 5"
         description="32 GB USB Bellek"
         effect=""
         type="generic"

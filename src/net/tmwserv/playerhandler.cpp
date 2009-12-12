@@ -269,7 +269,7 @@ void PlayerHandler::handleMessage(MessageIn &msg)
                 player_node->setSpecialStatus(id, current, max, recharge);
             }
         } break;
-        /*
+
         case SMSG_PLAYER_ARROW_MESSAGE:
             {
                 Sint16 type = msg.readInt16();
@@ -285,7 +285,7 @@ void PlayerHandler::handleMessage(MessageIn &msg)
                 }
             }
             break;
-        */
+
     }
 }
 

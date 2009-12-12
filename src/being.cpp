@@ -32,9 +32,10 @@
 #include "particle.h"
 #include "simpleanimation.h"
 #include "sound.h"
+#include "item.h"
 #include "text.h"
 #include "statuseffect.h"
-
+#include "equipment.h"
 #include "gui/speechbubble.h"
 
 #include "resources/colordb.h"
@@ -57,6 +58,8 @@
 
 #define BEING_EFFECTS_FILE "effects.xml"
 #define HAIR_FILE "hair.xml"
+
+class Item;
 
 int Being::mNumberOfHairstyles = 1;
 
@@ -334,14 +337,19 @@ void Being::handleAttack(Being *victim, int damage, AttackType type)
             p->moveBy(Vector(0.0f, 0.0f, 32.0f));
             victim->controlParticle(p);
             Particle *p2;
-            logger->log("-----%d",mEquippedWeapon->getId());
-if (mEquippedWeapon->getId()==690)
+
+//            Equipment *mEquipment;
+//Item *item = mEquipment->getEquipment(9);
+//logger->log("---: %d", item->getId());
             p2 = particleEngine->addEffect("graphics/particles/arrow.particle.y.xml", mPx, mPy);
 
-if (mEquippedWeapon->getId()==691)
-            p2 = particleEngine->addEffect("graphics/particles/arrow.particle.k.xml", mPx, mPy);
-if (mEquippedWeapon->getId()==692)
-            p2 = particleEngine->addEffect("graphics/particles/arrow.particle.m.xml", mPx, mPy);
+
+//if (mEquippedWeapon->getId()==690)
+//            p2 = particleEngine->addEffect("graphics/particles/arrow.particle.y.xml", mPx, mPy);
+//if (mEquippedWeapon->getId()==691)
+//            p2 = particleEngine->addEffect("graphics/particles/arrow.particle.k.xml", mPx, mPy);
+//if (mEquippedWeapon->getId()==692)
+//            p2 = particleEngine->addEffect("graphics/particles/arrow.particle.m.xml", mPx, mPy);
             if (p2)
             {
                 p2->setLifetime(900);

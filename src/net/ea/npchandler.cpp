@@ -45,6 +45,7 @@
 #include "elektro/circuitwindow.h"
 #include "elektro/slaytwindow.h"
 #include "elektro/similasyonpenceresi.h"
+#include "elektro/missionwindow.h"
 
 #include "log.h"
 
@@ -60,6 +61,7 @@ extern TestDialog *testDialog;
 extern CircuitWindow *circuitWindow;
 extern SlaytWindow *slaytWindow;
 extern SimilasyonPenceresi *similasyonPenceresi;
+extern MissionWindow *missionWindow;
 namespace EAthena {
 
 std::string temp;
@@ -108,11 +110,20 @@ void NpcHandler::handleMessage(MessageIn &msg)
             temp = msg.readString(msg.getLength() - 8);
             resetPlayer = true;
             npcText<<temp;
-            if (being->getJob()>=100 && being->getJob()<=149)
+            if (being->getJob() == 299)
+            {
+                if (temp=="</mission>")
+                {
+                     missionWindow->setVisible(true);
+//                     missionWindow->setDoc(npcText.str());
+//                     missionWindow->parse();
+                     npcText.str("");
+                }
+            }
+            else if (being->getJob()>=100 && being->getJob()<=149)
             {
                 if (temp=="</test>")
                 {
-//                   TestDialog *testDialog= new TestDialog();
                      testDialog->setVisible(true);
                      testDialog->setDoc(npcText.str());
                      testDialog->parse();

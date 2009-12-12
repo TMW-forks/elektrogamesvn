@@ -125,7 +125,6 @@ void BeingHandler::handleMessage(MessageIn &msg)
             statusEffects = msg.readInt16();  // opt2
             statusEffects |= ((Uint32)msg.readInt16()) << 16;  // option
             job = msg.readInt16();  // class
-logger->log("Job : %d ",job);
             dstBeing = beingManager->findBeing(id);
 
             if (!dstBeing)

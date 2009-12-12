@@ -123,6 +123,7 @@ add(sa);
 hideSubMissions();
 //viewOneMission("Eğitim Odası");
     putSubMission();
+    setVisible(false);
 }
 
 void
@@ -292,5 +293,11 @@ MissionWindow::hideSubMissions()
             (*mSubMissionsIter)->oneVisible = false;
         }
     }
+}
+
+void
+MissionWindow::parse()
+{
+
 }
 

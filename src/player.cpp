@@ -165,6 +165,7 @@ void Player::setSprite(unsigned int slot, int id, const std::string &color)
 #ifdef EATHENA_SUPPORT
         if (slot == WEAPON_SPRITE)
             mEquippedWeapon = NULL;
+//        if (slot == )
 #endif
     }
     else

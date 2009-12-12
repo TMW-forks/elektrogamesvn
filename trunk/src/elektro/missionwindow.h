@@ -120,11 +120,14 @@ class MissionWindow : public Window, public gcn::ActionListener
 
     private:
         int sayfa ; // gösterilecek resmi seçmek için
-        Image *sayfaImg;
         Image *mBackgroundPattern;
         Button *s1;
-        Container *mContainer;
-        ScrollArea *sa;
+        Container *mContainerSub;
+        Container *mContainerMain;
+        Container *mContainerExp;
+        ScrollArea *mScrollSub;
+        ScrollArea *mScrollMain;
+        ScrollArea *mScrollExp;
 
         //Alt Görev
 //        TSubMissions mSubMissions;

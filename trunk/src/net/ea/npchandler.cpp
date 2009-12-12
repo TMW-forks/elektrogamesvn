@@ -131,13 +131,13 @@ void NpcHandler::handleMessage(MessageIn &msg)
             }
             else if (being->getJob()>=250 && being->getJob()<=299)
             {
-                if (being->getJob()==143)
+                if (being->getJob()==251)
                 {
                     Hitabe *hitabe = new Hitabe();
                     hitabe->setVisible(true);
                     npcText.str("");
                 }
-                else if (being->getJob()==144)
+                else if (being->getJob()==252)
                 {
                     if (temp=="</presentation>")
                     {
@@ -146,7 +146,7 @@ void NpcHandler::handleMessage(MessageIn &msg)
                     }
                 }
                 //Similasyon Penceresi
-                else if (being->getJob()==145)
+                else if (being->getJob()==253)
                 {
                     if(temp == "</similasyon>")
                     {

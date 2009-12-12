@@ -101,27 +101,37 @@ void Kutle::mouseDragged(gcn::MouseEvent &event)
 void
 Kutle::mouseReleased(gcn::MouseEvent &event)
 {
+    std::vector<int> agirlikKefe;
+
     setSelected(false);
 
     if (getX()==305 && getY() == 280)
     {
         logger->log("arttı");
-        similasyonPenceresi->idKefe[getID()] = similasyonPenceresi->kefe1;
+        agirlikKefe.push_back(similasyonPenceresi->kefe1);
+        agirlikKefe.push_back(getAgirlik());
+        similasyonPenceresi->idKefe[getID()]= agirlikKefe;
     }
     else if (getX()==345 && getY() == 280)
     {
         logger->log("arttı");
-        similasyonPenceresi->idKefe[getID()] = similasyonPenceresi->kefe2;
+        agirlikKefe.push_back(similasyonPenceresi->kefe2);
+        agirlikKefe.push_back(getAgirlik());
+        similasyonPenceresi->idKefe[getID()]= agirlikKefe;
     }
     else if (getX()==385 && getY() == 280)
     {
         logger->log("arttı");
-        similasyonPenceresi->idKefe[getID()] = similasyonPenceresi->kefe3;
+        agirlikKefe.push_back(similasyonPenceresi->kefe3);
+        agirlikKefe.push_back(getAgirlik());
+        similasyonPenceresi->idKefe[getID()]= agirlikKefe;
     }
     else
     {
         //similasyonPenceresi->idKefe.insert(std::make_pair(getID(),0));
-        similasyonPenceresi->idKefe[getID()] = 0;
+        agirlikKefe.push_back(0);
+        agirlikKefe.push_back(getAgirlik());
+        similasyonPenceresi->idKefe[getID()]= agirlikKefe;
     }
 }
 

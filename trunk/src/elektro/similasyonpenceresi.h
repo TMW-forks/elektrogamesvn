@@ -59,8 +59,8 @@ class SimilasyonPenceresi : public Window, public gcn::ActionListener
         int findEmptyID();
 
         int kefe1,kefe2,kefe3;
-        std::map<int,int> idKefe;
-        std::map<int,int>::iterator idKefeIt;
+        std::map<int,std::vector<int> > idKefe;
+        std::map<int,std::vector<int> >::iterator idKefeIt;
     protected:
     private:
         bool startCancelDurum;
@@ -79,6 +79,7 @@ class SimilasyonPenceresi : public Window, public gcn::ActionListener
         std::vector<Kutle*>::iterator miKutle;
         std::vector<Kaldirac*> mvKaldirac;
         std::vector<Kaldirac*>::iterator miKaldirac;
+
 
         TmvAnim mvAnim;
         TmiAnim miAnim;

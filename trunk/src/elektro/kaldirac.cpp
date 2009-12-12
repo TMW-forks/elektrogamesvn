@@ -11,7 +11,7 @@ Kaldirac::Kaldirac(gcn::ActionListener *listener) : mListener(listener)
 
 Kaldirac::~Kaldirac()
 {
-    //dtor
+
 }
 
 void Kaldirac::draw(gcn::Graphics *graphics)

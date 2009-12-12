@@ -73,7 +73,7 @@ void NPCDB::load()
             {
                 NPCsprite *currentSprite = new NPCsprite;
                 currentSprite->sprite = (const char*)spriteNode->xmlChildrenNode->content;
-                currentSprite->variant = XML::getProperty(spriteNode, "variant", 0);
+                currentSprite->variant = XML::getProperty(spriteNode, "variant", 109);
                 currentInfo->sprites.push_back(currentSprite);
             }
             else if (xmlStrEqual(spriteNode->name, BAD_CAST "particlefx"))

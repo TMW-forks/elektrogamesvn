@@ -47,40 +47,6 @@ struct SmMainMission{
 typedef std::map<std::string, SmMainMission*> TMainMissions;
 typedef std::map<std::string, SmMainMission*>::iterator TMainMissionsIter;
 
-
-class LeftScrollArea : public gcn::ListModel
-{
-public:
-    std::vector<std::string> SLIDE_SIZE;
-
-    virtual ~LeftScrollArea() { }
-
-    virtual int getNumberOfElements()
-    {
-        return SLIDE_SIZE.size();
-    }
-
-    virtual std::string getElementAt(int i)
-    {
-        if (i >= getNumberOfElements())
-            return _("???");
-
-        return SLIDE_SIZE.at(i);
-    }
-    virtual void ekle(std::string slaytname)
-    {
-        SLIDE_SIZE.push_back(slaytname);
-    }
-    virtual void degistir(std::string slaytname, int yer)
-    {
-        SLIDE_SIZE.at(yer) = slaytname;
-    }
-    virtual void temizle()
-    {
-        SLIDE_SIZE.clear();
-    }
-};
-
 class MissionWindow : public Window, public gcn::ActionListener
 {
     public:
@@ -146,6 +112,11 @@ class MissionWindow : public Window, public gcn::ActionListener
          * Alt görevleri gizle
          */
         void hideSubMissions();
+
+        /**
+         * npchandler tarafýndan gelen verileri parse et
+         */
+        void parse(std::string mDoc);
 
     private:
         int sayfa ; // gösterilecek resmi seçmek için

@@ -33,15 +33,12 @@ MissionWindow::MissionWindow():
     setResizable(true);
 
     mContainerSub = new Container();
-    mContainerSub->setDimension(gcn::Rectangle(0,0,250,300));
     mContainerSub->setOpaque(false);
 
     mContainerMain = new Container();
-    mContainerMain->setDimension(gcn::Rectangle(0,0,145,380));
     mContainerMain->setOpaque(false);
 
     mContainerExp = new Container();
-    mContainerExp->setDimension(gcn::Rectangle(0,0,145,100));
     mContainerExp->setOpaque(false);
 
     mScrollSub = new ScrollArea(mContainerSub);
@@ -61,6 +58,11 @@ MissionWindow::MissionWindow():
     mScrollExp->setOpaque(false);
     mContainerExp->addActionListener(this);
     add(mScrollExp);
+
+    mContainerSub->setDimension(mScrollSub->getDimension());
+    mContainerMain->setDimension(mScrollMain->getDimension());
+    mContainerExp->setDimension(mScrollExp->getDimension());
+
 
     ResourceManager *resman = ResourceManager::getInstance();
     mBackgroundPattern = resman->getImage("graphics/elektrik/gorev_background.png");
@@ -157,7 +159,7 @@ MissionWindow::viewOneMission(std::string one)
             (*mSubMissionsIter)->oneTarget->setVisible(true);
 
         if((*mSubMissionsIter)->oneExplain)
-            (*mSubMissionsIter)->oneExplain->setVisible(true);
+            (*mSubMissionsIter)->oneExplain->setVisible(false);
 
         if((*mSubMissionsIter)->oneVisible)
             (*mSubMissionsIter)->oneVisible = true;
@@ -273,6 +275,7 @@ MissionWindow::parse(std::string mDoc)
                 {
                     SmSubMission *tempSub = new SmSubMission;
                     tempSub->mainName = mainMisName;
+                    tempSub->oneVisible = false;
                     TextBox *tempText = new TextBox();
                     tempText->setText(XML::getProperty(subnode, "label", "Alt görev."));
                     tempText->setWidth(100);
@@ -281,23 +284,33 @@ MissionWindow::parse(std::string mDoc)
                     tempText->setVisible(false);
                     tempText->setActionEventId(mainMisName+tempText->getText());
                     tempText->addActionListener(this);
-//                    tempText->addMouseListener(this);
-//                    tempText->setFocusable(false);
+                    tempText->addMouseListener(this);
+                    tempText->setId(tempText->getText());
                     mContainerSub->add(tempText);
                     tempSub->oneTarget = tempText;
                     tempSub->oneImage = XML::getProperty(subnode, "image", "elektrik/dugme.png");
                     tempSub->oneStatus = XML::getProperty(subnode, "status", 1)-1;
                     tempSub->oneExplain = NULL;
-                    if (xmlStrEqual(subnode->name, BAD_CAST "text"))
+                    for_each_xml_child_node(textnode, subnode)
                     {
-                        BrowserBox *tt = new BrowserBox();
-                        for_each_xml_child_node(supnode, subnode)
+                        if (xmlStrEqual(textnode->name, BAD_CAST "text"))
                         {
-                             tt->addRow(XML::getProperty(supnode, "addrow", ""));
-                             tt->setVisible(false);
-                             mContainerExp->add(tt);
-                         }
-                         tempSub->oneExplain = tt;
+                            BrowserBox *tt = new BrowserBox();
+                            tt->setVisible(false);
+                            tt->setOpaque(false);
+                            tt->addMouseListener(this);
+                            mContainerExp->add(tt);
+                            tempSub->oneExplain = tt;
+                            tt->setDimension(gcn::Rectangle(0,0,mContainerExp->getWidth(),mContainerExp->getHeight()));
+
+                            for_each_xml_child_node(rownode, textnode)
+                            {
+                                 if (xmlStrEqual(rownode->name, BAD_CAST "addrow"))
+                                 {
+                                     tt->addRow(XML::getProperty(rownode, "text", ""));
+                                 }
+                             }
+                        }
                     }
                     addSubMission(mainMisName, tempSub);
                 }
@@ -306,43 +319,35 @@ MissionWindow::parse(std::string mDoc)
     }
     putMissionButtons();
     putSubMission();
+    hideSubMissions();
 }
 
 void
 MissionWindow::mousePressed(gcn::MouseEvent &event)
 {
-    logger->log("pressssssssss");
-        for(TMainMissionsIter mit = mMainMission.begin(); mit != mMainMission.end(); ++mit)
+    logger->log("presssedddd :%d",event.getX());
+    Widget *w= event.getSource();
+    const std::string ClickedId = event.getSource()->getId();
+    for(TMainMissionsIter mit = mMainMission.begin(); mit != mMainMission.end(); ++mit)
+    {
+        SmMainMission *temp;
+        temp = mit->second;
+        TSubMissionsIter tik;
+        for(tik = temp->subMissions.begin(); tik != temp->subMissions.end(); tik++ )
         {
-            SmMainMission *temp;
-            temp = mit->second;
-            TSubMissionsIter tik;
-            gcn::Rectangle a;
-            a.x += mScrollExp->getX();
-            a.y += mScrollExp->getY();
-
-            for(tik = temp->subMissions.begin(); tik != temp->subMissions.end(); tik++ )
+            logger->log("%s == %s",(*tik)->oneTarget->getId().c_str() , ClickedId.c_str());
+            if ((*tik)->oneTarget->isVisible() &&
+                   (*tik)->oneTarget->getId() == ClickedId)
             {
-                a = (*tik)->oneTarget->getDimension();
-                logger->log("XX : %s - %d %d %d %d +++ %d-%d",(*tik)->oneTarget->getText().c_str(),
-                            a.x,
-                            a.y,
-                            a.width,
-                            a.height,event.getX(), event.getY()
-                             );
-                if ((*tik)->oneTarget->isVisible() &&
-                       a.isPointInRect(event.getX(), event.getY()))
-                {
-                     logger->log("yessssssssss : %s", (*tik)->oneTarget->getText().c_str());
-    //                hideSubMissions();
-    //                if (temp->subMissions.size() != 0)
-    //                    viewOneMission(event.getId());
-    //                    mScrollSub->setVerticalScrollAmount(0);
-                }
+                if((*tik)->oneExplain != NULL)
+                    (*tik)->oneExplain->setVisible(true);
+            }
+            else
+            {
+                if((*tik)->oneExplain != NULL)
+                    (*tik)->oneExplain->setVisible(false);
             }
         }
-
+    }
+    Window::mousePressed(event);
 }
-
-//&&
-//                    (*tik)->oneTarget->getDimension().isPointInRect(event.getX(), event.getY()

@@ -54,7 +54,7 @@ MissionWindow::MissionWindow():
     add(mScrollMain);
 
     mScrollExp = new ScrollArea(mContainerExp);
-    mScrollExp->setDimension(gcn::Rectangle(130,210,getWidth()-140,getHeight()-250));
+    mScrollExp->setDimension(gcn::Rectangle(130,215,getWidth()-140,getHeight()-250));
     mScrollExp->setOpaque(false);
     mContainerExp->addActionListener(this);
     add(mScrollExp);
@@ -161,6 +161,9 @@ MissionWindow::viewOneMission(std::string one)
         if((*mSubMissionsIter)->oneExplain)
             (*mSubMissionsIter)->oneExplain->setVisible(false);
 
+        if((*mSubMissionsIter)->oneImage)
+            (*mSubMissionsIter)->oneImage->setVisible(true);
+
         if((*mSubMissionsIter)->oneVisible)
             (*mSubMissionsIter)->oneVisible = true;
     }
@@ -199,7 +202,7 @@ MissionWindow::putSubMission()
     {
         int x  = 5;
         int y  = 10;
-        int dy = 20;
+        int dy = 25;
 
         SmMainMission *temp;
         temp = mMainMissionIter->second;
@@ -207,9 +210,16 @@ MissionWindow::putSubMission()
 
         for(mSubMissionsIter = subtemp.begin(); mSubMissionsIter != subtemp.end(); mSubMissionsIter++)
         {
+            if ((*mSubMissionsIter)->oneTarget != NULL)
+            {
                 (*mSubMissionsIter)->oneTarget->setPosition(x,y);
-                (*mSubMissionsIter)->oneTarget->setWidth(150);
-                (*mSubMissionsIter)->oneTarget->showPart(gcn::Rectangle(0,0,100,5));
+                (*mSubMissionsIter)->oneTarget->setWidth(170);
+            }
+            if ((*mSubMissionsIter)->oneImage != NULL)
+            {
+                (*mSubMissionsIter)->oneImage->setX(x + 180);
+                (*mSubMissionsIter)->oneImage->setY(y);
+            }
             y += dy;
         }
     }
@@ -233,6 +243,9 @@ MissionWindow::hideSubMissions()
 
             if((*zit)->oneExplain)
                 (*zit)->oneExplain->setVisible(false);
+
+            if((*zit)->oneImage)
+                (*zit)->oneImage->setVisible(false);
 
             (*zit)->oneVisible = false;
         }
@@ -288,7 +301,19 @@ MissionWindow::parse(std::string mDoc)
                     tempText->setId(tempText->getText());
                     mContainerSub->add(tempText);
                     tempSub->oneTarget = tempText;
-                    tempSub->oneImage = XML::getProperty(subnode, "image", "elektrik/dugme.png");
+                    std::string imagestr = XML::getProperty(subnode, "image", "elektrik/dugme.png");
+                    ImageWidget *tempImage;
+                    if (imagestr != "")
+                    {
+                        tempImage = new ImageWidget(imagestr);
+                        tempImage->setVisible(false);
+                        tempImage->setMode(XML::getProperty(subnode, "status", 0));
+                    }
+                    else
+                        tempImage = NULL;
+
+                    mContainerSub->add(tempImage);
+                    tempSub->oneImage = tempImage;
                     tempSub->oneStatus = XML::getProperty(subnode, "status", 1)-1;
                     tempSub->oneExplain = NULL;
                     for_each_xml_child_node(textnode, subnode)

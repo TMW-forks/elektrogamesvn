@@ -31,12 +31,14 @@ ImageWidget::draw(gcn::Graphics* graphics)
 {
     mMode = (mMode<0 || mMode >4? 0 : mMode);
     Graphics *g = static_cast<Graphics*>(graphics);
-
-    if(!mImageSet->get(mMode))
+    if (mImageSet != NULL)
     {
-        graphics->setColor(gcn::Color(0xff0000));
-        g->drawRectangle(gcn::Rectangle(0,0,getWidth(),getHeight()));
+        if(!mImageSet->get(mMode))
+        {
+            graphics->setColor(gcn::Color(0xff0000));
+            g->drawRectangle(gcn::Rectangle(0,0,getWidth(),getHeight()));
+        }
+        else
+            g->drawImage(mImageSet->get(mMode),0,0);
     }
-    else
-        g->drawImage(mImageSet->get(mMode),0,0);
 }

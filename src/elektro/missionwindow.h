@@ -30,7 +30,7 @@
 struct SmSubMission{
     std::string mainName;
     TextBox *oneTarget;
-    std::string oneImage;
+    ImageWidget *oneImage;
     BrowserBox *oneExplain;
     int oneStatus;
     bool oneVisible;

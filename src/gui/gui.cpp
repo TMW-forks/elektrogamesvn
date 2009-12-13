@@ -374,7 +374,7 @@ Gui::Gui(Graphics *graphics):
     path = resman->getPath(fontFile);
     try
     {
-        font_txt_4 = new TrueTypeFont(path, fontSize);
+        font_txt_4 = new TrueTypeFont(path, 12);
     }
     catch (gcn::Exception e)
     {

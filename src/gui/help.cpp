@@ -19,6 +19,7 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+#include "gui/gui.h"
 #include "gui/help.h"
 
 #include "gui/widgets/button.h"
@@ -45,6 +46,7 @@ HelpWindow::HelpWindow():
 
     mBrowserBox = new BrowserBox;
     mBrowserBox->setOpaque(false);
+    mBrowserBox->setFont(font_txt_4);
     mScrollArea = new ScrollArea(mBrowserBox);
     Button *okButton = new Button(_("Close"), "close", this);
 

@@ -24,7 +24,7 @@
  </tileset>
  <layer name="Ground" width="26" height="27">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAGNkYGBgHMWjeARhEHADYncg9gBiTzQ+MpuBQnv2EIlH7RkYe0gBo/aQZxc97KHEjuFozygexaMYNwYA0mXPV/gKAAA=
+   H4sIAAAAAAAAAGNkYGBgHMWjeITgPWTiUXtG7Rm1Z9SewW7PKB7Fo5gwBgCCpZdp+AoAAA==
   </data>
  </layer>
  <layer name="Fringe" width="26" height="27">
@@ -34,7 +34,7 @@
  </layer>
  <layer name="Top" width="26" height="27">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3ROQrCUBRG4ezDHZjsQG017sQhzpUTWFipEQSt4gBOK3EEBd2Rp7BKEZDLQ9B74CseXPiLZ1ma9l/FP7i1BTuOodtwKUO339qJGboN92v/k0AGLrJIR7yTgp0c8iigCA8llFFBFTXU0RDsNNFCGx10ccARPdxwf2/1BTsDDDGCjzFOOGOCB56YYibYCTDHAkuscMEVa2ywxQ57wY6madG9AKAlh8z4CgAA
+   H4sIAAAAAAAAAGNgGAWjYOQALSB2A2J3IPYAYk8i+Npk2KNDhh4uMvTYkqFHmgw95LiNnDAgx23khMFo/AzN+DkCxEdxyFEzfo4B8XEccuSEgTUDZrkCwieA+CQD9nLHhgx7RsEoGAWEAQBDEVAb+AoAAA==
   </data>
  </layer>
  <layer name="Collision" width="26" height="27">

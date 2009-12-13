@@ -19,9 +19,15 @@
  <tileset name="kaplama" firstgid="330" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/kaplamalar.png"/>
  </tileset>
+ <tileset name="cikis" firstgid="348" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/cikis.png"/>
+ </tileset>
+ <tileset name="collision" firstgid="350" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/collision.png"/>
+ </tileset>
  <layer name="Ground" width="46" height="31">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3OwQnAMAwEQam/9F9PCvAnYHMKeBb2P11VbXv56b25uafdU3Fn487GnY07G3e2XfeE/YSZ+3u3u23b//sFz8qcMkgWAAA=
+   H4sIAAAAAAAAAO3WsQ2AIBAF0GNHJ0M3QDdgA6RV3MgzsbDQKHLJYfzFK6AgP8cPaojIAADAb7RsYjNLbHmx7hRyO9aYMk4htxfIbRVyx8rnfdbjzSiQO1ycLdF7iR5r3INEj3P5SnqcK2Len5u3Vcgt8a7jPUG/n+ip7J/vbn387oZ9fxDIDQAAdVoB2celnEgWAAA=
   </data>
  </layer>
  <layer name="Fringe" width="46" height="31">
@@ -31,15 +37,15 @@
  </layer>
  <layer name="Top" width="46" height="31">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3WW07CQBTG8XFTkOg74l2fvCLIEwjen7yBKCtAdoDdgVvgFXVH/idhUtPYhMppOybnS35Jy5ycMyFTijEaTXp5xQQf+MTXH+6Hme/amIEnPZJm5EmPpHn3pEfSjD3pEZffnj/rTaB3ENNb4nnN4wxKzMzjDErMTPMMpjlTv+9sZ+bxTpOYqb8n2c78r+fbvhfn+a866/3PzwOBfZdQxgpWsYZ1bGATW9jGsmDdjsC+d7GPAxziCIUFY4qocl3DCfamdW7N1lVwbMI6txbtF62rC+y7gVO00MYZFpm9hEuur3CN5rTOrdm6c1yYsM6tRftF624E9n2LezzgER108YQenvGCO8G6vsC+NRqNRuNnvgHekkxASBYAAA==
+   H4sIAAAAAAAAAO3OsQ0AIAwEsWdPWBIWJAukTmNL118CAAAATLnVXsmp3vQMADQ+4r36s0gWAAA=
   </data>
  </layer>
  <layer name="Collision" width="46" height="31">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3OSQ0AIAwAsOGN078hZoEXgbQKGgEAAAB/qCWilduLcz3P48H3zPN68A3AuQ08r74OSBYAAA==
+   H4sIAAAAAAAAAO3BgQAAAADDoPlTn+AGVQEAAAAAwDcfSLnNSBYAAA==
   </data>
  </layer>
- <layer name="Objects" width="46" height="31">
+ <layer name="Objects" width="46" height="31" visible="0">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAAO3BgQAAAADDoPlTn+AGVQEAAAAAwDcfSLnNSBYAAA==
   </data>

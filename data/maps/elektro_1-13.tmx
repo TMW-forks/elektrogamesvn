@@ -7,27 +7,30 @@
  <tileset name="duvar" firstgid="2" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/hastehane.png"/>
  </tileset>
- <tileset name="arka" firstgid="86" tilewidth="32" tileheight="32">
+ <tileset name="kaplama" firstgid="86" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/kaplamalar.png"/>
+ </tileset>
+ <tileset name="zemin" firstgid="104" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/zemin2.png"/>
  </tileset>
  <layer name="Ground" width="66" height="36">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3TwQnAMAwEQbnW9N9DHldC7MiIOdgCNKBVVUuSJGljU8Yh2+HwDIhD5i8yDhmHjEPGIeOQfXWYYsEh45BxyDhkOxxO9te677zBoftGDhxucui+TZIkze4FqqsPQyAlAAA=
+   H4sIAAAAAAAAAO2XQQ6CMBBFh0txAhYqcg9JZCdwfUcDkQVpCy2Ewbd4+QsmDX0dmDQTkQwAAAAgETflYpyrUkZ6KJTHQG04czx8s8ADHox58NXgAQ9H9PAcaDZKKx5SvcvatOphPGs84KFeUW/FQyPL/n1L60PWi10j1sNdfne2T76UVumUXvz3PF+WjjMP7YU9+mFrXN8dHv7PQ44Hbz+E7BcP5/IwnUch82UuXc/GmVYdYK8AAABn4g1WDfWQICUAAA==
   </data>
  </layer>
- <layer name="Fringe" width="66" height="36">
+ <layer name="Fringe" width="66" height="36" visible="0">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAAO3BAQ0AAADCoPdPbQ8HFAAAAAAAAAAAwKcBBzE/CCAlAAA=
   </data>
  </layer>
  <layer name="Top" width="66" height="36">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO2WyU5DMQxFI4ZSdgwt7GiZdpShhS4Yy7Bg/Ar+/x+4VmJhRS/iKTKhEb7SUXvtqJWt967inMlkMplMJi29gueKeQFvCnuYgs/KmSrs4WkO5piXPdQujRlsD3q/8deyPXjZHrxsD162By+NGd6dv5Pl3ON++tS457WRxh4WwCJYAsugA1YStW6op3qxL/WsafzPGtgX9MT3DbAp/BZYD3CPzvdDL/Y17WHHfc+5C/aEH4Ya+3NwAQahx556Bw1e477bRhp7OAIjcAxOwCk4S9QewKPosad3Ydzga3oeLsEVuAY34BbcJWqzUI97nUDsKYM5M9vkatNnmzMfCnv4TaUyuKtU595qqYEyRRlM7xDnRi/ynLXsOYfl+b6ox9nMve1SA2WKMpjmlrki/dD5HGZP2ToQnjOb63xeZjn1DsuMk61UBo+V6tyblBooU6kMnkX1UaKeOs917t2XGMZkMplMJtO/0xflOcqcICUAAA==
+   H4sIAAAAAAAAAO3VMQqAMBBFwdTqAcQDiPc/oTYLQdIZskJmYJutfvdKAQAAAAD4t+W59XVb6qIce+N3DF+R72z8ruErAL6Lvs3YtFr0bcam1aJvmgYA/d1ZGdkYICUAAA==
   </data>
  </layer>
  <layer name="Collsion" width="66" height="36">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3OKQ6AQBQE0dGsFgawrAdg7n8yWnyPbBLqJeUrJQAAAAAAAAD4vlZ1UW9+cZrUHC3mF6dDndFlfnG6VXFPAC8qVavGPWI2qFFl94jZqja1u0cAAMCvPDdKQEogJQAA
+   H4sIAAAAAAAAAO3OAQkAAAwDoOV5/4CPMQaawAQAAAAAAPZcOwAAAMCEB1w7g0sgJQAA
   </data>
  </layer>
  <layer name="Objects" width="66" height="36">

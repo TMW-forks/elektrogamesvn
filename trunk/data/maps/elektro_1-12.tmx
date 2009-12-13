@@ -18,25 +18,25 @@
  </tileset>
  <layer name="Ground" width="68" height="35">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3QQQ0AIAwEwda/J14Iw0RDSplLVsBNRkRKkiQ1atoqPPagePDgcddjDSl48ODBgwcPHjwe9MgGP6qqsODBgweP1/rpKw8ePHhIv3UAKQ9KaTAlAAA=
+   H4sIAAAAAAAAAO2XSwqEMBAF46U8QS/iZLy1B9PZZcQf8YFtU4si0iFCF68D6VJKHQAAAIAj8sJQkataXtW3vvfO7NXO1rPzR/tF4KNfmIJgAh/moA9PPiLloxf4IB/kg3yQD/Kh8REpH4YPeT7MQR+efETKh+FD7uOb/t+qd7nyhi0NvX4u/HcU+HgCa/ChuBu80jKjilnwSouPyPn43Vlb81/3v95/690AAAAAMANnSYldMCUAAA==
   </data>
  </layer>
- <layer name="Fringe" width="68" height="35">
+ <layer name="Fringe" width="68" height="35" visible="0">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAAO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAfBg26l/DMCUAAA==
   </data>
  </layer>
  <layer name="Top" width="68" height="35">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO2XR0/DQBCFVxDagd4O9HagJqH4kEL1AQL5/3+HN4dVsqM9bEZj2FjzSZ8ijaUneT15lp0zDMMwDMPIiwH8hF81+P1WOI9CISMXNO6lVMjIBY17sf0Isf0Isf0Isf0Isf0Isf0Isf0IqdN+aJxHnfZD49nWaT807uXH/f23l+S7a5CQOxTkcmZgA87BebgAF+FshXPJcyxYTix3SZDLWYMbcBM+wie4A9cT5ltj11Ln207WWSXLieXuCnI5h/AYnsB3+AHP4VHC/HTsWur8zMnOo2A5sdwLQS7nBt7BJmzBNryHtxXOJf+XkuXEch8EuZwO7ME+fIYv8BV2K5xTh0/aw0OWE8t9UziP/4A6fNJe1ujKXKEOj/VhrK/9XKMrc4U6nPrQv4OoD5fhClx1o57016nHNboyV6jDqQ/9O4j6cA/uwwM36kl/nXpZoytzhTqc9+ElvILXLt7L09qVhjHN/AKymRgiMCUAAA==
+   H4sIAAAAAAAAAO3OMQrAIAAEQf//A5NaUgc/GEuxDpzgDFxx3ZYCAAAAAADAierYNe3O5sS15T+Rin28y++RCgCA/33WYv9QMCUAAA==
   </data>
  </layer>
- <layer name="Collision" width="68" height="35">
+ <layer name="Collision" width="68" height="35" visible="0">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAAO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAfBg26l/DMCUAAA==
   </data>
  </layer>
- <layer name="Objects" width="68" height="35">
+ <layer name="Objects" width="68" height="35" visible="0">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAAO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAfBg26l/DMCUAAA==
   </data>

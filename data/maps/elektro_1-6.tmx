@@ -4,48 +4,39 @@
  <tileset name="siyah" firstgid="1" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/siyah.png"/>
  </tileset>
- <tileset name="kapi" firstgid="2" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/kapi.png"/>
- </tileset>
- <tileset name="duvar" firstgid="8" tilewidth="32" tileheight="32">
+ <tileset name="duvar" firstgid="2" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/oda_platform.png"/>
  </tileset>
- <tileset name="pencere" firstgid="178" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/pencere.png"/>
- </tileset>
- <tileset name="kaplama" firstgid="194" tilewidth="32" tileheight="32">
+ <tileset name="kaplama" firstgid="172" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/kaplamalar.png"/>
  </tileset>
- <tileset name="kapick" firstgid="212" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/kapiacik.png"/>
- </tileset>
- <tileset name="araba" firstgid="218" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/arabalaryan.png"/>
- </tileset>
- <tileset name="karatahta" firstgid="298" tilewidth="32" tileheight="32">
+ <tileset name="karatahta" firstgid="190" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/karatahtalar.png"/>
  </tileset>
- <tileset name="yang?n" firstgid="334" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/yangin_musluk.png"/>
+ <tileset name="kapi" firstgid="226" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/kapiacikic.png"/>
+ </tileset>
+ <tileset name="collision" firstgid="232" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision.png"/>
  </tileset>
  <layer name="Ground" width="53" height="37">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3XywmAQAwE0NiB2oHawbbg1U/vVmQuC0FUCIxrxDm8g3EPDpsErESkIgqoUZOa1aLWws/Hdy0gU6e2QDpAphQgh5UAmcYAOawRkCla79WATNF6DzFP0XovATLVAXJYnCfO01sSIBPn6Xmcp//MUy/n/wGt4zvu/ldsPZ8/1u35AZBJLuqeOUP0SwmeOUP0SwmeHY/YvyV4eu8r9+Tpva/c09k+tHvL1hG7ioiIiIgo2wGFgFn1pB4AAA==
+   H4sIAAAAAAAAAO3XSwqAMAwE0HarvYF6A6/QrZ87ezizEYIUITC2EWfxFlYXDmYCxhBCJHKoF4tYxSb2ytf3ewmQaRCHIwMg0+wghzYDMmUHObQMyORt9jpAJm+zh+iTt9lD9KlzkENjn9inVtgn9qkV9qlsDOX/gGR4j6f/FX1+PX8/189PgEyIniHmpQZLzxDzUoNlxyP2bw2W2fvKd7LM3le+U2kf6r2lz9/cVURERET0PydY1NZ4pB4AAA==
   </data>
  </layer>
  <layer name="Fringe" width="53" height="37">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3BMQEAAADCoPVPbQsvoAAAAAAAAADgYwXm2VukHgAA
+   H4sIAAAAAAAAAO3UsREAMAgDMfYfFNZIVqAAGunue1eOAAAAACbkr65HADT4LQAANjywfUhnpB4AAA==
   </data>
  </layer>
  <layer name="Top" width="53" height="37">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3UyQkAIBAEQfOPzzMbNwhxFaqg//OaUgAAAPhNjVr2iMN6NLJHHDajlT0CHuG3/uC3AAC4YQNhEjdopB4AAA==
+   H4sIAAAAAAAAAO3UyQkAIBAEQfMP0zMNNwhxFaqg//OaUgAAAPhNjVr2iMN6NLJHHDajlT0CHuG3/uC3AAC4YQMnzk5NpB4AAA==
   </data>
  </layer>
- <layer name="Collision" width="53" height="37">
+ <layer name="Collision" width="53" height="37" visible="0">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3BMQEAAADCoPVPbQsvoAAAAAAAAADgYwXm2VukHgAA
+   H4sIAAAAAAAAAO3PwQ0AIAgEQfrv1C6swQcemrlkv4RZVbUkXWvSmJhSY2JKjYkpNSam1Jj6rKf3uv9mYpoY05v9YGCSJEma3wajkBd5pB4AAA==
   </data>
  </layer>
  <layer name="Objects" width="53" height="37" visible="0">

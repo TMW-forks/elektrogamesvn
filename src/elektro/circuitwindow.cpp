@@ -1682,6 +1682,9 @@ CircuitWindow::circuitFromXML(std::string mDoc)
 {
     if (mDoc=="") return;
     xmlDocPtr mxmlDoc;
+
+    logger->log("%s",mDoc.c_str());
+
     mxmlDoc=  xmlParseMemory(mDoc.c_str(), mDoc.size());
     elektroWidget->padX = 120;
     elektroWidget->padY = 5;
@@ -1774,6 +1777,7 @@ CircuitWindow::circuitFromXML(std::string mDoc)
         else if (xmlStrEqual(node->name, BAD_CAST "node"))
         {
             Node *tempNode = new Node("com_node_btn.png","Hint", "com_node",this);
+
             tempNode->setId(XML::getProperty(node, "id", 0));
             tempNode->setX(XML::getProperty(node, "x", 0)+elektroWidget->padX);
             tempNode->setY(XML::getProperty(node, "y", 0)+elektroWidget->padY);
@@ -1786,6 +1790,7 @@ CircuitWindow::circuitFromXML(std::string mDoc)
             tempNode->setToLink(XML::getProperty(node, "tolink", 1));
             tempNode->setFromLink(XML::getProperty(node, "fromlink", 1));
             mvNode.push_back(tempNode);
+
             add(tempNode);
         }
         else if (xmlStrEqual(node->name, BAD_CAST "component"))
@@ -1796,7 +1801,7 @@ CircuitWindow::circuitFromXML(std::string mDoc)
             std::string tempType = tempItem.getElektroType();
 
             Node *tempNode1 = new Node("com_node_btn.png","Hint", "com_node",this);
-            tempNode1->setId(findEmptyId());
+            tempNode1->setId(XML::getProperty(node, "id", 0));
             tempNode1->setX(20);
             tempNode1->setY(20);
             tempNode1->setEnabled(true);
@@ -1810,7 +1815,7 @@ CircuitWindow::circuitFromXML(std::string mDoc)
             mvNode.push_back(tempNode1);
             add(tempNode1);
             Node *tempNode2 = new Node("com_node_btn.png","Hint", "com_node",this);
-            tempNode2->setId(findEmptyId());
+            tempNode2->setId(XML::getProperty(node, "id", 0)+1);
             tempNode2->setX(20);
             tempNode2->setY(20);
             tempNode2->setEnabled(true);

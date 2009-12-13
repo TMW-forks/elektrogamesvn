@@ -30,7 +30,7 @@
 struct SmSubMission{
     std::string mainName;
     TextBox *oneTarget;
-    BitButton *oneImage;
+    std::string oneImage;
     BrowserBox *oneExplain;
     int oneStatus;
     bool oneVisible;
@@ -117,6 +117,8 @@ class MissionWindow : public Window, public gcn::ActionListener
          * npchandler tarafýndan gelen verileri parse et
          */
         void parse(std::string mDoc);
+
+        void mousePressed(gcn::MouseEvent &event);
 
     private:
         int sayfa ; // gösterilecek resmi seçmek için

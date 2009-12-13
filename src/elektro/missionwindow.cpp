@@ -57,7 +57,7 @@ MissionWindow::MissionWindow():
     add(mScrollMain);
 
     mScrollExp = new ScrollArea(mContainerExp);
-    mScrollExp->setDimension(gcn::Rectangle(130,150,getWidth()-140,getHeight()-250));
+    mScrollExp->setDimension(gcn::Rectangle(130,210,getWidth()-140,getHeight()-250));
     mScrollExp->setOpaque(false);
     mContainerExp->addActionListener(this);
     add(mScrollExp);
@@ -65,86 +65,7 @@ MissionWindow::MissionWindow():
     ResourceManager *resman = ResourceManager::getInstance();
     mBackgroundPattern = resman->getImage("graphics/elektrik/gorev_background.png");
 
-    setVisible(true);
-    addMainMission("Eğitim Odası");
-    addMainMission("Devre Tamamlama");
-    addMainMission("Akım bulma");
-    addMainMission("Gerilim bulma");
-    putMissionButtons();
-
-    TextBox *tl = new TextBox();
-    tl->setText("Test npcleri eğitimi");
-    tl->setWidth(100);
-    tl->setOpaque(true);
-    tl->setBackgroundColor(gcn::Color(156,184,184));
-    tl->setVisible(false);
-    mContainerSub->add(tl);
-
-    TextBox *tl1 = new TextBox();
-    tl1->setText("Robot dönüştürme eğitimi noexp");
-    tl1->setWidth(100);
-    tl1->setOpaque(true);
-    tl1->setBackgroundColor(gcn::Color(156,184,184));
-    tl1->setVisible(false);
-    mContainerSub->add(tl1);
-
-    TextBox *tl2 = new TextBox();
-    tl2->setText("Kablo bağlama");
-    tl2->setWidth(100);
-    tl2->setOpaque(true);
-    tl2->setBackgroundColor(gcn::Color(156,184,184));
-    tl2->setVisible(false);
-    mContainerSub->add(tl2);
-
-    TextBox *tl3 = new TextBox();
-    tl3->setWidth(100);
-    tl3->setText("Item yerleştirme");
-    tl3->setOpaque(true);
-    tl3->setBackgroundColor(gcn::Color(156,184,184));
-    tl3->setVisible(false);
-    mContainerSub->add(tl3);
-
-    BrowserBox *tt = new BrowserBox();
-    tt->addRow("soranCan'a git");
-    tt->addRow("onu yap ");
-    tt->addRow("bunu yap");
-    tt->addRow("falan filan");
-    tt->setDimension(gcn::Rectangle(120,150,100,5));
-    tt->setVisible(false);
-    mContainerSub->add(tt);
-
-    SmSubMission *ts = new SmSubMission;
-    ts->oneTarget =tl;
-    ts->oneExplain = tt;
-    addSubMission("Eğitim Odası", ts);
-
-    SmSubMission *ts1 = new SmSubMission;
-    ts1->oneTarget =tl1;
-    ts1->oneExplain = NULL;
-    addSubMission("Eğitim Odası", ts1);
-
-    SmSubMission *ts2 = new SmSubMission;
-    ts2->oneTarget =tl2;
-    ts2->oneExplain = tt;
-    addSubMission("Eğitim Odası", ts2);
-
-    SmSubMission *tss = new SmSubMission;
-    tss->oneTarget =tl3;
-    tss->oneExplain = tt;
-    addSubMission("Devre Tamamlama", tss);
-
-    s1 = new Button("Deneme","deneme",this);
-    s1->setDimension(gcn::Rectangle(120,0,50,250));
-    s1->showPart(gcn::Rectangle(10,70,10,10));
-
-ImageWidget *im = new ImageWidget("elektrik/dugme.png");
-im->setPosition(120,30);
-mContainerSub->add(im);
-
-//add(s1);
-hideSubMissions();
-//viewOneMission("Eğitim Odası");
-    putSubMission();
+//    hideSubMissions();
     setVisible(false);
 }
 
@@ -178,7 +99,6 @@ logger->log("action :%s",event.getId().c_str());
     }
     for(TMainMissionsIter mit = mMainMission.begin(); mit != mMainMission.end(); ++mit)
     {
-
         SmMainMission *temp;
         temp = mit->second;
         if (mit->first == event.getId())
@@ -189,7 +109,6 @@ logger->log("action :%s",event.getId().c_str());
                 mScrollSub->setVerticalScrollAmount(0);
         }
     }
-
 }
 
 void
@@ -207,7 +126,7 @@ MissionWindow::clearMissions()
 void
 MissionWindow::addSubMission(std::string mainname, SmSubMission *one)
 {
-    logger->log("addSubMission");
+    logger->log("addSubMission: %s", mainname.c_str());
     TSubMissions *temp;
     SmMainMission *mn = mMainMission[mainname];
     mn->subMissions.push_back(one);
@@ -216,9 +135,9 @@ MissionWindow::addSubMission(std::string mainname, SmSubMission *one)
 void
 MissionWindow::addMainMission(std::string one)
 {
-    logger->log("addMainMission");
+    logger->log("addMainMission : %s",one.c_str());
     Button *tmp = new Button(one,one,this);
-    add(tmp);
+    mContainerMain->add(tmp);
     SmMainMission *smtmp = new SmMainMission;
     smtmp->mainButton = tmp;
     mMainMission[one] = smtmp;
@@ -231,15 +150,14 @@ MissionWindow::viewOneMission(std::string one)
     SmMainMission *temp;
     temp = mMainMission[one];
     TSubMissions subtemp= temp->subMissions;
-//    if(subtemp.size() == 0) return;
+    if(subtemp.size() == 0) return;
     for(mSubMissionsIter = subtemp.begin(); mSubMissionsIter != subtemp.end(); mSubMissionsIter++)
     {
         if((*mSubMissionsIter)->oneTarget)
             (*mSubMissionsIter)->oneTarget->setVisible(true);
-//            showWidgetPart((*mSubMissionsIter)->oneTarget,gcn::Rectangle(15,15,50,60));
-//
-//        if((*mSubMissionsIter)->oneExplain)
-//            (*mSubMissionsIter)->oneExplain->setVisible(true);
+
+        if((*mSubMissionsIter)->oneExplain)
+            (*mSubMissionsIter)->oneExplain->setVisible(true);
 
         if((*mSubMissionsIter)->oneVisible)
             (*mSubMissionsIter)->oneVisible = true;
@@ -298,22 +216,23 @@ void
 MissionWindow::hideSubMissions()
 {
     logger->log(__FUNCTION__);
-
-    for(mMainMissionIter = mMainMission.begin(); mMainMissionIter != mMainMission.end(); mMainMissionIter++)
+    TMainMissionsIter mit;
+    for(mit = mMainMission.begin(); mit != mMainMission.end(); mit++)
     {
         SmMainMission *temp;
-        temp = mMainMissionIter->second;
+        temp = mit->second;
         if (temp ==NULL) continue;
         TSubMissions subtemp= temp->subMissions;
-        for(mSubMissionsIter = subtemp.begin(); mSubMissionsIter < subtemp.end(); mSubMissionsIter++)
+        TSubMissionsIter zit;
+        for(zit = subtemp.begin(); zit < subtemp.end(); zit++)
         {
-            if((*mSubMissionsIter)->oneTarget)
-                (*mSubMissionsIter)->oneTarget->setVisible(false);
+            if((*zit)->oneTarget)
+                (*zit)->oneTarget->setVisible(false);
 
-            if((*mSubMissionsIter)->oneExplain)
-                (*mSubMissionsIter)->oneExplain->setVisible(false);
+            if((*zit)->oneExplain)
+                (*zit)->oneExplain->setVisible(false);
 
-            (*mSubMissionsIter)->oneVisible = false;
+            (*zit)->oneVisible = false;
         }
     }
 }
@@ -347,36 +266,83 @@ MissionWindow::parse(std::string mDoc)
         if (xmlStrEqual(node->name, BAD_CAST "mainmission"))
         {
             std::string mainMisName = XML::getProperty(node, "name", "Ana Görev");
+            addMainMission(mainMisName);
             for_each_xml_child_node(subnode, node)
             {
                 if (xmlStrEqual(subnode->name, BAD_CAST "submission"))
                 {
-                        SmSubMission *tempSub = new SmSubMission;
-                        TextBox *tempText = new TextBox();
-                        tempText->setText(XML::getProperty(subnode, "label", "Alt görev."));
-                        tempText->setWidth(100);
-                        tempText->setOpaque(true);
-                        tempText->setBackgroundColor(gcn::Color(156,184,184));
-                        tempText->setVisible(false);
+                    SmSubMission *tempSub = new SmSubMission;
+                    tempSub->mainName = mainMisName;
+                    TextBox *tempText = new TextBox();
+                    tempText->setText(XML::getProperty(subnode, "label", "Alt görev."));
+                    tempText->setWidth(100);
+                    tempText->setOpaque(true);
+                    tempText->setBackgroundColor(gcn::Color(156,184,184));
+                    tempText->setVisible(false);
+                    tempText->setActionEventId(mainMisName+tempText->getText());
+                    tempText->addActionListener(this);
+//                    tempText->addMouseListener(this);
+//                    tempText->setFocusable(false);
+                    mContainerSub->add(tempText);
+                    tempSub->oneTarget = tempText;
+                    tempSub->oneImage = XML::getProperty(subnode, "image", "elektrik/dugme.png");
+                    tempSub->oneStatus = XML::getProperty(subnode, "status", 1)-1;
+                    tempSub->oneExplain = NULL;
+                    if (xmlStrEqual(subnode->name, BAD_CAST "text"))
+                    {
+                        BrowserBox *tt = new BrowserBox();
+                        for_each_xml_child_node(supnode, subnode)
+                        {
+                             tt->addRow(XML::getProperty(supnode, "addrow", ""));
+                             tt->setVisible(false);
+                             mContainerExp->add(tt);
+                         }
+                         tempSub->oneExplain = tt;
+                    }
+                    addSubMission(mainMisName, tempSub);
                 }
             }
         }
     }
-//
-//                }
-//                {
-//                    mMessageText->addRow(XML::getProperty(subnode, "text", "\n"));
-//                }
-//                else if (xmlStrEqual(subnode->name, BAD_CAST "effect"))
-//                {
-//                    std::string effecttype= XML::getProperty(subnode, "type", "particle");
-//                    std::string effectname= XML::getProperty(subnode, "name", "dogru1");
-//                    std::string effectsound= XML::getProperty(subnode, "sound", "dogru1");
-//                    makeEffect(effecttype,effectname,effectsound);
-//                }
-//            }
-//        }
+    putMissionButtons();
+    putSubMission();
+}
 
+void
+MissionWindow::mousePressed(gcn::MouseEvent &event)
+{
+    logger->log("pressssssssss");
+        for(TMainMissionsIter mit = mMainMission.begin(); mit != mMainMission.end(); ++mit)
+        {
+            SmMainMission *temp;
+            temp = mit->second;
+            TSubMissionsIter tik;
+            gcn::Rectangle a;
+            a.x += mScrollExp->getX();
+            a.y += mScrollExp->getY();
+
+            for(tik = temp->subMissions.begin(); tik != temp->subMissions.end(); tik++ )
+            {
+                a = (*tik)->oneTarget->getDimension();
+                logger->log("XX : %s - %d %d %d %d +++ %d-%d",(*tik)->oneTarget->getText().c_str(),
+                            a.x,
+                            a.y,
+                            a.width,
+                            a.height,event.getX(), event.getY()
+                             );
+                if ((*tik)->oneTarget->isVisible() &&
+                       a.isPointInRect(event.getX(), event.getY()))
+                {
+                     logger->log("yessssssssss : %s", (*tik)->oneTarget->getText().c_str());
+    //                hideSubMissions();
+    //                if (temp->subMissions.size() != 0)
+    //                    viewOneMission(event.getId());
+    //                    mScrollSub->setVerticalScrollAmount(0);
+                }
+            }
+        }
 
 }
 
+//&&
+//                    (*tik)->oneTarget->getDimension().isPointInRect(event.getX(), event.getY()

@@ -7,6 +7,8 @@
 #include "npc.h"
 #include "net/ea/npchandler.h"
 
+#include <guichan/font.hpp>
+
 extern int current_npc;
 extern ElektroWidget *elektroWidget;
 
@@ -20,6 +22,20 @@ SimilasyonPenceresi::SimilasyonPenceresi():
     pencereDurum= false;
     startCancelDurum = true;
     toplam = 0;
+    mText = "";
+
+    mmTurkce.insert(std::make_pair("ç","c"));
+    mmTurkce.insert(std::make_pair("ÄŸ","g"));
+    mmTurkce.insert(std::make_pair("ı","i"));
+    mmTurkce.insert(std::make_pair("ö","o"));
+    mmTurkce.insert(std::make_pair("ş","s"));
+    mmTurkce.insert(std::make_pair("ü","u"));
+    mmTurkce.insert(std::make_pair("Ç","C"));
+    mmTurkce.insert(std::make_pair("Ğ","G"));
+    mmTurkce.insert(std::make_pair("İ","I"));
+    mmTurkce.insert(std::make_pair("Ö","O"));
+    mmTurkce.insert(std::make_pair("Ş","S"));
+    mmTurkce.insert(std::make_pair("Ü","U"));
 
     mCancel = new Button("İptal","Sim_Cancel",this);
     mClose = new Button("Kapat","Sim_Close",this);
@@ -162,14 +178,19 @@ SimilasyonPenceresi::parseXML(std::string mDoc)
 
             for_each_xml_child_node(subNode,node)
             {
+//                if (xmlStrEqual(subNode->name, BAD_CAST "addrow"))
+//                {
+//                    mSoru->addRow(XML::getProperty(subNode, "text", ""));
+//                }
                 if (xmlStrEqual(subNode->name, BAD_CAST "addrow"))
                 {
-                    mSoru->addRow(XML::getProperty(subNode, "text", ""));
+                    mText += XML::getProperty(subNode, "text", "");
                 }
             }
 
+            autoWrap(mSoruArea,mSoru,mText);
             add(mSoruArea);
-
+            mText = "";
         }
         else if (xmlStrEqual(node->name, BAD_CAST "component"))
         {
@@ -185,7 +206,6 @@ SimilasyonPenceresi::parseXML(std::string mDoc)
             nesne->setID(id);
             kefeAgirlik.push_back(0);
             kefeAgirlik.push_back(nesne->getAgirlik());
-logger->log("IDsi:%d",nesne->getID());
             idKefe.insert(std::make_pair(nesne->getID(),kefeAgirlik));
 
             nesne->setX(x);
@@ -348,52 +368,138 @@ SimilasyonPenceresi::findEmptyID()
     return yeniID;
 }
 
-//void
-//SimilasyonPenceresi::autoWrap()
-//{
-//    gcn::Font *font = getFont();
-//    unsigned int y = 0;
-//    unsigned int nextChar;
-//    const char *hyphen = "~";
-//    int hyphenWidth = font->getWidth(hyphen);
-//    int x = 0;
-//
-//    for (TextRowIterator i = mTextRows.begin(); i != mTextRows.end(); i++)
+void
+SimilasyonPenceresi::autoWrap(ScrollArea *textArea,BrowserBox *browserBox,std::string text)
+{
+    gcn::Font *font = getFont();
+    std::string karakter;
+    std::string temp;
+    std::string sonKarakter="";
+    std::string kelime="";
+    std::string sonrakiKelime="";
+
+    int x = 0;
+    sonKarakter = text[text.size()-1];
+
+//    while(text.find("ç") != std::string::npos)
 //    {
-//        std::string row = *i;
-//        for (unsigned int j = 0; j < row.size(); j++)
-//        {
-//            std::string character = row.substr(j, 1);
-//            x += font->getWidth(character);
-//            nextChar = j + 1;
-//
-//            // Wraping between words (at blank spaces)
-//            if ((nextChar < row.size()) && (row.at(nextChar) == ' '))
-//            {
-//                int nextSpacePos = row.find(" ", (nextChar + 1));
-//                if (nextSpacePos <= 0)
-//                {
-//                    nextSpacePos = row.size() - 1;
-//                }
-//                int nextWordWidth = font->getWidth(
-//                        row.substr(nextChar,
-//                            (nextSpacePos - nextChar)));
-//
-//                if ((x + nextWordWidth + 10) > getWidth())
-//                {
-//                    x = 15; // Ident in new line
-//                    y += 1;
-//                    j++;
-//                }
-//            }
-//            // Wrapping looong lines (brutal force)
-//            else if ((x + 2 * hyphenWidth) > getWidth())
-//            {
-//                x = 15; // Ident in new line
-//                y += 1;
-//            }
-//        }
+//        harfSirasi.push_back(text.find("ç"));
+//        harf[sayac] = harfSirasi;
+//        text.replace(text.find("ç"),2,"c");
 //    }
+
+    for (int i=0;i<text.size();i++)
+    {
+        karakter = text[i];
+
+        x+=font->getWidth(karakter);
+        if (karakter == " " || karakter == sonKarakter )
+        {
+
+
+
+            int sonrakiBosluk = text.find(" ",i+1);
+            sonrakiKelime = text.substr(i+1,sonrakiBosluk-(i+1));
+            int sonrakiKelimeGen = font->getWidth(sonrakiKelime);
+
+            int sayi =0;
+            //çğıöşüÇĞİÖŞÜ
+//            if (sonrakiKelime.find("ç")!=std::string::npos)
+//                sayi += farkBul(sonrakiKelime,"ç","c");
+
+            if (sonrakiKelime.find("ğ")!=std::string::npos)
+                sayi += farkBul(sonrakiKelime,"ğ","g");
+
+//            if (sonrakiKelime.find("ı")!=std::string::npos)
+//                sayi += farkBul(sonrakiKelime,"ı","i");
 //
-//    setHeight(font->getHeight() * (mTextRows.size() + y));
-//}
+//            if (sonrakiKelime.find("ö")!=std::string::npos)
+//                sayi += farkBul(sonrakiKelime,"ö","o");
+//
+//            if (sonrakiKelime.find("ş")!=std::string::npos)
+//                sayi += farkBul(sonrakiKelime,"ş","s");
+//
+//            if (sonrakiKelime.find("ü")!=std::string::npos)
+//                sayi += farkBul(sonrakiKelime,"ü","u");
+//
+//            if (sonrakiKelime.find("Ç")!=std::string::npos)
+//                sayi += farkBul(sonrakiKelime,"Ç","C");
+//
+//            if (sonrakiKelime.find("Ğ")!=std::string::npos)
+//                sayi += farkBul(sonrakiKelime,"Ğ","G");
+//
+//            if (sonrakiKelime.find("İ")!=std::string::npos)
+//                sayi += farkBul(sonrakiKelime,"İ","I");
+//
+//            if (sonrakiKelime.find("Ö")!=std::string::npos)
+//                sayi += farkBul(sonrakiKelime,"Ö","O");
+//
+//            if (sonrakiKelime.find("Ş")!=std::string::npos)
+//                sayi += farkBul(sonrakiKelime,"Ş","S");
+//
+//            if (sonrakiKelime.find("Ü")!=std::string::npos)
+//                sayi += farkBul(sonrakiKelime,"Ü","U");
+//
+
+            x -= sayi;
+            kelime +=" ";
+
+            if(x + sonrakiKelimeGen>textArea->getWidth() || i == text.size()-1)
+            {
+                mvRow.push_back(kelime);
+                kelime= "";
+                x = 0;
+            }
+        }
+        else
+        {
+            kelime += karakter;
+        }
+    }
+
+    //Yüksekliği ayarla
+    textArea->setHeight(font->getHeight() * mvRow.size());
+
+    //BrowserBox'a verileri yazdır
+    for (int i=0;i<mvRow.size();i++)
+    {
+        browserBox->addRow(mvRow.at(i));
+    }
+
+    mvRow.clear();
+}
+
+int
+SimilasyonPenceresi::farkBul(std::string word,std::string harf1,std::string harf2)
+{
+    gcn::Font *font = getFont();
+    int sayac=0;
+    int sayi;
+    int a,b,tut;
+    std::string h;
+    a = font->getWidth(harf1);
+    b = font->getWidth(harf2);
+
+    if (b>a)
+    {
+        tut = a;
+        a = b;
+        b=tut;
+    }
+
+    for (int i=0;i<word.size();i++)
+    {
+        h =word[i];
+        if (strcmp(h.c_str(),harf1.c_str()))
+            sayac++;
+    }
+
+    sayac = sayac /2;
+    sayi = font->getWidth(word) - sayac*(a-b);
+
+    logger->log("sayac:%d",sayac);
+    logger->log("kelime:%s",word.c_str());
+
+    return sayi;
+}
+

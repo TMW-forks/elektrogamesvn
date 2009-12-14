@@ -97,6 +97,9 @@ class CircuitWindow : public Window,
         /**
          * hint penceresindeki açýklamalar için
          */
+
+        std::map<std::string, ImageSet*>mComponentImageSet;
+
         gcn::Label *toolCaption;
         gcn::Label *toolValue;
         bool toolRotate;
@@ -129,7 +132,7 @@ class CircuitWindow : public Window,
      */
      void distributeOlay(Item *it);
 
-        void mouseMoved(gcn::MouseEvent &event);
+     void mouseMoved(gcn::MouseEvent &event);
 
     // item bilgisini itemDB'den alabilmek için
     const ItemInfo &getInfo(int id) const { return ItemDB::get(id); }
@@ -261,6 +264,7 @@ class CircuitWindow : public Window,
 
         std::vector< float > matrisAkim;    // akýmlar için sayýlardan oluþan vector
         TmvComponentMatris matrisGerilim;    // pillerden oluþan en saðdaki matris <component*>
+
 
 
     /**

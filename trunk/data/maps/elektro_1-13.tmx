@@ -10,12 +10,12 @@
  <tileset name="kaplama" firstgid="86" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/kaplamalar.png"/>
  </tileset>
- <tileset name="zemin" firstgid="104" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/zemin2.png"/>
+ <tileset name="collasion" firstgid="104" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/collision.png"/>
  </tileset>
  <layer name="Ground" width="66" height="36">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO2XQQ6CMBBFh0txAhYqcg9JZCdwfUcDkQVpCy2Ewbd4+QsmDX0dmDQTkQwAAAAgETflYpyrUkZ6KJTHQG04czx8s8ADHox58NXgAQ9H9PAcaDZKKx5SvcvatOphPGs84KFeUW/FQyPL/n1L60PWi10j1sNdfne2T76UVumUXvz3PF+WjjMP7YU9+mFrXN8dHv7PQ44Hbz+E7BcP5/IwnUch82UuXc/GmVYdYK8AAABn4g1WDfWQICUAAA==
+   H4sIAAAAAAAAAO3XSwqAIBRAUd1UK3BQWQtw/xtJokgiLMjsPbmDg4NGXsyPNcZYAACAQsaoV26I/MsOLgoN6OiwcnSgAx2Kd5jMseee92EvYH61OuR0AuYnoYOmf4YOdKADHejwX4f9bpF7592Nte4gX3bQtKbooKNDrTup9A6sBzqk0vfsk/Plasx9C9s4C5grAAAtWQBdhtdwICUAAA==
   </data>
  </layer>
  <layer name="Fringe" width="66" height="36" visible="0">
@@ -25,12 +25,12 @@
  </layer>
  <layer name="Top" width="66" height="36">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3VMQqAMBBFwdTqAcQDiPc/oTYLQdIZskJmYJutfvdKAQAAAAD4t+W59XVb6qIce+N3DF+R72z8ruErAL6Lvs3YtFr0bcam1aJvmgYA/d1ZGdkYICUAAA==
+   H4sIAAAAAAAAAO3QMQqAMAADwHZVHyA+oPj/F1qwo3tKvYOQNaQUAAAAAGBGNT1gAvUjf+SDlw+A1Ww9e8+RHhJ2jr6iK/La6Du6AgDW9AAmkS1IICUAAA==
   </data>
  </layer>
  <layer name="Collsion" width="66" height="36">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3OAQkAAAwDoOV5/4CPMQaawAQAAAAAAPZcOwAAAMCEB1w7g0sgJQAA
+   H4sIAAAAAAAAAO3UQQ3AMAwEQdMNfwJ9LIVEbaM5aQF4Hl4zsyRJkrS9G8ahcWgcGofmhzYOjUPj0Dg0Do1D49BOO/zF8u0bOXDgwIHDt2PAgYMknekBoYk/hCAlAAA=
   </data>
  </layer>
  <layer name="Objects" width="66" height="36">

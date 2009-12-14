@@ -10,18 +10,12 @@
  <tileset name="kaplama" firstgid="72" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/kaplamalar.png"/>
  </tileset>
- <tileset name="pen" firstgid="90" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/pencere.png"/>
- </tileset>
- <tileset name="Untitled" firstgid="106" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/oda_platform.png"/>
- </tileset>
- <tileset name="zemin" firstgid="276" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/zemin2.png"/>
+ <tileset name="collasion" firstgid="90" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/collision.png"/>
  </tileset>
  <layer name="Ground" width="46" height="46">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO2XPQ7DIAyFYW2bdkmlZOvPGXKC3P9OdQZUamEYsA1UHj6BkBI9PZln451z3jAMw/g7LsAJOCuuE4PuHVhgs/rfVYrj/zuD7g2YYXMX1sutO/Y76JdmE/B7VYDL76B7VoDTb437KFHfsd/Svkv5rZGDHLpjv0eqk9jvkXIQ+z1KDsb5bTmo1+c50fQ7hUTGcPpN3fuVOC+xFL7l8pu69zNxXqKUS5x9XiI3qD2H31f3fUM94OAJvIC3L7+5Jpf2FucT3nP4XUOoMVy/pb7L4TeH7hb1XUP8xsPk/O5Bd0qjxnxSA1UnuSzpob5Dz8Iac1nSk99Yo8b8Xaubmg9ytNYd7mVqPsD0VieURmoW7MHvY0ZI9f/cbHBwa6zbMAxjBD6vbCtZECEAAA==
+   H4sIAAAAAAAAAO2XMQ6AIAxFy6qip+EEzN7/Opa4Ek1MQwHf8MJGfl5KaYOIBAAAmI5NWZS14RkNcmflbEw2yJ0Gze3hO+Eb3/juzrdFbvo3vmf2TR/EN77xbeV7l3t3qt3/tnNFR98eNWbh2yO3t++vb4Pc/6pvfJObOunPd5kRav//02xQOJxzAwCMwAUETo8HECEAAA==
   </data>
  </layer>
  <layer name="Fringe" width="46" height="46">
@@ -31,12 +25,12 @@
  </layer>
  <layer name="Top" width="46" height="46">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3OOQqAQBREwcnVC7jkLrnL/S/mDwcjB4QBqYIXdNYpAQAAAPCFNmoedVUfvdNHQ7bHaKr0pcQcLdleo63SlxJ7dGT7jK5KXwAAAP7sBkOoLU8QIQAA
+   H4sIAAAAAAAAAO3OKQ6AQBREwfHABVg8i2e5/8X4coJigpiEVCVPtOuUAAAAAPiqjZpHXdVH7/TRkO0xmip9KTFHS7bXaKv0pcQeHdk+o6vSFwAAgL+7AcHs4FQQIQAA
   </data>
  </layer>
- <layer name="Collsion" width="46" height="46">
+ <layer name="Collsion" width="46" height="46" visible="0">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3BAQ0AAADCoPdPbQ8HFAAAAAAAAADAlwG38bQVECEAAA==
+   H4sIAAAAAAAAAO3TMQoAIRAEwf2n//+H+YWC7QU10KkULK6ZWZIk/ah63O2423G3427H3Y67HXc77nbc5++/dH8Nt2/F3f6N12Zubm5ubknSrTYuPQAXECEAAA==
   </data>
  </layer>
  <layer name="Objects" width="46" height="46">

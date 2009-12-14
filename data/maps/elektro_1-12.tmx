@@ -7,18 +7,18 @@
  <tileset name="duvar" firstgid="2" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/hastehane.png"/>
  </tileset>
- <tileset name="pen" firstgid="86" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/pencere.png"/>
- </tileset>
- <tileset name="Untitled" firstgid="102" tilewidth="32" tileheight="32">
+ <tileset name="Untitled" firstgid="86" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/muze.png"/>
  </tileset>
- <tileset name="kaplama" firstgid="186" tilewidth="32" tileheight="32">
+ <tileset name="kaplama" firstgid="170" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/kaplamalar.png"/>
+ </tileset>
+ <tileset name="collosion" firstgid="188" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/collision.png"/>
  </tileset>
  <layer name="Ground" width="68" height="35">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO2XSwqEMBAF46U8QS/iZLy1B9PZZcQf8YFtU4si0iFCF68D6VJKHQAAAIAj8sJQkataXtW3vvfO7NXO1rPzR/tF4KNfmIJgAh/moA9PPiLloxf4IB/kg3yQD/Kh8REpH4YPeT7MQR+efETKh+FD7uOb/t+qd7nyhi0NvX4u/HcU+HgCa/ChuBu80jKjilnwSouPyPn43Vlb81/3v95/690AAAAAMANnSYldMCUAAA==
+   H4sIAAAAAAAAAO3XSQqAMBBE0XgpT+AiTnhZD6juosSBWGDb/MVDiShaVAesQggVAACAIXHVJmKyFg/rufOze87W7o53919d7wV51KvZiUaQR2PgOyzl4akftSAP+kE/6Af9oB+aPDz1g3nR94N58dsP5kWfxxD2/6pvPfmH7Qu+tXvw3FGQxxdK9izF3mBVbkanDPUsWFWSh+d+bHtWbv7TLI7X/7o3vJHm8fW7AACAcgsWi5m9MCUAAA==
   </data>
  </layer>
  <layer name="Fringe" width="68" height="35" visible="0">
@@ -28,12 +28,12 @@
  </layer>
  <layer name="Top" width="68" height="35">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3OMQrAIAAEQf//A5NaUgc/GEuxDpzgDFxx3ZYCAAAAAADAierYNe3O5sS15T+Rin28y++RCgCA/33WYv9QMCUAAA==
+   H4sIAAAAAAAAAO3OMQrAIAAEQb9vUkvq4EdjKdaBE5yBK67bUgAAAAAAADhRHbum3dmcuLb8J1Kxj3f5PVIBAPC/DxxQ61AwJQAA
   </data>
  </layer>
  <layer name="Collision" width="68" height="35" visible="0">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAfBg26l/DMCUAAA==
+   H4sIAAAAAAAAAO3QsQ3AMAwEMe2/k3dLfX0QGw4fuF7impklSZKko7tlPDoeHY+OR8ej49Hx6Hh0PDoeHY+OR/eWx47+9CsPHjy+Ndp9ywnx4CFJuqMHtmtxwTAlAAA=
   </data>
  </layer>
  <layer name="Objects" width="68" height="35" visible="0">

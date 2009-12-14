@@ -1,41 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
 <map version="1.0" orientation="orthogonal" width="35" height="35" tilewidth="32" tileheight="32">
- <tileset firstgid="1" name="syh" tilewidth="32" tileheight="32">
+ <tileset name="syh" firstgid="1" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/siyah.png"/>
  </tileset>
- <tileset firstgid="2" name="tas" tilewidth="32" tileheight="32">
+ <tileset name="tas" firstgid="2" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/tas_bina3.png"/>
  </tileset>
- <tileset firstgid="172" name="kaplama" tilewidth="32" tileheight="32">
+ <tileset name="kaplama" firstgid="172" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/kaplamalar.png"/>
  </tileset>
- <tileset firstgid="190" name="kapi" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/kapiacik.png"/>
+ <tileset name="kapi" firstgid="190" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/kapiacikic.png"/>
+ </tileset>
+ <tileset name="collosion" firstgid="196" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/collision.png"/>
  </tileset>
  <layer name="Ground" width="35" height="35">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+2WOw6AIBAFoeUK3EC9gdL6Oa43dIkNMSZGnSjFK6aA6uVlWNY757wQQvxAY4zGZMzGcuNc3rdAlmisAAHI0kFZIpAlQVm6inpJFfVC+BKgLIQv1DuSL/Ll6140d8/p3f7HvsmR//oByEI4Q3RCOUPMFsoZspfsTLm3HXe4qz2PckUIIZ6yAcavMCIkEwAA
+   H4sIAAAAAAAAAO3WOw6AIBCEYWjRG6A34Aq0Po7rDV0LE6Ox0EyEmL/4CmicbIa43jnnAaCAxgxmNJOZH5yP960gSzSLQBBkSaIsUZAli7KkiuaSK5qLoi9BlEXRF9U7oi/05eu50Bf6UqIvf/tPd+66t513uP17d3vephdkAYC3VigZ7qwkEwAA
   </data>
  </layer>
  <layer name="Fringe" width="35" height="35" visible="0">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3BAQEAAACCIP+vbkhAAQAAAMC3AV9aZlgkEwAA
+   H4sIAAAAAAAAAO3BAQEAAACCIP+vbkhAAQAAAMC3AV9aZlgkEwAA
   </data>
  </layer>
- <layer name="Top" width="35" height="35" visible="0">
+ <layer name="Top" width="35" height="35">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3BAQEAAACCIP+vbkhAAQAAAMC3AV9aZlgkEwAA
+   H4sIAAAAAAAAAO3OqQ0AMAwAse4/VN/FGhBcVCnElo5fawAAAPzSo1E9kWa0qifSjk71BMDDBYcdTO8kEwAA
   </data>
  </layer>
  <layer name="Collision" width="35" height="35" visible="0">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3BAQEAAACCIP+vbkhAAQAAAMC3AV9aZlgkEwAA
+   H4sIAAAAAAAAAO3OwQkAQAgDwfTfl31dCwpyHyew70wlKUnSylhYWFhYWFhYrlq61l9/LJKmPcqnaoAkEwAA
   </data>
  </layer>
  <layer name="Objects" width="35" height="35" visible="0">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3BAQEAAACCIP+vbkhAAQAAAMC3AV9aZlgkEwAA
+   H4sIAAAAAAAAAO3BAQEAAACCIP+vbkhAAQAAAMC3AV9aZlgkEwAA
   </data>
  </layer>
 </map>

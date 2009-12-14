@@ -5,7 +5,6 @@
 #include <guichan/actionlistener.hpp>
 #include <guichan/graphics.hpp>
 #include <guichan/widgets/label.hpp>
-//#include <guichan/widgets/textfield.hpp>
 #include <libxml/xmlwriter.h>
 #include <vector>
 
@@ -57,6 +56,8 @@ class SimilasyonPenceresi : public Window, public gcn::ActionListener
         void clearComponent();
         void kontrolEt();
         int findEmptyID();
+        void autoWrap(ScrollArea *textArea,BrowserBox *browserBox,std::string text);
+        int farkBul(std::string word,std::string harf1,std::string harf2);
 
         int kefe1,kefe2,kefe3;
         std::map<int,std::vector<int> > idKefe;
@@ -75,11 +76,15 @@ class SimilasyonPenceresi : public Window, public gcn::ActionListener
         ScrollArea *mSoruArea;
         Kutle *nesne;
 
+        std::string mText;
         std::vector<Kutle*> mvKutle;
         std::vector<Kutle*>::iterator miKutle;
         std::vector<Kaldirac*> mvKaldirac;
         std::vector<Kaldirac*>::iterator miKaldirac;
-
+        std::vector<std::string>mvRow;
+        std::vector<std::string>::iterator miRow;
+        std::map<std::string,std::string> mmTurkce;
+        std::map<std::string,std::string>::iterator miTurkce;
 
         TmvAnim mvAnim;
         TmiAnim miAnim;

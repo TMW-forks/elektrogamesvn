@@ -57,6 +57,7 @@ CircuitWindow::CircuitWindow():
     setDefaultSize(150, 150, 520, 450);
 
     ResourceManager *resman = ResourceManager::getInstance();
+
     nodeConnectImage = resman->getImage("graphics/elektrik/node_connect.png");
     cirToolBar = resman->getImage("graphics/elektrik/cir_toolbar.png");
     cirRotate = resman->getImage("graphics/elektrik/cir_rot.png");
@@ -78,6 +79,118 @@ CircuitWindow::CircuitWindow():
     mWireImage = resman->getImage("graphics/elektrik/kablo.png");
     mBackgroundPattern = resman->getImage("graphics/elektrik/backgroundpattern.png");
 
+
+    std::vector<std::string> imagesetname;
+    std::vector<std::string>::iterator iname;
+
+    imagesetname.push_back("graphics/elektrik/item-ampul-0-b.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-0-c.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-0-d.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-0-e.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-0.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-1.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-10.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-10b.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-10c.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-10d.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-10e.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-10f.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-1b.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-1c.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-1d.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-1e.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-1f.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-2.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-20.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-20b.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-20c.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-20d.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-20e.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-20f.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-2b.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-2c.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-2d.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-2e.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-2f.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-3.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-3b.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-3c.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-3d.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-3e.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-3f.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-5.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-50.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-50b.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-50c.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-50d.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-50e.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-50f.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-5b.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-5c.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-5d.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-5e.png");
+    imagesetname.push_back("graphics/elektrik/item-ampul-5f.png");
+    imagesetname.push_back("graphics/elektrik/item-anahtar-b.png");
+    imagesetname.push_back("graphics/elektrik/item-anahtar-c.png");
+    imagesetname.push_back("graphics/elektrik/item-anahtar.png");
+    imagesetname.push_back("graphics/elektrik/item-bled-b.png");
+    imagesetname.push_back("graphics/elektrik/item-bled-c.png");
+    imagesetname.push_back("graphics/elektrik/item-bled.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-1-b.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-1.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-10-b.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-10.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-11-b.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-11.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-12-b.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-12.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-13-b.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-13.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-14-b.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-14.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-15-b.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-15.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-2-b.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-2.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-20-b.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-20.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-25-b.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-25.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-3-b.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-3.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-30-b.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-30.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-4-b.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-4.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-5-b.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-5.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-50-b.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-50.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-6-b.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-6.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-7-b.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-7.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-8-b.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-8.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-9-b.png");
+    imagesetname.push_back("graphics/elektrik/item-direnc-9.png");
+    imagesetname.push_back("graphics/elektrik/item-kled-b.png");
+    imagesetname.push_back("graphics/elektrik/item-kled-c.png");
+    imagesetname.push_back("graphics/elektrik/item-kled.png");
+    imagesetname.push_back("graphics/elektrik/item-pil-b.png");
+    imagesetname.push_back("graphics/elektrik/item-pil.png");
+    imagesetname.push_back("graphics/elektrik/item-sled-a.png");
+    imagesetname.push_back("graphics/elektrik/item-sled-b.png");
+    imagesetname.push_back("graphics/elektrik/item-sled.png");
+    imagesetname.push_back("graphics/elektrik/item-yled-b.png");
+    imagesetname.push_back("graphics/elektrik/item-yled-c.png");
+    imagesetname.push_back("graphics/elektrik/item-yled.png");
+
+    for(iname = imagesetname.begin(); iname != imagesetname.end(); iname++)
+    {
+        ImageSet *compoImageSet = resman->getImageSet((*iname),32,32);
+        mComponentImageSet[(*iname)] = compoImageSet;
+    }
 
     toolRotate = false;
     toolMove = false;
@@ -206,17 +319,29 @@ CircuitWindow::stateCheck()
     {
         case MESSAGE_STATE:
             mMessageScroll->setVisible(true);
-            mMessageScroll->setDimension(gcn::Rectangle(120,10, getWidth()-20, getHeight()-130));
+            mMessageScroll->setDimension(gcn::Rectangle(150,30, getWidth()-180, getHeight()-160));
+            mMessageScroll->setOpaque(true);
+            mMessageText->setVisible(true);
             mStartOk->setVisible(true);
             mStartCancel->setVisible(true);
-            mStartOk->setPosition(200,getHeight()-70);
-            mStartCancel->setPosition(280,getHeight()-70);
+            int x = (getWidth()-mStartOk->getWidth()-mStartCancel->getWidth())/2 + 50;
+            mStartOk->setPosition(x,getHeight()-120);
+            x += mStartOk->getWidth() + 10 ;
+            mStartCancel->setPosition(x,getHeight()-120);
+            closeButton->setVisible(false);
             break;
         case CIRCUIT_STATE:
             mMessageScroll->setVisible(false);
+            mStartOk->setVisible(false);
+            mStartCancel->setVisible(false);
+            closeButton->setVisible(true);
+            mRefresh = true;
             break;
         case TEST_STATE:
             mMessageScroll->setVisible(false);
+            mStartOk->setVisible(false);
+            mStartCancel->setVisible(false);
+            closeButton->setVisible(false);
             break;
     }
 
@@ -1836,6 +1961,7 @@ CircuitWindow::circuitFromXML(std::string mDoc)
         }
         else if (xmlStrEqual(node->name, BAD_CAST "node"))
         {
+            mCircState = CIRCUIT_STATE;
             logger->log("buraya geldi : node");
             Node *tempNode = new Node("com_node_btn.png","Hint", "com_node",this);
 
@@ -1856,6 +1982,7 @@ CircuitWindow::circuitFromXML(std::string mDoc)
         }
         else if (xmlStrEqual(node->name, BAD_CAST "component"))
         {
+            mCircState = CIRCUIT_STATE;
             int const itemid = XML::getProperty(node, "item_id", 0);
             ItemInfo tempItem = ItemDB::get(itemid);
 
@@ -1939,6 +2066,7 @@ CircuitWindow::circuitFromXML(std::string mDoc)
         }
         else if (xmlStrEqual(node->name, BAD_CAST "connect"))
         {
+            mCircState = CIRCUIT_STATE;
             ConnectList *c=new ConnectList;
 
             int c_id=XML::getProperty(node, "id", 0);
@@ -2017,7 +2145,6 @@ CircuitWindow::circuitFromXML(std::string mDoc)
             mvBrowserBox.push_back(temp.browserbox);
         }
     }
-    mRefresh = true;
     stateCheck();
 }
 

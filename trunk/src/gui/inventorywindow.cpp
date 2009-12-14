@@ -190,32 +190,31 @@ void InventoryWindow::action(const gcn::ActionEvent &event)
             else
                 Net::getInventoryHandler()->equipItem(item);
         }
-        else
+        else if (item->getId()>1099 && item->getId()<1200)
         {
-            if (item->getId()>1099 && item->getId()<1200)
+            if (circuitWindow->isVisible())
             {
-                if (circuitWindow->isVisible())
+                Net::getInventoryHandler()->useItem(item);
+                circuitWindow->distributeOlay(item);
+            }
+            else if (similasyonPenceresi->isVisible())
+            {
+                if(similasyonPenceresi->getPencereDurum())
                 {
                     Net::getInventoryHandler()->useItem(item);
-                    circuitWindow->distributeOlay(item);
-                }
-                else if (similasyonPenceresi->isVisible())
-                {
-                    if(similasyonPenceresi->getPencereDurum())
-                    {
-                        Net::getInventoryHandler()->useItem(item);
-                        similasyonPenceresi->nesneyiAl(item);
-                    }
-                    else
-                        localChatTab->chatLog("Nesneyi kullanabilmek için similasyonu başlatmalısınız!!!",BY_SERVER);
-
+                    similasyonPenceresi->nesneyiAl(item);
                 }
                 else
-                {
-                    localChatTab->chatLog("Bu nesneyi sadece devre tamir ederken kullanabilirsin.",BY_SERVER);
-                }
+                    localChatTab->chatLog("Nesneyi kullanabilmek için similasyonu başlatmalısınız!!!",BY_SERVER);
+
+            }
+            else
+            {
+                localChatTab->chatLog("Bu nesneyi sadece devre tamir ederken kullanabilirsin.",BY_SERVER);
             }
         }
+        else
+            Net::getInventoryHandler()->useItem(item);
     }
     else if (event.getId() == "drop")
     {

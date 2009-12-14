@@ -86,8 +86,6 @@ class SlaytWindow: public Window, public gcn::ActionListener
         int mTotalSlides;
         int mCurrentSlide;
 
-        int padX;
-        int padY;
         SlideState slideState;
         SlideListModel *slideListModel;
         Button *mStart;

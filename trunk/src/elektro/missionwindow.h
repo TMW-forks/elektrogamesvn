@@ -11,6 +11,7 @@
 #include "gui/widgets/chattab.h"
 #include "gui/widgets/textbox.h"
 #include "gui/widgets/listbox.h"
+#include "gui/widgets/progressbar.h"
 #include "../resources/image.h"
 
 #include "../guichanfwd.h"
@@ -130,6 +131,8 @@ class MissionWindow : public Window, public gcn::ActionListener
         ScrollArea *mScrollSub;
         ScrollArea *mScrollMain;
         ScrollArea *mScrollExp;
+        ProgressBar  *susle;
+        bool susleprogress;
 
         //Alt Görev
 //        TSubMissions mSubMissions;

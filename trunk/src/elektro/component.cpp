@@ -278,10 +278,10 @@ void Component::mouseDragged(gcn::MouseEvent &event)
             requestMoveToTop();
             setX(getX()+event.getX()-xx);
             setY(getY()+event.getY()-yy);
-        if (getX()<20) setX(20);
-        if (getY()<50) setY(50);
+        if (getX()<120) setX(120);
+        if (getY()<10) setY(10);
         if (getX()>(circuitWindow->getWidth()-getWidth()-15)) setX(circuitWindow->getWidth()-15-getWidth());
-        if (getY()>(circuitWindow->getHeight()-getHeight()-60)) setY(circuitWindow->getHeight()-getHeight()-60);
+        if (getY()>(circuitWindow->getHeight()-getHeight()-25)) setY(circuitWindow->getHeight()-getHeight()-25);
         }
         nodesCalc();
 }

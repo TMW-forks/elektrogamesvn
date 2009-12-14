@@ -138,7 +138,11 @@ void NpcHandler::handleMessage(MessageIn &msg)
             }
             else if (being->getJob()>=200 && being->getJob()<=249)
             {
-
+                if (temp=="</presentation>")
+                {
+                    slaytWindow->parseXML(npcText.str());
+                    npcText.str("");
+                }
             }
             else if (being->getJob()>=250 && being->getJob()<=299)
             {
@@ -148,15 +152,6 @@ void NpcHandler::handleMessage(MessageIn &msg)
                     hitabe->setVisible(true);
                     npcText.str("");
                 }
-                else if (being->getJob()==252)
-                {
-                    if (temp=="</presentation>")
-                    {
-                        slaytWindow->parseXML(npcText.str());
-                        npcText.str("");
-                    }
-                }
-                //Similasyon Penceresi
                 else if (being->getJob()==253)
                 {
                     if(temp == "</similasyon>")

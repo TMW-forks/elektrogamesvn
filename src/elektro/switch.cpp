@@ -1,5 +1,9 @@
 #include "switch.h"
 #include "circuitwindow.h"
+
+#include "circuitwindow.h"
+#include "game.h"
+
 extern CircuitWindow *circuitWindow;
 extern volatile int tick_time;
 static int first_tick = 0;
@@ -52,7 +56,9 @@ Switch::draw(gcn::Graphics *graphics)
     ss += ".png";
     Graphics *g = static_cast<Graphics*>(graphics);
     ResourceManager *resman = ResourceManager::getInstance();
-    ImageSet *res = resman->getImageSet(ss,32,32);
+
+    ImageSet *res = circuitWindow->mComponentImageSet[ss];
     g->drawImage(res->get(mAngel),4,4);
+
     Component::draw(graphics);
 }

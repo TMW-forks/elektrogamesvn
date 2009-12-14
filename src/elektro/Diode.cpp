@@ -1,7 +1,10 @@
 #include "diode.h"
 
 #include "../utils/stringutils.h"
+#include "circuitwindow.h"
+#include "game.h"
 
+extern CircuitWindow *circuitWindow;
 Diode::Diode(gcn::ActionListener *listener, Node *n1, Node *n2):
     Component(listener, n1, n2)
 {
@@ -32,7 +35,7 @@ void Diode::draw(gcn::Graphics *graphics)
     ss += ".png";
     Graphics *g = static_cast<Graphics*>(graphics);
     ResourceManager *resman = ResourceManager::getInstance();
-    ImageSet *res = resman->getImageSet(ss,32,32);
+    ImageSet *res = circuitWindow->mComponentImageSet[ss];
     g->drawImage(res->get(mAngel),4,4);
     Component::draw(graphics);
 }

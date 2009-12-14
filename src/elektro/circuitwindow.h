@@ -140,6 +140,15 @@ class CircuitWindow : public Window,
     bool mWireRefresh;
 
     private:
+        enum CIRCSTATE{
+            MESSAGE_STATE = 0,
+            CIRCUIT_STATE,
+            TEST_STATE,
+            ENDSTATE
+        };
+
+        CIRCSTATE mCircState;
+
         std::vector<int> conLamp;
         std::vector<int>::iterator conLampIter;
 
@@ -155,6 +164,12 @@ class CircuitWindow : public Window,
 
         BrowserBox *mSb;
         ScrollArea *mSs;
+
+        BrowserBox *mMessageText;
+        ScrollArea *mMessageScroll;
+
+        Button *mStartOk;
+        Button *mStartCancel;
 
         gcn::Label *mX;
         gcn::Label *mY;
@@ -227,7 +242,7 @@ class CircuitWindow : public Window,
         TmvScrollArea mvScrollArea;     //ScrollArea vector
         TmiScrollArea miScrollArea;     //ScrollArea iter
 
-//kirþof için
+//kirþof içinmMessageText
 
         TmvIntMatris mvConnectedNodeId;     //Node'un baðlantýlý olduðu komþularýnýn listesi
         TmiIntMatris miConnectedNodeId;
@@ -246,6 +261,17 @@ class CircuitWindow : public Window,
 
         std::vector< float > matrisAkim;    // akýmlar için sayýlardan oluþan vector
         TmvComponentMatris matrisGerilim;    // pillerden oluþan en saðdaki matris <component*>
+
+
+    /**
+     * Pencerenin hangi durumda olduðunu kontrol ederek ayarlama yapar.
+     */
+    void stateCheck();
+
+    /**
+     * efekt yapmak için
+     */
+    void makeEffect(std::string type,std::string name, std::string ssound);
 
     /**
      * id'si verilen componenti geri döndürür.

@@ -72,10 +72,10 @@ void Node::mouseDragged(gcn::MouseEvent& mouseEvent)
             setX(getX()+mouseEvent.getX()-xx);
             setY(getY()+mouseEvent.getY()-yy);
             circuitWindow->collisionCheck = true;
-        if (getX()<40) setX(40);
-        if (getY()<50) setY(50);
-        if (getX()>(circuitWindow->getWidth()-getWidth()-45)) setX(circuitWindow->getWidth()-45-getWidth());
-        if (getY()>(circuitWindow->getHeight()-getHeight()-88)) setY(circuitWindow->getHeight()-getHeight()-88);
+        if (getX()<120) setX(120);
+        if (getY()<10) setY(10);
+        if (getX()>(circuitWindow->getWidth()-getWidth()-15)) setX(circuitWindow->getWidth()-15-getWidth());
+        if (getY()>(circuitWindow->getHeight()-getHeight()-25)) setY(circuitWindow->getHeight()-getHeight()-25);
         circuitWindow->mWireRefresh = true;
 
         }

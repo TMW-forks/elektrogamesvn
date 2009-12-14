@@ -17,8 +17,6 @@ SlaytWindow::SlaytWindow():
     setVisible(false);
     setSize(520, 450);
     setPosition(100,100);
-    padX = 0;
-    padY = 0;
     setCloseButton(false);
     slideListModel = new SlideListModel;
     slideListModel->ekle("eSata");
@@ -101,12 +99,17 @@ SlaytWindow::nextPrevPosition()
         mClose->setVisible(mCloseVisible);
         mDropDown->setVisible(mDropDownVisible);
     }
+    if(mTotalSlides<2)
+    {
+        mNext->setVisible(false);
+        mPrev->setVisible(false);
+        mDropDown->setVisible(false);
+    }
 }
 
 void
 SlaytWindow::action(const gcn::ActionEvent &event)
 {
-    logger->log("%s",event.getId().c_str());
     if (event.getId() == "Slide_Cancel")
     {
        Net::getNpcHandler()->listInput(current_npc, 1);
@@ -134,7 +137,6 @@ SlaytWindow::action(const gcn::ActionEvent &event)
     }
     else if (event.getId() == "Slide_Close")
     {
-           logger->log("Kapan sunu kapan :%d  ",mDropDown->getSelected());
            Net::getNpcHandler()->listInput(current_npc, 0xff);
            current_npc=0;
            NPC::isTalking =false;
@@ -187,8 +189,6 @@ SlaytWindow::slideStateControl()
             mStart->setVisible(false);
             mCancel->setVisible(false);
             nextPrevPosition();
-            for(TmiLabel it =mvLabel.begin(); it<mvLabel.end(); it++)
-                (*it)->setVisible(true);
             break;
     }
 }
@@ -237,7 +237,8 @@ SlaytWindow::clearOldSlide()
 void
 SlaytWindow::parseXML(std::string mDoc)
 {
-    logger->log("Slayt parse işlemi başladı : \n %s", mDoc.c_str());
+    elektroWidget->padX = 0;
+    elektroWidget->padY = 0;
     ResourceManager *resman = ResourceManager::getInstance();
     mxmlDoc = xmlParseMemory(mDoc.c_str(),mDoc.size());
     if (!mxmlDoc)
@@ -275,6 +276,10 @@ SlaytWindow::parseXML(std::string mDoc)
                 slideListModel->ekle(toString(i));
             }
             mButtonsDefault = true;
+            if (mTotalSlides<2)
+            {
+                Net::getNpcHandler()->listInput(current_npc, 2);
+            }
          }
          if (xmlStrEqual(node->name, BAD_CAST "slidebutton"))
          {
@@ -285,7 +290,6 @@ SlaytWindow::parseXML(std::string mDoc)
             bool visib;
             visib = (visi=="show" ? true: false);
             std::string obj = XML::getProperty(node, "object", "next");
-            logger->log("%s -> %d - %d -%d", obj.c_str(),x, y, visib);
             if(obj=="next")
             {
                 mNextX = x;
@@ -314,17 +318,20 @@ SlaytWindow::parseXML(std::string mDoc)
          else if (xmlStrEqual(node->name, BAD_CAST "label"))
          {
             gcn::Label *templabel = elektroWidget->addLabel(node);
+            templabel->setVisible(true);
             add(templabel);
             mvLabel.push_back(templabel);
          }
          else if (xmlStrEqual(node->name, BAD_CAST "image"))
          {
              SmImage temp = elektroWidget->addImage(node);
+             temp.visible = true;
              mvImage.push_back(temp);
          }
          else if (xmlStrEqual(node->name, BAD_CAST "simpleanim"))
          {
              SmAnim temp = elektroWidget->addAnim(node);
+             temp.visible = true;
              mvAnim.push_back(temp);
          }else if (xmlStrEqual(node->name, BAD_CAST "textbox"))
          {
@@ -332,6 +339,8 @@ SlaytWindow::parseXML(std::string mDoc)
              add(temp.scrollarea);
              mvScrollArea.push_back(temp.scrollarea);
              mvBrowserBox.push_back(temp.browserbox);
+             temp.scrollarea->setVisible(true);
+             temp.browserbox->setVisible(true);
          }
 
         else if (xmlStrEqual(node->name, BAD_CAST "slide"))

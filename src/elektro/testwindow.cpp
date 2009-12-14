@@ -1011,12 +1011,7 @@ void TestDialog::makeEffect(std::string type,std::string name, std::string ssoun
     }
     else
     {
-//        particleEngine->addTextSplashEffect(name,
-//                                    boldFont,
-//                                    gcn::Color(255, 0, 255),
-//                                    player_node->getPixelX() + 16,
-//                                    player_node->getPixelY() + 16);
-    particleEngine->addTextSplashEffect(name,
+        particleEngine->addTextSplashEffect(name,
                                         player_node->getPixelX() + 16,
                                         player_node->getPixelY() + 16,
                                         &gcn::Color(255, 0, 255),

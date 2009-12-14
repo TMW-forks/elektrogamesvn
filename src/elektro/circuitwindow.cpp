@@ -33,6 +33,8 @@
 #include "gsl/gsl_linalg.h"
 #include "gsl/gsl_vector.h"
 
+#include "../localplayer.h"
+#include "../sound.h"
 
 extern int current_npc;
 extern std::string globalHint;
@@ -161,17 +163,64 @@ CircuitWindow::CircuitWindow():
     add(mY);
     globalHint="hint";
     setLocationRelativeTo(getParent());
+
+    mMessageText = new BrowserBox();
+    mMessageText->setOpaque(false);
+    mMessageText->setVisible(false);
+
+    mMessageScroll = new ScrollArea(mMessageText);
+    mMessageScroll->setOpaque(false);
+    mMessageScroll->setDimension(gcn::Rectangle(120,10, getWidth()-20, getHeight()-130));
+    mMessageScroll->setVisible(false);
+    add(mMessageScroll);
+
+    mStartOk = new Button("Hemen Başla","startok",this);
+    mStartCancel = new Button("Yok Almayım","startcancel",this);
+
+    mStartCancel->setWidth(mStartOk->getWidth());
+    mStartCancel->setHeight(mStartOk->getHeight());
+
+    mStartOk->setVisible(false);
+    mStartCancel->setVisible(false);
+
+    add(mStartOk);
+    add(mStartCancel);
 }
 
-CircuitWindow::~CircuitWindow(){
+CircuitWindow::~CircuitWindow()
+{
     delete mHint;
     delete toolCaption;
     delete mX;
     delete mY;
+    delete mMessageText;
+    delete mMessageScroll;
     deleteWidgets();
 
 }
 
+void
+CircuitWindow::stateCheck()
+{
+    switch(mCircState)
+    {
+        case MESSAGE_STATE:
+            mMessageScroll->setVisible(true);
+            mMessageScroll->setDimension(gcn::Rectangle(120,10, getWidth()-20, getHeight()-130));
+            mStartOk->setVisible(true);
+            mStartCancel->setVisible(true);
+            mStartOk->setPosition(200,getHeight()-70);
+            mStartCancel->setPosition(280,getHeight()-70);
+            break;
+        case CIRCUIT_STATE:
+            mMessageScroll->setVisible(false);
+            break;
+        case TEST_STATE:
+            mMessageScroll->setVisible(false);
+            break;
+    }
+
+}
 void
 CircuitWindow::logic()
 {
@@ -1400,6 +1449,18 @@ CircuitWindow::action(const gcn::ActionEvent &event)
     {
         devreAnaliz();
     }
+    else if (event.getId()=="startcancel")
+    {
+        Net::getNpcHandler()->listInput(current_npc, 1);
+        setVisible(false);
+        current_npc=0;
+        NPC::isTalking = false;
+    }
+    else if (event.getId()=="startok")
+    {
+        Net::getNpcHandler()->listInput(current_npc, 2); //ilk menü
+    }
+
     else if (event.getId() == "close")
     {
         setVisible(false);
@@ -1683,8 +1744,6 @@ CircuitWindow::circuitFromXML(std::string mDoc)
     if (mDoc=="") return;
     xmlDocPtr mxmlDoc;
 
-    logger->log("%s",mDoc.c_str());
-
     mxmlDoc=  xmlParseMemory(mDoc.c_str(), mDoc.size());
     elektroWidget->padX = 120;
     elektroWidget->padY = 5;
@@ -1710,25 +1769,26 @@ CircuitWindow::circuitFromXML(std::string mDoc)
         // devreden önce gösterilen mesaj
         if (xmlStrEqual(node->name, BAD_CAST "mesaj"))
         {
-//            circState = MESSAGE_STATE;
-//            mMessageText->clearRows();
-//
-//            for_each_xml_child_node(subnode, node)
-//            {
-//                if (xmlStrEqual(subnode->name, BAD_CAST "addrow"))
-//                {
-//                    mMessageText->addRow(XML::getProperty(subnode, "text", "\n"));
-//                }
-//                else if (xmlStrEqual(subnode->name, BAD_CAST "effect"))
-//                {
-//                    std::string effecttype= XML::getProperty(subnode, "type", "particle");
-//                    std::string effectname= XML::getProperty(subnode, "name", "dogru1");
-//                    std::string effectsound= XML::getProperty(subnode, "sound", "dogru1");
-//                    makeEffect(effecttype,effectname,effectsound);
-//                }
-//            }
+            mCircState = MESSAGE_STATE;
+            mMessageText->clearRows();
+            logger->log("MESAJ GELDİ");
+
+            for_each_xml_child_node(subnode, node)
+            {
+                if (xmlStrEqual(subnode->name, BAD_CAST "addrow"))
+                {
+                    mMessageText->addRow(XML::getProperty(subnode, "text", ""));
+                }
+                else if (xmlStrEqual(subnode->name, BAD_CAST "effect"))
+                {
+                    std::string effecttype= XML::getProperty(subnode, "type", "particle");
+                    std::string effectname= XML::getProperty(subnode, "name", "dogru1");
+                    std::string effectsound= XML::getProperty(subnode, "sound", "dogru1");
+                    makeEffect(effecttype,effectname,effectsound);
+                }
+            }
         }
-        if (xmlStrEqual(node->name, BAD_CAST "window"))
+        else if (xmlStrEqual(node->name, BAD_CAST "window"))
         {
             //şartları temizle
             conLamp.clear();
@@ -1768,7 +1828,7 @@ CircuitWindow::circuitFromXML(std::string mDoc)
             rectMove= gcn::Rectangle(left,top,37,29);
 
         }
-        if (xmlStrEqual(node->name, BAD_CAST "info"))
+        else if (xmlStrEqual(node->name, BAD_CAST "info"))
         {
             mTotalTime = XML::getProperty(node, "totaltime", 0);
             mPunish = XML::getProperty(node, "punish", 0);
@@ -1776,6 +1836,7 @@ CircuitWindow::circuitFromXML(std::string mDoc)
         }
         else if (xmlStrEqual(node->name, BAD_CAST "node"))
         {
+            logger->log("buraya geldi : node");
             Node *tempNode = new Node("com_node_btn.png","Hint", "com_node",this);
 
             tempNode->setId(XML::getProperty(node, "id", 0));
@@ -1957,6 +2018,7 @@ CircuitWindow::circuitFromXML(std::string mDoc)
         }
     }
     mRefresh = true;
+    stateCheck();
 }
 
 int
@@ -2069,4 +2131,29 @@ void CircuitWindow::drawLine(gcn::Graphics *g,int a,int b,int c,int d, int t)
   }
   mTeller.push_back(mTekTel);
   mTekTel.clear();
+}
+
+
+void
+CircuitWindow::makeEffect(std::string type,std::string name, std::string ssound)
+{
+    if (type=="particle")
+    {
+        Particle *dogruFX;
+        dogruFX = particleEngine->addEffect("graphics/particles/"+name+".particle.xml", 0, 0);
+        player_node->controlParticle(dogruFX);
+    }
+    else
+    {
+        particleEngine->addTextSplashEffect(name,
+                                        player_node->getPixelX() + 16,
+                                        player_node->getPixelY() + 16,
+                                        &gcn::Color(255, 0, 255),
+                                        boldFont);
+    }
+    if (ssound !="")
+    {
+        sound.playSfx("sfx/"+ssound+".ogg");
+    }
+
 }

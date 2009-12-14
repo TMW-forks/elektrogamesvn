@@ -11,15 +11,14 @@
 #include "elektro/imagewidget.h"
 
 #include "../game.h"
-//#include "../engine.h"
-//#include "../particle.h"
-//#include "../map.h"
 
 #include "utils/stringutils.h"
 #include "../resources/resourcemanager.h"
 #include "../graphics.h"
 #include "log.h"
+#include "net/ea/npchandler.h"
 
+#include "../npc.h"
 
 #include "utils/xml.h"
 #include <libxml/xmlwriter.h>
@@ -63,10 +62,17 @@ MissionWindow::MissionWindow():
     mContainerMain->setDimension(mScrollMain->getDimension());
     mContainerExp->setDimension(mScrollExp->getDimension());
 
-
     ResourceManager *resman = ResourceManager::getInstance();
     mBackgroundPattern = resman->getImage("graphics/elektrik/gorev_background.png");
 
+    Button *btnClose = new Button("Kapat","close",this);
+    btnClose->setPosition(getWidth()-btnClose->getWidth()-5,0);
+    add(btnClose);
+    susle = new ProgressBar(0,getWidth()-90, 40, gcn::Color(171, 0, 34));
+    susle->setPosition(40,100);
+    susle->setVisible(false);
+    susle->setSmoothColorChange(true);
+    susleprogress = false;
 //    hideSubMissions();
     setVisible(false);
 }
@@ -74,7 +80,17 @@ MissionWindow::MissionWindow():
 void
 MissionWindow::logic()
 {
-Window::logic();
+    if (susleprogress)
+    {
+        susle->setProgress(susle->getProgress()+ 0.9);
+        susle->setColor(gcn::Color(0, 171, 34));
+    }
+    if (susle->getProgress() == 1)
+    {
+        susle->setVisible(false);
+        susleprogress = false;
+    }
+    Window::logic();
 }
 
 void
@@ -82,10 +98,6 @@ MissionWindow::draw(gcn::Graphics* graphics)
 {
     Window::draw(graphics);
     Graphics *g = static_cast<Graphics*>(graphics);
-//    g->drawRescaledImage(mBackgroundPattern,
-//                     0,0,120,10,
-//                     mBackgroundPattern->getWidth(),mBackgroundPattern->getHeight(),
-//                     getWidth()-130,getHeight()-30,false);
     g->drawImage(mBackgroundPattern,0,0);
     drawChildren(graphics);
 }
@@ -98,6 +110,7 @@ logger->log("action :%s",event.getId().c_str());
     if (event.getId() == "close")
     {
         setVisible(false);
+        susle->setVisible(false);
     }
     for(TMainMissionsIter mit = mMainMission.begin(); mit != mMainMission.end(); ++mit)
     {
@@ -255,7 +268,12 @@ MissionWindow::hideSubMissions()
 void
 MissionWindow::parse(std::string mDoc)
 {
-    ResourceManager *resman = ResourceManager::getInstance();
+    susle->setProgress(0.0f);
+    susleprogress = true;
+    susle->setVisible(true);
+    add(susle);
+
+
     logger->log(mDoc.c_str());
 
     xmlDocPtr mxmlDoc;
@@ -266,7 +284,6 @@ MissionWindow::parse(std::string mDoc)
         localChatTab->chatLog("Bu durumu bir yöneticiye haber versen çok iyi olur.", BY_SERVER);
         return;
     }
-
     xmlNodePtr rootNode = xmlDocGetRootElement(mxmlDoc);
     if (!rootNode || !xmlStrEqual(rootNode->name, BAD_CAST "mission"))
     {
@@ -284,6 +301,8 @@ MissionWindow::parse(std::string mDoc)
             addMainMission(mainMisName);
             for_each_xml_child_node(subnode, node)
             {
+                susle->setProgress(susle->getProgress()*1.1f);
+
                 if (xmlStrEqual(subnode->name, BAD_CAST "submission"))
                 {
                     SmSubMission *tempSub = new SmSubMission;
@@ -298,6 +317,7 @@ MissionWindow::parse(std::string mDoc)
                     tempText->setActionEventId(mainMisName+tempText->getText());
                     tempText->addActionListener(this);
                     tempText->addMouseListener(this);
+                    tempText->setFrameSize(1);
                     tempText->setId(tempText->getText());
                     mContainerSub->add(tempText);
                     tempSub->oneTarget = tempText;
@@ -345,12 +365,13 @@ MissionWindow::parse(std::string mDoc)
     putMissionButtons();
     putSubMission();
     hideSubMissions();
+    current_npc = 0;
+    NPC::isTalking = false;
 }
 
 void
 MissionWindow::mousePressed(gcn::MouseEvent &event)
 {
-    logger->log("presssedddd :%d",event.getX());
     Widget *w= event.getSource();
     const std::string ClickedId = event.getSource()->getId();
     for(TMainMissionsIter mit = mMainMission.begin(); mit != mMainMission.end(); ++mit)

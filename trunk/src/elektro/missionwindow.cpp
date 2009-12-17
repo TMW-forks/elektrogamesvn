@@ -55,6 +55,7 @@ MissionWindow::MissionWindow():
     mScrollExp = new ScrollArea(mContainerExp);
     mScrollExp->setDimension(gcn::Rectangle(130,215,getWidth()-140,getHeight()-250));
     mScrollExp->setOpaque(false);
+    mScrollExp->setScrollPolicy(gcn::ScrollArea::SHOW_AUTO,gcn::ScrollArea::SHOW_AUTO);
     mContainerExp->addActionListener(this);
     add(mScrollExp);
 
@@ -89,6 +90,7 @@ MissionWindow::logic()
     {
         susle->setVisible(false);
         susleprogress = false;
+        susle->setProgress(0.0f);
     }
     Window::logic();
 }
@@ -129,13 +131,24 @@ logger->log("action :%s",event.getId().c_str());
 void
 MissionWindow::clearMissions()
 {
-//    for(mSubMissionsIter = mSubMissions.begin(); mSubMissionsIter != mSubMissions.end(); mSubMissionsIter++)
-//    {
-//        delete (*mSubMissionsIter)->oneTarget;
-//        delete (*mSubMissionsIter)->oneExplain;
-//        ResourceManager *resman = ResourceManager::getInstance();
-//        (*mSubMissionsIter)->oneImage->decRef();
-//    }
+    for(mMainMissionIter = mMainMission.begin(); mMainMissionIter != mMainMission.end(); mMainMissionIter++)
+    {
+        SmMainMission *temp;
+        temp = mMainMissionIter->second;
+        TSubMissions subtemp= temp->subMissions;
+
+        for(mSubMissionsIter = subtemp.begin(); mSubMissionsIter != subtemp.end(); mSubMissionsIter++)
+        {
+            if ((*mSubMissionsIter)->oneTarget != NULL)
+                delete (*mSubMissionsIter)->oneTarget;
+            if ((*mSubMissionsIter)->oneImage != NULL)
+                delete (*mSubMissionsIter)->oneImage;
+            if ((*mSubMissionsIter)->oneExplain != NULL)
+                delete (*mSubMissionsIter)->oneExplain;
+        }
+        subtemp.clear();
+    }
+    mMainMission.clear();
 }
 
 void
@@ -272,10 +285,7 @@ MissionWindow::parse(std::string mDoc)
     susleprogress = true;
     susle->setVisible(true);
     add(susle);
-
-
-    logger->log(mDoc.c_str());
-
+    hideSubMissions();
     xmlDocPtr mxmlDoc;
     mxmlDoc=xmlParseMemory(mDoc.c_str(),mDoc.size());
     if (!mxmlDoc)
@@ -386,9 +396,13 @@ MissionWindow::mousePressed(gcn::MouseEvent &event)
                    (*tik)->oneTarget->getId() == ClickedId)
             {
                 if((*tik)->oneExplain != NULL)
+                {
                     (*tik)->oneExplain->setVisible(true);
+                    mContainerExp->setHeight((*tik)->oneExplain->getHeight());
+                    mScrollExp->setVerticalScrollAmount(0);
+                }
             }
-            else
+            else if(ClickedId != "")
             {
                 if((*tik)->oneExplain != NULL)
                     (*tik)->oneExplain->setVisible(false);

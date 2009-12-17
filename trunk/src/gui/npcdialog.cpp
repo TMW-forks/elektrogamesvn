@@ -200,7 +200,7 @@ void NpcDialog::action(const gcn::ActionEvent &event)
                 Net::getNpcHandler()->integerInput(mNpcId, mIntField->getValue());
             }
             // addText will auto remove the input layout
-            addText( strprintf("\n> \"%s\"\n", printText.c_str()) );
+            addText( strprintf("##1> \"%s\"", printText.c_str()) );
         }
     }
     else if (event.getId() == "reset")

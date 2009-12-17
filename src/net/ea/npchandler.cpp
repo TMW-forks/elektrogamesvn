@@ -114,7 +114,6 @@ void NpcHandler::handleMessage(MessageIn &msg)
             {
                 if (temp=="</mission>")
                 {
-                    logger->log("**** :%s", npcText.str().c_str());
                     missionWindow->setVisible(true);
                     missionWindow->parse(npcText.str());
                     npcText.str("");

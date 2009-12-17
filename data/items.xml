@@ -5028,7 +5028,7 @@
         type="usable"
         weight="1"
         max-per-slot="100"
-		elektro-type="resistance"
+		elektro-type="lamp"
 		elektro-value="3"/>
 	<item id="1126"
         image="/elektrik/item-anahtar.png"

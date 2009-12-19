@@ -607,7 +607,7 @@
         <sound event="swing">weapons/bows/bow_shoot_1.ogg</sound>
     </item>				
     <item id="657"
-        image="/elektroadd/silah-plazma-2.png"
+        image="/elektroadd/silah-plazma-3.png"
         name="Kırmızı Plazma Silahı"
         description="Uzun menzilli silah."
         effect="+15 Hasar, 15 Menzil"
@@ -623,7 +623,7 @@
         <sound event="swing">weapons/bows/bow_shoot_1.ogg</sound>
     </item>		
     <item id="658"
-        image="/elektroadd/silah-plazma-3.png"
+        image="/elektroadd/silah-plazma-2.png"
         name="Mavi Plazma Silahı"
         description="Uzun menzilli plazma silahı."
         effect="+70 Hasar, 30 Menzil"

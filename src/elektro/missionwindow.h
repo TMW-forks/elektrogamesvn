@@ -125,6 +125,7 @@ class MissionWindow : public Window, public gcn::ActionListener
         int sayfa ; // gösterilecek resmi seçmek için
         Image *mBackgroundPattern;
         Button *s1;
+        Container *mPopup;
         Container *mContainerSub;
         Container *mContainerMain;
         Container *mContainerExp;
@@ -134,6 +135,7 @@ class MissionWindow : public Window, public gcn::ActionListener
         ProgressBar  *susle;
         bool susleprogress;
 
+        Skin *mSkin;
         //Alt Görev
 //        TSubMissions mSubMissions;
         TSubMissionsIter mSubMissionsIter;

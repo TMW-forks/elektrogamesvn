@@ -909,6 +909,7 @@ TestDialog::parse()
         }
         else if (xmlStrEqual(node->name, BAD_CAST "question"))
         {
+            reset();
             mQuestionNumber = XML::getProperty(node, "qn", 1); //belirtilmezse 1. soru
             mType = XML::getProperty(node, "type", "radio");  //belirtilmezse radio
             mSelected= XML::getProperty(node, "selected", 0); //secili degil

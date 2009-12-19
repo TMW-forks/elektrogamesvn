@@ -31,6 +31,14 @@ MissionWindow::MissionWindow():
     loadWindowState();
     setResizable(true);
 
+
+    mPopup = new Container();
+    mPopup->setOpaque(true);
+    mPopup->setVisible(false);
+    mPopup->setWidth(200);
+    mPopup->setHeight(100);
+    add(mPopup);
+
     mContainerSub = new Container();
     mContainerSub->setOpaque(false);
 
@@ -384,6 +392,7 @@ MissionWindow::mousePressed(gcn::MouseEvent &event)
 {
     Widget *w= event.getSource();
     const std::string ClickedId = event.getSource()->getId();
+
     for(TMainMissionsIter mit = mMainMission.begin(); mit != mMainMission.end(); ++mit)
     {
         SmMainMission *temp;
@@ -400,6 +409,9 @@ MissionWindow::mousePressed(gcn::MouseEvent &event)
                     (*tik)->oneExplain->setVisible(true);
                     mContainerExp->setHeight((*tik)->oneExplain->getHeight());
                     mScrollExp->setVerticalScrollAmount(0);
+                    mPopup->setVisible(true);
+                    mPopup->setX(event.getX());
+                    mPopup->setY(event.getY());
                 }
             }
             else if(ClickedId != "")

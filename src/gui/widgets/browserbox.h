@@ -27,6 +27,7 @@
 
 #include <guichan/mouselistener.hpp>
 #include <guichan/widget.hpp>
+#include "gui/widgets/scrollarea.h"
 
 class LinkHandler;
 
@@ -52,6 +53,11 @@ class BrowserBox : public gcn::Widget, public gcn::MouseListener
          * Destructor.
          */
         ~BrowserBox();
+
+        /**
+        *autoWrap Fonksiyonu
+        */
+        void autoWrap(ScrollArea *textArea);
 
         /**
          * Sets the handler for links.
@@ -138,11 +144,11 @@ class BrowserBox : public gcn::Widget, public gcn::MouseListener
             BACKGROUND = 2
         };
     void setMode(unsigned int m) {mMode = m;}
-
-    private:
-        typedef std::list<std::string> TextRows;
+     typedef std::list<std::string> TextRows;
         typedef TextRows::iterator TextRowIterator;
         TextRows mTextRows;
+    private:
+
 
         typedef std::vector<BROWSER_LINK> Links;
         typedef Links::iterator LinkIterator;
@@ -155,6 +161,9 @@ class BrowserBox : public gcn::Widget, public gcn::MouseListener
         bool mUseLinksAndUserColors;
         int mSelectedLink;
         unsigned int mMaxRows;
+
+        std::vector<std::string>mvRow;
+        std::vector<std::string>::iterator miRow;
 };
 
 #endif

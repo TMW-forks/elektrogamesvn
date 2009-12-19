@@ -438,3 +438,80 @@ void BrowserBox::draw(gcn::Graphics *graphics)
         setHeight((mTextRows.size() + wrappedLines) * font->getHeight());
     }
 }
+
+void
+BrowserBox::autoWrap(ScrollArea *textArea)
+{
+    gcn::Font *font = getFont();
+    std::string metin="";
+    std::string karakter;
+    std::string sonKarakter="";
+    std::string kelime="";
+    std::string satir="";
+    std::string sonrakiKelime="";
+    std::string sonGorunenRenk;
+
+    int x =0;
+
+    for (BrowserBox::TextRowIterator i=mTextRows.begin(); i!=mTextRows.end();i++)
+        metin += (*i);
+
+    clearRows();
+    sonKarakter = metin[metin.size()-1];
+
+    for (int i=0;i<metin.size();i++)
+    {
+        karakter = metin[i];
+
+        if (karakter == " " || karakter == sonKarakter )
+        {
+            int sonrakiBosluk = metin.find(" ",i+1);
+            sonrakiKelime = metin.substr(i+1,sonrakiBosluk-(i+1));
+            int sonrakiKelimeGen = font->getWidth(sonrakiKelime);
+
+            if (kelime != "#br#")
+            {
+                kelime +=" ";
+
+                if (kelime[0] == '#' && kelime[1]=='#')
+                {
+                    std::string tut;
+                    sonGorunenRenk = kelime.substr(0,3);
+                    tut = kelime.substr(3,kelime.size()-1);
+                    x += font->getWidth(tut);
+                }
+                else
+                {
+                    x += font->getWidth(kelime);
+                }
+
+                satir += kelime;
+            }
+
+            kelime ="";
+
+            if(x + sonrakiKelimeGen + 5 >textArea->getWidth() || i == metin.size()-1 || sonrakiKelime == "#br#")
+            {
+                //logger->log("uzunluk satir:%s",satir.c_str());
+                mvRow.push_back(satir);
+                satir= sonGorunenRenk;
+                x =0;
+            }
+        }
+        else
+        {
+            kelime += karakter;
+        }
+    }
+
+    //Yüksekliği ayarla
+    textArea->setHeight(font->getHeight() * mvRow.size());
+
+    //BrowserBox'a verileri yaz
+    for (miRow=mvRow.begin();miRow!=mvRow.end();miRow++)
+    {
+        addRow((*miRow));
+    }
+
+    mvRow.clear();
+}

@@ -13,14 +13,20 @@
  <tileset name="merdiven" firstgid="104" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/mrdvn.png"/>
  </tileset>
+ <tileset name="collision" firstgid="114" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/collision.png"/>
+ </tileset>
+ <tileset name="taban" firstgid="116" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/yol2.png"/>
+ </tileset>
  <layer name="Ground" width="66" height="46">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO2ZTQ6DIBBGcav7uq+X8QDd9Ab97/13HRKSNl2IZaYdaJ7JiyaC4ONDQ+hCCB0AAEAjzMJBOKZr7/54sRNOwjlde/fnnV7YClPmrGUULsJV2GTKftJmLDsYjdPekHnh3k24K+ov1dF6KGl3Ca3XkvoW88zag/Z5XnmwnhfkwY8avw8eWOTBel6Qh7Y9/EMeavxO8t98js2v65MH8mCdh7j2y601p9TemnKD0kO/sp3X82jgwRqLeeH9DnjAAx7wgAc84AEPAQ/koXEPNe75lZDbs8vt0X1jzRQq8FIDeMADHvCABzzgAQ9QRjweXEXG43AvAAA=
+   H4sIAAAAAAAAAO2aTQ6CQAyFYSt73ctlPAAbr6Bb//XwdhJIEIfMTPsCI77FF0mgLTxK30Asi6IoCSGEEEKArIStUAd+pyS1pju+MurQCHsgu8D+rq4lx1iMRYeu5kk4C5fE+sO4kK4xOjQjuUN1ETpchZtwT9RhGBe6lwfhGHFvQ+fkq4t4Lh7CU3gl6jCMC/VDjA4x5+Sri+iHqYjRQQNqPvw61n5A+8VcsB8wOiylH1BzErV+0OTT5PDFIPoBtX7Q5NPk8MUg+gG1ftDk0+TwxeQ0HxD5NDms/bAuwu+adVsr5rgKoMOqzRVTr9veGHVAg/Bha4/nAMov5r4OlA4Wv1iSDla/mPs6UDpwPlAH6vCtA/2CftHXgX7B+YDSwfrOlAPsh08d6Bf0i74O9AvOSYf7vmX534Mjt29LhBDyD7wBz/j8ynAvAAA=
   </data>
  </layer>
  <layer name="Fringe" width="66" height="46">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3BMQEAAADCoPVP7W8GoAAAAAAAAAAAAAAAgDf2qZMvcC8AAA==
+   H4sIAAAAAAAAAO3QQQrAIAxFwRzXgtr771Sk0BsEcQYCWX5eBAAAp+u//01bkW91KPOe0OGjw6bDdnOHpc5r2SMAAAAAAAAAgKMMEgRSX3AvAAA=
   </data>
  </layer>
  <layer name="Top" width="66" height="46">
@@ -28,9 +34,9 @@
    H4sIAAAAAAAAAO3OsQ2AMAADwSwFqYEasv82eAsLdCd9/2MAAAAAAHzXlvY02yNlRzrT1R4pu9OTVnsEAAAAAAD4hRfyUnEbcC8AAA==
   </data>
  </layer>
- <layer name="Collision" width="66" height="46">
+ <layer name="Collision" width="66" height="46" visible="0">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3BMQEAAADCoPVP7W8GoAAAAAAAAAAAAAAAgDf2qZMvcC8AAA==
+   H4sIAAAAAAAAAO3VOwqAMBBAwdw59weLLWKhkWB+yiw8SJNVpzGnlLIkSZKG1HNq+/LNuWVH7Q4HDuc7HPZzeHrXq3Ov3V9xGDkcYjjEcIjZzaHHvj/8LziU91mxg0O5M6OWZ72dWd/EgcNsMw4cOHDgwIEDBw4cJEmSJEUHqWy1ZHAvAAA=
   </data>
  </layer>
  <layer name="Objects" width="66" height="46" visible="0">

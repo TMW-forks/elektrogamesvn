@@ -22,6 +22,15 @@
  <tileset name="taban" firstgid="142" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/yol2.png"/>
  </tileset>
+ <tileset name="dino1" firstgid="151" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/dino1.png"/>
+ </tileset>
+ <tileset name="dino2" firstgid="169" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/dino2.png"/>
+ </tileset>
+ <tileset name="dino3" firstgid="178" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/dino3.png"/>
+ </tileset>
  <layer name="Ground" width="41" height="50">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAAO2YOxLCMAwFlRZ66OEyOUAargB3gfA9L6JQ48YGWYpsXrGdi51k3ziTgYgGAAAAalbMTsGeWRs7TsxByQTHrOOROcGxq3d9Zi7MXOCUnvVyvDI35l7gmJ4dnRwfzJN5FTimZ62f41jgFKVHONZx7H3XXo7Y9f9spgVHza6t70LpMfKuxTHyrmv06PXd07ujV4+R7+sWdl3jvm6hxyUdpbtcp0t+90h3uU6/caTKjtJdrlNrR+8ef3HckO7/44etsSMAAIA4vAHVI0MGCCAAAA==
@@ -29,12 +38,12 @@
  </layer>
  <layer name="Fringe" width="41" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3OIQoAIBREQY+rRb1/UsFgEkwfYQYWNr6UAOAfea5ER1zU47ewirsfGpe+BwAAAAAAvBnT3uBoCCAAAA==
+   H4sIAAAAAAAAAO3OMQ5AQBRF0VkuDfbEoEOPsTSPKFSj4pvknuQmv/jFcw4AgHRkKrceEVHc7tJsRVwKGw/VFQAAAAD81aBGNT38zWpRqwpqe3cWcKpVo7xqVad600UAAOBLO5kcR50IIAAA
   </data>
  </layer>
  <layer name="Top" width="41" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3BAQ0AAADCoPdPbQ8HFAAAAAAAAADwYho5PoMIIAAA
+   H4sIAAAAAAAAAO3OORKCQAAFUe5/ARTEhYxFA1AQvRwdWhJMNDUB/ao6+8HPMkmSJEmSJEl70lBLXWA30EhPetEU+devnu70COxmetNCH/pG/qX4cjrQkQoq6ZT00VZFZ7rQlW5UpzwkSZL0ZwVnFNdPCCAAAA==
   </data>
  </layer>
  <layer name="Collision" width="41" height="50">

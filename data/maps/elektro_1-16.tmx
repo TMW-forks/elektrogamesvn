@@ -10,22 +10,31 @@
  <tileset name="kaplama" firstgid="86" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/kaplamalar.png"/>
  </tileset>
- <tileset name="Untitled" firstgid="104" tilewidth="32" tileheight="32">
+ <tileset name="merdiven" firstgid="104" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/mrdvn.png"/>
+ </tileset>
+ <tileset name="heykadin" firstgid="114" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/heykel kadin.png"/>
+ </tileset>
+ <tileset name="heyerkek" firstgid="130" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/heykel kafa.png"/>
+ </tileset>
+ <tileset name="taban" firstgid="142" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/yol2.png"/>
  </tileset>
  <layer name="Ground" width="41" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3YIRKAMAwF0dSCBw+X6QFquP9FCB6BSJh8WLH+TTKpaDOzVjgrYCAiumvytqR2bw4wDu9IbGDEiPFzxi5gjJhjFzAqzBEjxkrG7Lv+y/uoYFTYtYJRYdcYuZlKRoVdY+Rm3jKawK6fGBXmuFje/+PVGmAkIqK6nVpyDLYIIAAA
+   H4sIAAAAAAAAAO2YOxLCMAwFlRZ66OEyOUAargB3gfA9L6JQ48YGWYpsXrGdi51k3ziTgYgGAAAAalbMTsGeWRs7TsxByQTHrOOROcGxq3d9Zi7MXOCUnvVyvDI35l7gmJ4dnRwfzJN5FTimZ62f41jgFKVHONZx7H3XXo7Y9f9spgVHza6t70LpMfKuxTHyrmv06PXd07ujV4+R7+sWdl3jvm6hxyUdpbtcp0t+90h3uU6/caTKjtJdrlNrR+8ef3HckO7/44etsSMAAIA4vAHVI0MGCCAAAA==
   </data>
  </layer>
  <layer name="Fringe" width="41" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3BAQ0AAADCoPdPbQ8HFAAAAAAAAADwYho5PoMIIAAA
+   H4sIAAAAAAAAAO3OIQoAIBREQY+rRb1/UsFgEkwfYQYWNr6UAOAfea5ER1zU47ewirsfGpe+BwAAAAAAvBnT3uBoCCAAAA==
   </data>
  </layer>
  <layer name="Top" width="41" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3OsQ0AIQwAMcblgYf9O7JBRJXGlq6/1gDgTY++6onEiGb1RGJFf/VEYkenegIAAAAAAHhyAdVZNMEIIAAA
+   H4sIAAAAAAAAAO3BAQ0AAADCoPdPbQ8HFAAAAAAAAADwYho5PoMIIAAA
   </data>
  </layer>
  <layer name="Collision" width="41" height="50">

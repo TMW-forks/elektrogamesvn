@@ -20,7 +20,7 @@
  </layer>
  <layer name="Fringe" width="46" height="46">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3BAQ0AAADCoPdPbQ8HFAAAAAAAAADAlwG38bQVECEAAA==
+   H4sIAAAAAAAAAO3OAQ0AAAgDoNu/tDGuGyQgAQAA4LppBwAAAADgmQXGw9voECEAAA==
   </data>
  </layer>
  <layer name="Top" width="46" height="46">
@@ -28,7 +28,7 @@
    H4sIAAAAAAAAAO3OKQ6AQBREwfHABVg8i2e5/8X4coJigpiEVCVPtOuUAAAAAPiqjZpHXdVH7/TRkO0xmip9KTFHS7bXaKv0pcQeHdk+o6vSFwAAgL+7AcHs4FQQIQAA
   </data>
  </layer>
- <layer name="Collsion" width="46" height="46" visible="0">
+ <layer name="Collision" width="46" height="46" visible="0">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAAO3TMQoAIRAEwf2n//+H+YWC7QU10KkULK6ZWZIk/ah63O2423G3427H3Y67HXc77nbc5++/dH8Nt2/F3f6N12Zubm5ubknSrTYuPQAXECEAAA==
   </data>

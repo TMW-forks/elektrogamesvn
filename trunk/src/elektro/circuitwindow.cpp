@@ -394,7 +394,7 @@ CircuitWindow::logic()
             j++;
         }
     }
-    if (collisionCheck)
+    if (collisionCheck && isVisible())
     {
         int mx=0, my=0;
         bool found=false;
@@ -449,7 +449,7 @@ CircuitWindow::logic()
 
 
 //aradaki kabloları çiz
-    if (mWireRefresh || mRefresh)
+    if ((mWireRefresh || mRefresh) && isVisible())
     {
         mWireRefresh = false;
          for(mTellerIter = mTeller.begin(); mTellerIter != mTeller.end(); mTellerIter++)
@@ -478,7 +478,7 @@ CircuitWindow::logic()
             }
         }
     }
-    if (mRefresh)
+    if (mRefresh && isVisible())
     {
         mRefresh=false;
         devreAnaliz();

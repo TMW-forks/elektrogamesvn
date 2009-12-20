@@ -119,16 +119,22 @@ class MissionWindow : public Window, public gcn::ActionListener
          */
         void parse(std::string mDoc);
 
-        void mousePressed(gcn::MouseEvent &event);
+//        void mouseEntered(gcn::MouseEvent &event);
+
+        void mouseExited(gcn::MouseEvent &event);
+
+        void mouseMoved(gcn::MouseEvent &event);
 
     private:
         int sayfa ; // gösterilecek resmi seçmek için
         Image *mBackgroundPattern;
         Button *s1;
+        BrowserBox *mPopupBrowser;
         Container *mPopup;
         Container *mContainerSub;
         Container *mContainerMain;
         Container *mContainerExp;
+        ScrollArea *mPopupScroll;
         ScrollArea *mScrollSub;
         ScrollArea *mScrollMain;
         ScrollArea *mScrollExp;

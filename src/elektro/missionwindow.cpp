@@ -37,7 +37,15 @@ MissionWindow::MissionWindow():
     mPopup->setVisible(false);
     mPopup->setWidth(200);
     mPopup->setHeight(100);
-    add(mPopup);
+    mPopup->addActionListener(this);
+
+    mPopupBrowser = new BrowserBox();
+    mPopupBrowser->setOpaque(false);
+    mPopupScroll = new ScrollArea(mPopupBrowser);
+    mPopupScroll->setPosition(5,5);
+    mPopupScroll->setWidth(mPopup->getWidth()-10);
+    mPopup->add(mPopupScroll);
+
 
     mContainerSub = new Container();
     mContainerSub->setOpaque(false);
@@ -47,6 +55,7 @@ MissionWindow::MissionWindow():
 
     mContainerExp = new Container();
     mContainerExp->setOpaque(false);
+    mContainerExp->setVisible(false);
 
     mScrollSub = new ScrollArea(mContainerSub);
     mScrollSub->setDimension(gcn::Rectangle(130,50,getWidth()-140,getHeight()-180));
@@ -84,6 +93,8 @@ MissionWindow::MissionWindow():
     susleprogress = false;
 //    hideSubMissions();
     setVisible(false);
+    static_cast<Window*>(getParent())->add(mPopup);
+
 }
 
 void
@@ -388,7 +399,7 @@ MissionWindow::parse(std::string mDoc)
 }
 
 void
-MissionWindow::mousePressed(gcn::MouseEvent &event)
+MissionWindow::mouseMoved(gcn::MouseEvent &event)
 {
     Widget *w= event.getSource();
     const std::string ClickedId = event.getSource()->getId();
@@ -406,12 +417,20 @@ MissionWindow::mousePressed(gcn::MouseEvent &event)
             {
                 if((*tik)->oneExplain != NULL)
                 {
-                    (*tik)->oneExplain->setVisible(true);
+                    (*tik)->oneExplain->setVisible(false);
                     mContainerExp->setHeight((*tik)->oneExplain->getHeight());
                     mScrollExp->setVerticalScrollAmount(0);
+                    mPopupBrowser->clearRows();
+
+                    for(BrowserBox::TextRowIterator i =(*tik)->oneExplain->mTextRows.begin();
+                        i != (*tik)->oneExplain->mTextRows.end(); i++)
+                            mPopupBrowser->addRow((*i));
                     mPopup->setVisible(true);
-                    mPopup->setX(event.getX());
-                    mPopup->setY(event.getY());
+                    mPopup->setX(event.getX()+getX()+10);
+                    mPopup->setY(event.getY()+getY()+10);
+                    mPopupBrowser->autoWrap(mPopupScroll);
+                    mPopup->setHeight(mPopupScroll->getHeight()+10);
+                    mPopup->requestMoveToTop();
                 }
             }
             else if(ClickedId != "")
@@ -421,5 +440,23 @@ MissionWindow::mousePressed(gcn::MouseEvent &event)
             }
         }
     }
-    Window::mousePressed(event);
+    Window::mouseMoved(event);
 }
+
+void
+MissionWindow::mouseExited(gcn::MouseEvent &event)
+{
+    mPopup->setVisible(false);
+}
+
+//void
+//MissionWindow::mouseMoved(gcn::MouseEvent &event)
+//{
+//    if (mPopup->isVisible())
+//    {
+//        mPopup->setX(event.getX()+getX()+10);
+//        mPopup->setY(event.getY()+getY()+10);
+//    }
+//}
+
+

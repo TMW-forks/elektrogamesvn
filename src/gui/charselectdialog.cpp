@@ -175,10 +175,10 @@ CharSelectDialog::CharSelectDialog(LockedArray<LocalPlayer*> *charInfo,
     mNewDelCharButton = new Button(tempString, "newdel", this);
 
     ContainerPlacer place;
-    place = getPlacer(12, 20);
+    place = getPlacer(30, 20);
     place(0, 0, mAccountNameLabel);
     place(0, 1, mChangePasswordButton);
-    place = getPlacer(12, 21);
+    place = getPlacer(30, 21);
     place(0, 0, mPlayerBox, 1, 6).setPadding(3);
     place(1, 0, mNameLabel, 5);
     place(1, 1, mLevelLabel, 5);
@@ -186,13 +186,13 @@ CharSelectDialog::CharSelectDialog(LockedArray<LocalPlayer*> *charInfo,
     place(1, 3, mMoneyLabel, 5);
     place(1, 4, mNewDelCharButton);
     place.getCell().matchColWidth(1, 4);
-    place = getPlacer(12, 22);
+    place = getPlacer(30, 22);
     place(0, 0, mPreviousButton);
     place(1, 0, mNextButton);
     place(4, 0, mCancelButton);
     place(5, 0, mSelectButton);
 
-    reflowLayout(320, 380);
+    reflowLayout(370, 390);
 #endif
     setSize(573,507);
 

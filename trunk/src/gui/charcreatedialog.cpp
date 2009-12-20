@@ -113,27 +113,24 @@ CharCreateDialog::CharCreateDialog(Window *parent, int slot):
     int w = 200;
     int h = 330;
 
-    mPlayerBox->setDimension(gcn::Rectangle(215, 190, 80, 85));
-    mNameLabel->setPosition(150, 160);
-    mNameField->setDimension(
-            gcn::Rectangle(195, 160, 120, mNameField->getHeight()));
-    mPrevHairColorButton->setPosition(189, 195);
-    mNextHairColorButton->setPosition(305, 195);
-    mHairColorLabel->setPosition(115, 200);
-    mPrevHairStyleButton->setPosition(189, 224);
-    mNextHairStyleButton->setPosition(305, 224);
-    mHairStyleLabel->setPosition(115, 225);
-    mAttributesLeft->setPosition(105, 300);
-    updateSliders();
-    mCancelButton->setPosition(
-            300 - 5 - mCancelButton->getWidth(),
-            400);
-    mCreateButton->setPosition(
-            mCancelButton->getX() - 5 - mCreateButton->getWidth(),
-            400);
 
-    mMale->setPosition(190, 280);
-    mFemale->setPosition(260, 280);
+    ContainerPlacer place;
+    place = getPlacer(5,15);
+    place(0,0,mNameLabel);
+    place(1,0,mNameField,2);
+    place = getPlacer(5,16);
+    place(0,0,mHairColorLabel);
+    place(1,0,mPrevHairColorButton);
+    place(2,0,mPlayerBox,1,10).setPadding(3);
+    place(3,0,mNextHairColorButton);
+    place(0,1,mHairStyleLabel);
+    place(1,1,mPrevHairStyleButton);
+    place(3,1,mNextHairStyleButton);
+    reflowLayout(350,335);
+
+    mCreateButton->setPosition(200,345);
+    mCancelButton->setPosition(260,345);
+    mCancelButton->setWidth(mCreateButton->getWidth());
 
     add(mPlayerBox);
     add(mNameField);
@@ -144,12 +141,11 @@ CharCreateDialog::CharCreateDialog(Window *parent, int slot):
     add(mNextHairStyleButton);
     add(mPrevHairStyleButton);
     add(mHairStyleLabel);
-    add(mAttributesLeft);
     add(mCreateButton);
     add(mCancelButton);
-
-    add(mMale);
-    add(mFemale);
+//    add(mAttributesLeft);
+//    add(mMale);
+//    add(mFemale);
 
     setSize(573,507);
     center();
@@ -339,12 +335,12 @@ void CharCreateDialog::setAttributes(std::vector<std::string> labels,
 //    mAttributesLeft->setPosition(105, 480);
     updateSliders();
 
-    mCancelButton->setPosition(
-            300 - 5 - mCancelButton->getWidth(),
-            440 - 5 - mCancelButton->getHeight());
-    mCreateButton->setPosition(
-            mCancelButton->getX() - 5 - mCreateButton->getWidth(),
-            440 - 5 - mCancelButton->getHeight());
+//    mCancelButton->setPosition(
+//            300 - 5 - mCancelButton->getWidth(),
+//            440 - 5 - mCancelButton->getHeight());
+//    mCreateButton->setPosition(
+//            mCancelButton->getX() - 5 - mCreateButton->getWidth(),
+//            440 - 5 - mCancelButton->getHeight());
 
 }
 

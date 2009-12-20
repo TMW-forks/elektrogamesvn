@@ -31,9 +31,12 @@
  <tileset name="dino3" firstgid="178" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/dino3.png"/>
  </tileset>
+ <tileset name="collasion" firstgid="193" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/collision.png"/>
+ </tileset>
  <layer name="Ground" width="41" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO2YOxLCMAwFlRZ66OEyOUAargB3gfA9L6JQ48YGWYpsXrGdi51k3ziTgYgGAAAAalbMTsGeWRs7TsxByQTHrOOROcGxq3d9Zi7MXOCUnvVyvDI35l7gmJ4dnRwfzJN5FTimZ62f41jgFKVHONZx7H3XXo7Y9f9spgVHza6t70LpMfKuxTHyrmv06PXd07ujV4+R7+sWdl3jvm6hxyUdpbtcp0t+90h3uU6/caTKjtJdrlNrR+8ef3HckO7/44etsSMAAIA4vAHVI0MGCCAAAA==
+   H4sIAAAAAAAAAO2YOw4CMQxEvS300MNl9gDbcAW4Cyzf8zIUbtIkkhPnwxSvc/GUzMhRJhGZCCGEmNmAg4Ej2BZ2XMDJyELHqOMZXOg41F1fwQ2sCU7hrJfjHTzAM8ExnJ2dHF/gDT4JjuFs6XOcE5xaySMd8ziO3msvR/b6fzrTg6Ol16V3oeax5V6rY8u9zpFHr3fP6I5eeWx5X/fQ6xz7uoc81nTU3MVyWvPdo7mL5bSmo+YullPuGZGd2P4ff+wLOxJCCGmHL4ZxVbQIIAAA
   </data>
  </layer>
  <layer name="Fringe" width="41" height="50">
@@ -46,9 +49,9 @@
    H4sIAAAAAAAAAO3OORKCQAAFUe5/ARTEhYxFA1AQvRwdWhJMNDUB/ao6+8HPMkmSJEmSJEl70lBLXWA30EhPetEU+devnu70COxmetNCH/pG/qX4cjrQkQoq6ZT00VZFZ7rQlW5UpzwkSZL0ZwVnFNdPCCAAAA==
   </data>
  </layer>
- <layer name="Collision" width="41" height="50">
+ <layer name="Collision" width="41" height="50" visible="0">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3BAQ0AAADCoPdPbQ8HFAAAAAAAAADwYho5PoMIIAAA
+   H4sIAAAAAAAAAO3SwQkAIQwAwfRfViq7v6BcFFRwhAUfeQzRjIiUJD3T6mEcG7NzZ6y/dWXGf2RkZGRkZGRkZGRkPGGseNtZe2TcYZyds8d7jZIk/e0DmvJTiQggAAA=
   </data>
  </layer>
  <layer name="Objects" width="41" height="50">

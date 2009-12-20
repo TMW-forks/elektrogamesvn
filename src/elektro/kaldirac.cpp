@@ -18,13 +18,14 @@ void Kaldirac::draw(gcn::Graphics *graphics)
 {
     //std::string ss="graphics/sprites/elektroadd/kaldirac.png";
     ResourceManager *resman = ResourceManager::getInstance();
-    resim = resman->getImage("graphics/sprites/elektroadd/kaldirac.png");
+    std::string path = "graphics/sprites/elektroadd/kaldirac.png";
+    resim = resman->getImage(path);
 
     Graphics *g = static_cast<Graphics*>(graphics);
 
     g->drawImage(resim,25,25);
-//    ImageSet *res = resman->getImageSet(ss,32,32);
-//    g->drawImage(res->get(0),4,4);
+//    ImageSet *res = resman->getImageSet(path,25,25);
+//    g->drawImage(res->get(1),4,4);
     drawChildren(graphics);
 }
 

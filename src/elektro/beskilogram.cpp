@@ -14,7 +14,7 @@ BesKiloGram::~BesKiloGram()
 
 void BesKiloGram::draw(gcn::Graphics *graphics)
 {
-    std::string ss="graphics/elektrik/item-ampul-0.png";
+    std::string ss="graphics/elektrik/item-ampul-0-d.png";
 
     Graphics *g = static_cast<Graphics*>(graphics);
     ResourceManager *resman = ResourceManager::getInstance();

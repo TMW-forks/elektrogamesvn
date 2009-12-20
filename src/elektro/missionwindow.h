@@ -130,7 +130,7 @@ class MissionWindow : public Window, public gcn::ActionListener
         Image *mBackgroundPattern;
         Button *s1;
         BrowserBox *mPopupBrowser;
-        Container *mPopup;
+        Window *mPopup;
         Container *mContainerSub;
         Container *mContainerMain;
         Container *mContainerExp;

@@ -29,11 +29,11 @@ MissionWindow::MissionWindow():
     setResizable(false);
     setDefaultSize(1010-400, 754-300, 400, 300);
     loadWindowState();
-    setResizable(true);
+    setResizable(false);
 
 
-    mPopup = new Container();
-    mPopup->setOpaque(true);
+    mPopup = new Window("Görev Açıklaması");
+    mPopup->setOpaque(false);
     mPopup->setVisible(false);
     mPopup->setWidth(200);
     mPopup->setHeight(100);
@@ -42,7 +42,8 @@ MissionWindow::MissionWindow():
     mPopupBrowser = new BrowserBox();
     mPopupBrowser->setOpaque(false);
     mPopupScroll = new ScrollArea(mPopupBrowser);
-    mPopupScroll->setPosition(5,5);
+    mPopupScroll->setOpaque(false);
+    mPopupScroll->setPosition(3,2);
     mPopupScroll->setWidth(mPopup->getWidth()-10);
     mPopup->add(mPopupScroll);
 
@@ -74,7 +75,7 @@ MissionWindow::MissionWindow():
     mScrollExp->setOpaque(false);
     mScrollExp->setScrollPolicy(gcn::ScrollArea::SHOW_AUTO,gcn::ScrollArea::SHOW_AUTO);
     mContainerExp->addActionListener(this);
-    add(mScrollExp);
+    //add(mScrollExp);
 
     mContainerSub->setDimension(mScrollSub->getDimension());
     mContainerMain->setDimension(mScrollMain->getDimension());
@@ -340,6 +341,7 @@ MissionWindow::parse(std::string mDoc)
                     TextBox *tempText = new TextBox();
                     tempText->setText(XML::getProperty(subnode, "label", "Alt görev."));
                     tempText->setWidth(100);
+                    tempText->setEditable(false);
                     tempText->setOpaque(true);
                     tempText->setBackgroundColor(gcn::Color(156,184,184));
                     tempText->setVisible(false);
@@ -426,10 +428,10 @@ MissionWindow::mouseMoved(gcn::MouseEvent &event)
                         i != (*tik)->oneExplain->mTextRows.end(); i++)
                             mPopupBrowser->addRow((*i));
                     mPopup->setVisible(true);
-                    mPopup->setX(event.getX()+getX()+10);
-                    mPopup->setY(event.getY()+getY()+10);
+                    mPopup->setX(event.getX()+getX()+15);
+                    mPopup->setY(event.getY()+getY()+15);
                     mPopupBrowser->autoWrap(mPopupScroll);
-                    mPopup->setHeight(mPopupScroll->getHeight()+10);
+                    mPopup->setHeight(mPopupScroll->getHeight()+25);
                     mPopup->requestMoveToTop();
                 }
             }

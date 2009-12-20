@@ -18,7 +18,7 @@
    H4sIAAAAAAAAAO3XSwqAIBRAUd1UK3BQWQtw/xtJokgiLMjsPbmDg4NGXsyPNcZYAACAQsaoV26I/MsOLgoN6OiwcnSgAx2Kd5jMseee92EvYH61OuR0AuYnoYOmf4YOdKADHejwX4f9bpF7592Nte4gX3bQtKbooKNDrTup9A6sBzqk0vfsk/Plasx9C9s4C5grAAAtWQBdhtdwICUAAA==
   </data>
  </layer>
- <layer name="Fringe" width="66" height="36" visible="0">
+ <layer name="Fringe" width="66" height="36">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAAO3BAQ0AAADCoPdPbQ8HFAAAAAAAAAAAwKcBBzE/CCAlAAA=
   </data>

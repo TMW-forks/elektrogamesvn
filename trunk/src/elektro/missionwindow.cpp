@@ -128,7 +128,6 @@ void
 MissionWindow::action(const gcn::ActionEvent &event)
 {
     //ResourceManager *resman = ResourceManager::getInstance();
-logger->log("action :%s",event.getId().c_str());
     if (event.getId() == "close")
     {
         setVisible(false);
@@ -174,7 +173,6 @@ MissionWindow::clearMissions()
 void
 MissionWindow::addSubMission(std::string mainname, SmSubMission *one)
 {
-    logger->log("addSubMission: %s", mainname.c_str());
     TSubMissions *temp;
     SmMainMission *mn = mMainMission[mainname];
     mn->subMissions.push_back(one);
@@ -183,7 +181,6 @@ MissionWindow::addSubMission(std::string mainname, SmSubMission *one)
 void
 MissionWindow::addMainMission(std::string one)
 {
-    logger->log("addMainMission : %s",one.c_str());
     Button *tmp = new Button(one,one,this);
     mContainerMain->add(tmp);
     SmMainMission *smtmp = new SmMainMission;
@@ -194,7 +191,6 @@ MissionWindow::addMainMission(std::string one)
 void
 MissionWindow::viewOneMission(std::string one)
 {
-    logger->log("viewOneMission");
     SmMainMission *temp;
     temp = mMainMission[one];
     TSubMissions subtemp= temp->subMissions;
@@ -218,7 +214,6 @@ MissionWindow::viewOneMission(std::string one)
 void
 MissionWindow::putMissionButtons()
 {
-logger->log(__FUNCTION__);
     int x = 5;
     int y = 10;
     int dy =27;
@@ -242,8 +237,6 @@ MissionWindow::drawTree()
 void
 MissionWindow::putSubMission()
 {
-    logger->log(__FUNCTION__);
-
     for(mMainMissionIter = mMainMission.begin(); mMainMissionIter != mMainMission.end(); mMainMissionIter++)
     {
         int x  = 5;
@@ -273,7 +266,6 @@ MissionWindow::putSubMission()
 void
 MissionWindow::hideSubMissions()
 {
-    logger->log(__FUNCTION__);
     TMainMissionsIter mit;
     for(mit = mMainMission.begin(); mit != mMainMission.end(); mit++)
     {
@@ -413,7 +405,6 @@ MissionWindow::mouseMoved(gcn::MouseEvent &event)
         TSubMissionsIter tik;
         for(tik = temp->subMissions.begin(); tik != temp->subMissions.end(); tik++ )
         {
-            logger->log("%s == %s",(*tik)->oneTarget->getId().c_str() , ClickedId.c_str());
             if ((*tik)->oneTarget->isVisible() &&
                    (*tik)->oneTarget->getId() == ClickedId)
             {

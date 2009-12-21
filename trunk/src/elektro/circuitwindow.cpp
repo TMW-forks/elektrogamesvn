@@ -2141,6 +2141,7 @@ CircuitWindow::circuitFromXML(std::string mDoc)
         {
             SmTextBox temp = elektroWidget->addTextBox(this,node);
             add(temp.scrollarea);
+            temp.browserbox->autoWrap(temp.scrollarea);
             mvScrollArea.push_back(temp.scrollarea);
             mvBrowserBox.push_back(temp.browserbox);
         }

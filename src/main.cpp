@@ -1121,11 +1121,12 @@ int main(int argc, char *argv[])
                     if (options.username.empty()
                             || options.password.empty()) {
                         currentDialog = new LoginDialog(&loginData);
-                    } else {
+                    } else
+                    {
                         state = STATE_LOGIN_ATTEMPT;
                         // Clear the password so that when login fails, the
                         // dialog will show up next time.
-                        options.password.clear();
+                         options.password.clear();
                     }
                     break;
 
@@ -1421,9 +1422,39 @@ int main(int argc, char *argv[])
                     // Don't allow an alpha opacity
                     // lower than the default value
                     SkinLoader::instance()->setMinimumOpacity(0.8f);
-/**
-    Þifreyi geç
-*/
+
+/******************************************************************
+                        Þifreyi geç
+*******************************************************************/
+{    std::ifstream otologin;
+
+     otologin.open("otologin.txt",std::fstream::in);
+
+    if(otologin.is_open() == true)
+    {
+        char isim[20];
+        char pass[10];
+        char host[100];
+        char port[5];
+        int po = 0;
+        otologin.getline(host, 100);
+        otologin.getline(port, 5);
+        otologin.getline(isim, 20);
+        otologin.getline(pass, 16);
+        po = atoi(port);
+
+        loginData.hostname = host;
+        loginData.port = po;
+        loginData.username = isim;
+        loginData.password = pass;
+        options.chooseDefault = true;
+        options.skipUpdate = true;
+    }
+}
+/******************************************************************
+                        Þifreyi geç
+*******************************************************************/
+
                     if (!loginData.password.empty())
                     {
                         loginData.registerLogin = false;

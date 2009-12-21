@@ -1,0 +1,4 @@
+server.elektrogame.net
+9601
+puls
+1212

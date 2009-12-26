@@ -151,6 +151,8 @@ class NpcDialog : public Window, public gcn::ActionListener,
          */
         void widgetResized(const gcn::Event &event);
 
+        void autoWarp();
+
     private:
         void buildLayout();
 
@@ -160,7 +162,7 @@ class NpcDialog : public Window, public gcn::ActionListener,
         std::string mDefaultString;
 
         // Used for the main input area
-        gcn::ScrollArea *mScrollArea;
+        ScrollArea *mScrollArea;
         BrowserBox *mTextBox;
         std::string mText;
 

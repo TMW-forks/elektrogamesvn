@@ -132,8 +132,11 @@ void NpcHandler::handleMessage(MessageIn &msg)
             else if (being->getJob()>=150 && being->getJob()<=199)
             {
                 npcDialog->setNpc(current_npc);
-                npcDialog->addText(temp);
                 npcDialog->setVisible(true);
+                if (temp =="autowarp")
+                    npcDialog->autoWarp();
+                else
+                    npcDialog->addText(temp);
             }
             else if (being->getJob()>=200 && being->getJob()<=249)
             {

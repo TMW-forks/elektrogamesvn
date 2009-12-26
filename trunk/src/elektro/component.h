@@ -17,7 +17,7 @@
 #include "node.h"
 class Node;
 /**
- * Component türü
+ * Component tÃ¼rÃ¼
  */
 enum Type {
      UNKNOWN,
@@ -28,11 +28,11 @@ enum Type {
      LAMP,
      SWITCH};
 /**
- * Componentin bulunabileceği durumlar
+ * Componentin bulunabileceÃ°i durumlar
  */
 enum Status {
-     PASIVE, //Kapalı:Lambalar için sönük, anahtar için açık
-     ACTIVE, //Çalışıyor:Lambalar için yanıyor, anahtar için kapalı
+     PASIVE, //KapalÄ±:Lambalar iÃ§in sÃ¶nÃ¼k, anahtar iÃ§in aÃ§Ä±k
+     ACTIVE, //Ã‡alÄ±ÅŸÄ±yor:Lambalar iÃ§in yanÄ±yor, anahtar iÃ§in kapalÄ±
      BURNED, //Bozuk
      PLUS,   //Parlak
      PLUS2  //Daha Parlak
@@ -149,7 +149,7 @@ class Component : public gcn::Window,
         int getAngel ();
 
         /**
-         * Nodeların yerini hesapla
+         * NodelarÃ½n yerini hesapla
          */
         void nodesCalc();
 
@@ -158,7 +158,7 @@ class Component : public gcn::Window,
         float getValue();
 
         /**
-         * Grafik çizimlei için gerekli
+         * Grafik Ã§izimlei iÃ§in gerekli
          */
         void drawLine(gcn::Graphics *g,int a,int b,int c,int d, int t);
 
@@ -208,7 +208,7 @@ class Component : public gcn::Window,
         int mInterval;
         float mValue;
         int mYon;
-        float mCurrent;     //Nesne üzerinden geçen akım
+        float mCurrent;     //Nesne Ã¼zerinden geÃ§en akÃ½m
 
 
         SimpleAnimation *mSelectedAnime;

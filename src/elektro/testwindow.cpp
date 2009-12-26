@@ -59,7 +59,7 @@ TestDialog::TestDialog():
     mBackgroundPattern = resman->getImage("graphics/elektrik/backgroundpattern.png");
     mStartBox = new BrowserBox();
     mStartBox->setOpaque(true);
-    mStartBox->setFont(font_txt_4);
+    mStartBox->setFont(font_txt_4_12);
 
     mStartScroll = new ScrollArea(mStartBox);
     mStartScroll->setOpaque(true);
@@ -73,7 +73,7 @@ TestDialog::TestDialog():
 
     mFinishText = new BrowserBox();
     mFinishText->setOpaque(false);
-    mFinishText->setFont(font_txt_4);
+    mFinishText->setFont(font_txt_4_12);
     mFinishScroll = new ScrollArea(mFinishText);
     mFinishScroll->setOpaque(true);
     mFinishScroll->setWidth(250);
@@ -85,7 +85,7 @@ TestDialog::TestDialog():
     add(mFinishScroll);
 
     mMessageText = new BrowserBox();
-    mMessageText->setFont(font_txt_4);
+    mMessageText->setFont(font_txt_4_12);
     mMessageText->setOpaque(false);
     mMessageArea = new ScrollArea(mMessageText);
     mMessageArea->setWidth(getWidth()-90);

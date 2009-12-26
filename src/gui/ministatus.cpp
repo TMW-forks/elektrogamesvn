@@ -60,9 +60,9 @@ MiniStatusWindow::MiniStatusWindow():
     mMpLabel->setForegroundColor(gcn::Color(255, 255, 255));
     mXpLabel->setForegroundColor(gcn::Color(255, 255, 255));
 
-    mHpLabel->setFont(font_b_calibri);
-    mMpLabel->setFont(font_b_calibri);
-    mXpLabel->setFont(font_b_calibri);
+    mHpLabel->setFont(font_b_calibri_11);
+    mMpLabel->setFont(font_b_calibri_11);
+    mXpLabel->setFont(font_b_calibri_11);
 
     mHpLabel->setPosition(0,4);
     mMpLabel->setPosition(0,mMpBar->getY()+3);

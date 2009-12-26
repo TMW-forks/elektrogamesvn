@@ -68,33 +68,73 @@ gcn::Font *font_bas_4_14 = 0;
 gcn::Font *font_bas_4_12 = 0;
 gcn::Font *font_bas_4_10 = 0;
 gcn::Font *font_bas_4_8 = 0;
-gcn::Font *font_bas_5 = 0;
+gcn::Font *font_bas_5_16 = 0;
+gcn::Font *font_bas_5_14 = 0;
+gcn::Font *font_bas_5_12 = 0;
+gcn::Font *font_bas_5_10 = 0;
+gcn::Font *font_bas_5_8 = 0;
 gcn::Font *font_bas_b_1_20 = 0;
 gcn::Font *font_bas_b_1_18 = 0;
 gcn::Font *font_bas_b_1_16 = 0;
 gcn::Font *font_bas_b_1_14 = 0;
-gcn::Font *font_bas_b_2 = 0;
-gcn::Font *font_el_1 = 0;
-gcn::Font *font_el_2 = 0;
-gcn::Font *font_el_3 = 0;
-gcn::Font *font_el_b_1 = 0;
-gcn::Font *font_el_b_2 = 0;
+gcn::Font *font_bas_b_2_20 = 0;
+gcn::Font *font_bas_b_2_18 = 0;
+gcn::Font *font_bas_b_2_16 = 0;
+gcn::Font *font_bas_b_2_14 = 0;
+gcn::Font *font_el_1_14 = 0;
+gcn::Font *font_el_1_12 = 0;
+gcn::Font *font_el_1_10 = 0;
+gcn::Font *font_el_2_14 = 0;
+gcn::Font *font_el_2_12 = 0;
+gcn::Font *font_el_2_10 = 0;
+gcn::Font *font_el_3_14 = 0;
+gcn::Font *font_el_3_12 = 0;
+gcn::Font *font_el_3_10 = 0;
+gcn::Font *font_el_b_1_14 = 0;
+gcn::Font *font_el_b_1_12 = 0;
+gcn::Font *font_el_b_1_10 = 0;
+gcn::Font *font_el_b_2_14 = 0;
+gcn::Font *font_el_b_2_12 = 0;
+gcn::Font *font_el_b_2_10 = 0;
 gcn::Font *font_txt_1_14 = 0;
 gcn::Font *font_txt_1_12 = 0;
 gcn::Font *font_txt_1_10 = 0;
-gcn::Font *font_txt_1_8 = 0;
-gcn::Font *font_txt_2 = 0;
-gcn::Font *font_txt_3 = 0;
-gcn::Font *font_txt_4 = 0;
-gcn::Font *font_txt_5 = 0;
-gcn::Font *font_txt_6 = 0;
-gcn::Font *font_txt_b_1 = 0;
-gcn::Font *font_txt_b_2 = 0;
-gcn::Font *font_txt_b_3 = 0;
-gcn::Font *font_calibri = 0;
-gcn::Font *font_i_calibri = 0;
-gcn::Font *font_b_calibri = 0;
-gcn::Font *font_b_i_calibri = 0;
+gcn::Font *font_txt_2_14 = 0;
+gcn::Font *font_txt_2_12 = 0;
+gcn::Font *font_txt_2_10 = 0;
+gcn::Font *font_txt_3_14 = 0;
+gcn::Font *font_txt_3_12 = 0;
+gcn::Font *font_txt_3_10 = 0;
+gcn::Font *font_txt_4_14 = 0;
+gcn::Font *font_txt_4_12 = 0;
+gcn::Font *font_txt_4_10 = 0;
+gcn::Font *font_txt_5_14 = 0;
+gcn::Font *font_txt_5_12 = 0;
+gcn::Font *font_txt_5_10 = 0;
+gcn::Font *font_txt_6_14 = 0;
+gcn::Font *font_txt_6_12 = 0;
+gcn::Font *font_txt_6_10 = 0;
+gcn::Font *font_txt_b_1_14 = 0;
+gcn::Font *font_txt_b_1_12 = 0;
+gcn::Font *font_txt_b_1_10 = 0;
+gcn::Font *font_txt_b_2_14 = 0;
+gcn::Font *font_txt_b_2_12 = 0;
+gcn::Font *font_txt_b_2_10 = 0;
+gcn::Font *font_txt_b_3_14 = 0;
+gcn::Font *font_txt_b_3_12 = 0;
+gcn::Font *font_txt_b_3_10 = 0;
+gcn::Font *font_calibri_14 = 0;
+gcn::Font *font_calibri_11 = 0;
+gcn::Font *font_calibri_10 = 0;
+gcn::Font *font_i_calibri_14 = 0;
+gcn::Font *font_i_calibri_11 = 0;
+gcn::Font *font_i_calibri_10 = 0;
+gcn::Font *font_b_calibri_14 = 0;
+gcn::Font *font_b_calibri_11 = 0;
+gcn::Font *font_b_calibri_10 = 0;
+gcn::Font *font_b_i_calibri_14 = 0;
+gcn::Font *font_b_i_calibri_11 = 0;
+gcn::Font *font_b_i_calibri_10 = 0;
 
 class GuiConfigListener : public ConfigListener
 {
@@ -239,7 +279,11 @@ Gui::Gui(Graphics *graphics):
     path = resman->getPath(fontFile);
     try
     {
-        font_bas_5 = new TrueTypeFont(path, fontSize);
+        font_bas_5_8 = new TrueTypeFont(path, 8);
+        font_bas_5_10 = new TrueTypeFont(path, 10);
+        font_bas_5_12 = new TrueTypeFont(path, 12);
+        font_bas_5_14 = new TrueTypeFont(path, 14);
+        font_bas_5_16 = new TrueTypeFont(path, 16);
     }
     catch (gcn::Exception e)
     {
@@ -267,7 +311,10 @@ Gui::Gui(Graphics *graphics):
     path = resman->getPath(fontFile);
     try
     {
-        font_bas_b_2 = new TrueTypeFont(path, 14);
+        font_bas_b_2_20 = new TrueTypeFont(path, 20);
+        font_bas_b_2_18 = new TrueTypeFont(path, 18);
+        font_bas_b_2_16 = new TrueTypeFont(path, 16);
+        font_bas_b_2_14 = new TrueTypeFont(path, 14);
     }
     catch (gcn::Exception e)
     {
@@ -281,7 +328,9 @@ Gui::Gui(Graphics *graphics):
     path = resman->getPath(fontFile);
     try
     {
-        font_el_1 = new TrueTypeFont(path, 24);
+        font_el_1_14 = new TrueTypeFont(path, 14);
+        font_el_1_12 = new TrueTypeFont(path, 12);
+        font_el_1_10 = new TrueTypeFont(path, 10);
     }
     catch (gcn::Exception e)
     {
@@ -292,7 +341,9 @@ Gui::Gui(Graphics *graphics):
     path = resman->getPath(fontFile);
     try
     {
-        font_el_2 = new TrueTypeFont(path, fontSize);
+        font_el_2_14 = new TrueTypeFont(path, 14);
+        font_el_2_12 = new TrueTypeFont(path, 12);
+        font_el_2_10 = new TrueTypeFont(path, 10);
     }
     catch (gcn::Exception e)
     {
@@ -303,7 +354,9 @@ Gui::Gui(Graphics *graphics):
     path = resman->getPath(fontFile);
     try
     {
-        font_el_3 = new TrueTypeFont(path, fontSize);
+        font_el_3_14 = new TrueTypeFont(path, 14);
+        font_el_3_12 = new TrueTypeFont(path, 12);
+        font_el_3_10 = new TrueTypeFont(path, 10);
     }
     catch (gcn::Exception e)
     {
@@ -315,7 +368,9 @@ Gui::Gui(Graphics *graphics):
     path = resman->getPath(fontFile);
     try
     {
-        font_el_b_1 = new TrueTypeFont(path, fontSize);
+        font_el_b_1_14 = new TrueTypeFont(path, 14);
+        font_el_b_1_12 = new TrueTypeFont(path, 12);
+        font_el_b_1_10 = new TrueTypeFont(path, 10);
     }
     catch (gcn::Exception e)
     {
@@ -326,7 +381,9 @@ Gui::Gui(Graphics *graphics):
     path = resman->getPath(fontFile);
     try
     {
-        font_el_b_2 = new TrueTypeFont(path, fontSize);
+        font_el_b_2_14 = new TrueTypeFont(path, 14);
+        font_el_b_2_12 = new TrueTypeFont(path, 12);
+        font_el_b_2_10 = new TrueTypeFont(path, 10);
     }
     catch (gcn::Exception e)
     {
@@ -341,7 +398,6 @@ Gui::Gui(Graphics *graphics):
         font_txt_1_14 = new TrueTypeFont(path, 14);
         font_txt_1_12 = new TrueTypeFont(path, 12);
         font_txt_1_10 = new TrueTypeFont(path, 10);
-        font_txt_1_8 = new TrueTypeFont(path, 8);
     }
     catch (gcn::Exception e)
     {
@@ -352,7 +408,9 @@ Gui::Gui(Graphics *graphics):
     path = resman->getPath(fontFile);
     try
     {
-        font_txt_2 = new TrueTypeFont(path, fontSize);
+        font_txt_2_14 = new TrueTypeFont(path, 14);
+        font_txt_2_12 = new TrueTypeFont(path, 12);
+        font_txt_2_10 = new TrueTypeFont(path, 10);
     }
     catch (gcn::Exception e)
     {
@@ -363,7 +421,9 @@ Gui::Gui(Graphics *graphics):
     path = resman->getPath(fontFile);
     try
     {
-        font_txt_3 = new TrueTypeFont(path, fontSize);
+        font_txt_3_14 = new TrueTypeFont(path, 14);
+        font_txt_3_12 = new TrueTypeFont(path, 12);
+        font_txt_3_10 = new TrueTypeFont(path, 10);
     }
     catch (gcn::Exception e)
     {
@@ -374,7 +434,9 @@ Gui::Gui(Graphics *graphics):
     path = resman->getPath(fontFile);
     try
     {
-        font_txt_4 = new TrueTypeFont(path, 12);
+        font_txt_4_14 = new TrueTypeFont(path, 14);
+        font_txt_4_12 = new TrueTypeFont(path, 12);
+        font_txt_4_10 = new TrueTypeFont(path, 10);
     }
     catch (gcn::Exception e)
     {
@@ -385,7 +447,9 @@ Gui::Gui(Graphics *graphics):
     path = resman->getPath(fontFile);
     try
     {
-        font_txt_5 = new TrueTypeFont(path, fontSize);
+        font_txt_5_14 = new TrueTypeFont(path, 14);
+        font_txt_5_12 = new TrueTypeFont(path, 12);
+        font_txt_5_10 = new TrueTypeFont(path, 10);
     }
     catch (gcn::Exception e)
     {
@@ -396,7 +460,9 @@ Gui::Gui(Graphics *graphics):
     path = resman->getPath(fontFile);
     try
     {
-        font_txt_6 = new TrueTypeFont(path, fontSize);
+        font_txt_6_14 = new TrueTypeFont(path, 14);
+        font_txt_6_12 = new TrueTypeFont(path, 12);
+        font_txt_6_10 = new TrueTypeFont(path, 10);
     }
     catch (gcn::Exception e)
     {
@@ -408,7 +474,9 @@ Gui::Gui(Graphics *graphics):
     path = resman->getPath(fontFile);
     try
     {
-        font_txt_b_1 = new TrueTypeFont(path, fontSize);
+        font_txt_b_1_14 = new TrueTypeFont(path, 14);
+        font_txt_b_1_12 = new TrueTypeFont(path, 12);
+        font_txt_b_1_10 = new TrueTypeFont(path, 10);
     }
     catch (gcn::Exception e)
     {
@@ -419,7 +487,9 @@ Gui::Gui(Graphics *graphics):
     path = resman->getPath(fontFile);
     try
     {
-        font_txt_b_2 = new TrueTypeFont(path, fontSize);
+        font_txt_b_2_14 = new TrueTypeFont(path, 14);
+        font_txt_b_2_12 = new TrueTypeFont(path, 12);
+        font_txt_b_2_10 = new TrueTypeFont(path, 10);
     }
     catch (gcn::Exception e)
     {
@@ -430,7 +500,9 @@ Gui::Gui(Graphics *graphics):
     path = resman->getPath(fontFile);
     try
     {
-        font_txt_b_3 = new TrueTypeFont(path, fontSize);
+        font_txt_b_3_14 = new TrueTypeFont(path, 14);
+        font_txt_b_3_12 = new TrueTypeFont(path, 12);
+        font_txt_b_3_10 = new TrueTypeFont(path, 10);
     }
     catch (gcn::Exception e)
     {
@@ -442,7 +514,9 @@ Gui::Gui(Graphics *graphics):
     path = resman->getPath(fontFile);
     try
     {
-        font_calibri = new TrueTypeFont(path, fontSize);
+        font_calibri_14 = new TrueTypeFont(path, 14);
+        font_calibri_11 = new TrueTypeFont(path, 11);
+        font_calibri_10 = new TrueTypeFont(path, 10);
     }
     catch (gcn::Exception e)
     {
@@ -453,7 +527,9 @@ Gui::Gui(Graphics *graphics):
     path = resman->getPath(fontFile);
     try
     {
-        font_b_calibri = new TrueTypeFont(path, fontSize);
+        font_b_calibri_14 = new TrueTypeFont(path, 14);
+        font_b_calibri_11 = new TrueTypeFont(path, 11);
+        font_b_calibri_10 = new TrueTypeFont(path, 10);
     }
     catch (gcn::Exception e)
     {
@@ -464,7 +540,9 @@ Gui::Gui(Graphics *graphics):
     path = resman->getPath(fontFile);
     try
     {
-        font_i_calibri = new TrueTypeFont(path, fontSize);
+        font_i_calibri_14 = new TrueTypeFont(path, 14);
+        font_i_calibri_11 = new TrueTypeFont(path, 11);
+        font_i_calibri_10 = new TrueTypeFont(path, 10);
     }
     catch (gcn::Exception e)
     {
@@ -475,7 +553,9 @@ Gui::Gui(Graphics *graphics):
     path = resman->getPath(fontFile);
     try
     {
-        font_b_i_calibri = new TrueTypeFont(path, fontSize);
+        font_b_i_calibri_14 = new TrueTypeFont(path, 14);
+        font_b_i_calibri_11 = new TrueTypeFont(path, 11);
+        font_b_i_calibri_10 = new TrueTypeFont(path, 10);
     }
     catch (gcn::Exception e)
     {

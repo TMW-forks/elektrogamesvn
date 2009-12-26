@@ -156,11 +156,13 @@ void EmoteShortcutContainer::mousePressed(gcn::MouseEvent &event)
     // Stores the selected emote if there is one.
     if (emoteShortcut->isEmoteSelected())
     {
+        logger->log("isEmoteSelected");
         emoteShortcut->setEmote(index);
         emoteShortcut->setEmoteSelected(0);
     }
     else if (emoteShortcut->getEmote(index))
     {
+        logger->log("getEmote");
         mEmoteClicked = true;
     }
 }

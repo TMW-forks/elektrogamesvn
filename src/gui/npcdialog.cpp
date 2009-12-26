@@ -29,6 +29,7 @@
 #include "gui/widgets/textbox.h"
 #include "gui/widgets/textfield.h"
 #include "gui/setup.h"
+#include "gui/gui.h"
 
 #include "npc.h"
 
@@ -64,6 +65,7 @@ NpcDialog::NpcDialog()
 
     // Setup output text box
     mTextBox = new BrowserBox;
+    mTextBox->setFont(font_txt_4);
     mTextBox->setOpaque(false);
 
     mScrollArea = new ScrollArea(mTextBox);
@@ -127,12 +129,10 @@ void NpcDialog::setText(const std::string &text)
     mText = text;
     //mTextBox->clearRows();
     mTextBox->addRow(text);
-//    mTextBox->setTextWrapped(mText, mScrollArea->getWidth() - 15);
 }
 
 void NpcDialog::addText(const std::string &text)
 {
-//    setText(mText + text + "\n");
     setText(text);
     mScrollArea->setVerticalScrollAmount(mScrollArea->getVerticalMaxScroll());
     mActionState = NPC_ACTION_WAIT;
@@ -159,7 +159,7 @@ void NpcDialog::action(const gcn::ActionEvent &event)
         {
             nextDialog();
             // TRANSLATORS: Please leave the \n sequences intact.
-            addText(_(" ##6 ---- DEVAM  ----"));
+            addText(_(" #br# ##8 ---- DEVAM  ---- #br# "));
         }
         else if (mActionState == NPC_ACTION_CLOSE)
         {
@@ -168,6 +168,8 @@ void NpcDialog::action(const gcn::ActionEvent &event)
             setVisible(false);
             current_npc = 0;
             NPC::isTalking = false;
+            mText = "";
+            mTextBox->clearRows();
         }
         else if (mActionState == NPC_ACTION_INPUT)
         {
@@ -309,11 +311,14 @@ void NpcDialog::move(int amount)
     }
 }
 
+void NpcDialog::autoWarp()
+{
+    mTextBox->autoWrap(mScrollArea);
+}
+
 void NpcDialog::widgetResized(const gcn::Event &event)
 {
     Window::widgetResized(event);
-
-    setText(mText);
 }
 
 void NpcDialog::buildLayout()

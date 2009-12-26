@@ -13,7 +13,7 @@ SlaytWindow::SlaytWindow():
     logger->log("Slayt Window Açılır");
     setMinWidth(300);
     setMinHeight(400);
-    setResizable(true);
+    setResizable(false);
     setVisible(false);
     setSize(520, 450);
     setPosition(100,100);
@@ -341,6 +341,7 @@ SlaytWindow::parseXML(std::string mDoc)
              mvBrowserBox.push_back(temp.browserbox);
              temp.scrollarea->setVisible(true);
              temp.browserbox->setVisible(true);
+             temp.browserbox->autoWrap(temp.scrollarea);
          }
 
         else if (xmlStrEqual(node->name, BAD_CAST "slide"))

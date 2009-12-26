@@ -1,8 +1,6 @@
  <- @@index|Indekse geri don@@
  
- 
 ##3                      === En Ogrenceli Oyun===
- 
      ##2ElekrOgamE(TMW)##P ##9eglenirken ogrenmeyi amaclayan bir MMORPG (-)
 ##9     oyunudur. Birbirinden zorlu gorevleri basarabilmek icin hem bilgi-
 ##9     nizi hem zekanizi hem de giderek gelistirdiginiz yeteneklerinizi 
@@ -18,4 +16,3 @@
 ##9             - Mucadele edin.
                   
 ##9     IYI OGRENCELER :)
-                

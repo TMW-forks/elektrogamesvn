@@ -1,14 +1,10 @@
 ﻿ <- @@index|Indekse geri don@@
- 
- 
+
 ##3                        === GELISTIREN TAKIM ===
-
-
-                          Ögr.GöM.Emin KORKUSUZ
-                              Hüseyin Güneş
+                               Ögr.GöM.Emin KORKUSUZ
+                               Hüseyin Güneş
                                Esat Arslan
                                Ufuk Şanlı
-							   Zeynettin Eye
-							 Alper Burmabıyık
-                              Mehmet Doğan
- 
+                               Zeynettin Eye
+                               Alper Burmabıyık
+                               Mehmet Doğan

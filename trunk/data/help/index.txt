@@ -1,22 +1,14 @@
 ##3                             === INDEKS ===
-
-          ##3-> @@hakkinda|ElektrOgamE@@           |        -> @@yetenekler|Beceriler@@
-		  
-          ##3-> @@hikaye|Hikaye   @@           |        -> @@hikaye|.@@
-                                   ##3|
-          ##3-> @@komutlar|Kisa Yollar@@           ##3|        -> @@takim|Gelistiren Takim@@
-                                   ##3|
-          ##3-> @@dunyalar|Dunyalar@@              ##3|        -> @@degisiklik|Son Degisiklikler@@
-                                   ##3|
-          ##3-> @@robotlar|Robotlar@@              ##3|        -> @@emd|EMD Aygitlari@@
-                                   ##3|
-          ##3-> @@ustat|Ustatlar@@              ##3|        -> @@teknoloji|Kullanilan Teknolojiler@@
-
-         
-
+        -----------------------------------------------------
+        | ##3-> @@hakkinda|ElektrOgamE@@       -> @@yetenekler|Beceriler@@                 |
+        | ##3-> @@hikaye|Hikaye   @@         -> @@teknoloji|Kullanilan Teknolojiler@@   |
+        | ##3-> @@komutlar|Kisa Yollar@@       -> @@takim|Gelistiren Takim@@          |
+        | ##3-> @@dunyalar|Dunyalar@@          -> @@degisiklik|Son Degisiklikler@@         |
+        | ##3-> @@robotlar|Robotlar@@          -> @@emd|EMD Aygitlari@@             |
+        | ##3-> @@ustat|Ustatlar@@          -> @@adreslarimiz|Web adreslerimiz@@          |
+        -----------------------------------------------------
 
 ##3                           === Powered By ===
-
 ##2               SDL, SDL_image, SDL_mixer (Media framework)
 ##4                     SDL_net (Networking framework)
 ##2                        Guichan (GUI framework)

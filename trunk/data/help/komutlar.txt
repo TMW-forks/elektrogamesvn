@@ -1,38 +1,46 @@
 ﻿ <- @@index|Indekse geri don@@
- 
- 
-##3                            === Kisa Yollar ===
- 
-  Hareket etmek icin yon tuslarini kullanin. 
- 
-##3  Diger kisayollar :
- 
-     ##2Ctrl##P               saldir
-     ##2F1##P                 yardim 
-     ##2F2##P                 durum penceresi
-     ##2F3##P                 alet penceresi
-     ##2F4##P                 ekipman penceresi
-     ##2F5##P                 huner penceresi
-     ##2F7##P                 sohbet penceresi
-     ##2F9##P                 ayar penceresi
-     ##2F10##P                hata ayiklama penceresi
-     ##2TAB##P                mini harita
-     ##2Alt + 0-9##P          duygulari goster
-     ##2Alt + S##P            otur / kalk
-     ##2Alt + F##P            toggle debug pathfinding feature
-     ##2Alt + P##P            ekran goruntusu yakala
-     ##2A##P                  yakindaki canavarlari goster
-     ##2H##P                  tum pencereleri gizle
-     ##2G yada Z##P             nesneleri topla
-     ##2Enter##P              mesaj gonder
-     ##2Shift##P              saldiriya ugradiginda otomatik cevap ver.
-     ##21##P             	  Hızlı yardım penceresini aç.
-                       
- 
-
-##2     MOUSE:
-
-     Sol klikle yuruyebilir, robotlara saldirabilirsin.Yalniz
-     robotlara saldirirken ayaklarini hedef almaya dikkat et!!!!
-     Sag klik ise konteks menuyu gosterir.
+ |--------------------------------------------------------------------------|
+ | ##3                            === Kisa Yollar ===             ##0             |
+ |Hareket etmek icin yon tuslarini kullanin.                                |
+ |                                                                          |
+ | ##3  Diger kisayollar :                                     ##0                |                             
+ |                                                                          |
+ |    ##2Ctrl##P  --------->   saldir                         ##0                    |
+ |    ##2x##P     --------->   saldırmak icin ataga gecer     ##0                    |
+ |    ##2a##P     --------->   saldıracağı hedefi belirler eger saldıracağı  ##0     |
+ |    ##2##P                   hedef yakındaysa mavi halka icinde            ##0     |
+ |    ##2##P                   görünür eger saldıracağı hedef yakında        ##0     |
+ |    ##2##P                   değilse kırmızı halka icinde görünür.         ##0     |
+ |    ##2F1##P    --------->   yardim                                        ##0     |
+ |    ##2F2##P    --------->   durum penceresi                               ##0     |
+ |    ##2F3##P    --------->   alet penceresi                                ##0     |
+ |    ##2F4##P    --------->   ekipman penceresi                             ##0     |
+ |    ##2F5##P    --------->   huner penceresi                               ##0     |
+ |    ##2F6##P    --------->   mini harita                                   ##0     |
+ |    ##2F7##P    --------->   sohbet penceresi                              ##0     |
+ |    ##2F8##P    --------->   malzeme kısa yol penceresi                    ##0     |
+ |    ##2F9##P    --------->   ayar penceresi                                ##0     |
+ |    ##2F10##P   --------->   hata ayiklama penceresi                       ##0     |
+ |    ##2F11##P   --------->   hesap makinesi                                ##0     |
+ |    ##2F12##P   --------->   duygu ikonların kısa yolu                     ##0     |
+ |    ##2TAB##P   --------->   mini harita                                   ##0     |
+ |    ##2Alt + 0-9##P  ---->   duygulari goster                              ##0     |
+ |    ##2 S##P    --------->   oturmak / kalkmak: icin 10.seviyeye gelmelisiniz  ##0 |
+ |    ##2Alt + F##P ------->   toggle debug pathfinding feature              ##0     |
+ |    ##2Alt + P##P ------->   ekran goruntusu yakala                        ##0     |
+ |    ##2A##P     --------->   yakindaki canavarlari goster                  ##0     |
+ |    ##2H##P     --------->   tum pencereleri gizle                         ##0     |
+ |    ##2G yada Z##P  ----->   nesneleri topla                               ##0     |
+ |    ##2Enter##P   ------->   mesaj gonder                                  ##0     |
+ |    ##2Shift##P  -------->   saldiriya ugradiginda otomatik cevap ver.     ##0     |
+ |    ##21##P     --------->   Hızlı yardım penceresini aç.                  ##0     |
+ |    ##2R##P     --------->   oyuncular arasında ticaretin                  ##0     |
+ |    ##2##P                   acılıp kapanmasını saglar.                    ##0     |
+ |##2     MOUSE:                                               ##0                |
+ |    Sol klikle yuruyebilir.Robotların üstüne gelip sag tıkladığında       |
+ |    ise konteks menu gosterir.Menude Attack seceneği sectiğinizde         |
+ |    sag tikladiğiniz robotu geri dönüsüme göndermeye başlar               |
+ |    sag tikladiğiniz robotun cikan menude Add name to chat secenegini     |
+ |    sectiğinizde ise mail penceresinde o robotun ismi gelir.              |
+ |--------------------------------------------------------------------------|
 

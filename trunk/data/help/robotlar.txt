@@ -2,7 +2,6 @@
 
 ##3                               === ROBOTLAR ===
 
-
 ##1    YAGOT
 
 ##7    Adi              :##2 YAGOT
@@ -10,15 +9,12 @@
 ##7    Cesit            :##2 Pasif
 ##7    Cikacagi Harita  :##2 Santral
 
-
-
 ##1    GOZ
 
 ##7    Adi              :##2 GOZ
 ##7    Guc Durumu       :##2 Orta
 ##7    Cesit            :##2 Pasif
 ##7    Cikacagi Harita  :##2 Santral
-
 
 ##1    TIJI
 

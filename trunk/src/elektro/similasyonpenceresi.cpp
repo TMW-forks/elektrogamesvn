@@ -87,6 +87,7 @@ SimilasyonPenceresi::draw(gcn::Graphics *graphics)
 
     for (miAnim = mvAnim.begin();miAnim != mvAnim.end();++miAnim)
     {
+
         if (miAnim->visible)
         {
             Image *mImage1 = miAnim->anim->getCurrentImage();
@@ -94,6 +95,7 @@ SimilasyonPenceresi::draw(gcn::Graphics *graphics)
             miAnim->anim->update(miAnim->v);
         }
     }
+
     drawChildren(graphics);
 }
 
@@ -167,7 +169,7 @@ SimilasyonPenceresi::parseXML(std::string mDoc)
                     mSoru->addRow(XML::getProperty(subNode, "text", ""));
                 }
             }
-
+            mSoru->setFont(font_calibri_11);
             mSoru->autoWrap(mSoruArea);
             add(mSoruArea);
         }
@@ -218,8 +220,26 @@ SimilasyonPenceresi::parseXML(std::string mDoc)
         }
         else if (xmlStrEqual(node->name, BAD_CAST "simpleanim"))
         {
+//            ResourceManager *resman = ResourceManager::getInstance();
+//            SmAnim temp;
+//            ImageSet *mImageSet = resman->getImageSet(XML::getProperty(node, "src",""),
+//                                            XML::getProperty(node, "width", 0),
+//                                            XML::getProperty(node, "height", 0));
+//
+//            Animation *mAnimation = new Animation();
+//
+//            for (unsigned int i = 0; i < mImageSet->size(); ++i)
+//            {
+//                mAnimation->addFrame(mImageSet->get(i), 75, 0, 0);
+//            }
+//            temp.anim = new SimpleAnimation(mAnimation);
+//            temp.x   =  XML::getProperty(node, "x", 0)+padX;
+//            temp.y   =  XML::getProperty(node, "y", 0)+padY;
+//            temp.v   =  XML::getProperty(node, "v", 0);
+//            temp.visible = true;
             SmAnim temp = elektroWidget->addAnim(node);
-            //temp.x = 0;
+            temp.visible = true;
+            //logger->log("simple anim");
             mvAnim.push_back(temp);
         }
     }
@@ -230,7 +250,6 @@ SimilasyonPenceresi::parseXML(std::string mDoc)
 void
 SimilasyonPenceresi::nesneleriAyarla()
 {
-
     if (startCancelDurum)
     {
         mCancel->setX(85);

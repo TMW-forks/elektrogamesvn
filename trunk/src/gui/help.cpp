@@ -46,7 +46,7 @@ HelpWindow::HelpWindow():
 
     mBrowserBox = new BrowserBox;
     mBrowserBox->setOpaque(false);
-    mBrowserBox->setFont(font_txt_4);
+    mBrowserBox->setFont(font_txt_4_12);
     mScrollArea = new ScrollArea(mBrowserBox);
     Button *okButton = new Button(_("Close"), "close", this);
 

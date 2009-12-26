@@ -65,7 +65,7 @@ NpcDialog::NpcDialog()
 
     // Setup output text box
     mTextBox = new BrowserBox;
-    mTextBox->setFont(font_txt_4);
+    mTextBox->setFont(font_txt_4_12);
     mTextBox->setOpaque(false);
 
     mScrollArea = new ScrollArea(mTextBox);

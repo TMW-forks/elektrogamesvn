@@ -6,7 +6,8 @@
         | ##3-> @@dunyalar|Dunyalar@@          -> @@degisiklik|Son Degisiklikler@@         |
         | ##3-> @@robotlar|Robotlar@@          -> @@emd|EMD Aygitlari@@             |
         | ##3-> @@ustat|Ustatlar@@          -> @@adreslarimiz|Web adreslerimiz@@          |
-        | ##3-> @@soruustat|Soru ustatlari@@                                 |
+        | ##3-> @@soruustat|Soru ustatlari@@    ->@@bozukmakineler| Bozuk Makineler@@           |
+        | ##3-> @@Komutlar|Komutlar@@                                       |
         -----------------------------------------------------
 
 ##3                           === Powered By ===

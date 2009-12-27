@@ -663,7 +663,7 @@ void Being::drawSpeech(int offsetX, int offsetY)
 
         mSpeechBubble->setText(mSpeech, showName);
         mSpeechBubble->setPosition(px - (mSpeechBubble->getWidth() / 2),
-                                   py - getHeight() - (mSpeechBubble->getHeight()));
+                                   py - getHeight() - (mSpeechBubble->getHeight()-100));
         mSpeechBubble->setVisible(true);
     }
     else if (mSpeechTime > 0 && speech == TEXT_OVERHEAD)
@@ -895,7 +895,7 @@ void Being::updateCoords()
 {
     if (mDispName)
     {
-        mDispName->adviseXY(getPixelX(), getPixelY()-getHeight()-6);
+        mDispName->adviseXY(getPixelX(), getPixelY());
     }
 }
 

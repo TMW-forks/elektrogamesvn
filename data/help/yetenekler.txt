@@ -1,13 +1,13 @@
-﻿ <- @@index|Indekse geri don@@
+ <- @@index|Indekse geri don@@
  
-##3                         === BECERILER ===
-      Bu oyunda gelistirebilecegin bazi becerilere sahipsin. Bu beceri-
-      lerini yapman gereken gorevleri yerine getirdikce artirabilirsin.
-      Her yeni gorev becerilerini ortaya koyabilmen icin sana puan ka-
-      zandiracak. 
+##3                         === BECERİLER ===
+      Bu oyunda geliştirebileceğin bazı becerilere sahipsin. Bu beceri-
+      lerini, sana verilen görevleri yerine getirdikçe arttırabilirsin.
+      Her yeni görev, becerilerini ortaya koyabilmen icin sana puan ka-
+      zandıracak. 
  
-     ##4 Sahip olabiliecegin beceriler: 
+     ##4 Sahip olabilieceğin beceriler: 
  
-     ##2Duzey 1:##P digerleriyle degis-tokus yapmani sagliyacak.
-     ##2Duzey 2:##P duygularini ifade edebilmeni saglicak.
-     ##2Duzey 3:##P oturabilmeni saglicak.
+     ##2Duzey 1:##P Oturabilirsin. 
+     ##2Duzey 2:##P Duygularını görsel olarak ifade edebilirsin.
+     ##2Duzey 3:##P Diğerleriyle değiş-tokuş yapabilirsin.

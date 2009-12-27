@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: themanaworld-devel@lists.sourceforge.net\n"
 "POT-Creation-Date: 2009-06-09 21:24+0200\n"
-"PO-Revision-Date: 2009-12-02 22:24+0200\n"
-"Last-Translator: Mehmet Emin KORKUSUZ <ekorkusuz@hotmail.com>\n"
+"PO-Revision-Date: 2009-12-28 01:43+0200\n"
+"Last-Translator: oyunsitesi <oyunsitesi1@hotmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -86,7 +86,7 @@ msgstr "/toggle > Belirlenmiş olmasada<geri dönüş> günlük sohbete geç"
 
 #: src/commandhandler.cpp:164
 msgid "/present > Get list of players present (sent to chat log, if logging)"
-msgstr "/present > Şimdiki oyuncu listesini al (sohbet kaydını gönderir, eğer bağlı ise)"
+msgstr "/present >Şuanki oyuncu listesini al (sohbet kaydını gönderir, eğer bağlı ise)"
 
 #: src/commandhandler.cpp:166
 msgid "/announce > Global announcement (GM only)"
@@ -94,7 +94,7 @@ msgstr "/announce > Genel duyuru (sadece GM)"
 
 #: src/commandhandler.cpp:170
 msgid "For more information, type /help <command>."
-msgstr "Daha fazla bilgi içini, tür /help <komut> ."
+msgstr "Daha fazla bilgi için, tür /help <komut> ."
 
 #: src/commandhandler.cpp:174
 msgid "Command: /help"
@@ -1787,7 +1787,7 @@ msgstr "Değiştir"
 
 #: src/gui/trade.cpp:268
 msgid "Failed adding item. You can not overlap one kind of item on the window."
-msgstr "Nesne ekleme başarısız oldu. Bir tür nesneyi pencerede üst üste bindiremezsin."
+msgstr "Nesne ekleme başarısız oldu. Bu tür nesneyi pencerede üst üste bindiremezsin."
 
 #: src/gui/trade.cpp:311
 msgid "You don't have enough money."
@@ -2721,7 +2721,7 @@ msgstr "Öldün."
 #: src/net/ea/playerhandler.cpp:97
 #: src/net/tmwserv/beinghandler.cpp:313
 msgid "We regret to inform you that your character was killed in battle."
-msgstr "Sizi haberdar etmekten üzüntü duyuyoruz fakat karakteriniz savaş da öldürüldü."
+msgstr "Yeterince çalışmayan her öğrencinin başına gelen senin de başına geldi."
 
 #: src/net/ea/playerhandler.cpp:99
 #: src/net/tmwserv/beinghandler.cpp:314
@@ -2731,7 +2731,7 @@ msgstr "O artık hayyatta değil."
 #: src/net/ea/playerhandler.cpp:100
 #: src/net/tmwserv/beinghandler.cpp:315
 msgid "The cold hands of the grim reaper are grabbing for your soul."
-msgstr "Azrailin sağuk elleri senin ruhun için kapışıyor."
+msgstr "Bu hoca sana taktı :))"
 
 #: src/net/ea/playerhandler.cpp:101
 #: src/net/tmwserv/beinghandler.cpp:316
@@ -2745,12 +2745,12 @@ msgstr "Devam etmek için para ekle."
 #: src/net/ea/playerhandler.cpp:103
 #: src/net/tmwserv/beinghandler.cpp:317
 msgid "No, kids. Your character did not really die. It... err... went to a better place."
-msgstr "Hayır çocuklar. Sizin karakteriniz ölmedi. Eeee o daha iyi bir yere gitti."
+msgstr "Hayır geri dönüşüm kutusuna kendini yolladın."
 
 #: src/net/ea/playerhandler.cpp:105
 #: src/net/tmwserv/beinghandler.cpp:318
 msgid "Your plan of breaking your enemies weapon by bashing it with your throat failed."
-msgstr "Sopa tarafından boğazın ile düşmanlarının silahlarını kırma planın başarısız oldu."
+msgstr "Plan hüsranla sonuçlandı"
 
 #: src/net/ea/playerhandler.cpp:107
 #: src/net/tmwserv/beinghandler.cpp:319
@@ -2780,7 +2780,7 @@ msgstr ""
 #: src/net/ea/playerhandler.cpp:117
 #: src/net/tmwserv/beinghandler.cpp:324
 msgid "You screwed up again, dump your body down the tubes and get you another one."
-msgstr "Tekrar berbat ettin. Tüpler başından aşağı döküldü ve başka biri olsun."
+msgstr "Üzgünüm adamım başarısız oldun."
 
 #: src/net/ea/playerhandler.cpp:120
 msgid "You're not dead yet. You're just resting."
@@ -2808,7 +2808,7 @@ msgstr "Yoksun bir hayat, barış içinde yaşarken."
 
 #: src/net/ea/playerhandler.cpp:126
 msgid "If you weren't so animated, you'd be pushing up the daisies."
-msgstr "Eğer bu kadar hareketli olmasaydın, ölmüş olabilirdin."
+msgstr "Eğer bu kadar hareketli olmasaydın, geri dönüşüm kutusuna giden sen olabilirdin."
 
 #: src/net/ea/playerhandler.cpp:127
 msgid "Your metabolic processes are now history."
@@ -2824,7 +2824,7 @@ msgstr "Kovaya atıldı."
 
 #: src/net/ea/playerhandler.cpp:130
 msgid "You've shuffled off your mortal coil, run down the curtain and joined the bleedin' choir invisibile."
-msgstr "Sorumluluklarını üstünden attın,kahrolası görünmez koroya katıldın"
+msgstr "Sorumluluklarınla başa çıkamadın. Ne yazıkki sende artık geri dönüşüm kutusunun bir parçası oldun."
 
 #: src/net/ea/playerhandler.cpp:132
 msgid "You are an ex-player."

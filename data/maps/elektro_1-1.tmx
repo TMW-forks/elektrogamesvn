@@ -199,6 +199,10 @@
  <objectgroup name="Object Group 1" width="0" height="0">
   <object name="graphics/particles/wispdance.particle.xml" type="PARTICLE_EFFECT" x="720" y="520" width="32" height="32"/>
   <object name="graphics/particles/green-bubbles.particle.xml" type="PARTICLE_EFFECT" x="800" y="1020" width="32" height="32"/>
+<object name="graphics/particles/green-bubbles.particle.xml" type="PARTICLE_EFFECT" x="1890" y="1020" width="32" height="32"/>
+<object name="graphics/particles/green-bubbles.particle.xml" type="PARTICLE_EFFECT" x="2980" y="1020" width="32" height="32"/>
+<object name="graphics/particles/green-bubbles.particle.xml" type="PARTICLE_EFFECT" x="1345" y="865" width="32" height="32"/>
+<object name="graphics/particles/green-bubbles.particle.xml" type="PARTICLE_EFFECT" x="2435" y="865" width="32" height="32"/>
   <object name="graphics/particles/wispdance.particle.xml" type="PARTICLE_EFFECT" x="890" y="370" width="32" height="32"/>
   <object name="graphics/particles/wispdance.particle.xml" type="PARTICLE_EFFECT" x="890" y="520" width="32" height="32"/>
   <object name="graphics/particles/wispdance.particle.xml" type="PARTICLE_EFFECT" x="5524" y="362" width="32" height="32"/>

@@ -196,17 +196,7 @@
 <!--   ###############################################################  -->	
 <!--  250-299 öğretenler  -->	
 <!--   ###############################################################  -->	
-<npc id="251">                
-   <!-- This entry demonstrates that an NPC can be constructed from multiple preexisting
-   spritesets. While using the default player sprite and normal player equipment can save
-   time it is usually better to create a new NPC as one graphic from scratch. -->
-   <sprite>player_female_base.xml</sprite>
-   <sprite>feet-boots-female.xml|#4f2d29,c89078</sprite>
-   <sprite>leg-chaps-female.xml</sprite>
-   <sprite>chest-shorttanktop-female.xml</sprite>
-   <sprite>hairstyle11.xml|#bb2222,ffee33</sprite>
-</npc>
-
+<npc id="251"><sprite variant="21">npc4.xml</sprite></npc><!-- Ulubatli  -->
 <npc id="252">
    <!-- An NPC made only from a particle effect. -->
    <particlefx>graphics/particles/hellblaze.particle.xml</particlefx>

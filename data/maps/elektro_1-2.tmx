@@ -2,7 +2,7 @@
 <!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
 <map version="1.0" orientation="orthogonal" width="60" height="50" tilewidth="32" tileheight="32">
  <properties>
-  <property name="music" value="Mavi Gökyüzü - bluesky.ogg"/>
+  <property name="music" value="bluesky.ogg"/>
   <property name="name" value="Eğitim Odası"/>
  </properties>
  <tileset firstgid="1" name="syh" tilewidth="32" tileheight="32">
@@ -75,5 +75,8 @@
     <property name="DEST_Y" value="2320"/>
    </properties>
   </object>
+
+  <object name="graphics/particles/flame.particle.xml" type="PARTICLE_EFFECT" x="128" y="1184" width="32" height="96"/>
+
  </objectgroup>
 </map>

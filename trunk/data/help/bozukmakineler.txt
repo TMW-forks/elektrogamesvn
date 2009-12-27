@@ -1,0 +1,5 @@
+﻿ <- @@index|Indekse geri don@@
+##3              ===Bozuk Makineler===
+  Burada verilen herhangi eksiklik veya bağlanntı için 
+  sadece yapmanız gereken shift tuşu basılı iken
+  iki nokta arasındaki bağlantılar birbirina bağlamak olacaktır.

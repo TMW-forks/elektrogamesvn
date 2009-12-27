@@ -12,12 +12,12 @@ About 180 particles on max detail.
 	<particle
 		position-x = "0"
 		position-y = "0"
-		position-z = "200"
+		position-z = "50"
 		lifetime = "1"
 		>
 		<!-- PURPLE -->
 		<emitter>
-			<property name="position-x" value = "60"/>
+			<property name="position-x" value = "10"/>
 			<property name="position-y" value = "0"/>
 			<property name="position-z" value = "20"/>
 			<property name="image" value="graphics/particles/orb-large.png|W:#dd66ff,ffffff" />
@@ -36,7 +36,7 @@ About 180 particles on max detail.
 		
 		<!-- CYAN-->
 		<emitter>
-			<property name="position-x" value = "-60"/>
+			<property name="position-x" value = "-10"/>
 			<property name="position-y" value = "0"/>
 			<property name="position-z" value = "20"/>
 			<property name="image" value="graphics/particles/orb-large.png|W:#00ffff,ffffff" />

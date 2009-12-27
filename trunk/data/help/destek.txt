@@ -1,16 +1,12 @@
-﻿ <- @@index|Indekse geri don@@
+ <- @@index|Indekse geri don@@
  
 ##3                            === DESTEK ===
  
-##6 Eger oyunla ilgili anlamadiginiz bir sey varsa lutfen once FAQ'yu okuyun.
-##6 Yinede probleminiz cozume ulasmazsa ucretsiz forumlarimiza girmeyi
-##6 deneyebilirsiniz:
+##6 Eğer oyunla ilgili anlamadığınız bir sey varsa lutfen once Sıkça Sorulan 
+##6 Sorular bölümünü okuyun. Yinede probleminiz çözüme ulaşmazsa ücretsiz 
+##6 forumlarımıza girmeyi deneyebilirsiniz:
  
-##2     http://themanaworld.org/phpBB2/viewforum.php?f=3
- 
- burayi da ziyaret edebilirsiniz:
- 
-##2     #themanaworld ##P@##2 irc.freenode.net
+##2     http://forum.elektrogame.net/
  
 ##6 Ya da  @@takim|gelistiren takim@@ ı inceleyerek onlarla iletisim
 ##6 kurmayi deneyebilirsiniz.

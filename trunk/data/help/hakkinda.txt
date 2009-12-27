@@ -1,18 +1,18 @@
  <- @@index|Indekse geri don@@
  
-##3                      === En Ogrenceli Oyun===
-     ##2ElekrOgamE(TMW)##P ##9eglenirken ogrenmeyi amaclayan bir MMORPG (-)
-##9     oyunudur. Birbirinden zorlu gorevleri basarabilmek icin hem bilgi-
-##9     nizi hem zekanizi hem de giderek gelistirdiginiz yeteneklerinizi 
-##9     kullanmaniz gerekiyor. Ustelik bu mucadelede yalnizda degilsiniz. 
-##9     Arkadaslarinizla ortak calisip bilgilerinizi ve malzemelerinizi 
-##9     paylasabilirsiniz.
+##3                      === En Öğrenceli Oyun===
+     ##2ElekrOgamE(TMW)##P ##9eğlenirken öğrenmeyi amaçlayan bir MMORPG (-)
+##9     oyunudur. Birbirinden zorlu görevleri başarabilmek için hem bilgi-
+##9     nizi hem zekanızı hem de giderek geliştirdiğiniz yeteneklerinizi 
+##9     kullanmanız gerekiyor. Üstelik bu mücadelede yalnızda değilsiniz. 
+##9     Arkadaşlarınızla ortak çalışıp bilgilerinizi ve malzemelerinizi 
+##9     paylaşabilirsiniz.
        
-##9             Oyleyse :
-##9             - Ogreninin.
-##9             - Ogrendiklerinizi kullanin.
-##9             - Bulmacalari cozun.
-##9             - Paylasin.
-##9             - Mucadele edin.
+##9             Öyleyse:
+##9             - Öğrenin.
+##9             - Öğrendikleriniz kullanın.
+##9             - Bulmacaları çözün.
+##9             - Paylaşın.
+##9             - Mücadele edin.
                   
-##9     IYI OGRENCELER :)
+##9     İYİ ÖĞRENCELER :)

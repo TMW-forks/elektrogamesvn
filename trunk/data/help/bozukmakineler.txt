@@ -1,5 +1,6 @@
-﻿ <- @@index|Indekse geri don@@
+ <- @@index|Indekse geri don@@
 ##3              ===Bozuk Makineler===
-  Burada verilen herhangi eksiklik veya bağlanntı için 
-  sadece yapmanız gereken shift tuşu basılı iken
-  iki nokta arasındaki bağlantılar birbirina bağlamak olacaktır.
+  Burada amacımız size verilen bozuk makineleri tamir etmek. 
+  Shift tuşu ve mouse yarıdmı ile iki devre elemanı arasında bağlantı
+  kurabilirsiniz. Alt tuşu ve mouse yardımı ile devre elemanlarının
+  açılarını değiştirebilirsiniz.

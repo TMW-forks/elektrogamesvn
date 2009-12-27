@@ -96,7 +96,7 @@ Palette::Palette() :
     addColor(CHAT, 0x000000, STATIC, _("Chat"), 'C');
     addColor(GM, 0xff0000, STATIC, indent + _("GM"), 'G');
     addColor(PLAYER, 0x1fa052, STATIC, indent + _("Player"), 'Y');
-    addColor(WHISPER, 0x00feaf, STATIC, indent + _("Whisper"), 'W');
+    addColor(WHISPER, 0xff0000, STATIC, indent + _("Whisper"), 'W');
     addColor(IS, 0xa08527, STATIC, indent + _("Is"), 'I');
     addColor(PARTY, 0xf48055, STATIC, indent + _("Party"), 'P');
     addColor(SERVER, 0x8415e2, STATIC, indent + _("Server"), 'S');
@@ -131,6 +131,7 @@ Palette::Palette() :
     addColor(EXP_INFO, 0xffff00, STATIC, indent + _("Exp Notification"));
     addColor(HIT_PLAYER_MONSTER, 0x0064ff, STATIC,
             indent + _("Player Hits Monster"));
+
     addColor(HIT_MONSTER_PLAYER, 0xff3232, STATIC,
             indent + _("Monster Hits Player"));
     addColor(HIT_CRITICAL, 0xff0000, RAINBOW, indent + _("Critical Hit"));

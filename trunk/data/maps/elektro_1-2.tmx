@@ -1,74 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
-<map version="1.0" orientation="orthogonal" width="40" height="30" tilewidth="32" tileheight="32">
- <tileset name="duvar" firstgid="1" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/zemin_metalik.png"/>
+<map version="1.0" orientation="orthogonal" width="60" height="50" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="syh" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/siyah.png"/>
  </tileset>
- <tileset name="pc_dolap" firstgid="49" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/bilgisayar_dolap.png"/>
+ <tileset firstgid="2" name="Untitled" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/kaplamalar.png"/>
  </tileset>
- <tileset name="oda_zemin" firstgid="97" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/_oda1_zemin.png"/>
+ <tileset firstgid="20" name="hast" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/hastehane.png"/>
  </tileset>
- <tileset name="havuz" firstgid="145" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/havuz.png"/>
+ <tileset firstgid="104" name="Untitled" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/oda1_zemin.png"/>
  </tileset>
- <tileset name="x" firstgid="170" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/collision.png"/>
- </tileset>
- <tileset name="agac_zemin" firstgid="172" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/agacalti.png"/>
- </tileset>
- <tileset name="agac" firstgid="181" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/agaclar.png"/>
- </tileset>
- <tileset name="toprak" firstgid="231" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/toprak.png"/>
- </tileset>
- <tileset name="altlik" firstgid="233" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/lambaalti.png"/>
- </tileset>
- <tileset name="sokak_lambasi" firstgid="235" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/lamba.png"/>
- </tileset>
- <tileset name="teller" firstgid="251" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/teller.png"/>
- </tileset>
- <tileset name="altlik2" firstgid="259" tilewidth="32" tileheight="32">
+ <tileset firstgid="152" name="yol" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/yol2.png"/>
  </tileset>
- <tileset name="agac3" firstgid="268" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/agacuzun.png"/>
+ <tileset firstgid="161" name="Untitled" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/trans_woodland-desert.png"/>
  </tileset>
- <tileset name="kapi" firstgid="304" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/kapi.png"/>
+ <tileset firstgid="289" name="Untitled" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/Woodland_ground.png"/>
  </tileset>
- <tileset name="kah_tasbina" firstgid="310" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/tas_bina.png"/>
+ <tileset firstgid="545" name="Untitled" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/havuz.png"/>
  </tileset>
- <layer name="Ground" width="40" height="30">
+ <tileset firstgid="570" name="Untitled" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/isin_kabin.png"/>
+ </tileset>
+ <tileset firstgid="885" name="Untitled" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/kucuk_fanus.png"/>
+ </tileset>
+ <tileset firstgid="933" name="Untitled" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/cikis.png"/>
+ </tileset>
+ <tileset firstgid="935" name="Untitled" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/agaclar.png"/>
+ </tileset>
+ <tileset firstgid="985" name="Untitled" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/agac.png"/>
+ </tileset>
+ <layer name="Ground" width="60" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAM2YSU7DMBSGbcYW2CCxYTgL4gbADRCotIWOCNGK+SIsAIkVgxgklqyQWLLlBNBb8Jv6qY9XO0nThLL4FCdx6i+/HduglVJDYHiAR8OaVmoLbOt22VwbAVmwA/YHyAGoMz9TNk5TYBqUQA5sgjwo9Hnuuuerf2ryg88KOACHYBUUrZ/JbxeUYzidhGDaPgpwrtk6Y/AZB2fgypbruD5j89tlv3kNbvrg1joRUd6B/G7Bsy3L/PKWO/Bp+RLHMEy9e+Zm+m3EwajutFdgfi/gjeVH48/4VS13nnajOEo/aleS0Z32aqzeO/gIyI/8es0tjl9TtTnx1JPjrzoAv4rNJYvzCVGH8uN+tR79ZD3pR+1KJkED9/dYu2XxPjT+ssLvATz2wZP6/f3uWXKq06eGBuuzlsOvyPq3JN7jKEGOLWXhx3GNB19+NE8n5Vex+ZXZsempK/OT61saGVZYfpycA5cfX9/C/Fqs7Jt742Dma+lH8wutyQSdL+n2eunDN3fEIePwo+/D7GdcLLJ3q6hu/sJvKsBvmT1LcwQnbT9X/y55/GiO4CTtJ9c5yu8c5Qtwqbv3sH+ZX96Rn/FD8Wef/6S797D0bNhclWZ+NL+82gwpSzk2OKcp+MkxQ+OP/Oh6FL808pN+cv/Si5/81tLKj/q3xPwedXss8mfp75kW8/PtneIw6cnP1b++b6vgyDDKPsL1nOuaLz/aHwTln9Q6GwZvU36/SY2lpOD5mf8lrIMNdtxwXOP3gu5HfS6o7o4df7NgDsz/w+MC+Aah01uawBIAAA==
+   H4sIAAAAAAAAC+3aTQ6CMBCG4eLp2Lph4S9u1BOoJ5Ar+I97L+EJ9ErOoiSkkqYglWH6LZ5YTTDzpppqQqSUigAAABiYkJEwU0tvTAbCJOhFryDoRa8kofXGgfXa9jdhMN8/e0Pb36a9w6gb6EVvaL0+ziNzjiVZaTeS68ey3LIuK15fM97fDdm2bOexN7WQ2ruoIL23fB165fVy+jw/G/a6nEephUvvnry0N8n0Oqt4bq4z47rimofH/f31POL0e8PH/8G+9oa2v+jtP/R+9x7IkZwYzFuXObtL75lcyJXB/HWZs7v03khO7gzmr8ucHd/fcHtnqvv7Dwrjlt5nbukFAADo2ge2kgIP4C4AAA==
   </data>
  </layer>
- <layer name="Fringe" width="40" height="30" opacity="0.96">
+ <layer name="Fringe" width="60" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO2Wz07CMBzHu+eBCIhEfBZIfCsBnSKCTg/eOXH35N2D+Gf6DmYQ/Ry2bGlSRrduwtJP8sna5bfu225pKoTFUjyuE7c9R133XzySqYktnGvk+8JvfMcP/JTaaZzhAIc4wnNF3YJMh9jGpwLW7xWX+Cbdv0AXL/EKx4rnn8l0hB180czni3gddbnGCd7gFGcZxtClxvzq4RwPuDYc9be+xTv08B4fDGVQfS8VWdfXFNH7falvgh9D41iqjfyfrHAdGkj9be8FRQY2sM//5h9CzZ7kO03Yw/6Ga7K2rHx5sPmEOJE8xm6iLOrLdbr5qnqGLQvdM+ym/TnIUJdG2hnWnjMslt3iDzV0LEbAEgAA
+   H4sIAAAAAAAAC+2X107DMBSGU9o7xEOw99438Aw8A+MFgEtWB0hsWobEplDeshJfBZXSqEnstE6Tcn7pU1rn5Pj8tuPIliUSiUQikUgUrlYTtVTbvOLsMfar877qf9UYtzhdv0Ha6o1Nvd9+V6+cOs+qyqRfv/Xg1odpv0HXs9sY1Lvv9x649eH1TFzXs+68RnU9q1xVY7zadeS3/6muNRUPKn2o+g26nkWi/6oy70tnRzjY+2qVugz0fZiyrCNIp2rb1xK/mOhTVZW+16lhBzZgEwoN7pHX+LyBvMPvSkT8bv/5rbDbhO/BOz4/oBhRvxlqyEIOtgx+/6LiNyyZ8ttNvh7ohT7o98gfpl9T+9UA+QZhCIZhRMFvo3uUikz5HSXfGIzDBEy2+fxOkW8aZmAW5trc7zz5FmARlmC5zf3qSPyaUSkRP7/O87zbGd1tr4+i31LSsr6TzcntzBUFv84zm1t7EOy5qmfBsoffNGOTgazGeO8Ruw8HTZqjMHVKzWdwrlF7jthjOImh3zw1F+BWo/YLYi/hKoZ+H6n5CZ41ar8j9h4eYui3SM2f8KVR+wuxr/AWQ78ikUgkEolEotboB5jqUo7gLgAA
   </data>
  </layer>
- <layer name="Top" width="40" height="30" opacity="0.85">
+ <layer name="Top" width="60" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3WSU7DMBTG8fgWjAvGPbCHgsQgwQU4A0eAUwBXYV4wL5hnynQEQICATUDiX9FKjydjNW4aBZpP+sl2mqRPtpUkCP5PlrFi6achm9jCtuoXMod5LGAxwZqOcYJTHOAQR6pfyCrWsI6NBOu7wS3ukMcVrlV/CTvYxR72LfeZxgxmY6pLr5ecR1vOcI4LXIrj1VprvV5yHutMENSjAY1oQrOpUiG/xLVeLdTSija0owOdxj2/rtzjAY8RrtHrpddXj+X8Rs0TnvHicW0p+v8rqUfnFW94j+FeaY7PPkkytn3ygc+iUI3LPRbGVJ9tn6SpvnIzijFH65sp822y2OY8n7n9GBBtH3Ki9c2E+ak3Qn3jwjBGRDuIIdHKc7P8jfQoXegWv5fG+rxaiu394Xr+hR7nVZKo74+k66uV74wsWbLEly8x+rw6wBIAAA==
+   H4sIAAAAAAAAC+3BMQEAAADCoPVPbQwfoAAAAAAAAAAAAAAA4G+ekqdq4C4AAA==
   </data>
  </layer>
- <layer name="collision" width="40" height="30">
+ <layer name="Collision" width="60" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO2V4QrAIAiEff9X8SX3e2Mt805rcAdCCNqXlbqZuQy23RIfpiyfB9ar+zL5ohrl6eLLniFbC1b9ZrFVfKvc7D+G3i+TJ/JuT5P4MGX/1FcO5uxn1I/V10f+P/EhMwW51w4+ROI7n28Wz3h/I1+ED1E1X6T+rP78zPkW0yVGf66U+DBlZ5LsbheRaHobwBIAAA==
+   H4sIAAAAAAAAC+3BMQEAAADCoPVPbQwfoAAAAAAAAAAAAAAA4G+ekqdq4C4AAA==
   </data>
  </layer>
- <layer name="objects" width="40" height="30">
+ <layer name="Objects" width="60" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3BMQEAAADCoPVPbQ0PoAAAAADg1wAW4j6/wBIAAA==
+   H4sIAAAAAAAAC+3BMQEAAADCoPVPbQwfoAAAAAAAAAAAAAAA4G+ekqdq4C4AAA==
   </data>
  </layer>
 </map>

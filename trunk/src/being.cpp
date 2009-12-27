@@ -132,7 +132,7 @@ void Being::setPosition(const Vector &pos)
 
     if (mText)
         mText->adviseXY(mPx,
-                        mPy - mText->getHeight() + 6);
+                        mPy - mText->getHeight() -getHeight() - 6);
 }
 
 #ifdef EATHENA_SUPPORT

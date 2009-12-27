@@ -105,6 +105,7 @@ class Palette : public gcn::ListModel
             ENTRY(HPBAR_THREE_QUARTERS)\
             ENTRY(HPBAR_ONE_HALF)\
             ENTRY(HPBAR_ONE_QUARTER)\
+            ENTRY(MINI_SELF)\
             LASTENTRY(TYPE_COUNT)
 
         TEXTENUM(ColorType, COLOR_TYPE);
@@ -364,7 +365,7 @@ class Palette : public gcn::ListModel
          * @param text identifier of color
          */
         void addColor(ColorType type, int rgb, GradientType grad,
-                      const std::string &text, char c = 0, 
+                      const std::string &text, char c = 0,
                       int delay = GRADIENT_DELAY);
 
         /**

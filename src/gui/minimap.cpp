@@ -110,7 +110,7 @@ void Minimap::setMap(Map *map)
         const int mapHeight = mMapImage->getHeight() < 100 ?
                               mMapImage->getHeight() + offsetY : 100;
 
-        setMinWidth(mapWidth > titleWidth ? mapWidth : titleWidth);
+        setMinWidth((mapWidth > titleWidth ? mapWidth : titleWidth));
         setMinHeight(mapHeight);
 
         mWidthProportion = (float) mMapImage->getWidth() / map->getWidth();
@@ -194,7 +194,7 @@ void Minimap::draw(gcn::Graphics *graphics)
 
                     if (being == player_node)
                     {
-                        type = Palette::SELF;
+                        type = Palette::MINI_SELF;
                         dotSize = 3;
                     }
                     else if (player->isGM())

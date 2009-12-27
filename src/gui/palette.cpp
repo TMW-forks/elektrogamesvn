@@ -106,6 +106,7 @@ Palette::Palette() :
     addColor(BEING, 0xffffff, STATIC, _("Being"));
     addColor(PC, 0xffffff, STATIC, indent + _("Other Players' Names"));
     addColor(SELF, 0xff8040, STATIC, indent + _("Own Name"));
+    addColor(MINI_SELF, 0x0000ff, STATIC, indent + _("Mini Self"));
     addColor(GM_NAME, 0x00ff00, STATIC, indent + _("GM Names"));
     addColor(NPC, 0xc8c8ff, STATIC, indent + _("NPCs"));
     addColor(MONSTER, 0xff4040, STATIC, indent + _("Monsters"));

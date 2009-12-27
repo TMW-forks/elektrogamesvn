@@ -365,7 +365,7 @@
         type="generic"
         weight="2"/>
     <item id="531"
-        image="saglik-icecek-4.png"
+        image="/elektroadd/saglik-icecek-4.png"
         name="Kola"
         description="Kola."
         effect="+2 SP"
@@ -1182,14 +1182,7 @@
         type="generic"
         weight="1"
         max-per-slot="10"/>		
-    <item id="711"
-        image="/elektroadd/dnnm-nesne-chip.png"
-        name="Programlanabilir çip"
-        description="Elektronik devrelerde kullanılır."
-        effect=""
-        type="generic"
-        weight="10"
-        max-per-slot="10"/>
+
     <item id="712"
         image="generic-emptybottle.png"
         name="Boş şişe"

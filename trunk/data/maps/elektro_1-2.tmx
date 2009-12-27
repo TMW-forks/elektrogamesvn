@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
 <map version="1.0" orientation="orthogonal" width="60" height="50" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="music" value="Mavi Gökyüzü - bluesky.ogg"/>
+  <property name="name" value="Eğitim Odası"/>
+ </properties>
  <tileset firstgid="1" name="syh" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/siyah.png"/>
  </tileset>
@@ -40,9 +44,12 @@
  <tileset firstgid="985" name="Untitled" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/agac.png"/>
  </tileset>
+ <tileset firstgid="1209" name="Collision" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision.png"/>
+ </tileset>
  <layer name="Ground" width="60" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3aTQ6CMBCG4eLp2Lph4S9u1BOoJ5Ar+I97L+EJ9ErOoiSkkqYglWH6LZ5YTTDzpppqQqSUigAAABiYkJEwU0tvTAbCJOhFryDoRa8kofXGgfXa9jdhMN8/e0Pb36a9w6gb6EVvaL0+ziNzjiVZaTeS68ey3LIuK15fM97fDdm2bOexN7WQ2ruoIL23fB165fVy+jw/G/a6nEephUvvnry0N8n0Oqt4bq4z47rimofH/f31POL0e8PH/8G+9oa2v+jtP/R+9x7IkZwYzFuXObtL75lcyJXB/HWZs7v03khO7gzmr8ucHd/fcHtnqvv7Dwrjlt5nbukFAADo2ge2kgIP4C4AAA==
+   H4sIAAAAAAAAC+3aSwrCMBSF4VRwb5066cBnnagrUFdgt+Cz7dxNuALdkneQQgghhNqY1xl8WIXI/YkaBTPGWAYAAOCBOZlGZqHpzckoMgV60RsR9KI3Jqn15on16va38GC+f/amtr99eyeZG+hFb2q9Ns4jeY4N2XI1afitqNFci7rHdx7v754cBna02FtqxNq7Voi9V1yH3vh6fXo9v3r2mpxHpYZJ74m8uQ+p+HWluC9fV9K6bs3T4v7+eh759H3Dxu/BUHtT21/0hq9v79iD2W31nsmFXIXWUHrl2U16b+ROHkKrius2FXF2096aNKQNcH/l2fH+Tffzecnc//+gMxvoeVaaXgAAANe+JajSq+AuAAA=
   </data>
  </layer>
  <layer name="Fringe" width="60" height="50">
@@ -57,12 +64,16 @@
  </layer>
  <layer name="Collision" width="60" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3BMQEAAADCoPVPbQwfoAAAAAAAAAAAAAAA4G+ekqdq4C4AAA==
+   H4sIAAAAAAAAC+3WywmAMBRFwSzsv6BU51YQxSTmw8tcODtRR1DMR0pZkiRNKdp4eSONlzfSeHkjjbfdu/K/by/v6EX0vp03ovePa47wjnhfeXlLvCXPgpeXdy1vyXb3jhjv83G87d6v37zad7b2Xnt4Vx7v3RvBfbXw7u2NNF5JkjSrExDFupHgLgAA
   </data>
  </layer>
- <layer name="Objects" width="60" height="50">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3BMQEAAADCoPVPbQwfoAAAAAAAAAAAAAAA4G+ekqdq4C4AAA==
-  </data>
- </layer>
+ <objectgroup name="Objects" width="0" height="0">
+  <object name="ToMainMap" type="WARP" x="128" y="1184" width="32" height="96">
+   <properties>
+    <property name="DEST_MAP" value="elektro_1-1"/>
+    <property name="DEST_X" value="1200"/>
+    <property name="DEST_Y" value="2320"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>

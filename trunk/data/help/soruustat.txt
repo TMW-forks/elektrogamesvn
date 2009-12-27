@@ -1,0 +1,21 @@
+ <- @@index|Indekse geri don@@
+##3          ===Soru Ustatları===
+  Burada bulunan soru çeşitleri üçe ayrılır.
+  
+##1  -->1-)  Tek Sorulu Sorular
+##1  -->2-)  Çok Cevaplı Sorular
+##1  -->3-)  Çok Sorulu Testler
+##7  -->Tek Sorulu Sorular
+  Tek soruluda bir tane soru sorar.Tek şık doğrudur.
+  Soruyu doğru cevaplarsanız ödül alırsınız.
+##7  -->Çok Cevaplı Sorular
+  Çok cevaplı sorularda da bir tane soru sorar ve 
+  soruda birden fazla cevap bulunur.
+  Soruyu doğru cevapladığınızda ödül alırsınız.
+##7  -->Çok Sorulu Testler
+  Çok sorulu testlerde de normal testlerden oluşur.
+  Bu sorulan testte sınırlanan barajı geçerseniz 
+  ödül alırsınız barajı aşamazsanız ceza puanı alısınız.
+
+  
+

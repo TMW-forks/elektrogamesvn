@@ -104,6 +104,7 @@
 #include "elektro/hesapmak.h"
 #include "elektro/instanthelp.h"
 #include "elektro/missionwindow.h"
+#include "elektro/wellcome.h"
 
 std::string map_path;
 std::string globalHint;
@@ -354,7 +355,11 @@ Game::Game():
     // Initialize frame limiting
     config.addListener("fpslimit", this);
     optionChanged("fpslimit");
-
+    if (config.getValue("Wellcome",true))
+    {
+        Wellcome *wellcomeWindow;
+        wellcomeWindow = new Wellcome;
+    }
     // Initialize beings
     beingManager->setPlayer(player_node);
 
@@ -731,6 +736,20 @@ void Game::handleInput()
                         used = true;
                         return;
                     }
+                    break;
+                case KeyboardConfig::KEY_GOREV_PENCERESI:
+                    // gÖREV PENCERESİNİ AÇ
+                   if (!chatWindow->isInputFocused())
+                   {
+                        if (missionWindow->isVisible()  )
+                            missionWindow->setVisible(false);
+                        else
+                        {
+                            missionWindow->setVisible(true);
+                            missionWindow->requestMoveToTop();
+                        }
+                        used = true;
+                   }
                     break;
                 case KeyboardConfig::KEY_WINDOW_HELP:
                     // In-game Help

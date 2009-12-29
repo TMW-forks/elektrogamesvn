@@ -13,7 +13,7 @@ writing a branding.xml for their forks.
  <option name="appName" value="elektrogame"/>
  <option name="appShort" value="elektro"/>
  <option name="appIcon" value="icons/elektro.png"/>
- <option name="loginMusic" value="Magick - Real.ogg"/>
+ <option name="loginMusic" value="Moonlight.ogg"/>
  <option name="defaultServer" value="server.elektrogame.net"/>
  <option name="defaultPort" value="9601"/>
  <option name="defaultUpdateHost" value="http://updates.elektrogame.net"/>

@@ -124,6 +124,8 @@
 		<Unit filename="src\elektro\testwindow.cpp" />
 		<Unit filename="src\elektro\testwindow.h" />
 		<Unit filename="src\elektro\typedef.h" />
+		<Unit filename="src\elektro\wellcome.cpp" />
+		<Unit filename="src\elektro\wellcome.h" />
 		<Unit filename="src\elektro\wire.cpp" />
 		<Unit filename="src\elektro\wire.h" />
 		<Unit filename="src\emoteshortcut.cpp" />

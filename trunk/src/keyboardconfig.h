@@ -213,6 +213,7 @@ class KeyboardConfig
             KEY_QUIT,
             KEY_IGNORE_INPUT_1,
             KEY_IGNORE_INPUT_2,
+            KEY_GOREV_PENCERESI,
             KEY_INSTANT_HELP,
             KEY_TOTAL
         };

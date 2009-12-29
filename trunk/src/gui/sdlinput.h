@@ -88,7 +88,7 @@ namespace Key
         INSERT,
         HOME,
         PAGE_UP,
-        DELETE,
+        DELET,
         END,
         PAGE_DOWN,
         ESCAPE,

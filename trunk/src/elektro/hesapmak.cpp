@@ -183,6 +183,7 @@ HesapMak::HesapMak():
     mButGeriSil->setSize(mbutw,mbuth);
     mButGeriSil->setAlignment(gcn::Graphics::CENTER);
     add(mButGeriSil);
+    loadWindowState();
 }
 
 HesapMak::~HesapMak() {

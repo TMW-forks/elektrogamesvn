@@ -46,6 +46,7 @@
 #include "elektro/slaytwindow.h"
 #include "elektro/similasyonpenceresi.h"
 #include "elektro/missionwindow.h"
+#include "elektro/wellcome.h"
 
 #include "log.h"
 
@@ -110,6 +111,12 @@ void NpcHandler::handleMessage(MessageIn &msg)
             temp = msg.readString(msg.getLength() - 8);
             resetPlayer = true;
             npcText<<temp;
+            if (being->getJob() == 252) //Wellcome
+            {
+                Wellcome *wellcomeWindow = new Wellcome;
+                npcText.str("");
+            }
+
             if (being->getJob() == 299)
             {
                 if (temp=="</mission>")

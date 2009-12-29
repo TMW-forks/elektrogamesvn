@@ -197,15 +197,7 @@
 <!--  250-299 öğretenler  -->	
 <!--   ###############################################################  -->	
 <npc id="251"><sprite variant="21">npc4.xml</sprite></npc><!-- Ulubatli  -->
-<npc id="252">
-   <!-- An NPC made only from a particle effect. -->
-   <particlefx>graphics/particles/hellblaze.particle.xml</particlefx>
-</npc>
-
-<npc id="300">
-   <sprite>npc-test.xml</sprite>
-   <particlefx>graphics/particles/circle.particle.xml</particlefx>
-</npc>
+<npc id="252"><sprite variant="18">npc4.xml</sprite><particlefx>graphics/particles/soulmenhir.particle.xml</particlefx></npc><!-- Hoþgeldin  -->
 <npc id="253"><sprite variant="00">npc4.xml</sprite></npc><!--  -->
 <npc id="254"><sprite variant="01">npc4.xml</sprite></npc><!--  -->
 <npc id="255"><sprite variant="02">npc4.xml</sprite></npc><!--  -->
@@ -257,7 +249,10 @@
 <!--   ###############################################################  -->	
 <!--   300-349 makinalar -->	
 <!--   ###############################################################  -->	
-
+<npc id="300">
+   <sprite>npc-test.xml</sprite>
+   <particlefx>graphics/particles/circle.particle.xml</particlefx>
+</npc>
 <npc id="301">
    <!-- This entry demonstrates that an NPC can be constructed from multiple preexisting
    spritesets. While using the default player sprite and normal player equipment can save

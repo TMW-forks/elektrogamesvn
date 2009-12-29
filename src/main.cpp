@@ -345,7 +345,7 @@ static void initConfiguration(const Options &options)
     // Fill configuration with defaults
     logger->log("Initializing configuration...");
     std::string defaultHost = branding.getValue("defaultServer",
-        "server.elektrogame.net");
+        "sunucu.elektrogame.net");
     config.setValue("host", defaultHost);
     int defaultPort = (int)branding.getValue("defaultPort", DEFAULT_PORT);
     config.setValue("port", defaultPort);
@@ -367,6 +367,7 @@ static void initConfiguration(const Options &options)
     config.setValue("updatehost", defaultUpdateHost);
     config.setValue("customcursor", true);
     config.setValue("ChatLogLength", 128);
+    config.setValue("Wellcome", true);
 
     // Checking if the configuration file exists... otherwise create it with
     // default options.

@@ -37,7 +37,7 @@ void IntTextField::keyPressed(gcn::KeyEvent &event)
     const gcn::Key &key = event.getKey();
 
     if (key.getValue() == Key::BACKSPACE ||
-        key.getValue() == Key::DELETE)
+        key.getValue() == Key::DELET)
     {
         setText(std::string());
         event.consume();

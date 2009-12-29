@@ -33,6 +33,9 @@
 #include <string>
 #include <map>
 
+#include "elektro/bitbutton.h"
+
+
 class BrowserBox;
 class Channel;
 class ChatTab;
@@ -195,6 +198,7 @@ class ChatWindow : public Window,
         ChatInput *mChatInput;
 
     private:
+        BitButton *mSohbetBut;  //sağ üst köeşeye sohbet butonu
         bool mTmpVisible;
 
         /** Tabbed area for holding each channel. */
@@ -211,6 +215,8 @@ class ChatWindow : public Window,
         HistoryIterator mCurHist;   /**< History iterator. */
         bool mReturnToggles; /**< Marks whether <Return> toggles the chat log
                                 or not */
+
+
 };
 
 extern ChatWindow *chatWindow;

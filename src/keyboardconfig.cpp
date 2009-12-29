@@ -102,6 +102,7 @@ static KeyData const keyData[KeyboardConfig::KEY_TOTAL] = {
     {"keyQuit", SDLK_ESCAPE, _("Quit")},
     {"keyIgnoreInput1", SDLK_LSUPER, _("Ignore input 1")},
     {"keyIgnoreInput2", SDLK_RSUPER, _("Ignore input 2")},
+    {"keyGorevPenceresi", SDLK_BACKSPACE, _("Görev Penceresi")},
     {"keyInstantHelp", SDLK_l, _("Instant Help")}
 };
 

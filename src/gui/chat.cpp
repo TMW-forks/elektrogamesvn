@@ -110,6 +110,10 @@ ChatWindow::ChatWindow():
     mReturnToggles = config.getValue("ReturnToggles", "0") == "1";
 
     mRecorder = new Recorder(this);
+
+    mSohbetBut = new BitButton("sohbet.png","sohbetbutton","sohbetbutton",this);
+    mSohbetBut->setPosition(getWidth()-mSohbetBut->getWidth()-10,0);
+    add(mSohbetBut);
 }
 
 ChatWindow::~ChatWindow()
@@ -176,6 +180,11 @@ void ChatWindow::nextTab()
 
 void ChatWindow::action(const gcn::ActionEvent &event)
 {
+    if (event.getId() == "sohbetbutton")
+    {
+     requestChatFocus();
+    }
+
     if (event.getId() == "chatinput")
     {
         std::string message = mChatInput->getText();
@@ -346,6 +355,7 @@ void ChatWindow::mousePressed(gcn::MouseEvent &event)
 void ChatWindow::mouseDragged(gcn::MouseEvent &event)
 {
     Window::mouseDragged(event);
+        mSohbetBut->setPosition(getWidth()-mSohbetBut->getWidth()-10,0);
 
     if(event.isConsumed())
         return;

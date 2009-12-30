@@ -60,6 +60,8 @@ Wellcome::Wellcome():
     mList.push_back("graphics/sunular/basla1/g_09.png");
     mList.push_back("graphics/sunular/basla1/g_10.png");
     mCurrentSlide = 0;
+    current_npc = 0;
+    NPC::isTalking = false;
 }
 
 void

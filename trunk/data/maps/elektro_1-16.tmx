@@ -37,19 +37,22 @@
  <tileset name="icdizayn" firstgid="195" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/muzeic.png"/>
  </tileset>
+ <tileset name="mesalealti" firstgid="244" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/lambaalti.png"/>
+ </tileset>
  <layer name="Ground" width="41" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO2YOw4CMQxEvS300MNl9gDbcAW4Cyzf8zIUbtIkkhPnwxSvc/GUzMhRJhGZCCGEmNmAg4Ej2BZ2XMDJyELHqOMZXOg41F1fwQ2sCU7hrJfjHTzAM8ExnJ2dHF/gDT4JjuFs6XOcE5xaySMd8ziO3msvR/b6fzrTg6Ol16V3oeax5V6rY8u9zpFHr3fP6I5eeWx5X/fQ6xz7uoc81nTU3MVyWvPdo7mL5bSmo+YullPuGZGd2P4ff+wLOxJCCGmHL4ZxVbQIIAAA
+   H4sIAAAAAAAAAO2YPQ7CMAyF3ZXusMNleoAuXAHuwl+Bk/YAGAlLqKJKJCeuE97wDZU8fErfk6M0RNQAAABQs2K2CnZMm9mxZ/ZKejgGHQ/MEY5V/esTc2YuEU7TWSvHK3Njhs/3+MNtnJntjBzvzIN5RpzjdDb3OXYRTl7yCMc0jrX32soRvf6fzpTgqOl17l0oefTca3H03OsUebS699TuaJVHz/u6hF6n2Ncl5HFJR8ldKKdL3nskd9/Z8+YouQvlFHuGaE2698c3m8yOAAAA/PAC1MROAwggAAA=
   </data>
  </layer>
  <layer name="Fringe" width="41" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3OPQ6CQBRF4VkuNMCeELBDehBqf1twNVyJhRWMicNkkvMlJ3nFK64xAACEI1Kx7xErkq879bZiXQgb37JPsDOqSb0sfu/qoZ5OFwHY29X3AABWLj/83pytAPAvtTqpZuOvVZ06q14NbmcBi1wdVKFKVamj10UAAGBPM5x6SUoIIAAA
+   H4sIAAAAAAAAAO3TvQ6CMABFYR4XFvCd8IdN3EGZUWRVnsJH8JKUhEGLCdqGeL7kJC1huEuDAACA5QhV5HuERTw6J95W2C1hY29lwmdu6q46c3+8+Gf41qirah3sAvA9tnfdO7saAmCWenSeeteXH28BMN9e5epg7u/edaFKdVQnVbkYh7+XqrXaqK3aqczrIgAA4NITQ4GqhwggAAA=
   </data>
  </layer>
  <layer name="Top" width="41" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3ONw7CUBQFUe9/A+TYEQtyKMFAC2yIKRFI2BSPL6Q50nS3uFkmSZKkT650o3uJ7YnOdAl9JOnXjqkPSCrl8MU2D3sh/YcBDWlUsJvRnBa0pFXwr2djmtC0YLemDW1pR/vgX4pXoSrVqE4NaiZ99K5FbepQl3rUT3lIkiTpxQN5H6GKCCAAAA==
+   H4sIAAAAAAAAAO3TNw7CQAAFUd//AuTYEQtyKIktcBCuwCAZySLYBdimmCeN5LW2+M0GgSRJkuKc6EyX8Hx9c+fxb08HOmawS9LvxL3ru21WQyR9ZRP5TnrXu5S3SP+uQ13qJdwb0ZgmNKVZyrui+jSgYXj+9K7ntKAlrWidyTqlqUBFKlGZKlTNddGrGtWpQU1qUTvPQZIkSU9uKPbQ7QggAAA=
   </data>
  </layer>
  <layer name="Collision" width="41" height="50" visible="0">

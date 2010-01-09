@@ -60,9 +60,14 @@
    H4sIAAAAAAAAAO3SQQqAMAwAwf7/WXmZ94DFVJBIRljoIYUhNdZaIUka09uPcW+MmzNj/a0rM/7Hmnl3d/oeGRn/bIx07mjMXkbGicaKN9+zR0bGfsaKN8/aI+MXxtM5e+xrlCTpaRcPzCvACCAAAA==
   </data>
  </layer>
- <layer name="Objects" width="41" height="50">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3BAQ0AAADCoPdPbQ8HFAAAAAAAAADwYho5PoMIIAAA
-  </data>
- </layer>
+ <objectgroup name="Object Group 1" width="0" height="0">
+  <object name="graphics/particles/flame.particle.xml" type="PARTICLE_EFFECT" x="575" y="500" width="32" height="32"/>
+  <object name="graphics/particles/flame.particle.xml" type="PARTICLE_EFFECT" x="735" y="501" width="32" height="32"/>
+  <object name="graphics/particles/flame.particle.xml" type="PARTICLE_EFFECT" x="735" y="693" width="32" height="32"/>
+  <object name="graphics/particles/flame.particle.xml" type="PARTICLE_EFFECT" x="575" y="693" width="32" height="32"/>
+  <object name="graphics/particles/flame.particle.xml" type="PARTICLE_EFFECT" x="575" y="885" width="32" height="32"/>
+  <object name="graphics/particles/flame.particle.xml" type="PARTICLE_EFFECT" x="735" y="884" width="32" height="32"/>
+  <object name="graphics/particles/flame.particle.xml" type="PARTICLE_EFFECT" x="575" y="1075" width="32" height="32"/>
+  <object name="graphics/particles/flame.particle.xml" type="PARTICLE_EFFECT" x="735" y="1076" width="32" height="32"/>
+ </objectgroup>
 </map>

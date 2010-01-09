@@ -55,9 +55,9 @@
    H4sIAAAAAAAAAO3TNw7CQAAFUd//AuTYEQtyKIktcBCuwCAZySLYBdimmCeN5LW2+M0GgSRJkuKc6EyX8Hx9c+fxb08HOmawS9LvxL3ru21WQyR9ZRP5TnrXu5S3SP+uQ13qJdwb0ZgmNKVZyrui+jSgYXj+9K7ntKAlrWidyTqlqUBFKlGZKlTNddGrGtWpQU1qUTvPQZIkSU9uKPbQ7QggAAA=
   </data>
  </layer>
- <layer name="Collision" width="41" height="50" visible="0">
+ <layer name="Collision" width="41" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3SQQqAMAwAwf7/WXmZ94DFVJBIRljoIYUhNdZaIUka09uPcW+MmzNj/a0rM/7Hmnl3d/oeGRn/bIx07mjMXkbGicaKN9+zR0bGfsaKN8/aI+MXxtM5e+xrlCTpaRcPzCvACCAAAA==
+   H4sIAAAAAAAAAO3RSwqAMAxAwdz/WDmZe0nqDyHiCA9azWKIGREpSfpNTx/G7xuzOU8yxsUZ/7q+V5Zu1h4ZGecbq/e5ONsjI+NMY3c++m6PjIwzjXtvZV/N2iPj28a7c/Y41yhJ0tk24ePheAggAAA=
   </data>
  </layer>
  <objectgroup name="Object Group 1" width="0" height="0">

@@ -48,9 +48,22 @@
    H4sIAAAAAAAAAO2V0QqAIAwA/Wf/H6I3kaZz6pZygwNptea1MKeUMgAAAABsYWW06mVhPVKj9Qwe1nqwOpFq1PUsOW1PO+dBylm/5SnzsDtWzF6rNh58PEQ4K9+tyXnNQ4SDkTjpv9gZJ50X2og+L6x7kGr0ao/cq+nhT//FDfOwIk72oHXl5dVrTzPzggc8zHgr95aqe/JH/nYPIxHdPx7wgAc8eHmQ1q1rN3qwRnT/eMADHvDg5UFa9/LR/TMPeAAAAHh5AC2OD2lwLwAA
   </data>
  </layer>
- <layer name="Objects" width="66" height="46" visible="0">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3BMQEAAADCoPVP7W8GoAAAAAAAAAAAAAAAgDf2qZMvcC8AAA==
-  </data>
- </layer>
+ <objectgroup name="Object Group 1" width="0" height="0">
+  <object name="graphics/particles/flame.particle.xml" type="PARTICLE_EFFECT" x="479" y="403" width="32" height="32"/>
+  <object name="graphics/particles/flame.particle.xml" type="PARTICLE_EFFECT" x="480" y="595" width="32" height="32"/>
+  <object name="graphics/particles/flame.particle.xml" type="PARTICLE_EFFECT" x="671" y="594" width="32" height="32"/>
+  <object name="graphics/particles/flame.particle.xml" type="PARTICLE_EFFECT" x="671" y="402" width="32" height="32"/>
+  <object name="graphics/particles/flame.particle.xml" type="PARTICLE_EFFECT" x="1119" y="469" width="32" height="32"/>
+  <object name="graphics/particles/flame.particle.xml" type="PARTICLE_EFFECT" x="1087" y="627" width="32" height="32"/>
+  <object name="graphics/particles/flame.particle.xml" type="PARTICLE_EFFECT" x="1246" y="628" width="32" height="32"/>
+  <object name="graphics/particles/flame.particle.xml" type="PARTICLE_EFFECT" x="1216" y="468" width="32" height="32"/>
+  <object name="graphics/particles/flame.particle.xml" type="PARTICLE_EFFECT" x="1088" y="820" width="32" height="32"/>
+  <object name="graphics/particles/flame.particle.xml" type="PARTICLE_EFFECT" x="1248" y="820" width="32" height="32"/>
+  <object name="graphics/particles/flame.particle.xml" type="PARTICLE_EFFECT" x="1087" y="1012" width="32" height="32"/>
+  <object name="graphics/particles/flame.particle.xml" type="PARTICLE_EFFECT" x="1247" y="1013" width="32" height="32"/>
+  <object name="graphics/particles/flame.particle.xml" type="PARTICLE_EFFECT" x="1087" y="1204" width="32" height="32"/>
+  <object name="graphics/particles/flame.particle.xml" type="PARTICLE_EFFECT" x="1246" y="1204" width="32" height="32"/>
+  <object name="graphics/particles/flame.particle.xml" type="PARTICLE_EFFECT" x="1534" y="500" width="32" height="32"/>
+  <object name="graphics/particles/flame.particle.xml" type="PARTICLE_EFFECT" x="1759" y="500" width="32" height="32"/>
+ </objectgroup>
 </map>

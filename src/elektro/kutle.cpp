@@ -9,6 +9,7 @@
 #include "../game.h"
 
 #include <utility> //make_pair() için
+#include <cmath>
 
 extern SimilasyonPenceresi *similasyonPenceresi;
 
@@ -22,6 +23,7 @@ Kutle::Kutle(gcn::ActionListener *listener) :
         addActionListener(mListener);
     }
     setFrameSize(0);
+    resimIndex=3;
 }
 
 Kutle::~Kutle()
@@ -76,25 +78,18 @@ void Kutle::mouseDragged(gcn::MouseEvent &event)
             setX(305);
             setY(280);
         }
+        //2.Kefe
         else if (getX()>320 && getX()<365 && getY()>265)
         {
             setX(345);
             setY(280);
         }
+        //3.Kefe
         else if (getX()>365 && getX()<400 && getY()>265)
         {
             setX(385);
             setY(280);
         }
-//        else
-//        {
-//            if (similasyonPenceresi->idKefeIt != similasyonPenceresi->idKefe.begin())
-//            {
-//                logger->log("azaldı");
-//                similasyonPenceresi->idKefeIt--;
-//                similasyonPenceresi->idKefe.erase(similasyonPenceresi->idKefeIt);
-//            }
-//        }
     }
 }
 
@@ -102,7 +97,6 @@ void
 Kutle::mouseReleased(gcn::MouseEvent &event)
 {
     std::vector<int> agirlikKefe;
-
     setSelected(false);
 
     if (getX()==305 && getY() == 280)
@@ -133,6 +127,26 @@ Kutle::mouseReleased(gcn::MouseEvent &event)
         agirlikKefe.push_back(getAgirlik());
         similasyonPenceresi->idKefe[getID()]= agirlikKefe;
     }
+}
+
+void
+Kutle::hesaplaY2()
+{
+    int y=0;
+
+    y = getY() + sin(-15*(22/7.0)/180)*(getX()-234);
+    setY(y);
+}
+
+void
+Kutle::hesaplaY()
+{
+    int y=0;
+
+    y = getY() + sin(15*(22/7.0)/180)*(getX()-275);
+    logger->log("Sonuc %d",getX());
+//    y = getY() + sin(15*(22/7.0)/180)*34;
+    setY(y);
 }
 
 void
@@ -171,3 +185,14 @@ Kutle::setAgirlik(int agirlik)
     mAgirlik = agirlik;
 }
 
+void
+Kutle::setResimIndex(int index)
+{
+    resimIndex = index;
+}
+
+int
+Kutle::getResimIndex()
+{
+    return resimIndex;
+}

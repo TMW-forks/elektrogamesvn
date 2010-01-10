@@ -24,10 +24,14 @@ class Kutle : public gcn::Window, public gcn::ActionListener
         void setSelected (bool durum);
         void setAgirlik(int agirlik);
         void setID(int id);
+        void setResimIndex(int index);
+        void hesaplaY2();
+        void hesaplaY();
 
         int getID();
         bool getSelected ();
         int getAgirlik();
+        int getResimIndex();
 
         void mousePressed(gcn::MouseEvent &event);
         void mouseDragged(gcn::MouseEvent &event);
@@ -39,6 +43,7 @@ class Kutle : public gcn::Window, public gcn::ActionListener
         int mID;
         bool mSelected;
         int mAgirlik;
+        int resimIndex;
 };
 
 #endif // KUTLE_H

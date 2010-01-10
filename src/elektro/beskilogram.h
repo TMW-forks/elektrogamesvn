@@ -12,6 +12,8 @@ class BesKiloGram : public Kutle
         BesKiloGram(gcn::ActionListener *listener);
         virtual ~BesKiloGram();
         void draw(gcn::Graphics *graphics);
+        void logic();
+
     protected:
     private:
 };

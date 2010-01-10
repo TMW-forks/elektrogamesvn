@@ -1,5 +1,6 @@
 #include <cstdlib>
 #include <ctime>
+#include <sstream>
 
 #include "similasyonpenceresi.h"
 #include "elektrowidget.h"
@@ -21,18 +22,31 @@ SimilasyonPenceresi::SimilasyonPenceresi():
     setVisible(false);
     pencereDurum= false;
     startCancelDurum = true;
-    toplam = 0;
+    setKontrolEtDurum(false);
 
     mCancel = new Button("İptal","Sim_Cancel",this);
     mClose = new Button("Kapat","Sim_Close",this);
     mStart = new Button("Başla","Sim_Start",this);
     mControl = new Button("Kontrol Et","Sim_Control",this);
+    mKaldirac = new Kaldirac(this);
+
+
+    mCevap = new BrowserBox();
+    mCevap->setX(10);
+    mCevap->setY(300);
+    mCevap->setOpaque(false);
+    mCevap->setVisible(true);
+
+//    mKaldirac->setX(150);
+//    mKaldirac->setY(450);
 
     nesneleriAyarla();
     add(mCancel);
     add(mStart);
     add(mClose);
     add(mControl);
+    add(mKaldirac);
+    add(mCevap);
 }
 
 SimilasyonPenceresi::~SimilasyonPenceresi()
@@ -41,6 +55,7 @@ SimilasyonPenceresi::~SimilasyonPenceresi()
     delete mClose;
     delete mStart;
     delete mControl;
+    delete mKaldirac;
 }
 
 void
@@ -86,15 +101,14 @@ SimilasyonPenceresi::draw(gcn::Graphics *graphics)
     Window::draw(graphics);
 
     for (miAnim = mvAnim.begin();miAnim != mvAnim.end();++miAnim)
-    {
-
+     {
         if (miAnim->visible)
         {
             Image *mImage1 = miAnim->anim->getCurrentImage();
             g->drawImage(mImage1,miAnim->x,miAnim->y);
             miAnim->anim->update(miAnim->v);
         }
-    }
+     }
 
     drawChildren(graphics);
 }
@@ -104,6 +118,8 @@ SimilasyonPenceresi::parseXML(std::string mDoc)
 {
     mxmlDoc = xmlParseMemory(mDoc.c_str(), mDoc.size());
     rootNode = xmlDocGetRootElement(mxmlDoc);
+    elektroWidget->padX = 0;
+    elektroWidget->padY = 0;
     if (mDoc=="") return;
 //    logger->log("%s",mDoc.c_str());
 
@@ -199,47 +215,14 @@ SimilasyonPenceresi::parseXML(std::string mDoc)
         }
         else if (xmlStrEqual(node->name, BAD_CAST "nesne"))
         {
-            Kaldirac *nesne;
-            int x = XML::getProperty(node, "x", 50);
-            int y = XML::getProperty(node, "y", 50);
-            int w = XML::getProperty(node, "width", 50);
-            int h = XML::getProperty(node, "height", 50);
-//
             kefe1=XML::getProperty(node, "kefe1", 0);
             kefe2=XML::getProperty(node, "kefe2", 0);
             kefe3=XML::getProperty(node, "kefe3", 0);
-
-            nesne = new Kaldirac(this);
-            nesne->setX(x);
-            nesne->setY(y);
-            nesne->setWidth(w-150);
-            nesne->setHeight(h+150);
-            nesne->setVisible(true);
-            mvKaldirac.push_back(nesne);
-            add(nesne);
         }
         else if (xmlStrEqual(node->name, BAD_CAST "simpleanim"))
         {
-//            ResourceManager *resman = ResourceManager::getInstance();
-//            SmAnim temp;
-//            ImageSet *mImageSet = resman->getImageSet(XML::getProperty(node, "src",""),
-//                                            XML::getProperty(node, "width", 0),
-//                                            XML::getProperty(node, "height", 0));
-//
-//            Animation *mAnimation = new Animation();
-//
-//            for (unsigned int i = 0; i < mImageSet->size(); ++i)
-//            {
-//                mAnimation->addFrame(mImageSet->get(i), 75, 0, 0);
-//            }
-//            temp.anim = new SimpleAnimation(mAnimation);
-//            temp.x   =  XML::getProperty(node, "x", 0)+padX;
-//            temp.y   =  XML::getProperty(node, "y", 0)+padY;
-//            temp.v   =  XML::getProperty(node, "v", 0);
-//            temp.visible = true;
             SmAnim temp = elektroWidget->addAnim(node);
             temp.visible = true;
-            //logger->log("simple anim");
             mvAnim.push_back(temp);
         }
     }
@@ -283,20 +266,20 @@ SimilasyonPenceresi::clearComponent()
     miKutle = mvKutle.begin();
     miKaldirac = mvKaldirac.begin();
 
+
     while(miKutle!=mvKutle.end())
     {
         delete (*miKutle);
         miKutle = mvKutle.erase(miKutle);
     }
 
-    while(miKaldirac!=mvKaldirac.end())
-    {
-        delete (*miKaldirac);
-        miKaldirac = mvKaldirac.erase(miKaldirac);
-    }
+//    while(miKaldirac!=mvKaldirac.end())
+//    {
+//        delete (*miKaldirac);
+//        miKaldirac = mvKaldirac.erase(miKaldirac);
+//    }
 
     mvAnim.clear();
-
     delete mSoru;
     delete mSoruArea;
 }
@@ -336,17 +319,48 @@ SimilasyonPenceresi::nesneyiAl(Item *it)
 void
 SimilasyonPenceresi::kontrolEt()
 {
-    toplam =0;
+    std::stringstream tut;
+    std::string strTut;
+    int toplam =0;
+    int sonuc=150;
+    mCevap->clearRows();
+    HareketYonu yon;
+
     for (idKefeIt = idKefe.begin();idKefeIt!=idKefe.end();idKefeIt++)
     {
         if ((*idKefeIt).second[0] != 0)
             toplam += (*idKefeIt).second[0] * (*idKefeIt).second[1];
 
-            logger->log("Kefe:%d",(*idKefeIt).second[0]);
-            logger->log("Agirlik:%d",(*idKefeIt).second[1]);
+        logger->log("Kefe 1:%d",(*idKefeIt).second[0]);
+        logger->log("Kefe 1:%d",(*idKefeIt).second[1]);
+
+        tut.clear();
+        tut<<(*idKefeIt).second[0];
+        tut>>strTut;
+        mCevap->addRow(strTut);
+
+        tut.clear();
+        tut<<(*idKefeIt).second[1];
+        tut>>strTut;
+        mCevap->addRow(strTut);
     }
 
-    logger->log("Toplam:%d",toplam);
+    if (toplam > sonuc)
+        yon = UP;
+    else if (toplam<sonuc)
+        yon = DOWN;
+    else
+        yon = SABIT;
+
+    mKaldirac->setHareketYonu(yon);
+    logger->log("Kaldiraç:%d",mKaldirac->getX());
+    logger->log("Kaldiraç genişlik:%d",mKaldirac->getWidth());
+
+    tut.clear();
+    tut<<toplam;
+    tut>>strTut;
+    mCevap->addRow(strTut);
+    setKontrolEtDurum(true);
 }
 
 int
@@ -365,4 +379,16 @@ SimilasyonPenceresi::findEmptyID()
     }
 
     return yeniID;
+}
+
+bool
+SimilasyonPenceresi::getKontrolEtDurum()
+{
+    return kontrolEtDurum;
+}
+
+void
+SimilasyonPenceresi::setKontrolEtDurum(bool durum)
+{
+    kontrolEtDurum = durum;
 }

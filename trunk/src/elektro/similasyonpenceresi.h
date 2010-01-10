@@ -7,6 +7,7 @@
 #include <guichan/widgets/label.hpp>
 #include <libxml/xmlwriter.h>
 #include <vector>
+#include <map>
 
 
 
@@ -38,8 +39,7 @@
 #include "simpleanimation.h"
 #include "kaldirac.h"
 #include "item.h"
-#include <map>
-
+#include "log.h"
 
 
 class SimilasyonPenceresi : public Window, public gcn::ActionListener
@@ -52,30 +52,36 @@ class SimilasyonPenceresi : public Window, public gcn::ActionListener
         void nesneleriAyarla();
         void nesneyiAl(Item *it);
         void parseXML(std::string mDoc);
-        bool getPencereDurum();
         void clearComponent();
         void kontrolEt();
         int findEmptyID();
+        bool getPencereDurum();
+        bool getKontrolEtDurum();
+        void setKontrolEtDurum(bool durum);
+
 
         int kefe1,kefe2,kefe3;
         std::map<int,std::vector<int> > idKefe;
         std::map<int,std::vector<int> >::iterator idKefeIt;
+        std::vector<Kutle*> mvKutle;
+        std::vector<Kutle*>::iterator miKutle;
     protected:
     private:
         bool startCancelDurum;
-        int toplam;
+        bool kontrolEtDurum;
 
         Button *mCancel;
         Button *mClose;
         Button *mStart;
         Button *mControl;
 
+        BrowserBox *mCevap;
         BrowserBox *mSoru;
         ScrollArea *mSoruArea;
-        Kutle *nesne;
 
-        std::vector<Kutle*> mvKutle;
-        std::vector<Kutle*>::iterator miKutle;
+        Kutle *nesne;
+        Kaldirac *mKaldirac;
+
         std::vector<Kaldirac*> mvKaldirac;
         std::vector<Kaldirac*>::iterator miKaldirac;
 

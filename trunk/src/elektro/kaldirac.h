@@ -12,6 +12,12 @@
 #include "../resources/resourcemanager.h"
 #include "../resources/imageset.h"
 
+enum HareketYonu
+{
+    SABIT,
+    UP,
+    DOWN
+};
 
 class Kaldirac : public gcn::Window, public gcn::ActionListener
 {
@@ -20,10 +26,21 @@ class Kaldirac : public gcn::Window, public gcn::ActionListener
         virtual ~Kaldirac();
         void action(const gcn::ActionEvent &event);
         void draw(gcn::Graphics *graphics);
+        void logic();
+        SimpleAnimation *mSelectedAnime;
+        HareketYonu getHareketYonu();
+        void setHareketYonu(HareketYonu yon);
+
     protected:
+
     private:
         gcn::ActionListener *mListener;
         Image *resim;
+        ImageSet *mKaldiracImages;
+        Animation *mKaldiracAnime;
+        int sayac,resimIndex;
+        HareketYonu hareketYonu;
+
 };
 
 #endif // KALDIRAC_H

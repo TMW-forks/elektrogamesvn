@@ -99,7 +99,7 @@ StatusWindow::StatusWindow():
                    (windowContainer->getHeight() - 255) / 2, 365, 275);
 
     // ----------------------
-    // Status Part
+    // Status PartmaYA
     // ----------------------
 
     mLvlLabel = new Label(strprintf(_("Level: %d"), 0));
@@ -448,6 +448,7 @@ AttrDisplay::AttrDisplay(int id, const std::string &name):
 }
 
 std::string AttrDisplay::update()
+
 {
     int base = player_node->getAttributeBase(mId);
     int bonus = player_node->getAttributeEffective(mId) - base;

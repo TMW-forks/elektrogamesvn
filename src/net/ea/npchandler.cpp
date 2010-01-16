@@ -52,9 +52,9 @@
 
 //NPC id:
 //100-149 test
-//150-199 açýklama yapanlar
-//200-249 güzel söz vs
-//250-299 öðretenler
+//150-199 aÃ§Ä±klama yapanlar
+//200-249 gÃ¼zel sÃ¶z vs
+//250-299 Ã¶ÄŸretenler
 //300-349 makinalar
 
 Net::NpcHandler *npcHandler;
@@ -165,8 +165,8 @@ void NpcHandler::handleMessage(MessageIn &msg)
                 {
                     if(temp == "</similasyon>")
                     {
-                        //Serverdaki npc nin xml dosyasýndan gelen veri
-                        //similasyon nesnesine gönderiliyor
+                        //Serverdaki npc nin xml dosyasÃ½ndan gelen veri
+                        //similasyon nesnesine gÃ¶nderiliyor
                         similasyonPenceresi->parseXML(npcText.str());
                         similasyonPenceresi->setVisible(true);
                         npcText.str("");

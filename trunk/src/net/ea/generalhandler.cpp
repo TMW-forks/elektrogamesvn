@@ -216,9 +216,9 @@ void GeneralHandler::guiWindowsLoaded()
     statusWindow->addAttribute(DEF, _("Defense"), false);
     statusWindow->addAttribute(MATK, _("M.Attack"), false);
     statusWindow->addAttribute(MDEF, _("M.Defense"), false);
-    statusWindow->addAttribute(HIT, _("% Accuracy"), false);
-    statusWindow->addAttribute(FLEE, _("% Evade"), false);
-    statusWindow->addAttribute(CRIT, _("% Critical"), false);
+    statusWindow->addAttribute(HIT, _("% isabet"), false);
+    statusWindow->addAttribute(FLEE, _("% kacma"), false);
+    statusWindow->addAttribute(CRIT, _("% Kritik"), false);
 }
 
 void GeneralHandler::guiWindowsUnloaded()

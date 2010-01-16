@@ -58,8 +58,8 @@ WindowMenu::WindowMenu():
         N_("Status"),
         N_("Equipment"),
         N_("Inventory"),
-        N_("Skills"),
-        N_("Specials"),
+ //       N_("Skills"),
+ //       N_("Specials"),
 #ifdef TMWSERV_SUPPORT
         N_("Guilds"),
         N_("Buddies"),

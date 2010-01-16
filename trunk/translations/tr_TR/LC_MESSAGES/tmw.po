@@ -1,0 +1,4705 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: elektroGame1.0Beta\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-01-02 12:06+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: Elektro <elektragame@hotmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Turkish\n"
+"X-Poedit-Country: TURKEY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Basepath: C:\\Documents and Settings\\ElektroGame\\Belgelerim\\elektrogamesvn\\src\n"
+"X-Poedit-SearchPath-0: C:\\Documents and Settings\\ElektroGame\\Belgelerim\\elektrogamesvn\\src\n"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:122
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:297
+msgid "Unknown command."
+msgstr "Bilinmeyen komut."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:151
+msgid "-- Help --"
+msgstr "-- Yardım --"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:152
+msgid "/help > Display this help"
+msgstr "Bu yardımı göster"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:154
+msgid "/where > Display map name"
+msgstr "Harita ismini göster"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:155
+msgid "/who > Display number of online users"
+msgstr "Çevrimiçi oyuncu sayısını göster"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:156
+msgid "/me > Tell something about yourself"
+msgstr "Hakkında birşeyler söyle"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:158
+msgid "/clear > Clears this window"
+msgstr "Pencereyi temizler"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:160
+msgid "/msg > Send a private message to a user"
+msgstr "Oyuncuya özel ileti gönderir"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:161
+msgid "/whisper > Alias of msg"
+msgstr "/whisper > İleti kısayolu"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:162
+msgid "/w > Alias of msg"
+msgstr "İleti kısayolu"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:163
+msgid "/query > Makes a tab for private messages with another user"
+msgstr "Özel ileti sekmesi açar"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:164
+msgid "/q > Alias of query"
+msgstr "Özel ileti sekmesi kısayolu"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:166
+msgid "/ignore > ignore a player"
+msgstr "Oyuncuyu engelle"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:167
+msgid "/unignore > stop ignoring a player"
+msgstr "Oyuncuyu engellemeyi kaldır"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:169
+msgid "/list > Display all public channels"
+msgstr "Tüm açık kanalları göster"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:170
+msgid "/join > Join or create a channel"
+msgstr "Bir kanal oluştur yada katıl"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:172
+msgid "/party > Invite a user to party"
+msgstr "Oyuncuyu partiye davet et"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:174
+msgid "/record > Start recording the chat to an external file"
+msgstr "Sohbeti bir dosyaya kaydet"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:175
+msgid "/toggle > Determine whether <return> toggles the chat log"
+msgstr "/toggle > ???"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:176
+msgid "/present > Get list of players present (sent to chat log, if logging)"
+msgstr "/present > Tüm oyuncuların zaman listesini verir."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:178
+msgid "/announce > Global announcement (GM only)"
+msgstr "Evrensel duyuru"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:182
+msgid "For more information, type /help <command>."
+msgstr "Daha fazla bilgi için, /help yazınız..."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:186
+msgid "Command: /help"
+msgstr "Komut: /help"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:187
+msgid "This command displays a list of all commands available."
+msgstr "Bu komut kullanılabilir tüm komutları gösterir"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:188
+msgid "Command: /help <command>"
+msgstr "Komut: /help <komut>"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:189
+msgid "This command displays help on <command>."
+msgstr "<> işaretleri arasına yazılan komut hakkında bilgi verir."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:197
+msgid "Command: /announce <msg>"
+msgstr "Komut: /announce <ileti>"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:198
+msgid "*** only available to a GM ***"
+msgstr "*** Evrensel duyurular için geçerli ***"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:199
+msgid "This command sends the message <msg> to all players currently online."
+msgstr "Bu komut o anda çevrimiçi olan tüm oyunculara ileti gönderir."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:204
+msgid "Command: /clear"
+msgstr "Komut: /clear"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:205
+msgid "This command clears the chat log of previous chat."
+msgstr "Bu komutla bir önceki sohbet kaydı temizlenir."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:209
+msgid "Command: /ignore <player>"
+msgstr "Komut: /ignore <oyuncu>"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:210
+msgid "This command ignores the given player regardless of current relations."
+msgstr "Bu komutla belirtilen oyunucuyu engeller"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:215
+msgid "Command: /join <channel>"
+msgstr "Komut: /join <kanal>"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:216
+msgid "This command makes you enter <channel>."
+msgstr "Bu komutla belirtilen kanala katılınır."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:217
+msgid "If <channel> doesn't exist, it's created."
+msgstr "Eğer <kanal> kanal yoksa oluşturulur."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:221
+msgid "Command: /list"
+msgstr "Komut: /list"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:222
+msgid "This command shows a list of all channels."
+msgstr "Bu komutla tüm "
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:226
+msgid "Command: /me <message>"
+msgstr "Komut: /me <ileti>"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:227
+msgid "This command tell others you are (doing) <msg>."
+msgstr "Bu komutla belirttiğiniz ileti diğer oyunculara ne yaptığınızı gösterir"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:231
+msgid "Command: /msg <nick> <message>"
+msgstr "Komut: /msg <oyuncu> <ileti>"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:232
+msgid "Command: /whisper <nick> <message>"
+msgstr "Komut: /whisper <oyuncu> <ileti>"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:233
+msgid "Command: /w <nick> <message>"
+msgstr "Komut: /w <oyuncu> <ileti>"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:234
+msgid "This command sends the text <message> to <nick>."
+msgstr "Bu komutla belirtilen oyuncuya yazılan ileti gönderilir."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:235
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:249
+msgid "If the <nick> has spaces in it, enclose it in double quotes (\")."
+msgstr "Eğer <oyuncu> boşluk karakteri içeriyorsa onu (\") biçimine çevirir."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:240
+msgid "Command: /query <nick>"
+msgstr "Komut: /query <oyuncu>"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:241
+msgid "Command: /q <nick>"
+msgstr "Komut: /q <oyuncu>"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:242
+msgid "This command tries to make a tab for whispers betweenyou and <nick>."
+msgstr "Bu komutla <oyuncu> ile senin aranda  sohbet edebileceğin yeni bir sekme oluşur."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:247
+msgid "Command: /party <nick>"
+msgstr "Komut: /party <oyuncu>"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:248
+msgid "This command invites <nick> to party with you."
+msgstr "Bu komutla <oyuncu> seninle partiye davet edilir. "
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:254
+msgid "Command: /present"
+msgstr "Komut: /present"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:255
+msgid "This command gets a list of players within hearing and sends it to either the record log if recording, or the chat log otherwise."
+msgstr "Bu komutla oyuncu listesi alınır."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:261
+msgid "Command: /record <filename>"
+msgstr "Komut: /record <dosya adı>"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:262
+msgid "This command starts recording the chat log to the file <filename>."
+msgstr "Bu komutla birlikte belirtilen dosyaya sohbet kaydı tutulur."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:264
+msgid "Command: /record"
+msgstr "Komut: /record"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:265
+msgid "This command finishes a recording session."
+msgstr "Bu komut kayıt oturumunu sonlandırır."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:269
+msgid "Command: /toggle <state>"
+msgstr "Komut: /toggle <durum>"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:270
+msgid "This command sets whether the return key should toggle the chat log, or whether the chat log turns off automatically."
+msgstr "Bu komut sohbet kaydını açar yada kapatır. --"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:272
+msgid "<state> can be one of \"1\", \"yes\", \"true\" to turn the toggle on, or \"0\", \"no\", \"false\" to turn the toggle off."
+msgstr "dxf"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:275
+msgid "Command: /toggle"
+msgstr "Komut: /toggle"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:276
+msgid "This command displays the return toggle status."
+msgstr "Bu komut sohbet penceresini açıp kapatmayı gösterir. --"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:280
+msgid "Command: /unignore <player>"
+msgstr "Komut: /unignore <oyuncu>"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:281
+msgid "This command stops ignoring the given player if they are being ignored"
+msgstr "Bu komutla birlikte engellenmiş oyuncunun engeli kaldırılır."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:286
+msgid "Command: /where"
+msgstr "Komut: /where"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:287
+msgid "This command displays the name of the current map."
+msgstr "Bu komut bulunulan haritanın adını gösterir."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:291
+msgid "Command: /who"
+msgstr "Komut: /who"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:292
+msgid "This command displays the number of players currently online."
+msgstr "Bu komutla o anki aktif olan oyuncuların sayısı gösterilir."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:298
+msgid "Type /help for a list of commands."
+msgstr "Komut listesi için /help yazınız."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:364
+msgid "Cannot send empty whispers!"
+msgstr "Boş kişisel ileti gönderilemedi!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:372
+#, c-format
+msgid "Cannot create a whisper tab for nick \"%s\"! It either already exists, or is you."
+msgstr "Kişisel ileti sekmesi %s için oluşturulamadı. Oluşturmaya çalıştığınız sekme ya var yada size ait."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:386
+#, c-format
+msgid "Requesting to join channel %s."
+msgstr "%s kanalına giriş isteği alınıyor."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:400
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:448
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:470
+msgid "Please specify a name."
+msgstr "Lütfen bir ad iletin."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:418
+msgid "Return toggles chat."
+msgstr "Giriş(Enter) sohbeti açar kapatır."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:418
+msgid "Message closes chat."
+msgstr "İleti sohbeti kapatır."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:427
+msgid "Return now toggles chat."
+msgstr "Giriş(Enter) şimdi sohbeti açar kapatır."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:431
+msgid "Message now closes chat."
+msgstr "İleti şimdi sohbeti kapatır."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:454
+msgid "Player already ignored!"
+msgstr "Oyuncu zaten engellenmiş!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:461
+msgid "Player successfully ignored!"
+msgstr "Oyuncu başarıyla engellendi!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:463
+msgid "Player could not be ignored!"
+msgstr "Oyuncu engellenemedi!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:478
+msgid "Player wasn't ignored!"
+msgstr "Oyuncu engellenmemiş!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:483
+msgid "Player no longer ignored!"
+msgstr "Oyuncu artık engelli değil!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.cpp:485
+msgid "Player could not be unignored!"
+msgstr "Oyuncu engeli kaldırılamadı!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/engine.cpp:88
+msgid "Could Not Load Map"
+msgstr "Harita Yüklenemiyor"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/engine.cpp:89
+#, c-format
+msgid "Error while loading %s"
+msgstr "%s yüklenirken hata"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/game.cpp:274
+msgid "General"
+msgstr "Genel"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/game.cpp:454
+msgid "Screenshot saved to ~/"
+msgstr "Ekran görüntüsü kaydedildi : ~/"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/game.cpp:459
+msgid "Saving screenshot failed!"
+msgstr "Ekran görüntüsü kaydedilirken hata oluştu!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/game.cpp:535
+msgid "The connection to the server was lost, the program will now quit"
+msgstr "Sunucu ile bağlantı koptu, oyun kapatılacak"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/game.cpp:541
+msgid "Network Error"
+msgstr "Ağ iletişim hatası"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/game.cpp:780
+msgid "Quit"
+msgstr "Kapat"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/game.cpp:781
+msgid "Are you sure you want to quit?"
+msgstr "Oyunu kapatmak istediğinize emin misiniz?"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/game.cpp:788
+msgid "no"
+msgstr "hayır"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/game.cpp:934
+msgid "Ignoring incoming trade requests"
+msgstr "Alışveriş istekleri reddediliyor"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/game.cpp:941
+msgid "Accepting incoming trade requests"
+msgstr "Alışveriş istekleri kabul ediliyor"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:41
+msgid "Move Up"
+msgstr "Yukarı hareket"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:42
+msgid "Move Down"
+msgstr "Aşağı hareket"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:43
+msgid "Move Left"
+msgstr "Sola hareket"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:44
+msgid "Move Right"
+msgstr "Sağa Hareket"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:45
+msgid "Attack"
+msgstr "Atak"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:46
+msgid "Target & Attack"
+msgstr "Hedef & Atak"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:47
+msgid "Smilie"
+msgstr "Güleryüz"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:48
+msgid "Talk"
+msgstr "Konuş"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:49
+msgid "Stop Attack"
+msgstr "Atak Durdur"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:50
+msgid "Target Closest"
+msgstr "En Yakın Hedef"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:51
+msgid "Target NPC"
+msgstr "Hedef Üstat"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:52
+msgid "Target Player"
+msgstr "Hedef Oyuncu"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:53
+msgid "Pickup"
+msgstr "Yerden Al"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:54
+msgid "Hide Windows"
+msgstr "Pencereleri Gizle"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:55
+msgid "Sit"
+msgstr "Otur"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:56
+msgid "Screenshot"
+msgstr "Ekran Görüntüsü"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:57
+msgid "Enable/Disable Trading"
+msgstr "Alışverişi Aktif/Pasif Yap"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:58
+msgid "Find Path to Mouse"
+msgstr "Fareye Yolu Göster"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:59
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:60
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:61
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:62
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:63
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:64
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:65
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:66
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:67
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:68
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:69
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:70
+#, c-format
+msgid "Item Shortcut %d"
+msgstr "Nesne Kısayolu %d"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:71
+msgid "Help Window"
+msgstr "Yardım Penceresi"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:72
+msgid "Status Window"
+msgstr "Durum Penceresi"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:73
+msgid "Inventory Window"
+msgstr "Heybe Penceresi"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:74
+msgid "Equipment Window"
+msgstr "Üzerindekiler Penceresi"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:75
+msgid "Skill Window"
+msgstr "Beceri Penceresi"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:76
+msgid "Minimap Window"
+msgstr "Mini Harita Penceresi"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:77
+msgid "Chat Window"
+msgstr "Sohbet Penceresi"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:78
+msgid "Item Shortcut Window"
+msgstr "Nesne Kısayol Penceresi"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:79
+msgid "Setup Window"
+msgstr "Ayar Penceresi"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:80
+msgid "Debug Window"
+msgstr "Hata Ayıklama Penceresi"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:81
+msgid "Party Window"
+msgstr "Parti Penceresi"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:82
+msgid "Emote Shortcut Window"
+msgstr "Güleryüz Kısayol Penceresi"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:83
+msgid "Outfits Window"
+msgstr "Kıyafet Penceresi"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:84
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:85
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:86
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:87
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:88
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:89
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:90
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:91
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:92
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:93
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:94
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:95
+#, c-format
+msgid "Emote Shortcut %d"
+msgstr "Güleryüz Kısayolu %d"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:96
+msgid "Toggle Chat"
+msgstr "Sohbet Aç/Kapat"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:97
+msgid "Scroll Chat Up"
+msgstr "Sohbeti Yukarı Kaydır"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:98
+msgid "Scroll Chat Down"
+msgstr "Sohbeti Aşağı Kaydır"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:99
+msgid "Previous Chat Tab"
+msgstr "Önceki Sohbet Sekmesi"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:100
+msgid "Next Chat Tab"
+msgstr "Sonraki Sohbet Sekmesi"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:101
+msgid "Select OK"
+msgstr "Seç Tamam"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:103
+msgid "Ignore input 1"
+msgstr "1. girişi yoksay"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:104
+msgid "Ignore input 2"
+msgstr "2. girişi yoksay"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:105
+msgid "Görev Penceresi"
+msgstr "Görev Penceresi"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/keyboardconfig.cpp:106
+msgid "Instant Help"
+msgstr "Anlık Yardım"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/localplayer.cpp:936
+msgid "Unable to pick up item."
+msgstr "Nesneyi alamadınız."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:260
+#, c-format
+msgid "Invalid update host: %s"
+msgstr "Geçersiz güncelleme sunucusu: %s"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:293
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:299
+msgid "Error creating updates directory!"
+msgstr "Güncelleme klasörleri oluşturulurken hata oluştu!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:335
+#, c-format
+msgid "%s doesn't exist and can't be created! Exiting."
+msgstr "%s yok ve oluşturulamıyor! Çıkış yapılıyor."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:565
+msgid "tmw"
+msgstr "elektrogame"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:566
+msgid "Options:"
+msgstr "Ayarlar:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:567
+msgid "  -C --config-file : Configuration file to use"
+msgstr "  -C --ayar-dosya : Ayar kayıtları için kullanılacak dosya"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:568
+msgid "  -d --data        : Directory to load game data from"
+msgstr "  -d --veriyolu        : Oyun verilerinin alınacağı klasör"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:569
+msgid "  -D --default     : Choose default character server and character"
+msgstr "  -D --varsayılan     : Varsayılan karakter sunucuyu ve karakteri seçin"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:571
+msgid "  -h --help        : Display this help"
+msgstr "  -h --yardim        : Bu yardımı göster"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:572
+msgid "  -S --home-dir    : Directory to use as home directory"
+msgstr "  -S --ana-dizin    : Ana dizin olarak kullan"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:573
+msgid "  -H --update-host : Use this update host"
+msgstr "  -H --guncelle-sunucu : Güncelleme sunucusu olarak kullan"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:574
+msgid "  -P --password    : Login with this password"
+msgstr "  -P --şifre    : Bu şifre ile giriş yap"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:575
+msgid "  -c --character   : Login with this character"
+msgstr "  -c --karakter   : Bu karakter ile giriş yap"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:576
+msgid "  -p --port        : Login server port"
+msgstr "  -p --port        : Sunucu giriş portu"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:577
+msgid "  -s --server      : Login server name or IP"
+msgstr "  -s --sunucu      : Giriş sunucusu veya ip adresi"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:578
+msgid "  -u --skip-update : Skip the update downloads"
+msgstr "  -u --guncelleme-yoksay : Güncellemeleri indirmez"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:579
+msgid "  -U --username    : Login with this username"
+msgstr "  -U --kullaniciadi    : Bu kullanıcı adıyla giriş yap"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:581
+msgid "  -O --no-opengl   : Disable OpenGL for this session"
+msgstr "  -O --no-opengl   : Bu oturum için OpenGL yi kullanma."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:583
+msgid "  -v --version     : Display the version"
+msgstr "  -v --version     : Oyun sürümünü gösterir"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:930
+msgid "Setup"
+msgstr "Ayarlar"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:1163
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:1265
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:1273
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:1573
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:1624
+msgid "Error"
+msgstr "Hata"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:1221
+msgid "Email Address Change"
+msgstr "E-posta Adresi Değiştirme"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:1222
+msgid "Email address changed successfully!"
+msgstr "E-posta adresi başarıyla değiştirilmiştir!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:1238
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:1614
+msgid "Password Change"
+msgstr "Şifre Değiştirme"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:1239
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:1615
+msgid "Password changed successfully!"
+msgstr "Şifre başarıyla değiştirildi!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:1255
+msgid "Unregister Successful"
+msgstr "Kayıt başarıyla geri alındı!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:1256
+msgid "Farewell, come back any time..."
+msgstr "Elveda, ileriki bir zamanda görüşmek üzere..."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:1584
+msgid "Connecting to map server..."
+msgstr "Harita sunucuya bağlanılıyor..."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:1592
+msgid "Connecting to character server..."
+msgstr "Karakter sunucuya bağlanılıyor..."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/main.cpp:1600
+msgid "Connecting to account server..."
+msgstr "Hesap sunucuya bağlanılıyor..."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/playerrelations.cpp:296
+msgid "Completely ignore"
+msgstr "Tamamen engelle"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/playerrelations.cpp:310
+msgid "Print '...'"
+msgstr "Yazdır '...'"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/playerrelations.cpp:326
+msgid "Blink name"
+msgstr "Görünmez ad"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/playerrelations.cpp:363
+msgid "Floating '...' bubble"
+msgstr "Baloncuk"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/playerrelations.cpp:366
+msgid "Floating bubble"
+msgstr "Baloncuk"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/elektro/hitabe.cpp:61
+msgid "close"
+msgstr "kapat"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/elektro/kutle.cpp:17
+msgid "Kütle"
+msgstr "Kütle"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/elektro/similasyonpenceresi.cpp:16
+msgid "Simulasyon"
+msgstr "Benzetişim"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/elektro/slaytwindow.cpp:11
+msgid "Slayt"
+msgstr "Sunu"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/elektro/testwindow.cpp:46
+msgid "Soran Üstat"
+msgstr "Soran Üstat"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/buddywindow.cpp:35
+msgid "Buddy"
+msgstr "Arkadaş"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/buddywindow.cpp:38
+msgid "Buddy List"
+msgstr "Arkadaş Listesi"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/buy.cpp:47
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/buy.cpp:76
+msgid "Buy"
+msgstr "Satın Al"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/buy.cpp:67
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/buy.cpp:262
+#, c-format
+msgid "Price: %s / Total: %s"
+msgstr "Fiyat: %s Toplam: %s"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/buy.cpp:72
+msgid "+"
+msgstr "+"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/buy.cpp:75
+msgid "-"
+msgstr "-"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/buy.cpp:78
+msgid "Max"
+msgstr "En Yüksek"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/buy.cpp:79
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/buy.cpp:229
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/buy.cpp:247
+#, c-format
+msgid "Description: %s"
+msgstr "Açıklama: %s"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/buy.cpp:80
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/buy.cpp:231
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/buy.cpp:248
+#, c-format
+msgid "Effect: %s"
+msgstr "Etki: %s"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/buysell.cpp:35
+msgid "Shop"
+msgstr "Dükkan"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/changeemaildialog.cpp:43
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/changeemaildialog.cpp:52
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:129
+msgid "Change Email Address"
+msgstr "Eposta Adresini Değiştir"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/changeemaildialog.cpp:47
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/changepassworddialog.cpp:51
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:121
+#, c-format
+msgid "Account: %s"
+msgstr "Hesap: %s"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/changeemaildialog.cpp:49
+msgid "Type new email address twice:"
+msgstr "E-posta adresini iki defa giriniz:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/changeemaildialog.cpp:53
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/changepassworddialog.cpp:57
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charcreatedialog.cpp:91
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:118
+msgid "Cancel"
+msgstr "İptal"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/changeemaildialog.cpp:123
+#, c-format
+msgid "The new email address needs to be at least %d characters long."
+msgstr "Yeni e-posta adresinin uzunluğu en az %d karakter olmalı."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/changeemaildialog.cpp:131
+#, c-format
+msgid "The new email address needs to be less than %d characters long."
+msgstr "Yeni e-posta adresinin uzunluğu en fazla %d karakter olmalı."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/changeemaildialog.cpp:139
+msgid "The email address entries mismatch."
+msgstr "Girilen e-posta adresleri birbiriyle eşleşmiyor."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/changepassworddialog.cpp:46
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/changepassworddialog.cpp:55
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:124
+msgid "Change Password"
+msgstr "Şifre Değiştir"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/changepassworddialog.cpp:60
+msgid "Password:"
+msgstr "Şifre:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/changepassworddialog.cpp:62
+msgid "Type new password twice:"
+msgstr "İkinci defa şifre:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/changepassworddialog.cpp:106
+msgid "Enter the old password first."
+msgstr "Önceki şifrenizi giriniz."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/changepassworddialog.cpp:112
+#, c-format
+msgid "The new password needs to be at least %d characters long."
+msgstr "Yeni şifrenin uzunluğu en az %d karakter olmalı."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/changepassworddialog.cpp:119
+#, c-format
+msgid "The new password needs to be less than %d characters long."
+msgstr "Yeni şifrenin uzunluğu en fazla %d karakter olmalı."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/changepassworddialog.cpp:127
+msgid "The new password entries mismatch."
+msgstr "Yeni şifre girişleri birbiriyle uyuşmuyor."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charcreatedialog.cpp:56
+msgid "Create Character"
+msgstr "Karakter Oluştur"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charcreatedialog.cpp:65
+msgid "-=KARAKTER OLUŞTUR=-"
+msgstr "-=KARAKTER OLUŞTUR=-"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charcreatedialog.cpp:79
+msgid "Name:"
+msgstr "Ad:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charcreatedialog.cpp:82
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charcreatedialog.cpp:87
+msgid ">"
+msgstr ">"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charcreatedialog.cpp:85
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charcreatedialog.cpp:88
+msgid "<"
+msgstr "<"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charcreatedialog.cpp:86
+msgid "Hair color:"
+msgstr "Saç Rengi:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charcreatedialog.cpp:89
+msgid "Hair style:"
+msgstr "Saç Tarzı:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charcreatedialog.cpp:90
+msgid "Create"
+msgstr "Oluştur"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charcreatedialog.cpp:92
+msgid "Male"
+msgstr "Bay"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charcreatedialog.cpp:93
+msgid "Female"
+msgstr "Bayan"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charcreatedialog.cpp:111
+#, c-format
+msgid "Please distribute %d points"
+msgstr "Lütfen %d puanlarını düzenle."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charcreatedialog.cpp:201
+msgid "Your name needs to be at least 4 characters."
+msgstr "Adınız en az 4 karakterden oluşmalıdır."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:81
+msgid "Confirm Character Delete"
+msgstr "Karakter Silmeyi Onaylayın"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:82
+msgid "Are you sure you want to delete this character?"
+msgstr "Bu karakteri silmek istediğinize emin misiniz?"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:99
+msgid "Account and Character Management"
+msgstr "Hesap ve Karakter Yönetimi"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:110
+msgid "-=KARAKTER SEÇ=-"
+msgstr "-=KARAKTER SEÇ=-"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:117
+msgid "OK"
+msgstr "Tamam"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:119
+msgid "Previous"
+msgstr "Önceki"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:120
+msgid "Next"
+msgstr "Sonraki"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:122
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:131
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:311
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:332
+#, c-format
+msgid "Name: %s"
+msgstr "Ad: %s"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:123
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:132
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:313
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:333
+#, c-format
+msgid "Level: %d"
+msgstr "Seviye: %d"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:126
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:171
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:173
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:342
+msgid "New"
+msgstr "Yeni"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:127
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:172
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:173
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:325
+msgid "Delete"
+msgstr "Sil"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:128
+msgid "Unregister"
+msgstr "Kaydı Geri Al"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:133
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:169
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:318
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:337
+#, c-format
+msgid "Money: %s"
+msgstr "Para: %s"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:168
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:315
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/charselectdialog.cpp:335
+#, c-format
+msgid "Job Level: %d"
+msgstr "Görev Seviyesi: %d"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/chat.cpp:75
+msgid "Chat"
+msgstr "Sohbet"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/chat.cpp:305
+#, c-format
+msgid "Present: %s; %d players are present."
+msgstr "Present: %s; %d players are present."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/chat.cpp:323
+msgid "Attendance written to record log."
+msgstr "Katılım kayda yazıldı."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/chat.cpp:482
+#, c-format
+msgid "Whispering to %s: %s"
+msgstr "Kişisel ileti: %s - %s"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/confirmdialog.cpp:42
+msgid "Yes"
+msgstr "Evet"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/confirmdialog.cpp:43
+msgid "No"
+msgstr "Hayır"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/connectiondialog.cpp:34
+msgid "Info"
+msgstr "Bilgi"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/connectiondialog.cpp:40
+msgid "Connecting..."
+msgstr "Bağlanılıyor..."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/debugwindow.cpp:39
+msgid "Debug"
+msgstr "Hata Ayıklama"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/debugwindow.cpp:49
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/debugwindow.cpp:76
+#, c-format
+msgid "%d FPS"
+msgstr "%d FPS"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/debugwindow.cpp:50
+#, c-format
+msgid "Music: %s"
+msgstr "Müzik: %s"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/debugwindow.cpp:51
+#, c-format
+msgid "Map: %s"
+msgstr "Harita: %s"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/debugwindow.cpp:52
+#, c-format
+msgid "Minimap: %s"
+msgstr "Mini Harita: %s"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/debugwindow.cpp:53
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/debugwindow.cpp:78
+#, c-format
+msgid "Cursor: (%d, %d)"
+msgstr "Kürsör: (%d, %d)"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/debugwindow.cpp:54
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/debugwindow.cpp:98
+#, c-format
+msgid "Particle count: %d"
+msgstr "Parçacık sayısı %d"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/equipmentwindow.cpp:68
+msgid "Equipment"
+msgstr "Ekipman"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/equipmentwindow.cpp:86
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/inventorywindow.cpp:82
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/inventorywindow.cpp:84
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/inventorywindow.cpp:312
+msgid "Unequip"
+msgstr "Kullanma"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/guildwindow.cpp:52
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/guildwindow.cpp:56
+msgid "Guild"
+msgstr "Sınıf"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/guildwindow.cpp:66
+msgid "Create Guild"
+msgstr "Sınıf Oluştur"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/guildwindow.cpp:67
+msgid "Invite User"
+msgstr "Oyuncuyu Davet Et"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/guildwindow.cpp:68
+msgid "Quit Guild"
+msgstr "Sınıftan Çık"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/guildwindow.cpp:116
+msgid "Guild Name"
+msgstr "Sınıf Adı"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/guildwindow.cpp:117
+msgid "Choose your guild's name."
+msgstr "Sınıfının ismini seç"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/guildwindow.cpp:125
+msgid "Member Invite"
+msgstr "Üye Davetiyesi"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/guildwindow.cpp:126
+msgid "Who would you like to invite?"
+msgstr "Kimi davet etmek istiyorsun?"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/guildwindow.cpp:136
+#, c-format
+msgid "Guild %s quit."
+msgstr "Sınıf %s çıktı."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/guildwindow.cpp:153
+#, c-format
+msgid "Creating guild called %s."
+msgstr "Sınıf oluşturulması %s diye adlandırıldı."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/guildwindow.cpp:167
+#, c-format
+msgid "Invited user %s."
+msgstr "%s davet edildi."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/guildwindow.cpp:243
+#, c-format
+msgid "%s has invited you to join the guild %s."
+msgstr "%s seni %s sınıfına katılamaya davet etti."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/guildwindow.cpp:247
+msgid "Accept Guild Invite"
+msgstr "Sınıf Davetini Kabul Et"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/help.cpp:36
+msgid "Help"
+msgstr "Yardım"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/help.cpp:51
+msgid "Close"
+msgstr "Kapat"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/inventorywindow.cpp:61
+msgid "Inventory"
+msgstr "Heybe"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/inventorywindow.cpp:77
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/inventorywindow.cpp:79
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/inventorywindow.cpp:314
+msgid "Equip"
+msgstr "Kullan"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/inventorywindow.cpp:78
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/inventorywindow.cpp:79
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/inventorywindow.cpp:318
+msgid "Use"
+msgstr "Kullan"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/inventorywindow.cpp:88
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/inventorywindow.cpp:322
+msgid "Drop..."
+msgstr "Bırak..."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/inventorywindow.cpp:89
+msgid "Split"
+msgstr "Ayır"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/inventorywindow.cpp:90
+msgid "Outfits"
+msgstr "Kıyafetler"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/inventorywindow.cpp:101
+msgid "Slots:"
+msgstr "Alan:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/inventorywindow.cpp:102
+msgid "Weight:"
+msgstr "Ağırlık:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/inventorywindow.cpp:324
+msgid "Drop"
+msgstr "Yere Bırak"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/itemamount.cpp:97
+msgid "All"
+msgstr "Tümü"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/itemamount.cpp:123
+msgid "Select amount of items to trade."
+msgstr "Alışveriş yapacağınız nesne miktarını seçin."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/itemamount.cpp:126
+msgid "Select amount of items to drop."
+msgstr "Bırakacağınız nesne miktarını seçin."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/itemamount.cpp:129
+msgid "Select amount of items to store."
+msgstr "Saklayacağınız nesne sayısını seçin."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/itemamount.cpp:132
+msgid "Select amount of items to retrieve."
+msgstr "Geri alacağınız nesne miktarını seçin."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/itemamount.cpp:135
+msgid "Select amount of items to split."
+msgstr "Ayıracağınız nesne miktarını seçin."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/itempopup.cpp:91
+#, c-format
+msgid "Weight: %s"
+msgstr "Ağırlık: %s"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/login.cpp:51
+msgid "Login"
+msgstr "Giriş"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/login.cpp:60
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/register.cpp:79
+msgid "Server:"
+msgstr "Sunucu:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/login.cpp:61
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/register.cpp:80
+msgid "Port:"
+msgstr "Port:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/login.cpp:62
+msgid "Recent:"
+msgstr "Önceki:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/login.cpp:71
+msgid "-=GİRİŞ=-"
+msgstr "-=GİRİŞ=-"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/login.cpp:88
+msgid "Remember username"
+msgstr "Kullanıcı adını hatırla"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/login.cpp:91
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/register.cpp:59
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/register.cpp:95
+msgid "Register"
+msgstr "Kayıt"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/minimap.cpp:46
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/minimap.cpp:86
+msgid "Map"
+msgstr "Harita"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/ministatus.cpp:55
+msgid "HP"
+msgstr "Sağlık"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/ministatus.cpp:56
+msgid "MP"
+msgstr "Enerji"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/ministatus.cpp:57
+msgid "XP"
+msgstr "Tecrübe"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/npcdialog.cpp:44
+msgid "Waiting for server"
+msgstr "Sunucu için bekleniyor"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/npcdialog.cpp:47
+msgid "Submit"
+msgstr "Gönder"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/npcdialog.cpp:50
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/npcpostdialog.cpp:39
+msgid "NPC"
+msgstr "Üstat"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/npcdialog.cpp:107
+msgid "Reset"
+msgstr "Temizle"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/npcdialog.cpp:162
+msgid " #br# ##8 ---- DEVAM  ---- #br# "
+msgstr " #br# ##8 ---- DEVAM  ---- #br# "
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/npcpostdialog.cpp:44
+msgid "To:"
+msgstr "Kime:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/npcpostdialog.cpp:51
+msgid "Send"
+msgstr "Gönder"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/npcpostdialog.cpp:85
+msgid "Failed to send as sender or letter invalid."
+msgstr "Gönderili yada alıcı olarak harfler gönderilemedi."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/outfitwindow.cpp:63
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/outfitwindow.cpp:143
+#, c-format
+msgid "Outfit: %d"
+msgstr "Kıyafet: %d"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/outfitwindow.cpp:65
+msgid "Unequip first"
+msgstr "Önce kullanmayı bırakın."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:81
+msgid "Text"
+msgstr "Metin"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:82
+msgid "Text Shadow"
+msgstr "Metin Gölgesi"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:83
+msgid "Text Outline"
+msgstr "Metin dışçizgisi"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:84
+msgid "Progress Bar Labels"
+msgstr "Seviye Çubuğu Etiketi"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:85
+msgid "Buttons"
+msgstr "Düğmeler"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:86
+msgid "Disabled Buttons"
+msgstr "Pasifleştirilmiş Düğmeler"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:87
+msgid "Tabs"
+msgstr "Sekmeler"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:89
+msgid "Background"
+msgstr "Arkaplan"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:91
+msgid "Highlight"
+msgstr "Seçili Olanı Belirtme"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:92
+msgid "Tab Highlight"
+msgstr "Sekmelerden Seçili Olan"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:93
+msgid "Item Too Expensive"
+msgstr "Nesne Çok Pahalı"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:94
+msgid "Item Is Equipped"
+msgstr "Nesne Kullanıma Hazır"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:97
+msgid "GM"
+msgstr "Yönetici"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:98
+msgid "Player"
+msgstr "Oyuncu"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:99
+msgid "Whisper"
+msgstr "Kişisel İleti"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:100
+msgid "Is"
+msgstr "İz"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:101
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/partywindow.cpp:49
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/partywindow.cpp:77
+msgid "Party"
+msgstr "Parti"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:102
+msgid "Server"
+msgstr "Sunucu"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:103
+msgid "Logger"
+msgstr "Kayıtçı"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:104
+msgid "Hyperlink"
+msgstr "Bağlantı"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:106
+msgid "Being"
+msgstr "Oluyor"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:107
+msgid "Other Players' Names"
+msgstr "Diğer Oyuncuların Adları"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:108
+msgid "Own Name"
+msgstr "Kendi Adın"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:109
+msgid "Mini Self"
+msgstr "Mini Sen"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:110
+msgid "GM Names"
+msgstr "Yöntici Adları"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:111
+msgid "NPCs"
+msgstr "Üstatlar"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:112
+msgid "Monsters"
+msgstr "Çılgın Robotlar"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:114
+msgid "Unknown Item Type"
+msgstr "Bilinmeyen Nesne Tipi"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:115
+msgid "Generics"
+msgstr "Cinsiyete Özgü Olanlar"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:116
+msgid "Hats"
+msgstr "Şapkalar"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:117
+msgid "Usables"
+msgstr "Kullanılabilirler"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:118
+msgid "Shirts"
+msgstr "Kazaklar"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:119
+msgid "One Handed Weapons"
+msgstr "Tek Elle Kullanılabilen Işınlar"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:120
+msgid "Pants"
+msgstr "Pantolonlar"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:121
+msgid "Shoes"
+msgstr "Ayakkabılar"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:122
+msgid "Two Handed Weapons"
+msgstr "İki Elle Kullanılabilen Işınlar"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:123
+msgid "Shields"
+msgstr "Güç Kalkanı"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:124
+msgid "Rings"
+msgstr "Yüzükler"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:125
+msgid "Necklaces"
+msgstr "Kolye"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:126
+msgid "Arms"
+msgstr "Işın Deposu"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:127
+msgid "Ammo"
+msgstr "Işın Tankı"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:129
+msgid "Particle Effects"
+msgstr "Parçacık Efektleri"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:130
+msgid "Pickup Notification"
+msgstr "Yerden Alma Dildirimi"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:131
+msgid "Exp Notification"
+msgstr "Tecrübe Bildirimi"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:133
+msgid "Player Hits Monster"
+msgstr "Oyuncu Çılgın Robota Lazer Işını Yansıttı"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:136
+msgid "Monster Hits Player"
+msgstr "Çılgın Robot Karşılık Verdi"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:137
+msgid "Critical Hit"
+msgstr "Kritik Hamle"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:138
+msgid "Misses"
+msgstr "İsabetsiz"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:140
+msgid "HP Bar"
+msgstr "Sağlık Çubuğu"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:141
+msgid "3/4 HP Bar"
+msgstr "3/4 Sağlık Çubuğu"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:142
+msgid "1/2 HP Bar"
+msgstr "Yarım Sağlık Çubuğu"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:143
+msgid "1/4 HP Bar"
+msgstr "Çeyrek Sağlık Çubuğu"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/partywindow.cpp:72
+#, c-format
+msgid "Party (%s)"
+msgstr "Parti (%s)"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/partywindow.cpp:176
+msgid "Received party request, but one already exists."
+msgstr "Bir parti isteği alındı ancak zaten başka bir partidesiniz."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/partywindow.cpp:193
+msgid "Accept Party Invite"
+msgstr "Parti Davetini Kabul Et"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/partywindow.cpp:206
+#, c-format
+msgid "Accepted invite from %s."
+msgstr "%s ten gelen davet kabul edildi."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/partywindow.cpp:213
+#, c-format
+msgid "Rejected invite from %s."
+msgstr "%s ten gelen davet reddedildi."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/popupmenu.cpp:85
+#, c-format
+msgid "Trade with %s..."
+msgstr "%s ile alış veriş"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/popupmenu.cpp:89
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/popupmenu.cpp:162
+#, c-format
+msgid "Attack %s"
+msgstr "Lazer Işını Yansıt %s"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/popupmenu.cpp:97
+#, c-format
+msgid "Befriend %s"
+msgstr "Arkadaş olundu %s"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/popupmenu.cpp:102
+#, c-format
+msgid "Disregard %s"
+msgstr "%s İhmal edildi."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/popupmenu.cpp:105
+#, c-format
+msgid "Ignore %s"
+msgstr "%s 'i yoksay."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/popupmenu.cpp:111
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/popupmenu.cpp:120
+#, c-format
+msgid "Unignore %s"
+msgstr "%s 'i yoksaymayı geri al."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/popupmenu.cpp:114
+#, c-format
+msgid "Completely ignore %s"
+msgstr "%s 'i tamamen yoksay."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/popupmenu.cpp:133
+#, c-format
+msgid "Invite %s to join your guild"
+msgstr "%s 'i sınıfına katılması için davet et."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/popupmenu.cpp:138
+#, c-format
+msgid "Invite %s to join your party"
+msgstr "%s 'i sınıfına partine için davet et."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/popupmenu.cpp:145
+msgid "Kick player"
+msgstr "Oyuncuyu At"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/popupmenu.cpp:154
+#, c-format
+msgid "Talk to %s"
+msgstr "%s ile konuş"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/popupmenu.cpp:167
+msgid "Kick monster"
+msgstr "Çılgın Robotu Çıkart"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/popupmenu.cpp:175
+msgid "Add name to chat"
+msgstr "Sohbete isim ekle"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/popupmenu.cpp:192
+#, c-format
+msgid "Pick up %s"
+msgstr "%s aldın."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/popupmenu.cpp:194
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/popupmenu.cpp:408
+msgid "Add to chat"
+msgstr "Sohbete ekle"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/popupmenu.cpp:399
+msgid "Store"
+msgstr "Depo"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/popupmenu.cpp:406
+msgid "Retrieve"
+msgstr "Geri Al"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/quitdialog.cpp:37
+msgid "Switch server"
+msgstr "Sunucu değiştir"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/quitdialog.cpp:38
+msgid "Switch character"
+msgstr "Karakter değiştir"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/recorder.cpp:88
+msgid "Finishing recording."
+msgstr "Kayıt bitiriliyor."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/recorder.cpp:92
+msgid "Not currently recording."
+msgstr "Şu anda kaydedilmiyor."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/recorder.cpp:97
+msgid "Already recording."
+msgstr "Zaten kaydediliyor."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/recorder.cpp:105
+msgid "Starting to record..."
+msgstr "Kayda başlanıyor..."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/recorder.cpp:114
+msgid "Failed to start recording."
+msgstr "Kayıt başlatılamadı."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/register.cpp:67
+msgid "-=KAYIT=-"
+msgstr "-=KAYIT=-"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/register.cpp:77
+msgid "Confirm:"
+msgstr "Onayla:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/register.cpp:82
+msgid "Email:"
+msgstr "E-posta:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/register.cpp:200
+#, c-format
+msgid "The username needs to be at least %d characters long."
+msgstr "Kullanıcı adı en fazla %d karakter olmalıdır."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/register.cpp:208
+#, c-format
+msgid "The username needs to be less than %d characters long."
+msgstr "Kullanıcı adı en az %d karakter olmalıdır."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/register.cpp:216
+#, c-format
+msgid "The password needs to be at least %d characters long."
+msgstr "Şifre en az %d karakter olmalıdır."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/register.cpp:224
+#, c-format
+msgid "The password needs to be less than %d characters long."
+msgstr "Şifre en fazla %d karakter olmalıdır."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/register.cpp:231
+msgid "Passwords do not match."
+msgstr "Şifreler eşleşmiyor."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/sell.cpp:47
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/sell.cpp:74
+msgid "Sell"
+msgstr "Sat"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/serverdialog.cpp:74
+msgid "Choose Your Server"
+msgstr "Sunucunu Tercih Et"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/serverdialog.cpp:164
+msgid "Please type both the address and the port of a server."
+msgstr "Lütfen hem sunucu adresini ve portu birlikte girin."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/serverselectdialog.cpp:59
+msgid "Select Server"
+msgstr "Sunucu Seç"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_audio.cpp:41
+msgid "Sound"
+msgstr "Ses"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_audio.cpp:45
+msgid "Audio"
+msgstr "Ses"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_audio.cpp:48
+msgid "Sfx volume"
+msgstr "Efekt Sesi Seviyesi"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_audio.cpp:49
+msgid "Music volume"
+msgstr "Müzik Sesi Seviyesi"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_audio.cpp:94
+msgid "Sound Engine"
+msgstr "Ses Makinesi"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_colors.cpp:45
+msgid "This is what the color looks like"
+msgstr "Renk nasıl görünüyor..."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_colors.cpp:50
+msgid "Colors"
+msgstr "Renkler"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_colors.cpp:71
+msgid "Type:"
+msgstr "Tip:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_colors.cpp:82
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_colors.cpp:433
+msgid "Static"
+msgstr "Durgun"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_colors.cpp:84
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_colors.cpp:85
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_colors.cpp:434
+msgid "Pulse"
+msgstr "Nabız"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_colors.cpp:86
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_colors.cpp:87
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_colors.cpp:435
+msgid "Rainbow"
+msgstr "Gökkuşağı"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_colors.cpp:88
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_colors.cpp:89
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_colors.cpp:435
+msgid "Spectrum"
+msgstr "Göz Kamaşması"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_colors.cpp:93
+msgid "Delay:"
+msgstr "Gecikme:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_colors.cpp:108
+msgid "Red:"
+msgstr "Kırmızı:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_colors.cpp:123
+msgid "Green:"
+msgstr "Yeşil:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_colors.cpp:138
+msgid "Blue:"
+msgstr "Mavi:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_joystick.cpp:37
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_joystick.cpp:78
+msgid "Press the button to start calibration"
+msgstr "Ayarlamaya başlamak için start 'a basınız..."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_joystick.cpp:38
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_joystick.cpp:76
+msgid "Calibrate"
+msgstr "Ayarlama"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_joystick.cpp:39
+msgid "Enable joystick"
+msgstr "Oyun Çubuğunu Etkinleştir"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_joystick.cpp:41
+msgid "Joystick"
+msgstr "Oyun Çubuğu"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_joystick.cpp:83
+msgid "Stop"
+msgstr "Dur"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_joystick.cpp:84
+msgid "Rotate the stick"
+msgstr "Çubuğu çevirin"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_keyboard.cpp:77
+msgid "Keyboard"
+msgstr "Klavye"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_keyboard.cpp:86
+msgid "Assign"
+msgstr "Atamak"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_keyboard.cpp:90
+msgid "Default"
+msgstr "Varsayılan"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_keyboard.cpp:119
+msgid "Key Conflict(s) Detected"
+msgstr "Aynı tuş farklı işlemler için kullanılıyor."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_keyboard.cpp:120
+msgid "Resolve them, or gameplay may result in strange behaviour."
+msgstr "Bunlara kesin karar ver yada oyun oynarken sıradışı etkilere hazırlıklı ol."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_players.cpp:207
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:131
+msgid "???"
+msgstr "???"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_players.cpp:224
+msgid "Allow trading"
+msgstr "Alış verişi kabul et"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_players.cpp:226
+msgid "Allow whispers"
+msgstr "Kişisel sohbet kabul ediliyor"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_players.cpp:230
+msgid "Put all whispers in tabs"
+msgstr "Tüm kişisel sohbetleri sekmelelre yerleştir"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_players.cpp:232
+msgid "Players"
+msgstr "Oyuncular"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_players.cpp:257
+msgid "When ignoring:"
+msgstr "Engellenirken:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:141
+msgid "No text"
+msgstr "Metin yok"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:143
+msgid "Bubbles, no names"
+msgstr "Baloncuklar, ad yok"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:144
+msgid "Bubbles with names"
+msgstr "Adlarla birlikte baloncuklar"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:153
+msgid "off"
+msgstr "kapalı"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:154
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:164
+msgid "low"
+msgstr "alçak"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:155
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:166
+msgid "high"
+msgstr "yüksek"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:165
+msgid "medium"
+msgstr "orta"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:167
+msgid "max"
+msgstr "en yüksek"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:187
+msgid "Full screen"
+msgstr "Tam Ekren"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:188
+msgid "OpenGL"
+msgstr "OpenGL"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:189
+msgid "Custom cursor"
+msgstr "Özel Kürsör"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:191
+msgid "Visible names"
+msgstr "Görünen Adlar"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:193
+msgid "Particle effects"
+msgstr "Parçacık Efektleri"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:195
+msgid "Show own name"
+msgstr "Kendi adını göster"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:196
+msgid "Show pickup notification"
+msgstr "Yerden alma bildirimini göster"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:198
+msgid "in chat"
+msgstr "sohbette"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:200
+msgid "as particle"
+msgstr "parçacık olarak"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:205
+msgid "FPS limit:"
+msgstr "FPS sınırı:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:216
+msgid "Video"
+msgstr "Vidyo"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:221
+msgid "Overhead text"
+msgstr "Başüstü metin"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:222
+msgid "Gui opacity"
+msgstr "Pencere Şeffaflığı"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:223
+msgid "Ambient FX"
+msgstr "Çevre"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:224
+msgid "Particle detail"
+msgstr "Parçacık Detayları"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:225
+msgid "Font size"
+msgstr "Yazı Boyutu"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:360
+msgid "Failed to switch to windowed mode and restoration of old mode also failed!"
+msgstr "Pencere görünümüne geçilemedi. Aynı zamanda eski görünümede geçilemedi!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:366
+msgid "Failed to switch to fullscreen mode and restoration of old mode also failed!"
+msgstr "Tam ekran görünümüne geçilemedi. Aynı zamanda eski görünümede geçilemedi!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:377
+msgid "Switching to Full Screen"
+msgstr "Tam Ekrana Geçiliyor"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:378
+msgid "Restart needed for changes to take effect."
+msgstr "Değişikliklerin etkin olması için oyunu tekrar başlatılması gerekiyor."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:390
+msgid "Changing to OpenGL"
+msgstr "OpenGL ye geçiliyor..."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:391
+msgid "Applying change to OpenGL requires restart."
+msgstr "OpenGL ayarlarındaki değişikliklerin etkin olması için oyunu tekrar başlatın."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:453
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:458
+msgid "Screen Resolution Changed"
+msgstr "Ekran çözünürlüğü değiştirildi."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:454
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:459
+msgid "Restart your client for the change to take effect."
+msgstr "Değişikliklerin etkin olması için oyunu tekrar başlatın."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:456
+msgid "Some windows may be moved to fit the lowered resolution."
+msgstr "Bazı pencereler düşük çözünürlüğe ayarlamak için taşınabilir."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:483
+msgid "Particle Effect Settings Changed."
+msgstr "Parçacık Efekti Ayarları Değiştirildi."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_video.cpp:484
+msgid "Changes will take effect on map change."
+msgstr "Değişiklikler harita değiştirildiğinde uygulanacaktır."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/skilldialog.cpp:85
+msgid "Skills"
+msgstr "Beceriler"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/skilldialog.cpp:141
+#, c-format
+msgid "Skill points available: %d"
+msgstr "Kullanılabilir beceri puanı: %d"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/skilldialog.cpp:189
+#, c-format
+msgid "Skill Set %d"
+msgstr "Beceri Ayarla %d"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/skilldialog.cpp:204
+#, c-format
+msgid "Skill %d"
+msgstr "Beceri %d"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/skilldialog.cpp:315
+#, c-format
+msgid "Lvl: %d (%+d)"
+msgstr "Seviye: %d(%+d)"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/skilldialog.cpp:320
+#, c-format
+msgid "Lvl: %d"
+msgstr "Seviye: %d"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/specialswindow.cpp:84
+msgid "Specials"
+msgstr "Özellikler"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/specialswindow.cpp:173
+#, c-format
+msgid "Specials Set %d"
+msgstr "Özellik Ayarla %d"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/specialswindow.cpp:190
+#, c-format
+msgid "Special %d"
+msgstr "Özellik %d"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/statuswindow.cpp:108
+msgid "HP:"
+msgstr "Sağlık:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/statuswindow.cpp:113
+msgid "Exp:"
+msgstr "Tecrübe:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/statuswindow.cpp:118
+msgid "MP:"
+msgstr "Enerji:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/statuswindow.cpp:135
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/statuswindow.cpp:219
+#, c-format
+msgid "Job: %d"
+msgstr "Uzmanlık: %d"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/statuswindow.cpp:136
+msgid "Job:"
+msgstr "Uzmanlık:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/statuswindow.cpp:205
+msgid "Exp"
+msgstr "Tecrübe"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/statuswindow.cpp:214
+msgid "Money"
+msgstr "Para"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/statuswindow.cpp:225
+msgid "Job"
+msgstr "Uzmanlık"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/statuswindow.cpp:230
+#, c-format
+msgid "Character points: %d"
+msgstr "Karakterpuanı: %d"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/statuswindow.cpp:235
+#, c-format
+msgid "Correction points: %d"
+msgstr "Doğrulama puanı: %d"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/statuswindow.cpp:251
+msgid "Level"
+msgstr "Seviye"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/storagewindow.cpp:55
+msgid "Storage"
+msgstr "Depo"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/trade.cpp:52
+msgid "Propose trade"
+msgstr "Alışveriş Teklif Et"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/trade.cpp:53
+msgid "Confirmed. Waiting..."
+msgstr "Onaylandı. Bekleniyor..."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/trade.cpp:54
+msgid "Agree trade"
+msgstr "Alışverişi Kabul Et"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/trade.cpp:55
+msgid "Agreed. Waiting..."
+msgstr "Kabul Edildi. Bekleniyor..."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/trade.cpp:58
+msgid "Trade: You"
+msgstr "Alış Veriş: Sen"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/trade.cpp:72
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/trade.cpp:73
+msgid "Trade"
+msgstr "Alış Veriş"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/trade.cpp:75
+msgid "Add"
+msgstr "Ekle"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/trade.cpp:97
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/trade.cpp:133
+#, c-format
+msgid "You get %s"
+msgstr "Sen %s aldın."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/trade.cpp:98
+msgid "You give:"
+msgstr "Senin verdiğin:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/trade.cpp:102
+msgid "Change"
+msgstr "Değiştir"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/trade.cpp:273
+msgid "Failed adding item. You can not overlap one kind of item on the window."
+msgstr "Nesne eklemede hata. Aynı tür nesneleri kullanamzsınız."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/trade.cpp:316
+msgid "You don't have enough money."
+msgstr "Yeterli paranız yok."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/updatewindow.cpp:94
+msgid "Updating..."
+msgstr "Güncelleniyor..."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/updatewindow.cpp:114
+msgid "-=GÜNCELLEME=-"
+msgstr "-=GÜNCELLEME=-"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/updatewindow.cpp:126
+msgid "Play"
+msgstr "Oyna"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/updatewindow.cpp:473
+msgid "##1  The update process is incomplete."
+msgstr "##1 Güncelleme süreci tamamlanmadı."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/updatewindow.cpp:475
+msgid "##1  It is strongly recommended that"
+msgstr "##1 Güncelleme mutlaka yapılmalıdır."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/updatewindow.cpp:477
+msgid "##1  you try again later."
+msgstr "##1 daha sonra tekrar deneyin."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/updatewindow.cpp:544
+msgid "Completed"
+msgstr "Tamamlandı"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/widgets/channeltab.cpp:49
+msgid "/users > Lists the users in the current channel"
+msgstr "/users > Aktif kanaldaki kulanıcıları gösterir"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/widgets/channeltab.cpp:50
+msgid "/topic > Set the topic of the current channel"
+msgstr "/topic > Kanaldaki başlığı değiştirir"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/widgets/channeltab.cpp:51
+msgid "/quit > Leave a channel"
+msgstr "/quit > Kanaldan ayrıl"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/widgets/channeltab.cpp:52
+msgid "/op > Make a user a channel operator"
+msgstr "/op > Oyuncuyu kanal operatörü yap"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/widgets/channeltab.cpp:53
+msgid "/kick > Kick a user from the channel"
+msgstr "/kick > Oyuncuyu kanaldan çıkar"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/widgets/channeltab.cpp:63
+msgid "Command: /users"
+msgstr "Komut: /users"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/widgets/channeltab.cpp:64
+msgid "This command shows the users in this channel."
+msgstr "Bu komutla kanaldaki oyuncuların listesini görürsünüz."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/widgets/channeltab.cpp:68
+msgid "Command: /topic <message>"
+msgstr "Komut: /topic <ileti>"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/widgets/channeltab.cpp:69
+msgid "This command sets the topic to <message>."
+msgstr "Bu komut ile başlık belirtilen ileti olur."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/widgets/channeltab.cpp:73
+msgid "Command: /quit"
+msgstr "Komut: /quit"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/widgets/channeltab.cpp:74
+msgid "This command leaves the current channel."
+msgstr "Bu komutla bulunduğunuz kanaldan ayrılırsınız."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/widgets/channeltab.cpp:75
+msgid "If you're the last person in the channel, it will be deleted."
+msgstr "Eğer kanaldaki son kişiyseniz, kanal silinecektir."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/widgets/channeltab.cpp:80
+msgid "Command: /op <nick>"
+msgstr "Komut: /op <oyuncu>"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/widgets/channeltab.cpp:81
+msgid "This command makes <nick> a channel operator."
+msgstr "Bu komutla <ad> belirtilen oyuncu kanal operatörü yapılır."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/widgets/channeltab.cpp:84
+msgid "Channel operators can kick and op other users from the channel."
+msgstr "Kanal operatörleri oyuncuları kanaldan dışarı çıkartabilirler."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/widgets/channeltab.cpp:89
+msgid "Command: /kick <nick>"
+msgstr "Komut: /kick <ad>"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/widgets/channeltab.cpp:90
+msgid "This command makes <nick> leave the channel."
+msgstr "Bu komutla <ad> belirtilen oyunucuyu kanaldan çıkartırsınız."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/widgets/channeltab.cpp:119
+msgid "Need a user to op!"
+msgstr "Operatörlük için bir oyuncuya ihtiyaç var!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/widgets/channeltab.cpp:126
+msgid "Need a user to kick!"
+msgstr "Çıkartmak için bir oyuncuya ihtiyaç var!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/widgets/chattab.cpp:114
+msgid "Global announcement:"
+msgstr "Evrensel Duyuru:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/widgets/chattab.cpp:120
+#, c-format
+msgid "Global announcement from %s:"
+msgstr "%s ten evrensel duyuru:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/widgets/chattab.cpp:146
+#, c-format
+msgid "%s whispers: %s"
+msgstr "%s sana diyorki: %s"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/widgets/whispertab.cpp:50
+msgid "Cannot send empty chat!"
+msgstr "Boş ileti gönderilemez!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/widgets/whispertab.cpp:69
+msgid "/ignore > Ignore the other player"
+msgstr "/ignore > Diğer oyuncuyu engelle"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/widgets/whispertab.cpp:70
+msgid "/unignore > Stop ignoring the other player"
+msgstr "/unignore > Oyuncuya uygulanan engeli kaldır"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/widgets/whispertab.cpp:71
+msgid "/close > Close the whisper tab"
+msgstr "/close > Kişisel İleti sekmesini kapatır"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/widgets/whispertab.cpp:81
+msgid "Command: /close"
+msgstr "Komut: /close"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/widgets/whispertab.cpp:82
+msgid "This command closes the current whisper tab."
+msgstr "Bu komut aktif olan kişisel ileti sekmesini kapatır."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/widgets/whispertab.cpp:86
+msgid "Command: /ignore"
+msgstr "Komut: /ignore"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/widgets/whispertab.cpp:87
+msgid "This command ignores the other player regardless of current relations."
+msgstr "Bu komutla diğer oyunucuyu engellemiş olursunuz."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/widgets/whispertab.cpp:93
+msgid "This command stops ignoring the other player if they are being ignored."
+msgstr "Bu komutla diğer oyuncuya uygulamış olduğunuz engel kaldırılır."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/adminhandler.cpp:66
+msgid "Kick failed!"
+msgstr "Oyuncu çıkartma başarısız!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/adminhandler.cpp:68
+msgid "Kick succeeded!"
+msgstr "Oyuncu atma başarılı!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/buysellhandler.cpp:111
+msgid "Nothing to sell."
+msgstr "Satacak birşey yok!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/buysellhandler.cpp:119
+msgid "Thanks for buying."
+msgstr "Satın aldığınız için teşekkürler."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/buysellhandler.cpp:126
+msgid "Unable to buy."
+msgstr "Satın alamazsınız."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/buysellhandler.cpp:132
+msgid "Thanks for selling."
+msgstr "Satış için teşekkürler."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/buysellhandler.cpp:134
+msgid "Unable to sell."
+msgstr "Satış gerçekleştirilemedi."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/charserverhandler.cpp:95
+msgid "Access denied."
+msgstr "Erişim reddedildi."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/charserverhandler.cpp:98
+msgid "Cannot use this ID."
+msgstr "Bu ID kullanılamaz."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/charserverhandler.cpp:101
+msgid "Unknown failure to select character."
+msgstr "Karakter seçiminde bilinmeyen hata."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/charserverhandler.cpp:123
+msgid "Failed to create character. Most likely the name is already taken."
+msgstr "Karakter oluşturulamadı! Daha önce bu isim kullanılmış."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/charserverhandler.cpp:135
+msgid "Character deleted."
+msgstr "Karakter silindi."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/charserverhandler.cpp:140
+msgid "Failed to delete character."
+msgstr "Karakter silinemedi."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/charserverhandler.cpp:224
+msgid "Strength:"
+msgstr "Güç:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/charserverhandler.cpp:225
+msgid "Agility:"
+msgstr "Çeviklik:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/charserverhandler.cpp:226
+msgid "Vitality:"
+msgstr "Dayanıklılık:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/charserverhandler.cpp:227
+msgid "Intelligence:"
+msgstr "Zeka:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/charserverhandler.cpp:228
+msgid "Dexterity:"
+msgstr "Beceri:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/charserverhandler.cpp:229
+msgid "Luck:"
+msgstr "Şans:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/chathandler.cpp:78
+msgid "Whisper could not be sent, user is offline."
+msgstr "Kişisel ileti gönderilemedi, kullanıcı oyundan çıkmış."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/chathandler.cpp:82
+msgid "Whisper could not be sent, ignored by user."
+msgstr "Kişisel ileti gönderilemedi, oyuncu sizi engellemiş."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/chathandler.cpp:169
+msgid "MVP player."
+msgstr "En Değerli Oyuncu."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/chathandler.cpp:202
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/chathandler.cpp:208
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/chathandler.cpp:213
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/chathandler.cpp:218
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/chathandler.cpp:223
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/chathandler.cpp:228
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/chathandler.cpp:233
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/chathandler.cpp:238
+msgid "Channels are not supported!"
+msgstr "Kanallar desteklenmiyor."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/equipmenthandler.cpp:196
+msgid "Unable to equip."
+msgstr "Kullanılamıyor."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/equipmenthandler.cpp:209
+msgid "Unable to unequip."
+msgstr "Kullanımdan çıkarılamıyor."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/generalhandler.cpp:120
+msgid "Authentication failed."
+msgstr "Kullanıcı adı ve şifre denetimi başarısız."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/generalhandler.cpp:123
+msgid "No servers available."
+msgstr "Sunucular erişilebilir değil."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/generalhandler.cpp:127
+msgid "Someone else is trying to use this account."
+msgstr "Başka bir kullanıcı bu hesabı kullanarak giriş yapmayı deniyor."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/generalhandler.cpp:130
+msgid "This account is already logged in."
+msgstr "Bu hesap ile zaten giriş yapılmış"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/generalhandler.cpp:133
+msgid "Speed hack detected."
+msgstr "Hız saldırısı belirlendi."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/generalhandler.cpp:136
+msgid "Duplicated login."
+msgstr "Tek hesaba iki kişilik giriş."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/generalhandler.cpp:139
+msgid "Unknown connection error."
+msgstr "Bilinmeyen bağlantı hatası."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/generalhandler.cpp:196
+msgid "Got disconnected from server!"
+msgstr "Sunucuyla bağantı kesildi!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/generalhandler.cpp:208
+msgid "Strength"
+msgstr "Güç"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/generalhandler.cpp:209
+msgid "Agility"
+msgstr "Çeviklik"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/generalhandler.cpp:210
+msgid "Vitality"
+msgstr "Dayanıklılık"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/generalhandler.cpp:211
+msgid "Intelligence"
+msgstr "Zeka"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/generalhandler.cpp:212
+msgid "Dexterity"
+msgstr "Kabiliyet"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/generalhandler.cpp:213
+msgid "Luck"
+msgstr "Şans"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/generalhandler.cpp:216
+msgid "Defense"
+msgstr "Savunma"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/generalhandler.cpp:217
+msgid "M.Attack"
+msgstr "T. Atak"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/generalhandler.cpp:218
+msgid "M.Defense"
+msgstr "T. Savunma"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/generalhandler.cpp:219
+#, c-format
+msgid "% Accuracy"
+msgstr "% Accuracy"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/generalhandler.cpp:220
+#, c-format
+msgid "% Evade"
+msgstr "% Evade"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/generalhandler.cpp:221
+#, c-format
+msgid "% Critical"
+msgstr "% Critical"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/inventoryhandler.cpp:230
+msgid "Failed to use item."
+msgstr "Nesne kullanılamadı."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/loginhandler.cpp:76
+msgid "Account was not found. Please re-login."
+msgstr "Hesap bulunamadı. Tekrar giriş apın."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/loginhandler.cpp:79
+msgid "Old password incorrect."
+msgstr "Eski şifre yanlış."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/loginhandler.cpp:82
+msgid "New password too short."
+msgstr "Yeni şifre çok kısa."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/loginhandler.cpp:85
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/loginhandler.cpp:169
+msgid "Unknown error."
+msgstr "Bilinmeyen hata."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/loginhandler.cpp:142
+msgid "Unregistered ID."
+msgstr "Kaydedilmemiş ID."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/loginhandler.cpp:145
+msgid "Wrong password."
+msgstr "Yanlış şifre."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/loginhandler.cpp:148
+msgid "Account expired."
+msgstr "Hesabınızın süresi dolmuş."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/loginhandler.cpp:151
+msgid "Rejected from server."
+msgstr "Sunucudan çıkartıldınız."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/loginhandler.cpp:155
+msgid "You have been permanently banned from the game. Please contact the GM team."
+msgstr "Bu oyundan atılmışsınız. Lütfen yönetici ile iletişime geçin."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/loginhandler.cpp:159
+#, c-format
+msgid ""
+"You have been temporarily banned from the game until %s.\n"
+"Please contact the GM team via the forums."
+msgstr "%s tarihine kadar oyundan uzaklaştırılmışsınız. Lütfen yönetici ile irtibata geçiniz."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/loginhandler.cpp:166
+msgid "This user name is already taken."
+msgstr "Bu kullanıcı adı daha önce alınmış."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/maphandler.cpp:82
+#, c-format
+msgid "Online users: %d"
+msgstr "Çevrimiçi Kullanıcılar: %d"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/partyhandler.cpp:77
+msgid "Could not create party."
+msgstr "Parti oluşturulamadı."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/partyhandler.cpp:80
+msgid "Party successfully created."
+msgstr "Parti başarıyla oluşturuldu."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/partyhandler.cpp:115
+#, c-format
+msgid "%s is already a member of a party."
+msgstr "%s zaten senin partinin bir üyesi."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/partyhandler.cpp:119
+#, c-format
+msgid "%s refused your invitation."
+msgstr "%s davetini geri çevirdi."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/partyhandler.cpp:123
+#, c-format
+msgid "%s is now a member of your party."
+msgstr "%s artık senin partinin bir üyesi."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/partyhandler.cpp:127
+#, c-format
+msgid "Unknown invite response for %s."
+msgstr "%s içn bilinmeyen davet karşılığı."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/partyhandler.cpp:169
+msgid "Experience sharing enabled."
+msgstr "Tecrübe paylaşımı etkinleştirildi."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/partyhandler.cpp:175
+msgid "Experience sharing disabled."
+msgstr "Tecrübe paylaşımı etkin değil."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/partyhandler.cpp:181
+msgid "Experience sharing not possible."
+msgstr "Tecrbüe paylaşımı mümkün değil."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/partyhandler.cpp:192
+msgid "Item sharing enabled."
+msgstr "Nesne paylaşımı etkinleştirildi."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/partyhandler.cpp:198
+msgid "Item sharing disabled."
+msgstr "Nesne paylaşımı etkin değil."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/partyhandler.cpp:204
+msgid "Item sharing not possible."
+msgstr "Nesne paylaşımı mümkün değil."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/partyhandler.cpp:233
+msgid "You have left the party."
+msgstr "Partiden ayrıldınız."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/partyhandler.cpp:237
+#, c-format
+msgid "%s has left your party."
+msgstr "%s partinden ayrıldı."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/partyhandler.cpp:272
+#, c-format
+msgid "An unknown member tried to say: %s"
+msgstr "Bilinmeyen oyuncu şunu söylemeye çalışıyor:%s"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/partyhandler.cpp:298
+msgid "Inviting like this isn't supported at the moment."
+msgstr "Bu şekilde davet henüz desteklenmiyor."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/partyhandler.cpp:327
+#, c-format
+msgid "%s is not in your party!"
+msgstr "%s senin partinde değil."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/playerhandler.cpp:242
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/playerhandler.cpp:299
+msgid "Message"
+msgstr "İleti"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/playerhandler.cpp:243
+msgid "You are carrying more than half your weight. You are unable to regain health."
+msgstr "Ağırlığının yarısından fazla yük taşıyorsun bu yüzden sağlığını tekrar geri kazanamazsın."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/playerhandler.cpp:320
+#, c-format
+msgid "You picked up %s."
+msgstr "%s yerden aldın."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/playerhandler.cpp:466
+msgid "Equip arrows first."
+msgstr "Önce ışınları kullanın."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/specialhandler.cpp:147
+msgid "Trade failed!"
+msgstr "Alışveriş başarısız!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/specialhandler.cpp:150
+msgid "Emote failed!"
+msgstr "Güleryüz hatası!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/specialhandler.cpp:153
+msgid "Sit failed!"
+msgstr "Oturma başarısız!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/specialhandler.cpp:156
+msgid "Chat creating failed!"
+msgstr "Sohbet oluşturma başarısız!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/specialhandler.cpp:159
+msgid "Could not join party!"
+msgstr "Partiye katılınamadı!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/specialhandler.cpp:162
+msgid "Cannot shout!"
+msgstr "Atış yapılamadı!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/specialhandler.cpp:171
+msgid "You have not yet reached a high enough lvl!"
+msgstr "Henüz yeterli seviyeye ulaşmadınız!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/specialhandler.cpp:174
+msgid "Insufficient HP!"
+msgstr "Yetersiz Sağlık!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/specialhandler.cpp:177
+msgid "Insufficient SP!"
+msgstr "Yetersiz Enerji!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/specialhandler.cpp:180
+msgid "You have no memos!"
+msgstr "Herhangi bir bildiriminiz yok!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/specialhandler.cpp:183
+msgid "You cannot do that right now!"
+msgstr "Bunu şu anda yapamazsınız!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/specialhandler.cpp:186
+msgid "Seems you need more money... ;-)"
+msgstr "Daha fazla paraya ihtiyacınız var..."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/specialhandler.cpp:189
+msgid "You cannot use this skill with that kind of weapon!"
+msgstr "Bu beceriyi bu tür bir araçla kulllanamazsınız!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/specialhandler.cpp:192
+msgid "You need another red gem!"
+msgstr "Başka bir kırmızı taşa ihtiyacın var!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/specialhandler.cpp:195
+msgid "You need another blue gem!"
+msgstr "Başka bir mavi taşa ihtiyacın var!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/specialhandler.cpp:198
+msgid "You're carrying to much to do this!"
+msgstr "Bu işi yapabilmek için çok fazla yük taşıyorsun!"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/specialhandler.cpp:201
+msgid "Huh? What's that?"
+msgstr "Ah? Bu da ne?"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/specialhandler.cpp:210
+msgid "Warp failed..."
+msgstr "Kaydırma başarısız..."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/specialhandler.cpp:213
+msgid "Could not steal anything..."
+msgstr "Herhangi birşey alınamadı..."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/specialhandler.cpp:216
+msgid "Poison had no effect..."
+msgstr "Zehrin bir etkisi yok..."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/tradehandler.cpp:103
+msgid "Request for Trade"
+msgstr "Alışveriş İsteği"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/tradehandler.cpp:104
+#, c-format
+msgid "%s wants to trade with you, do you accept?"
+msgstr "%s seninle alışveriş yaptı, kabul ediyor musun?"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/tradehandler.cpp:119
+msgid "Trading isn't possible. Trade partner is too far away."
+msgstr "Alışveriş mümkün değil çünkü oyuncu çok uzak."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/tradehandler.cpp:123
+msgid "Trading isn't possible. Character doesn't exist."
+msgstr "Alışveriş mümkün değil çünkü oyuncu yok."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/tradehandler.cpp:127
+msgid "Trade cancelled due to an unknown reason."
+msgstr "Alışveriş bilinmeyen bir sebepten dolayı iptal edildi."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/tradehandler.cpp:132
+#, c-format
+msgid "Trade: You and %s"
+msgstr "Alışveriş: Sen ve %s"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/tradehandler.cpp:139
+#, c-format
+msgid "Trade with %s cancelled."
+msgstr "%s ile alışveriş iptal edildi."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/tradehandler.cpp:148
+msgid "Unhandled trade cancel packet."
+msgstr "Belirtilmemiş alışveriş paketi iptal edildi."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/tradehandler.cpp:198
+msgid "Failed adding item. Trade partner is over weighted."
+msgstr "Nesne ekleme başarısız. Alışveriş yaptığınız oyunucunun heybesi gereğinden fazla dolu."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/tradehandler.cpp:203
+msgid "Failed adding item. Trade partner has no free slot."
+msgstr "Nesne ekleme başarısız. Alıveriş yaptığınız oyuncunun heybesinde yeterli alan yok."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/tradehandler.cpp:207
+msgid "Failed adding item for unknown reason."
+msgstr "Bilinmeyen bir sebepten dolayı nesne ekleme başarısız."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/tradehandler.cpp:220
+msgid "Trade canceled."
+msgstr "Alışveriş iptal edildi."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/tradehandler.cpp:227
+msgid "Trade completed."
+msgstr "Alışveriş tamamlandı."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/gui/partytab.cpp:55
+msgid "/help > Display this help."
+msgstr "/help> Yardımı gösterir."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/gui/partytab.cpp:56
+msgid "/create > Create a new party"
+msgstr "/create > Yeni parti oluşturur"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/gui/partytab.cpp:57
+msgid "/new > Alias of create"
+msgstr "/new > Oluşturma kısayolu"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/gui/partytab.cpp:58
+msgid "/invite > Invite a player to your party"
+msgstr "/invite > Partiye bir oyuncu davet edin"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/gui/partytab.cpp:59
+msgid "/leave > Leave the party you are in"
+msgstr "/leave > Bulunduğunuz partiden ayrılın"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/gui/partytab.cpp:60
+msgid "/kick > Kick some one from the party you are in"
+msgstr "Partinizde bulunan birini çıkarın"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/gui/partytab.cpp:61
+msgid "/item > Show/change party item sharing options"
+msgstr "/item > Göster/parti nesne paylaşım ayarlarını değiştir."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/gui/partytab.cpp:62
+msgid "/exp > Show/change party experience sharing options"
+msgstr "/exp > Göster/parti tecrübe paylaşım ayarlarını değiştir."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/gui/partytab.cpp:71
+msgid "Command: /new <party-name>"
+msgstr "Komut: /new <parti-adı>"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/gui/partytab.cpp:72
+msgid "Command: /create <party-name>"
+msgstr "Komut: /create <parti-adı>"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/gui/partytab.cpp:73
+msgid "These commands create a new party called <party-name>."
+msgstr "Bu komut <parti-adi> belirtilen partiyi oluşturur."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/gui/partytab.cpp:77
+msgid "Command: /invite <nick>"
+msgstr "Komut: /invite <oyuncu>"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/gui/partytab.cpp:84
+msgid "Command: /leave"
+msgstr "Komut: /leave"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/gui/partytab.cpp:85
+msgid "This command causes the player to leave the party."
+msgstr "Bu komut oyuncunun partiden ayrılmasına sebep olur."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/gui/partytab.cpp:89
+msgid "Command: /item <policy>"
+msgstr "Komut: /item <kural>"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/gui/partytab.cpp:90
+msgid "This command changes the party's item sharing policy."
+msgstr "Bu komut parti nesne paylaşım kuralını değiştirir."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/gui/partytab.cpp:91
+msgid "<policy> can be one of \"1\", \"yes\", \"true\" to enable item sharing, or \"0\", \"no\", \"false\" to disable item sharing."
+msgstr "<policy> can be one of \"1\", \"yes\", \"true\" to enable item sharing, or \"0\", \"no\", \"false\" to disable item sharing."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/gui/partytab.cpp:94
+msgid "Command: /item"
+msgstr "Komut: /item"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/gui/partytab.cpp:95
+msgid "This command displays the party's current item sharing policy."
+msgstr "Bu komut bulunduğunuz partinin nesne paylaşım kuralını gösterir."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/gui/partytab.cpp:99
+msgid "Command: /exp <policy>"
+msgstr "Komut: /exp <kural>"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/gui/partytab.cpp:100
+msgid "This command changes the party's experience sharing policy."
+msgstr "Bu komut bulunduğunuz partinin tecrübe paylaşım kuralını gösterir."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/gui/partytab.cpp:101
+msgid "<policy> can be one of \"1\", \"yes\", \"true\" to enable experience sharing, or \"0\", \"no\", \"false\" to disable experience sharing."
+msgstr "<policy> can be one of \"1\", \"yes\", \"true\" to enable experience sharing, or \"0\", \"no\", \"false\" to disable experience sharing."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/gui/partytab.cpp:104
+msgid "Command: /exp"
+msgstr "Komut: /exp"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/gui/partytab.cpp:105
+msgid "This command displays the party's current experience sharing policy."
+msgstr "Bu komut partinin şu anki tecrübe paylaşım kuralını gösterir."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/gui/partytab.cpp:113
+msgid "Party name is missing."
+msgstr "Parti adı yok."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/beinghandler.cpp:272
+msgid "You are dead."
+msgstr "Sınıfta kaldın!!! Tekrar baştan başlayalım..."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/beinghandler.cpp:273
+msgid "We regret to inform you that your character was killed in battle."
+msgstr "Öğretmen seni okuldan kaçarken yakaladı, derse baştan başlaman için en başa gönderdi..."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/beinghandler.cpp:275
+msgid "You are not that alive anymore."
+msgstr "Öğretmeni iyi dinlemiyorsun galiba, cezaya kaldın..."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/beinghandler.cpp:276
+msgid "The cold hands of the grim reaper are grabbing for your soul."
+msgstr "Kötü robotu sen geridönüşüme gönderecektin ama o seni gönderdi."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/beinghandler.cpp:277
+msgid "Game Over!"
+msgstr "Oyun daha bitmedi en baştan başlayalım."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/beinghandler.cpp:278
+msgid "No, kids. Your character did not really die. It... err... went to a better place."
+msgstr "Kötü robot seni en başa ışınladı..."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/beinghandler.cpp:280
+msgid "Your plan of breaking your enemies weapon by bashing it with your throat failed."
+msgstr "Başlangıç noktasını ziyaret etmenin vakti gelmişti..."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/beinghandler.cpp:282
+msgid "I guess this did not run too well."
+msgstr "Bu seferde sen geri dönüşüme git bakalım :). Haydi en başa..."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/beinghandler.cpp:283
+msgid "Do you want your possessions identified?"
+msgstr "Burada ders kaynadı, hadi başka yere gidelim..."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/beinghandler.cpp:284
+msgid "Sadly, no trace of you was ever found..."
+msgstr "Bu robotlarda çok kötü hep en başa gönderiyorlar..."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/beinghandler.cpp:285
+msgid "Annihilated."
+msgstr "AAA neresi burası!!! Acaba neden buraya geldim :)"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/beinghandler.cpp:286
+msgid "Looks like you got your head handed to you."
+msgstr "Hocam sular kesikti :). - Çık dışarı çabuk en başa dön ödevini düzgün yap öyle gel..."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/beinghandler.cpp:287
+msgid "You screwed up again, dump your body down the tubes and get you another one."
+msgstr "Otobüsü kaçırdım hocam ondan dolayı geç kaldım. -Yemezler çocuğum sen en baştan bir daha gel..."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/beinghandler.cpp:292
+msgid "Press OK to respawn."
+msgstr "Tekrar başlamak ister misin???"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/beinghandler.cpp:293
+msgid "You Died"
+msgstr "Yine mi en başa dönüyorum :("
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/charserverhandler.cpp:86
+msgid "Player deleted."
+msgstr "Oyuncu silindi."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/charserverhandler.cpp:95
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/charserverhandler.cpp:140
+msgid "Not logged in."
+msgstr "Giriş yapılmamış."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/charserverhandler.cpp:98
+msgid "Selection out of range."
+msgstr "Seçim mesafe dışında."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/charserverhandler.cpp:143
+msgid "No empty slot."
+msgstr "Boş alan yok."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/charserverhandler.cpp:146
+msgid "Invalid name."
+msgstr "Geçersiz ad."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/charserverhandler.cpp:149
+msgid "Character's name already exists."
+msgstr "Karakter adı zaten var."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/charserverhandler.cpp:152
+msgid "Invalid hairstyle."
+msgstr "Geçersiz saç tarzı."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/charserverhandler.cpp:155
+msgid "Invalid hair color."
+msgstr "Geçersiz saç rengi."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/charserverhandler.cpp:158
+msgid "Invalid gender."
+msgstr "Geçersiz cinsiyet."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/charserverhandler.cpp:161
+msgid "Character's stats are too high."
+msgstr "Karakter değerleri çok yüksek."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/charserverhandler.cpp:164
+msgid "Character's stats are too low."
+msgstr "Karakter değerleri çok düşük."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/charserverhandler.cpp:167
+msgid "One stat is zero."
+msgstr "Bir değer sıfır."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/charserverhandler.cpp:221
+msgid "No gameservers are available."
+msgstr "Herhangi bir sunucu ulaşılabilir değil."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/charserverhandler.cpp:260
+msgid "Willpower:"
+msgstr "İrade:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/chathandler.cpp:158
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/chathandler.cpp:279
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/guildhandler.cpp:250
+#, c-format
+msgid "Topic: %s"
+msgstr "Başlık: %s"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/chathandler.cpp:162
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/chathandler.cpp:240
+msgid "Players in this channel:"
+msgstr "Bu kanaldaki oyuncular:"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/chathandler.cpp:179
+msgid "Error joining channel."
+msgstr "Kanala girişte hata."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/chathandler.cpp:185
+msgid "Listing channels."
+msgstr "Kanallar listeleniyor."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/chathandler.cpp:197
+msgid "End of channel list."
+msgstr "Kanal listesi sonu."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/chathandler.cpp:269
+#, c-format
+msgid "%s entered the channel."
+msgstr "%s kanala giriş yaptı."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/chathandler.cpp:274
+#, c-format
+msgid "%s left the channel."
+msgstr "%s kanaldan ayrıldı."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/chathandler.cpp:290
+#, c-format
+msgid "%s has set mode %s on user %s."
+msgstr "%s modu %s olarak %s için değiştirdi."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/chathandler.cpp:300
+#, c-format
+msgid "%s has kicked %s."
+msgstr "%s %s adlı oyuncuyu dışarı çıkardı."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/chathandler.cpp:305
+msgid "Unknown channel event."
+msgstr "Bilinmeyen kanal durumu."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/generalhandler.cpp:164
+msgid "Willpower"
+msgstr "İrade"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/guildhandler.cpp:74
+msgid "Guild created."
+msgstr "Sınıf oluşturuldu."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/guildhandler.cpp:79
+msgid "Error creating guild."
+msgstr "Sınıf oluşturulurken hata oluştu."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/guildhandler.cpp:89
+msgid "Invite sent."
+msgstr "Davet gönderildi."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/guildhandler.cpp:194
+msgid "Member was promoted successfully."
+msgstr "Üye başarıyla terfi ettirildi."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/guildhandler.cpp:199
+msgid "Failed to promote member."
+msgstr "Üye terfi ettirilemedi."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/loginhandler.cpp:80
+msgid "Wrong magic_token."
+msgstr "Yanlış büyü."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/loginhandler.cpp:83
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/loginhandler.cpp:182
+msgid "Already logged in."
+msgstr "Zaten giriş yapılmış."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/loginhandler.cpp:86
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/loginhandler.cpp:185
+msgid "Server is full."
+msgstr "Sunucu dolu."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/loginhandler.cpp:110
+msgid "New password incorrect."
+msgstr "Yeni şifre yanlış."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/loginhandler.cpp:116
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/loginhandler.cpp:146
+msgid "Account not connected. Please login first."
+msgstr "Hesap bağlanılamadı. Lütfen önce giriş yapın."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/loginhandler.cpp:140
+msgid "New email address incorrect."
+msgstr "Yeni e-posta adresi yanlış."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/loginhandler.cpp:143
+msgid "Old email address incorrect."
+msgstr "Eski e-posta adresi yanlış."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/loginhandler.cpp:149
+msgid "The new email address already exists."
+msgstr "Yeni e-posta adresi daha önce kullanılmış."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/loginhandler.cpp:176
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/loginhandler.cpp:208
+msgid "Client version is too old."
+msgstr "Oyun sürümü çok eski."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/loginhandler.cpp:179
+msgid "Wrong username or password."
+msgstr "Yanlış kullanıcı adı veya şifre."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/loginhandler.cpp:211
+msgid "Wrong username, password or email address."
+msgstr "Yanlış kullanıcı adı, şifre ve e-posta adresi."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/loginhandler.cpp:214
+msgid "Username already exists."
+msgstr "Kullanıcı adı daha önce kullanılmış."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/loginhandler.cpp:217
+msgid "Email address already exists."
+msgstr "E-posta adresi daha önce kullanılmış."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/partyhandler.cpp:86
+msgid "Joined party."
+msgstr "Partiye katıldın."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/partyhandler.cpp:103
+#, c-format
+msgid "%s joined the party."
+msgstr "%s partiye katıldı."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/partyhandler.cpp:120
+#, c-format
+msgid "%s rejected your invite."
+msgstr "%s davetinizi geri çevirdi."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/tradehandler.cpp:97
+msgid "Accepting incoming trade requests."
+msgstr "Gelen alıveriş istekleri kabul ediliyor."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/tradehandler.cpp:99
+msgid "Ignoring incoming trade requests."
+msgstr "Gelen alış veriş istekleri kabul edilmiyor."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/tmwserv/tradehandler.cpp:137
+#, c-format
+msgid "Trading with %s"
+msgstr "%s ile alış veriş yapılıyor."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/resources/itemdb.cpp:113
+msgid "Unknown item"
+msgstr "Bilinmeyen nesne"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/resources/itemdb.cpp:158
+msgid "unnamed"
+msgstr "adlandırılmamış"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/commandhandler.h:31
+#, c-format
+msgid "Options to /%s are \"yes\", \"no\", \"true\", \"false\", \"1\", \"0\"."
+msgstr "Ayarlar /%s  \"evet\", \"hayır\", \"doğru\", \"yanlış\", \"1\", \"0\"."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/recorder.h:39
+msgid "Recording..."
+msgstr "Kaydediliyor..."
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/recorder.h:40
+msgid "Stop recording"
+msgstr "Kaydı durdur"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/windowmenu.cpp:67
+msgid "Shortcut"
+msgstr "Kısayol"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/windowmenu.cpp:58
+msgid "Status"
+msgstr "Karakter"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup.cpp:51
+msgid "Apply"
+msgstr "Uygula"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup.cpp:51
+msgid "Reset Windows"
+msgstr "Pencerelere Şimdi Uygula"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_players.cpp:56
+msgid "Name"
+msgstr "Ad"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_players.cpp:57
+msgid "Relation"
+msgstr "Arkadaşlık"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_players.cpp:62
+msgid "Neutral"
+msgstr "Normal"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_players.cpp:63
+msgid "Friend"
+msgstr "Arkadaş"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_players.cpp:64
+msgid "Disregarded"
+msgstr "Dikkate Alma"
+
+#: C:\Documents
+#: and
+#: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/setup_players.cpp:65
+msgid "Ignored"
+msgstr "Yoksay"
+

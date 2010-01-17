@@ -329,6 +329,7 @@ bool Network::realConnect()
     mSocket = SDLNet_TCP_Open(&ipAddress);
     if (!mSocket)
     {
+        logger->log("Burası");
         logger->log("Error in SDLNet_TCP_Open(): %s", SDLNet_GetError());
         setError(SDLNet_GetError());
         return false;

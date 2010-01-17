@@ -31,6 +31,7 @@
 
 #include "gui/ministatus.h"
 #include "gui/setup.h"
+#include "gui/gui.h"
 
 #include "localplayer.h"
 #include "units.h"
@@ -90,7 +91,7 @@ class ChangeDisplay : public AttrDisplay, gcn::ActionListener
 StatusWindow::StatusWindow():
     Window(player_node->getName())
 {
-    setWindowName("Status");
+    setWindowName("Karakter Bilgisi");
     setupWindow->registerWindowForReset(this);
     setResizable(true);
     setCloseButton(true);
@@ -98,12 +99,37 @@ StatusWindow::StatusWindow():
     setDefaultSize((windowContainer->getWidth() - 365) / 2,
                    (windowContainer->getHeight() - 255) / 2, 365, 275);
 
+    mHead = new ImageWidget("elektrik/karakter_head.png", false);
+    add(mHead);
+
+    mLabelLvl = new ImageWidget("elektrik/karakter_label_back.png",false);
+    mLabelLvl->setY(0);
+    add(mLabelLvl);
+
+    mLabelGP = new ImageWidget("elektrik/karakter_label_back.png",false);
+    mLabelGP->setY(0);
+    add(mLabelGP);
+
+    mLabelJob = new ImageWidget("elektrik/karakter_label_back.png",false);
+    mLabelJob->setY(30);
+    add(mLabelJob);
+
+    mCharName = new Label ("MehmetCan");//player_node->getName());
+    mCharName->setFont(font_bas_2_18);
+    mCharName->adjustSize();
+    mCharName->setForegroundColor(gcn::Color(30,70,230));
+    add(mCharName);
+
     // ----------------------
     // Status PartmaYA
     // ----------------------
 
     mLvlLabel = new Label(strprintf(_("Level: %d"), 0));
+    mLvlLabel->setY(15);
+    add(mLvlLabel);
     mMoneyLabel = new Label(strprintf(_("Money: %s"), ""));
+    mMoneyLabel->setY(15);
+    add(mMoneyLabel);
 
     mHpLabel = new Label(_("HP:"));
     mHpBar = new ProgressBar((float) player_node->getHp()
@@ -120,9 +146,11 @@ StatusWindow::StatusWindow():
                              / (float) player_node->getMaxMP(),
                              80, 15, gcn::Color(26, 102, 230));
 
-    place(0, 0, mLvlLabel, 3);
+   // place(0, 0, mLvlLabel, 3);
     // 5, 0 Job Level
-    place(8, 0, mMoneyLabel, 3);
+//    place(8, 0, mMoneyLabel, 3);
+
+
     place(0, 1, mHpLabel).setPadding(3);
     place(1, 1, mHpBar, 4);
     place(5, 1, mXpLabel).setPadding(3);
@@ -134,9 +162,15 @@ StatusWindow::StatusWindow():
 #ifdef EATHENA_SUPPORT
     mJobLvlLabel = new Label(strprintf(_("Job: %d"), 0));
     mJobLabel = new Label(_("Job:"));
+//    mJobLabel->setY(mLabelJo->getY()+15);
+//    add(mJobLabel);
     mJobBar = new ProgressBar(0.0f, 80, 15, gcn::Color(220, 135, 203));
+    mJobLvlLabel->setY(mLabelJob->getY()+15);
+    add(mJobLvlLabel);
 
-    place(5, 0, mJobLvlLabel, 3);
+
+
+//    place(5, 0, mJobLvlLabel, 3);
     place(5, 2, mJobLabel).setPadding(3);
     place(6, 2, mJobBar, 5);
 #endif
@@ -162,7 +196,9 @@ StatusWindow::StatusWindow():
     getLayout().setRowHeight(3, Layout::AUTO_SET);
 
     mCharacterPointsLabel = new Label("C");
-    place(0, 6, mCharacterPointsLabel, 5);
+    mCharacterPointsLabel->setFont(font_bas_2_16);
+    add(mCharacterPointsLabel);
+    //place(0, 6, mCharacterPointsLabel, 5);
 #ifdef TMWSERV_SUPPORT
     mCorrectionPointsLabel = new Label("C");
     place(0, 7, mCorrectionPointsLabel, 5);
@@ -179,6 +215,31 @@ StatusWindow::StatusWindow():
 #ifdef EATHENA_SUPPORT
     update(JOB);
 #endif
+    elektroUpdate();
+}
+
+void StatusWindow::elektroUpdate()
+{
+    mHead->setX((getWidth()-mHead->getWidth())/2);
+    mCharName->setY(mHead->getY()+5);
+    mCharName->setX((getWidth()-mCharName->getWidth())/2);
+    mCharacterPointsLabel->setX((getWidth()-mCharacterPointsLabel->getWidth())/2);
+    mCharacterPointsLabel->setY(mHead->getY()+45);
+
+    mLabelLvl->setX(mHead->getX()-mLabelLvl->getWidth()+10);
+    mLabelGP->setX(mHead->getX()+mHead->getWidth()-10);
+    mLabelJob->setX(mLabelGP->getX());
+
+    mLvlLabel->setX(mLabelLvl->getX()+30);
+    mMoneyLabel->setX(mHead->getX()+mHead->getWidth()+30);
+    mJobLvlLabel->setX(mMoneyLabel->getX());
+//    mJobLabel->setX(mMoneyLabel->getX());
+}
+
+void StatusWindow::mouseDragged(gcn::MouseEvent &event)
+{
+    elektroUpdate();
+    Window::mouseDragged(event);
 }
 
 std::string StatusWindow::update(int id)

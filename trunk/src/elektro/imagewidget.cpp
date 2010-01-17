@@ -3,21 +3,33 @@
 #include "../resources/image.h"
 #include "../graphics.h"
 
-ImageWidget::ImageWidget(std::string imagename)
+ImageWidget::ImageWidget(std::string imagename, bool sets)
 {
     setFrameSize(0);
     setTitleBarHeight(0);
+    mSet = sets;
     if (imagename != "")
     {
         // Load the skin
         ResourceManager *resman = ResourceManager::getInstance();
 
+        if(mSet)
+        {
+            Image *temp = resman->getImage("graphics/"+imagename);
+            temp->decRef();
+            mImageSet = resman->getImageSet("graphics/"+imagename,temp->getWidth()/4,temp->getHeight());
+            setSize(temp->getWidth()/4,temp->getHeight());
+            setSize(temp->getWidth()/4,temp->getHeight());
+        }
+        else
+        {
+            Image *temp = resman->getImage("graphics/"+imagename);
+            temp->decRef();
+            mImageSet = resman->getImageSet("graphics/"+imagename,temp->getWidth(),temp->getHeight());
+            setSize(temp->getWidth(),temp->getHeight());
+            setSize(temp->getWidth(),temp->getHeight());
+        }
 
-        Image *temp = resman->getImage("graphics/"+imagename);
-        temp->decRef();
-        mImageSet = resman->getImageSet("graphics/"+imagename,temp->getWidth()/4,temp->getHeight());
-        setSize(temp->getWidth()/4,temp->getHeight());
-        setSize(temp->getWidth()/4,temp->getHeight());
     }
 }
 

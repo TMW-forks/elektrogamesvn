@@ -28,6 +28,8 @@
 
 #include <guichan/actionlistener.hpp>
 
+#include "elektro/imagewidget.h"
+
 #include <map>
 
 class AttrDisplay;
@@ -71,10 +73,20 @@ class StatusWindow : public Window
         void updateProgressBar(ProgressBar *bar, int id,
                                bool percent = true);
 
+        void mouseDragged(gcn::MouseEvent &event);
+
+        void elektroUpdate();
+
     private:
         /**
          * Status Part
          */
+        ImageWidget *mHead;
+        ImageWidget *mLabelLvl;
+        ImageWidget *mLabelGP;
+        ImageWidget *mLabelJob;
+        gcn::Label *mCharName;
+
         gcn::Label *mLvlLabel, *mMoneyLabel;
         gcn::Label *mHpLabel, *mMpLabel, *mXpLabel;
         ProgressBar *mHpBar, *mMpBar, *mXpBar;

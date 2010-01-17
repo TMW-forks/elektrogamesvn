@@ -320,7 +320,7 @@ static void destroyGuiWindows()
     delete testDialog;
     delete circuitWindow;
     delete slaytWindow;
-    delete similasyonPenceresi;
+//    delete similasyonPenceresi;
     delete hesapMakinesi;
     delete instantHelp;
 }

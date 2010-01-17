@@ -8,6 +8,7 @@
 
 #include "gui/widgets/window.h"
 #include "gui/widgets/button.h"
+#include "gui/widgets/checkbox.h"
 #include "../resources/image.h"
 
 #include "../guichanfwd.h"
@@ -45,11 +46,13 @@ class Wellcome : public Window, public gcn::ActionListener
 
         void mouseMoved(gcn::MouseEvent &event);
 
+        void mousePressed(gcn::MouseEvent &event);
     private:
         Image *mSlide;
         Button *mNext;
         Button *mPrev;
         Button *mFinish;
+        CheckBox *mAgain;
 
         int mCurrentSlide;
 

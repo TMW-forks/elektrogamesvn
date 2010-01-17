@@ -1,82 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
-<map version="1.0" orientation="orthogonal" width="60" height="50" tilewidth="32" tileheight="32">
- <properties>
-  <property name="music" value="bluesky.ogg"/>
-  <property name="name" value="Eğitim Odası"/>
- </properties>
- <tileset firstgid="1" name="syh" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/siyah.png"/>
+<map version="1.0" orientation="orthogonal" width="100" height="100" tilewidth="32" tileheight="32">
+ <tileset name="cali_kaya" firstgid="1" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/cali_kaya.png"/>
  </tileset>
- <tileset firstgid="2" name="Untitled" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/kaplamalar.png"/>
- </tileset>
- <tileset firstgid="20" name="hast" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/hastehane.png"/>
- </tileset>
- <tileset firstgid="104" name="Untitled" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/oda1_zemin.png"/>
- </tileset>
- <tileset firstgid="152" name="yol" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/yol2.png"/>
- </tileset>
- <tileset firstgid="161" name="Untitled" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/trans_woodland-desert.png"/>
- </tileset>
- <tileset firstgid="289" name="Untitled" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/Woodland_ground.png"/>
- </tileset>
- <tileset firstgid="545" name="Untitled" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/havuz.png"/>
- </tileset>
- <tileset firstgid="570" name="Untitled" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/isin_kabin.png"/>
- </tileset>
- <tileset firstgid="885" name="Untitled" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/kucuk_fanus.png"/>
- </tileset>
- <tileset firstgid="933" name="Untitled" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/cikis.png"/>
- </tileset>
- <tileset firstgid="935" name="Untitled" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/agaclar.png"/>
- </tileset>
- <tileset firstgid="985" name="Untitled" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/agac.png"/>
- </tileset>
- <tileset firstgid="1209" name="Collision" tilewidth="32" tileheight="32">
+ <tileset name="Collision" firstgid="41" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/collision.png"/>
  </tileset>
- <layer name="Ground" width="60" height="50">
+ <layer name="Ground" width="100" height="100">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3aSwrCMBSF4VRwb5066cBnnagrUFdgt+Cz7dxNuALdkneQQgghhNqY1xl8WIXI/YkaBTPGWAYAAOCBOZlGZqHpzckoMgV60RsR9KI3Jqn15on16va38GC+f/amtr99eyeZG+hFb2q9Ns4jeY4N2XI1afitqNFci7rHdx7v754cBna02FtqxNq7Voi9V1yH3vh6fXo9v3r2mpxHpYZJ74m8uQ+p+HWluC9fV9K6bs3T4v7+eh759H3Dxu/BUHtT21/0hq9v79iD2W31nsmFXIXWUHrl2U16b+ROHkKrius2FXF2096aNKQNcH/l2fH+Tffzecnc//+gMxvoeVaaXgAAANe+JajSq+AuAAA=
+   H4sIAAAAAAAAAO3DAQkAAAwEoevx/XsOlkPBVVNVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf8BdPnlmUCcAAA=
   </data>
  </layer>
- <layer name="Fringe" width="60" height="50">
+ <layer name="Fringe" width="100" height="100">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+2X107DMBSGU9o7xEOw99438Aw8A+MFgEtWB0hsWobEplDeshJfBZXSqEnstE6Tcn7pU1rn5Pj8tuPIliUSiUQikUgUrlYTtVTbvOLsMfar877qf9UYtzhdv0Ha6o1Nvd9+V6+cOs+qyqRfv/Xg1odpv0HXs9sY1Lvv9x649eH1TFzXs+68RnU9q1xVY7zadeS3/6muNRUPKn2o+g26nkWi/6oy70tnRzjY+2qVugz0fZiyrCNIp2rb1xK/mOhTVZW+16lhBzZgEwoN7pHX+LyBvMPvSkT8bv/5rbDbhO/BOz4/oBhRvxlqyEIOtgx+/6LiNyyZ8ttNvh7ohT7o98gfpl9T+9UA+QZhCIZhRMFvo3uUikz5HSXfGIzDBEy2+fxOkW8aZmAW5trc7zz5FmARlmC5zf3qSPyaUSkRP7/O87zbGd1tr4+i31LSsr6TzcntzBUFv84zm1t7EOy5qmfBsoffNGOTgazGeO8Ruw8HTZqjMHVKzWdwrlF7jthjOImh3zw1F+BWo/YLYi/hKoZ+H6n5CZ41ar8j9h4eYui3SM2f8KVR+wuxr/AWQ78ikUgkEolEotboB5jqUo7gLgAA
+   H4sIAAAAAAAAAO3aC0vDMBSG4Qo6L9UxJ4iKlwrq//+JJmCgjjRNk5P0tH0fOGxduiTrR9ZS2jQAAADz6SoVxr2ubJyl05JHJ1BroCEPiTmsZf2Rhy6a8jgL7DPWRh5y47i2XWCfsTbykBtnzv+rN1PvEa+1bD2P1tS5qQtPm/u8TZ1Ugq3ncTB1berG0+Y+P6ROKsHW83gp2HcK8ijXdwpNeYSuaUNyrnfJY7gtdE0bknO9Sx5l5kAecuOQR/2xyCMOeZTrOwV5xPX9kdj/VOQR57Fi1SIxh6HjVzoPn33Gdy13P2bfDN+zKUlifE15PGR897SfW1N3Qv3VHF9THrnro+/e1FGwv1rja8pDan0smaY8JNfHUmnKQ3J9zHn+yBnfHr8nU89/2+79kteH7WfO80fO+Pb4tZ5a8vqY+zyUM749fgdPlc6ji6zSfUiKnU+oNJ0/poidX817ZbV++xTkoQt56EIeupCHLuShC3noQh66uDntmv/Pf51ux+wT2iaPOKwPXfpzujR11Xv1GdtnqJ084tjnRroK9Rk5n63n8WXqu0L9RM5n63loQx76rO05LwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAHr9tMwrCQJwAAA==
   </data>
  </layer>
- <layer name="Top" width="60" height="50">
+ <layer name="Top" width="100" height="100">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3BMQEAAADCoPVPbQwfoAAAAAAAAAAAAAAA4G+ekqdq4C4AAA==
+   H4sIAAAAAAAAAO3WOwqAMBAFQL+FFjbe/66mSGGhEFKYyM7AIwks+9oMAwAAAAAAAAAAAPCFJWV9uEfp782Wsj/co/QD/3PkRO3vzZkTtR/oX+v/f+v+3rT+/7fuBwCAqMact3fJTMkO+KspZb6dNTMlOwAAAAAAAAAAAAAAAAAAAAAAAAAAAKDWBRcse3tAnAAA
   </data>
  </layer>
- <layer name="Collision" width="60" height="50">
+ <layer name="Collision" width="100" height="100" y="1">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3WywmAMBRFwSzsv6BU51YQxSTmw8tcODtRR1DMR0pZkiRNKdp4eSONlzfSeHkjjbfdu/K/by/v6EX0vp03ovePa47wjnhfeXlLvCXPgpeXdy1vyXb3jhjv83G87d6v37zad7b2Xnt4Vx7v3RvBfbXw7u2NNF5JkjSrExDFupHgLgAA
+   H4sIAAAAAAAAAO3YUY6CMBiFUdcz+1/gPJmZoClQbttfOSfhQS1txy9MkMcDAO7jZ/JB28zvSI99FXq4/v5U6TFy/k+iRy161FKpR2svRz7TI7PWyuuj2n1ChbW2778bd+S9qz3OfDZKhbVWXR9718CKa+TuPUbN3UuPMXP30mPM3L0q9ejdS+/5ehx7/+iert5f6TF2D3pk1tJj/jqttfSYv85zrZHPI0b3mHXMosf39WiNHdlje17iO1zZIrV+hR6p8//Ps6JHYn098vR4nWdVi6vr65Gnx+s8n/z/KnWvqMf19Sv0cL/bnmNGj711e9ev1qPnaM1/dj8zJf7G9H4qWdEjMSZFj8yYFD0yY1L0yIxJ0SMzJkWPzJgUPTJjUir32N73v/sdsDfmyOszexpNj3N7Gq1yj+frvd/Ie2Nan+vRNvvZhB5tqedpyedSd+5RkR61VLteAQAAAAAAAAAAAAAAAAAAAAAAAIBxfgGWfxZPQJwAAA==
   </data>
  </layer>
- <objectgroup name="Objects" width="0" height="0">
-  <object name="ToMainMap" type="WARP" x="128" y="1184" width="32" height="96">
-   <properties>
-    <property name="DEST_MAP" value="elektro_1-1"/>
-    <property name="DEST_X" value="1200"/>
-    <property name="DEST_Y" value="2320"/>
-   </properties>
-  </object>
-
-  <object name="graphics/particles/flame.particle.xml" type="PARTICLE_EFFECT" x="128" y="1184" width="32" height="96"/>
-
- </objectgroup>
+ <layer name="Objects" width="100" height="100" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3BMQEAAADCoPVP7WULoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgBt5RKnmQJwAAA==
+  </data>
+ </layer>
 </map>

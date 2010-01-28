@@ -21,17 +21,17 @@
    H4sIAAAAAAAAAO3WOw6AIBCEYWjRG6A34Aq0Po7rDV0LE6Ox0EyEmL/4CmicbIa43jnnAaCAxgxmNJOZH5yP960gSzSLQBBkSaIsUZAli7KkiuaSK5qLoi9BlEXRF9U7oi/05eu50Bf6UqIvf/tPd+66t513uP17d3vephdkAYC3VigZ7qwkEwAA
   </data>
  </layer>
- <layer name="Fringe" width="35" height="35" visible="0">
+ <layer name="Fringe" width="35" height="35">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAAO3BAQEAAACCIP+vbkhAAQAAAMC3AV9aZlgkEwAA
   </data>
  </layer>
  <layer name="Top" width="35" height="35">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3OqQ0AMAwAse4/VN/FGhBcVCnElo5fawAAAPzSo1E9kWa0qifSjk71BMDDBYcdTO8kEwAA
+   H4sIAAAAAAAAAO3Suw0AIAwD0ew/FOGzGClSUFHiIN2T3F9hMwAAgDdcHZD8mFrVlko9wG+a1flujw11RJqxpY4AgIsNNmDXuSQTAAA=
   </data>
  </layer>
- <layer name="Collision" width="35" height="35" visible="0">
+ <layer name="Collision" width="35" height="35">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAAO3OwQkAQAgDwfTfl31dCwpyHyew70wlKUnSylhYWFhYWFhYrlq61l9/LJKmPcqnaoAkEwAA
   </data>

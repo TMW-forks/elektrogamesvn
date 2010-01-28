@@ -26,15 +26,15 @@
  </layer>
  <layer name="Fringe" width="46" height="37">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3BMQEAAADCoPVPbQo/oAAAAAAAAOBvgMSd45gaAAA=
+   H4sIAAAAAAAAAO3VvQmAQAyG4dTqBuoGrmDrz/476BrGUrzC+wh3IO8DX3FFIOQCMQMAAPiX1rN4Vs/m2T+8uyqdPk1CTRPeRb5ZqOnDu8inzE75o2jK7JQ/isZ+l8V+l8V+lzXY+47fOTynpe/8WKVTAAAApFyr7PN0mBoAAA==
   </data>
  </layer>
  <layer name="Top" width="46" height="37">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3VzQmAMAyG4Z7VDdQNXMGrP/tv4O8axqPYgg2lLfI+8B1KKYQkUGMAAAD+pZQMklEySeYP5ypJpU+d4k0RvAp/veJNHbwKf5reaWYUmqZ3mhmFxn7HxX7H5erdIlkddznv9ybZHXc57Hdj3v/4nUNyGvs/3yapFAAAADYXSqKpfpgaAAA=
+   H4sIAAAAAAAAAO3OyQkAIAwAQfsv07MN04EQhHxmYP/bGgAAAPBbj0b1RMKMVvVEwo5O9QQAAE8XytBl85gaAAA=
   </data>
  </layer>
- <layer name="Collision" width="46" height="37">
+ <layer name="Collision" width="46" height="37" visible="0">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAAO3OMQ0AMAzAsPBnWhbDsGud5Ej+M9UAALDCba9/ffv27du37y1+ePQNAFAHj8l62pgaAAA=
   </data>

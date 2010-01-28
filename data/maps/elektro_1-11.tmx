@@ -28,10 +28,10 @@
  </layer>
  <layer name="Top" width="35" height="35">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3Suw0AIAwD0ew/FOGzGClSUFHiIN2T3F9hMwAAgDdcHZD8mFrVlko9wG+a1flujw11RJqxpY4AgIsNNmDXuSQTAAA=
+   H4sIAAAAAAAAAO3OqQ0AMAwAse4/VN/FGhBcVCnElo5fawAAAPzSo1E9kWa0qifSjk71BMDDBYcdTO8kEwAA
   </data>
  </layer>
- <layer name="Collision" width="35" height="35">
+ <layer name="Collision" width="35" height="35" visible="0">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAAO3OwQkAQAgDwfTfl31dCwpyHyew70wlKUnSylhYWFhYWFhYrlq61l9/LJKmPcqnaoAkEwAA
   </data>

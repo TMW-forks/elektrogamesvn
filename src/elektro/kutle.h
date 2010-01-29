@@ -21,6 +21,7 @@ class Kutle : public gcn::Window, public gcn::ActionListener
 
         void action(const gcn::ActionEvent &event);
         void draw(gcn::Graphics *graphics);
+        void setHareket (bool durum);
         void setSelected (bool durum);
         void setAgirlik(int agirlik);
         void setID(int id);
@@ -29,7 +30,8 @@ class Kutle : public gcn::Window, public gcn::ActionListener
         void hesaplaY();
 
         int getID();
-        bool getSelected ();
+        bool getHareket();
+        bool getSelected();
         int getAgirlik();
         int getResimIndex();
 
@@ -41,9 +43,14 @@ class Kutle : public gcn::Window, public gcn::ActionListener
         gcn::ActionListener *mListener;
         int tempX,tempY;
         int mID;
-        bool mSelected;
         int mAgirlik;
         int resimIndex;
+        bool mHareket;
+        bool mSelected;
+        int mR;
+        int mX;
+        int mY;
+        int mAlfa;
 };
 
 #endif // KUTLE_H

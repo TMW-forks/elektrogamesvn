@@ -24,6 +24,8 @@ Kutle::Kutle(gcn::ActionListener *listener) :
     }
     setFrameSize(0);
     resimIndex=3;
+    setHareket(false);
+    mAlfa = 1;
 }
 
 Kutle::~Kutle()
@@ -76,19 +78,19 @@ void Kutle::mouseDragged(gcn::MouseEvent &event)
         if (getX()>290 && getX()<320 && getY()>265)
         {
             setX(305);
-            setY(280);
+            setY(284);
         }
         //2.Kefe
         else if (getX()>320 && getX()<365 && getY()>265)
         {
             setX(345);
-            setY(280);
+            setY(284);
         }
         //3.Kefe
         else if (getX()>365 && getX()<400 && getY()>265)
         {
             setX(385);
-            setY(280);
+            setY(284);
         }
     }
 }
@@ -99,42 +101,52 @@ Kutle::mouseReleased(gcn::MouseEvent &event)
     std::vector<int> agirlikKefe;
     setSelected(false);
 
-    if (getX()==305 && getY() == 280)
+    if (getX()==305 && getY() == 284)
     {
-        logger->log("arttı");
         agirlikKefe.push_back(similasyonPenceresi->kefe1);
         agirlikKefe.push_back(getAgirlik());
         similasyonPenceresi->idKefe[getID()]= agirlikKefe;
+        setHareket(true);
+        mR = 32;
+        mX = getX()-30;
+        mY = 225+92-32;
     }
-    else if (getX()==345 && getY() == 280)
+    else if (getX()==345 && getY() == 284)
     {
-        logger->log("arttı");
         agirlikKefe.push_back(similasyonPenceresi->kefe2);
         agirlikKefe.push_back(getAgirlik());
         similasyonPenceresi->idKefe[getID()]= agirlikKefe;
+        setHareket(true);
+        mR = 79;
+        mX = getX()-78;
+        mY = 225+92-40;
     }
-    else if (getX()==385 && getY() == 280)
+    else if (getX()==385 && getY() == 284)
     {
-        logger->log("arttı");
         agirlikKefe.push_back(similasyonPenceresi->kefe3);
         agirlikKefe.push_back(getAgirlik());
         similasyonPenceresi->idKefe[getID()]= agirlikKefe;
+        setHareket(true);
+        mR = 119;
+        mX = getX()-64-getWidth();
+        mY = 225+92-(getHeight());
     }
     else
     {
-        //similasyonPenceresi->idKefe.insert(std::make_pair(getID(),0));
         agirlikKefe.push_back(0);
         agirlikKefe.push_back(getAgirlik());
         similasyonPenceresi->idKefe[getID()]= agirlikKefe;
+        setHareket(false);
     }
+
 }
 
 void
 Kutle::hesaplaY2()
 {
     int y=0;
-
-    y = getY() + sin(-15*(22/7.0)/180)*(getX()-234);
+    y = getY() + sin(-15*(22/7.0)/180)*(getX()-282);
+//    y = getY() + tan(-15*(22/7.0)/180)*(getX()-300);
     setY(y);
 }
 
@@ -142,11 +154,20 @@ void
 Kutle::hesaplaY()
 {
     int y=0;
+    int x=0;
 
-    y = getY() + sin(15*(22/7.0)/180)*(getX()-275);
-    logger->log("Sonuc %d",getX());
+    mAlfa = (resimIndex - 2)*6;
+    y = mY + sin(mAlfa*(22/7.0)/180)*mR;
+    mAlfa = (resimIndex - 2)*4;
+    x = mX + cos(mAlfa*(22/7.0)/180)*mR;
+//    y = getY() + sin(15*(22/7.0)/180)*(getX()-352);
+//    y = getY() + tan(15*(22/7.0)/180)*(getX()-355);
+    logger->log("X--: %d",mX);
+    logger->log("Y--: %d",mY);
+    logger->log("R--: %d",mR);
 //    y = getY() + sin(15*(22/7.0)/180)*34;
     setY(y);
+    setX(x);
 }
 
 void
@@ -162,13 +183,25 @@ Kutle::getID()
 }
 
 void
-Kutle::setSelected (bool durum)
+Kutle::setHareket (bool durum)
+{
+    mHareket = durum;
+}
+
+bool
+Kutle::getHareket ()
+{
+    return mHareket;
+}
+
+void
+Kutle::setSelected(bool durum)
 {
     mSelected = durum;
 }
 
 bool
-Kutle::getSelected ()
+Kutle::getSelected()
 {
     return mSelected;
 }

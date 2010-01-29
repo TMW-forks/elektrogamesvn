@@ -9,8 +9,6 @@
 #include <vector>
 #include <map>
 
-
-
 #include "../resources/animation.h"
 #include "../resources/image.h"
 #include "../resources/resourcemanager.h"
@@ -35,7 +33,7 @@
 #include "./typedef.h"
 #include "./bitbutton.h"
 
-#include "beskilogram.h"
+#include "kutle.h"
 #include "simpleanimation.h"
 #include "kaldirac.h"
 #include "item.h"
@@ -59,12 +57,17 @@ class SimilasyonPenceresi : public Window, public gcn::ActionListener
         bool getKontrolEtDurum();
         void setKontrolEtDurum(bool durum);
 
-
         int kefe1,kefe2,kefe3;
         std::map<int,std::vector<int> > idKefe;
         std::map<int,std::vector<int> >::iterator idKefeIt;
+
+        //Penceredeki bütün kütleleri tutan vektör
         std::vector<Kutle*> mvKutle;
         std::vector<Kutle*>::iterator miKutle;
+
+        //Sadece kefelerdeki kütleleri tutan vektör
+        std::vector<Kutle*> mvKutleKefe;
+        std::vector<Kutle*>::iterator miKutleKefe;
     protected:
     private:
         bool startCancelDurum;
@@ -84,7 +87,6 @@ class SimilasyonPenceresi : public Window, public gcn::ActionListener
 
         std::vector<Kaldirac*> mvKaldirac;
         std::vector<Kaldirac*>::iterator miKaldirac;
-
 
         TmvAnim mvAnim;
         TmiAnim miAnim;

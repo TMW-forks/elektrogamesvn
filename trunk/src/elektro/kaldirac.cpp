@@ -9,11 +9,11 @@ Kaldirac::Kaldirac(gcn::ActionListener *listener) : mListener(listener)
     {
         addActionListener(mListener);
     }
-    setFrameSize(0);
+    setFrameSize(1);
 
     ResourceManager *resman = ResourceManager::getInstance();
 
-    mKaldiracImages = resman->getImageSet("graphics/sprites/elektroadd/kaldirac.png",315,128);
+    mKaldiracImages = resman->getImageSet("graphics/elektrik/kaldirac.png",315,128);
     mKaldiracAnime = new Animation();
 
     for (unsigned int  i=0; i<mKaldiracImages->size(); i++)
@@ -41,18 +41,19 @@ void Kaldirac::draw(gcn::Graphics *graphics)
     ResourceManager *resman = ResourceManager::getInstance();
     Graphics *g = static_cast<Graphics*>(graphics);
 
-    g->drawImage(mKaldiracImages->get(resimIndex),25, 25);
 
+
+    g->drawImage(mKaldiracImages->get(resimIndex),25, 25);
+    g->drawRectangle(gcn::Rectangle(182,92,30,30));
     drawChildren(graphics);
 }
 
 void
 Kaldirac::logic()
 {
-    int a;
+    int index;
     if (similasyonPenceresi->getKontrolEtDurum())
     {
-        a = similasyonPenceresi->mvKutle.at(0)->getResimIndex();
         sayac++;
         if(sayac >=50)
         {
@@ -65,24 +66,42 @@ Kaldirac::logic()
                     }
                     else
                     {
-                        a--;
                         resimIndex--;
-                        similasyonPenceresi->mvKutle.at(0)->setResimIndex(a);
-                        similasyonPenceresi->mvKutle.at(0)->hesaplaY2();
+                        for (std::vector<Kutle*>::iterator it= similasyonPenceresi->mvKutle.begin();
+                            it != similasyonPenceresi->mvKutle.end(); it++)
+                        {
+                            logger->log("döngüde");
+                            if ((*it)->getHareket())
+                            {
+                                index = (*it)->getResimIndex();
+                                index--;
+                                (*it)->setResimIndex(index);
+                                (*it)->hesaplaY();
+                            }
+                        }
                     }
                     break;
 
                 case UP:
-                    if (resimIndex==6)
+                    if (resimIndex>=6)
                     {
                         similasyonPenceresi->setKontrolEtDurum(false);
                     }
                     else
                     {
-                        a++;
                         resimIndex++;
-                        similasyonPenceresi->mvKutle.at(0)->setResimIndex(a);
-                        similasyonPenceresi->mvKutle.at(0)->hesaplaY();
+                        for (std::vector<Kutle*>::iterator it = similasyonPenceresi->mvKutle.begin();
+                            it != similasyonPenceresi->mvKutle.end(); it++)
+                        {
+                            if ((*it)->getHareket())
+                            {
+                                logger->log("döngüde");
+                                index = (*it)->getResimIndex();
+                                index++;
+                                (*it)->setResimIndex(index);
+                                (*it)->hesaplaY();
+                            }
+                        }
                     }
                     break;
 

@@ -10,6 +10,14 @@
 
 #include <guichan/font.hpp>
 
+#include "besgram.h"
+#include "ongram.h"
+#include "yirmigram.h"
+#include "yirmibesgram.h"
+#include "otuzbesgram.h"
+#include "elligram.h"
+#include "yuzgram.h"
+
 extern int current_npc;
 extern ElektroWidget *elektroWidget;
 
@@ -197,19 +205,31 @@ SimilasyonPenceresi::parseXML(std::string mDoc)
             int y = XML::getProperty(node, "y", 50);
             int w = XML::getProperty(node, "width", 50);
             int h = XML::getProperty(node, "height", 50);
-            int id = XML::getProperty(node, "id", 0);
+            int id = XML::getProperty(node, "id", findEmptyID());
+            int item_id = XML::getProperty(node, "item_id", 0);
 
-            nesne = new BesKiloGram(this);
+            switch(item_id)
+            {
+                case 1400:nesne = new BesGram(this);break;
+                case 1401:nesne = new OnGram(this);break;
+                case 1402:nesne = new YirmiGram(this);break;
+                case 1403:nesne = new YirmibesGram(this);break;
+                case 1404:nesne = new OtuzbesGram(this);break;
+                case 1405:nesne = new ElliGram(this);break;
+                case 1406:nesne = new YuzGram(this);break;
+            }
+
             nesne->setID(id);
-            kefeAgirlik.push_back(0);
-            kefeAgirlik.push_back(nesne->getAgirlik());
-            idKefe.insert(std::make_pair(nesne->getID(),kefeAgirlik));
-
             nesne->setX(x);
             nesne->setY(y);
             nesne->setWidth(w);
             nesne->setHeight(h);
             nesne->setVisible(true);
+
+            kefeAgirlik.push_back(0);
+            kefeAgirlik.push_back(nesne->getAgirlik());
+            idKefe.insert(std::make_pair(nesne->getID(),kefeAgirlik));
+
             mvKutle.push_back(nesne);
             add(nesne);
         }
@@ -266,7 +286,6 @@ SimilasyonPenceresi::clearComponent()
     miKutle = mvKutle.begin();
     miKaldirac = mvKaldirac.begin();
 
-
     while(miKutle!=mvKutle.end())
     {
         delete (*miKutle);
@@ -297,23 +316,30 @@ SimilasyonPenceresi::nesneyiAl(Item *it)
     std::string nesneTipi = ItemDB::get(it->getId()).getName();
     int itemID = it->getId();
 
-    if (itemID >= 1100)
+    switch(itemID)
     {
-        nesne = new BesKiloGram(this);
-        nesne->setID(findEmptyID());
-        kefeAgirlik.push_back(0);
-        kefeAgirlik.push_back(nesne->getAgirlik());
-        logger->log("IDsi:%d",nesne->getID());
-        idKefe.insert(std::make_pair(nesne->getID(),kefeAgirlik));
-
-        nesne->setX(100);
-        nesne->setY(150);
-        nesne->setWidth(50);
-        nesne->setHeight(50);
-        nesne->setVisible(true);
-        mvKutle.push_back(nesne);
-        add(nesne);
+        case 1400:nesne = new BesGram(this);break;
+        case 1401:nesne = new OnGram(this);break;
+        case 1402:nesne = new YirmiGram(this);break;
+        case 1403:nesne = new YirmibesGram(this);break;
+        case 1404:nesne = new OtuzbesGram(this);break;
+        case 1405:nesne = new ElliGram(this);break;
+        case 1406:nesne = new YuzGram(this);break;
     }
+
+    nesne->setID(findEmptyID());
+    kefeAgirlik.push_back(0);
+    kefeAgirlik.push_back(nesne->getAgirlik());
+    logger->log("IDsi:%d",nesne->getID());
+    idKefe.insert(std::make_pair(nesne->getID(),kefeAgirlik));
+
+    nesne->setX(100);
+    nesne->setY(150);
+    nesne->setWidth(50);
+    nesne->setHeight(50);
+    nesne->setVisible(true);
+    mvKutle.push_back(nesne);
+    add(nesne);
 }
 
 void
@@ -329,10 +355,14 @@ SimilasyonPenceresi::kontrolEt()
     for (idKefeIt = idKefe.begin();idKefeIt!=idKefe.end();idKefeIt++)
     {
         if ((*idKefeIt).second[0] != 0)
+        {
+            //logger->log("Kefe 1:%d",(*idKefeIt).second[0]);
+            logger->log("hesaplama");
             toplam += (*idKefeIt).second[0] * (*idKefeIt).second[1];
+        }
 
-        logger->log("Kefe 1:%d",(*idKefeIt).second[0]);
-        logger->log("Kefe 1:%d",(*idKefeIt).second[1]);
+//        logger->log("Kefe 1:%d",(*idKefeIt).second[0]);
+//        logger->log("Kefe 2:%d",(*idKefeIt).second[1]);
 
         tut.clear();
         tut<<(*idKefeIt).second[0];

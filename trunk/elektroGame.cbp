@@ -80,8 +80,8 @@
 		<Unit filename="src\elektro\Diode.cpp" />
 		<Unit filename="src\elektro\battery.cpp" />
 		<Unit filename="src\elektro\battery.h" />
-		<Unit filename="src\elektro\beskilogram.cpp" />
-		<Unit filename="src\elektro\beskilogram.h" />
+		<Unit filename="src\elektro\besgram.cpp" />
+		<Unit filename="src\elektro\besgram.h" />
 		<Unit filename="src\elektro\bitbutton.cpp" />
 		<Unit filename="src\elektro\bitbutton.h" />
 		<Unit filename="src\elektro\circuitwindow.cpp" />
@@ -91,6 +91,8 @@
 		<Unit filename="src\elektro\diode.h" />
 		<Unit filename="src\elektro\elektrowidget.cpp" />
 		<Unit filename="src\elektro\elektrowidget.h" />
+		<Unit filename="src\elektro\elligram.cpp" />
+		<Unit filename="src\elektro\elligram.h" />
 		<Unit filename="src\elektro\hesapmak.cpp" />
 		<Unit filename="src\elektro\hesapmak.h" />
 		<Unit filename="src\elektro\hitabe.cpp" />
@@ -111,6 +113,10 @@
 		<Unit filename="src\elektro\missionwindow.h" />
 		<Unit filename="src\elektro\node.cpp" />
 		<Unit filename="src\elektro\node.h" />
+		<Unit filename="src\elektro\ongram.cpp" />
+		<Unit filename="src\elektro\ongram.h" />
+		<Unit filename="src\elektro\otuzbesgram.cpp" />
+		<Unit filename="src\elektro\otuzbesgram.h" />
 		<Unit filename="src\elektro\rescolorwindow.cpp" />
 		<Unit filename="src\elektro\rescolorwindow.h" />
 		<Unit filename="src\elektro\resistance.cpp" />
@@ -128,6 +134,12 @@
 		<Unit filename="src\elektro\wellcome.h" />
 		<Unit filename="src\elektro\wire.cpp" />
 		<Unit filename="src\elektro\wire.h" />
+		<Unit filename="src\elektro\yirmibesgram.cpp" />
+		<Unit filename="src\elektro\yirmibesgram.h" />
+		<Unit filename="src\elektro\yirmigram.cpp" />
+		<Unit filename="src\elektro\yirmigram.h" />
+		<Unit filename="src\elektro\yuzgram.cpp" />
+		<Unit filename="src\elektro\yuzgram.h" />
 		<Unit filename="src\emoteshortcut.cpp" />
 		<Unit filename="src\emoteshortcut.h" />
 		<Unit filename="src\engine.cpp" />

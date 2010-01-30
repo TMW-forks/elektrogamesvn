@@ -66,7 +66,7 @@
 <!--   150-199 açıklama yapanlar  -->	
 <!--   ###############################################################  -->	
 
-<npc id="150"><sprite variant="0">npc2.xml</sprite></npc><!-- -->
+<npc id="150"><sprite variant="22">npc4.xml</sprite></npc><!-- gorunmez gecitler-->
 <npc id="151"><sprite variant="1">npc2.xml</sprite></npc><!-- -->
 <npc id="152"><sprite variant="2">npc2.xml</sprite></npc><!-- -->
 <npc id="153"><sprite variant="3">npc2.xml</sprite></npc><!-- -->
@@ -235,7 +235,7 @@
 <npc id="287"><sprite variant="07">npc4.xml</sprite></npc><!--  -->
 <npc id="288"><sprite variant="08">npc4.xml</sprite></npc><!--  -->
 <npc id="289"><sprite variant="09">npc4.xml</sprite></npc><!--  -->
-<npc id="290"><sprite variant="10">npc4.xml</sprite></npc><!--  -->
+<npc id="290"><sprite variant="22">npc4.xml</sprite></npc><!--  -->
 <npc id="291"><sprite variant="11">npc4.xml</sprite></npc><!--  -->
 <npc id="292"><sprite variant="12">npc4.xml</sprite></npc><!--  -->
 <npc id="293"><sprite variant="13">npc4.xml</sprite></npc><!--  -->

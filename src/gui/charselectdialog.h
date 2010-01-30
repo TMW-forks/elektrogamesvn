@@ -23,6 +23,7 @@
 #define CHAR_SELECT_H
 
 #include "gui/widgets/window.h"
+#include "gui/help.h"
 
 #include "player.h"
 #include "guichanfwd.h"
@@ -48,6 +49,8 @@ class CharSelectDialog : public Window, public gcn::ActionListener
          */
         CharSelectDialog(LockedArray<LocalPlayer*> *charInfo,
                          LoginData *loginData);
+
+        ~CharSelectDialog();
 
         void action(const gcn::ActionEvent &event);
 
@@ -102,6 +105,12 @@ class CharSelectDialog : public Window, public gcn::ActionListener
          * Communicate character selection to the server.
          */
         void attemptCharSelect();
+
+        /**
+         * Yardım ekranı için
+         */
+        HelpWindow *hWindow;
+
 };
 
 #endif

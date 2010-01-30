@@ -56,8 +56,11 @@ class HelpWindow : public Window, public LinkHandler,
          */
         void loadHelp(const std::string &helpFile);
 
-    private:
         void loadFile(const std::string &file);
+
+        void clearText();
+
+    private:
 
         BrowserBox *mBrowserBox;
         gcn::ScrollArea *mScrollArea;

@@ -23,6 +23,7 @@
 #define LOGIN_H
 
 #include "gui/widgets/window.h"
+#include "gui/help.h"
 
 #include <guichan/actionlistener.hpp>
 #include <guichan/keylistener.hpp>
@@ -104,6 +105,11 @@ class LoginDialog : public Window, public gcn::ActionListener,
         gcn::Button *mRegisterButton;
 
         LoginData *mLoginData;
+
+        /**
+         * Yardım ekranı için
+         */
+        HelpWindow *hWindow;
 
         /**
          * Helper class to keep a list of all the recent entries for the

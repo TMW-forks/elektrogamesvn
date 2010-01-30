@@ -102,3 +102,8 @@ void HelpWindow::loadFile(const std::string &file)
         mBrowserBox->addRow(lines[i]);
     }
 }
+
+void HelpWindow::clearText()
+{
+    mBrowserBox->clearRows();
+}

@@ -1,0 +1,6 @@
+##1NASIL KARAKTER OLUŞTURURUM
+Karakterinize 4-10 harf arası bir isim verin.
+Daha sonra saç tipini ve saç rengini seçin.
+İstediğiniz gibi bir karakter elde ettiğinizde
+##3Oluştur##0 düğmesine basın.
+##6İyi Öğrenceler

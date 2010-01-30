@@ -1,0 +1,9 @@
+##1NASIL GİRİŞ YAPARIM
+Oyuna giriş yapmak için kullanıcı adınızı ve 
+şifrenizi yazınız.  Sunucuya bağlantı portu 
+resmi sunucu için ##39601##0'dir.  Resmi sunucu
+adresi ##3sunucu.elektrogame.net##0'dir.
+Oyuncu değilseniz ve oyuncu olmak istiyorsanız
+##3www.elektrogame.net##0 sitesinin üst kısmında 
+bulunan paneli kullanarak kayıt olun.
+##6İyi Öğrenceler

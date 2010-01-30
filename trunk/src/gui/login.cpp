@@ -34,6 +34,7 @@
 #include "net/logindata.h"
 
 #include "main.h"
+#include "game.h"
 #include "gui.h"
 #include "configuration.h"
 
@@ -46,6 +47,8 @@ static const int MAX_SERVER_LIST_SIZE = 5;
 static const int LOGIN_DIALOG_WIDTH = 573;
 static const int LOGIN_DIALOG_HEIGHT = 550;
 static const int FIELD_WIDTH = LOGIN_DIALOG_WIDTH - 70;
+
+class HelpWindow;
 
 LoginDialog::LoginDialog(LoginData *loginData):
     Window(_("Login")),
@@ -132,8 +135,8 @@ LoginDialog::LoginDialog(LoginData *loginData):
     place(x+1, y+4, mServerDropDown, 3).setPadding(1);
 #endif
     place(x+0, y+5, mKeepCheck, 4);
-    place(x+0, y+6, mRegisterButton).setHAlign(LayoutCell::LEFT);
-    place(x+2, y+6, mCancelButton);
+//    place(x+0, y+6, mRegisterButton).setHAlign(LayoutCell::LEFT);
+    place(x+1, y+6, mCancelButton);
     place(x+3, y+6, mOkButton);
     reflowLayout(340, 0);
 
@@ -148,6 +151,13 @@ LoginDialog::LoginDialog(LoginData *loginData):
     mOkButton->setEnabled(canSubmit());
     setWidth(573);
     setHeight(507);
+
+    hWindow = new HelpWindow;
+    hWindow->loadFile("login");
+    hWindow->setVisible(true);
+    hWindow->setSize(400,200);
+    hWindow->setPosition(0,getParent()->getHeight()-200);
+    requestMoveToTop();
 }
 
 LoginDialog::~LoginDialog()
@@ -157,6 +167,7 @@ LoginDialog::~LoginDialog()
 #endif
 //    ResourceManager *resman = ResourceManager::getInstance();
 //    resman->release(mBackGround);
+    delete hWindow;
 }
 
 void LoginDialog::action(const gcn::ActionEvent &event)

@@ -1,0 +1,8 @@
+##1NASIL KARAKTER SEÇERİM
+ElektroGame 3 adet karakter oluşturmanıza
+izin vermektedir.  Daha önce oluşturduğunuz 
+karakterlerden seçim yapmak için ##2Önceki##0 ve
+##2Sonraki##0 düğmelerini kullanabilirsiniz.
+Yeni bir karakter oluşturmak için boş bir
+slota gidip yeni düğmesine basın.
+##6İyi Öğrenceler

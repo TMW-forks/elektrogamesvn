@@ -20,6 +20,7 @@
  */
 
 #include "gui/charselectdialog.h"
+#include "gui/help.h"
 
 #include "gui/charcreatedialog.h"
 #include "gui/confirmdialog.h"
@@ -143,7 +144,8 @@ CharSelectDialog::CharSelectDialog(LockedArray<LocalPlayer*> *charInfo,
     place(0, 2, mChangePasswordButton);
     place(1, 2, mChangeEmailButton);
     place = getPlacer(10, 10);
-    place(0, 0, mPlayerBox, 1, 5).setPadding(3);
+    place(0, 0, mPlayerBox#include "gui/.h"
+, 1, 5).setPadding(3);
     place(1, 0, mNameLabel, 3);
     place(1, 1, mLevelLabel, 3);
     place(1, 2, mMoneyLabel, 3);
@@ -200,6 +202,18 @@ CharSelectDialog::CharSelectDialog(LockedArray<LocalPlayer*> *charInfo,
     setVisible(true);
     mSelectButton->requestFocus();
     updatePlayerInfo();
+
+    hWindow = new HelpWindow;
+    hWindow->loadFile("charselect");
+    hWindow->setVisible(true);
+    hWindow->setSize(400,200);
+    hWindow->setPosition(0,getParent()->getHeight()-200);
+    requestMoveToTop();
+}
+
+CharSelectDialog::~CharSelectDialog()
+{
+    delete hWindow;
 }
 
 void CharSelectDialog::action(const gcn::ActionEvent &event)
@@ -242,6 +256,9 @@ void CharSelectDialog::action(const gcn::ActionEvent &event)
         if (!(mCharInfo->getEntry()))
         {
             // Start new character dialog
+            hWindow->clearText();
+            hWindow->loadFile("charcreate");
+
             CharCreateDialog *charCreateDialog =
                 new CharCreateDialog(this, mCharInfo->getPos());
             Net::getCharHandler()->setCharCreateDialog(charCreateDialog);
@@ -266,6 +283,9 @@ void CharSelectDialog::action(const gcn::ActionEvent &event)
         else if (n_character <= maxSlot)
         {
             // Start new character dialog
+            hWindow->clearText();
+            hWindow->loadFile("charcreate");
+
             CharCreateDialog *charCreateDialog =
                 new CharCreateDialog(this, mCharInfo->getPos());
             Net::getCharHandler()->setCharCreateDialog(charCreateDialog);

@@ -21,7 +21,7 @@
  </tileset>
  <layer name="Ground" width="46" height="31">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3WTQ5AMBAF4FoqN8AN3IBu/VzYBXAvIyGRhiidaBtv8S1q0b5MXiYiIUQEAAC/kZCGtKQj/Ytz6iB3RgZLmYPcJUNu6SC38nzeZz1e1Qy5q4u7OXrP0eM78cmbPvTYJPdIJjJvb/rQ46e5FeYd3Lylg9wce/2rfXLMHco+0YXSbx1Hv3Nh989nct7z7t8LhtwAAOCnBT2bwnZIFgAA
+   H4sIAAAAAAAAAO3WTQ5AMBAF4FoqN6jewBVs/VzYBXAvI9FEmopiom28xbeohb5MXoZMCJEBAMBvFKQlHenJ8OBcBsityPiSCpC7ZsgtA+RuIp+3q8cbzZC7Onk3R+85enwld9wZQ499ck9kJst+Zww9vpu7wbyTm7cMkJtjr3+1T465U9kntlT6bePo9/ZNe/PP53M2ec1zzZAbAADitALldKaBSBYAAA==
   </data>
  </layer>
  <layer name="Fringe" width="46" height="31">

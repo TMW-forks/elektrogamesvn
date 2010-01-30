@@ -18,10 +18,10 @@
  </tileset>
  <layer name="Ground" width="68" height="35">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3XSQqAMBBE0XgpT+AiTnhZD6juosSBWGDb/MVDiShaVAesQggVAACAIXHVJmKyFg/rufOze87W7o53919d7wV51KvZiUaQR2PgOyzl4akftSAP+kE/6Af9oB+aPDz1g3nR94N58dsP5kWfxxD2/6pvPfmH7Qu+tXvw3FGQxxdK9izF3mBVbkanDPUsWFWSh+d+bHtWbv7TLI7X/7o3vJHm8fW7AACAcgsWi5m9MCUAAA==
+   H4sIAAAAAAAAAO3X2wpAQBSF4fFSnsCFY17WA6JcDI1DY5Vt9198jYhYrT2lCCEUAAAAhrSLJlJvmmi9Oj675+zc3Xp3/9X1TpBHuZicqAR5VAa+w1IenvpRCvKgH/SDftAP+qHJw1M/mBd9P5gXv/1gXvR59GH/r/rWk3/YLuNb2wfPHQR5fCFnz1LsDValZnRMUM+CVTl5eO7Humel5j/O4nj9r3vDG3EeX78LAADINwMBD4BKMCUAAA==
   </data>
  </layer>
- <layer name="Fringe" width="68" height="35" visible="0">
+ <layer name="Fringe" width="68" height="35">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAAO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAfBg26l/DMCUAAA==
   </data>

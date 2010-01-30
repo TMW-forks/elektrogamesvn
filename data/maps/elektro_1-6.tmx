@@ -10,13 +10,10 @@
  <tileset name="kaplama" firstgid="172" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/kaplamalar.png"/>
  </tileset>
- <tileset name="karatahta" firstgid="190" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/karatahtalar.png"/>
- </tileset>
- <tileset name="kapi" firstgid="226" tilewidth="32" tileheight="32">
+ <tileset name="kapi" firstgid="190" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/kapiacikic.png"/>
  </tileset>
- <tileset name="collision" firstgid="232" tilewidth="32" tileheight="32">
+ <tileset name="collision" firstgid="196" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/collision.png"/>
  </tileset>
  <layer name="Ground" width="53" height="37">
@@ -26,17 +23,17 @@
  </layer>
  <layer name="Fringe" width="53" height="37">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3UsREAMAgDMfYfFNZIVqAAGunue1eOAAAAACbkr65HADT4LQAANjywfUhnpB4AAA==
+   H4sIAAAAAAAAAO3UsREAMAgDMfYfCxZLVqAAGunue1eOAAAAACbkr65HADT4LQAANjwlRRXppB4AAA==
   </data>
  </layer>
  <layer name="Top" width="53" height="37">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3UyQkAIBAEQfMP0zMNNwhxFaqg//OaUgAAAPhNjVr2iMN6NLJHHDajlT0CHuG3/uC3AAC4YQMnzk5NpB4AAA==
+   H4sIAAAAAAAAAO3UyQkAIBAEQfMPyjMxNwhxFaqg//OaUgAAAPhNjVr2iMN6NLJHHDajlT0CHuG3/uC3AAC4YQOILnYPpB4AAA==
   </data>
  </layer>
  <layer name="Collision" width="53" height="37" visible="0">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3PwQ0AIAgEQfrv1C6swQcemrlkv4RZVbUkXWvSmJhSY2JKjYkpNSam1Jj6rKf3uv9mYpoY05v9YGCSJEma3wajkBd5pB4AAA==
+   H4sIAAAAAAAAAO3PwQ0AIAgEQfrvy76swQcemrlkv4RZVbUkXWvSmJhSY2JKjYkpNSam1Jj6rKf3uv9mYpoY05v9YGCSJEma3wYnP/ropB4AAA==
   </data>
  </layer>
  <layer name="Objects" width="53" height="37" visible="0">

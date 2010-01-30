@@ -16,31 +16,28 @@
  <tileset name="collision" firstgid="114" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/collision.png"/>
  </tileset>
- <tileset name="taban" firstgid="116" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/yol2.png"/>
- </tileset>
- <tileset name="icdizayn" firstgid="125" tilewidth="32" tileheight="32">
+ <tileset name="icdizayn" firstgid="116" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/muzeic.png"/>
  </tileset>
- <tileset name="misir" firstgid="174" tilewidth="32" tileheight="32">
+ <tileset name="misir" firstgid="165" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/MISIR.png"/>
  </tileset>
- <tileset name="mesalealti" firstgid="210" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/elektroadd/lambaalti.png"/>
+ <tileset name="stand" firstgid="201" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/kaldirimlar.png"/>
  </tileset>
  <layer name="Ground" width="66" height="46">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO2aTW4CMQyFwxb27b5cpgdg0yu025afllPOieqRiBQiezKJH50U3uITaAY/a54cOxmxCiGsCCGEEEKArIUXYVv4/Etqc46/3zh92AlvQF4L92Nej4YV4/Eh5vwUvoR9Zf48blfQ03yo1bBiED4chKNwqvQhjyvpvQsfTg0rBrEuvoUf4ZzkGoxnT6/ncVN6lg+1GlYMoh5KdR+pXTc5mg8IUP2hVPeR2nVj1ZFVa61466E0L5A+eL2buvef6uGWoPqkRexHEa1n9QCqT2qzes68yONa9iMtGloMoh5Q+wdLT/N0qNQo5UXUw9SsnrNuYlyLXouGFnPL/tCyTpfQ8NbDUyifNbeXXHN+twH4sL5ozckXvz87fUDTclbM8dZ4D0z1+nSPrl1H9f4esM6KQ7jek52CPS/uyQet16d7Mu06qvf3APsDfaAPtg/e88XSz4HywXO+uCcfvOeLpZ8D5QP7g98H75mpB1gP1z5wXnBepD5wXrBPjozvtzz/exjp7d0SIYQ8Ar8SoaOecC8AAA==
+   H4sIAAAAAAAAAO2aMW7DMAxFlTXZk725TA+QpVdoT5p2abO0OYJvERqIAEUgLUv8qdX0Dw8JbJOEPihSNLwKIawIIYQQQoCshSdhX/j9TWpjjs9vnDochBcgz4X7Ma7Hh2Xj0SHGPArvwkdl/NzuUPCn6VDrw7JB6PApfAmnSh1yu5K/V+HN6cOyQeyLb+FHOCexBmPt6fXcbsqfpUOtD8sGkQ+lvI/U7pscTQcEqPpQyvtI7b6x8sjKtVa8+VDqF0gdvNpN3ftL+XBPUHXSItajyLmDNWug6qTWq+f0i9yu5TzS4kOzQeQD6vxg+dM0HSp9lOIi8mGqV8/ZN9GuxV+LD83mnvWhZZ8u4cObD9tQnjX311hzntsAdFhffc2JF//vnDqgaZkVc7w53gNTtT49o2vXUbW/B6xZcQi3Z7JTsPvFI+mg1fr0TKZdR9X+HmB9oA7UwdbBO18svQ6UDp754pF08M4XS68DpQPrg18H78zUA8yHWx3YL9gvUh3YL1gnR8b3W57vHkZ6e7dECCH/gQv2TCBCcC8AAA==
   </data>
  </layer>
  <layer name="Fringe" width="66" height="46">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3XCQrCMBCF4RxXweUePYHgXhfEAwgqegKXKzmhCKGYhoaapPp/8CAdSBOGlFClAAAA0HYDYzyMtov4dB86kq5Kuw8Lz3kjS/1eeq46DzfLO5ZeO2rWvmbdhe+iQB8K+hz1JH3lf6ZiGUsmkqlkJpkHXr+qXyF7mUtWkrVkI9kGXBtpafq+aIud57zMUj8Y40+9M2tHz7UBAL/lfTc8JM9STbuE3Q4AICFXY+z6vwAA/K+TMXbdF+cv7wUAAKCuF9GKzahwLwAA
+   H4sIAAAAAAAAAO3XCQrCMBCF4RxXweUMPYHgXhfEAwgqegKXczmhCKGYhoaapPp/8CAdSBOGlFClAAAA0HYDYzyMtov4dB86kq5Kuw8Lz3kjS/1eeq46DzfLO5ZeO2rWvmbdhe+iQB8K+hz1JH3lf6ZiGUsmkqlkJpkHXr+qXyF7mUtWkrVkI9kGXBtpafq+aIud57zMUj8Y40+9M2tHz7UBAL/lfTc8JM9STbuE3Q4AICFXY+z6vwAA/K+TMXbdF+cv7wUAAKCuF2pkNMJwLwAA
   </data>
  </layer>
  <layer name="Top" width="66" height="46">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3XSwrCMBSFYTeljtWxuigXIA5UdAPSiW/RoQ/wsSuvAyFIY0kwvY39PzgQLm1zyCS0UgEAAEBsTg7PHkOV8DDxfG9gmd8cvnG1zKeOXUJIHOcoj/4PvpFY1rEYSkaSscLe384rxrNE/Mp6X8w83+tZ5ktjnXZ25mzjuTfyV5XUJHXtIsoakqakpV1EWVvSkXS1i/yRs+SSMl/lXUTJ+264Sx4fs5d9vnUAoBDW2gUK4mCss/4vAKCM5g7PLoK10Lc11ln3xS5wFwAAAPh5AkbEKI1wLwAA
+   H4sIAAAAAAAAAO3OSw4BQRSFYZvCGGPsxwLEAGEDUhNvYeiReCzNlRhUpGpQFdW3H/+XnKic0t2nVgMAAEDRXAL+e062Itws8rmRp38EvOPu6eeBW1IwgT2qY/iHdxjPuSjGkolkqvBtE3kHpGIC+7JYRD438PRr62wc93a3i/w2sleXNCRN7SHKWpK2pKM9RFlX0pP0tYeUyFVyc/SbrIcoMd/fp+T1030cM9wCAHmx1R6QEyfrbBz3rg4AqmQZ8N9VshX69tbZOO7t7pB0CQAAAGK9Ac8JmmpwLwAA
   </data>
  </layer>
  <layer name="Collision" width="66" height="46" visible="0">
@@ -48,7 +45,7 @@
    H4sIAAAAAAAAAO2V0QqAIAwA/Wf/H6I3kaZz6pZygwNptea1MKeUMgAAAABsYWW06mVhPVKj9Qwe1nqwOpFq1PUsOW1PO+dBylm/5SnzsDtWzF6rNh58PEQ4K9+tyXnNQ4SDkTjpv9gZJ50X2og+L6x7kGr0ao/cq+nhT//FDfOwIk72oHXl5dVrTzPzggc8zHgr95aqe/JH/nYPIxHdPx7wgAc8eHmQ1q1rN3qwRnT/eMADHvDg5UFa9/LR/TMPeAAAAHh5AC2OD2lwLwAA
   </data>
  </layer>
- <objectgroup name="Object Group 1" width="0" height="0">
+ <objectgroup name="Object Group 1" width="0" height="0" visible="0">
   <object name="graphics/particles/flame.particle.xml" type="PARTICLE_EFFECT" x="479" y="403" width="32" height="32"/>
   <object name="graphics/particles/flame.particle.xml" type="PARTICLE_EFFECT" x="480" y="595" width="32" height="32"/>
   <object name="graphics/particles/flame.particle.xml" type="PARTICLE_EFFECT" x="671" y="594" width="32" height="32"/>

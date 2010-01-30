@@ -28,7 +28,7 @@
    H4sIAAAAAAAAAO3OwQkAIQADQd9qAWIBcv1XeD6swYDMQMh3SwEAAAAAAABuq3ttr6dDwsb5Ga3IW+e/aAUAvOkHptAoliAlAAA=
   </data>
  </layer>
- <layer name="Collision" width="66" height="36">
+ <layer name="Collision" width="66" height="36" visible="0">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAAO3UQQ3AMAwEQdMNfwJ9LIVEbaM5aQF4Hl4zsyRJkrS9G8ahcWgcGofmhzYOjUPj0Dg0Do1D49BOO/zF8u0bOXDgwIHDt2PAgYMknekBoYk/hCAlAAA=
   </data>

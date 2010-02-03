@@ -102,7 +102,7 @@
             />
     </monster>
 
-    <monster id="2" name="robot-guguk">
+    <monster id="2" name="Guguk">
         <sprite>elektroadd/robot-guguk.xml|#791d0a,cd5d27,f28d54,ffffff</sprite>
         <sound event="hit">monsters/scorpion/scorpion-hit1.ogg</sound>
         <sound event="hit">monsters/scorpion/scorpion-hit2.ogg</sound>
@@ -212,7 +212,7 @@
             />
     </monster>
 
-    <monster id="5" name="Robot Zipzip Mor">
+    <monster id="5" name="Robot Zıpzıp Mor">
         <sprite>elektroadd/robot_zipzip_mor.xml|#b47f00,ffffff</sprite>
         <sound event="hit">monsters/slime/slime-hit1.ogg</sound>
         <drop item="534" percent="2"/>
@@ -235,7 +235,7 @@
             />
     </monster>
 
-    <monster id="6" name="Robot Zipzip">
+    <monster id="6" name="Robot Zıpzıp">
         <sprite>elektroadd/robot_zipzip.xml|#7e0000,ffffff</sprite>
         <sound event="hit">monsters/slime/slime-hit1.ogg</sound>
         <drop item="1201" percent="3"/>
@@ -286,7 +286,7 @@
             />
     </monster>
 
-    <monster id="8" name="Robot Zuzu Yesil">
+    <monster id="8" name="Robot Zuzu Yeşil">
         <sprite>elektroadd/robot_zuzu_yesil.xml|#664d28,a6673a,dbbc86,ffffff</sprite>
         <attributes
             hp="20"
@@ -426,7 +426,7 @@
             />
     </monster>
 
-    <monster id="13" name="Robot Pitircik Siyah">
+    <monster id="13" name="Robot Pıtırcık Siyah">
         <sprite>elektroadd/robot_pitircik_siyah.xml</sprite>
         <drop item="512" percent="8"/>
         <drop item="513" percent="7"/>
@@ -449,7 +449,7 @@
             />
     </monster>
 
-    <monster id="14" name="Robot Pitircik">
+    <monster id="14" name="Robot Pıtırcık">
         <sprite>elektroadd/robot_pitircik.xml</sprite>
         <drop item="504" percent="8"/>
         <drop item="506" percent="5"/>
@@ -473,7 +473,7 @@
             />
     </monster>
 
-    <monster id="15" name="Robot Pasli Yesil">
+    <monster id="15" name="Robot Paslı Yeşil">
         <sprite>elektroadd/robot_pasli_yesil.xml</sprite>
         <sound event="die">monsters/bat/bat-dying1.ogg</sound>
         <sound event="hit">monsters/bat/bat-hit1.ogg</sound>
@@ -518,7 +518,7 @@
             />
     </monster>
 
-    <monster id="17" name="Robot Goz Mavi">
+    <monster id="17" name="Robot Göz Mavi">
         <sprite>elektroadd/robot_goz_mavi.xml</sprite>
         <sound event="hit">monsters/shroom/shroom-hit1.ogg</sound>
         <drop item="567" percent="8"/>
@@ -540,7 +540,7 @@
             />
     </monster>
 
-    <monster id="18" name="Robot Buyuk Goz">
+    <monster id="18" name="Robot Büyük Göz">
         <sprite>elektroadd/robot_buyuk_goz.xml</sprite>
         <sprite>elektroadd/robot_buyuk_goz.xml</sprite>
         <sound event="hit">monsters/fluffy/fluffy-hit1.ogg</sound>
@@ -566,7 +566,7 @@
             />
     </monster>
 
-    <monster id="19" name="Robot Afacan Yesil">
+    <monster id="19" name="Robot Afacan Yeşil">
         <sprite>elektroadd/robot_afacan_yesil.xml</sprite>
         <drop item="612" percent="8"/>
         <drop item="610" percent="0.1"/>
@@ -663,7 +663,7 @@
             />
     </monster>
 
-    <monster id="24" name="Mountain Snake">
+    <monster id="24" name="Yılan">
         <sprite>monster-snake.xml|#585b39,a67c5d,dbc9a9,ffffff</sprite>
         <attributes
             hp="20"
@@ -680,7 +680,7 @@
             />
     </monster>
 
-    <monster id="25" name="Easter Fluffy">
+    <monster id="25" name="Kirpi">
         <sprite>monster-fluffy.xml</sprite>
         <sound event="hit">monsters/fluffy/fluffy-hit1.ogg</sound>
         <sound event="hit">monsters/fluffy/fluffy-hit2.ogg</sound>
@@ -702,7 +702,7 @@
             />
     </monster>
 
-    <monster id="26" name="Mouboo">
+    <monster id="26" name="Lama">
         <sprite>monster-mouboo.xml</sprite>
         <attributes
             hp="20"
@@ -719,7 +719,7 @@
             />
     </monster>
 
-    <monster id="27" name="Mauve Plant">
+    <monster id="27" name="Çiçek">
         <sprite>resource-plant.xml|#e0b0ff</sprite>
         <attributes
             hp="20"
@@ -736,7 +736,7 @@
             />
     </monster>
 
-    <monster id="28" name="Cobalt Plant">
+    <monster id="28" name="Çiçek">
         <sprite>resource-plant.xml|#0047ab</sprite>
         <attributes
             hp="20"
@@ -753,7 +753,7 @@
             />
     </monster>
 
-    <monster id="29" name="Gamboge Plant">
+    <monster id="29" name="Çiçek">
         <sprite>resource-plant.xml|#ef9b0f</sprite>
         <attributes
             hp="20"
@@ -770,7 +770,7 @@
             />
     </monster>
 
-    <monster id="30" name="Alizarin Plant">
+    <monster id="30" name="Çiçek">
         <sprite>resource-plant.xml|#e32636</sprite>
         <attributes
             hp="20"
@@ -822,7 +822,7 @@
             />
     </monster>
 
-    <monster id="33" name="Silkworm">
+    <monster id="33" name="Solucan">
         <sprite>monster-silkworm.xml|#807d20,e0dac0;#c0a830</sprite>
         <attributes
             hp="20"
@@ -879,7 +879,7 @@
             />
     </monster>
 
-    <monster id="36" name="Squirrel">
+    <monster id="36" name="Sincap">
         <sprite>monster-squirrel.xml</sprite>
         <attributes
             hp="20"
@@ -968,7 +968,7 @@
             />
     </monster>
 
-    <monster id="39" name="Snail">
+    <monster id="39" name="Salyangoz">
         <sprite>monster-snail.xml</sprite>
         <exp>200</exp>
         <attributes
@@ -1002,7 +1002,7 @@
             action="special1"
             />
     </monster>
-	<monster id="38" name="Bat">
+	<monster id="38" name="Yarasa">
         <sprite>monster-bat.xml</sprite>
         <sound event="die">monsters/bat/bat-dying1.ogg</sound>
         <sound event="hit">monsters/bat/bat-hit1.ogg</sound>
@@ -1026,27 +1026,8 @@
             mutation="50"
             />
     </monster>	
-	<monster id="39" name="Snail">
-        <sprite>monster-snail.xml</sprite>
-        <particlefx>particles/monster-snail-trail.particle.xml</particlefx>
-        <sound event="hit">slime/slime-hit1.ogg</sound>
-        <exp>20</exp>
-        <attributes
-            hp="20"
-            size="4"
-            speed="2.0"
-            attack-min="10"
-            attack-delta="2"
-            attack-magic="0"
-            hit="10"
-            evade="5"
-            physical-defence="5"
-            magical-defence="0"
-            mutation="50"
-            />
-    </monster>
 	
-<monster id="41" name="Duck" targetCursor="small">
+<monster id="41" name="Ördek" targetCursor="small">
         <sprite>monster-duck.xml</sprite>
         <attributes
             hp="20"
@@ -1083,7 +1064,7 @@
             />
     </monster>
 	
-	 <monster id="40" name="Fire Lizard">
+	 <monster id="40" name="Dinozor">
         <sprite>monster-lizard.xml|#673132,923F42,CD5961,E163A4,ffffff</sprite>
         <sound event="hit">fire-goblin/fire-goblin-hit1.ogg</sound>
         <sound event="hit">fire-goblin/fire-goblin-hit2.ogg</sound>

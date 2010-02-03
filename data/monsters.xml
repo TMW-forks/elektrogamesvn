@@ -1002,5 +1002,117 @@
             action="special1"
             />
     </monster>
+	<monster id="38" name="Bat">
+        <sprite>monster-bat.xml</sprite>
+        <sound event="die">monsters/bat/bat-dying1.ogg</sound>
+        <sound event="hit">monsters/bat/bat-hit1.ogg</sound>
+        <drop item="505" percent="8"/>
+        <drop item="501" percent="1.5"/>
+        <drop item="518" percent="4"/>
+        <drop item="533" percent="1.5"/>
+        <drop item="521" percent="0.7"/>
+        <drop item="522" percent="0.1"/>
+        <attributes
+            hp="20"
+            size="4"
+            speed="2.0"
+            attack-min="10"
+            attack-delta="2"
+            attack-magic="0"
+            hit="10"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+    </monster>	
+	<monster id="39" name="Snail">
+        <sprite>monster-snail.xml</sprite>
+        <particlefx>particles/monster-snail-trail.particle.xml</particlefx>
+        <sound event="hit">slime/slime-hit1.ogg</sound>
+        <exp>20</exp>
+        <attributes
+            hp="20"
+            size="4"
+            speed="2.0"
+            attack-min="10"
+            attack-delta="2"
+            attack-magic="0"
+            hit="10"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+    </monster>
+	
+<monster id="41" name="Duck" targetCursor="small">
+        <sprite>monster-duck.xml</sprite>
+        <attributes
+            hp="20"
+            size="4"
+            speed="1.0"
+            attack-min="10"
+            attack-delta="2"
+            attack-magic="0"
+            hit="10"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+        <vulnerability element="fire" factor="1.5"/>
+        <vulnerability element="earth" factor="0.7"/>
+        <exp>0</exp>
+        <!-- average stroll- and track range-->
+        <behavior
+            aggressive="false"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="10"
+            aft-delay="5"
+            damage-factor="1"
+            range="32"
+            animation="attack"
+            />
+    </monster>
+	
+	 <monster id="40" name="Fire Lizard">
+        <sprite>monster-lizard.xml|#673132,923F42,CD5961,E163A4,ffffff</sprite>
+        <sound event="hit">fire-goblin/fire-goblin-hit1.ogg</sound>
+        <sound event="hit">fire-goblin/fire-goblin-hit2.ogg</sound>
+        <sound event="miss">fire-goblin/fire-goblin-miss1.ogg</sound>
+        <!-- stats identical to maggot - change this when making up real monster stats -->
+        <attributes
+            hp="20"
+            size="4"
+            speed="2.0"
+            attack-min="10"
+            attack-delta="2"
+            attack-magic="0"
+            hit="10"
+            evade="10"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+        <attack id="1"
+            priority="1"
+            type="magical"
+            element="fire"
+            pre-delay="10"
+            aft-delay="5"
+            damage-factor="1"
+            range="32"
+            animation="attack"
+            particle-effect="graphics/particles/monster-lizard-firebreath.particle.xml"
+            />
+    </monster>
 
 </monsters>

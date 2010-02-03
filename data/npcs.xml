@@ -60,13 +60,13 @@
 <npc id="146"><sprite variant="19">npc1.xml</sprite></npc><!-- -->
 <npc id="147"><sprite variant="20">npc1.xml</sprite></npc><!-- -->
 <npc id="148"><sprite variant="21">npc1.xml</sprite></npc><!-- -->
-<npc id="149"><sprite variant="22">npc1.xml</sprite></npc><!-- -->
+<npc id="149"><sprite variant="22">npc4.xml</sprite></npc><!-- gorunmez gecitler -->
 
 <!--   ###############################################################  -->	
 <!--   150-199 açıklama yapanlar  -->	
 <!--   ###############################################################  -->	
 
-<npc id="150"><sprite variant="22">npc4.xml</sprite></npc><!-- gorunmez gecitler-->
+<npc id="150"><sprite variant="22">npc4.xml</sprite></npc><!-- -->
 <npc id="151"><sprite variant="1">npc2.xml</sprite></npc><!-- -->
 <npc id="152"><sprite variant="2">npc2.xml</sprite></npc><!-- -->
 <npc id="153"><sprite variant="3">npc2.xml</sprite></npc><!-- -->
@@ -115,7 +115,7 @@
 <npc id="196"><sprite variant="19">npc2.xml</sprite></npc><!--  -->
 <npc id="197"><sprite variant="20">npc2.xml</sprite></npc><!--  -->
 <npc id="198"><sprite variant="21">npc2.xml</sprite></npc><!--  -->
-<npc id="199"><sprite variant="22">npc2.xml</sprite></npc><!--  -->
+<npc id="199"><sprite variant="22">npc4.xml</sprite></npc><!-- gorunmez gecitler -->
                                
 <!--   ###############################################################  -->	
 <!--  200-249 güzel söz vs  -->	
@@ -191,7 +191,7 @@
 <npc id="246"><sprite variant="16">npc3.xml</sprite></npc><!--  -->
 <npc id="247"><sprite variant="17">npc3.xml</sprite></npc><!--  -->
 <npc id="248"><sprite variant="18">npc3.xml</sprite></npc><!--  -->
-<npc id="249"><sprite variant="19">npc3.xml</sprite></npc><!--  -->
+<npc id="249"><sprite variant="22">npc4.xml</sprite></npc><!-- gorunmez gecitler -->
                                
 <!--   ###############################################################  -->	
 <!--  250-299 öğretenler  -->	
@@ -243,8 +243,8 @@
 <npc id="295"><sprite variant="15">npc4.xml</sprite></npc><!--  -->
 <npc id="296"><sprite variant="16">npc4.xml</sprite></npc><!--  -->
 <npc id="297"><sprite variant="17">npc4.xml</sprite></npc><!--  -->
-<npc id="298"><sprite variant="18">npc4.xml</sprite></npc><!--  -->
-<npc id="299"><sprite variant="21">npc5.xml</sprite><particlefx>graphics/particles/flame.particle.xml</particlefx></npc><!-- Görev Penceresini Yenileyen Kontrol Bilgisayarı -->
+<npc id="298"><sprite variant="21">npc5.xml</sprite><particlefx>graphics/particles/flame.particle.xml</particlefx></npc><!-- Görev Penceresini Yenileyen Kontrol Bilgisayarı -->
+<npc id="299"><sprite variant="22">npc4.xml</sprite></npc><!-- Görünmez Geçit  -->
                                
 <!--   ###############################################################  -->	
 <!--   300-349 makinalar -->	
@@ -315,6 +315,6 @@
 <npc id="346"><sprite variant="16">npc.xml</sprite></npc><!--  -->
 <npc id="347"><sprite variant="17">npc.xml</sprite></npc><!--  -->
 <npc id="348"><sprite variant="18">npc.xml</sprite></npc><!--  -->
-<npc id="349"><sprite variant="19">npc.xml</sprite></npc><!--  -->
+<npc id="349"><sprite variant="22">npc4.xml</sprite></npc><!-- Görünmez geçit -->
                             
 </npcs>

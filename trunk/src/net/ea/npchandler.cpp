@@ -117,14 +117,11 @@ void NpcHandler::handleMessage(MessageIn &msg)
                 npcText.str("");
             }
 
-            if (being->getJob() == 299)
+            if (temp=="</mission>")
             {
-                if (temp=="</mission>")
-                {
-                    missionWindow->setVisible(true);
-                    missionWindow->parse(npcText.str());
-                    npcText.str("");
-                }
+                missionWindow->setVisible(true);
+                missionWindow->parse(npcText.str());
+                npcText.str("");
             }
             else if (being->getJob()>=100 && being->getJob()<=149)
             {

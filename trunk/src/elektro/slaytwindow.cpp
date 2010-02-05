@@ -77,6 +77,7 @@ SlaytWindow::nextPrevPosition()
     {
         mPrev->setX(getWidth()-mNext->getWidth()-mPrev->getWidth()-mDropDown->getWidth()-15);
         mDropDown->setX(mPrev->getX()+mPrev->getWidth()+5);
+        mDropDown->setWidth(150);
         mNext->setX(mDropDown->getX()+mDropDown->getWidth()+5);
         mPrev->setY(25);
         mNext->setY(25);

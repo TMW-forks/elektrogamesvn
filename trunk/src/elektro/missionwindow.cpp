@@ -252,11 +252,11 @@ MissionWindow::putSubMission()
             if ((*mSubMissionsIter)->oneTarget != NULL)
             {
                 (*mSubMissionsIter)->oneTarget->setPosition(x,y);
-                (*mSubMissionsIter)->oneTarget->setWidth(170);
+                (*mSubMissionsIter)->oneTarget->setWidth(210);
             }
             if ((*mSubMissionsIter)->oneImage != NULL)
             {
-                (*mSubMissionsIter)->oneImage->setX(x + 180);
+                (*mSubMissionsIter)->oneImage->setX(x + 220);
                 (*mSubMissionsIter)->oneImage->setY(y);
             }
             y += dy;
@@ -332,7 +332,7 @@ MissionWindow::parse(std::string mDoc)
                     tempSub->oneVisible = false;
                     TextBox *tempText = new TextBox();
                     tempText->setText(XML::getProperty(subnode, "label", "Alt görev."));
-                    tempText->setWidth(100);
+                    tempText->setWidth(140);
                     tempText->setEditable(false);
                     tempText->setOpaque(true);
                     tempText->setBackgroundColor(gcn::Color(156,184,184));

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="40" height="50" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="roket" tilewidth="32" tileheight="32"/>
+ <tileset firstgid="1" name="roket" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/roket.png"/>
+ </tileset>
+ <tileset firstgid="577" name="zemin" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/arena.png"/>
+ </tileset>
+ <tileset firstgid="833" name="collision" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision.png"/>
+ </tileset>
+ <layer name="gorund" width="40" height="50" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3DAQkAAAwDoPFq699pQa5gL6mqqqqqqqqqPj8M55XzQB8AAA==
+  </data>
+ </layer>
+ <layer name="fringe" width="40" height="50" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3QsQkAIBAEQf2W7L8ey1DE3Eh4eGaiC5drDQAAAOCv2bML3tbpi7sjUlNKGD4EAACK2C96oj5AHwAA
+  </data>
+ </layer>
+ <layer name="top" width="40" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3VNYwQURhGUVjc3d3dg8subg3uToO70+C2OA3uToO70+DuNLhbicOhICE0dDMkzJc53Uv+202CBNGiRfuflpwUpCQVqUlDWtKRngxkJFMIffkpQEEKUZgiFKUYxSlBSUqF0FeN6tSgJrWoTR1iiaMu9agfQl8LWtKK1rShLe1oTwc60onOIfT1oS/96M8ABjKIwQxhKMMYHkLfBCYyiclMYSrTmM4MZjKL+BD6FrOEpSxjOStYySpWs4a1rAuhbzs72MkudrOHvexjPwc4yKEQ+k5zhrOc4zwXuMglLnOFq1wLoe8+D3jIIx7zhKc84zkveMmrEPo+8JFPfOYLX/nG958PEvqIIVHCYNvSuZeeDGQkE5nJQlaykZ0c5CRXwH3F3CtOCUpSitKUoSzlKE8FKlIp4L5Y9+KoSz3q04CGNKIxTWhKM5oH3NfevQ50pBOd6UJXutGdHvSkF70D7hvs3hCGMozhjGAkoxjNGMYyjvEB9013bwYzmUU8s5nDXOYxnwUsZFHAfavcW80a1rKO9WxgI5vYzBa2si3gvn3u7ecABznEYY5wlGMc5wQnORVw3yX3LnOFq1zjOje4yS1uc4e73Au475l7z3nBS17xmje85R3vA276fd9/3o7x/yKGRCQmCUlJRvKY8Pr+XC4tuclDXvKR/x/q+7XKmqpQlWr/YF+0aNGiRYsWLVq0aNGi/W0/ANrjzVhAHwAA
+  </data>
+ </layer>
+ <layer name="collision" width="40" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3OoQ0AIBAEwU++M/ovCvUKgcAcyUyyfqsAAACA360+S+LvXfLbSP8DAAC42d61j5xAHwAA
+  </data>
+ </layer>
+ <layer name="object" width="40" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3BAQEAAACAkP6v7ggKAAAAAAAAABhk6EtKQB8AAA==
+  </data>
+ </layer>
+ <objectgroup name="Object Group 1" width="0" height="0">
+  <object name="graphics/particles/waterfall.particle.xml" type="PARTICLE_EFFECT" x="432" y="906" width="32" height="32"/>
+  <object name="graphics/particles/waterfall.particle.xml" type="PARTICLE_EFFECT" x="720" y="874" width="32" height="32"/>
+  <object name="graphics/particles/waterfall.particle.xml" type="PARTICLE_EFFECT" x="624" y="1002" width="32" height="32"/>
+ </objectgroup>
+</map>

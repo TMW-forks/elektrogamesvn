@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
+<map version="1.0" orientation="orthogonal" width="46" height="31" tilewidth="32" tileheight="32">
+ <tileset name="syh" firstgid="1" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/siyah.png"/>
+ </tileset>
+ <tileset name="dvr" firstgid="2" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/tas_bina.png"/>
+ </tileset>
+ <tileset name="kaplama" firstgid="172" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/kaplamalar.png"/>
+ </tileset>
+ <tileset name="collision" firstgid="190" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/collision.png"/>
+ </tileset>
+ <tileset name="merdiven" firstgid="192" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/merdiven.png"/>
+ </tileset>
+ <tileset name="kapi" firstgid="201" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/kapiacikic.png"/>
+ </tileset>
+ <layer name="Ground" width="46" height="31">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3WTQ5AMBAF4FoqN6jewBVs/VzYBXAvI9FEmopiom28xbeohb5MXoZMCJEBAMBvFKQlHenJ8OBcBsityPiSCpC7ZsgtA+RuIp+3q8cbzZC7Onk3R+85enwld9wZQ499ck9kJst+Zww9vpu7wbyTm7cMkJtjr3+1T465U9kntlT6bePo9/ZNe/PP53M2ec1zzZAbAADitALldKaBSBYAAA==
+  </data>
+ </layer>
+ <layer name="Fringe" width="46" height="31">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3OMQ0AAAjAMPx7A01ggQeeNtm/CAAAAIC9nOp7AoATDQm0hmhIFgAA
+  </data>
+ </layer>
+ <layer name="Top" width="46" height="31">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3OsQ0AIAgAQfbfTHEomcDChoTcJd9/BAAAAMywqt098SGr0z0BAA8XoJsz2UgWAAA=
+  </data>
+ </layer>
+ <layer name="Collision" width="46" height="31" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3OsQ0AMAgDQfZfitXS00YoQZylq/0ZEQkAA9xOt+4furtXP3Tr1q17W3fd9u5u03qndwO8dAAKdkstSBYAAA==
+  </data>
+ </layer>
+ <layer name="Objects" width="46" height="31" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3BgQAAAADDoPlTn+AGVQEAAAAAwDcfSLnNSBYAAA==
+  </data>
+ </layer>
+</map>

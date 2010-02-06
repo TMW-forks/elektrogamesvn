@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
+<map version="1.0" orientation="orthogonal" width="61" height="46" tilewidth="32" tileheight="32">
+ <tileset name="syh" firstgid="1" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/siyah.png"/>
+ </tileset>
+ <tileset name="tasbina" firstgid="2" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/oda_platform.png"/>
+ </tileset>
+ <tileset name="kaplama" firstgid="172" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/kaplamalar.png"/>
+ </tileset>
+ <tileset name="collosion" firstgid="190" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/collision.png"/>
+ </tileset>
+ <tileset name="kapi" firstgid="192" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/kapiacikic.png"/>
+ </tileset>
+ <layer name="Ground" width="61" height="46">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO2ZOw6DMBBETUu4AckNuAJtPifO9WIKpEhAFEtvox1lileACzRi31iGrpTSGWOMMUaKU+VWuVcelWvC6/d7A5B5rDyFGIHMU4IcLUxA5jlBjhZmIHOfIMevM6v53AOZ1XwmOkxttokOU5ttwud/nG21vYqYbTWfvVfZ5285l+3ZZTnPDAny7UH4rOY54bOa58Rsq3keOdtZ9+3I2V667eibzfr8vfXoLiT2qmjoLoz0mYLuwkifKegujPSZgu5CBZ/p96zgM/2eFXyme1vBZ7q37XNO1rNqy3+5T2uXBJmMMcYY084LxXHANNgrAAA=
+  </data>
+ </layer>
+ <layer name="Fringe" width="61" height="46">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3BMQEAAADCoPVPbQwfoAAAAAAAAAAAAACAtwEUf/fE2CsAAA==
+  </data>
+ </layer>
+ <layer name="Top" width="61" height="46">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3OuREAIAzAMPafincvsgFdUiDduXdrAAAAAADAr3o0qieSzWhVTyTb0ameAAAAAODpAqTc6NvYKwAA
+  </data>
+ </layer>
+ <layer name="Collision" width="61" height="46" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3QAQkAQAwDsfo3NWtvYvArpHAC0kkykiRJBTWNmZmZmblrzMzMzMxd2zI3fcHMzMy89cWP75iZL8XMzMzMzCxJknS9B0oLjQvYKwAA
+  </data>
+ </layer>
+ <layer name="Objects" width="61" height="46">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3BMQEAAADCoPVPbQwfoAAAAAAAAAAAAACAtwEUf/fE2CsAAA==
+  </data>
+ </layer>
+</map>

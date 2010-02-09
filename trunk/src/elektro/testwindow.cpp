@@ -368,6 +368,17 @@ TestDialog::start()
         case MANYQ_CONTINUE_STATE:
             showInfoLabels();
             showQuestion();
+            if (mQuestionNumber < 2 )
+                   (mvButton[0])->setEnabled(false);
+            else
+                (mvButton[0])->setEnabled(true);
+
+            if (mQuestionNumber < mTotalQuestion )
+                   (mvButton[1])->setEnabled(true);
+            else
+                (mvButton[1])->setEnabled(false);
+
+
             for(miButton = mvButton.begin();miButton !=mvButton.end();++miButton)
             {
                 (*miButton)->setVisible(true);

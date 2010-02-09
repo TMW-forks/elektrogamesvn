@@ -190,6 +190,15 @@ SlaytWindow::slideStateControl()
             mStart->setVisible(false);
             mCancel->setVisible(false);
             nextPrevPosition();
+            if(mCurrentSlide <2)
+                mPrev->setEnabled(false);
+            else
+                mPrev->setEnabled(true);
+
+            if(mCurrentSlide < mTotalSlides)
+                mNext->setEnabled(true);
+            else
+                mNext->setEnabled(false);
             break;
     }
 }

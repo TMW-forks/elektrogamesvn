@@ -1,41 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
 <map version="1.0" orientation="orthogonal" width="46" height="46" tilewidth="32" tileheight="32">
- <tileset name="syh" firstgid="1" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="siyah" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/siyah.png"/>
  </tileset>
- <tileset name="duvar" firstgid="2" tilewidth="32" tileheight="32">
+ <tileset firstgid="2" name="duvar" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/askeriye.png"/>
  </tileset>
- <tileset name="kaplama" firstgid="72" tilewidth="32" tileheight="32">
+ <tileset firstgid="72" name="kaplama" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/kaplamalar.png"/>
  </tileset>
- <tileset name="collasion" firstgid="90" tilewidth="32" tileheight="32">
+ <tileset firstgid="90" name="collasion" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/collision.png"/>
+ </tileset>
+ <tileset firstgid="92" name="siralar" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/malzemeler.png"/>
+ </tileset>
+ <tileset firstgid="192" name="malzeme" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/karatahtalar.png"/>
  </tileset>
  <layer name="Ground" width="46" height="46">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO2XMQ6AIAxFy6qip+EEzN7/Opa4KoNpKOAbXhhIyM9LadogIgEAAKZjUxZlbXhGg9xZORuTDXKnQXN7+E74xje+u/NtkZv+je+ZfdMH8Y1vfFv53uXenZ7eL3e1nSs6+vaoMQvfHrm9fX/9G+T+V33jm9zUSX++3+aA2mxQOJxzAwCMwAUPl4x7ECEAAA==
+   H4sIAAAAAAAAC+2XMQ6AIAxFy6qip+EEzN7/Opa4KoNpKOAbXhhIyM9LadogIgEAAKZjUxZlbXhGg9xZORuTDXKnQXN7+E74xje+u/NtkZv+je+ZfdMH8Y1vfFv53uXenZ7eL3e1nSs6+vaoMQvfHrm9fX/9G+T+V33jm9zUSX++3+aA2mxQOJxzAwCMwAUPl4x7ECEAAA==
   </data>
  </layer>
  <layer name="Fringe" width="46" height="46">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3BAQ0AAADCoPdPbQ8HFAAAAAAAAADAlwG38bQVECEAAA==
+   H4sIAAAAAAAAC+3SsQ2AMAxFwezLVkAJTAXMgQuqKBUSciLdSa9w5+KXAgAAAACM6oyu6H7vOVqiNe2jb7Zoj47sR+hKvedR9l3v2b5pse9/TNkPANCVBxmAirAQIQAA
   </data>
  </layer>
  <layer name="Top" width="46" height="46">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3OIQ6DQABEUTz0ApT6QnUL1dz/ToxcgdgEsQl5L/li3HQdAAAAAFcNqT/p0fJUhTE9iz2lV/q2uVPtneZiL+mT9jZ3qv3SWuwt/Rt9AQAAuLsDW6aD2hAhAAA=
+   H4sIAAAAAAAAC+3SOw5BQRSA4dtjAx69R+1VWwm1nVB6dCwMBTbiv4VkIuROMmQU/5f8xWnOnGKKQpIkSZIkSanqVHtTI+dREZrUCuY2dWiYsPNEZ7ok7KjSpV4w92lAs4SdV7rRPWFHlRGNg3lC0x++Jz0taEXrYN7RPttFcZZ0oOOHWSq9/udy3tA220Vx/v1/z3MfIEnSFzwAbqr/DhAhAAA=
   </data>
  </layer>
  <layer name="Collision" width="46" height="46" visible="0">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3TMQoAIRAEwf2n//+H+YWC7QU10KkULK6ZWZIk/ah63O2423G3427H3Y67HXc77nbc5++/dH8Nt2/F3f6N12Zubm5ubknSrTYuPQAXECEAAA==
+   H4sIAAAAAAAAC+3TMQoAIRAEwf2n//+H+YWC7QU10KkULK6ZWZIk/ah63O2423G3427H3Y67HXc77nbc5++/dH8Nt2/F3f6N12Zubm5ubknSrTYuPQAXECEAAA==
   </data>
  </layer>
  <layer name="Objects" width="46" height="46">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3BAQ0AAADCoPdPbQ8HFAAAAAAAAADAlwG38bQVECEAAA==
+   H4sIAAAAAAAAC+3BAQ0AAADCoPdPbQ8HFAAAAAAAAADAlwG38bQVECEAAA==
   </data>
  </layer>
 </map>

@@ -1,47 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
 <map version="1.0" orientation="orthogonal" width="46" height="37" tilewidth="32" tileheight="32">
- <tileset name="SIYAH" firstgid="1" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="siyah" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/siyah.png"/>
  </tileset>
- <tileset name="DUVAR" firstgid="2" tilewidth="32" tileheight="32">
+ <tileset firstgid="2" name="DUVAR" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/tas_bina.png"/>
  </tileset>
- <tileset name="kaplama" firstgid="172" tilewidth="32" tileheight="32">
+ <tileset firstgid="172" name="kaplama" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/kaplamalar.png"/>
  </tileset>
- <tileset name="karatahta" firstgid="190" tilewidth="32" tileheight="32">
+ <tileset firstgid="190" name="karatahta" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/karatahtalar.png"/>
  </tileset>
- <tileset name="kapi" firstgid="226" tilewidth="32" tileheight="32">
+ <tileset firstgid="238" name="kapi" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/kapiacikic.png"/>
  </tileset>
- <tileset name="collosion" firstgid="232" tilewidth="32" tileheight="32">
+ <tileset firstgid="244" name="collision" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/collision.png"/>
+ </tileset>
+ <tileset firstgid="246" name="malzemeler" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/malzemeler.png"/>
+ </tileset>
+ <tileset firstgid="346" name="cicekler" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/Pots_x2.png"/>
  </tileset>
  <layer name="Ground" width="46" height="37">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3OMQ0AAAgDsOHfD/rwQMJDevRvJSkAgEd6ydvb29vb29sbAIBbA5LlMweYGgAA
+   H4sIAAAAAAAAC+3PsQ0AIAwEsc/++zBfZqBAIOLiel8lKUnS961DcXNzc3Nzc3Nzc3Nzc89y7/7ddkiS3qoBJTRcz5gaAAA=
   </data>
  </layer>
  <layer name="Fringe" width="46" height="37">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3VvQmAQAyG4dTqBuoGrmDrz/476BrGUrzC+wh3IO8DX3FFIOQCMQMAAPiX1rN4Vs/m2T+8uyqdPk1CTRPeRb5ZqOnDu8inzE75o2jK7JQ/isZ+l8V+l8V+lzXY+47fOTynpe/8WKVTAAAApFyr7PN0mBoAAA==
+   H4sIAAAAAAAAC+2XsQqDQBBE99oY8AMS+yRYadq00fz/D2WLBCym2GJcXJgHgwgyXPHu3DMTQggRpfO8PYtn9XwC79Hvzjuu+0TquTWz+yaPxutGXEg9k69z9vS/57PxuhFj0e4XqQd5wupGsBxEnlTwO7ub5SDypILfyJMKfmd3sxxEnlTYO9n/HXmS6wnrrEKeVDgHs7s1x2qOjaA5NneOvVr8Xvwnei8edly3EEKI4/AFfY05apgaAAA=
   </data>
  </layer>
  <layer name="Top" width="46" height="37">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3OyQkAIAwAQfsv07MN04EQhHxmYP/bGgAAAPBbj0b1RMKMVvVEwo5O9QQAAE8XytBl85gaAAA=
+   H4sIAAAAAAAAC+2WyQoCMRBEk99UHBfcGMdxGbevdv0BqyFhcvEi6KSgHjxyyKVomqKdE0II8W/G3rmeb1+TgR1ylr59S5LcrMww3zks4AgOSOZ9RM4TrOEWrklyM5PuRkEy7ybsRhOsSXKzYnsxCV0yJZq17cU+dMkBVkTZmbF9WcAlybyrpEfO8EKSmxXrkGHolHirMGAdsgmdEm8V8Ttih/QTc+EKbx/+YoesEnPhDh9dh/iCJ3x1HUIIIUR2vAEnPEIJmBoAAA==
   </data>
  </layer>
- <layer name="Collision" width="46" height="37" visible="0">
+ <layer name="Collision" width="46" height="37">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3OMQ0AMAzAsPBnWhbDsGud5Ej+M9UAALDCba9/ffv27du37y1+ePQNAFAHj8l62pgaAAA=
+   H4sIAAAAAAAAC+3RwQkAMAgEQfvv139qkIQsJyvsfw67qtrMzNb34nT/dRNbEoy6+S0JRt38lgSjbn5LglE3vyXBqJvfkmDc5J7uox03P6E9us1sYwfTFjtImBoAAA==
   </data>
  </layer>
  <layer name="Objects" width="26" height="27" visible="0">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3BAQ0AAADCoPdPbQ8HFAAA/Bu6lPpf+AoAAA==
+   H4sIAAAAAAAAC+3BAQ0AAADCoPdPbQ8HFAAA/Bu6lPpf+AoAAA==
   </data>
  </layer>
 </map>

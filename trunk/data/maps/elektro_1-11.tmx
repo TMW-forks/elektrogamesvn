@@ -15,10 +15,10 @@
  <tileset firstgid="196" name="collosion" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/collision.png"/>
  </tileset>
- <tileset firstgid="198" name="tahta" tilewidth="32" tileheight="32">
+ <tileset firstgid="198" name="karatahta" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/karatahtalar.png"/>
  </tileset>
- <tileset firstgid="246" name="siralar" tilewidth="32" tileheight="32">
+ <tileset firstgid="246" name="malzeme" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/malzemeler.png"/>
  </tileset>
  <tileset firstgid="346" name="altlik" tilewidth="32" tileheight="32">
@@ -27,7 +27,7 @@
  <tileset firstgid="348" name="malzeme" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/malzemeler2.png"/>
  </tileset>
- <tileset firstgid="364" name="kaldirim" tilewidth="32" tileheight="32">
+ <tileset firstgid="364" name="kaldirimlar" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/kaldirimlar.png"/>
  </tileset>
  <layer name="Ground" width="35" height="35">
@@ -42,7 +42,7 @@
  </layer>
  <layer name="Top" width="35" height="35">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+2SvQ6CMBhF8T1FFAT8eUdFTdAB2NBBfRfv0Klp6NTcEu9JztCkyXfSr0kihBBcRviEL8+9Ft7hI2DLG37g13Ovgz0cArZMsVqQBjvI0VJF1POPpNb7b4n72Fiz1zjXpJ59RP8yi6ilsFoOxLbSMXtJ6tk55h4j2puYFyd4ZkcYGnhhRxiu8MaOEEKICX7Uo9keJBMAAA==
+   H4sIAAAAAAAAC+3SvQ5AMBiFYe7TYPDvHv0mGLBhwL04QweDaCJpvkrOk7xbk54UxyEikrWgFW2acx3q0WBwy44OdGrOjWhCs8EtfxK50gvoLrDoe/jYEgvtSS16B5tlgu8UPtztCe1JHu7N+Q/RRwUqpUcoFaqlRygNaqVHEBG9uABUBRX/JBMAAA==
   </data>
  </layer>
  <layer name="Collision" width="35" height="35" visible="0">

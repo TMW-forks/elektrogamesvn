@@ -285,7 +285,7 @@ CircuitWindow::CircuitWindow():
 
     mMessageScroll = new ScrollArea(mMessageText);
     mMessageScroll->setOpaque(false);
-    mMessageScroll->setDimension(gcn::Rectangle(120,10, getWidth()-20, getHeight()-130));
+    mMessageScroll->setDimension(gcn::Rectangle(150,30, getWidth()-20, getHeight()-130));
     mMessageScroll->setVisible(false);
     add(mMessageScroll);
 
@@ -331,6 +331,8 @@ CircuitWindow::stateCheck()
             x += mStartOk->getWidth() + 10 ;
             mStartCancel->setPosition(x,getHeight()-120);
             closeButton->setVisible(false);
+            if (mMessageAutoWrap)
+                mMessageText->autoWrap(mMessageScroll);
             break;
         case CIRCUIT_STATE:
             mMessageScroll->setVisible(false);
@@ -1899,12 +1901,17 @@ CircuitWindow::circuitFromXML(std::string mDoc)
             mCircState = MESSAGE_STATE;
             mMessageText->clearRows();
             logger->log("MESAJ GELDİ");
-
+            mMessageAutoWrap = false;
+            setWidth(600);
             for_each_xml_child_node(subnode, node)
             {
                 if (xmlStrEqual(subnode->name, BAD_CAST "addrow"))
                 {
-                    mMessageText->addRow(XML::getProperty(subnode, "text", ""));
+                    std::string mt = XML::getProperty(subnode, "text", "");
+                    if (mt != "#autowrap#")
+                        mMessageText->addRow(mt);
+                    else
+                        mMessageAutoWrap = true;
                 }
                 else if (xmlStrEqual(subnode->name, BAD_CAST "effect"))
                 {
@@ -1914,6 +1921,7 @@ CircuitWindow::circuitFromXML(std::string mDoc)
                     makeEffect(effecttype,effectname,effectsound);
                 }
             }
+
         }
         else if (xmlStrEqual(node->name, BAD_CAST "window"))
         {

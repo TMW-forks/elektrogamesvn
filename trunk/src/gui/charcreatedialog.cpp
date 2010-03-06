@@ -71,6 +71,7 @@ CharCreateDialog::CharCreateDialog(Window *parent, int slot):
 
     int numberOfHairColors = ColorDB::size();
 
+    srand((unsigned)time(0));
     mHairStyle = rand() % mPlayer->getNumOfHairstyles();
     mHairColor = rand() % numberOfHairColors;
     updateHair();

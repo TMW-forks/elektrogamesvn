@@ -32,6 +32,8 @@
 
 #include <string>
 #include <vector>
+#include <cstdlib>
+#include <iostream>
 
 class LocalPlayer;
 class PlayerBox;
@@ -116,6 +118,9 @@ class CharCreateDialog : public Window, public gcn::ActionListener
 
         int mSlot;
         Image *mBackGround;
+
+        //Rastgele Saç Rengi ve Saç Tarzý için...
+
 };
 
 #endif // CHAR_CREATE_H

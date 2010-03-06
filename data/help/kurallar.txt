@@ -1,0 +1,61 @@
+﻿ <- @@index|Indekse geri don@@
+##3              === Oyun Kuralları ===
+
+1-İsimlendirme 
+
+a.Küfür/hakaret, ırkçı söylem, siyasi/ideolojik söylem, kötü alışkanlıklara özendirici
+ifadeler ve/veya şahıslara ve kurumlara özel ve korunan Oyuncu(Karakter) isimleri
+kullanmak kesinlikle yasaktır. 
+
+b.Amaçsız ve anlamsız karakter dizileri içeren Oyuncu ve Karakter isimleri kullanmak
+yasaktır. 
+
+d.Türkçe olmayan isimler yasaktır. 
+
+
+2-Davranış 
+
+-Lütfen, Oyun içerisinde diğer oyunculara karşı ılımlı olun ve kesinlikle hakaret
+etmeyin. Tehdit etmek ve baskı yapmak kesinlikle yasaktır. Eğer bir oyuncunun
+kurallara uygun hareket etmediğine inanıyorsanız bunu yetkililere iletmekten çekinmeyin. 
+
+a.Yeni Başlayanları Rahatsız Etme Lütfen, yeni başlayan oyuncuları küçümseyici
+davranışlarda bulunmayın ve onları kandırmaya çalışmayın. Yeni oyunculara
+karakterlerini geliştirmede yardım edin! 
+
+
+3- Oyun İçinde Sohbet 
+
+a.Oyundaki sohbet ve benzeri yazışmalarda dil Türkçe'dir. Türkçe dışında
+yazışmalar yasaktır. 
+
+b.Sohbette kaba/argo dil kullanımı ve küfür yasaktır. 
+
+c.Spam (Sürekli olarak aynı mesajın tekrarlanması) Lütfen spam yapmayın. Kısa
+mesafede aynı mesajı sürekli olarak Sohbet ekranlarında tekrarlamak yasaktır. 
+
+d.Gerçek hayata yönelik tehdit Herhangi bir oyuncuyu, takım üyesini, oyun
+sorumlusunu, yada herhangi bir şekilde oyun servisleri ile ilgili birini bulup
+ona zarar vereceğinize dair imalar ve söylemler kesinlikle yasaktır. 
+
+
+4- Bug (Oyun Açığı) Kullanımı 
+
+Eğer bir açık bulup bunu kendinize avantaj sağlamak için kullanırsanız oyun
+hesabınız silinir. Bulunan tüm oyun ve programlama açıkları derhal bir yetkiliye
+iletilmelidir. 
+
+
+5- Hesap Bilgisi 
+
+a.Her oyuncu hesap bilgilerini gizli tutmakla yükümlüdür. Bu bilgiyi diğer
+oyunculara vermeniz yasaktır. Bilgilerini paylaşan oyuncular doğacak zararlardan
+sonucunda herhangi bir destek/hak talep edemezler. elektroGame takımı hiçbir
+zaman hiçbir surette sizden hesap bilginizi yada şifrenizi istemez. 
+
+b.Hesap Çalımı: Hesap çalan/hackleyen kişilerin varolan tüm hesapları
+kapatılacaktır. 
+
+
+6- Cezalar 
+-Kural ihlallerinde verilecek cezalar yetkililer tarafından belirlenecektir.

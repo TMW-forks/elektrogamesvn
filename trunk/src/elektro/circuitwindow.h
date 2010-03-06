@@ -144,7 +144,8 @@ class CircuitWindow : public Window,
 
     private:
         enum CIRCSTATE{
-            MESSAGE_STATE = 0,
+            HEAD_MESSAGE_STATE = 0,
+            FOOT_MESSAGE_STATE,
             CIRCUIT_STATE,
             TEST_STATE,
             ENDSTATE
@@ -173,6 +174,7 @@ class CircuitWindow : public Window,
 
         Button *mStartOk;
         Button *mStartCancel;
+        Button *mFootOk;
 
         gcn::Label *mX;
         gcn::Label *mY;

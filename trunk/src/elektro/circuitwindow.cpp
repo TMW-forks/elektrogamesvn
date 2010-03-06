@@ -225,7 +225,7 @@ CircuitWindow::CircuitWindow():
     mPopupLabel->setOpaque(true);
     add(mPopupLabel);
 
-    closeButton = new BitButton("btn_degerlendir.png", "Degerlendir", "close",this);
+    closeButton = new BitButton("btn_degerlendir.png", "Degerlendir", "evaluate",this);
     closeButton->setPosition(10,120);
     add(closeButton);
 
@@ -291,15 +291,19 @@ CircuitWindow::CircuitWindow():
 
     mStartOk = new Button("Hemen Başla","startok",this);
     mStartCancel = new Button("Yok Almayım","startcancel",this);
+    mFootOk = new Button("Tamam","FootOk",this);
 
     mStartCancel->setWidth(mStartOk->getWidth());
     mStartCancel->setHeight(mStartOk->getHeight());
+    mFootOk->setWidth(150);
 
     mStartOk->setVisible(false);
     mStartCancel->setVisible(false);
+    mFootOk->setVisible(false);
 
     add(mStartOk);
     add(mStartCancel);
+    add(mFootOk);
 }
 
 CircuitWindow::~CircuitWindow()
@@ -319,22 +323,43 @@ CircuitWindow::stateCheck()
 {
     switch(mCircState)
     {
-        case MESSAGE_STATE:
+        case HEAD_MESSAGE_STATE:
+            deleteWidgets();
+            trashMeshMem();
             mMessageScroll->setVisible(true);
             mMessageScroll->setDimension(gcn::Rectangle(150,30, getWidth()-180, getHeight()-160));
             mMessageScroll->setOpaque(true);
             mMessageText->setVisible(true);
             mStartOk->setVisible(true);
             mStartCancel->setVisible(true);
+            closeButton->setEnabled(false);
             int x = (getWidth()-mStartOk->getWidth()-mStartCancel->getWidth())/2 + 50;
             mStartOk->setPosition(x,getHeight()-120);
             x += mStartOk->getWidth() + 10 ;
             mStartCancel->setPosition(x,getHeight()-120);
             closeButton->setVisible(false);
+            mFootOk->setVisible(false);
             if (mMessageAutoWrap)
                 mMessageText->autoWrap(mMessageScroll);
             break;
+        case FOOT_MESSAGE_STATE:
+            deleteWidgets();
+            trashMeshMem();
+            mMessageScroll->setVisible(true);
+            mMessageScroll->setDimension(gcn::Rectangle(150,30, getWidth()-180, getHeight()-160));
+            mMessageScroll->setOpaque(true);
+            mMessageText->setVisible(true);
+            mFootOk->setVisible(true);
+            mFootOk->setX( mMessageScroll->getX()+mMessageScroll->getWidth()/2- mFootOk->getWidth()/2);
+            mFootOk->setY(mMessageScroll->getY()+mMessageScroll->getHeight()+20);
+            closeButton->setEnabled(false);
+            if (mMessageAutoWrap)
+                mMessageText->autoWrap(mMessageScroll);
+
+            break;
         case CIRCUIT_STATE:
+            closeButton->setEnabled(true);
+            mFootOk->setVisible(false);
             mMessageScroll->setVisible(false);
             mStartOk->setVisible(false);
             mStartCancel->setVisible(false);
@@ -342,13 +367,14 @@ CircuitWindow::stateCheck()
             mRefresh = true;
             break;
         case TEST_STATE:
+            closeButton->setEnabled(true);
             mMessageScroll->setVisible(false);
             mStartOk->setVisible(false);
             mStartCancel->setVisible(false);
             closeButton->setVisible(false);
+            mFootOk->setVisible(false);
             break;
     }
-
 }
 void
 CircuitWindow::logic()
@@ -1567,7 +1593,6 @@ void CircuitWindow::deleteWidgets()
 void
 CircuitWindow::action(const gcn::ActionEvent &event)
 {
-    logger->log("CIRCUIT ACTION");
     mHint->setCaption(event.getId());
     mHint->adjustSize();
     if (event.getId() == "clear")
@@ -1588,6 +1613,33 @@ CircuitWindow::action(const gcn::ActionEvent &event)
     else if (event.getId()=="startok")
     {
         Net::getNpcHandler()->listInput(current_npc, 2); //ilk menü
+    }
+
+    else if (event.getId() == "evaluate")
+    {
+        int cevap = 1;
+        for(conLampIter = conLamp.begin(); conLampIter != conLamp.end(); conLampIter++)
+        {
+            Component *tmp = findComponent(*conLampIter);
+            if (tmp->getCurrent() != 0)
+                cevap *= 1;
+            else cevap = 0;
+        }
+        if (cevap == 1)
+            Net::getNpcHandler()->listInput(current_npc, 2);
+        else
+            Net::getNpcHandler()->listInput(current_npc, 3);
+    }
+    else if (event.getId() == "FootOk")
+    {
+        setVisible(false);
+        deleteWidgets();
+        trashMeshMem();
+        if (current_npc)
+            Net::getNpcHandler()->nextDialog(current_npc);
+
+        current_npc = 0;
+        NPC::isTalking = false;
     }
 
     else if (event.getId() == "close")
@@ -1896,11 +1948,10 @@ CircuitWindow::circuitFromXML(std::string mDoc)
    for_each_xml_child_node(node, rootNode)
     {
         // devreden önce gösterilen mesaj
-        if (xmlStrEqual(node->name, BAD_CAST "mesaj"))
+        if (xmlStrEqual(node->name, BAD_CAST "head_mesaj"))
         {
-            mCircState = MESSAGE_STATE;
+            mCircState = HEAD_MESSAGE_STATE;
             mMessageText->clearRows();
-            logger->log("MESAJ GELDİ");
             mMessageAutoWrap = false;
             setWidth(600);
             for_each_xml_child_node(subnode, node)
@@ -1922,6 +1973,46 @@ CircuitWindow::circuitFromXML(std::string mDoc)
                 }
             }
 
+        }
+
+        else if (xmlStrEqual(node->name, BAD_CAST "foot_mesaj"))
+        {
+            mCircState = FOOT_MESSAGE_STATE;
+            mMessageText->clearRows();
+            mMessageAutoWrap = false;
+            setWidth(600);
+            bool bitir = false;
+            for_each_xml_child_node(subnode, node)
+            {
+                if (xmlStrEqual(subnode->name, BAD_CAST "addrow"))
+                {
+                    std::string mt = XML::getProperty(subnode, "text", "");
+                    std::string mtt = mt;
+                    std::remove(mtt.begin(), mtt.end(), ' ');
+                    if ( mtt == "#close# ")
+                    {
+                        bitir = true;
+                    }
+                    else if (mtt == "#autowrap#")
+                        mMessageAutoWrap = true;
+                    else
+                        mMessageText->addRow(mt);
+                }
+                else if (xmlStrEqual(subnode->name, BAD_CAST "effect"))
+                {
+                    std::string effecttype= XML::getProperty(subnode, "type", "particle");
+                    std::string effectname= XML::getProperty(subnode, "name", "dogru1");
+                    std::string effectsound= XML::getProperty(subnode, "sound", "dogru1");
+                    makeEffect(effecttype,effectname,effectsound);
+                }
+            }
+            if (bitir)
+            {
+                addActionListener(this);
+                const std::string &actionEventId="FootOk";
+                setActionEventId(actionEventId);
+                distributeActionEvent();
+            }
         }
         else if (xmlStrEqual(node->name, BAD_CAST "window"))
         {
@@ -2070,7 +2161,7 @@ CircuitWindow::circuitFromXML(std::string mDoc)
             if(type == "lampturnon")
             {
                 int componentid = XML::getProperty(node, "componentid", 0);
-                localChatTab->chatLog("lamp turn on :"+toString(componentid),BY_GM);
+//                localChatTab->chatLog("lamp turn on :"+toString(componentid),BY_GM);
                 conLamp.push_back(componentid);
             }
         }

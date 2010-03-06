@@ -114,7 +114,7 @@ StatusWindow::StatusWindow():
     mLabelJob->setY(30);
     add(mLabelJob);
 
-    mCharName = new Label ("MehmetCan");//player_node->getName());
+    mCharName = new Label (player_node->getName());
     mCharName->setFont(font_bas_2_18);
     mCharName->adjustSize();
     mCharName->setForegroundColor(gcn::Color(30,70,230));

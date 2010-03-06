@@ -215,7 +215,7 @@ class ChatWindow : public Window,
         HistoryIterator mCurHist;   /**< History iterator. */
         bool mReturnToggles; /**< Marks whether <Return> toggles the chat log
                                 or not */
-
+        bool aktif;
 
 };
 

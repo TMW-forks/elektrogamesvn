@@ -35,6 +35,7 @@
 #include "beingmanager.h"
 #include "configuration.h"
 #include "localplayer.h"
+#include "log.h"
 
 #include "net/chathandler.h"
 #include "net/net.h"
@@ -182,7 +183,44 @@ void ChatWindow::action(const gcn::ActionEvent &event)
 {
     if (event.getId() == "sohbetbutton")
     {
-     requestChatFocus();
+        if (aktif)
+        {
+                std::string message = mChatInput->getText();
+
+                if (!message.empty())
+                {
+                    // If message different from previous, put it in the history
+                    if (mHistory.empty() || message != mHistory.back())
+                    {
+                        mHistory.push_back(message);
+                    }
+                    // Reset history iterator
+                    mCurHist = mHistory.end();
+
+                    // Send the message to the server
+                    chatInput(message);
+
+                    // Clear the text from the chat input
+                    mChatInput->setText("");
+                }
+
+                if (message.empty() || !mReturnToggles)
+                {
+                    // Remove focus and hide input
+                    mFocusHandler->focusNone();
+
+                    // If the chatWindow is shown up because you want to send a message
+                    // It should hide now
+                    if (mTmpVisible)
+                        setVisible(false);
+                }
+                aktif=false;
+        }
+        else
+        {
+            requestChatFocus();
+            aktif=true;
+        }
     }
 
     if (event.getId() == "chatinput")
@@ -216,6 +254,7 @@ void ChatWindow::action(const gcn::ActionEvent &event)
             if (mTmpVisible)
                 setVisible(false);
         }
+        aktif=false;
     }
 }
 

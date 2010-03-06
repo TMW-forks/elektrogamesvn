@@ -321,7 +321,7 @@ TestDialog::start()
             break;
         case ONE_RADIO_STATE:
         case ONE_CEHCK_STATE:
-            gecenZaman=0;
+//            gecenZaman=0;  //şıkları seçince zamanı sıfırlıyordu
             mBasla = true;
             hideStart();
             mEvaluate->setVisible(true);
@@ -838,7 +838,6 @@ void
 TestDialog::parse()
 {
     ResourceManager *resman = ResourceManager::getInstance();
-    logger->log(mDoc.c_str());
     mxmlDoc=xmlParseMemory(mDoc.c_str(),mDoc.size());
     elektroWidget->padX = 10;
     elektroWidget->padY = 120;
@@ -862,6 +861,7 @@ TestDialog::parse()
         // Testten önce gösterilen mesaj
         if (xmlStrEqual(node->name, BAD_CAST "mesaj"))
         {
+            bool autow = false;
             testState = MESSAGE_STATE;
             mMessageText->clearRows();
 
@@ -869,7 +869,12 @@ TestDialog::parse()
             {
                 if (xmlStrEqual(subnode->name, BAD_CAST "addrow"))
                 {
-                    mMessageText->addRow(XML::getProperty(subnode, "text", "\n"));
+                    std::string tstr;
+                    tstr = XML::getProperty(subnode, "text", "\n");
+                    if (tstr == "#autowrap#")
+                        autow = true;
+                    else
+                        mMessageText->addRow(tstr);
                 }
                 else if (xmlStrEqual(subnode->name, BAD_CAST "effect"))
                 {
@@ -879,6 +884,8 @@ TestDialog::parse()
                     makeEffect(effecttype,effectname,effectsound);
                 }
             }
+
+            if (autow) mMessageText->autoWrap(mMessageArea);
         }
         else if (xmlStrEqual(node->name, BAD_CAST "starter"))
         {
@@ -951,8 +958,10 @@ TestDialog::parse()
         {
             SmTextBox temp = elektroWidget->addTextBox(this,node);
             add(temp.scrollarea);
+            temp.browserbox->autoWrap(temp.scrollarea);
             mvScrollArea.push_back(temp.scrollarea);
             mvTextBox.push_back(temp.browserbox);
+
         }
         else if (xmlStrEqual(node->name, BAD_CAST "radio"))
         {

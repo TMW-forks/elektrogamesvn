@@ -27,7 +27,7 @@ MissionWindow::MissionWindow():
     Window("Mission")
 {
     setResizable(false);
-    setDefaultSize(1010-400, 754-300, 400, 300);
+    setDefaultSize(0, 200, 400, 300);
     loadWindowState();
     setResizable(false);
 

@@ -166,8 +166,8 @@ Status Component::getStatus ()
 
 void Component::draw(gcn::Graphics *graphics)
 {
-    graphics->setColor(gcn::Color(0xff0000));
-    graphics->drawRectangle(gcn::Rectangle(0,0,getWidth(),getHeight()));
+//  graphics->setColor(gcn::Color(0xff0000));
+//  graphics->drawRectangle(gcn::Rectangle(0,0,getWidth(),getHeight()));
     Graphics *g = static_cast<Graphics*>(graphics);
     ResourceManager *resman = ResourceManager::getInstance();
     if (getSelected())

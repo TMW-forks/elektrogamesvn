@@ -231,16 +231,16 @@ CircuitWindow::CircuitWindow():
 
     solveButton = new BitButton("com_close_btn.png", "Degerlendir", "solve",this);
     solveButton->setPosition(10,140);
-    add(solveButton);
+    //add(solveButton);
 
     clearButton = new BitButton("com_rotate_btn.png", "Degerlendir", "clear",this);
     clearButton->setPosition(10,100);
-    add(clearButton);
+    //add(clearButton);
 
     mHint = new gcn::Label("");
     mHint->setPosition(10,10);
     mHint->adjustSize();
-    add(mHint);
+    //add(mHint);
 
 //    gcn::Label *mHint1 = new gcn::Label("");
 //    mHint1->setPosition(100,10);
@@ -269,11 +269,13 @@ CircuitWindow::CircuitWindow():
 
     mX = new gcn::Label("X:");
     mX->setPosition(4,5);
-    add(mX);
+  //  add(mX);
 
     mY = new gcn::Label("Y:");
     mY->setPosition(4,15);
-    add(mY);
+ //   add(mY);
+
+
     globalHint="hint";
     setLocationRelativeTo(getParent());
 

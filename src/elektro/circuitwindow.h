@@ -181,6 +181,7 @@ class CircuitWindow : public Window,
         int mPunish;
         int mAward;
 
+        bool mMessageAutoWrap;
         bool mNodeCreate;
         bool mRefresh;
 

@@ -159,7 +159,8 @@ void NpcDialog::action(const gcn::ActionEvent &event)
         {
             nextDialog();
             // TRANSLATORS: Please leave the \n sequences intact.
-            addText(_(" #br# ##8 ---- DEVAM  ---- #br# "));
+            addText(_(" #br# ##8 ------------------ #br# "));
+            mTextBox->autoWrap(mScrollArea);
         }
         else if (mActionState == NPC_ACTION_CLOSE)
         {
@@ -202,7 +203,7 @@ void NpcDialog::action(const gcn::ActionEvent &event)
                 Net::getNpcHandler()->integerInput(mNpcId, mIntField->getValue());
             }
             // addText will auto remove the input layout
-            addText( strprintf("##1> \"%s\"", printText.c_str()) );
+            addText( strprintf("##1Yapılan İşlem : \"%s\"", printText.c_str()) );
         }
     }
     else if (event.getId() == "reset")

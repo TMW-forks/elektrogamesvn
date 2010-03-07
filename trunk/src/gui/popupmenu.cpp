@@ -204,7 +204,7 @@ void PopupMenu::handleLink(const std::string &link)
 {
     Being *being = beingManager->findBeing(mBeingId);
 
-    // Talk To action
+    // Talk To actiondar :
     if (link == "talk" &&
         being &&
         being->getType() == Being::NPC &&
@@ -342,7 +342,7 @@ void PopupMenu::handleLink(const std::string &link)
     else if (link == "name" && being)
     {
         const std::string &name = being->getName();
-        chatWindow->addInputText(name);
+        chatWindow->addInputText("/w "+name);
     }
 
     else if (link == "admin-kick" &&

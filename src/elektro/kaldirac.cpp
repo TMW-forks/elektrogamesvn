@@ -9,7 +9,7 @@ Kaldirac::Kaldirac(gcn::ActionListener *listener) : mListener(listener)
     {
         addActionListener(mListener);
     }
-    setFrameSize(1);
+    setFrameSize(0);
 
     ResourceManager *resman = ResourceManager::getInstance();
 
@@ -31,8 +31,6 @@ Kaldirac::Kaldirac(gcn::ActionListener *listener) : mListener(listener)
 
 Kaldirac::~Kaldirac()
 {
-    delete resim;
-    delete mKaldiracImages;
     delete mKaldiracAnime;
 }
 
@@ -41,10 +39,8 @@ void Kaldirac::draw(gcn::Graphics *graphics)
     ResourceManager *resman = ResourceManager::getInstance();
     Graphics *g = static_cast<Graphics*>(graphics);
 
-
-
     g->drawImage(mKaldiracImages->get(resimIndex),25, 25);
-    g->drawRectangle(gcn::Rectangle(182,92,30,30));
+
     drawChildren(graphics);
 }
 
@@ -70,7 +66,7 @@ Kaldirac::logic()
                         for (std::vector<Kutle*>::iterator it= similasyonPenceresi->mvKutle.begin();
                             it != similasyonPenceresi->mvKutle.end(); it++)
                         {
-                            logger->log("döngüde");
+                            //logger->log("döngüde");
                             if ((*it)->getHareket())
                             {
                                 index = (*it)->getResimIndex();
@@ -95,7 +91,7 @@ Kaldirac::logic()
                         {
                             if ((*it)->getHareket())
                             {
-                                logger->log("döngüde");
+                                //logger->log("döngüde");
                                 index = (*it)->getResimIndex();
                                 index++;
                                 (*it)->setResimIndex(index);

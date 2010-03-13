@@ -35,7 +35,6 @@ class Kaldirac : public gcn::Window, public gcn::ActionListener
 
     private:
         gcn::ActionListener *mListener;
-        Image *resim;
         ImageSet *mKaldiracImages;
         Animation *mKaldiracAnime;
         int sayac,resimIndex;

@@ -162,9 +162,6 @@ Kutle::hesaplaY()
     x = mX + cos(mAlfa*(22/7.0)/180)*mR;
 //    y = getY() + sin(15*(22/7.0)/180)*(getX()-352);
 //    y = getY() + tan(15*(22/7.0)/180)*(getX()-355);
-    logger->log("X--: %d",mX);
-    logger->log("Y--: %d",mY);
-    logger->log("R--: %d",mR);
 //    y = getY() + sin(15*(22/7.0)/180)*34;
     setY(y);
     setX(x);

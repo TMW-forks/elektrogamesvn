@@ -252,7 +252,7 @@ CircuitWindow::CircuitWindow():
     mHint = new gcn::Label("");
     mHint->setPosition(10,10);
     mHint->adjustSize();
-    //add(mHint);
+    add(mHint);
 
 //    gcn::Label *mHint1 = new gcn::Label("");
 //    mHint1->setPosition(100,10);
@@ -281,11 +281,11 @@ CircuitWindow::CircuitWindow():
 
     mX = new gcn::Label("X:");
     mX->setPosition(4,5);
-  //  add(mX);
+    add(mX);
 
     mY = new gcn::Label("Y:");
     mY->setPosition(4,15);
- //   add(mY);
+    add(mY);
 
 
     globalHint="hint";
@@ -697,8 +697,8 @@ CircuitWindow::mousePressed(gcn::MouseEvent &event)
    {
         Node *tempNode = new Node("com_node_btn.png","Hint", "com_node",this);
         tempNode->setId(findEmptyId());
-        tempNode->setX(event.getX());//+QALeftPad);
-        tempNode->setY(event.getY());//+QATopPad);
+        tempNode->setX(event.getX()-10);//+QALeftPad);
+        tempNode->setY(event.getY()-25);//+QATopPad);
         tempNode->setEnabled(true);
         tempNode->setScroll(true);
         tempNode->setMovable(true);
@@ -973,7 +973,6 @@ CircuitWindow::hasDoubleNode(Component *comp,TmvInt mesh)
             var2 = true;
         }
     }
-    logger->log("Bakalım bulmuşmu :%d - %d", comp->getId(), var1&&var2);
     return (var1&&var2);
 }
 
@@ -1632,15 +1631,40 @@ CircuitWindow::action(const gcn::ActionEvent &event)
         int cevap = 1;
         for(conLampIter = conLamp.begin(); conLampIter != conLamp.end(); conLampIter++)
         {
-            Component *tmp = findComponent(*conLampIter);
-            if (tmp->getCurrent() != 0)
+            Component *tmp = findComponent((*conLampIter)->compId);
+//            logger->log("kontrol :id : %d - %d, %d",(*conLampIter)->compId, a,(*conLampIter)->stat);
+            if ((tmp->getStatus() == ACTIVE || tmp->getStatus() == PLUS || tmp->getStatus() == PLUS2) &&  (*conLampIter)->stat == 1)
+                cevap *= 1;
+            else if (tmp->getStatus() == PASIVE &&  (*conLampIter)->stat == 0)
                 cevap *= 1;
             else cevap = 0;
         }
+        for(conNodeIter = conNode.begin(); conNodeIter!= conNode.end(); conNodeIter++)
+        {
+            logger->log("node akımı kontrol et : %f", (*conNodeIter)->compCurrent);
+            Node *tmp = findNode((*conNodeIter)->compId);
+            if (tmp->getCurrent() == (*conNodeIter)->compCurrent)
+                cevap *= 1;
+            else cevap = 0;
+        }
+
         if (cevap == 1)
             Net::getNpcHandler()->listInput(current_npc, 2);
         else
             Net::getNpcHandler()->listInput(current_npc, 3);
+
+// TEMİZLİK
+        for(conLampIter = conLamp.begin(); conLampIter != conLamp.end(); conLampIter++)
+        {
+            delete (*conLampIter);
+        }
+        for(conNodeIter = conNode.begin(); conNodeIter!= conNode.end(); conNodeIter++)
+        {
+            delete (*conNodeIter);
+        }
+        conLamp.clear();
+        conNode.clear();
+
     }
     else if (event.getId() == "FootOk")
     {
@@ -1660,14 +1684,14 @@ CircuitWindow::action(const gcn::ActionEvent &event)
         setVisible(false);
         deleteWidgets();
         trashMeshMem();
-        int cevap = 1;
-        for(conLampIter = conLamp.begin(); conLampIter != conLamp.end(); conLampIter++)
-        {
-            Component *tmp = findComponent(*conLampIter);
-            if (tmp->getCurrent()>0)
-                cevap *= 1;
-            else cevap = 0;
-        }
+//        int cevap = 1;
+//        for(conLampIter = conLamp.begin(); conLampIter != conLamp.end(); conLampIter++)
+//        {
+//            Component *tmp = findComponent(*conLampIter);
+//            if (tmp->getCurrent()>0)
+//                cevap *= 1;
+//            else cevap = 0;
+//        }
         if (current_npc)
             Net::getNpcHandler()->nextDialog(current_npc);
 
@@ -1782,7 +1806,6 @@ CircuitWindow::action(const gcn::ActionEvent &event)
 void
 CircuitWindow::distributeOlay(Item *it)
 {
-    localChatTab->chatLog("Geldim",BY_SERVER);
     ItemInfo tempItem = ItemDB::get(it->getId());
     it->setQuantity(it->getQuantity()-1);
     std::string tempType = tempItem.getElektroType();
@@ -2166,6 +2189,7 @@ CircuitWindow::circuitFromXML(std::string mDoc)
             conList.push_back(c);
             add(tempComponent);
             tempComponent->setStatus(XML::getProperty(node, "status", PASIVE)); //herşey bittikten sonra statüyü değiştir
+            if(tempComponent->getType() == SWITCH && tempComponent->getStatus()==PASIVE) c->active=false;
 
             for (miNode = mvNode.begin(); miNode < mvNode.end(); miNode++)
                 (*miNode)->requestMoveToTop();
@@ -2175,9 +2199,22 @@ CircuitWindow::circuitFromXML(std::string mDoc)
             std::string type = XML::getProperty(node, "type", "");
             if(type == "lampturnon")
             {
-                int componentid = XML::getProperty(node, "componentid", 0);
-//                localChatTab->chatLog("lamp turn on :"+toString(componentid),BY_GM);
-                conLamp.push_back(componentid);
+                ConditionLamp *tmp = new ConditionLamp;
+                tmp->compId = XML::getProperty(node, "componentid", 0);
+                tmp->stat = XML::getProperty(node, "status", 0);
+                logger->log("şart : %d - %d",tmp->compId, tmp->stat );
+                conLamp.push_back(tmp);
+            }
+            else if(type == "nodecurrent")
+            {
+                std::stringstream hes;
+                ConditionCurrent *cct = new ConditionCurrent;
+                cct->compId = XML::getProperty(node, "componentid", 0);
+                hes << XML::getProperty(node, "current", "");
+                float hesf;
+                hes >> hesf;
+                cct->compCurrent = hesf;
+                conNode.push_back(cct);
             }
         }
         else if (xmlStrEqual(node->name, BAD_CAST "connect"))

@@ -194,7 +194,6 @@ void InventoryWindow::action(const gcn::ActionEvent &event)
         {
             if (circuitWindow->isVisible())
             {
-                Net::getInventoryHandler()->useItem(item);
                 circuitWindow->distributeOlay(item);
             }
             else if (similasyonPenceresi->isVisible())

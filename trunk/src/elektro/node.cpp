@@ -95,10 +95,12 @@ void Node::mouseReleased(gcn::MouseEvent& mouseEvent)
     {
         mRightClick =false;
         mDead = true;
+        gui->setCursorType(0);
         const std::string &actionEventId="node_close";
         setActionEventId(actionEventId);
         distributeActionEvent();
     }
+    //sağ tıklandığında bağlantıları temizliyordum
     BitButton::mouseReleased(mouseEvent);
 }
 void
@@ -110,9 +112,9 @@ Node::mouseMoved(gcn::MouseEvent &event)
 void Node::mouseEntered(gcn::MouseEvent &mouseEvent)
 {    Uint8* keys;
     keys = SDL_GetKeyState(NULL);
-    //devre penceresinde shiftle yeni node olu�mas�n� engelle
+    //devre penceresinde shiftle yeni node oluþmasýný engelle
     circuitWindow->setNodeCreate(false);
-    circuitWindow->mHint->setCaption("node:"+toString(mCurrent));
+    circuitWindow->mHint->setCaption("node: "+toString(mCurrent)+"A");
     circuitWindow->mHint->adjustSize();
     if (mFromLink && (keys[SDLK_LSHIFT] || keys[SDLK_RSHIFT]))
     {
@@ -137,7 +139,7 @@ void Node::mouseEntered(gcn::MouseEvent &mouseEvent)
 void Node::mouseExited(gcn::MouseEvent &mouseEvent)
 {
     gui->setCursorType(0);
-    circuitWindow->setNodeCreate(true);  //art�k node olu�turabilir.
+    circuitWindow->setNodeCreate(true);  //artýk node oluþturabilir.
 }
 
 void

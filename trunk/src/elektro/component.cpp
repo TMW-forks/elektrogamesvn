@@ -181,8 +181,7 @@ void Component::draw(gcn::Graphics *graphics)
 
 void Component::mousePressed(gcn::MouseEvent &event)
 {
-
-    if (getSelectable())
+    if (getSelectable() && isMovable())
     {
         Uint8* keys;
         keys = SDL_GetKeyState(NULL);
@@ -252,6 +251,7 @@ void Component::mouseDragged(gcn::MouseEvent &event)
 //    circuitWindow->moveComponents(mDragOffsetX,mDragOffsetY);
         Uint8* keys;
         keys = SDL_GetKeyState(NULL);
+        if (!isMovable()) return;
         if (isMovable()) mNewSelected=true;
 
         if (isMovable() && (keys[SDLK_LALT] || keys[SDLK_RALT]))
@@ -271,18 +271,18 @@ void Component::mouseDragged(gcn::MouseEvent &event)
                 distributeActionEvent();
             }
         }
-        else
+        else if (isMovable())
         {
 //        circuitWindow->mHint->setCaption(toString(event.getX())+" - "+toString(event.getX()));
 //        circuitWindow->mHint->adjustSize();
             requestMoveToTop();
             setX(getX()+event.getX()-xx);
             setY(getY()+event.getY()-yy);
-        if (getX()<120) setX(120);
+  /*      if (getX()<120) setX(120);
         if (getY()<10) setY(10);
         if (getX()>(circuitWindow->getWidth()-getWidth()-15)) setX(circuitWindow->getWidth()-15-getWidth());
         if (getY()>(circuitWindow->getHeight()-getHeight()-25)) setY(circuitWindow->getHeight()-getHeight()-25);
-        }
+       */ }
         nodesCalc();
 }
 
@@ -457,7 +457,7 @@ void Component::mouseEntered(gcn::MouseEvent &event)
     circuitWindow->toolCaption->setX(55-circuitWindow->toolCaption->getWidth()/2);
     circuitWindow->toolValue->setCaption(toString(mValue)+cap);
     circuitWindow->toolValue->adjustSize();
-    circuitWindow->mHint->setCaption("comp:"+toString(mCurrent));
+    circuitWindow->mHint->setCaption("comp: "+toString(mCurrent)+"A");
     circuitWindow->mHint->adjustSize();
 }
 

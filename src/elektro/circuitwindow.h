@@ -50,32 +50,32 @@ class CircuitWindow : public Window,
          void showBatteryMatris();
 
         /**
-         * seçili olan componentleri bırak
+         * seÃ§ili olan componentleri bÃ½rak
          */
         void clearSelections();
 
         /**
-         * Seçili komponentleri hareket ettir --> todo: sadece movable ise
+         * SeÃ§ili komponentleri hareket ettir --> todo: sadece movable ise
          */
         void moveComponents(int x, int y);
 
         /**
-         * Bir node'un komşu sayısını bul
+         * Bir node'un komÃ¾u sayÃ½sÃ½nÃ½ bul
          */
         int nodeConnectCount(Node *count);
 
         /**
-         * Bir node'un komşu sayısını bul id'ye göre
+         * Bir node'un komÃ¾u sayÃ½sÃ½nÃ½ bul id'ye gÃ¶re
          */
         int nodeConnectCount(int count);
 
         /**
-         * NPC'den gelen XML'i oku ve devre elemanlarını oluştur
+         * NPC'den gelen XML'i oku ve devre elemanlarÃ½nÃ½ oluÃ¾tur
          */
         void circuitFromXML(std::string mDoc);
 
         /**
-         * İki nodu birbirine bağla
+         * Ãki nodu birbirine baÃ°la
          */
         void bindingNodes();
 
@@ -85,17 +85,17 @@ class CircuitWindow : public Window,
         void handleLink(const std::string& link);
 
         /**
-         * Kullanılmayan bir node id'si bul
+         * KullanÃ½lmayan bir node id'si bul
          */
         int findEmptyId();
 
         /**
-         * Connect list'te bulunan node'u değiştir
+         * Connect list'te bulunan node'u deÃ°iÃ¾tir
          */
         void swapNode(Node *find, Node *target);
 
         /**
-         * hint penceresindeki açıklamalar için
+         * hint penceresindeki aÃ§Ã½klamalar iÃ§in
          */
 
         std::map<std::string, ImageSet*>mComponentImageSet;
@@ -114,9 +114,9 @@ class CircuitWindow : public Window,
         void setNodeCreate(bool s) { mNodeCreate=s; }
         bool getNodeCreate() { return mNodeCreate; }
 
-        bool collisionCheck; /**< Çakışma olup olmadığı kontrol edilecek */
+        bool collisionCheck; /**< Ã‡akÃ½Ã¾ma olup olmadÃ½Ã°Ã½ kontrol edilecek */
 
-        bool nodeCollision;  /**< Hareketli node çakıştı */
+        bool nodeCollision;  /**< Hareketli node Ã§akÃ½Ã¾tÃ½ */
 
         Node *movingNode;
         Node *targetNode;
@@ -128,16 +128,17 @@ class CircuitWindow : public Window,
         gcn::Label *mHint;
 
     /**
-     * DistrubureActionEvent katatküllisi
+     * DistrubureActionEvent katatkÃ¼llisi
      */
+
      void distributeOlay(Item *it);
 
      void mouseMoved(gcn::MouseEvent &event);
 
-    // item bilgisini itemDB'den alabilmek için
+    // item bilgisini itemDB'den alabilmek iÃ§in
     const ItemInfo &getInfo(int id) const { return ItemDB::get(id); }
 
-    // anahtar açılıp kapatıldığında connection durumunu değiştir
+    // anahtar aÃ§Ã½lÃ½p kapatÃ½ldÃ½Ã°Ã½nda connection durumunu deÃ°iÃ¾tir
     void statusChanged(Component *sw , Status st);
 
     bool mWireRefresh;
@@ -156,7 +157,11 @@ class CircuitWindow : public Window,
         std::vector<int> conLamp;
         std::vector<int>::iterator conLampIter;
 
-        //tellerin çizilmesi için vektör
+        //kullanÄ±lan itemlarÄ± silecek vector
+        std::vector < Item *> mUsedItem;
+        std::vector < Item *>::iterator mIterUsedItem;
+
+        //tellerin Ã§izilmesi iÃ§in vektÃ¶r
         typedef std::vector < SmPoint *> TTekTel;
         typedef std::vector < SmPoint *>::iterator TTekTelIter;
 
@@ -212,7 +217,7 @@ class CircuitWindow : public Window,
         Image *mWireImage;
         Image *mBackgroundPattern;
 
-        //imleç üzerine gelince popup hint çıkması için
+        //imleÃ§ Ã¼zerine gelince popup hint Ã§Ã½kmasÃ½ iÃ§in
         gcn::Rectangle rectRotate;
         gcn::Rectangle rectMove;
         gcn::Rectangle rectFromRight;
@@ -227,13 +232,13 @@ class CircuitWindow : public Window,
         int collisionNodeX;
         int collisionNodeY;
 
-        TmvNode mvNode;           //Bağlantı noktası vector
-        TmiNode miNode;           //Bağlantı noktası iter
+        TmvNode mvNode;           //BaÃ°lantÃ½ noktasÃ½ vector
+        TmiNode miNode;           //BaÃ°lantÃ½ noktasÃ½ iter
 
-        TmvComponent mvComponent;       //Devre pencersindeki tüm componentler (direnç, pil ...) için vector
+        TmvComponent mvComponent;       //Devre pencersindeki tÃ¼m componentler (direnÃ§, pil ...) iÃ§in vector
         TmiComponent miComponent;       //compnent iter
 
-        TmvLabel mvLabel;           //Label Vectorü
+        TmvLabel mvLabel;           //Label VectorÃ¼
         TmiLabel miLabel;           //Label Iteratoru
 
         TmvImage mvImage;           //TImage Vectoru
@@ -248,204 +253,208 @@ class CircuitWindow : public Window,
         TmvScrollArea mvScrollArea;     //ScrollArea vector
         TmiScrollArea miScrollArea;     //ScrollArea iter
 
-//kirşof içinmMessageText
+//kirÃ¾of iÃ§inmMessageText
 
-        TmvIntMatris mvConnectedNodeId;     //Node'un bağlantılı olduğu komşularının listesi
+        TmvIntMatris mvConnectedNodeId;     //Node'un baÃ°lantÃ½lÃ½ olduÃ°u komÃ¾ularÃ½nÃ½n listesi
         TmiIntMatris miConnectedNodeId;
 
-        TmvIntMatris mvNodeLoop;             //İlmek oluşturma ihtimali olan node'ların listesi -map
+        TmvIntMatris mvNodeLoop;             //Ãlmek oluÃ¾turma ihtimali olan node'larÃ½n listesi -map
         TmiIntMatris miNodeLoop;
 
         TmvIntMatris mvMesh;                 //ilmeklerin listesi ->temizleniyor
         TmiIntMatris miMesh;
 
-        Tmatris resistanceCompDeter;            // dirençlerden oluşan en soldaki matris için
-        Tmatris batteryCompDeter;              // pillerden oluşan en sağdaki matris için
+        Tmatris resistanceCompDeter;            // direnÃ§lerden oluÃ¾an en soldaki matris iÃ§in
+        Tmatris batteryCompDeter;              // pillerden oluÃ¾an en saÃ°daki matris iÃ§in
         TmvFloat rowResistanceValue;
         TmvFloat batteryValue;
         TmvFloatMatris resistanceMatris;
 
-        std::vector< float > matrisAkim;    // akımlar için sayılardan oluşan vector
-        TmvComponentMatris matrisGerilim;    // pillerden oluşan en sağdaki matris <component*>
+        std::vector< float > matrisAkim;    // akÃ½mlar iÃ§in sayÃ½lardan oluÃ¾an vector
+        TmvComponentMatris matrisGerilim;    // pillerden oluÃ¾an en saÃ°daki matris <component*>
 
 
 
     /**
-     * Pencerenin hangi durumda olduğunu kontrol ederek ayarlama yapar.
+     * Pencerenin hangi durumda olduÃ°unu kontrol ederek ayarlama yapar.
      */
     void stateCheck();
 
     /**
-     * efekt yapmak için
+     * efekt yapmak iÃ§in
      */
     void makeEffect(std::string type,std::string name, std::string ssound);
 
     /**
-     * id'si verilen componenti geri döndürür.
+     * id'si verilen componenti geri dÃ¶ndÃ¼rÃ¼r.
      */
     Component* findComponent(int id);
 
     /**
-     * Üzerinden geçen lambaların parlaklıklarını hesapla ve yak
+     * Ãœzerinden geÃ§en lambalarÃ½n parlaklÃ½klarÃ½nÃ½ hesapla ve yak
      */
     void turnonLamps();
 
     /**
-     * Pilin değerini yönüyle birlikte hesapla
+     * Pilin deÃ°erini yÃ¶nÃ¼yle birlikte hesapla
      */
     void calculateBatteryValue();
 
     /**
-     * Gönderilen vector içinde o component var mı?
+     * GÃ¶nderilen vector iÃ§inde o component var mÃ½?
      */
     bool isExistComponent(Component *comp, TmvComponent vect);
 
     /**
-     * Component direnç türlerinden biri mi
+     * Component direnÃ§ tÃ¼rlerinden biri mi
      */
     bool isResistance(Component *comp);
 
     /**
-     * Component pil türlerinden biri mi
+     * Component pil tÃ¼rlerinden biri mi
      */
     bool isBattery(Component *comp);
 
     /**
-     * Component lamba türlerinden biri mi
+     * Component lamba tÃ¼rlerinden biri mi
      */
     bool isLamp(Component *comp);
 
     /**
-     * Bütün lambaları kapat
+     * BÃ¼tÃ¼n lambalarÃ½ kapat
      */
      void turnoffAllLamp();
 
     /**
-     * Tüm gui elemanlarını sil
+     * TÃ¼m gui elemanlarÃ½nÃ½ sil
      */
      void deleteWidgets();
 
     /**
-     * Tüm vector ve map'leri boşalt
+     * TÃ¼m vector ve map'leri boÃ¾alt
      */
      void trashMeshMem();
 
     /**
-     * Her nod'un bağlantılı komşularını belirler
+     * Her nod'un baÃ°lantÃ½lÃ½ komÃ¾ularÃ½nÃ½ belirler
      */
     void findConnectedNodeId();
 
     /**
-     * komşu nodeların listesini metin kutusuna yazar --debug
+     * komÃ¾u nodelarÃ½n listesini metin kutusuna yazar --debug
      */
     void showConnectedNodeId();
 
     /**
-     * çevrimlerin listesini metin kutusuna yazar --debug
+     * Ã§evrimlerin listesini metin kutusuna yazar --debug
      */
     void showNodeLoop();
 
     /**
-     * kesinleşmiş düğümlerin listesini metin kutusuna yazar --debug
+     * kesinleÃ¾miÃ¾ dÃ¼Ã°Ã¼mlerin listesini metin kutusuna yazar --debug
      */
     void showMesh();
 
     /**
-     * mvNodeLoop map'inin içindeki tekrar eden düğümleri temizler
+     * mvNodeLoop map'inin iÃ§indeki tekrar eden dÃ¼Ã°Ã¼mleri temizler
      */
     void winnowMesh();
 
     /**
-     * ilmek ihtimali olanları bulur arasından ilmek seçimi yapar :mvNodeLoop --> mvMesh
+     * ilmek ihtimali olanlarÃ½ bulur arasÃ½ndan ilmek seÃ§imi yapar :mvNodeLoop --> mvMesh
      */
     void addLoopToMesh();
 
     /**
-     * kesinleşmiş düğümlerin listesin kirchoff denklemini yazar
+     * kesinleÃ¾miÃ¾ dÃ¼Ã°Ã¼mlerin listesin kirchoff denklemini yazar
      */
     void makeMatris();
 
     /**
-     * id'si verilen node'un nodelist adresini döndürür
+     * id'si verilen node'un nodelist adresini dÃ¶ndÃ¼rÃ¼r
      */
     Node* findNode(int id);
 
     /**
-     * Devrenin analizini yap ve gereken componentlerin status'unu değiştir
+     * Devrenin analizini yap ve gereken componentlerin status'unu deÃ°iÃ¾tir
      */
     void devreAnaliz();
 
     /**
-     * Kirchhoff için oluşturulan matrisi textbox içine yaz
+     * Kirchhoff iÃ§in oluÃ¾turulan matrisi textbox iÃ§ine yaz
      */
     void matrisYaz();
 
     /**
-     * Matrisin satır sütun vectorunu bul köşegen haricindeki eleman listesini oluştur
+     * Matrisin satÃ½r sÃ¼tun vectorunu bul kÃ¶Ã¾egen haricindeki eleman listesini oluÃ¾tur
      */
     TmvComponent matrisElemanBul(int satir);
 
     /**
-     * Dirençlerin matrisini göster --
+     * DirenÃ§lerin matrisini gÃ¶ster --
      */
     void direncMatrisYaz();
 
     /**
-     * resistanceCompDeter map'inin içinden satır ve sütuna göre TmvComponent döndürecek
+     * resistanceCompDeter map'inin iÃ§inden satÃ½r ve sÃ¼tuna gÃ¶re TmvComponent dÃ¶ndÃ¼recek
      */
      TmvComponent matrisComponentXY(int satir, int sutun);
 
     /**
-     * mvDugum'in içinde verilen iki node sırayla var mı?
+     * mvDugum'in iÃ§inde verilen iki node sÃ½rayla var mÃ½?
      * @satir :
      * @node1 :
      * @node2 :
-     * -1 : ter sırada
+     * -1 : ter sÃ½rada
      *  0 : yok
      *  1 : var
      */
      int elemanYonKontrol(int satir, int node1, int node2);
 
      /**
-      * mvDugum map'ini yeniden numaralandır
+      * mvDugum map'ini yeniden numaralandÄ±r
       */
       void dugumListResort();
 
       /**
-       * akımların yönüne göre dirençlerin yönünü belirle
+       * akÃ½mlarÃ½n yÃ¶nÃ¼ne gÃ¶re direnÃ§lerin yÃ¶nÃ¼nÃ¼ belirle
        */
       void direncYonBelirle();
 
       /**
-       * Nodun komşularını mvConnectedNodeId vectörün al
-       * @hedef: komşuları bulunacak node
-       * @geri : bu noda gelinmesini sağlayan önceki node
-       * return: node id'i listesini geri döndürür
+       * Nodun komÅŸularÄ±nÄ± mvConnectedNodeId vectÃ¶rÃ¼n al
+       * @hedef: komÃ¾ularÄ± bulunacak node
+       * @geri : bu noda gelinmesini saÃ°layan Ã¶nceki node
+       * return: node id'i listesini geri dÃ¶ndÃ¼rÃ¼r
        */
       TmvInt getConnectedNodeId(int target, int prev);
 
      /**
-      * Düğüm listesinde componentin her iki node'u da var mı?
+      * DÃ¼Ã°Ã¼m listesinde componentin her iki node'u da var mÄ±?
       * @component: kontrol edilecek component
       * @liste    :
       */
       bool hasDoubleNode(Component *comp,TmvInt mesh);
 
       /**
-       * Graph : Çizgi çiz
+       * Graph : Ã‡izgi Ã§iz
       */
       void drawLine(gcn::Graphics *g,int a,int b,int c,int d, int t);
 
       /**
-       * Graph : Daire Çiz
+       * Graph : Daire Ã‡iz
        */
       void drawCircle(gcn::Graphics *g, int xc, int yc, int r);
 
       /**
-       * Graph : Çizim için işaret +/- bul
+       * Graph : Ã‡izim iÃ§in iÅŸaret +/- bul
        */
       int sgn (long a);
 
+      /**
+       * Inventoryde iÃ§in kullanÄ±lan item'larÄ±n sunucuya iletilmesi
+       */
+      void sendUsedItem ();
 };
 extern CircuitWindow *circuitWindow;
 #endif

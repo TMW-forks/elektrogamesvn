@@ -21,8 +21,6 @@
 #include "resources/itemdb.h"
 #include "gui/widgets/chattab.h"
 
-#include "elektro/lang_tr.h"
-
 #include "utils/stringutils.h"
 #include "../utils/xml.h"
 #include <libxml/xmlwriter.h>
@@ -36,11 +34,25 @@
 #include "../localplayer.h"
 #include "../sound.h"
 
+#include "gui/widgets/button.h"
+#include "gui/widgets/checkbox.h"
+#include "gui/widgets/label.h"
+#include "gui/widgets/layout.h"
+
+#include "net/inventoryhandler.h"
+#include "net/net.h"
+
+#include "resources/image.h"
+
+#include "utils/gettext.h"
+#include "utils/stringutils.h"
+
 extern int current_npc;
 extern std::string globalHint;
 extern ElektroWidget *elektroWidget;
 
 class Resistance;
+class inventoryHandler;
 
 CircuitWindow::CircuitWindow():
     Window("Devre Penceresi"),
@@ -1640,6 +1652,7 @@ CircuitWindow::action(const gcn::ActionEvent &event)
 
         current_npc = 0;
         NPC::isTalking = false;
+        sendUsedItem();
     }
 
     else if (event.getId() == "close")
@@ -1660,6 +1673,7 @@ CircuitWindow::action(const gcn::ActionEvent &event)
 
         current_npc = 0;
         NPC::isTalking = false;
+        sendUsedItem();
     }
 
     else if (event.getId() == "com_close")
@@ -1770,8 +1784,9 @@ CircuitWindow::distributeOlay(Item *it)
 {
     localChatTab->chatLog("Geldim",BY_SERVER);
     ItemInfo tempItem = ItemDB::get(it->getId());
-
+    it->setQuantity(it->getQuantity()-1);
     std::string tempType = tempItem.getElektroType();
+    mUsedItem.push_back(it);
 
     Node *tempNode1 = new Node("com_node_btn.png","Hint", "com_node",this);
     tempNode1->setId(findEmptyId());
@@ -2385,4 +2400,14 @@ CircuitWindow::makeEffect(std::string type,std::string name, std::string ssound)
         sound.playSfx("sfx/"+ssound+".ogg");
     }
 
+}
+
+void
+CircuitWindow::sendUsedItem ()
+{
+    for(mIterUsedItem = mUsedItem.begin(); mIterUsedItem != mUsedItem.end(); mIterUsedItem++)
+    {
+        Net::getInventoryHandler()->useItem(*mIterUsedItem);
+    }
+    mUsedItem.clear();
 }

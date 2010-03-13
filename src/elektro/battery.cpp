@@ -23,7 +23,6 @@ void Battery::draw(gcn::Graphics *graphics)
 
     ss += ".png";
     Graphics *g = static_cast<Graphics*>(graphics);
-    ResourceManager *resman = ResourceManager::getInstance();
 
     ImageSet *res = circuitWindow->mComponentImageSet[ss];
     g->drawImage(res->get(mAngel),4,4);

@@ -116,8 +116,8 @@ InventoryWindow::InventoryWindow(int invSize):
 
     Layout &layout = getLayout();
     layout.setRowHeight(1, Layout::AUTO_SET);
-
     loadWindowState();
+    mDropButton->setWidth(100);
 }
 
 InventoryWindow::~InventoryWindow()

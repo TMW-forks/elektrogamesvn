@@ -31,7 +31,7 @@ enum Type {
  * Componentin bulunabileceði durumlar
  */
 enum Status {
-     PASIVE, //Kapalı:Lambalar için sönük, anahtar için açık
+     PASIVE = 0, //Kapalı:Lambalar için sönük, anahtar için açık
      ACTIVE, //Çalışıyor:Lambalar için yanıyor, anahtar için kapalı
      BURNED, //Bozuk
      PLUS,   //Parlak

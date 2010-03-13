@@ -153,9 +153,26 @@ class CircuitWindow : public Window,
         };
 
         CIRCSTATE mCircState;
+//kontrol edilmesi gerekenler
+        struct ConditionCurrent
+        {
+            int compId;
+            float compCurrent;
+        };
 
-        std::vector<int> conLamp;
-        std::vector<int>::iterator conLampIter;
+        struct ConditionLamp
+        {
+            int compId;
+            bool stat;
+        };
+
+//yanması gereken lambalar
+        std::vector<ConditionLamp *> conLamp;
+        std::vector<ConditionLamp *>::iterator conLampIter;
+
+// akım geçmesi gereken node'lar
+        std::vector<ConditionCurrent *> conNode;
+        std::vector<ConditionCurrent *>::iterator conNodeIter;
 
         //kullanılan itemları silecek vector
         std::vector < Item *> mUsedItem;

@@ -193,7 +193,7 @@ SimilasyonPenceresi::parseXML(std::string mDoc)
                     mSoru->addRow(XML::getProperty(subNode, "text", ""));
                 }
             }
-            mSoru->setFont(font_calibri_11);
+            mSoru->setFont(font_calibri_14);
             mSoru->autoWrap(mSoruArea);
             add(mSoruArea);
         }
@@ -283,14 +283,14 @@ SimilasyonPenceresi::nesneleriAyarla()
 void
 SimilasyonPenceresi::clearComponent()
 {
-    miKutle = mvKutle.begin();
-    miKaldirac = mvKaldirac.begin();
-
-    while(miKutle!=mvKutle.end())
-    {
-        delete (*miKutle);
-        miKutle = mvKutle.erase(miKutle);
-    }
+//    miKutle = mvKutle.begin();
+//    miKaldirac = mvKaldirac.begin();
+//
+//    while(miKutle!=mvKutle.end())
+//    {
+//        delete (*miKutle);
+//        miKutle = mvKutle.erase(miKutle);
+//    }
 
 //    while(miKaldirac!=mvKaldirac.end())
 //    {
@@ -348,7 +348,7 @@ SimilasyonPenceresi::kontrolEt()
     std::stringstream tut;
     std::string strTut;
     int toplam =0;
-    int sonuc=150;
+    int sonuc=90;
     mCevap->clearRows();
     HareketYonu yon;
 
@@ -359,20 +359,21 @@ SimilasyonPenceresi::kontrolEt()
             //logger->log("Kefe 1:%d",(*idKefeIt).second[0]);
             logger->log("hesaplama");
             toplam += (*idKefeIt).second[0] * (*idKefeIt).second[1];
+            tut.clear();
+            tut<<(*idKefeIt).second[0];
+            tut>>strTut;
+            mCevap->addRow(strTut);
+
+            tut.clear();
+            tut<<(*idKefeIt).second[1];
+            tut>>strTut;
+            mCevap->addRow(strTut);
         }
 
 //        logger->log("Kefe 1:%d",(*idKefeIt).second[0]);
 //        logger->log("Kefe 2:%d",(*idKefeIt).second[1]);
 
-        tut.clear();
-        tut<<(*idKefeIt).second[0];
-        tut>>strTut;
-        mCevap->addRow(strTut);
 
-        tut.clear();
-        tut<<(*idKefeIt).second[1];
-        tut>>strTut;
-        mCevap->addRow(strTut);
     }
 
     if (toplam > sonuc)

@@ -61,6 +61,6 @@
   <object name="graphics/particles/wispdance.particle.xml" type="PARTICLE_EFFECT" x="479" y="814" width="32" height="32"/>
   <object name="graphics/particles/wispdance.particle.xml" type="PARTICLE_EFFECT" x="796" y="810" width="32" height="32"/>
   <object name="graphics/particles/wispdance.particle.xml" type="PARTICLE_EFFECT" x="1115" y="811" width="32" height="32"/>
-  <object name="graphics/particles/wispdance.particle.xml" type="PARTICLE_EFFECT" x="1257" y="413" width="32" height="32"/>
+  <object name="graphics/particles/wispdance.particle.xml" type="PARTICLE_EFFECT" x="1265" y="419" width="32" height="32"/>
  </objectgroup>
 </map>

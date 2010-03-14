@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<map version="0.99b" orientation="orthogonal" width="40" height="40" tilewidth="32" tileheight="32">
+ <tileset name="Zemin" firstgid="1" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/zemin_metalik.png"/>
+ </tileset>
+ <tileset name="bilgisayar" firstgid="49" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/bilgisayar_dolap.png"/>
+ </tileset>
+ <tileset name="tile" firstgid="97" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/tile_3.png"/>
+ </tileset>
+ <tileset name="x" firstgid="337" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision.png"/>
+ </tileset>
+ <layer name="Layer 0" width="40" height="40">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3SqQGAQBDF0DULGA7DYTj6r5J0MV9ERMS/3lobaKSJetjPtNBKW+DvdNBJV+Df9NBLX+BX+9Kf/pK86U9/SV/tS3/6S/KmP/0lfbUv/ekvyZv+9Jf01b70p78kb/rTX9L/HUgwgQAZAAA=
+  </data>
+ </layer>
+ <layer name="Layer 1" width="40" height="40">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO2YSw7CMAxE4wNR2LWbcgE+G9jw5/6nYDYRFVKa1NjIKX7SaLJIHctqnCgh6LKgEBp6uzV65LQ2nJ9U/S7QFbpBdwHP5Ve6XqTFtx3JeS6/qXE2GG9JziOp/29qHC1q2b/RHVu0UDfwWtdwHA5L9KQV8V07vvX8nO95QE+Gl3KAjgx3dNE+F+dy7u6gPcNLOUFnhke095d2f3DqJ7fXJXrBWIy59BprWL//Wc/P+W80z0SJe3LqTvErcu/An/UrfS+OjM0b1i817wWQnxs0ABkAAA==
+  </data>
+ </layer>
+ <layer name="Layer 2" width="40" height="40" opacity="0.43">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO2Y2QrCMBBF+0v67r6Cu+D6/x/iERkIAzZJaZXqPXC4EIYJFJqEKYoXK1zXmDFy++xwjwc84gCHOMIx9rAfpNX5tPoYqfsZJzzjBa84wzkucIkTnAZpdT6tPkbqfkKI36WD3SDbuocQQrSRG94rZCob3FZI0SxN34u6d4X4D2L/eh1nQVkPnTVCiE8Tm//6N3Pu3LmsLnwnv6uLzYE9uXNnW/f9Pbbu+8XmwJ7cubOt+/5Pwu9n67lz7G/zAAVGZt8AGQAA
+  </data>
+ </layer>
+ <layer name="Layer 3" width="40" height="40" opacity="0.54">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO2WQQoAIQwD9Yv7/8fsWVmUpY0GOgMFDxKCiWhrWp4+jhtV/M060dn5+6ujokq+KvAHEU7kQwfAlax3VqXv7g/iqM+ebD1Rnzd5noH7C7fZZZ/RjZUG3dPg/v9z9we1UfYhQ/N2X9X3ebXvaz3PC3aXZBYAGQAA
+  </data>
+ </layer>
+ 
+ <objectgroup name="Object Group 1" width="0" height="0">
+ <object name="graphics/animetile/teleport1.xml" type="ANIMATED_TILE" x="512" y="1024" width="64" height="64" layer="5">
+  <properties/>
+ </object>
+
+ <object name="graphics/particles/snow.particle.xml" type="PARTICLE_EFFECT" x="500" y="1000" width="128" height="128">
+  <properties/>
+ </object>
+
+ </objectgroup>
+</map>

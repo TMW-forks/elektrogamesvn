@@ -1,46 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
 <map version="1.0" orientation="orthogonal" width="46" height="46" tilewidth="32" tileheight="32">
- <tileset firstgid="1" name="siyah" tilewidth="32" tileheight="32">
+ <tileset name="siyah" firstgid="1" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/siyah.png"/>
  </tileset>
- <tileset firstgid="2" name="duvar" tilewidth="32" tileheight="32">
+ <tileset name="duvar" firstgid="2" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/askeriye.png"/>
  </tileset>
- <tileset firstgid="72" name="kaplama" tilewidth="32" tileheight="32">
+ <tileset name="kaplama" firstgid="72" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/kaplamalar.png"/>
  </tileset>
- <tileset firstgid="90" name="collasion" tilewidth="32" tileheight="32">
+ <tileset name="collasion" firstgid="90" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/collision.png"/>
  </tileset>
- <tileset firstgid="92" name="siralar" tilewidth="32" tileheight="32">
+ <tileset name="siralar" firstgid="92" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/malzemeler.png"/>
  </tileset>
- <tileset firstgid="192" name="malzeme" tilewidth="32" tileheight="32">
+ <tileset name="malzeme" firstgid="192" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/karatahtalar.png"/>
+ </tileset>
+ <tileset name="malzeme2" firstgid="240" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/malzemeler3.png"/>
  </tileset>
  <layer name="Ground" width="46" height="46">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+2XMQ6AIAxFy6qip+EEzN7/Opa4KoNpKOAbXhhIyM9LadogIgEAAKZjUxZlbXhGg9xZORuTDXKnQXN7+E74xje+u/NtkZv+je+ZfdMH8Y1vfFv53uXenZ7eL3e1nSs6+vaoMQvfHrm9fX/9G+T+V33jm9zUSX++3+aA2mxQOJxzAwCMwAUPl4x7ECEAAA==
+   H4sIAAAAAAAAAO2XMQ6AIBAEjxYFX+MLqP3/d8TYESTmIK7AFhMqZZ2sFzAiYgghhAzHGrGR5cPVNcgdIoeSXflcaJBbuzc6d43vmu9F+tZC33P1W5u7V98tcnN+0/fIvmedgzbBder7jQe0b2130L5zpL3JgfaNnCde7rtT7v1eyncu5DxBdKyFb0RutG/tv8Hcc/WbvpmbPfmf76dzQOlscLGBcxNCSA+cz5mokRAhAAA=
   </data>
  </layer>
  <layer name="Fringe" width="46" height="46">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3SsQ2AMAxFwezLVkAJTAXMgQuqKBUSciLdSa9w5+KXAgAAAACM6oyu6H7vOVqiNe2jb7Zoj47sR+hKvedR9l3v2b5pse9/TNkPANCVBxmAirAQIQAA
+   H4sIAAAAAAAAAO3XQQ5AMBCFYcdwOE7gVmqJU+EcZtNEJkYtpB38X/ISqc1EX5SqAgAAJdWJ+4tklWwZZsE7NZL25NqDq373knDIkGWi++J8eq5wEk9GySSZ1br3uS3e57Z6EvchRu9HaVZPPL9Pvojn/byrc4fnjSj1/f1G+p/BOp+8s84n/IPVW73urd9Wb/U6/f43+p1XV3oAAIArO3dZOmkQIQAA
   </data>
  </layer>
  <layer name="Top" width="46" height="46">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3SOw5BQRSA4dtjAx69R+1VWwm1nVB6dCwMBTbiv4VkIuROMmQU/5f8xWnOnGKKQpIkSZIkSanqVHtTI+dREZrUCuY2dWiYsPNEZ7ok7KjSpV4w92lAs4SdV7rRPWFHlRGNg3lC0x++Jz0taEXrYN7RPttFcZZ0oOOHWSq9/udy3tA220Vx/v1/z3MfIEnSFzwAbqr/DhAhAAA=
+   H4sIAAAAAAAAAO3XORIBQRiGYTkuYMktsS12EmI3IbRkHAkBAgS4AGKUV9alhjHVTGO+p+oNulW1P+igJxYTEREJZkwTmroeJKAZzWnhehCRiGlSl3quBwmoRUMaefy2pwMdQ53I3onOdHE9iId/vCciEj0JinuUdDnUC1KUNtYZylLJ4swlrWhtcYafHOWNdYGKVLc4c0Nb2lmc4adMFWNdpdoH/0+i59G76rbfpo6x7tMgvNGeevSuut/X+yva7u+xuW/e52/7vvjV+91wPYCIiMgbXAF4c1ttECEAAA==
   </data>
  </layer>
- <layer name="Collision" width="46" height="46" visible="0">
+ <layer name="Collision" width="46" height="46">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3TMQoAIRAEwf2n//+H+YWC7QU10KkULK6ZWZIk/ah63O2423G3427H3Y67HXc77nbc5++/dH8Nt2/F3f6N12Zubm5ubknSrTYuPQAXECEAAA==
+   H4sIAAAAAAAAAO2SSwrAIAwFc0/vf4/upRGN5CfzYECk0UnNEJEBAABQCGustR28/77J9rYG79hke69qV/dU8NbOwZs50e5/wfukrtKc4O0/J7vnVfDe2avmrTl19Y7ixtFa5+l92/OY1t7/3eOtunpH9fC6t9bDvJ/t9oq3JdnOnb27zkln79Nk+wIAgB8fzkfeQxAhAAA=
   </data>
  </layer>
  <layer name="Objects" width="46" height="46">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3BAQ0AAADCoPdPbQ8HFAAAAAAAAADAlwG38bQVECEAAA==
+   H4sIAAAAAAAAAO3BAQ0AAADCoPdPbQ8HFAAAAAAAAADAlwG38bQVECEAAA==
   </data>
  </layer>
 </map>

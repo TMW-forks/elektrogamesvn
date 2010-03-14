@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
+<map version="1.0" orientation="orthogonal" width="55" height="55" tilewidth="32" tileheight="32">
+ <tileset name="siyah" firstgid="1" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/siyah.png"/>
+ </tileset>
+ <tileset name="duvar" firstgid="2" tilewidth="32" tileheight="32">
+  <image source="../../../ElektroGit/data/graphics/tiles/elektroadd/tas_bina.png"/>
+ </tileset>
+ <tileset name="kaplamalar" firstgid="172" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/kaplamalar.png"/>
+ </tileset>
+ <tileset name="kapi" firstgid="190" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/kapiacikic.png"/>
+ </tileset>
+ <tileset name="collision" firstgid="196" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/collision.png"/>
+ </tileset>
+ <layer name="Ground" width="55" height="55">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3WSwqAMAxF0Xaq7kDdgVtw6me1btGACBLqB4kY8Q7OIC0WHiWpMYQQAQAAAOBHctGJXgxiVPXR3nhjPbWm68IoWyYmZzKjbKWDLFpplK1xkEVrjLK1DrJoLff263urwjKDU3P4rWxWc9Lj22A1J/e8+TZY9ZvHGWPVb2d9ePX/aluvZ5x93+2cVz+cDQAAAAAAAAAAfMMMO9zc/0QvAAA=
+  </data>
+ </layer>
+ <layer name="Fringe" width="55" height="55">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3OQQkAAAgAMfvH0mLaQoUN7n8RAAAAAABwX061PQEAAAAAALzXUQSPtkQvAAA=
+  </data>
+ </layer>
+ <layer name="Top" width="55" height="55">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3OyQkAMAgAQfsvKkdnsYmg4AzsfyMAAAAAAGZZ2a6e+ORkt3oCAAAAAACgsQfJSDGeRC8AAA==
+  </data>
+ </layer>
+ <layer name="Collision" width="55" height="55">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3QsREAIAwDMe+/V/ZiCAoMyHfq85kkAwAAwDPapk1b27Rpa2vWpu3Htt2fnL5DGwAAAAAA3G0BhBaxvUQvAAA=
+  </data>
+ </layer>
+ <layer name="Objects" width="55" height="55">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAADAhwHLDBX+RC8AAA==
+  </data>
+ </layer>
+</map>

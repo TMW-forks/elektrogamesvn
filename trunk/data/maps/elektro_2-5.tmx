@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
+<map version="1.0" orientation="orthogonal" width="43" height="31" tilewidth="32" tileheight="32">
+ <tileset name="siyah" firstgid="1" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/siyah.png"/>
+ </tileset>
+ <tileset name="duvar" firstgid="2" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/mtas_bina.png"/>
+ </tileset>
+ <tileset name="kapi" firstgid="138" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/kapiacikm.png"/>
+ </tileset>
+ <tileset name="pencere" firstgid="144" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/pencere.png"/>
+ </tileset>
+ <layer name="Ground" width="43" height="31">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO2S0QmAQAzFbgonuF3UDdQN1A3U4X0blFbOguZBoJ+hpJZSKsDH6cUgRsfdJblOYhaL48766yo2sTvurL8e4hSX487qMjKr61ZdRmZ13arLyKyuW3UZmdX1U9c3hyuuuOKKK65/cgUAgBg3knctXdQUAAA=
+  </data>
+ </layer>
+ <layer name="Fringe" width="43" height="31">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3OIRKAQAwEwbwOj8Kj8Kjz93C+kKqEqG4/tRsBAADAtGN47yy0V9uLnLvQPm0vct5Cu9pe5OzhPYA/fZIWTDPUFAAA
+  </data>
+ </layer>
+ <layer name="Top" width="43" height="31">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3QRwrCUBRGYVfhFtyCO7CXob0M7WVoLzMrKOh2PQEzCUGN8RGQ/8A3eXm5PG4opJRS6pvCQT/AQ5GgH+Ah7dVM2quZtFczaa9m0l7NFPX5fwxxJJBECmlkkEUO+Tf3Pp3htwKKKKGMCqqooY4GLri63LPPnTPsc2vGDns0f/DWFtrooIse+hhgiBFuuLvcs8+dM+xza8YBR4x/8NYJpphhjgWWWGGNDbZv7r36dsL5OUMppf6pBxnIZF/UFAAA
+  </data>
+ </layer>
+ <layer name="Collision" width="43" height="31">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3BAQ0AAADCoPdPbQ43oAAAAAAAfgx9+kgD1BQAAA==
+  </data>
+ </layer>
+ <layer name="Objects" width="43" height="31">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3BAQ0AAADCoPdPbQ43oAAAAAAAfgx9+kgD1BQAAA==
+  </data>
+ </layer>
+</map>

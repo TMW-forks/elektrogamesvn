@@ -53,77 +53,85 @@ class Component : public gcn::Window,
         virtual ~Component();
 
         /**
-         * Deconstructor
+         * sol koordinat
          */
         void setX(int x);
 
         /**
-         * Deconstructor
+         * üst koordinat
          */
         void setY(int y);
 
         /**
-         * Deconstructor
+         * genişlik
          */
         void setW(int w);
 
         /**
-         * Deconstructor
+         * yükseklik
          */
         void setH(int h);
 
         /**
-         * Deconstructor
+         * genişlik geri dön
          */
         int getW();
 
         /**
-         * Deconstructor
+         * yükseklik geri dön
          */
         int getH();
 
         /**
-         * Deconstructor
+         * oluşturan çerçeveyi belirle
          */
         void setBounce(int x, int y, int w, int h);
 
         /**
-         * Deconstructor
+         * seçilebilirlik ata
          */
         void setSelectable (bool s);
 
         /**
-         * Deconstructor
+         * seçilebilirlik döndür
          */
         bool getSelectable ();
 
         /**
-         * Deconstructor
+         * seçili mi?
          */
         void setSelected (bool s);
 
         /**
-         * Deconstructor
+         * seçili mi?
          */
         bool getSelected ();
 
         /**
-         * Deconstructor
+         * Tipini ata
          */
         void setType (Type t);
 
-        Type getType ();
         /**
-         * Deconstructor
+         * Tipini döndür
          */
+        Type getType ();
+
 
         /**
-         * Deconstructor
+         * Durumunu ata (active, passive vs)
          */
         void setStatus (Status s);
 
+        /**
+         * Durumunu sayı olarak ata
+         */
         void setStatus (int s);
 
+
+        /**
+         * Durumunu öğren
+         */
         Status getStatus ();
 
         void setActionListener (gcn::ActionListener *listener);
@@ -144,17 +152,30 @@ class Component : public gcn::Window,
 
         void mouseMoved(gcn::MouseEvent &event);
 
+
+        /**
+         * açıyı ata (a *15 derece)
+         */
         void setAngel(int a);
 
+        /**
+         * açıyı öğren
+         */
         int getAngel ();
 
         /**
-         * Nodelarýn yerini hesapla
+         * Nodeların yerini hesapla
          */
         void nodesCalc();
 
+        /**
+        * Item'ın bir değeri varsa ata (direnç ohm, pil V gibi)
+        */
         void setValue(float v);
 
+        /**
+        * Değeri döndür
+        */
         float getValue();
 
         /**
@@ -194,6 +215,17 @@ class Component : public gcn::Window,
 
         void setCurrent(float s) {mCurrent = s; }
 
+
+        /**
+         * yükseklik
+         */
+        void setYariCap(int h) {mYariCap = h;}
+
+        /**
+         * genişlik geri dön
+         */
+        int getYariCap() {return mYariCap;}
+
         Node *node1;
         Node *node2;
         int mX;     /** center */
@@ -208,7 +240,7 @@ class Component : public gcn::Window,
         int mInterval;
         float mValue;
         int mYon;
-        float mCurrent;     //Nesne üzerinden geçen akým
+        float mCurrent;     //Nesne üzerinden geçen akım
 
 
         SimpleAnimation *mSelectedAnime;
@@ -228,6 +260,7 @@ class Component : public gcn::Window,
 
     private:
         int xx,yy;
+        int mYariCap;
 
 };
 

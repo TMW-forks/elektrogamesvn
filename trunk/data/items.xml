@@ -5073,7 +5073,7 @@
 		elektro-type="diode"
 		elektro-value="2"/>
 	<item id="1131"
-        image="/elektrik/item-pil15.png"
+        image="/elektrik/item-pil-1v.png"
         name="Pil 1 V"
         description="Pil 1 V."
         effect=""
@@ -5083,7 +5083,7 @@
 		elektro-type="battery"
 		elektro-value="1"/>
 	<item id="1132"
-        image="/elektrik/item-pil15.png"
+        image="/elektrik/item-pil-2v.png"
         name="Pil 2 V"
         description="Pil 2 V."
         effect=""
@@ -5093,7 +5093,7 @@
 		elektro-type="battery"
 		elektro-value="2"/>
 	<item id="1133"
-        image="/elektrik/item-pil15.png"
+        image="/elektrik/item-pil-3v.png"
         name="Pil 3 V"
         description="Pil 3 V."
         effect=""

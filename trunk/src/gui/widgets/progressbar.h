@@ -112,8 +112,17 @@ class ProgressBar : public gcn::Widget
         void setSmoothColorChange(bool smoothColorChange)
         { mSmoothColorChange = smoothColorChange; }
 
+        // yüklenme hızını arttırmak için ben ekledim
+        void setStep(float st)
+            {mStep = st;}
+
+        float getStep()
+            {
+                return mStep;
+            }
     private:
         float mProgress, mProgressToGo;
+        float mStep;
         bool mSmoothProgress;
 
         gcn::Color mColor;

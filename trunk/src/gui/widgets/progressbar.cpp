@@ -47,7 +47,8 @@ ProgressBar::ProgressBar(float progress,
     mSmoothProgress(true),
     mColor(color),
     mColorToGo(color),
-    mSmoothColorChange(true)
+    mSmoothColorChange(true),
+    mStep(0.005f)
 {
     // The progress value is directly set at load time:
     if (progress > 1.0f || progress < 0.0f)
@@ -115,9 +116,9 @@ void ProgressBar::logic()
     {
         // Smoothly showing the progressbar changes.
         if (mProgressToGo > mProgress)
-            mProgress = std::min(1.0f, mProgress + 0.005f);
+            mProgress = std::min(1.0f, mProgress + mStep);
         if (mProgressToGo < mProgress)
-            mProgress = std::max(0.0f, mProgress - 0.005f);
+            mProgress = std::max(0.0f, mProgress - mStep);
     }
 }
 

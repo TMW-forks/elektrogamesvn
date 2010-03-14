@@ -247,6 +247,7 @@ SlaytWindow::clearOldSlide()
 void
 SlaytWindow::parseXML(std::string mDoc)
 {
+logger->log("--------------------------------%s",mDoc.c_str());
     elektroWidget->padX = 0;
     elektroWidget->padY = 0;
     ResourceManager *resman = ResourceManager::getInstance();

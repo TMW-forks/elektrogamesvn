@@ -87,12 +87,10 @@ MissionWindow::MissionWindow():
     Button *btnClose = new Button("Kapat","close",this);
     btnClose->setPosition(getWidth()-btnClose->getWidth()-5,0);
     add(btnClose);
-    susle = new ProgressBar(0,getWidth()-90, 40, gcn::Color(171, 0, 34));
+    susle = new ProgressBar(0,getWidth()-90, 30, gcn::Color(171, 0, 34));
     susle->setPosition(40,100);
     susle->setVisible(false);
-    susle->setSmoothColorChange(true);
-    susleprogress = false;
-//    hideSubMissions();
+    susle->setStep(0.01f);
     setVisible(false);
     static_cast<Window*>(getParent())->add(mPopup);
 
@@ -101,16 +99,13 @@ MissionWindow::MissionWindow():
 void
 MissionWindow::logic()
 {
-    if (susleprogress)
-    {
-        susle->setProgress(susle->getProgress()+ 0.9);
-        susle->setColor(gcn::Color(0, 171, 34));
-    }
     if (susle->getProgress() == 1)
     {
         susle->setVisible(false);
-        susleprogress = false;
         susle->setProgress(0.0f);
+        susle->setSmoothColorChange(false);
+        susle->setColor(gcn::Color(255,0,0));
+        susle->setSmoothColorChange(true);
     }
     Window::logic();
 }
@@ -231,7 +226,7 @@ MissionWindow::putMissionButtons()
 void
 MissionWindow::drawTree()
 {
-
+    //todo:  görevler arasında çizgi çizilecek
 }
 
 void
@@ -294,6 +289,7 @@ void
 MissionWindow::parse(std::string mDoc)
 {
     susle->setProgress(0.0f);
+    susle->setColor(gcn::Color(255,0,0));
     susleprogress = true;
     susle->setVisible(true);
     add(susle);
@@ -390,6 +386,8 @@ MissionWindow::parse(std::string mDoc)
     hideSubMissions();
     current_npc = 0;
     NPC::isTalking = false;
+     susle->setProgress(1.0f);
+     susle->setColor(gcn::Color(0,255,0));
 }
 
 void

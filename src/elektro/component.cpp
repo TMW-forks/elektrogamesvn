@@ -17,7 +17,8 @@ extern CircuitWindow *circuitWindow;
 
 Component::Component(gcn::ActionListener *listener, Node *n1, Node *n2):
     gcn::Window("compo"),
-    mListener(listener)
+    mListener(listener),
+    mYariCap(22)
 
 {
     mAngel=0;
@@ -315,8 +316,8 @@ bool Component::getDeletable()
 void Component::nodesCalc()
 {
     int xx,yy;
-    xx = cos(mAngel*15*(22/7.0)/180)*22;
-    yy = sin(mAngel*15*(22/7.0)/180)*22;
+    xx = cos(mAngel*15*(22/7.0)/180)*getYariCap();
+    yy = sin(mAngel*15*(22/7.0)/180)*getYariCap();
 
     node1->setX(20-xx+getX()-4);
     node1->setY(20-yy+getY()-4);

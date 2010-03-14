@@ -189,8 +189,11 @@ CircuitWindow::CircuitWindow():
     imagesetname.push_back("graphics/elektrik/item-kled-b.png");
     imagesetname.push_back("graphics/elektrik/item-kled-c.png");
     imagesetname.push_back("graphics/elektrik/item-kled.png");
-    imagesetname.push_back("graphics/elektrik/item-pil-b.png");
     imagesetname.push_back("graphics/elektrik/item-pil.png");
+    imagesetname.push_back("graphics/elektrik/item-pil-b.png");
+    imagesetname.push_back("graphics/elektrik/item-pil-1v.png");
+    imagesetname.push_back("graphics/elektrik/item-pil-2v.png");
+    imagesetname.push_back("graphics/elektrik/item-pil-3v.png");
     imagesetname.push_back("graphics/elektrik/item-sled-a.png");
     imagesetname.push_back("graphics/elektrik/item-sled-b.png");
     imagesetname.push_back("graphics/elektrik/item-sled.png");

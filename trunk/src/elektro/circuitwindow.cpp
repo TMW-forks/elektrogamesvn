@@ -1272,7 +1272,6 @@ CircuitWindow::mouseMoved(gcn::MouseEvent &event)
     }
     else
         mPopupLabel->setVisible(false);
-
 }
 
 bool

@@ -24,6 +24,9 @@
  <tileset firstgid="307" name="dolaplar" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/bilgisayar_dolap.png"/>
  </tileset>
+ <tileset firstgid="355" name="helikopter" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/malzemeler3.png"/>
+ </tileset>
  <layer name="Ground" width="46" height="31">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAC+3WTQ5AMBAF4FoqN6jewBVs/VzYBXAvI9FEmopiom28xbeohb5MXoZMCJEBAMBvFKQlHenJ8OBcBsityPiSCpC7ZsgtA+RuIp+3q8cbzZC7Onk3R+85enwld9wZQ499ck9kJst+Zww9vpu7wbyTm7cMkJtjr3+1T465U9kntlT6bePo9/ZNe/PP53M2ec1zzZAbAADitALldKaBSBYAAA==
@@ -31,15 +34,15 @@
  </layer>
  <layer name="Fringe" width="46" height="31">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3Suw2AMBCD4dwQQAnMAwUVW8MIzBI3SCeeoiGR8n+SlVznwiEAAEo22fOdk0rdaqVRZjvfuWrVrVN6u74HvaPdv/hmS13ghd+t/+fO7/a4YWDHvoHyLMqaugQA4BcRjShVGkgWAAA=
+   H4sIAAAAAAAAC+3SSwqAMAwE0OYQ1qX1PLpw5a31CNKjGBeFYv1QBBPtPBja7AIZYwAAoGQDXc+aVLyb5dSckdJZq4Z3c5yWjueO357OX8izSC9wI+5t/Ncu7u2+w38SbmI/dJuNpTQScvsduuSEO1VKv+EZL72AUhNnll4CAABesQLaKl9wSBYAAA==
   </data>
  </layer>
  <layer name="Top" width="46" height="31">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3UvQqDQBAE4NvKaKdvFA2oaWOTvLE/ZazzJokjKHdoiJBmT5wPBtm7wgUHjSEioqPpkVCMicTOb+Qz3Z9xniIZchE735BKdHYevZAY70/k+5zjWSAlchU735GH4t579dReYMPY2wDf9STrDvvM7e2yw0Qz9z/tdt137Df5oEYa7SX+0CKd9hJEREQ/DI9hAApIFgAA
+   H4sIAAAAAAAAC+2UuQpCMRBFM5VLp3/kAi6tNtqqtfqZLqXP1j9RzwMhweVZhUS8Bw5hEkgG5hLnhBBC/BsFNsy5pvn6irfHeYf9Lvawb76e4NTS9FxywRbvt+19PWAd4gjH5usZzhP2/aucUjfwhTK3NeZat9cM50yY2+cMizxYMI8lrhLOJfynw6xXseZ8g9tM/mnlW3ziHPn+He4jvxGDAx5TNyGEEEJUcAfN4OV2SBYAAA==
   </data>
  </layer>
- <layer name="Collision" width="46" height="31">
+ <layer name="Collision" width="46" height="31" visible="0">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAC+3TuQ0AIAwEQffflFsjd0KA/BzekyYgWyRwM3MAAFDCLudJXqfartgc+yvvM707e3T/8U5Uu7On2h23vbvqn3R3bOkGgE4HgS7SLEgWAAA=
   </data>

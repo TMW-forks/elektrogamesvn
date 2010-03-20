@@ -59,7 +59,7 @@ MissionWindow::MissionWindow():
     mContainerExp->setVisible(false);
 
     mScrollSub = new ScrollArea(mContainerSub);
-    mScrollSub->setDimension(gcn::Rectangle(130,50,getWidth()-140,getHeight()-180));
+    mScrollSub->setDimension(gcn::Rectangle(130,50,getWidth()-140,getHeight()-40));
     mScrollSub->setOpaque(false);
     mContainerSub->addActionListener(this);
     add(mScrollSub);

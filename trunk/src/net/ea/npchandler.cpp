@@ -137,7 +137,7 @@ void NpcHandler::handleMessage(MessageIn &msg)
             {
                 npcDialog->setNpc(current_npc);
                 npcDialog->setVisible(true);
-                if (temp =="autowarp")
+                if (temp =="autowrap")
                     npcDialog->autoWarp();
                 else
                     npcDialog->addText(temp);

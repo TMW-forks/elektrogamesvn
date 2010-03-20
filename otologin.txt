@@ -1,4 +1,4 @@
-server.elektrogame.net
+10.0.2.246
 9601
 puls
 1212

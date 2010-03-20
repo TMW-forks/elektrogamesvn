@@ -22,7 +22,7 @@ void Battery::draw(gcn::Graphics *graphics)
     std::stringstream ss;
     ss <<"graphics/elektrik/item-pil";
 
-    if (getStatus()!=BURNED && (getValue()>0 && getValue()<4)) ss << "-" << getValue() << "v";
+    if (getStatus()!=BURNED) ss << "-" << getValue() << "v";
 
     if (getStatus()==BURNED) ss << "-b";
 

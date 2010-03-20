@@ -56,7 +56,7 @@ Hitabe::Hitabe():
     ResourceManager *resman = ResourceManager::getInstance();
     mBase = resman->getImage("graphics/images/hitabemars.png");
 
-    sound.playMusic("mars.ogg");
+    sound.fadeInMusic("mars.ogg",100);
 
     Button *closeButton = new Button(_("close"),"close",this);
     closeButton->setPosition(320,360);

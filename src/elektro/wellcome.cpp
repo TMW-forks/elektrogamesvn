@@ -63,14 +63,13 @@ Wellcome::Wellcome():
     mList.push_back("graphics/sunular/basla1/g_05.png");
     mList.push_back("graphics/sunular/basla1/g_06.png");
     mList.push_back("graphics/sunular/basla1/g_07.png");
-//    mList.push_back("graphics/sunular/basla1/g_08.png");
+    mList.push_back("graphics/sunular/basla1/g_08.png");
 //    mList.push_back("graphics/sunular/basla1/g_09.png");
 //    mList.push_back("graphics/sunular/basla1/g_10.png");
     mCurrentSlide = 0;
     current_npc = 0;
     NPC::isTalking = false;
     addActionListener(this);
-
 }
 
 void

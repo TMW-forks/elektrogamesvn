@@ -26,47 +26,47 @@ class Node : public BitButton
         virtual ~Node();
 
         /**
-         * Seçilebilirlik ata
+         * SeÃ§ilebilirlik ata
          */
         void setSelectable (bool s) { mSelectable = s; }
 
         /**
-         * Seçilebilirlik değerini geri döndür
+         * SeÃ§ilebilirlik deÃ°erini geri dÃ¶ndÃ¼r
          */
         bool getSelectable () { return mSelectable; }
 
         /**
-         * Seç
+         * SeÃ§
          */
         void setSelected (bool s) { mSelected = s; }
 
         /**
-         * Seçilili olup olmadığını döndür
+         * SeÃ§ilili olup olmadÃ½Ã°Ã½nÃ½ dÃ¶ndÃ¼r
          */
         bool getSelected () { return mSelected; }
 
         /**
-         * ID değerini ata
+         * ID deÃ°erini ata
          */
         void setId(int id) { mId= id; }
 
         /**
-         * ID değerini döndür
+         * ID deÃ°erini dÃ¶ndÃ¼r
          */
         int getId() { return mId; }
 
         /**
-         * Serbest hareket değeri ata
+         * Serbest hareket deÃ°eri ata
          */
         void setFree(bool f) { mFree = f; }
 
         /**
-         * Serbest hareket değeri döndür
+         * Serbest hareket deÃ°eri dÃ¶ndÃ¼r
          */
         int getFree () { return mFree; }
 
         /**
-         * Silinebilirlik değeri ata
+         * Silinebilirlik deÃ°eri ata
          */
         void setDeletable(bool s) { mDeletable = s; }
 
@@ -76,22 +76,22 @@ class Node : public BitButton
         bool getDeletable() { return mDeletable; }
 
         /**
-         * Bağlantı yapma değeri ata
+         * BaÃ°lantÃ½ yapma deÃ°eri ata
          */
         void setToLink(bool s) { mToLink = s; }
 
         /**
-         * Bağlantı yapma değeri döndür
+         * BaÃ°lantÃ½ yapma deÃ°eri dÃ¶ndÃ¼r
          */
         bool getToLink() { return mToLink; }
 
         /**
-         * Bağlantı kabul etme değeri
+         * BaÃ°lantÃ½ kabul etme deÃ°eri
          */
         void setFromLink(bool s) { mFromLink = s; }
 
         /**
-         * Bağlantı kabulme değeri döndür
+         * BaÃ°lantÃ½ kabulme deÃ°eri dÃ¶ndÃ¼r
          */
         bool getFromLink() { return mFromLink; }
 
@@ -101,7 +101,7 @@ class Node : public BitButton
         void setMovable(bool s) { mMovable = s; }
 
         /**
-         * hareket edebilir mi değeri döndür
+         * hareket edebilir mi deÃ°eri dÃ¶ndÃ¼r
          */
         bool getMovable() { return mMovable; }
 
@@ -121,39 +121,49 @@ class Node : public BitButton
         void setDead(bool s) { mDead = s; }
 
         /**
-         * Silinmiş mi
+         * SilinmiÃ¾ mi
          */
         bool getDead() { return mDead; }
 
         /**
-         * Yeni node oluşmasına sebep ol
+         * Yeni node oluÃ¾masÃ½na sebep ol
          */
         void setCreator(bool s) { mCreator = s; }
 
         /**
-         * Yeni node oluşmasına sebep olan bu mu
+         * Yeni node oluÃ¾masÃ½na sebep olan bu mu
          */
         bool getCreator() { return mCreator; }
 
         /**
-         * Node'un üzerindeki akımı belirle
+         * Node'un Ã¼zerindeki akÃ½mÃ½ belirle
          */
         void setCurrent(float s) { mCurrent = s; }
 
         /**
-         * Node'un üzerindeki akımı ver
+         * Node'un Ã¼zerindeki akÃ½mÃ½ ver
          */
         float getCurrent() { return mCurrent; }
 
         /**
-         * Sağ klik basılı
+         * SaÃ° klik basÃ½lÃ½
          */
         void setRightClick(bool s) { mRightClick = s; }
 
         /**
-         * Sağ klik basılı mı
+         * SaÃ° klik basÃ½lÃ½ mÃ½
          */
         bool getRightClick() { return mRightClick; }
+
+        /**
+         * Temizle
+         */
+        void setClean(bool s) { mClean = s; }
+
+        /**
+         * temizlenecek mi
+         */
+        bool getClean() { return mClean; }
 
         /**
          * Sahip olan component'i ata
@@ -162,22 +172,22 @@ class Node : public BitButton
         void setOwner(Component *s) { mOwner = s; }
 
         /**
-         * Sahibi olan componenti döndür
+         * Sahibi olan componenti dÃ¶ndÃ¼r
          */
         Component* getOwner() { return mOwner; }
 
         /**
-         * Node'u ekrana çiz
+         * Node'u ekrana Ã§iz
          */
         void draw(gcn::Graphics *graphics);
 
         /**
-         * Atama işlemlerini yap
+         * Atama iÃ¾lemlerini yap
          */
         void esitle(Node* atanan);
 
         /**
-         * mouse olaylarının yönetimi
+         * mouse olaylarÃ½nÃ½n yÃ¶netimi
          */
         void mousePressed(gcn::MouseEvent& mouseEvent);
 
@@ -192,23 +202,24 @@ class Node : public BitButton
         void mouseMoved(gcn::MouseEvent &event);
 
     protected:
-        int mId;                        /**< Her node'a özel kimlik no */
+        int mId;                        /**< Her node'a Ã¶zel kimlik no */
         bool mSelectable;
         bool mSelected;
         bool mFree;                     /**< Neydi acaba */
         bool mRightClick;
         bool mDead;                     /**< Node logic'de silinecekse */
-        bool mCreator;                  /**< Shift ile sürüklemede çoğaltmaya sebep olan node */
+        bool mCreator;                  /**< Shift ile sÃ¼rÃ¼klemede Ã§oÃ°altmaya sebep olan node */
         bool mMoving;
         bool mMovable;
         bool mDeletable;
         bool mToLink;
         bool mFromLink;
-        float mCurrent;                 /**< Node üzerinden geçen akım */
-        int xx;     //mouse'un ilk kontrol noktası
+        bool mClean;                    /**< Node eÄŸer Ã¼zerindeki baÄŸlantÄ±larÄ± silecekse true */
+        float mCurrent;                 /**< Node Ã¼zerinden geÃ§en akÄ±m */
+        int xx;     //mouse'un ilk kontrol noktasÃ½
         int yy;
 
-        Component *mOwner;              /**< Sahibi olan component varsa gösterir */
+        Component *mOwner;              /**< Sahibi olan component varsa gÃ¶sterir */
         void firstValues();
 
     private:

@@ -194,6 +194,10 @@ CircuitWindow::CircuitWindow():
     imagesetname.push_back("graphics/elektrik/item-pil-1v.png");
     imagesetname.push_back("graphics/elektrik/item-pil-2v.png");
     imagesetname.push_back("graphics/elektrik/item-pil-3v.png");
+    imagesetname.push_back("graphics/elektrik/item-pil-4v.png");
+    imagesetname.push_back("graphics/elektrik/item-pil-5v.png");
+    imagesetname.push_back("graphics/elektrik/item-pil-10v.png");
+    imagesetname.push_back("graphics/elektrik/item-pil-20v.png");
     imagesetname.push_back("graphics/elektrik/item-sled-a.png");
     imagesetname.push_back("graphics/elektrik/item-sled-b.png");
     imagesetname.push_back("graphics/elektrik/item-sled.png");
@@ -1801,6 +1805,30 @@ CircuitWindow::action(const gcn::ActionEvent &event)
             c->secondCon = tempNode;
             conList.push_back(c);
 
+        }
+    }else if (event.getId() == "node_clear")
+    {
+        std::vector<Node*>::iterator j = mvNode.begin();
+        while (j != mvNode.end())
+        {
+            Node *nod = (*j);
+            Component *master = nod->getOwner();
+
+            if (nod->getClean() && (nod->getFromLink() || nod->getToLink()))
+            {
+                for (int z=0; z <10; z++) //????????????????????????????????
+                    for (conListIter=conList.begin();conListIter<conList.end();conListIter++)
+                    {
+                        if ((*conListIter)->firstCon == nod ||
+                            (*conListIter)->secondCon == nod)
+                        {
+                            conList.erase(conListIter);
+                            nod->getClean();
+                        }
+                    }
+                mRefresh = true;
+            }
+            j++;
         }
     }
 }

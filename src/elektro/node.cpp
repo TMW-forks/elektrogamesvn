@@ -15,7 +15,8 @@ extern CircuitWindow *circuitWindow;
 Node::Node(const std::string& caption,const std::string& hint,
             const std::string &actionEventId,
             gcn::ActionListener *listener):
-    BitButton(caption, hint, actionEventId,listener)
+    BitButton(caption, hint, actionEventId,listener),
+    mClean(false)
 {
     setRightClick(false);
     setCreator(false);
@@ -97,6 +98,15 @@ void Node::mouseReleased(gcn::MouseEvent& mouseEvent)
         mDead = true;
         gui->setCursorType(0);
         const std::string &actionEventId="node_close";
+        setActionEventId(actionEventId);
+        distributeActionEvent();
+    }
+
+    if (mRightClick && !mFree)
+    {
+        mRightClick =false;
+        mClean = true;
+        const std::string &actionEventId="node_clear";
         setActionEventId(actionEventId);
         distributeActionEvent();
     }

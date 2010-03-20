@@ -5,7 +5,7 @@
   <image source="../graphics/tiles/elektroadd/siyah.png"/>
  </tileset>
  <tileset name="duvar" firstgid="2" tilewidth="32" tileheight="32">
-  <image source="../../../ElektroGit/data/graphics/tiles/elektroadd/tas_bina.png"/>
+  <image source="../graphics/tiles/elektroadd/tas_bina.png"/>
  </tileset>
  <tileset name="kaplamalar" firstgid="172" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/kaplamalar.png"/>

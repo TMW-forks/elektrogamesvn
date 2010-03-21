@@ -143,6 +143,20 @@ class CircuitWindow : public Window,
 
     bool mWireRefresh;
 
+    /**
+     * id'si verilen componenti geri döndürür.
+     */
+    Component* findComponent(int id);
+
+        struct ConditionLocate
+        {
+            int compId;
+            gcn::Rectangle area;
+        };
+
+// nesnelerin konması gereken yerler
+        std::vector<ConditionLocate *> conLocate;
+        std::vector<ConditionLocate *>::iterator conLocateIter;
     private:
         enum CIRCSTATE{
             HEAD_MESSAGE_STATE = 0,
@@ -166,6 +180,7 @@ class CircuitWindow : public Window,
             bool stat;
         };
 
+
 //yanması gereken lambalar
         std::vector<ConditionLamp *> conLamp;
         std::vector<ConditionLamp *>::iterator conLampIter;
@@ -173,6 +188,8 @@ class CircuitWindow : public Window,
 // akım geçmesi gereken node'lar
         std::vector<ConditionCurrent *> conNode;
         std::vector<ConditionCurrent *>::iterator conNodeIter;
+
+
 
         //kullanılan itemları silecek vector
         std::vector < Item *> mUsedItem;
@@ -301,11 +318,6 @@ class CircuitWindow : public Window,
      * efekt yapmak için
      */
     void makeEffect(std::string type,std::string name, std::string ssound);
-
-    /**
-     * id'si verilen componenti geri döndürür.
-     */
-    Component* findComponent(int id);
 
     /**
      * Üzerinden geçen lambalarýn parlaklýklarýný hesapla ve yak

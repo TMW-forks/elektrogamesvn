@@ -60,8 +60,6 @@ CircuitWindow::CircuitWindow():
     nodeCollision(false)
 {
     setWindowName("Devreci");
-    logger->log("circuit window a geldi");
-
     setMinWidth(300);
     setMinHeight(400);
     setResizable(false);
@@ -548,6 +546,12 @@ Window::draw(graphics);
                          getWidth()-130,getHeight()-35,false);
 
     g->drawImage(cirToolBar,10,(getHeight()-cirToolBar->getHeight())/2);
+
+//    for(conLocateIter = conLocate.begin(); conLocateIter!= conLocate.end(); conLocateIter++)
+//    {
+//          graphics->setColor(gcn::Color(0x00ff00));
+//            graphics->drawRectangle((*conLocateIter)->area);
+//    }
 
     if (nodeCollision)
       g->drawImage(nodeConnectImage,collisionNodeX,collisionNodeY);
@@ -1647,9 +1651,18 @@ CircuitWindow::action(const gcn::ActionEvent &event)
         }
         for(conNodeIter = conNode.begin(); conNodeIter!= conNode.end(); conNodeIter++)
         {
-            logger->log("node akımı kontrol et : %f", (*conNodeIter)->compCurrent);
             Node *tmp = findNode((*conNodeIter)->compId);
             if (tmp->getCurrent() == (*conNodeIter)->compCurrent)
+                cevap *= 1;
+            else cevap = 0;
+        }
+        for(conLocateIter = conLocate.begin(); conLocateIter!= conLocate.end(); conLocateIter++)
+        {
+            Component *tmp = findComponent((*conLocateIter)->compId);
+            if ((*conLocateIter)->area.x - this->getPadding() <= tmp->getX() &&
+                (*conLocateIter)->area.x - this->getPadding() +  (*conLocateIter)->area.width >= tmp->getX()&&
+                (*conLocateIter)->area.y - this->getTitleBarHeight() <= tmp->getY() &&
+                (*conLocateIter)->area.y - this->getTitleBarHeight() +  (*conLocateIter)->area.height >= tmp->getY())
                 cevap *= 1;
             else cevap = 0;
         }
@@ -1668,8 +1681,13 @@ CircuitWindow::action(const gcn::ActionEvent &event)
         {
             delete (*conNodeIter);
         }
+        for(conLocateIter= conLocate.begin(); conLocateIter!= conLocate.end(); conLocateIter++)
+        {
+            delete (*conLocateIter);
+        }
         conLamp.clear();
         conNode.clear();
+        conLocate.clear();
 
     }
     else if (event.getId() == "FootOk")
@@ -2131,7 +2149,6 @@ CircuitWindow::circuitFromXML(std::string mDoc)
         else if (xmlStrEqual(node->name, BAD_CAST "node"))
         {
             mCircState = CIRCUIT_STATE;
-            logger->log("buraya geldi : node");
             Node *tempNode = new Node("com_node_btn.png","Hint", "com_node",this);
 
             tempNode->setId(XML::getProperty(node, "id", 0));
@@ -2232,7 +2249,6 @@ CircuitWindow::circuitFromXML(std::string mDoc)
                 ConditionLamp *tmp = new ConditionLamp;
                 tmp->compId = XML::getProperty(node, "componentid", 0);
                 tmp->stat = XML::getProperty(node, "status", 0);
-                logger->log("şart : %d - %d",tmp->compId, tmp->stat );
                 conLamp.push_back(tmp);
             }
             else if(type == "nodecurrent")
@@ -2245,6 +2261,16 @@ CircuitWindow::circuitFromXML(std::string mDoc)
                 hes >> hesf;
                 cct->compCurrent = hesf;
                 conNode.push_back(cct);
+            }
+            else if(type == "locate")
+            {
+                ConditionLocate *mmp = new ConditionLocate;
+                mmp->compId = XML::getProperty(node, "componentid", 0);
+                mmp->area.x = XML::getProperty(node, "x", 0)+elektroWidget->padX + this->getPadding();
+                mmp->area.y = XML::getProperty(node, "y", 0)+elektroWidget->padY + this->getTitleBarHeight() ;
+                mmp->area.width = XML::getProperty(node, "w", 0);
+                mmp->area.height = XML::getProperty(node, "h", 0);
+                conLocate.push_back(mmp);
             }
         }
         else if (xmlStrEqual(node->name, BAD_CAST "connect"))
@@ -2314,6 +2340,8 @@ CircuitWindow::circuitFromXML(std::string mDoc)
         else if (xmlStrEqual(node->name, BAD_CAST "image"))
         {
             SmImage temp = elektroWidget->addImage(node);
+            temp.y += this->getTitleBarHeight();
+            temp.x += this->getPadding();
             mvImage.push_back(temp);
         }
         else if (xmlStrEqual(node->name, BAD_CAST "simpleanim"))

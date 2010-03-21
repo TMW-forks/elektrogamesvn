@@ -223,6 +223,7 @@ void Component::mousePressed(gcn::MouseEvent &event)
 
 void Component::mouseReleased(gcn::MouseEvent &event)
 {
+    logger->log("*****-------------");
    Uint8* keys;
    keys = SDL_GetKeyState(NULL);
    if (event.getButton() == gcn::MouseEvent::RIGHT && mDeletable)
@@ -242,6 +243,24 @@ void Component::mouseReleased(gcn::MouseEvent &event)
         {
             circuitWindow->clearSelections();
             setSelected(true);
+        }
+   }
+   if (mMovable)
+   {
+        std::vector<CircuitWindow::ConditionLocate *>::iterator cit;
+        for(cit = circuitWindow->conLocate.begin();
+             cit!= circuitWindow->conLocate.end();
+             cit++)
+        {
+            if ((*cit)->area.x - circuitWindow->getPadding() <= getX() &&
+                (*cit)->area.x - circuitWindow->getPadding() +  (*cit)->area.width >= getX()&&
+                (*cit)->area.y- circuitWindow->getTitleBarHeight() <= getY() &&
+                (*cit)->area.y - circuitWindow->getTitleBarHeight() +  (*cit)->area.height >= getY())
+            {
+                setX((*cit)->area.x - circuitWindow->getPadding() + ((*cit)->area.width - getW())/2 );
+                setY((*cit)->area.y- circuitWindow->getTitleBarHeight()+ ((*cit)->area.height - getH())/2);
+                break;
+            }
         }
    }
    nodesCalc();
@@ -283,7 +302,8 @@ void Component::mouseDragged(gcn::MouseEvent &event)
         if (getY()<10) setY(10);
         if (getX()>(circuitWindow->getWidth()-getWidth()-15)) setX(circuitWindow->getWidth()-15-getWidth());
         if (getY()>(circuitWindow->getHeight()-getHeight()-25)) setY(circuitWindow->getHeight()-getHeight()-25);
-       */ }
+       */
+       }
         nodesCalc();
 }
 

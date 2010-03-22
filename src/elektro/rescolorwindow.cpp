@@ -93,7 +93,7 @@ ResColorWindow::ResColorWindow():
 
     setResizable(false);
     setDefaultSize(150, 150, 480, 400);
-//    loadWindowState();
+    loadWindowState();
 
     ResourceManager *resman = ResourceManager::getInstance();
     mSet1 = resman->getImageSet("graphics/elektrik/res1set.png",21,61);
@@ -142,7 +142,9 @@ ResColorWindow::ResColorWindow():
     mModeList4->setDimension(gcn::Rectangle(0, 0, w, 50));
     scrollArea4->setDimension(gcn::Rectangle(345, 175, w, 50));
 
-    mValueLabel = new gcn::Label("0 ohm +/- %10");
+    mValueLabel = new gcn::Label("0 Ω ± %10");
+    mValueLabel->setFont(font_bas_2_20);
+    mValueLabel->setForegroundColor(gcn::Color(150,120,70));
     mValueLabel->setPosition(200,30);
     mValueLabel->adjustSize();
 
@@ -177,9 +179,9 @@ ResColorWindow::logic()
     }
     switch (mModeList4->getSelected())
     {
-    case 0 :temp<<"ohm +/- %5";break;
-    case 1 :temp<<"ohm +/- %10";break;
-    case 2 :temp<<"ohm +/- %20";break;
+    case 0 :temp<<"Ω ± %5";break;
+    case 1 :temp<<"Ω ± %10";break;
+    case 2 :temp<<"Ω ± %20";break;
     }
 
 
@@ -209,8 +211,8 @@ ResColorWindow::action(const gcn::ActionEvent &event)
     if (event.getId() == "close")
     {
         setVisible(false);
-        Net::getNpcHandler()->nextDialog(current_npc);
-        current_npc = 0;
+        current_npc=0;
+        NPC::isTalking = false;
         scheduleDelete();
 
     }

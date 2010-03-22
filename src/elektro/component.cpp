@@ -65,7 +65,7 @@ void Component::setX (int x)
 {
     gcn::Window::setX(x);
     mX = x;
-            //node için açý kontrolü yapýlacak (180 derce yapýlýrsa olabilir)
+            //node iÃ§in aÃ§Ã½ kontrolÃ¼ yapÃ½lacak (180 derce yapÃ½lÃ½rsa olabilir)
 
 }
 
@@ -223,7 +223,6 @@ void Component::mousePressed(gcn::MouseEvent &event)
 
 void Component::mouseReleased(gcn::MouseEvent &event)
 {
-    logger->log("*****-------------");
    Uint8* keys;
    keys = SDL_GetKeyState(NULL);
    if (event.getButton() == gcn::MouseEvent::RIGHT && mDeletable)
@@ -450,11 +449,11 @@ void Component::mouseEntered(gcn::MouseEvent &event)
     std::string typeName[]= {
      "Bilinmiyor",
      "Tel",
-     "Direnc",
+     "DirenÃ§",
      "Pil",
      "Diyot",
      "Lamba",
-     "Dugme"};
+     "Anahtar"};
 
     Uint8* keys;
     keys = SDL_GetKeyState(NULL);
@@ -470,7 +469,7 @@ void Component::mouseEntered(gcn::MouseEvent &event)
     circuitWindow->toolRotate = mMovable;
     std::string cap;
     if (mType == 2 || mType == 5)
-        cap = "ohm";
+        cap = "â„¦";
     else if (mType == 3)
         cap = "V";
     circuitWindow->toolCaption->setCaption(typeName[mType]+" :"+toString(getId()));
@@ -489,5 +488,4 @@ void Component::mouseExited(gcn::MouseEvent &event)
 
  void Component::action(const gcn::ActionEvent &event)
  {
-    logger->log(" ++++++++++++++++ ACT ++++++++++++++++++++");
  }

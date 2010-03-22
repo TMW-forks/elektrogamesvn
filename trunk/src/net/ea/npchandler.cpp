@@ -47,6 +47,7 @@
 #include "elektro/similasyonpenceresi.h"
 #include "elektro/missionwindow.h"
 #include "elektro/wellcome.h"
+#include "elektro/rescolorwindow.h"
 
 #include "log.h"
 
@@ -115,6 +116,12 @@ void NpcHandler::handleMessage(MessageIn &msg)
             {
                 Wellcome *wellcomeWindow = new Wellcome;
                 npcText.str("");
+            }
+            else if (being->getJob() == 253) //Wellcome
+            {
+               ResColorWindow *direnk = new ResColorWindow;
+               direnk->setVisible(true);
+               npcText.str("");
             }
 
             if (temp=="</mission>")

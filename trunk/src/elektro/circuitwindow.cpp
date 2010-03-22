@@ -222,13 +222,13 @@ CircuitWindow::CircuitWindow():
 
     toolCaption = new gcn::Label("");
     toolCaption->setPosition(100,getHeight()-200);
-    toolCaption->setFont(font_bas_1_14);
+    toolCaption->setFont(font_bas_3_14);
     toolCaption->setForegroundColor(gcn::Color(56,84,184));
     add(toolCaption);
 
     toolValue = new gcn::Label();
     toolValue->setPosition(170,getHeight()-130);
-    toolValue->setFont(font_bas_b_1_14);
+    toolValue->setFont(font_bas_b_2_14);
     toolValue->setForegroundColor(gcn::Color(56,84,184));
     add(toolValue);
 

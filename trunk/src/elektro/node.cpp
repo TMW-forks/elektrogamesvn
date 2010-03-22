@@ -141,7 +141,7 @@ void Node::mouseEntered(gcn::MouseEvent &mouseEvent)
     circuitWindow->toolToLeft = false;
     circuitWindow->toolRotate = false;
     circuitWindow->toolSelect = false;
-    circuitWindow->toolCaption->setCaption("Baglanti :"+toString(getId()));
+    circuitWindow->toolCaption->setCaption("Bağlantı :"+toString(getId()));
     circuitWindow->toolCaption->adjustSize();
     circuitWindow->toolCaption->setX(55-circuitWindow->toolCaption->getWidth()/2);
 }

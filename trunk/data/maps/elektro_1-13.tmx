@@ -1,41 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
 <map version="1.0" orientation="orthogonal" width="66" height="36" tilewidth="32" tileheight="32">
- <tileset name="syh" firstgid="1" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="siyah" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/siyah.png"/>
  </tileset>
- <tileset name="duvar" firstgid="2" tilewidth="32" tileheight="32">
+ <tileset firstgid="2" name="duvar" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/hastehane.png"/>
  </tileset>
- <tileset name="kaplama" firstgid="86" tilewidth="32" tileheight="32">
+ <tileset firstgid="86" name="kaplamalar" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/kaplamalar.png"/>
  </tileset>
- <tileset name="collasion" firstgid="104" tilewidth="32" tileheight="32">
+ <tileset firstgid="104" name="collosion" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/collision.png"/>
+ </tileset>
+ <tileset firstgid="106" name="malzeme" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/malzemeler.png"/>
+ </tileset>
+ <tileset firstgid="206" name="malzeme2" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/malzemeler3.png"/>
+ </tileset>
+ <tileset firstgid="314" name="cicek" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/Pots_x2.png"/>
  </tileset>
  <layer name="Ground" width="66" height="36">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3XSwqAIBRAUd1UK3BQWQtw/xtJokgiLMjsPbmDg4NGXsyPNcZYAACAQsaoV26I/MsOLgoN6OiwcnSgAx2Kd5jMseee92EvYH61OuR0AuYnoYOmf4YOdKADHejwX4f9bpF7592Nte4gX3bQtKbooKNDrTup9A6sBzqk0vfsk/Plasx9C9s4C5grAAAtWQBdhtdwICUAAA==
+   H4sIAAAAAAAAC+2XSQ6DMAwAw6fyghwKoeLc/3+kQQK1osVJi1kMcxhZihAoE8c2lXOuAgAAAFCiSdyMUyfiQg8h0e2ETzyU8IY9BEUPAQ94wIO6h9a9au60Dscva78SjXiQ0KjnUr5pOVjbg8Z5XclD7jnr96J/d0kNuIKHpfkg3Yuzefi3PuDBlodxtpD+83JRmh/mZpda+Mbc2poetHJqq9l0773iIY/HA/mAhw/ee0JJfyntEWPshng/wF4BAADOxBOr/1E/ICUAAA==
   </data>
  </layer>
  <layer name="Fringe" width="66" height="36">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3BAQ0AAADCoPdPbQ8HFAAAAAAAAAAAwKcBBzE/CCAlAAA=
+   H4sIAAAAAAAAC+3UuwmAMBRG4aztLmqplsZSXUPr6ADO4G8REHwUQlT0fHCaQOASyDUGAAAAAAC80aQ61a/OYpWo9OReqWzAue7m1KDG1VmmclWc3KtVE24svFz09ACB7e2Hhf//1e0TPcOZ7X5Y+P/fHtz72p68yhreAQAAAADwDzMcO2EAICUAAA==
   </data>
  </layer>
  <layer name="Top" width="66" height="36">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3OwQkAIQADQd9qAWIBcv1XeD6swYDMQMh3SwEAAAAAAABuq3ttr6dDwsb5Ga3IW+e/aAUAvOkHptAoliAlAAA=
+   H4sIAAAAAAAAC+3QQQ2AMBBE0XIFBBAEEFQgASsYQDw91MO05L1kstefLQUAAAAYxZsOoHtPOiDsmtIFfbj9AQCGMNctdWs6JGxrd49W5B3tntEKAPinD5YvVOggJQAA
   </data>
  </layer>
- <layer name="Collision" width="66" height="36" visible="0">
+ <layer name="Collision" width="66" height="36">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3UQQ3AMAwEQdMNfwJ9LIVEbaM5aQF4Hl4zsyRJkrS9G8ahcWgcGofmhzYOjUPj0Dg0Do1D49BOO/zF8u0bOXDgwIHDt2PAgYMknekBoYk/hCAlAAA=
+   H4sIAAAAAAAAC+2USw7AIAgFua73v0CXNTbxgwjYzEtmhRE6VYuIFAAAAAAwJyqWvfHw7oUHPNR74SH+jd3xfJOHUc+ZuTyCh28/zzPdzqCd3SrRd3/nn9/kYbZvb52mtpoMHjR1GdRWk/G8t3P11lgl+l2wvFt/xyPR34gHPOABD1nBAR7wAABwhgcQTjzHICUAAA==
   </data>
  </layer>
  <layer name="Objects" width="66" height="36">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3BAQ0AAADCoPdPbQ8HFAAAAAAAAAAAwKcBBzE/CCAlAAA=
+   H4sIAAAAAAAAC+3BAQ0AAADCoPdPbQ8HFAAAAAAAAAAAwKcBBzE/CCAlAAA=
   </data>
  </layer>
 </map>

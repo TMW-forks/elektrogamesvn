@@ -9,12 +9,12 @@
  <tileset firstgid="97" name="tile" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/tile_3.png"/>
  </tileset>
- <tileset firstgid="337" name="x" tilewidth="32" tileheight="32">
+ <tileset firstgid="337" name="collosion" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/collision.png"/>
  </tileset>
  <layer name="Layer 0" width="40" height="40">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3SqQGAQBDF0DULGA7DYTj6r5J0MV9ERMS/3lobaKSJetjPtNBKW+DvdNBJV+Df9NBLX+BX+9Kf/pK86U9/SV/tS3/6S/KmP/0lfbUv/ekvyZv+9Jf01b70p78kb/rTX9L/HUgwgQAZAAA=
+   H4sIAAAAAAAAC+3VQQuCQBQE4L1oMpB2ybxU/v9f2Rx24fHQQ1K7j5rDINOIgn1ol1LqmRMzMF2wfmZGZmIuAfuVmZkbswTsd+bBPJk1YG/tS/7kL5K3T/iDSdnhUs73v9fwh9zLPed89Pti9pr+YDryDrfD7HD7t/35/6zPR3v+VseB+x31Z31Zf9aj3afU1t+eR/+sa/kr8fuWN7x5/V9//+n7q++v/MXorX3Jn/xF8iZ/8hept/Ylf/IXyZv8/Ze/F2gPU5sAGQAA
   </data>
  </layer>
  <layer name="Layer 1" width="40" height="40">

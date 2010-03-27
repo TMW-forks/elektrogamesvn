@@ -33,7 +33,7 @@
  </layer>
  <layer name="Top" width="41" height="31">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+2TWwrCMBQFk191AUEUQUHcnfjtHlXEN6L1VfXbDXiCKWhJY8WSWjkDQ9qQliFwhSCEEPKP9BL2u7H3lhTiZJ4vMIRXy3czOM+oLaKf8lwTjXX5uneznAvg7ruk1Oh7q8GG6VJPfUe4hwfxuM+zp6ZPcDUN4BCO4ARO4dhHVAKhZW8Bl3AFN3AL1z6jDLZZich6XjTx+f21/7nQ86LnRsn3ZwkpAiVYhpW8Qxwos1ZzrXDTNmsn1wpCCCk2d3Joj8/cEwAA
+   H4sIAAAAAAAAC+2TXQsBQRSGZ27xAyaRouTfybX/iOQ7sciuj0vcyjs5W6zZoUy7Vuepp9k9nd3epl4hGIZhmH+kFTNvRt5rUogtPe+gD/eG70Zw7ChbSPvDvSoyluXz7GTY8+Dqu0gvHOAZXuEFHmmu760EK5RLPeQL4BpuxP0+A8eZXGDL1IFd2IMDOIT9JELF4BtmEziFM7iASzhPMhRh6kqI675oov39tf/Z0H3RvVHy/S7DZIEczMNC2kEsKDqLqaawU6ezkWoKhmGYbHMDu6onJdwTAAA=
   </data>
  </layer>
  <layer name="Collision" width="41" height="31" visible="0">

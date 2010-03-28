@@ -491,7 +491,7 @@
         image="/elektroadd/silah-sari-isin.png"
         name="Sarı Işın Kılıcı"
         description="Sarı Işın Kılıcı"
-        effect="+100 Hasar, 1 Menzil"
+        effect="+10 Hasar, 1 Menzil"
         type="equip-1hand"
         weapon_type="2"
         weight="1025"
@@ -509,7 +509,7 @@
         image="/elektroadd/silah-yesil-isin.png"
         name="Yeşil Işın Kılıcı"
         description="Yeşil Işın Kılıcı"
-        effect="+100 Hasar, 1 Menzil"
+        effect="+20 Hasar, 1 Menzil"
         type="equip-1hand"
         weapon_type="2"
         weight="1025"
@@ -527,7 +527,7 @@
         image="/elektroadd/silah-kirmizi-isin.png"
         name="Kırmızı Işın Kılıcı"
         description="Kırmızı Işın Kılıcı"
-        effect="+100 Hasar, 1 Menzil"
+        effect="+30 Hasar, 1 Menzil"
         type="equip-1hand"
         weapon_type="2"
         weight="1025"
@@ -545,7 +545,7 @@
         image="/elektroadd/silah-mavi-isin.png"
         name="Mavi Işın Kılıcı"
         description="Mavi Işın Kılıcı"
-        effect="+100 Hasar, 1 Menzil"
+        effect="+40 Hasar, 1 Menzil"
         type="equip-1hand"
         weapon_type="2"
         weight="1025"
@@ -563,7 +563,7 @@
         image="/elektroadd/silah-keskin-lazer.png"
         name="İki taraflı lazer kılıcı"
         description="Dikkatli tut."
-        effect="+15 Hasar, 1 Menzil"
+        effect="+50 Hasar, 1 Menzil"
         type="equip-1hand"
         weapon_type="1"
         weight="60"
@@ -580,7 +580,7 @@
         image="/elektroadd/silah-lazer-gulle.png"
         name="Lazer gülle"
         description="Kocaman bir lazer demeti."
-        effect="+10 Hasar, 1 Menzil"
+        effect="+60 Hasar, 1 Menzil"
         type="equip-1hand"
         weapon_type="1"
         weight="45"
@@ -594,7 +594,7 @@
         image="/elektroadd/silah-plazma-1.png"
         name="Yeşil Plazma Silahı"
         description="Uzun menzilli silah."
-        effect="+15 Hasar, 5 Menzil"
+        effect="+50 Hasar, 5 Menzil"
         type="equip-1hand"
         weapon_type="10"
         weight="125"
@@ -610,7 +610,7 @@
         image="/elektroadd/silah-plazma-3.png"
         name="Kırmızı Plazma Silahı"
         description="Uzun menzilli silah."
-        effect="+15 Hasar, 15 Menzil"
+        effect="+60 Hasar, 15 Menzil"
         type="equip-1hand"
         weapon_type="10"
         weight="125"
@@ -1909,7 +1909,7 @@
         image="armor-chest-cottonshirt.png|W:#A4B2B2,FFFFFF"
         name="Tişört"
         description="%100 pamuktan sağlıklı tişört."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-torso"
         weight="15"
         defense="2"
@@ -1921,7 +1921,7 @@
         image="armor-chest-cottonshirt.png|W:#580000,A40000,C02020,ff6060"
         name="Kırmızı Tişört"
         description="Rahat tişört."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-torso"
         weight="15">
         <sprite gender="male">chest-cotton-male.xml|#580000,A40000,C02020,ff6060</sprite>
@@ -1931,7 +1931,7 @@
         image="armor-chest-cottonshirt.png|W:#115511,22aa22,99dd99"
         name="Yeşil Tişört"
         description="Rahat tişört."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-torso"
         weight="15">
         <sprite gender="male">chest-cotton-male.xml|#115511,22aa22,99dd99</sprite>
@@ -1941,7 +1941,7 @@
         image="armor-chest-cottonshirt.png|W:#222255,6666ff"
         name="Lacivert Tişört"
         description="Rahat tişört."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-torso"
         weight="15">
         <sprite gender="male">chest-cotton-male.xml|#222255,6666ff</sprite>
@@ -1951,7 +1951,7 @@
         image="armor-chest-cottonshirt.png|W:#846211,dab333,fffb93,ffffff"
         name="Sarı Tişört"
         description="Rahat tişört."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-torso"
         weight="15">
         <sprite gender="male">chest-cotton-male.xml|#846211,dab333,fffb93,ffffff</sprite>
@@ -1961,7 +1961,7 @@
         image="armor-chest-cottonshirt.png|W:#16486e,498ec5,e4f2fc"
         name="Mavi Tişört"
         description="Rahat tişört."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-torso"
         weight="15">
         <sprite gender="male">chest-cotton-male.xml|#16486e,498ec5,e4f2fc</sprite>
@@ -1971,7 +1971,7 @@
         image="armor-chest-cottonshirt.png|W:#56002f,930050,fe70bd,feb7de,ffffff"
         name="Pembe Tişört"
         description="Rahat tişört."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-torso"
         weight="15">
         <sprite gender="male">chest-cotton-male.xml|#56002f,930050,fe70bd,feb7de,ffffff</sprite>
@@ -1981,7 +1981,7 @@
         image="armor-chest-cottonshirt.png|W:#111111,222222,333333,444444,555555,aaaaaa"
         name="Siyah Tişört"
         description="Rahat tişört."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-torso"
         weight="15">
         <sprite gender="male">chest-cotton-male.xml|#111111,222222,333333,444444,555555,aaaaaa</sprite>
@@ -1991,7 +1991,7 @@
         image="armor-chest-cottonshirt.png|W:#80280f,b04810,ef681f,ffb830"
         name="Turuncu Tişört"
         description="Rahat tişört."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-torso"
         weight="15">
         <sprite gender="male">chest-cotton-male.xml|#80280f,b04810,ef681f,ffb830</sprite>
@@ -2001,7 +2001,7 @@
         image="armor-chest-cottonshirt.png|W:#4f0a76,8010c0,d699f7"
         name="Mor Tişört"
         description="Rahat tişört."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-torso"
         weight="15">
         <sprite gender="male">chest-cotton-male.xml|#4f0a76,8010c0,d699f7</sprite>
@@ -2011,7 +2011,7 @@
         image="armor-chest-cottonshirt.png|W:#104010,208020,30c030"
         name="Koyu Yeşil Tişört"
         description="Rahat tişört."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-torso"
         weight="15">
         <sprite gender="male">chest-cotton-male.xml|#104010,208020,30c030</sprite>
@@ -2024,7 +2024,7 @@
         image="armor-chest-vnecksweater.png|W:#A4B2B2,FFFFFF"
         name="V Yaka Kazak"
         description="Sıcacık yünden V yaka kazak."
-        effect="+8% Defense"
+        effect="+8% Savunma"
         type="equip-torso"
         weight="45"
         defense="8"
@@ -2036,7 +2036,7 @@
         image="armor-chest-vnecksweater.png|W:#580000,A40000,C02020,ff6060"
         name="Kırmızı V Yaka Kazak"
         description="Sıcacık bir kazak."
-        effect="+8% Defense"
+        effect="+8% Savunma"
         type="equip-torso"
         weight="45">
         <sprite gender="male">chest-vnecksweater-male.xml|#580000,A40000,C02020,ff6060</sprite>
@@ -2046,7 +2046,7 @@
         image="armor-chest-vnecksweater.png|W:#115511,22aa22,99dd99"
         name="Yeşil V Yaka Kazak"
         description="Sıcacık bir kazak."
-        effect="+8% Defense"
+        effect="+8% Savunma"
         type="equip-torso"
         weight="45">
         <sprite gender="male">chest-vnecksweater-male.xml|#115511,22aa22,99dd99</sprite>
@@ -2056,7 +2056,7 @@
         image="armor-chest-vnecksweater.png|W:#222255,6666ff"
         name="Lacivert V Yaka Kazak"
         description="Sıcacık bir kazak."
-        effect="+8% Defense"
+        effect="+8% Savunma"
         type="equip-torso"
         weight="45">
         <sprite gender="male">chest-vnecksweater-male.xml|#222255,6666ff</sprite>
@@ -2066,7 +2066,7 @@
         image="armor-chest-vnecksweater.png|W:#846211,dab333,fffb93,ffffff"
         name="Sarı V Yaka Kazak"
         description="Sıcacık bir kazak."
-        effect="+8% Defense"
+        effect="+8% Savunma"
         type="equip-torso"
         weight="45">
         <sprite gender="male">chest-vnecksweater-male.xml|#846211,dab333,fffb93,ffffff</sprite>
@@ -2076,7 +2076,7 @@
         image="armor-chest-vnecksweater.png|W:#16486e,498ec5,e4f2fc"
         name="Mavi V Yaka Kazak"
         description="Sıcacık bir kazak."
-        effect="+8% Defense"
+        effect="+8% Savunma"
         type="equip-torso"
         weight="45">
         <sprite gender="male">chest-vnecksweater-male.xml|#16486e,498ec5,e4f2fc</sprite>
@@ -2086,7 +2086,7 @@
         image="armor-chest-vnecksweater.png|W:#56002f,930050,fe70bd,feb7de,ffffff"
         name="Pembe V Yaka Kazak"
         description="Sıcacık bir kazak."
-        effect="+8% Defense"
+        effect="+8% Savunma"
         type="equip-torso"
         weight="45">
         <sprite gender="male">chest-vnecksweater-male.xml|#56002f,930050,fe70bd,feb7de,ffffff</sprite>
@@ -2096,7 +2096,7 @@
         image="armor-chest-vnecksweater.png|W:#111111,222222,333333,444444,555555,aaaaaa"
         name="Siyah V Yaka Kazak"
         description="Sıcacık bir kazak."
-        effect="+8% Defense"
+        effect="+8% Savunma"
         type="equip-torso"
         weight="45">
         <sprite gender="male">chest-vnecksweater-male.xml|#111111,222222,333333,444444,555555,aaaaaa</sprite>
@@ -2106,7 +2106,7 @@
         image="armor-chest-vnecksweater.png|W:#80280f,b04810,ef681f,ffb830"
         name="Orange V Yaka Kazak"
         description="Sıcacık bir kazak."
-        effect="+8% Defense"
+        effect="+8% Savunma"
         type="equip-torso"
         weight="45">
         <sprite gender="male">chest-vnecksweater-male.xml|#80280f,b04810,ef681f,ffb830</sprite>
@@ -2116,7 +2116,7 @@
         image="armor-chest-vnecksweater.png|W:#4f0a76,8010c0,d699f7"
         name="Mor V Yaka Kazak"
         description="Sıcacık bir kazak."
-        effect="+8% Defense"
+        effect="+8% Savunma"
         type="equip-torso"
         weight="45">
         <sprite gender="male">chest-vnecksweater-male.xml|#4f0a76,8010c0,d699f7</sprite>
@@ -2126,7 +2126,7 @@
         image="armor-chest-vnecksweater.png|W:#104010,208020,30c030"
         name="Koyu Yeşil V Yaka Kazak"
         description="Sıcacık bir kazak."
-        effect="+8% Defense"
+        effect="+8% Savunma"
         type="equip-torso"
         weight="45">
         <sprite gender="male">chest-vnecksweater-male.xml|#104010,208020,30c030</sprite>
@@ -2138,7 +2138,7 @@
         image="armor-chest-tnecksweater.png|W:#A4B2B2,FFFFFF"
         name="Balıkçı Yaka Kazak"
         description="Yumuşak ve sıcak."
-        effect="+6% Defense"
+        effect="+6% Savunma"
         type="equip-torso"
         weight="40"
         defense="6"
@@ -2150,7 +2150,7 @@
         image="armor-chest-tnecksweater.png|W:#580000,A40000,C02020,ff6060"
         name="Kırmızı Balıkçı Yaka Kazak"
         description="Boğazınızı sıcacık tutar."
-        effect="+6% Defense"
+        effect="+6% Savunma"
         type="equip-torso"
         weight="40">
         <sprite gender="male">chest-tnecksweater-male.xml|#580000,A40000,C02020,ff6060</sprite>
@@ -2160,7 +2160,7 @@
         image="armor-chest-tnecksweater.png|W:#115511,22aa22,99dd99"
         name="Yeşil Balıkçı Yaka Kazak"
         description="Boğazınızı sıcacık tutar."
-        effect="+6% Defense"
+        effect="+6% Savunma"
         type="equip-torso"
         weight="40">
         <sprite gender="male">chest-tnecksweater-male.xml|#115511,22aa22,99dd99</sprite>
@@ -2170,7 +2170,7 @@
         image="armor-chest-tnecksweater.png|W:#222255,6666ff"
         name="Lacivert Balıkçı Yaka Kazak"
         description="Boğazınızı sıcacık tutar."
-        effect="+6% Defense"
+        effect="+6% Savunma"
         type="equip-torso"
         weight="40">
         <sprite gender="male">chest-tnecksweater-male.xml|#222255,6666ff</sprite>
@@ -2180,7 +2180,7 @@
         image="armor-chest-tnecksweater.png|W:#846211,dab333,fffb93,ffffff"
         name="Sarı Balıkçı Yaka Kazak"
         description="Boğazınızı sıcacık tutar."
-        effect="+6% Defense"
+        effect="+6% Savunma"
         type="equip-torso"
         weight="40">
         <sprite gender="male">chest-tnecksweater-male.xml|#846211,dab333,fffb93,ffffff</sprite>
@@ -2190,7 +2190,7 @@
         image="armor-chest-tnecksweater.png|W:#16486e,498ec5,e4f2fc"
         name="Mavi Balıkçı Yaka Kazak"
         description="Boğazınızı sıcacık tutar."
-        effect="+6% Defense"
+        effect="+6% Savunma"
         type="equip-torso"
         weight="40">
         <sprite gender="male">chest-tnecksweater-male.xml|#16486e,498ec5,e4f2fc</sprite>
@@ -2200,7 +2200,7 @@
         image="armor-chest-tnecksweater.png|W:#56002f,930050,fe70bd,feb7de,ffffff"
         name="Pembe Balıkçı Yaka Kazak"
         description="Boğazınızı sıcacık tutar."
-        effect="+6% Defense"
+        effect="+6% Savunma"
         type="equip-torso"
         weight="40">
         <sprite gender="male">chest-tnecksweater-male.xml|#56002f,930050,fe70bd,feb7de,ffffff</sprite>
@@ -2210,7 +2210,7 @@
         image="armor-chest-tnecksweater.png|W:#111111,222222,333333,444444,555555,aaaaaa"
         name="Siyah Balıkçı Yaka Kazak"
         description="Boğazınızı sıcacık tutar."
-        effect="+6% Defense"
+        effect="+6% Savunma"
         type="equip-torso"
         weight="40">
         <sprite gender="male">chest-tnecksweater-male.xml|#111111,222222,333333,444444,555555,aaaaaa</sprite>
@@ -2220,7 +2220,7 @@
         image="armor-chest-tnecksweater.png|W:#80280f,b04810,ef681f,ffb830"
         name="Orange Balıkçı Yaka Kazak"
         description="Boğazınızı sıcacık tutar."
-        effect="+6% Defense"
+        effect="+6% Savunma"
         type="equip-torso"
         weight="40">
         <sprite gender="male">chest-tnecksweater-male.xml|#80280f,b04810,ef681f,ffb830</sprite>
@@ -2230,7 +2230,7 @@
         image="armor-chest-tnecksweater.png|W:#4f0a76,8010c0,d699f7"
         name="Mor Balıkçı Yaka Kazak"
         description="Boğazınızı sıcacık tutar."
-        effect="+6% Defense"
+        effect="+6% Savunma"
         type="equip-torso"
         weight="40">
         <sprite gender="male">chest-tnecksweater-male.xml|#4f0a76,8010c0,d699f7</sprite>
@@ -2240,7 +2240,7 @@
         image="armor-chest-tnecksweater.png|W:#104010,208020,30c030"
         name="Koyu Yeşil Balıkçı Yaka Kazak"
         description="Boğazınızı sıcacık tutar."
-        effect="+6% Defense"
+        effect="+6% Savunma"
         type="equip-torso"
         weight="40">
         <sprite gender="male">chest-tnecksweater-male.xml|#104010,208020,30c030</sprite>
@@ -2252,7 +2252,7 @@
         image="armor-chest-robe.png|W:#E40A0A"
         name="Yönetici Elbisesi"
         description="Yöneticiler için özel elbise."
-        effect="+5% Defense"
+        effect="+5% Savunma"
         type="equip-torso"
         weight="10"
         defense="5"
@@ -2264,7 +2264,7 @@
         image="armor-chest-robe.png|W:#ffffff"
         name="İpek Elbise"
         description="Parıltılı ipek elbise."
-        effect="+5% Defense"
+        effect="+5% Savunma"
         type="equip-torso"
         weight="10"
         defense="5"
@@ -2276,7 +2276,7 @@
         image="armor-chest-robe.png|W:#580000,A40000,C02020,ff6060"
         name="Kırmızı İpek Elbise"
         description="Parıltılı ipek elbise."
-        effect="+5% Defense"
+        effect="+5% Savunma"
         type="equip-torso"
         weight="10"
         defense="5"
@@ -2288,7 +2288,7 @@
         image="armor-chest-robe.png|W:#115511,22aa22,99dd99"
         name="Yeşil İpek Elbise"
         description="Parıltılı ipek elbise."
-        effect="+5% Defense"
+        effect="+5% Savunma"
         type="equip-torso"
         weight="10"
         defense="5"
@@ -2300,7 +2300,7 @@
         image="armor-chest-robe.png|W:#222255,6666ff"
         name="Lacivert İpek Elbise"
         description="Parıltılı ipek elbise."
-        effect="+5% Defense"
+        effect="+5% Savunma"
         type="equip-torso"
         weight="10"
         defense="5"
@@ -2312,7 +2312,7 @@
         image="armor-chest-robe.png|W:#846211,dab333,fffb93,ffffff"
         name="Sarı İpek Elbise"
         description="Parıltılı ipek elbise."
-        effect="+5% Defense"
+        effect="+5% Savunma"
         type="equip-torso"
         weight="10"
         defense="5"
@@ -2324,7 +2324,7 @@
         image="armor-chest-robe.png|W:#16486e,498ec5,e4f2fc"
         name="Mavi İpek Elbise"
         description="Parıltılı ipek elbise."
-        effect="+5% Defense"
+        effect="+5% Savunma"
         type="equip-torso"
         weight="10"
         defense="5"
@@ -2336,7 +2336,7 @@
         image="armor-chest-robe.png|W:#56002f,930050,fe70bd,feb7de,ffffff"
         name="Pembe İpek Elbise"
         description="Parıltılı ipek elbise."
-        effect="+5% Defense"
+        effect="+5% Savunma"
         type="equip-torso"
         weight="10"
         defense="5"
@@ -2348,7 +2348,7 @@
         image="armor-chest-robe.png|W:#111111,222222,333333,444444,555555,aaaaaa"
         name="Siyah İpek Elbise"
         description="Parıltılı ipek elbise."
-        effect="+5% Defense"
+        effect="+5% Savunma"
         type="equip-torso"
         weight="10"
         defense="5"
@@ -2360,7 +2360,7 @@
         image="armor-chest-robe.png|W:#80280f,b04810,ef681f,ffb830"
         name="Turuncu İpek Elbise"
         description="Parıltılı ipek elbise."
-        effect="+5% Defense"
+        effect="+5% Savunma"
         type="equip-torso"
         weight="10"
         defense="5"
@@ -2372,7 +2372,7 @@
         image="armor-chest-robe.png|W:#4f0a76,8010c0,d699f7"
         name="Mor İpek Elbise"
         description="Parıltılı ipek elbise."
-        effect="+5% Defense"
+        effect="+5% Savunma"
         type="equip-torso"
         weight="10"
         defense="5"
@@ -2384,7 +2384,7 @@
         image="armor-chest-robe.png|W:#104010,208020,30c030"
         name="Koyu Yeşil İpek Elbise"
         description="Parıltılı ipek elbise."
-        effect="+5% Defense"
+        effect="+5% Savunma"
         type="equip-torso"
         weight="10"
         defense="5"
@@ -2399,7 +2399,7 @@
         image="armor-chest-tanktop.png|W:#A4B2B2,FFFFFF"
         name="Fanila"
         description="Sıcak yaz günleri için fanila."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-torso"
         weight="15">
         <sprite gender="male">chest-tanktop-male.xml|#A4B2B2,FFFFFF</sprite>
@@ -2409,7 +2409,7 @@
         image="armor-chest-tanktop.png|W:#580000,A40000,C02020,ff6060"
         name="Kırmızı Fanila"
         description="Sıcak yaz günleri için rahat bir fanila."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-torso"
         weight="15">
         <sprite gender="male">chest-tanktop-male.xml|#580000,A40000,C02020,ff6060</sprite>
@@ -2419,7 +2419,7 @@
         image="armor-chest-tanktop.png|W:#115511,22aa22,99dd99"
         name="Yeşil Fanila"
         description="Sıcak yaz günleri için rahat bir fanila."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-torso"
         weight="15">
         <sprite gender="male">chest-tanktop-male.xml|#115511,22aa22,99dd99</sprite>
@@ -2429,7 +2429,7 @@
         image="armor-chest-tanktop.png|W:#222255,6666ff"
         name="Lacivert Fanila"
         description="Sıcak yaz günleri için rahat bir fanila."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-torso"
         weight="15">
         <sprite gender="male">chest-tanktop-male.xml|#222255,6666ff</sprite>
@@ -2439,7 +2439,7 @@
         image="armor-chest-tanktop.png|W:#846211,dab333,fffb93,ffffff"
         name="Sarı Fanila"
         description="Sıcak yaz günleri için rahat bir fanila."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-torso"
         weight="15">
         <sprite gender="male">chest-tanktop-male.xml|#846211,dab333,fffb93,ffffff</sprite>
@@ -2448,7 +2448,7 @@
     <item id="2051" image="armor-chest-tanktop.png|W:#16486e,498ec5,e4f2fc"
         name="Mavi Fanila"
         description="Sıcak yaz günleri için rahat bir fanila."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-torso"
         weight="15">
         <sprite gender="male">chest-tanktop-male.xml|#16486e,498ec5,e4f2fc</sprite>
@@ -2457,7 +2457,7 @@
     <item id="2052" image="armor-chest-tanktop.png|W:#56002f,930050,fe70bd,feb7de,ffffff"
         name="Pembe Fanila"
         description="Sıcak yaz günleri için rahat bir fanila."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-torso"
         weight="15">
         <sprite gender="male">chest-tanktop-male.xml|#56002f,930050,fe70bd,feb7de,ffffff</sprite>
@@ -2467,7 +2467,7 @@
         image="armor-chest-tanktop.png|W:#111111,222222,333333,444444,555555,aaaaaa"
         name="Siyah Fanila"
         description="Sıcak yaz günleri için rahat bir fanila."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-torso"
         weight="15">
         <sprite gender="male">chest-tanktop-male.xml|#111111,222222,333333,444444,555555,aaaaaa</sprite>
@@ -2477,7 +2477,7 @@
         image="armor-chest-tanktop.png|W:#80280f,b04810,ef681f,ffb830"
         name="Turuncu Fanila"
         description="Sıcak yaz günleri için rahat bir fanila."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-torso"
         weight="15">
         <sprite gender="male">chest-tanktop-male.xml|#80280f,b04810,ef681f,ffb830</sprite>
@@ -2486,7 +2486,7 @@
     <item id="2055" image="armor-chest-tanktop.png|W:#4f0a76,8010c0,d699f7"
         name="Mor Fanila"
         description="Sıcak yaz günleri için rahat bir fanila."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-torso"
         weight="15">
         <sprite gender="male">chest-tanktop-male.xml|#4f0a76,8010c0,d699f7</sprite>
@@ -2496,7 +2496,7 @@
         image="armor-chest-tanktop.png|W:#104010,208020,30c030"
         name="Koyu Yeşil Fanila"
         description="Sıcak yaz günleri için rahat bir fanila."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-torso"
         weight="15">
         <sprite gender="male">chest-tanktop-male.xml|#104010,208020,30c030</sprite>
@@ -2508,7 +2508,7 @@
         image="armor-chest-tanktop-short.png|W:#A4B2B2,FFFFFF"
         name="Kısa Tişört"
         description="Sıcak havalarda giymek için kısa zırh."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-torso"
         weight="15">
         <sprite gender="male">chest-shorttanktop-male.xml|#A4B2B2,FFFFFF</sprite>
@@ -2518,7 +2518,7 @@
         image="armor-chest-tanktop-short.png|W:#580000,A40000,C02020,ff6060"
         name="Kırmızı Kısa Tişört"
         description="Sıcak havalarda giymek için kısa tişört."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-torso"
         weight="15">
         <sprite gender="male">chest-shorttanktop-male.xml|#580000,A40000,C02020,ff6060</sprite>
@@ -2528,7 +2528,7 @@
         image="armor-chest-tanktop-short.png|W:#115511,22aa22,99dd99"
         name="Yeşil Kısa Tişört"
         description="Sıcak havalarda giymek için kısa tişört."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-torso"
         weight="15">
         <sprite gender="male">chest-shorttanktop-male.xml|#115511,22aa22,99dd99</sprite>
@@ -2538,7 +2538,7 @@
         image="armor-chest-tanktop-short.png|W:#222255,6666ff"
         name="Lacivert Kısa Tişört"
         description="Sıcak havalarda giymek için kısa tişört."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-torso"
         weight="15">
         <sprite gender="male">chest-shorttanktop-male.xml|#222255,6666ff</sprite>
@@ -2548,7 +2548,7 @@
         image="armor-chest-tanktop-short.png|W:#846211,dab333,fffb93,ffffff"
         name="Sarı Kısa Tişört"
         description="Sıcak havalarda giymek için kısa tişört."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-torso"
         weight="15">
         <sprite gender="male">chest-shorttanktop-male.xml|#846211,dab333,fffb93,ffffff</sprite>
@@ -2558,7 +2558,7 @@
         image="armor-chest-tanktop-short.png|W:#16486e,498ec5,e4f2fc"
         name="Mavi Kısa Tişört"
         description="Sıcak havalarda giymek için kısa tişört."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-torso"
         weight="15">
         <sprite gender="male">chest-shorttanktop-male.xml|#16486e,498ec5,e4f2fc</sprite>
@@ -2568,7 +2568,7 @@
         image="armor-chest-tanktop-short.png|W:#56002f,930050,fe70bd,feb7de,ffffff"
         name="Pembe Kısa Tişört"
         description="Sıcak havalarda giymek için kısa tişört."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-torso"
         weight="15">
         <sprite gender="male">chest-shorttanktop-male.xml|#56002f,930050,fe70bd,feb7de,ffffff</sprite>
@@ -2578,7 +2578,7 @@
         image="armor-chest-tanktop-short.png|W:#111111,222222,333333,444444,555555,aaaaaa"
         name="Siyah Kısa Tişört"
         description="Sıcak havalarda giymek için kısa tişört."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-torso"
         weight="15">
         <sprite gender="male">chest-shorttanktop-male.xml|#111111,222222,333333,444444,555555,aaaaaa</sprite>
@@ -2588,7 +2588,7 @@
         image="armor-chest-tanktop-short.png|W:#80280f,b04810,ef681f,ffb830"
         name="Turuncu Kısa Tişört"
         description="Sıcak havalarda giymek için kısa tişört."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-torso"
         weight="15">
         <sprite gender="male">chest-shorttanktop-male.xml|#80280f,b04810,ef681f,ffb830</sprite>
@@ -2597,7 +2597,7 @@
     <item id="2066" image="armor-chest-tanktop-short.png|W:#4f0a76,8010c0,d699f7"
         name="Mor Kısa Tişört"
         description="Sıcak havalarda giymek için kısa tişört."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-torso"
         weight="15">
         <sprite gender="male">chest-shorttanktop-male.xml|#4f0a76,8010c0,d699f7</sprite>
@@ -2607,7 +2607,7 @@
         image="armor-chest-tanktop-short.png|W:#104010,208020,30c030"
         name="Koyu Yeşil Kısa Tişört"
         description="Sıcak havalarda giymek için kısa tişört."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-torso"
         weight="15">
         <sprite gender="male">chest-shorttanktop-male.xml|#104010,208020,30c030</sprite>
@@ -2618,7 +2618,7 @@
         image="armor-chest-leathershirt.png"
         name="Spor Tişört"
         description="Sportif"
-        effect="+4% Defense"
+        effect="+4% Savunma"
         type="equip-torso"
         weight="30"
         defense="4"
@@ -2630,7 +2630,7 @@
         image="armor-chest-desertshirt.png"
         name="Elektro Gömlek"
         description="Elektrogame ekibinin üstün tasarımı."
-        effect="+16% Defense"
+        effect="+16% Savunma"
         type="equip-torso"
         weight="50"
         defense="6"
@@ -2643,7 +2643,7 @@
         image="armor-chest-chainmail.png"
         name="Zincir Kazak"
         description="Savunma amaçlı, nanoteknoloji metalik kazak."
-        effect="+12% Defense"
+        effect="+12% Savunma"
         type="equip-torso"
         weight="120"
         defense="12"
@@ -2655,7 +2655,7 @@
         image="armor-chest-lightplatemail.png|W:#ddeeff"
         name="Hafif Zırh"
         description="Genellikle zayıf robotlarla mücadele edenlerin taktığı hafif zırh."
-        effect="+14% Defense"
+        effect="+14% Savunma"
         type="equip-torso"
         weight="240"
         defense="14"
@@ -2667,7 +2667,7 @@
         image="armor-chest-lightplatemail.png|W:#573f10,9c8226,d3c04b,ffffff"
         name="Nano Zırh"
         description="Nano teknoloji ile güçlendirilmiş bir zırh."
-        effect="+25% Defense"
+        effect="+25% Savunma"
         type="equip-torso"
         defense="25"
         weight="240">
@@ -2679,7 +2679,7 @@
         image="armor-chest-warlordplate.png"
         name="NanoCarbon Zırh"
         description="Karbon atomlarıyla güçlendirilmiş zırh."
-        effect="+27% Defense"
+        effect="+27% Savunma"
         type="equip-torso"
         weight="275"
         defense="27"
@@ -2691,7 +2691,7 @@
         image="armor-chest-warlordplate.png|W:#573f10,9c8226,d3c04b,ffffff"
         name="NanoTekno Zırh"
         description="Nano teknoloji kullanarak güçlendirilmiş zırh."
-        effect="+27% Defense"
+        effect="+27% Savunma"
         type="equip-torso"
         weight="275"
         defense="27"
@@ -2703,7 +2703,7 @@
         image="armor-chest-terranite.png"
         name="Polar Zırh"
         description="Mükemmel koruma sağlar."
-        effect="+30% Defense"
+        effect="+30% Savunma"
         type="equip-torso"
         weight="120"
         defense="30"
@@ -2717,7 +2717,7 @@
         image="armor-legs-skirt.png|W:#A4B2B2,FFFFFF"
         name="Penye Etek"
         description="Son moda %100 pamuktan etek."
-        effect="+4% Defense"
+        effect="+4% Savunma"
         defense="4"
         type="equip-legs"
         weight="30"
@@ -2728,7 +2728,7 @@
         image="armor-legs-skirt.png|W:#580000,A40000,C02020,ff6060"
         name="Kırmızı Keten Etek"
         description="Keten kumaştan etek."
-        effect="+4% Defense"
+        effect="+4% Savunma"
         defense="4"
         type="equip-legs"
         weight="30"
@@ -2739,7 +2739,7 @@
         image="armor-legs-skirt.png|W:#115511,22aa22,99dd99"
         name="Yeşil Keten Etek"
         description="Keten kumaştan etek."
-        effect="+4% Defense"
+        effect="+4% Savunma"
         defense="4"
         type="equip-legs"
         weight="30"
@@ -2750,7 +2750,7 @@
         image="armor-legs-skirt.png|W:#222255,6666ff"
         name="Lacivert Keten Etek"
         description="Keten kumaştan etek."
-        effect="+4% Defense"
+        effect="+4% Savunma"
         defense="4"
         type="equip-legs"
         weight="30"
@@ -2761,7 +2761,7 @@
         image="armor-legs-skirt.png|W:#846211,dab333,fffb93,ffffff"
         name="Sarı Keten Etek"
         description="Keten kumaştan etek."
-        effect="+4% Defense"
+        effect="+4% Savunma"
         defense="4"
         type="equip-legs"
         weight="30"
@@ -2772,7 +2772,7 @@
         image="armor-legs-skirt.png|W:#16486e,498ec5,e4f2fc"
         name="Mavi Keten Etek"
         description="Keten kumaştan etek."
-        effect="+4% Defense"
+        effect="+4% Savunma"
         defense="4"
         type="equip-legs"
         weight="30"
@@ -2783,7 +2783,7 @@
         image="armor-legs-skirt.png|W:#56002f,930050,fe70bd,feb7de,ffffff"
         name="Pembe Keten Etek"
         description="Keten kumaştan etek."
-        effect="+4% Defense"
+        effect="+4% Savunma"
         defense="4"
         type="equip-legs"
         weight="30"
@@ -2794,7 +2794,7 @@
         image="armor-legs-skirt.png|W:#111111,222222,333333,444444,555555,aaaaaa"
         name="Siyah Keten Etek"
         description="Keten kumaştan etek."
-        effect="+4% Defense"
+        effect="+4% Savunma"
         defense="4"
         type="equip-legs"
         weight="30"
@@ -2805,7 +2805,7 @@
         image="armor-legs-skirt.png|W:#80280f,b04810,ef681f,ffb830"
         name="Turuncu Keten Etek"
         description="Keten kumaştan etek."
-        effect="+4% Defense"
+        effect="+4% Savunma"
         defense="4"
         type="equip-legs"
         weight="30"
@@ -2816,7 +2816,7 @@
         image="armor-legs-skirt.png|W:#4f0a76,8010c0,d699f7"
         name="Mor Keten Etek"
         description="Keten kumaştan etek."
-        effect="+4% Defense"
+        effect="+4% Savunma"
         defense="4"
         type="equip-legs"
         weight="30"
@@ -2827,7 +2827,7 @@
         image="armor-legs-skirt.png|W:#104010,208020,30c030"
         name="Koyu Yeşil Keten Etek"
         description="Keten kumaştan etek."
-        effect="+4% Defense"
+        effect="+4% Savunma"
         defense="4"
         type="equip-legs"
         weight="30"
@@ -2852,7 +2852,7 @@
         image="armor-legs-shorts.png|W:#580000,A40000,C02020,ff6060"
         name="Kırmızı Pantolon"
         description="%100 pamuktan, sağlıklı pantolon."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-legs"
         weight="10"
         defense="2"
@@ -2864,7 +2864,7 @@
         image="armor-legs-shorts.png|W:#115511,22aa22,99dd99"
         name="Yeşil Pantolon"
         description="%100 pamuktan, sağlıklı pantolon."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-legs"
         weight="10"
         defense="2"
@@ -2876,7 +2876,7 @@
         image="armor-legs-shorts.png|W:#222255,6666ff"
         name="Lacivert Pantolon"
         description="%100 pamuktan, sağlıklı pantolon."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-legs"
         weight="10"
         defense="2"
@@ -2888,7 +2888,7 @@
         image="armor-legs-shorts.png|W:#846211,dab333,fffb93,ffffff"
         name="Sarı Pantolon"
         description="%100 pamuktan, sağlıklı pantolon."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-legs"
         weight="10"
         defense="2"
@@ -2900,7 +2900,7 @@
         image="armor-legs-shorts.png|W:#16486e,498ec5,e4f2fc"
         name="Mavi Pantolon"
         description="%100 pamuktan, sağlıklı pantolon."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-legs"
         weight="10"
         defense="2"
@@ -2912,7 +2912,7 @@
         image="armor-legs-shorts.png|W:#56002f,930050,fe70bd,feb7de,ffffff"
         name="Pembe Pantolon"
         description="%100 pamuktan, sağlıklı pantolon."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-legs"
         weight="10"
         defense="2"
@@ -2924,7 +2924,7 @@
         image="armor-legs-shorts.png|W:#111111,222222,333333,444444,555555,aaaaaa"
         name="Siyah Pantolon"
         description="%100 pamuktan, sağlıklı pantolon."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-legs"
         weight="10"
         defense="2"
@@ -2936,7 +2936,7 @@
         image="armor-legs-shorts.png|W:#80280f,b04810,ef681f,ffb830"
         name="Turuncu Pantolon"
         description="%100 pamuktan, sağlıklı pantolon."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-legs"
         weight="10"
         defense="2"
@@ -2948,7 +2948,7 @@
         image="armor-legs-shorts.png|W:#4f0a76,8010c0,d699f7"
         name="Mor Pantolon"
         description="%100 pamuktan, sağlıklı pantolon."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-legs"
         weight="10"
         defense="2"
@@ -2960,7 +2960,7 @@
         image="armor-legs-shorts.png|W:#104010,208020,30c030"
         name="Koyu Yeşil Pantolon"
         description="%100 pamuktan, sağlıklı pantolon."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-legs"
         weight="10"
         defense="2"
@@ -2972,7 +2972,7 @@
         image="armor-legs-chaps.png"
         name="Kot Pantolon"
         description="Kot."
-        effect="+6% Defense"
+        effect="+6% Savunma"
         type="equip-legs"
         defense="6"
         weight="40">
@@ -2983,7 +2983,7 @@
         image="armor-legs-chaps.png"
         name="Taşlanmış Kot"
         description="Taşlanmış kot."
-        effect="+6% Defense"
+        effect="+6% Savunma"
         type="equip-legs"
         defense="6"
         weight="40">
@@ -2994,7 +2994,7 @@
         image="armor-legs-assassinpants.png"
         name="Şalvar"
         description="Şalvar."
-        effect="+6% Defense"
+        effect="+6% Savunma"
         type="equip-legs"
         defense="6"
         weight="40">
@@ -3005,7 +3005,7 @@
         image="armor-legs-terranite.png"
         name="Kadife Pantolon"
         description="Kadife pantolon."
-        effect="+8% Defense"
+        effect="+8% Savunma"
         type="equip-legs"
         weight="15"
         defense="8"
@@ -3019,7 +3019,7 @@
         image="armor-feet-boots.png|W:#4f2d29,c89078"
         name="Spor Ayakkabı"
         description="Ortopedik, sağlıklı spor ayakkabısı."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-feet"
         weight="15"
         defense="2"
@@ -3031,7 +3031,7 @@
         image="armor-feet-boots.png|W:#505050"
         name="Siyah Bot"
         description="Sağlam bot."
-        effect="+4% Defense"
+        effect="+4% Savunma"
         type="equip-feet"
         weight="35"
         defense="4"
@@ -3043,7 +3043,7 @@
         image="armor-feet-boots.png|#A4B2B2,FFFFFF"
         name="Bez Ayakkabı"
         description="Çok koruyucu olmasa da rahat ayakkabılar."
-        effect="+1% Defense"
+        effect="+1% Savunma"
         type="equip-head"
         defense="1"
         weight="10">
@@ -3055,7 +3055,7 @@
         image="armor-feet-boots.png|W:#580000,A40000,C02020,ff6060"
         name="Kırmızı Ayakkabı"
         description="Rahat ve kaliteli ayakkabı."
-        effect="+1% Defense"
+        effect="+1% Savunma"
         type="equip-feet"
         defense="1"
         weight="10">
@@ -3066,7 +3066,7 @@
         image="armor-feet-boots.png|W:#115511,22aa22,99dd99"
         name="Yeşil Ayakkabı"
         description="Rahat ve kaliteli ayakkabı."
-        effect="+1% Defense"
+        effect="+1% Savunma"
         type="equip-feet"
         defense="1"
         weight="10">
@@ -3077,7 +3077,7 @@
         image="armor-feet-boots.png|W:#222255,6666ff"
         name="Lacivert Ayakkabı"
         description="Rahat ve kaliteli ayakkabı."
-        effect="+1% Defense"
+        effect="+1% Savunma"
         type="equip-feet"
         defense="1"
         weight="10">
@@ -3088,7 +3088,7 @@
         image="armor-feet-boots.png|W:#846211,dab333,fffb93,ffffff"
         name="Sarı Ayakkabı"
         description="Rahat ve kaliteli ayakkabı."
-        effect="+1% Defense"
+        effect="+1% Savunma"
         type="equip-feet"
         defense="1"
         weight="10">
@@ -3099,7 +3099,7 @@
         image="armor-feet-boots.png|W:#16486e,498ec5,e4f2fc"
         name="Mavi Ayakkabı"
         description="Rahat ve kaliteli ayakkabı."
-        effect="+1% Defense"
+        effect="+1% Savunma"
         type="equip-feet"
         defense="1"
         weight="10">
@@ -3110,7 +3110,7 @@
         image="armor-feet-boots.png|W:#56002f,930050,fe70bd,feb7de,ffffff"
         name="Pembe Ayakkabı"
         description="Rahat ve kaliteli ayakkabı."
-        effect="+1% Defense"
+        effect="+1% Savunma"
         type="equip-feet"
         defense="1"
         weight="10">
@@ -3121,7 +3121,7 @@
         image="armor-feet-boots.png|W:#111111,222222,333333,444444,555555,aaaaaa"
         name="Siyah Ayakkabı"
         description="Rahat ve kaliteli ayakkabı."
-        effect="+1% Defense"
+        effect="+1% Savunma"
         type="equip-feet"
         defense="1"
         weight="10">
@@ -3132,7 +3132,7 @@
         image="armor-feet-boots.png|W:#80280f,b04810,ef681f,ffb830"
         name="Truncu Ayakkabı"
         description="Rahat ve kaliteli ayakkabı."
-        effect="+1% Defense"
+        effect="+1% Savunma"
         type="equip-feet"
         defense="1"
         weight="10">
@@ -3143,7 +3143,7 @@
         image="armor-feet-boots.png|W:#4f0a76,8010c0,d699f7"
         name="Mor Ayakkabı"
         description="Rahat ve kaliteli ayakkabı."
-        effect="+1% Defense"
+        effect="+1% Savunma"
         type="equip-feet"
         defense="1"
         weight="10">
@@ -3154,7 +3154,7 @@
         image="armor-feet-boots.png|W:#104010,208020,30c030"
         name="Koyu Yeşil Ayakkabı"
         description="Rahat ve kaliteli ayakkabı."
-        effect="+1% Defense"
+        effect="+1% Savunma"
         type="equip-feet"
         defense="1"
         weight="10">
@@ -3165,7 +3165,7 @@
         image="armor-feet-furboots.png"
         name="Kürklü bot"
         description="Kürkle desteklenmiş botlar, sıcacık."
-        effect="+3% Defense"
+        effect="+3% Savunma"
         type="equip-feet"
         weight="25"
         defense="3"
@@ -3179,7 +3179,7 @@
         image="armor-hands-minergloves.png"
         name="Madenci Eldiveni"
         description="Madencilerin ellerini korur. Seninkini de!"
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-arms"
         weight="10"
         defense="2"
@@ -3191,7 +3191,7 @@
         image="armor-hands-leathergloves.png"
         name="Deri Eldiven"
         description="En kaliteli deriden, sağlıklı eldiven."
-        effect="+4% Defense"
+        effect="+4% Savunma"
         type="equip-arms"
         weight="25"
         defense="4"
@@ -3203,7 +3203,7 @@
         image="armor-hands-gloves.png|W:#a0a0a0,d0d0d0,ffffff,ffffff"
         name="Kar Eldiveni"
         description="Soğukta ellerinizi ısıtacak bir çift eldiven."
-        effect="+3% Defense"
+        effect="+3% Savunma"
         type="equip-arms"
         weight="15"
         defense="3"
@@ -3215,7 +3215,7 @@
         image="armor-hands-gloves.png|W:#A4B2B2,FFFFFF"
         name="Pamuk Eldiven"
         description="Rahat pamuk eldiven."
-        effect="+1% Defense"
+        effect="+1% Savunma"
         type="equip-arms"
         defense="1"
         weight="10">
@@ -3226,7 +3226,7 @@
         image="armor-hands-assassingloves.png"
         name="Örgü Eldiven"
         description="Babaannenden güzel bir hediye :)."
-        effect="+1% Defense"
+        effect="+1% Savunma"
         type="equip-arms"
         defense="1"
         weight="10">
@@ -3237,7 +3237,7 @@
         image="armor-hands-gloves.png|W:#580000,A40000,C02020,ff6060"
         name="Kırmızı Eldiven"
         description="Rahat pamuk eldiven."
-        effect="+1% Defense"
+        effect="+1% Savunma"
         type="equip-arms"
         defense="1"
         weight="10">
@@ -3248,7 +3248,7 @@
         image="armor-hands-gloves.png|W:#115511,22aa22,99dd99"
         name="Yeşil Eldiven"
         description="Rahat pamuk eldiven."
-        effect="+1% Defense"
+        effect="+1% Savunma"
         type="equip-arms"
         defense="1"
         weight="10">
@@ -3259,7 +3259,7 @@
         image="armor-hands-gloves.png|W:#222255,6666ff"
         name="Lacivert Eldiven"
         description="Rahat pamuk eldiven."
-        effect="+1% Defense"
+        effect="+1% Savunma"
         type="equip-arms"
         defense="1"
         weight="10">
@@ -3270,7 +3270,7 @@
         image="armor-hands-gloves.png|W:#846211,dab333,fffb93,ffffff"
         name="Sarı Eldiven"
         description="Rahat pamuk eldiven."
-        effect="+1% Defense"
+        effect="+1% Savunma"
         type="equip-arms"
         defense="1"
         weight="10">
@@ -3281,7 +3281,7 @@
         image="armor-hands-gloves.png|W:#16486e,498ec5,e4f2fc"
         name="Mavi Eldiven"
         description="Rahat pamuk eldiven."
-        effect="+1% Defense"
+        effect="+1% Savunma"
         type="equip-arms"
         defense="1"
         weight="10">
@@ -3292,7 +3292,7 @@
         image="armor-hands-gloves.png|W:#56002f,930050,fe70bd,feb7de,ffffff"
         name="Pembe Eldiven"
         description="Rahat pamuk eldiven."
-        effect="+1% Defense"
+        effect="+1% Savunma"
         type="equip-arms"
         defense="1"
         weight="10">
@@ -3303,7 +3303,7 @@
         image="armor-hands-gloves.png|W:#111111,222222,333333,444444,555555,aaaaaa"
         name="Siyah Eldiven"
         description="Rahat pamuk eldiven."
-        effect="+1% Defense"
+        effect="+1% Savunma"
         type="equip-arms"
         defense="1"
         weight="10">
@@ -3314,7 +3314,7 @@
         image="armor-hands-gloves.png|W:#80280f,b04810,ef681f,ffb830"
         name="Truncu Eldiven"
         description="Rahat pamuk eldiven."
-        effect="+1% Defense"
+        effect="+1% Savunma"
         type="equip-arms"
         defense="1"
         weight="10">
@@ -3325,7 +3325,7 @@
         image="armor-hands-gloves.png|W:#4f0a76,8010c0,d699f7"
         name="Mor Eldiven"
         description="Rahat pamuk eldiven."
-        effect="+1% Defense"
+        effect="+1% Savunma"
         type="equip-arms"
         defense="1"
         weight="10">
@@ -3336,7 +3336,7 @@
         image="armor-hands-gloves.png|W:#104010,208020,30c030"
         name="Koyu Yeşil Eldiven"
         description="Rahat pamuk eldiven."
-        effect="+1% Defense"
+        effect="+1% Savunma"
         type="equip-arms"
         defense="1"
         weight="10">
@@ -3349,7 +3349,7 @@
         image="armor-head-deserthat.png|R:#FFFFFF"
         name="Çöl Şapkası"
         description="Kumdan, rüzgardan ve sıcaktan koruyan çöl şapkası."
-        effect="+3% Defense"
+        effect="+3% Savunma"
         type="equip-head"
         defense="3"
         weight="10">
@@ -3359,7 +3359,7 @@
         image="armor-head-deserthat.png|R:#580000,A40000,C02020,ff6060"
         name="Kırmızı Çöl Şapkası"
         description="Kumdan, rüzgardan ve sıcaktan koruyan çöl şapkası."
-        effect="+3% Defense"
+        effect="+3% Savunma"
         type="equip-head"
         defense="3"
         weight="10">
@@ -3369,7 +3369,7 @@
         image="armor-head-deserthat.png|R:#115511,22aa22,99dd99"
         name="Yeşil Çöl Şapkası"
         description="Kumdan, rüzgardan ve sıcaktan koruyan çöl şapkası."
-        effect="+3% Defense"
+        effect="+3% Savunma"
         type="equip-head"
         defense="3"
         weight="10">
@@ -3379,7 +3379,7 @@
         image="armor-head-deserthat.png|R:#222255,6666ff"
         name="Lacivert Çöl Şapkası"
         description="Kumdan, rüzgardan ve sıcaktan koruyan çöl şapkası."
-        effect="+3% Defense"
+        effect="+3% Savunma"
         type="equip-head"
         defense="3"
         weight="10">
@@ -3389,7 +3389,7 @@
         image="armor-head-deserthat.png|R:#846211,dab333,fffb93,ffffff"
         name="Sarı Çöl Şapkası"
         description="Kumdan, rüzgardan ve sıcaktan koruyan çöl şapkası."
-        effect="+3% Defense"
+        effect="+3% Savunma"
         type="equip-head"
         defense="3"
         weight="10">
@@ -3399,7 +3399,7 @@
         image="armor-head-deserthat.png|R:#16486e,498ec5,e4f2fc"
         name="Mavi Çöl Şapkası"
         description="Kumdan, rüzgardan ve sıcaktan koruyan çöl şapkası."
-        effect="+3% Defense"
+        effect="+3% Savunma"
         type="equip-head"
         defense="3"
         weight="10">
@@ -3409,7 +3409,7 @@
         image="armor-head-deserthat.png|R:#56002f,930050,fe70bd,feb7de,ffffff"
         name="Pembe Çöl Şapkası"
         description="Kumdan, rüzgardan ve sıcaktan koruyan çöl şapkası."
-        effect="+3% Defense"
+        effect="+3% Savunma"
         type="equip-head"
         defense="3"
         weight="10">
@@ -3419,7 +3419,7 @@
         image="armor-head-deserthat.png|R:#111111,222222,333333,444444,555555,aaaaaa"
         name="Siyah Çöl Şapkası"
         description="Kumdan, rüzgardan ve sıcaktan koruyan çöl şapkası."
-        effect="+3% Defense"
+        effect="+3% Savunma"
         type="equip-head"
         defense="3"
         weight="10">
@@ -3429,7 +3429,7 @@
         image="armor-head-deserthat.png|R:#80280f,b04810,ef681f,ffb830"
         name="Turuncu Çöl Şapkası"
         description="Kumdan, rüzgardan ve sıcaktan koruyan çöl şapkası."
-        effect="+3% Defense"
+        effect="+3% Savunma"
         type="equip-head"
         defense="3"
         weight="10">
@@ -3439,7 +3439,7 @@
         image="armor-head-deserthat.png|R:#4f0a76,8010c0,d699f7"
         name="Mor Çöl Şapkası"
         description="Kumdan, rüzgardan ve sıcaktan koruyan çöl şapkası."
-        effect="+3% Defense"
+        effect="+3% Savunma"
         type="equip-head"
         defense="3"
         weight="10">
@@ -3449,7 +3449,7 @@
         image="armor-head-deserthat.png|R:#104010,208020,30c030"
         name="Koyu Yeşil Çöl Şapkası"
         description="Kumdan, rüzgardan ve sıcaktan koruyan çöl şapkası."
-        effect="+3% Defense"
+        effect="+3% Savunma"
         type="equip-head"
         defense="3"
         weight="10">
@@ -3461,7 +3461,7 @@
         image="armor-head-standardheadband.png|W:#291e16,99784c,d8bd86,ffffff"
         name="Saç Bandı"
         description="Robotlar saldırılarından koruyan saç bandı."
-        effect="+3% Defense"
+        effect="+3% Savunma"
         type="equip-head"
         weight="45"
         max-per-slot="1"
@@ -3472,7 +3472,7 @@
         image="armor-head-standardheadband.png|W:#A4B2B2,FFFFFF"
         name="Cotton Headband"
         description="Saç bandı."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-head"
         defense="2"
         weight="5">
@@ -3483,7 +3483,7 @@
         image="armor-head-standardheadband.png|W:#580000,A40000,C02020,ff6060"
         name="Kırmızı Saç Bandı"
         description="Saç bandı."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-head"
         defense="2"
         weight="5">
@@ -3493,7 +3493,7 @@
         image="armor-head-standardheadband.png|W:#115511,22aa22,99dd99"
         name="Yeşil Saç Bandı"
         description="Saç bandı."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-head"
         defense="2"
         weight="5">
@@ -3503,7 +3503,7 @@
         image="armor-head-standardheadband.png|W:#222255,6666ff"
         name="Lacivert Saç Bandı"
         description="Saç bandı."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-head"
         defense="2"
         weight="5">
@@ -3513,7 +3513,7 @@
         image="armor-head-standardheadband.png|W:#846211,dab333,fffb93,ffffff"
         name="Sarı Saç Bandı"
         description="Saç bandı."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-head"
         defense="2"
         weight="5">
@@ -3523,7 +3523,7 @@
         image="armor-head-standardheadband.png|W:#16486e,498ec5,e4f2fc"
         name="Mavi Saç Bandı"
         description="Saç bandı."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-head"
         defense="2"
         weight="5">
@@ -3533,7 +3533,7 @@
         image="armor-head-standardheadband.png|W:#56002f,930050,fe70bd,feb7de,ffffff"
         name="Pembe Saç Bandı"
         description="Saç bandı."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-head"
         defense="2"
         weight="5">
@@ -3543,7 +3543,7 @@
         image="armor-head-standardheadband.png|W:#111111,222222,333333,444444,555555,aaaaaa"
         name="Siyah Saç Bandı"
         description="Saç bandı."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-head"
         defense="2"
         weight="5">
@@ -3553,7 +3553,7 @@
         image="armor-head-standardheadband.png|W:#80280f,b04810,ef681f,ffb830"
         name="Turuncu Saç Bandı"
         description="Saç bandı."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-head"
         defense="2"
         weight="5">
@@ -3563,7 +3563,7 @@
         image="armor-head-standardheadband.png|W:#4f0a76,8010c0,d699f7"
         name="Mor Saç Bandı"
         description="Saç bandı."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-head"
         defense="2"
         weight="5">
@@ -3573,7 +3573,7 @@
         image="armor-head-standardheadband.png|W:#104010,208020,30c030"
         name="Koyu Yeşil Saç Bandı"
         description="Saç bandı."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-head"
         defense="2"
         weight="5">
@@ -3583,7 +3583,7 @@
         image="armor-head-silkheadband.png"
         name="İpek Saç Bandı"
         description="Hem şık hem daha sağlam saç bandı."
-        effect="+10% Defense"
+        effect="+10% Savunma"
         type="equip-head"
         weight="20"
         defense="10"
@@ -3596,7 +3596,7 @@
         image="armor-head-cap.png"
         name="Şapka"
         description="Gözlerinizi güneşten koruyan şapka."
-        effect="+5% Defense"
+        effect="+5% Savunma"
         type="equip-head"
         defense="5"
         weight="20">
@@ -3606,7 +3606,7 @@
         image="armor-head-fancyhat.png"
         name="Maceracı Şapkası"
         description="Maceradan maceraya atılanlar için."
-        effect="+5% Defense"
+        effect="+5% Savunma"
         type="equip-head"
         weight="25"
         defense="5"
@@ -3617,7 +3617,7 @@
         image="armor-head-minershat.png"
         name="Kask"
         description="Çelik Kask"
-        effect="+4% Defense"
+        effect="+4% Savunma"
         type="equip-head"
         weight="25"
         defense="4"
@@ -3628,7 +3628,7 @@
         image="armor-head-pumpkinhelmet.png"
         name="Kabak Başlık"
         description="GDO'suz kabakla yapılmış başlık."
-        effect="+4% Defense"
+        effect="+4% Savunma"
         type="equip-head"
         weight="30"
         defense="4"
@@ -3639,7 +3639,7 @@
         image="armor-head-piratehat.png"
         name="Korsan Şapkası"
         description="Korsan Şapkası."
-        effect="+4% Defense"
+        effect="+4% Savunma"
         type="equip-head"
         weight="25"
         defense="4"
@@ -3650,7 +3650,7 @@
         image="armor-head-goggles.png"
         name="Gözlük"
         description="Gözlerinizi robotlardan korumak için tasarlanmış gözlük."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-head"
         weight="20"
         defense="2"
@@ -3661,7 +3661,7 @@
         image="armor-head-leathergoggles.png"
         name="Gözlük 2"
         description="Modaya uygun olarak çerçevesi yenilenmiş gözlük."
-        effect="+3% Defense"
+        effect="+3% Savunma"
         type="equip-head"
         weight="25"
         defense="3"
@@ -3673,7 +3673,7 @@
         image="armor-head-circlet.png"
         name="Taç"
         description="Mücevherlerle süslü taç."
-        effect="+4% Defense"
+        effect="+4% Savunma"
         type="equip-head"
         weight="35"
         defense="4"
@@ -3684,7 +3684,7 @@
         image="armor-head-eyepatch.png"
         name="Göz bandı"
         description="Hem gözünü korur, hem de korsan görüntüsü verir."
-        effect="+3% Defense"
+        effect="+3% Savunma"
         type="equip-head"
         weight="15"
         defense="3"
@@ -3695,7 +3695,7 @@
         image="armor-head-bandana.png"
         name="Bandana"
         description="Güzel bir bandana."
-        effect="+3% Defense"
+        effect="+3% Savunma"
         type="equip-head"
         weight="15"
         defense="3"
@@ -3706,7 +3706,7 @@
         image="armor-head-tophat.png"
         name="Fötr Şapka"
         description="Fötr şapka."
-        effect="+10% Defense"
+        effect="+10% Savunma"
         type="equip-head"
         weight="20"
         defense="10"
@@ -3717,7 +3717,7 @@
         image="armor-head-funkyhat.png"
         name="Komik şapka"
         description="Komik ama üstün teknolojisi ile çok güçlü."
-        effect="+13% Defense"
+        effect="+13% Savunma"
         type="equip-head"
         weight="20"
         defense="13"
@@ -3728,7 +3728,7 @@
         image="armor-head-mushroomhat.png"
         name="Mantar Şapka"
         description="Güzel bir şapka."
-        effect="+10% Defense"
+        effect="+10% Savunma"
         type="equip-head"
         weight="20"
         defense="10"
@@ -3739,7 +3739,7 @@
         image="armor-head-shroomhat.png"
         name="Yeni Mantar Şapka"
         description="Farklı bir mantar şapka."
-        effect="+13% Defense"
+        effect="+13% Savunma"
         type="equip-head"
         weight="20"
         defense="13"
@@ -3750,7 +3750,7 @@
         image="armor-head-xmaself.png"
         name="Taraftar şapkası"
         description="Çok sağlam taraftar şapkası."
-        effect="+13% Defense"
+        effect="+13% Savunma"
         defense="13"
         type="equip-head"
         weight="20"
@@ -3761,7 +3761,7 @@
         image="armor-head-mask.png"
         name="Yüz Maskesi"
         description="Yüzünüzü darbelerden korur."
-        effect="+10% Defense"
+        effect="+10% Savunma"
         defense="10"
         type="equip-head"
         weight="20"
@@ -3772,7 +3772,7 @@
         image="armor-head-warlordhelm.png"
         name="Boynuzlu Kask"
         description="Eski savaşçılardan kalma boynuzlu kask."
-        effect="+18% Defense"
+        effect="+18% Savunma"
         type="equip-head"
         defense="18"
         weight="40">
@@ -3782,7 +3782,7 @@
         image="armor-head-knighthelm.png"
         name="Uzun Metal Kask"
         description="İki uzun parçasıyla daha iyi koruma sağlar."
-        effect="+15% Defense"
+        effect="+15% Savunma"
         type="equip-head"
         defense="15"
         weight="35">
@@ -3792,7 +3792,7 @@
         image="armor-head-infantryhelm.png"
         name="Piyade Kaskı"
         description="Piyadelerin kullandığı kask."
-        effect="+15% Defense"
+        effect="+15% Savunma"
         type="equip-head"
         defense="15"
         weight="35">
@@ -3802,7 +3802,7 @@
         image="armor-head-cowboywhite.png"
         name="Beyaz Kovboy Şapkası"
         description="Beyaz kovboy şapkası."
-        effect="+6% Defense"
+        effect="+6% Savunma"
         type="equip-head"
         defense="6"
         weight="30">
@@ -3812,7 +3812,7 @@
         image="armor-head-cowboyblack.png"
         name="Siyah Kovboy Şapkası"
         description="Siyah kovboy şapkası."
-        effect="+6% Defense"
+        effect="+6% Savunma"
         type="equip-head"
         defense="6"
         weight="30">
@@ -3822,7 +3822,7 @@
         image="armor-head-crown.png"
         name="Buyuk Taç"
         description="Oldukça gösterişli bir taç."
-        effect="+4% Defense"
+        effect="+4% Savunma"
         type="equip-head"
         defense="4"
         weight="50">
@@ -3832,7 +3832,7 @@
         image="armor-head-devcap.png|R:#9999ff"
         name="Geliştirici Şapkası"
         description="Bu şapka ile geliştiricileri tanıyabilirsiniz."
-        effect="+5% Defense"
+        effect="+5% Savunma"
         type="equip-head"
         defense="5"
         weight="10">
@@ -3842,7 +3842,7 @@
         image="armor-head-cap.png|R:#d94800"
         name="Kep"
         description="Gözlerinizi güneşten koruyan şapka."
-        effect="+5% Defense"
+        effect="+5% Savunma"
         type="equip-head"
         defense="5"
         weight="20">
@@ -3852,7 +3852,7 @@
         image="armor-head-serf.png"
         name="Kukuleta"
         description="Basit bir şapka."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-head"
         weight="25"
         defense="2"
@@ -3863,7 +3863,7 @@
         image="armor-head-gradcap.png"
         name="Mezuniyet Kepi"
         description="Öğrenciler mezun olurken havaya atar."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-head"
         weight="20"
         defense="2"
@@ -3874,7 +3874,7 @@
         image="armor-head-nohmask.png"
         name="Noh Maskesi"
         description="Geleneksel Japon maskesi."
-        effect="+3% Defense"
+        effect="+3% Savunma"
         type="equip-head"
         weight="15"
         defense="3"
@@ -3885,7 +3885,7 @@
         image="armor-head-demonmask.png"
         name="Şeytan Maskesi"
         description="Arkadaşlarını korkutmak için maske."
-        effect="+3% Defense"
+        effect="+3% Savunma"
         type="equip-head"
         weight="15"
         defense="3"
@@ -3896,7 +3896,7 @@
         image="armor-head-highpriest-crown.png"
         name="Nano Taç"
         description="Üzerinde bulunan nanobotlarla çabuk iyileşme sağlar."
-        effect="+4% Defense, +20 SP"
+        effect="+4% Savunma, +20 SP"
         type="equip-head"
         defense="4"
         weight="60">
@@ -3906,7 +3906,7 @@
         image="armor-head-monster-skull-helm.png"
         name="Kemik Başlık"
         description="Kalın kemikler başını korur, nazara da iyi gelir ;)."
-        effect="+7% Defense, +20% Magic Defense"
+        effect="+7% Savunma, +20% Magic Savunma"
         type="equip-head"
         defense="7"
         weight="40">
@@ -3916,7 +3916,7 @@
         image="armor-head-gmcap.png|R:#BF0E08"
         name="Yönetici Şapkası"
         description="Yöneticileri tanımak için."
-        effect="+5% Defense"
+        effect="+5% Savunma"
         type="equip-head"
         defense="5"
         weight="10">
@@ -3926,7 +3926,7 @@
         image="armor-head-pinkiehat.png"
         name="Işıldaklı şapka"
         description="Üzerinde aydınlatıcı led takılı şapka."
-        effect="+1% Defense"
+        effect="+1% Savunma"
         type="equip-head"
         weight="5"
         defense="1"
@@ -3937,7 +3937,7 @@
         image="armor-head-fluffyhat.png"
         name="Kürk Şapka"
         description="Hayvan dostu kıyafetlerden biri."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-head"
         weight="10"
         defense="2"
@@ -3948,7 +3948,7 @@
         image="armor-head-paladin_helm.png"
         name="Elf Şapka"
         description="Elflerin giydiği şapkanın bir benzeri."
-        effect="+19% Defense"
+        effect="+19% Savunma"
         type="equip-head"
         defense="19"
         weight="43"
@@ -3959,7 +3959,7 @@
         image="armor-head-overlord_helm.png"
         name="Koç Şapka"
         description="Gösterişli, koç başı şeklinde şapka."
-        effect="+20% Defense"
+        effect="+20% Savunma"
         type="equip-head"
         defense="20"
         weight="45"
@@ -3970,7 +3970,7 @@
         image="armor-head-desert-helmet.png"
         name="Metal Şapka"
         description="Mükemmel koruma sağlar."
-        effect="+21% Defense"
+        effect="+21% Savunma"
         type="equip-head"
         weight="48"
         defense="21"
@@ -3981,7 +3981,7 @@
         image="armor-head-sailor_hat.png"
         name="Gemici Şapkası"
         description="Gemicilerin giydiği şapka."
-        effect="+5% Defense"
+        effect="+5% Savunma"
         type="equip-head"
         weight="5"
         defense="5"
@@ -3992,7 +3992,7 @@
         image="armor-head-captain_hat.png"
         name="Kaptan Şapkası"
         description="Cesut gemi kaptanlarının şapkası."
-        effect="+15% Defense"
+        effect="+15% Savunma"
         type="equip-head"
         weight="8"
         defense="15"
@@ -4003,7 +4003,7 @@
         image="armor-head-terranitehelm.png"
         name="Selçuklu Kaskı"
         description="Selçuklu askerlerinin kullandığı bir kask."
-        effect="+15% Defense"
+        effect="+15% Savunma"
         type="equip-head"
         defense="15"
         weight="10">
@@ -4014,7 +4014,7 @@
         image="armor-head-guyfawkes.png"
         name="Güley Yüz Maskesi"
         description="Güler yüz tüm güçlükleri yener."
-        effect="+14% Defense"
+        effect="+14% Savunma"
         type="equip-head"
         weight="12"
         defense="14"
@@ -4025,7 +4025,7 @@
         image="armor-head-rangerhat.png"
         name="İzci Şapkası"
         description="Genellikle izcilerin giydiği şapka."
-        effect="+2% Defense"
+        effect="+2% Savunma"
         type="equip-head"
         weight="55"
         defense="2"
@@ -4036,7 +4036,7 @@
         image="armor-head-antlerhat.png"
         name="GeyikSapka"
         description="Doğal yaşamın simgesi."
-        effect="+4% Defense"
+        effect="+4% Savunma"
         type="equip-head"
         weight="20"
         defense="4"
@@ -4047,7 +4047,7 @@
         image="armor-head-bunnyears.png"
         name="Tavşan Kulağı"
         description="Tavşan kulaklı toka."
-        effect="+10% Defense"
+        effect="+10% Savunma"
         type="equip-head"
         defense="10"
         weight="20">
@@ -4057,7 +4057,7 @@
         image="armor-head-mouboohead.png"
         name="Lama Maskesi 2"
         description="Hayvan dostlarının simgesi."
-        effect="+1% Defense"
+        effect="+1% Savunma"
         type="equip-head"
         defense="1"
         weight="20">
@@ -4067,7 +4067,7 @@
         image="armor-head-catears.png|M:#774444;W:#777777"
         name="Kedi kulağı"
         description="Daha iyi duymak için kedi kulağı. Miyav!"
-        effect="+1% Defense, +3 Agility"
+        effect="+1% Savunma, +3 Agility"
         type="equip-head"
         defense="1"
         weight="2">
@@ -4077,7 +4077,7 @@
         image="armor-head-paperbag.png"
         name="Kese Kağıdı Maskesi"
         description="Kese kağıdı maskesi."
-        effect="+1% Defense, -1 Agility"
+        effect="+1% Savunma, -1 Agility"
         type="equip-head"
         defense="1"
         weight="1">
@@ -4087,7 +4087,7 @@
         image="armor-head-moubootaurhead.png"
         name="Lama Maskesi"
         description="Hayvan dostlarının simgesi."
-        effect="+1% Defense"
+        effect="+1% Savunma"
         type="equip-head"
         defense="1"
         weight="20">
@@ -4099,7 +4099,7 @@
         image="armor-shield-steelshield.png"
         name="Çelik Kalkan"
         description="Çelikten yapılmış kalkan."
-        effect="+20% Defense"
+        effect="+20% Savunma"
         type="equip-shield"
         weight="10"
         max-per-slot="1"/>
@@ -4107,7 +4107,7 @@
         image="armor-shield-woodenshield.png"
         name="Tahta Kalkan"
         description="Tahta."
-        effect="+14% Defense"
+        effect="+14% Savunma"
         type="equip-shield"
         weight="10"
         max-per-slot="1"/>
@@ -4115,7 +4115,7 @@
         image="armor-shield-leathershield.png"
         name="Deri Kalkan"
         description="Tahta üzerine deri kaplanarak yapılmış kalkan."
-        effect="+7% Defense"
+        effect="+7% Savunma"
         type="equip-shield"
         weight="10"
         max-per-slot="1"/>
@@ -4124,7 +4124,7 @@
         image="armor-hands-scarabarmlet.png"
         name="Örümcek Kolluk"
         description="Havalı bir kolluk."
-        effect="+0% Defense"
+        effect="+0% Savunma"
         type="equip-arms"
         weight="10"
         max-per-slot="1"/>
@@ -4204,7 +4204,7 @@
         image="armor-head-crusadehelm.png"
         name="Crusade Helmet"
         description="Start your own crusade."
-        effect="+18% Defense"
+        effect="+18% Savunma"
         type="equip-head"
         defense="18"
         weight="40">

@@ -24,6 +24,9 @@
 #include "./battery.h"
 #include "./wire.h"
 #include "./typedef.h"
+#include "./motor.h"
+#include "./ampermetre.h"
+
 
 class BrowserBox;
 class ScrollArea;

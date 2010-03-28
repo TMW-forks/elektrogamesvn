@@ -136,7 +136,6 @@ bool AnimatedSprite::updateCurrentAnimation(unsigned int time)
             return false;
         }
     }
-
     return true;
 }
 

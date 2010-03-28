@@ -205,6 +205,7 @@ CircuitWindow::CircuitWindow():
     imagesetname.push_back("graphics/elektrik/item-motor-1.png");
     imagesetname.push_back("graphics/elektrik/item-motor-2.png");
     imagesetname.push_back("graphics/elektrik/item-motor-3.png");
+    imagesetname.push_back("graphics/elektrik/item-ampermetre.png");
 
     for(iname = imagesetname.begin(); iname != imagesetname.end(); iname++)
     {
@@ -2214,6 +2215,7 @@ CircuitWindow::circuitFromXML(std::string mDoc)
             else if (tempType=="battery") tempComponent = new Battery (this, tempNode1, tempNode2);
             else if (tempType=="switch") tempComponent = new Switch (this, tempNode1, tempNode2);
             else if (tempType=="motor") tempComponent = new Motor (this, tempNode1, tempNode2);
+            else if (tempType=="ampermetre") tempComponent = new Ampermetre (this, tempNode1, tempNode2);
             else return;
             tempComponent->setItemId(itemid);
             tempComponent->setValue(tempItem.getElektroValue());

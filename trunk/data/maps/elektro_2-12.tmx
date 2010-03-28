@@ -1,44 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
 <map version="1.0" orientation="orthogonal" width="68" height="35" tilewidth="32" tileheight="32">
- <tileset name="syh" firstgid="1" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="siyah" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/siyah.png"/>
  </tileset>
- <tileset name="duvar" firstgid="2" tilewidth="32" tileheight="32">
+ <tileset firstgid="2" name="duvar" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/hastehane.png"/>
  </tileset>
- <tileset name="Untitled" firstgid="86" tilewidth="32" tileheight="32">
+ <tileset firstgid="86" name="Untitled" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/muze.png"/>
  </tileset>
- <tileset name="kaplama" firstgid="170" tilewidth="32" tileheight="32">
+ <tileset firstgid="170" name="kaplama" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/kaplamalar.png"/>
  </tileset>
- <tileset name="collosion" firstgid="188" tilewidth="32" tileheight="32">
+ <tileset firstgid="188" name="collosion" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/collision.png"/>
+ </tileset>
+ <tileset firstgid="190" name="yataklar" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/malzemeler3.png"/>
+ </tileset>
+ <tileset firstgid="298" name="masalar" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/malzemeler.png"/>
+ </tileset>
+ <tileset firstgid="398" name="cicekler" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/Pots_x2.png"/>
+ </tileset>
+ <tileset firstgid="430" name="masaustumalzeme" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/elektroadd/malzemeler2.png"/>
  </tileset>
  <layer name="Ground" width="68" height="35">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3X2wpAQBSF4fFSnsCFY17WA6JcDI1DY5Vt9198jYhYrT2lCCEUAAAAhrSLJlJvmmi9Oj675+zc3Xp3/9X1TpBHuZicqAR5VAa+w1IenvpRCvKgH/SDftAP+qHJw1M/mBd9P5gXv/1gXvR59GH/r/rWk3/YLuNb2wfPHQR5fCFnz1LsDValZnRMUM+CVTl5eO7Humel5j/O4nj9r3vDG3EeX78LAADINwMBD4BKMCUAAA==
+   H4sIAAAAAAAAC+3XUQ6CMBBF0bIpVuCHgMTNukAxgaSYTlung7R6P04wtgV9zrSxc851AAAAFRkXg+e6Grxr7LW0RnovdU2tj41PBnn0i4fg22OSywfzSvOIPesf82ihPnLX9AZ5UB/UB/VBfZTUx3Z+b/cNnftWY7MwL/X8nPkWeWh+r1od3S+tOXo/bQ39ske/2Odxc/v/qqVyzoZJ8V3HjPvOBnmcQbNnWewNtQr16D3Auhdqpcnjl+vjtWeF+t/P4n281b2hhJ/H2Z8FAADoPQFHo1qAMCUAAA==
   </data>
  </layer>
  <layer name="Fringe" width="68" height="35">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAfBg26l/DMCUAAA==
+   H4sIAAAAAAAAC+2UTQrCMBCF6510UQTd1p3oRdSlehwR9BzqTvxZV8/iDBpIw3RMNSm0vA+Gpjw6zTxekiQAAAAAAKCJdDv1ai5PqiPVSXh3Ne7bq9C76r+Zwad/rmjadwdFS+k5o5pTLUrmuFLdqO7Cu6tx32FAP9z+9t5jaMyS1iuqteccWj5C+zEWepm9x9B+oc58SNnOlNwb7aFo0lnKrD1/Oy+MfS/UmQ8p2xMl9/9qnB2f82LPqeWDfR4F9EMiVfrH0CR852Sfp5H9AM3ibK0vVJuA+di2IGvwowj8KBLSjz78AKAR7Cjn+5Ksa1rbMHeWjx9tuN8AAAAAAMCbF4A3rJgwJQAA
   </data>
  </layer>
  <layer name="Top" width="68" height="35">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3OMQrAIAAEQb9vUkvq4EdjKdaBE5yBK67bUgAAAAAAADhRHbum3dmcuLb8J1Kxj3f5PVIBAPC/DxxQ61AwJQAA
+   H4sIAAAAAAAAC+3WSw6CMBAGYDiRj6Vh7Ul0pwdRFy58RTfGYNwiUVnpQr2YQ2KTQsrQkhIe+b9kEprRaSllguMAAAAAQBO93OzcksltmZzQ0fiNiYDqPSzXNHFk5r4wufQe32jsWbiPyOWfn6mholbfzc55TE7nf7bdqe615POxLlifW9dKynXpekQxzpmHezeF0PL5UDkz9YOCc/vS2RlQTCimObW4d1OIn0FY8n5wPa+MnMpTs0/GzyeqsJ9C/bwpPv/4OsX7nYrON0PdYT+SsB9JNvejh/0AaIQ9nfNDxlnncm0jepa45xldz6VYSLk29DdTm9R4V8kq6uOUGvuVrAIAAADAvh++ID0wMCUAAA==
   </data>
  </layer>
  <layer name="Collision" width="68" height="35" visible="0">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3QsQ3AMAwEMe2/k3dLfX0QGw4fuF7impklSZKko7tlPDoeHY+OR8ej49Hx6Hh0PDoeHY+OR/eWx47+9CsPHjy+Ndp9ywnx4CFJuqMHtmtxwTAlAAA=
+   H4sIAAAAAAAAC+2USw6AIAwFuf+duJtbMeVnoa04L5nVK4ITNKeUMgAAAACERop1V5uN5kOa0657u38EH7u63v7SOk8nO7vZRLgr2q71Xs9nRPPQO/vqbmT/1vxpPkbj+Z3Mfg8rOs2s9f2Int3+vh58lMFHGXyU8f4HW/v3Pi8+fHy0/Nw77/NaORnx8VdwgQ98AADAiVwPJg7vMCUAAA==
   </data>
  </layer>
  <layer name="Objects" width="68" height="35" visible="0">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAfBg26l/DMCUAAA==
+   H4sIAAAAAAAAC+3BAQEAAACCIP+vbkhAAQAAAAAAAAAAfBg26l/DMCUAAA==
   </data>
  </layer>
 </map>

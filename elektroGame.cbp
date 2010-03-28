@@ -78,6 +78,8 @@
 		<Unit filename="src\effectmanager.cpp" />
 		<Unit filename="src\effectmanager.h" />
 		<Unit filename="src\elektro\Diode.cpp" />
+		<Unit filename="src\elektro\ampermetre.cpp" />
+		<Unit filename="src\elektro\ampermetre.h" />
 		<Unit filename="src\elektro\battery.cpp" />
 		<Unit filename="src\elektro\battery.h" />
 		<Unit filename="src\elektro\besgram.cpp" />

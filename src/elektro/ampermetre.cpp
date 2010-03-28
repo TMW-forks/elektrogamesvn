@@ -41,6 +41,6 @@ void Ampermetre::setCurrent(float s)
 {
     mLabel->setCaption(toString(s));
     mLabel->adjustSize();
-    Component::setCurrent(s);
+    setCurrent(s);
 }
 

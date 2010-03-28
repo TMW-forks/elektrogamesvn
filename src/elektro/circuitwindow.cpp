@@ -2243,7 +2243,8 @@ CircuitWindow::circuitFromXML(std::string mDoc)
             add(tempComponent);
             tempComponent->setStatus(XML::getProperty(node, "status", PASIVE)); //herşey bittikten sonra statüyü değiştir
             if(tempComponent->getType() == SWITCH && tempComponent->getStatus()==PASIVE) c->active=false;
-
+            if(tempComponent->getType() == MOTOR || tempComponent->getType() == AMPERMETRE)
+               tempComponent->setStatus(ACTIVE);
             for (miNode = mvNode.begin(); miNode < mvNode.end(); miNode++)
                 (*miNode)->requestMoveToTop();
         }

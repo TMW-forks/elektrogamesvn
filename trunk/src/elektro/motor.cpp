@@ -10,7 +10,7 @@ Motor::Motor(gcn::ActionListener *listener, Node *n1, Node *n2):
     Component(listener, n1, n2)
 {
     setType(MOTOR);
-    setYariCap(19);
+    setYariCap(21);
     picture = 1;
 }
 

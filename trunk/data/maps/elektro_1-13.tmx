@@ -31,17 +31,17 @@
  </layer>
  <layer name="Fringe" width="66" height="36">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3Uyw7BQBiG4elFcg/2LETClp04brB03GiXuA12olyAa/A1aZOmRg/4dSrfk7ypTNN2MiOjFBERERFJqETKSxXVcvy+KevQRC3N+Aqt0Ub4+6avQzdylZJlHYaC83i1Dr+SZh1GfgM0FppHG3U041tkIyfluKnOCfcv/rWH+pr7O7RHh5TjEu7oiE6hsQmaolnMc8Fe/QsXXdEtNDZHC7SMeS7YK/qeIp0PdcF3m3o+eEzcC0muej4fPEl78c45Kfmfyoutsq9DQ2IiRFRoJUupsvX5byIiIiIiSQ9TIBpsICUAAA==
+   H4sIAAAAAAAAC+3UywqCUBAG4OND1ju0r0UEta1ddN1Uy66bdFm9Ru0i6wF6hn5BQcy8MnqS/4MfY0SPzMQoRUREREQSGoGUpYm0Sjxflz50kV5IfYfskYPw+br3YRi4SknTh6ngd/zqQ1GS9GHmZoLMhb6jjwxC6kfERKyEdV3dY+4/3OsIGYfcPyFn5JKwLuGNXJGbr7ZAlsgq4jlvVlVhI0/k5autkQ2yjXjOm1VVRM28KP+0H9qC79Z1Pzh0nIUkW33vB0fcLLLsScn/VF5Z94Op0vehk/EsIqqumqFU3cj/m4iIiIhI0gftR3K0ICUAAA==
   </data>
  </layer>
  <layer name="Top" width="66" height="36">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3WTQ7BQBgG4HaLA4gDiFNYSFhasCUIwg6xEy7g5wBs/O84DC7klcxCqkWY8Wn7PsmbjqnUN186E5ZFREREpFffYxw2I4+xhJr9OLdEVsj6x7VIqaIHZZc+/KOJ4eeXBPvwzvkwVRkjM4O11F36sEG2SNcxf/s8Rxaaftv0+XBCzk9yUd+reLwLB+SIDBzzg7t7/yzjk73+qSFSxBqbT9bZwL1CwPvwaztkb5k/H3ToGHy2H86HdMjf/bZaf15jH0y+U1Lc/ge80tNfhrhWyPcL0bey2EM5+/sxhVsEiSIx6UKExdU1IVqFvKS6pkSrICIiCqYrW6ZYISAlAAA=
+   H4sIAAAAAAAAC+3WTQ7BQBgG4NriAOIA4hQWEpYW1gRB2CF2wgX8HICN/52fs+BCXkkXUm01zPiqfZ/kzYxpw9cvnQnDICIiIlKr7zAPm5HDXEIt8rq2RFbI+se1SKmiB2WbPvjRRPP3lwT74OV8mJoZIzONtdRt+rBBtkjXsv74PEcWin5b9/lwQa4uuZn3VRzehQNyRAaW9cHTNT/L/sle/9QQOSFNl+ds4Fox4H34tR2yN/SfD25OHu/raKzhH86HTMjf/Tae/4yxoLAPOt8pKXb/A97pqS9DGa/ng1Ur5PuF6Fs57KF85Ps5hVsUiSFx6UKEJcwxKVqFvJQ5pkWrICIiCqY7lsWXFiAlAAA=
   </data>
  </layer>
  <layer name="Collision" width="66" height="36">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+2TQQrAIAwE813//4FeC7UaYpqkOgsDhQS6DtpEpAEAAADA9liS3TnCg8ZRducoD/IyO8mDJtmdo+5Db5bd80QPvczm2h3P4OH5vygPvQ4e5xjNst+Fp69RqnvQdJvtabLqsoIHy/xt35qq9303D1EusztW8bCa7DPiwc/Dfc/6/Qcikn1GPNQAB3jAAwDAN1zs7AuEICUAAA==
+   H4sIAAAAAAAAC+2TWwqAMAwEe93e/wL+ivYRaszGOgsDQgJuh7aWUioAAAAAbM9K1J0jPFgcqTtHeSid2Z88WKLuHHUfWjN1zz96aGU2t+54Bg/3/0W6uHbwOMdopn4Xnr5Gye7B0m22Z4mHR7WHlXlvfzVZ7/uOHiI8qjtm8fA06jPiwc/DeW/1+wtERH1GPOQAB3jAAwDAOxxHhppZICUAAA==
   </data>
  </layer>
  <layer name="Objects" width="66" height="36">

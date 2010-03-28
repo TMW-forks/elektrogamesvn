@@ -5103,7 +5103,7 @@
 		elektro-type="battery"
 		elektro-value="3"/>
 	<item id="1134"
-        image="/elektrik/item-pil15.png"
+        image="/elektrik/item-pil-4v.png"
         name="Pil 4 V"
         description="Pil 4 V."
         effect=""
@@ -5113,7 +5113,7 @@
 		elektro-type="battery"
 		elektro-value="4"/>
 	<item id="1135"
-        image="/elektrik/item-pil15.png"
+        image="/elektrik/item-pil-5v.png"
         name="Pil 5 V"
         description="Pil 5 V."
         effect=""
@@ -5123,7 +5123,7 @@
 		elektro-type="battery"
 		elektro-value="5"/>
 	<item id="1136"
-        image="/elektrik/item-pil15.png"
+        image="/elektrik/item-pil-10v.png"
         name="Pil 10 V"
         description="Pil 10 V."
         effect=""
@@ -5133,7 +5133,7 @@
 		elektro-type="battery"
 		elektro-value="10"/>
 	<item id="1137"
-        image="/elektrik/item-pil15.png"
+        image="/elektrik/item-pil-20v.png"
         name="Pil 20 V"
         description="Pil 20 V."
         effect=""

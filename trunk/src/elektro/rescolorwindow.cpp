@@ -131,20 +131,20 @@ ResColorWindow::ResColorWindow():
     int w=80,h=135;
 
     mModeList1->setDimension(gcn::Rectangle(0, 0, w, h));
-    scrollArea1->setDimension(gcn::Rectangle(55, 175, w, h));
+    scrollArea1->setDimension(gcn::Rectangle(55, 180, w, h));
 
     mModeList2->setDimension(gcn::Rectangle(0, 0, w, h));
-    scrollArea2->setDimension(gcn::Rectangle(165, 175, w, h));
+    scrollArea2->setDimension(gcn::Rectangle(165, 180, w, h));
 
     mModeList3->setDimension(gcn::Rectangle(0, 0, w, h));
-    scrollArea3->setDimension(gcn::Rectangle(255, 175, w, h));
+    scrollArea3->setDimension(gcn::Rectangle(255, 180, w, h));
 
     mModeList4->setDimension(gcn::Rectangle(0, 0, w, 50));
-    scrollArea4->setDimension(gcn::Rectangle(345, 175, w, 50));
+    scrollArea4->setDimension(gcn::Rectangle(345, 180, w, 50));
 
     mValueLabel = new gcn::Label("0 Ω ± %10");
     mValueLabel->setFont(font_bas_2_20);
-    mValueLabel->setForegroundColor(gcn::Color(150,120,70));
+    mValueLabel->setForegroundColor(gcn::Color(49,6,239));
     mValueLabel->setPosition(200,30);
     mValueLabel->adjustSize();
 

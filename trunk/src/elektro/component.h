@@ -26,7 +26,9 @@ enum Type {
      BATTERY,
      DIODE,
      LAMP,
-     SWITCH};
+     SWITCH,
+     MOTOR,
+     AMPERMETRE};
 /**
  * Componentin bulunabileceði durumlar
  */

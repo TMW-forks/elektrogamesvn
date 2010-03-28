@@ -453,7 +453,9 @@ void Component::mouseEntered(gcn::MouseEvent &event)
      "Pil",
      "Diyot",
      "Lamba",
-     "Anahtar"};
+     "Anahtar",
+     "Motor",
+     "Ampermetre"};
 
     Uint8* keys;
     keys = SDL_GetKeyState(NULL);

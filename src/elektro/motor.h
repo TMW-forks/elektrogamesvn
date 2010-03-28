@@ -15,6 +15,7 @@ class Motor : public Component
         Motor(gcn::ActionListener *listener, Node *n1, Node *n2);
         virtual ~Motor();
         void draw(gcn::Graphics *graphics);
+        void logic();
     protected:
     private:
         int picture;

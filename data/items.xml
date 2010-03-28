@@ -5141,7 +5141,27 @@
         weight="1"
         max-per-slot="100"
 		elektro-type="battery"
-		elektro-value="20"/>
+		elektro-value="20"/>	
+	<item id="1138"
+        image="/elektrik/item-motor-1.png"
+        name="Motor"
+        description="Pervaneye takýlmýþ motor."
+        effect=""
+        type="usable"
+        weight="1"
+        max-per-slot="100"
+		elektro-type="motor"
+		elektro-value="5"/>	
+	<item id="1139"
+        image="/elektrik/item-ampermetre.png"
+        name="Ampermetre"
+        description="Akýmölçer."
+        effect=""
+        type="usable"
+        weight="1"
+        max-per-slot="100"
+		elektro-type="ampermetre"
+		elektro-value="1"/>
 <!--   ###############################################################  -->	
 <!--                         BASİT MAKİNA ELEMANLARI                 -->
 <!--   ###############################################################  -->	

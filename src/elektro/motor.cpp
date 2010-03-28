@@ -2,6 +2,7 @@
 #include "circuitwindow.h"
 #include "game.h"
 #include <sstream>
+#include "log.h"
 
 extern CircuitWindow *circuitWindow;
 
@@ -32,11 +33,10 @@ void Motor::draw(gcn::Graphics *graphics)
     g->drawImage(res->get(mAngel),4,4);
 
     Component::draw(graphics);
-    if (tick_time %10 == 0 && mCurrent != 0) picture++;
-    if (picture>3) picture = 1;
 }
 
 void Motor::logic()
 {
-//    if (mCurrent != 0)
+    if (tick_time %4 == 0 && mCurrent != 0) picture++;
+    if (picture>3) picture = 1;
 }

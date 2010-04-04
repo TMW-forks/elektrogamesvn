@@ -12,7 +12,7 @@ Ampermetre::Ampermetre(gcn::ActionListener *listener, Node *n1, Node *n2):
 {
     setType(AMPERMETRE);
     setYariCap(20);
-    mLabel = new gcn::Label("0.0");
+    mLabel = new gcn::Label("aa0.0");
     mLabel->setPosition(7,10);
     mLabel->setForegroundColor(gcn::Color(00,90,220));
     mLabel->setFont(font_txt_1_12);
@@ -39,7 +39,9 @@ void Ampermetre::draw(gcn::Graphics *graphics)
 
 void Ampermetre::setCurrent(float s)
 {
-    mLabel->setCaption(toString(s));
+    std::stringstream zz;
+    zz << Round(s,2);
+    mLabel->setCaption("x");
     mLabel->adjustSize();
     setCurrent(s);
 }

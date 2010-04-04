@@ -24,6 +24,7 @@
 #include <algorithm>
 #include <cstdarg>
 #include <cstdio>
+#include <iomanip>
 
 std::string &trim(std::string &str)
 {
@@ -104,4 +105,17 @@ std::string &removeBadChars(std::string &str)
     } while (pos != std::string::npos);
 
     return str;
+}
+
+
+double Round(const double value, const int digits)
+{
+   std::stringstream stream;
+   // Store the number with required no. of decimal
+   // places to stream
+   stream << std::setprecision(digits) << value;
+   // Convert stream to number
+   double roundedValue = 0.0;
+   stream >> roundedValue;
+   return roundedValue;
 }

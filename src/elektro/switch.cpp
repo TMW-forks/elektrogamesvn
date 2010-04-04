@@ -40,6 +40,7 @@ Switch::mousePressed(gcn::MouseEvent &event)
     {
         setStatus(getStatus() == ACTIVE ? PASIVE : ACTIVE);
         dbl_click = false;
+        circuitWindow->setRefresh(true);
     }
     Component::mousePressed(event);
 }

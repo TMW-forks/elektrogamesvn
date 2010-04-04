@@ -30,6 +30,7 @@
 #include "../npc.h"
 #include "gsl/gsl_linalg.h"
 #include "gsl/gsl_vector.h"
+#include "gsl/gsl_math.h"
 
 #include "../localplayer.h"
 #include "../sound.h"
@@ -252,25 +253,16 @@ CircuitWindow::CircuitWindow():
 
     solveButton = new BitButton("com_close_btn.png", "Degerlendir", "solve",this);
     solveButton->setPosition(10,140);
-    //add(solveButton);
+    add(solveButton);
 
     clearButton = new BitButton("com_rotate_btn.png", "Degerlendir", "clear",this);
     clearButton->setPosition(10,100);
-    //add(clearButton);
+    add(clearButton);
 
     mHint = new gcn::Label("");
     mHint->setPosition(10,10);
     mHint->adjustSize();
     add(mHint);
-
-//    gcn::Label *mHint1 = new gcn::Label("");
-//    mHint1->setPosition(100,10);
-//    mHint1->setFont(verdana14);
-//    mHint1->setBaseColor(gcn::Color(255,0,0));
-//    mHint1->setForegroundColor(gcn::Color(50,100,150));
-//    mHint1->setBackgroundColor(gcn::Color(255,255,255));
-//    mHint1->adjustSize();
-//    add(mHint1);
 
 //******
     mSb = new BrowserBox();
@@ -280,11 +272,11 @@ CircuitWindow::CircuitWindow():
     mSs = new ScrollArea(mSb);
     mSs->setHorizontalScrollPolicy(gcn::ScrollArea::SHOW_ALWAYS);
     mSs->setVerticalScrollPolicy(gcn::ScrollArea::SHOW_ALWAYS);
-    mSs->setVisible(false);
-    mSs->setWidth(250);
-    mSs->setHeight(200);
-    mSs->setY(getHeight()- mSs->getHeight()-10);
-    mSs->setX(getWidth()-mSs->getWidth()-10);
+    mSs->setVisible(true);
+    mSs->setWidth(350);
+    mSs->setHeight(100);
+    mSs->setY(getHeight()- mSs->getHeight());
+    mSs->setX(getWidth()-mSs->getWidth());
     add(mSs);
 //***********/
 
@@ -544,10 +536,10 @@ Window::draw(graphics);
 //    graphics->drawRectangle(gcn::Rectangle(20,20,getWidth()-40,getHeight()-40));
     Graphics *g = static_cast<Graphics*>(graphics);
 
-    g->drawRescaledImage(mBackgroundPattern,
-                         0,0,120,20,
-                         mBackgroundPattern->getWidth(),mBackgroundPattern->getHeight(),
-                         getWidth()-130,getHeight()-35,false);
+//    g->drawRescaledImage(mBackgroundPattern,
+//                         0,0,120,20,
+//                         mBackgroundPattern->getWidth(),mBackgroundPattern->getHeight(),
+//                         getWidth()-130,getHeight()-35,false);
 
     g->drawImage(cirToolBar,10,(getHeight()-cirToolBar->getHeight())/2);
 
@@ -991,6 +983,22 @@ CircuitWindow::hasDoubleNode(Component *comp,TmvInt mesh)
     return (var1&&var2);
 }
 
+bool
+CircuitWindow::isNodeInMesh(Node *n,TmvInt mesh)
+{
+    if (!n) return false;
+    bool var1 =false;
+    for (TmiInt i = mesh.begin(); i != mesh.end(); i++)
+    {
+        if (n->getId() == *i)
+        {
+            var1 = true;
+            break;
+        }
+    }
+    return var1;
+}
+
 void
 CircuitWindow::makeMatris()
 {
@@ -1034,10 +1042,6 @@ CircuitWindow::makeMatris()
                         if(!isExistComponent(own, batteryComp)
                             && hasDoubleNode(own, nodes))
                         {
-                            Node *nii = own->node1;
-                            Node *nis = own->node2;
-                            int yon = elemanYonKontrol(dugsirasi,nii->getId() ,nis->getId() );
-                            own->setYon(yon);
                             batteryComp.push_back(own);
                         }
                     }
@@ -1129,9 +1133,6 @@ CircuitWindow::makeMatris()
     }
 
     double pil[batteryValue.size()];
-    #ifdef DEBUG
-         mSb->addRow(" batteryValue SIZE-----: "+toString(batteryValue.size()));
-    #endif
 
     for (int i = 0; i < batteryValue.size(); i++)
     {
@@ -1166,28 +1167,57 @@ CircuitWindow::makeMatris()
         (*cit)->setCurrent(0.0);
 
 //matris'teki akım değerlerini componentlere aktar
+/*
 int i = 0;
         for(miMesh=mvMesh.begin(); miMesh != mvMesh.end(); miMesh++)
         {
             std::stringstream b;
             for(TmiInt uf= miMesh->second.begin(); uf != miMesh->second.end(); uf++)
             {
-                Node *ndc = findNode(*uf);
-                ndc->setCurrent(gsl_vector_get (x, i));
-                Component *cmc = ndc->getOwner();
-                if (cmc && hasDoubleNode(cmc, miMesh->second))
-                    cmc->setCurrent(cmc->getCurrent() + gsl_vector_get (x, i));
-                b<<*uf<<" : "<<gsl_vector_get (x, i) <<" *";
+                if(gsl_isinf(gsl_vector_get (x, i)) != 0)
+                {
+                    Node *ndc = findNode(*uf);
+                    ndc->setCurrent(0);
+                    Component *cmc = ndc->getOwner();
+                    if (cmc && hasDoubleNode(cmc, miMesh->second))
+                        cmc->setCurrent(0);
+                }
+                else
+                {
+                    Node *ndc = findNode(*uf);
+                    ndc->setCurrent(gsl_vector_get (x, i));
+                    Component *cmc = ndc->getOwner();
+                    if (cmc && hasDoubleNode(cmc, miMesh->second))
+                        cmc->setCurrent(cmc->getCurrent() + gsl_vector_get (x, i));
+                    b<<*uf<<" : "<<gsl_vector_get (x, i) <<" *";
+                }
+
             }
             #ifdef DEBUG
                 mSb->addRow(b.str());
             #endif
             i++;
         }
+*/
 
-// Bütün comp'ların akımını sıfırla
-    for(TmiComponent cit = mvComponent.begin(); cit != mvComponent.end(); cit++)
-        (*cit)->setCurrent((*cit)->getCurrent()/2.0);
+// yeni yöntem : her nodun ait olduğu ilmek'leri bul. ilmek akımlarını topla.
+    for(TmiNode nit = mvNode.begin(); nit != mvNode.end(); nit++)
+    {
+        int i = 0;
+        for(miMesh=mvMesh.begin(); miMesh != mvMesh.end(); miMesh++)
+        {
+            if(isNodeInMesh(*nit, miMesh->second))
+            {
+                (*nit)->setCurrent((*nit)->getCurrent()+gsl_vector_get (x, i) );
+            }
+            i++;
+        }
+    }
+
+
+// Bütün comp'ların akımını yarıla
+//    for(TmiComponent cit = mvComponent.begin(); cit != mvComponent.end(); cit++)
+//        (*cit)->setCurrent((*cit)->getCurrent()/2.0);
 
     // lambaların parlaklıklarını kontrol et ve yak
     turnonLamps();
@@ -1204,6 +1234,8 @@ CircuitWindow::calculateBatteryValue()
         matIt++)
     {
         double pildeger = 0;
+        int i = 0;
+
         TmvComponentMatris matSat = matIt->second;
         for(TmiComponentMatris satIt= matSat.begin();
             satIt != matSat.end();
@@ -1213,7 +1245,13 @@ CircuitWindow::calculateBatteryValue()
             for (TmiComponent matEl = temp.begin();
                   matEl != temp.end(); matEl++)
             {
-                pildeger += (*matEl)->getValue() * (*matEl)->getYon()* -1;
+                Node *nii = (*matEl)->node1;
+                Node *nis = (*matEl)->node2;
+                int yon = elemanYonKontrol(i,nii->getId() ,nis->getId() );
+
+
+                pildeger += (*matEl)->getValue() * yon;
+                mSb->addRow("    V : "+toString((*matEl)->getValue())+"    Yön : "+toString((*matEl)->getYon()));
             }
         }
         turnonLamps();
@@ -1241,9 +1279,11 @@ CircuitWindow::turnonLamps()
         }
     }
     float interval = (maxCurrent - minCurrent) / 3.0;
-    mSb->addRow("minimum :"+toString(minCurrent));
-    mSb->addRow("maximum :"+toString(maxCurrent));
-    mSb->addRow("interval:"+toString(interval));
+    #ifdef DEBUG
+//    mSb->addRow("minimum :"+toString(minCurrent));
+//    mSb->addRow("maximum :"+toString(maxCurrent));
+//    mSb->addRow("interval:"+toString(interval));
+    #endif
     for (miComponent = mvComponent.begin(); miComponent != mvComponent.end(); miComponent++)
     {
         // gerekirse sadece lambalar arası karşılaştırma yapılacak
@@ -1392,14 +1432,23 @@ CircuitWindow::matrisComponentXY(int satir, int sutun)
 int
 CircuitWindow::elemanYonKontrol(int satir, int node1, int node2)
 {
+    std::stringstream a;
     TmvInt sat= mvMesh[satir];
+    for (TmiInt i = sat.begin(); i != sat.end(); i++)
+        a << *i;
+        mSb->addRow(a.str().c_str());
     TmiInt it;
     int dizi[] = {node1,node2};
     it = std::search(sat.begin(), sat.end(),dizi, dizi+2);
+
+    if (it != sat.end())
+        mSb->addRow(" eleman yön : 1");
     if (it != sat.end())
         return 1;
     int dizi2[] = {node2,node1};
-    it = std::search(sat.begin(), sat.end(),dizi2, dizi2+2);
+    it = std::search(sat.begin(), sat.end(),dizi2, dizi+2);
+    if (it != sat.end())
+        mSb->addRow(" eleman yön : -1");
     if (it != sat.end())
         return -1;
     return 0;
@@ -1543,11 +1592,11 @@ CircuitWindow::devreAnaliz()
         }
         addLoopToMesh();
 //        showConnectedNodeId();
-    //    showNodeLoop();
-    //    showMesh();
-        winnowMesh();
-//        mSb->addRow("---   ----");
+//        showNodeLoop();
 //        showMesh();
+        winnowMesh();
+        mSb->addRow("---   ----");
+        showMesh();
         makeMatris();
         logger->log("************ analiz yapıldı ****************");
     }

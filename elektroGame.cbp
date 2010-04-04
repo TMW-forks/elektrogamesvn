@@ -19,6 +19,7 @@
 					<Add option="-DNOGDI" />
 					<Add option="-DENABLE_NLS" />
 					<Add option="-DEATHENA_SUPPORT" />
+					<Add option="-DDEBUG" />
 					<Add directory="c:\Program Files\CodeBlocks\MinGW\include" />
 					<Add directory="src" />
 					<Add directory="libraries\include" />

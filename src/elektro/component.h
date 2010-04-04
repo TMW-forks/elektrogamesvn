@@ -215,7 +215,7 @@ class Component : public gcn::Window,
 
         float getCurrent() {return mCurrent; }
 
-        void setCurrent(float s) {mCurrent = s; }
+        void setCurrent(float s);
 
 
         /**

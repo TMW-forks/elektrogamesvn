@@ -92,4 +92,7 @@ std::string strprintf(char const *, ...)
  */
 std::string &removeBadChars(std::string &str);
 
+double Round(const double value, const int digits);
+
+
 #endif // UTILS_STRINGUTILS_H

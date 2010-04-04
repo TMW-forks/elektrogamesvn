@@ -479,7 +479,7 @@ void Component::mouseEntered(gcn::MouseEvent &event)
     circuitWindow->toolCaption->setX(55-circuitWindow->toolCaption->getWidth()/2);
     circuitWindow->toolValue->setCaption(toString(mValue)+cap);
     circuitWindow->toolValue->adjustSize();
-    circuitWindow->mHint->setCaption("comp: "+toString(mCurrent)+"A");
+    circuitWindow->mHint->setCaption("comp: "+toString(mCurrent)+"A"+ "    Yön:"+toString(getYon()));
     circuitWindow->mHint->adjustSize();
 }
 
@@ -491,3 +491,8 @@ void Component::mouseExited(gcn::MouseEvent &event)
  void Component::action(const gcn::ActionEvent &event)
  {
  }
+
+void Component::setCurrent(float s)
+{
+    mCurrent = s;
+}

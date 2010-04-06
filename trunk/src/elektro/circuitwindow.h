@@ -50,7 +50,7 @@ class CircuitWindow : public Window,
          * Pil matrisini yaz
 
          */
-         void showBatteryMatris();
+         void yaz_PilCompMatris();
 
         /**
          * seçili olan componentleri býrak
@@ -304,7 +304,7 @@ class CircuitWindow : public Window,
         TmiIntMatris miMesh;
 
         Tmatris resistanceCompDeter;            // dirençlerden oluþan en soldaki matris için
-        Tmatris batteryCompDeter;              // pillerden oluþan en sağdaki matris için
+        Tmatris batteryCompDeter;              // pillerden oluşan en sağdaki matris için
         TmvFloat rowResistanceValue;
         TmvFloat batteryValue;
         TmvFloatMatris resistanceMatris;
@@ -380,7 +380,7 @@ class CircuitWindow : public Window,
     /**
      * komþu nodelarýn listesini metin kutusuna yazar --debug
      */
-    void showConnectedNodeId();
+    void yaz_ConnectedNodeId();
 
     /**
      * çevrimlerin listesini metin kutusuna yazar --debug
@@ -420,7 +420,7 @@ class CircuitWindow : public Window,
     /**
      * Kirchhoff için oluþturulan matrisi textbox içine yaz
      */
-    void matrisYaz();
+    void yaz_DirencCompMatris();
 
     /**
      * Matrisin satýr sütun vectorunu bul köþegen haricindeki eleman listesini oluþtur
@@ -430,7 +430,7 @@ class CircuitWindow : public Window,
     /**
      * Dirençlerin matrisini göster --
      */
-    void direncMatrisYaz();
+    void yaz_DirencDegerMatris();
 
     /**
      * resistanceCompDeter map'inin içinden satýr ve sütuna göre TmvComponent döndürecek

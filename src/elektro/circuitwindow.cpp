@@ -778,54 +778,6 @@ CircuitWindow::getConnectedNodeId(int target, int prev)
 }
 
 void
-CircuitWindow::showConnectedNodeId()
-{
-    mSb->addRow("~~~~~~ Node'un komşuları ~~~~~~");
-    for(miConnectedNodeId = mvConnectedNodeId.begin(); miConnectedNodeId != mvConnectedNodeId.end(); miConnectedNodeId++)
-    {
-        std::stringstream b;
-        b<<miConnectedNodeId->first<<" - ";
-        for(TmiInt uf= miConnectedNodeId->second.begin(); uf != miConnectedNodeId->second.end(); uf++)
-        {
-            b<<*uf;
-            if (uf+1 != miConnectedNodeId->second.end())
-                b <<" * ";
-        }
-        mSb->addRow(b.str());
-    }
-}
-
-void
-CircuitWindow::showNodeLoop()
-{
-    mSb->addRow("~~~~cevrim~~~~~~");
-
-    for(miNodeLoop=mvNodeLoop.begin(); miNodeLoop != mvNodeLoop.end(); miNodeLoop++)
-    {
-        std::stringstream b;
-        b<<miNodeLoop->first<<" - ";
-        for(TmiInt uf= miNodeLoop->second.begin(); uf != miNodeLoop->second.end(); uf++)
-            b<<*uf <<" *";
-    mSb->addRow(b.str());
-    }
-}
-
-void
-CircuitWindow::showMesh()
-{
-    mSb->addRow("##3~~~~dugum~~~~~~");
-
-    for(miMesh=mvMesh.begin(); miMesh != mvMesh.end(); miMesh++)
-    {
-        std::stringstream b;
-        b<<"##3"<<miMesh->first<<" - ";
-        for(TmiInt uf= miMesh->second.begin(); uf != miMesh->second.end(); uf++)
-            b<<*uf <<" *";
-    mSb->addRow(b.str());
-    }
-}
-
-void
 CircuitWindow::winnowMesh()
 {
     logger->log("aynı ilmekleri temizle");
@@ -1079,7 +1031,6 @@ CircuitWindow::makeMatris()
         }
 
         direncYonBelirle();
-        matrisYaz();
         resistanceMatris.clear();
         int str1 = 0, stn1 = 0;
         for( TmatrisIter a = resistanceCompDeter.begin(); a != resistanceCompDeter.end(); a++)
@@ -1108,13 +1059,8 @@ CircuitWindow::makeMatris()
             resistanceMatris.push_back(rowResistanceValue);
             str1++;
         }
-        direncMatrisYaz();
     }
     calculateBatteryValue();
-
-    #ifdef DEBUG
-    showBatteryMatris();
-    #endif
 
     TmvFloat gslDirenc;
 
@@ -1138,6 +1084,16 @@ CircuitWindow::makeMatris()
     {
         pil[i] = batteryValue[i]*1.0;
     }
+#ifdef DEBUG
+//Componetlerin matrisini yaz
+yaz_DirencCompMatris();
+yaz_PilCompMatris();
+
+//componentlerin değerini yaz
+yaz_DirencDegerMatris();
+
+#endif
+
 
     double akim[batteryValue.size()];
     // gsl kullanarak oluşan matrisi çöz
@@ -1153,10 +1109,10 @@ CircuitWindow::makeMatris()
     // stdout.txt dosyasına yazdırmak gerekirse
     //gsl_vector_fprintf (stdout, x, "%g");
 #ifdef DEBUG
-    for(int i=0; i<resistanceMatris.size(); i++)
-    {
-        mSb->addRow("akım =" +toString(gsl_vector_get (x, i)));
-    }
+//    for(int i=0; i<resistanceMatris.size(); i++)
+//    {
+//        mSb->addRow("akım =" +toString(gsl_vector_get (x, i)));
+//    }
 #endif
 
 // Bütün node'ların akımını sıfırla
@@ -1249,15 +1205,13 @@ CircuitWindow::calculateBatteryValue()
                 Node *nis = (*matEl)->node2;
                 int yon = elemanYonKontrol(i,nii->getId() ,nis->getId() );
 
-
                 pildeger += (*matEl)->getValue() * yon;
-                mSb->addRow("    V : "+toString((*matEl)->getValue())+"    Yön : "+toString((*matEl)->getYon()));
+                mSb->addRow("    V : "+toString((*matEl)->getValue())+"    Yön : "+toString(yon));
             }
         }
-        turnonLamps();
         batteryValue.push_back(pildeger);
         #ifdef DEBUG
-        mSb->addRow("ilmek pil : "+toString(pildeger));
+//        mSb->addRow("ilmek pil : "+toString(pildeger));
         #endif
     }
 }
@@ -1469,8 +1423,9 @@ CircuitWindow::dugumListResort()
 }
 
 void
-CircuitWindow::direncMatrisYaz()
+CircuitWindow::yaz_DirencDegerMatris()
 {
+    mSb->addRow("##1~~~~~~Direnç Değer Matris~~~~~~");
     for( TmiFloatMatris a = resistanceMatris.begin(); a!= resistanceMatris.end(); a++)
     {
         std::stringstream yaz;
@@ -1525,60 +1480,6 @@ CircuitWindow::matrisElemanBul(int satir)
 }
 
 void
-CircuitWindow::matrisYaz()
-{
-    mSb->addRow("##1~~~~~~matris~~~~~~");
-    for(TmatrisIter matIt = resistanceCompDeter.begin(); matIt != resistanceCompDeter.end(); matIt++)
-    {
-        std::stringstream b;
-        b<<matIt->first<<" | ";
-        TmvComponentMatris matSat = matIt->second;
-        for(TmiComponentMatris satIt= matSat.begin(); satIt != matSat.end(); satIt++)
-        {
-            TmvComponent temp = *satIt;
-            for (std::vector< Component* >::iterator matEl = temp.begin();
-                  matEl != temp.end(); matEl++)
-            {
-                b<<(*matEl)->getId();
-                if (matEl+1 != temp.end()) b<<" +";
-            }
-            if (satIt+1 !=matSat.end()) b<<"   -   ";
-        }
-        b<<" |";
-    mSb->addRow(b.str());
-    }
-}
-
-void
-CircuitWindow::showBatteryMatris()
-{
-    mSb->addRow("##1~~~~~~pil matris~~~~~~");
-    for(TmatrisIter matIt = batteryCompDeter.begin();
-        matIt != batteryCompDeter.end();
-        matIt++)
-    {
-        std::stringstream b;
-        b<<matIt->first<<" | ";
-        TmvComponentMatris matSat = matIt->second;
-        for(TmiComponentMatris satIt= matSat.begin();
-            satIt != matSat.end();
-            satIt++)
-        {
-            TmvComponent temp = *satIt;
-            for (TmiComponent matEl = temp.begin();
-                  matEl != temp.end(); matEl++)
-            {
-                b<<(*matEl)->getId();
-                if (matEl+1 != temp.end()) b<<" +";
-            }
-            if (satIt+1 !=matSat.end()) b<<"   -   ";
-        }
-        b<<" |";
-        mSb->addRow(b.str());
-    }
-}
-
-void
 CircuitWindow::devreAnaliz()
 {
     if (isVisible())
@@ -1591,14 +1492,13 @@ CircuitWindow::devreAnaliz()
             mvNodeLoop[mvNodeLoop.size()].push_back((*nn)->getId());
         }
         addLoopToMesh();
-//        showConnectedNodeId();
+//        yaz_ConnectedNodeId();
 //        showNodeLoop();
 //        showMesh();
         winnowMesh();
         mSb->addRow("---   ----");
         showMesh();
         makeMatris();
-        logger->log("************ analiz yapıldı ****************");
     }
 }
 
@@ -1624,7 +1524,6 @@ void CircuitWindow::trashMeshMem()
      }
     mTeller.clear();
 
-    logger->log("temizlik tamam");
 }
 
 void CircuitWindow::deleteWidgets()
@@ -2561,4 +2460,106 @@ CircuitWindow::sendUsedItem ()
         Net::getInventoryHandler()->useItem(*mIterUsedItem);
     }
     mUsedItem.clear();
+}
+
+void
+CircuitWindow::yaz_DirencCompMatris()
+{
+    mSb->addRow("##1~~~~~~Direnç Component Matris~~~~~~");
+    for(TmatrisIter matIt = resistanceCompDeter.begin(); matIt != resistanceCompDeter.end(); matIt++)
+    {
+        std::stringstream b;
+        b<<matIt->first<<" | ";
+        TmvComponentMatris matSat = matIt->second;
+        for(TmiComponentMatris satIt= matSat.begin(); satIt != matSat.end(); satIt++)
+        {
+            TmvComponent temp = *satIt;
+            for (std::vector< Component* >::iterator matEl = temp.begin();
+                  matEl != temp.end(); matEl++)
+            {
+                b<<(*matEl)->getId();
+                if (matEl+1 != temp.end()) b<<" +";
+            }
+            if (satIt+1 !=matSat.end()) b<<"   -   ";
+        }
+        b<<" |";
+    mSb->addRow(b.str());
+    }
+}
+
+void
+CircuitWindow::yaz_PilCompMatris()
+{
+    mSb->addRow("##1~~~~~~Pil Component Matris~~~~~~");
+    for(TmatrisIter matIt = batteryCompDeter.begin();
+        matIt != batteryCompDeter.end();
+        matIt++)
+    {
+        std::stringstream b;
+        b<<matIt->first<<" | ";
+        TmvComponentMatris matSat = matIt->second;
+        for(TmiComponentMatris satIt= matSat.begin();
+            satIt != matSat.end();
+            satIt++)
+        {
+            TmvComponent temp = *satIt;
+            for (TmiComponent matEl = temp.begin();
+                  matEl != temp.end(); matEl++)
+            {
+                b<<(*matEl)->getId();
+                if (matEl+1 != temp.end()) b<<" +";
+            }
+            if (satIt+1 !=matSat.end()) b<<"   -   ";
+        }
+        b<<" |";
+        mSb->addRow(b.str());
+    }
+}
+
+void
+CircuitWindow::yaz_ConnectedNodeId()
+{
+    mSb->addRow("~~~~~~ Node'un komşuları ~~~~~~");
+    for(miConnectedNodeId = mvConnectedNodeId.begin(); miConnectedNodeId != mvConnectedNodeId.end(); miConnectedNodeId++)
+    {
+        std::stringstream b;
+        b<<miConnectedNodeId->first<<" - ";
+        for(TmiInt uf= miConnectedNodeId->second.begin(); uf != miConnectedNodeId->second.end(); uf++)
+        {
+            b<<*uf;
+            if (uf+1 != miConnectedNodeId->second.end())
+                b <<" * ";
+        }
+        mSb->addRow(b.str());
+    }
+}
+
+void
+CircuitWindow::showNodeLoop()
+{
+    mSb->addRow("~~~~cevrim~~~~~~");
+
+    for(miNodeLoop=mvNodeLoop.begin(); miNodeLoop != mvNodeLoop.end(); miNodeLoop++)
+    {
+        std::stringstream b;
+        b<<miNodeLoop->first<<" - ";
+        for(TmiInt uf= miNodeLoop->second.begin(); uf != miNodeLoop->second.end(); uf++)
+            b<<*uf <<" *";
+    mSb->addRow(b.str());
+    }
+}
+
+void
+CircuitWindow::showMesh()
+{
+    mSb->addRow("##3~~~~dugum~~~~~~");
+
+    for(miMesh=mvMesh.begin(); miMesh != mvMesh.end(); miMesh++)
+    {
+        std::stringstream b;
+        b<<"##3"<<miMesh->first<<" - ";
+        for(TmiInt uf= miMesh->second.begin(); uf != miMesh->second.end(); uf++)
+            b<<*uf <<" *";
+    mSb->addRow(b.str());
+    }
 }

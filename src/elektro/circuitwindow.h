@@ -433,6 +433,11 @@ class CircuitWindow : public Window,
     void yaz_DirencDegerMatris();
 
     /**
+     * Pillerin matrisini göster --
+     */
+    void yaz_PilDegerMatris();
+
+    /**
      * resistanceCompDeter map'inin içinden satýr ve sütuna göre TmvComponent döndürecek
      */
      TmvComponent matrisComponentXY(int satir, int sutun);

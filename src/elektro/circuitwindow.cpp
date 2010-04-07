@@ -965,9 +965,6 @@ CircuitWindow::makeMatris()
     }
     else
     {
-        #ifdef DEBUG
-        mSb->addRow("Düğüm bulundu ve çözülecek");
-        #endif
         int dugsirasi = 0;
 
         for (miMesh = mvMesh.begin();
@@ -1049,8 +1046,6 @@ CircuitWindow::makeMatris()
                 }
                 if (str1 != stn1)
                 {
-//    mSb->addRow(" >> eşit değil>>> str1: " +toString(str1)+ " :stn1 "+toString(stn1));
-
                     deger *= ara;
                 }
                 rowResistanceValue.push_back(deger);
@@ -1085,13 +1080,13 @@ CircuitWindow::makeMatris()
         pil[i] = batteryValue[i]*1.0;
     }
 #ifdef DEBUG
-//Componetlerin matrisini yaz
-yaz_DirencCompMatris();
-yaz_PilCompMatris();
+    //Componetlerin matrisini yaz
+    yaz_DirencCompMatris();
+    yaz_PilCompMatris();
 
-//componentlerin değerini yaz
-yaz_DirencDegerMatris();
-
+    //componentlerin değerini yaz
+    yaz_DirencDegerMatris();
+    yaz_PilDegerMatris();
 #endif
 
 
@@ -1109,10 +1104,10 @@ yaz_DirencDegerMatris();
     // stdout.txt dosyasına yazdırmak gerekirse
     //gsl_vector_fprintf (stdout, x, "%g");
 #ifdef DEBUG
-//    for(int i=0; i<resistanceMatris.size(); i++)
-//    {
-//        mSb->addRow("akım =" +toString(gsl_vector_get (x, i)));
-//    }
+    for(int i=0; i<resistanceMatris.size(); i++)
+    {
+        mSb->addRow("akım "+toString(i)+" = " +toString(gsl_vector_get (x, i)));
+    }
 #endif
 
 // Bütün node'ların akımını sıfırla
@@ -1123,38 +1118,38 @@ yaz_DirencDegerMatris();
         (*cit)->setCurrent(0.0);
 
 //matris'teki akım değerlerini componentlere aktar
-/*
-int i = 0;
-        for(miMesh=mvMesh.begin(); miMesh != mvMesh.end(); miMesh++)
-        {
-            std::stringstream b;
-            for(TmiInt uf= miMesh->second.begin(); uf != miMesh->second.end(); uf++)
-            {
-                if(gsl_isinf(gsl_vector_get (x, i)) != 0)
-                {
-                    Node *ndc = findNode(*uf);
-                    ndc->setCurrent(0);
-                    Component *cmc = ndc->getOwner();
-                    if (cmc && hasDoubleNode(cmc, miMesh->second))
-                        cmc->setCurrent(0);
-                }
-                else
-                {
-                    Node *ndc = findNode(*uf);
-                    ndc->setCurrent(gsl_vector_get (x, i));
-                    Component *cmc = ndc->getOwner();
-                    if (cmc && hasDoubleNode(cmc, miMesh->second))
-                        cmc->setCurrent(cmc->getCurrent() + gsl_vector_get (x, i));
-                    b<<*uf<<" : "<<gsl_vector_get (x, i) <<" *";
-                }
 
-            }
-            #ifdef DEBUG
-                mSb->addRow(b.str());
-            #endif
-            i++;
-        }
-*/
+//int i = 0;
+//        for(miMesh=mvMesh.begin(); miMesh != mvMesh.end(); miMesh++)
+//        {
+//            std::stringstream b;
+//            for(TmiInt uf= miMesh->second.begin(); uf != miMesh->second.end(); uf++)
+//            {
+//                if(gsl_isinf(gsl_vector_get (x, i)) != 0)
+//                {
+//                    Node *ndc = findNode(*uf);
+//                    ndc->setCurrent(0);
+//                    Component *cmc = ndc->getOwner();
+//                    if (cmc && hasDoubleNode(cmc, miMesh->second))
+//                        cmc->setCurrent(0);
+//                }
+//                else
+//                {
+//                    Node *ndc = findNode(*uf);
+//                    ndc->setCurrent(gsl_vector_get (x, i));
+//                    Component *cmc = ndc->getOwner();
+//                    if (cmc && hasDoubleNode(cmc, miMesh->second))
+//                        cmc->setCurrent(cmc->getCurrent() + gsl_vector_get (x, i));
+//                    b<<*uf<<" : "<<gsl_vector_get (x, i) <<" *";
+//                }
+//
+//            }
+//            #ifdef DEBUG
+//                mSb->addRow(b.str());
+//            #endif
+//            i++;
+//        }
+
 
 // yeni yöntem : her nodun ait olduğu ilmek'leri bul. ilmek akımlarını topla.
     for(TmiNode nit = mvNode.begin(); nit != mvNode.end(); nit++)
@@ -1169,8 +1164,9 @@ int i = 0;
             i++;
         }
     }
-
-
+    for(TmiComponent cit = mvComponent.begin(); cit != mvComponent.end(); cit++)
+            (*cit)->setCurrent((*cit)->node1->getCurrent());
+/** Yeni yöntem sonu*/
 // Bütün comp'ların akımını yarıla
 //    for(TmiComponent cit = mvComponent.begin(); cit != mvComponent.end(); cit++)
 //        (*cit)->setCurrent((*cit)->getCurrent()/2.0);
@@ -1185,11 +1181,12 @@ void
 CircuitWindow::calculateBatteryValue()
 {
     batteryValue.clear();
+
     for(TmatrisIter matIt = batteryCompDeter.begin();
         matIt != batteryCompDeter.end();
         matIt++)
     {
-        double pildeger = 0;
+        double pildeger = 0.0;
         int i = 0;
 
         TmvComponentMatris matSat = matIt->second;
@@ -1205,7 +1202,7 @@ CircuitWindow::calculateBatteryValue()
                 Node *nis = (*matEl)->node2;
                 int yon = elemanYonKontrol(i,nii->getId() ,nis->getId() );
 
-                pildeger += (*matEl)->getValue() * yon;
+                pildeger += (*matEl)->getValue() * yon * -1;
                 mSb->addRow("    V : "+toString((*matEl)->getValue())+"    Yön : "+toString(yon));
             }
         }
@@ -1213,6 +1210,7 @@ CircuitWindow::calculateBatteryValue()
         #ifdef DEBUG
 //        mSb->addRow("ilmek pil : "+toString(pildeger));
         #endif
+        i++;
     }
 }
 
@@ -1388,21 +1386,17 @@ CircuitWindow::elemanYonKontrol(int satir, int node1, int node2)
 {
     std::stringstream a;
     TmvInt sat= mvMesh[satir];
-    for (TmiInt i = sat.begin(); i != sat.end(); i++)
-        a << *i;
-        mSb->addRow(a.str().c_str());
+
     TmiInt it;
     int dizi[] = {node1,node2};
     it = std::search(sat.begin(), sat.end(),dizi, dizi+2);
 
     if (it != sat.end())
-        mSb->addRow(" eleman yön : 1");
-    if (it != sat.end())
         return 1;
+
     int dizi2[] = {node2,node1};
-    it = std::search(sat.begin(), sat.end(),dizi2, dizi+2);
-    if (it != sat.end())
-        mSb->addRow(" eleman yön : -1");
+    it = std::search(sat.begin(), sat.end(),dizi2, dizi2+2);
+
     if (it != sat.end())
         return -1;
     return 0;
@@ -1420,26 +1414,6 @@ CircuitWindow::dugumListResort()
     }
     mvMesh.clear();
     mvMesh = gecici;
-}
-
-void
-CircuitWindow::yaz_DirencDegerMatris()
-{
-    mSb->addRow("##1~~~~~~Direnç Değer Matris~~~~~~");
-    for( TmiFloatMatris a = resistanceMatris.begin(); a!= resistanceMatris.end(); a++)
-    {
-        std::stringstream yaz;
-        yaz<<" | ";
-        for( TmiFloat b = (*a).begin(); b != (*a).end(); b++)
-        {
-            if ( *b >= 0 ) yaz<<" ";
-            yaz<<*b;
-//            if ( *b >= 0 ) yaz<<" ";
-            if ( b+1 != (*a).end()) yaz<<"     ";
-        }
-        yaz<<" |";
-        mSb->addRow("##4 "+yaz.str());
-    }
 }
 
 TmvComponent
@@ -2552,7 +2526,7 @@ CircuitWindow::showNodeLoop()
 void
 CircuitWindow::showMesh()
 {
-    mSb->addRow("##3~~~~dugum~~~~~~");
+    mSb->addRow("##3~~~~ İlmek ~~~~~~");
 
     for(miMesh=mvMesh.begin(); miMesh != mvMesh.end(); miMesh++)
     {
@@ -2560,6 +2534,40 @@ CircuitWindow::showMesh()
         b<<"##3"<<miMesh->first<<" - ";
         for(TmiInt uf= miMesh->second.begin(); uf != miMesh->second.end(); uf++)
             b<<*uf <<" *";
-    mSb->addRow(b.str());
+        mSb->addRow(b.str());
+    }
+}
+
+void
+CircuitWindow::yaz_DirencDegerMatris()
+{
+    mSb->addRow("##1~~~~~~Direnç Değer Matris~~~~~~");
+    for( TmiFloatMatris a = resistanceMatris.begin(); a!= resistanceMatris.end(); a++)
+    {
+        std::stringstream yaz;
+        yaz<<" | ";
+        for( TmiFloat b = (*a).begin(); b != (*a).end(); b++)
+        {
+            if ( *b >= 0 ) yaz<<" ";
+            yaz<<*b;
+//            if ( *b >= 0 ) yaz<<" ";
+            if ( b+1 != (*a).end()) yaz<<"     ";
+        }
+        yaz<<" |";
+        mSb->addRow("##4 "+yaz.str());
+    }
+}
+
+void
+CircuitWindow::yaz_PilDegerMatris()
+{
+    mSb->addRow("##1~~~~~~Pil Değer Matris~~~~~~");
+    for( TmiFloat a = batteryValue.begin(); a!= batteryValue.end(); a++)
+    {
+        std::stringstream yaz;
+        yaz<<" | "<< (*a);
+
+        yaz<<" |";
+        mSb->addRow("##4 "+yaz.str());
     }
 }

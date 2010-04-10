@@ -113,9 +113,9 @@ double Round(const double value, const int digits)
    std::stringstream stream;
    // Store the number with required no. of decimal
    // places to stream
-   stream << std::setprecision(digits) << value;
+   stream << std::fixed <<std::setprecision(digits) << value;
    // Convert stream to number
-   double roundedValue = 0.0;
+   double roundedValue = 0.0f;
    stream >> roundedValue;
    return roundedValue;
 }

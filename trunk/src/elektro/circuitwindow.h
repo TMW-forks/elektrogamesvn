@@ -53,7 +53,7 @@ class CircuitWindow : public Window,
          void yaz_PilCompMatris();
 
         /**
-         * seçili olan componentleri býrak
+         * seçili olan componentleri bırak
          */
         void clearSelections();
 
@@ -63,17 +63,17 @@ class CircuitWindow : public Window,
         void moveComponents(int x, int y);
 
         /**
-         * Bir node'un komþu sayýsýný bul
+         * Bir node'un komşu sayısını bul
          */
         int nodeConnectCount(Node *count);
 
         /**
-         * Bir node'un komþu sayýsýný bul id'ye göre
+         * Bir node'un komşu sayısını bul id'ye göre
          */
         int nodeConnectCount(int count);
 
         /**
-         * NPC'den gelen XML'i oku ve devre elemanlarýný oluþtur
+         * NPC'den gelen XML'i oku ve devre elemanlarını oluştur
          */
         void circuitFromXML(std::string mDoc);
 
@@ -88,17 +88,17 @@ class CircuitWindow : public Window,
         void handleLink(const std::string& link);
 
         /**
-         * Kullanýlmayan bir node id'si bul
+         * Kullanılmayan bir node id'si bul
          */
         int findEmptyId();
 
         /**
-         * Connect list'te bulunan node'u değiþtir
+         * Connect list'te bulunan node'u değiştir
          */
         void swapNode(Node *find, Node *target);
 
         /**
-         * hint penceresindeki açýklamalar için
+         * hint penceresindeki açıklamalar için
          */
 
         std::map<std::string, ImageSet*>mComponentImageSet;
@@ -117,9 +117,9 @@ class CircuitWindow : public Window,
         void setNodeCreate(bool s) { mNodeCreate=s; }
         bool getNodeCreate() { return mNodeCreate; }
 
-        bool collisionCheck; /**< Çakýþma olup olmadýğý kontrol edilecek */
+        bool collisionCheck; /**< Çakışma olup olmadığı kontrol edilecek */
 
-        bool nodeCollision;  /**< Hareketli node çakýþtý */
+        bool nodeCollision;  /**< Hareketli node çakıştı */
 
         Node *movingNode;
         Node *targetNode;
@@ -143,7 +143,7 @@ class CircuitWindow : public Window,
     // item bilgisini itemDB'den alabilmek için
     const ItemInfo &getInfo(int id) const { return ItemDB::get(id); }
 
-    // anahtar açýlýp kapatýldýğýnda connection durumunu değiþtir
+    // anahtar açılıp kapatıldığında connection durumunu değiştir
     void statusChanged(Component *sw , Status st);
 
     bool mWireRefresh;
@@ -228,8 +228,8 @@ class CircuitWindow : public Window,
         int mAward;
 
         bool mMessageAutoWrap;
-        bool mNodeCreate;
-        bool mRefresh;
+        bool mNodeCreate;               // Pencerede yeni node oluşturulmasına izin vermek için
+        bool mRefresh;                  // devrenin yeniden hesaplanması gerekince true olur
 
         BitButton *closeButton;
         BitButton *solveButton;
@@ -256,7 +256,7 @@ class CircuitWindow : public Window,
         Image *mWireImage;
         Image *mBackgroundPattern;
 
-        //imleç üzerine gelince popup hint çýkmasý için
+        //imleç üzerine gelince popup hint çıkması için
         gcn::Rectangle rectRotate;
         gcn::Rectangle rectMove;
         gcn::Rectangle rectFromRight;
@@ -271,8 +271,8 @@ class CircuitWindow : public Window,
         int collisionNodeX;
         int collisionNodeY;
 
-        TmvNode mvNode;           //Bağlantý noktasý vector
-        TmiNode miNode;           //Bağlantý noktasý iter
+        TmvNode mvNode;           //Bağlantı noktası vector
+        TmiNode miNode;           //Bağlantı noktası iter
 
         TmvComponent mvComponent;       //Devre pencersindeki tüm componentler (direnç, pil ...) için vector
         TmiComponent miComponent;       //compnent iter
@@ -292,30 +292,37 @@ class CircuitWindow : public Window,
         TmvScrollArea mvScrollArea;     //ScrollArea vector
         TmiScrollArea miScrollArea;     //ScrollArea iter
 
-//kirþof içinmMessageText
+//kirşof içinmMessageText
 
-        TmvIntMatris mvConnectedNodeId;     //Node'un bağlantýlý olduğu komþularýnýn listesi
+        TmvIntMatris mvConnectedNodeId;     //Node'un bağlantılı olduğu komşularının listesi
         TmiIntMatris miConnectedNodeId;
 
-        TmvIntMatris mvNodeLoop;             //Ýlmek oluþturma ihtimali olan node'larýn listesi -map
+        TmvIntMatris mvNodeLoop;             //Ýlmek oluşturma ihtimali olan node'ların listesi -map
         TmiIntMatris miNodeLoop;
 
         TmvIntMatris mvMesh;                 //ilmeklerin listesi ->temizleniyor
         TmiIntMatris miMesh;
 
-        Tmatris resistanceCompDeter;            // dirençlerden oluþan en soldaki matris için
+        Tmatris resistanceCompDeter;            // dirençlerden oluşan en soldaki matris için
         Tmatris batteryCompDeter;              // pillerden oluşan en sağdaki matris için
         TmvFloat rowResistanceValue;
         TmvFloat batteryValue;
         TmvFloatMatris resistanceMatris;
 
-        std::vector< float > matrisAkim;    // akýmlar için sayýlardan oluþan vector
-        TmvComponentMatris matrisGerilim;    // pillerden oluþan en sağdaki matris <component*>
+        std::vector< float > matrisAkim;    // akımlar için sayılardan oluşan vector
+        TmvComponentMatris matrisGerilim;    // pillerden oluşan en sağdaki matris <component*>
+
+        std::map <int, std::string> mHale;
 
     /**
      * Bir node'un verilen mesh'in üyesi olup olmadığını kontrol eder.
      */
     bool isNodeInMesh(Node *n,TmvInt mesh);
+
+    /**
+     * Verilen node'un connectionListteki kayıtlı bağlantılarını ve connection'ı siler
+     */
+    void clearNodeConnection(Node *n);
 
     /**
      * Pencerenin hangi durumda olduðunu kontrol ederek ayarlama yapar.
@@ -328,7 +335,7 @@ class CircuitWindow : public Window,
     void makeEffect(std::string type,std::string name, std::string ssound);
 
     /**
-     * Üzerinden geçen lambalarýn parlaklýklarýný hesapla ve yak
+     * Üzerinden geçen lambaların parlaklıklarını hesapla ve yak
      */
     void turnonLamps();
 
@@ -338,7 +345,7 @@ class CircuitWindow : public Window,
     void calculateBatteryValue();
 
     /**
-     * Gönderilen vector içinde o component var mý?
+     * Gönderilen vector içinde o component var mı?
      */
     bool isExistComponent(Component *comp, TmvComponent vect);
 
@@ -358,27 +365,27 @@ class CircuitWindow : public Window,
     bool isLamp(Component *comp);
 
     /**
-     * Bütün lambalarý kapat
+     * Bütün lambaları kapat
      */
      void turnoffAllLamp();
 
     /**
-     * Tüm gui elemanlarýný sil
+     * Tüm gui elemanlarını sil
      */
      void deleteWidgets();
 
     /**
-     * Tüm vector ve map'leri boþalt
+     * Tüm vector ve map'leri boşalt
      */
      void trashMeshMem();
 
     /**
-     * Her nod'un bağlantýlý komþularýný belirler
+     * Her nod'un bağlantılı komşularını belirler
      */
     void findConnectedNodeId();
 
     /**
-     * komþu nodelarýn listesini metin kutusuna yazar --debug
+     * komşu nodeların listesini metin kutusuna yazar --debug
      */
     void yaz_ConnectedNodeId();
 
@@ -388,7 +395,7 @@ class CircuitWindow : public Window,
     void showNodeLoop();
 
     /**
-     * kesinleþmiþ düğümlerin listesini metin kutusuna yazar --debug
+     * kesinleşmiş düğümlerin listesini metin kutusuna yazar --debug
      */
     void showMesh();
 
@@ -398,12 +405,12 @@ class CircuitWindow : public Window,
     void winnowMesh();
 
     /**
-     * ilmek ihtimali olanlarý bulur arasýndan ilmek seçimi yapar :mvNodeLoop --> mvMesh
+     * ilmek ihtimali olanları bulur arasından ilmek seçimi yapar :mvNodeLoop --> mvMesh
      */
     void addLoopToMesh();
 
     /**
-     * kesinleþmiþ düğümlerin listesin kirchoff denklemini yazar
+     * kesinleşmiş düğümlerin listesin kirchoff denklemini yazar
      */
     void makeMatris();
 
@@ -413,17 +420,17 @@ class CircuitWindow : public Window,
     Node* findNode(int id);
 
     /**
-     * Devrenin analizini yap ve gereken componentlerin status'unu değiþtir
+     * Devrenin analizini yap ve gereken componentlerin status'unu değiştir
      */
     void devreAnaliz();
 
     /**
-     * Kirchhoff için oluþturulan matrisi textbox içine yaz
+     * Kirchhoff için oluşturulan matrisi textbox içine yaz
      */
     void yaz_DirencCompMatris();
 
     /**
-     * Matrisin satýr sütun vectorunu bul köþegen haricindeki eleman listesini oluþtur
+     * Matrisin satır sütun vectorunu bul köşegen haricindeki eleman listesini oluştur
      */
     TmvComponent matrisElemanBul(int satir);
 
@@ -438,16 +445,16 @@ class CircuitWindow : public Window,
     void yaz_PilDegerMatris();
 
     /**
-     * resistanceCompDeter map'inin içinden satýr ve sütuna göre TmvComponent döndürecek
+     * resistanceCompDeter map'inin içinden satır ve sütuna göre TmvComponent döndürecek
      */
      TmvComponent matrisComponentXY(int satir, int sutun);
 
     /**
-     * mvDugum'in içinde verilen iki node sýrayla var mý?
+     * mvDugum'in içinde verilen iki node sırayla var mı?
      * @satir :
      * @node1 :
      * @node2 :
-     * -1 : ter sýrada
+     * -1 : ter sırada
      *  0 : yok
      *  1 : var
      */
@@ -459,13 +466,13 @@ class CircuitWindow : public Window,
       void dugumListResort();
 
       /**
-       * akýmlarýn yönüne göre dirençlerin yönünü belirle
+       * akımların yönüne göre dirençlerin yönünü belirle
        */
       void direncYonBelirle();
 
       /**
        * Nodun komşularını mvConnectedNodeId vectörün al
-       * @hedef: komþuları bulunacak node
+       * @hedef: komşuları bulunacak node
        * @geri : bu noda gelinmesini sağlayan önceki node
        * return: node id'i listesini geri döndürür
        */

@@ -138,12 +138,12 @@ class Node : public BitButton
         /**
          * Node'un üzerindeki akýmý belirle
          */
-        void setCurrent(float s) { mCurrent = s; }
+        void setCurrent(double s);
 
         /**
          * Node'un üzerindeki akýmý ver
          */
-        float getCurrent() { return mCurrent; }
+        double getCurrent() { return mCurrent; }
 
         /**
          * Sað klik basýlý
@@ -215,8 +215,8 @@ class Node : public BitButton
         bool mToLink;
         bool mFromLink;
         bool mClean;                    /**< Node eğer üzerindeki bağlantıları silecekse true */
-        float mCurrent;                 /**< Node üzerinden geçen akım */
-        int xx;     //mouse'un ilk kontrol noktasý
+        double mCurrent;                 /**< Node üzerinden geçen akım */
+        int xx;     //mouse'un ilk kontrol noktası
         int yy;
 
         Component *mOwner;              /**< Sahibi olan component varsa gösterir */

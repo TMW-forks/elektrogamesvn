@@ -207,10 +207,28 @@ CircuitWindow::CircuitWindow():
     imagesetname.push_back("graphics/elektrik/item-motor-2.png");
     imagesetname.push_back("graphics/elektrik/item-motor-3.png");
     imagesetname.push_back("graphics/elektrik/item-ampermetre.png");
+    imagesetname.push_back("graphics/elektrik/hale-kirmizi.png");
+    imagesetname.push_back("graphics/elektrik/hale-sari.png");
+    imagesetname.push_back("graphics/elektrik/hale-mavi.png");
+    imagesetname.push_back("graphics/elektrik/hale-pembe.png");
+    imagesetname.push_back("graphics/elektrik/hale-yesil.png");
+    imagesetname.push_back("graphics/elektrik/hale-turuncu.png");
+
+    mHale.insert(std::make_pair(1,"graphics/elektrik/hale-beyaz.png" ));
+    mHale.insert(std::make_pair(2,"graphics/elektrik/hale-sari.png" ));
+    mHale.insert(std::make_pair(3,"graphics/elektrik/hale-pembe.png" ));
+    mHale.insert(std::make_pair(5,"graphics/elektrik/hale-mavi.png" ));
+    mHale.insert(std::make_pair(10,"graphics/elektrik/hale-yesil.png" ));
+    mHale.insert(std::make_pair(20,"graphics/elektrik/hale-kirmizi.png" ));
+    mHale.insert(std::make_pair(50,"graphics/elektrik/hale-turuncu.png" ));
 
     for(iname = imagesetname.begin(); iname != imagesetname.end(); iname++)
     {
-        ImageSet *compoImageSet = resman->getImageSet((*iname),32,32);
+        ImageSet *compoImageSet;
+        if ((*iname).find("hale") == std::string::npos)
+            compoImageSet = resman->getImageSet((*iname),32,32);
+        else
+            compoImageSet = resman->getImageSet((*iname),64,64);
         mComponentImageSet[(*iname)] = compoImageSet;
     }
 
@@ -251,13 +269,7 @@ CircuitWindow::CircuitWindow():
     closeButton->setPosition(10,120);
     add(closeButton);
 
-    solveButton = new BitButton("com_close_btn.png", "Degerlendir", "solve",this);
-    solveButton->setPosition(10,140);
-    add(solveButton);
 
-    clearButton = new BitButton("com_rotate_btn.png", "Degerlendir", "clear",this);
-    clearButton->setPosition(10,100);
-    add(clearButton);
 
     mHint = new gcn::Label("");
     mHint->setPosition(10,10);
@@ -265,6 +277,14 @@ CircuitWindow::CircuitWindow():
     add(mHint);
 
 //******
+    solveButton = new BitButton("com_close_btn.png", "Degerlendir", "solve",this);
+    solveButton->setPosition(10,140);
+//    add(solveButton);
+
+    clearButton = new BitButton("com_rotate_btn.png", "Degerlendir", "clear",this);
+    clearButton->setPosition(10,100);
+//    add(clearButton);
+
     mSb = new BrowserBox();
     mSb->setOpaque(true);
 
@@ -277,16 +297,18 @@ CircuitWindow::CircuitWindow():
     mSs->setHeight(100);
     mSs->setY(getHeight()- mSs->getHeight());
     mSs->setX(getWidth()-mSs->getWidth());
-    add(mSs);
-//***********/
+//    add(mSs);
 
     mX = new gcn::Label("X:");
     mX->setPosition(4,5);
-    add(mX);
+//    add(mX);
 
     mY = new gcn::Label("Y:");
     mY->setPosition(4,15);
-    add(mY);
+//    add(mY);
+
+//***********/
+
 
 
     globalHint="hint";
@@ -392,7 +414,7 @@ CircuitWindow::stateCheck()
 void
 CircuitWindow::logic()
 {
-//    if (isVisible() == false) return;
+    //silinen component'leri temizle
     std::vector<Component*>::iterator i = mvComponent.begin();
     while (i != mvComponent.end())
     {
@@ -414,6 +436,7 @@ CircuitWindow::logic()
         }
     }
 
+    //silinen nodları temizle
     std::vector<Node*>::iterator j = mvNode.begin();
     while (j != mvNode.end())
     {
@@ -421,22 +444,19 @@ CircuitWindow::logic()
 
         if (nod->getDead())
         {
-           for (int z=0; z <10; z++) //????????????????????????????????
-            for (conListIter=conList.begin();conListIter<conList.end();conListIter++)
-                {
-                    if ((*conListIter)->firstCon == nod ||
-                        (*conListIter)->secondCon == nod)
-                        conList.erase(conListIter);
-                }
+            clearNodeConnection(nod);
             nod->setDead(false);
             delete nod;
             j = mvNode.erase(j);
             mRefresh = true;
+            circuitWindow->setNodeCreate(true);
         }
         else {
             j++;
         }
     }
+
+
     if (collisionCheck && isVisible())
     {
         int mx=0, my=0;
@@ -603,6 +623,7 @@ Window::draw(graphics);
     else
         g->drawImage(cirMoveG,x , top );
 
+#ifdef DEBUG
     for(miComponent=mvComponent.begin(); miComponent<mvComponent.end(); miComponent++)
     {
         if ((*miComponent)->getSelected())
@@ -613,6 +634,7 @@ Window::draw(graphics);
                 mY->adjustSize();
             }
     }
+#endif
 
     for (miImage=mvImage.begin();miImage!=mvImage.end();++miImage)
     {
@@ -648,8 +670,41 @@ Window::draw(graphics);
 //                                               mPopupLabel->getWidth(),
 //                                               mPopupLabel->getHeight()));
      drawChildren(graphics);
-
+    for(miComponent=mvComponent.begin(); miComponent<mvComponent.end(); miComponent++)
+    {
+        if (isLamp((*miComponent)) && (*miComponent)->getCurrent() != 0)
+            {
+                ResourceManager *resman = ResourceManager::getInstance();
+                ImageSet *res = circuitWindow->mComponentImageSet[mHale[(*miComponent)->getValue()]];
+                g->drawImage(res->get((*miComponent)->getParilti()), (*miComponent)->getX()-8, (*miComponent)->getY()+5);
+            }
+    }
  }
+
+void
+CircuitWindow:: clearNodeConnection(Node *n)
+{
+    conListIter=conList.begin();
+    while(conListIter != conList.end())
+    {
+        if (((*conListIter)->firstCon == n ||
+            (*conListIter)->secondCon == n))
+        {
+            if (((*conListIter)->firstCon->getOwner() != NULL && (*conListIter)->secondCon->getOwner() != NULL))
+            {
+                if ((*conListIter)->firstCon->getOwner() == (*conListIter)->secondCon->getOwner())
+                    {
+                        conListIter++;
+                        continue;
+                    }
+            }
+            delete (*conListIter);
+            conList.erase(conListIter);
+            mRefresh = true;
+        }
+        else conListIter++;
+    }
+}
 
 void
 CircuitWindow::mousePressed(gcn::MouseEvent &event)
@@ -835,8 +890,6 @@ CircuitWindow::winnowMesh()
 void
 CircuitWindow::addLoopToMesh()
 {
-    logger->log("komsu ekle");
-
     TmvInt ust;
     TmiInt teki, i;
     TmiIntMatris miLoop = mvNodeLoop.begin();  // ilmek denemelerindeki her bir satır
@@ -960,6 +1013,12 @@ CircuitWindow::makeMatris()
     #ifdef DEBUG
       mSb->addRow("ilmek bulunamadı.");
     #endif
+    // Bütün node'ların akımını sıfırla
+        for(TmiNode nit = mvNode.begin(); nit != mvNode.end(); nit++)
+            (*nit)->setCurrent(0.0);
+    // Bütün comp'ların akımını sıfırla
+        for(TmiComponent cit = mvComponent.begin(); cit != mvComponent.end(); cit++)
+        (*cit)->setCurrent(0.0);
         turnoffAllLamp();
         return;
     }
@@ -1159,7 +1218,14 @@ CircuitWindow::makeMatris()
         {
             if(isNodeInMesh(*nit, miMesh->second))
             {
-                (*nit)->setCurrent((*nit)->getCurrent()+gsl_vector_get (x, i) );
+                if(gsl_isinf(gsl_vector_get (x, i)) || gsl_isnan(gsl_vector_get (x, i)) )
+                {
+                    (*nit)->setCurrent(0);
+                }
+                else
+                {
+                    (*nit)->setCurrent((*nit)->getCurrent()+gsl_vector_get (x, i) );
+                }
             }
             i++;
         }
@@ -1167,10 +1233,6 @@ CircuitWindow::makeMatris()
     for(TmiComponent cit = mvComponent.begin(); cit != mvComponent.end(); cit++)
             (*cit)->setCurrent((*cit)->node1->getCurrent());
 /** Yeni yöntem sonu*/
-// Bütün comp'ların akımını yarıla
-//    for(TmiComponent cit = mvComponent.begin(); cit != mvComponent.end(); cit++)
-//        (*cit)->setCurrent((*cit)->getCurrent()/2.0);
-
     // lambaların parlaklıklarını kontrol et ve yak
     turnonLamps();
     //gsl kaynaklarını geri ver
@@ -1181,13 +1243,13 @@ void
 CircuitWindow::calculateBatteryValue()
 {
     batteryValue.clear();
+        int i = 0;
 
     for(TmatrisIter matIt = batteryCompDeter.begin();
         matIt != batteryCompDeter.end();
         matIt++)
     {
         double pildeger = 0.0;
-        int i = 0;
 
         TmvComponentMatris matSat = matIt->second;
         for(TmiComponentMatris satIt= matSat.begin();
@@ -1203,7 +1265,9 @@ CircuitWindow::calculateBatteryValue()
                 int yon = elemanYonKontrol(i,nii->getId() ,nis->getId() );
 
                 pildeger += (*matEl)->getValue() * yon * -1;
+#ifdef DEBUG
                 mSb->addRow("    V : "+toString((*matEl)->getValue())+"    Yön : "+toString(yon));
+#endif
             }
         }
         batteryValue.push_back(pildeger);
@@ -1386,20 +1450,21 @@ CircuitWindow::elemanYonKontrol(int satir, int node1, int node2)
 {
     std::stringstream a;
     TmvInt sat= mvMesh[satir];
-
+mSb->addRow("##8 aranan :"+toString(node1)+"-"+toString(node2)+" -- Satır : "+ toString(satir));
     TmiInt it;
     int dizi[] = {node1,node2};
-    it = std::search(sat.begin(), sat.end(),dizi, dizi+2);
+    it = std::search(sat.begin(), sat.end(),dizi, dizi+1);
 
     if (it != sat.end())
         return 1;
 
     int dizi2[] = {node2,node1};
-    it = std::search(sat.begin(), sat.end(),dizi2, dizi2+2);
-
+    it = std::search(sat.begin(), sat.end(),dizi2, dizi2+1);
     if (it != sat.end())
         return -1;
-    return 0;
+
+    mSb->addRow("##8 Bulamadım");
+    return 9;
 }
 
 void
@@ -1466,12 +1531,11 @@ CircuitWindow::devreAnaliz()
             mvNodeLoop[mvNodeLoop.size()].push_back((*nn)->getId());
         }
         addLoopToMesh();
-//        yaz_ConnectedNodeId();
+//       yaz_ConnectedNodeId();
 //        showNodeLoop();
 //        showMesh();
         winnowMesh();
-        mSb->addRow("---   ----");
-        showMesh();
+//        showMesh();
         makeMatris();
     }
 }
@@ -1691,9 +1755,9 @@ CircuitWindow::action(const gcn::ActionEvent &event)
 
     else if (event.getId() == "node_shift")
     {
-        mWireRefresh = true;
+        mWireRefresh = true;                            //telleri yeniden çiz
         Node *creatorNode=NULL;
-        for (miNode = mvNode.begin(); miNode<mvNode.end(); miNode++)
+        for (miNode = mvNode.begin(); miNode<mvNode.end(); miNode++)    //hangi nod'un buraya gelmeye sebep olduğunu bul
         {
             if ((*miNode)->getCreator())
             {
@@ -1704,21 +1768,20 @@ CircuitWindow::action(const gcn::ActionEvent &event)
 
         if (creatorNode)
         {
-            Node *tempNode = new Node("com_node_btn.png","Hint", "com_node",this);
-            tempNode->esitle(creatorNode);
+            Node *tempNode = new Node("com_node_btn.png","Hint", "com_node",this);  //yerine bırakılacak nod'u oluştur
+            tempNode->esitle(creatorNode);                                          //eski nodun özelliklerini aynen al
             tempNode->setEnabled(true);
             tempNode->setScroll(true);
 
-            creatorNode->setId(findEmptyId());
-            creatorNode->setFree(true);
+            creatorNode->setId(findEmptyId());                                      //eski nod'a yeni id ver
+            creatorNode->setFree(true);                                             //özgürlüğüne kavuştur
             creatorNode->setMovable(true);
             creatorNode->setToLink(true);
             creatorNode->setFromLink(true);
             creatorNode->setSelectable(true);
             creatorNode->setDeletable(true);
             creatorNode->setOwner(NULL);
-//            creatorNode->clearConnect();
-            mvNode.push_back(tempNode);
+            mvNode.push_back(tempNode);                                             //nod vektörüne ekle
             add(tempNode);
 //yukarda yapıldı
 //            tempNode->nodeConnect(creatorNode);
@@ -1733,44 +1796,35 @@ CircuitWindow::action(const gcn::ActionEvent &event)
                     tempNode->setFree(false);
                     tempNode->setMovable(false);
                     (*miComponent)->node1 = tempNode;
+                    mSb->addRow("hareketsiz yap"+toString(tempNode->getId()));
                 }
                 if ((*miComponent)->node2 == creatorNode)
                 {
                     tempNode->setMovable(false);
                     tempNode->setFree(false);
                     (*miComponent)->node2 = tempNode;
+                    mSb->addRow("hareketsiz yap"+toString(tempNode->getId()));
                 }
             }
-
             ConnectList *c=new ConnectList;
             c->active=true;
             c->draw = true;
             c->firstCon = creatorNode;
             c->secondCon = tempNode;
             conList.push_back(c);
-
         }
     }else if (event.getId() == "node_clear")
     {
+        Component *master;
+
         std::vector<Node*>::iterator j = mvNode.begin();
         while (j != mvNode.end())
         {
             Node *nod = (*j);
-            Component *master = nod->getOwner();
-
             if (nod->getClean() && (nod->getFromLink() || nod->getToLink()))
             {
-                for (int z=0; z <10; z++) //????????????????????????????????
-                    for (conListIter=conList.begin();conListIter<conList.end();conListIter++)
-                    {
-                        if ((*conListIter)->firstCon == nod ||
-                            (*conListIter)->secondCon == nod)
-                        {
-                            conList.erase(conListIter);
-                            nod->getClean();
-                        }
-                    }
-                mRefresh = true;
+                clearNodeConnection(nod);
+                nod->setClean(false);
             }
             j++;
         }
@@ -1825,6 +1879,8 @@ CircuitWindow::distributeOlay(Item *it)
     else if (tempType=="diode") tempComponent = new Diode (this, tempNode1, tempNode2);
     else if (tempType=="battery") tempComponent = new Battery (this, tempNode1, tempNode2);
     else if (tempType=="switch") tempComponent = new Switch (this, tempNode1, tempNode2);
+    else if (tempType=="ampermetre") tempComponent = new Ampermetre(this, tempNode1, tempNode2);
+    else if (tempType=="motor") tempComponent = new Motor(this, tempNode1, tempNode2);
     else return;
 
         tempComponent->setId(findEmptyId());
@@ -1832,7 +1888,7 @@ CircuitWindow::distributeOlay(Item *it)
         tempComponent->setX(150);//+QALeftPad);
         tempComponent->setY(150);//+QATopPad);
         tempComponent->setAngel(0);
-        tempComponent->setStatus(PASIVE);
+        tempComponent->setStatus(ACTIVE);
         tempComponent->setItemId(transItemId);
         tempComponent->setMovable(1);
         tempComponent->setSelectable(1);
@@ -2166,7 +2222,10 @@ CircuitWindow::circuitFromXML(std::string mDoc)
             tempComponent->setStatus(XML::getProperty(node, "status", PASIVE)); //herşey bittikten sonra statüyü değiştir
             if(tempComponent->getType() == SWITCH && tempComponent->getStatus()==PASIVE) c->active=false;
             if(tempComponent->getType() == MOTOR || tempComponent->getType() == AMPERMETRE)
-               tempComponent->setStatus(ACTIVE);
+            {
+                tempComponent->setStatus(ACTIVE);
+                c->active = true;
+            }
             for (miNode = mvNode.begin(); miNode < mvNode.end(); miNode++)
                 (*miNode)->requestMoveToTop();
         }

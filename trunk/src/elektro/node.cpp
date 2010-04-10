@@ -73,12 +73,11 @@ void Node::mouseDragged(gcn::MouseEvent& mouseEvent)
             setX(getX()+mouseEvent.getX()-xx);
             setY(getY()+mouseEvent.getY()-yy);
             circuitWindow->collisionCheck = true;
-        if (getX()<120) setX(120);
-        if (getY()<10) setY(10);
-        if (getX()>(circuitWindow->getWidth()-getWidth()-15)) setX(circuitWindow->getWidth()-15-getWidth());
-        if (getY()>(circuitWindow->getHeight()-getHeight()-25)) setY(circuitWindow->getHeight()-getHeight()-25);
-        circuitWindow->mWireRefresh = true;
-
+            if (getX()<120) setX(120);
+            if (getY()<10) setY(10);
+            if (getX()>(circuitWindow->getWidth()-getWidth()-15)) setX(circuitWindow->getWidth()-15-getWidth());
+            if (getY()>(circuitWindow->getHeight()-getHeight()-25)) setY(circuitWindow->getHeight()-getHeight()-25);
+            circuitWindow->mWireRefresh = true;
         }
     }
 }
@@ -122,7 +121,7 @@ Node::mouseMoved(gcn::MouseEvent &event)
 void Node::mouseEntered(gcn::MouseEvent &mouseEvent)
 {    Uint8* keys;
     keys = SDL_GetKeyState(NULL);
-    //devre penceresinde shiftle yeni node oluþmasýný engelle
+    //devre penceresinde shiftle yeni node oluşmasını engelle
     circuitWindow->setNodeCreate(false);
     circuitWindow->mHint->setCaption("node: "+toString(mCurrent)+"A");
     circuitWindow->mHint->adjustSize();
@@ -149,7 +148,7 @@ void Node::mouseEntered(gcn::MouseEvent &mouseEvent)
 void Node::mouseExited(gcn::MouseEvent &mouseEvent)
 {
     gui->setCursorType(0);
-    circuitWindow->setNodeCreate(true);  //artýk node oluþturabilir.
+    circuitWindow->setNodeCreate(true);  //artık node oluşturabilir.
 }
 
 void
@@ -164,5 +163,11 @@ Node::esitle(Node* atanan)
     this->mToLink = atanan->mToLink;
     this->mFromLink = atanan->mFromLink;
     this->mRightClick = atanan->mRightClick;
+    this->mMovable= atanan->mMovable;
     this->mOwner = atanan->mOwner;
+}
+
+void Node::setCurrent(double s)
+{
+    mCurrent = Round(s, 3);
 }

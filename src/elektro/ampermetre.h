@@ -15,7 +15,7 @@ class Ampermetre : public Component
         Ampermetre(gcn::ActionListener *listener, Node *n1, Node *n2);
         virtual ~Ampermetre();
         void draw(gcn::Graphics *graphics);
-        void setCurrent(float s);
+        void setCurrent(double s);
     protected:
     private:
         gcn::Label *mLabel;

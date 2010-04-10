@@ -33,6 +33,7 @@ Component::Component(gcn::ActionListener *listener, Node *n1, Node *n2):
     setVisible(true);
     setYon(0);
     setCurrent(0);
+    mParilti = 0;
 
     ResourceManager *resman = ResourceManager::getInstance();
     ImageSet *mHalkaImages;
@@ -65,7 +66,7 @@ void Component::setX (int x)
 {
     gcn::Window::setX(x);
     mX = x;
-            //node için açý kontrolü yapýlacak (180 derce yapýlýrsa olabilir)
+            //node için açı kontrolü yapılacak (180 derce yapılırsa olabilir)
 
 }
 
@@ -479,7 +480,7 @@ void Component::mouseEntered(gcn::MouseEvent &event)
     circuitWindow->toolCaption->setX(55-circuitWindow->toolCaption->getWidth()/2);
     circuitWindow->toolValue->setCaption(toString(mValue)+cap);
     circuitWindow->toolValue->adjustSize();
-    circuitWindow->mHint->setCaption("comp: "+toString(mCurrent)+"A"+ "    Yön:"+toString(getYon()));
+    circuitWindow->mHint->setCaption("comp: "+toString(mCurrent)+"A");
     circuitWindow->mHint->adjustSize();
 }
 
@@ -492,7 +493,18 @@ void Component::mouseExited(gcn::MouseEvent &event)
  {
  }
 
-void Component::setCurrent(float s)
+void Component::setCurrent(double s)
 {
-    mCurrent = s;
+    mCurrent = Round(s, 3);
+    double mCur = fabs(mCurrent);
+    if(mCur>0 && mCur<1) mParilti = 0;
+    else if(mCur>=1 && mCur<2) mParilti = 1;
+    else if(mCur>=2 && mCur<4) mParilti = 2;
+    else if(mCur>=4 && mCur<7) mParilti = 3;
+    else if(mCur>=7 && mCur<11) mParilti = 4;
+    else if(mCur>=11 && mCur<16) mParilti = 5;
+    else if(mCur>=16 && mCur<22) mParilti = 6;
+    else if(mCur>=22 && mCur<29) mParilti = 7;
+    else if(mCur>=29 && mCur<37) mParilti = 8;
+    else if(mCur>=37 ) mParilti = 9;
 }

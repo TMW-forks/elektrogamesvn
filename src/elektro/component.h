@@ -30,7 +30,7 @@ enum Type {
      MOTOR,
      AMPERMETRE};
 /**
- * Componentin bulunabileceði durumlar
+ * Componentin bulunabileceği durumlar
  */
 enum Status {
      PASIVE = 0, //Kapalı:Lambalar için sönük, anahtar için açık
@@ -213,9 +213,11 @@ class Component : public gcn::Window,
 
         bool getInterval() {return mInterval; }
 
-        float getCurrent() {return mCurrent; }
+        double getCurrent() {return mCurrent; }
 
-        void setCurrent(float s);
+        void setCurrent(double s);
+
+        char getParilti() {return mParilti;}
 
 
         /**
@@ -240,9 +242,10 @@ class Component : public gcn::Window,
         int mFirstX;
         int mFirstY;
         int mInterval;
-        float mValue;
+        double mValue;
         int mYon;
-        float mCurrent;     //Nesne üzerinden geçen akım
+        double mCurrent;     //Nesne üzerinden geçen akım
+        char mParilti;      //lambaların parlaklıkları için
 
 
         SimpleAnimation *mSelectedAnime;

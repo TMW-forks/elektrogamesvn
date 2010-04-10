@@ -15,19 +15,19 @@
  <tileset firstgid="192" name="kapi" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/kapiacikic.png"/>
  </tileset>
- <tileset firstgid="198" name="malzeme" tilewidth="32" tileheight="32">
+ <tileset firstgid="198" name="malzemeler" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/malzemeler.png"/>
  </tileset>
- <tileset firstgid="298" name="cicekler" tilewidth="32" tileheight="32">
+ <tileset firstgid="298" name="saksi" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/Pots_x2.png"/>
  </tileset>
  <tileset firstgid="330" name="yemek" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/malzeme_yemek.png"/>
  </tileset>
- <tileset firstgid="410" name="masaustumalzeme" tilewidth="32" tileheight="32">
+ <tileset firstgid="410" name="malzeme2" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/malzemeler2.png"/>
  </tileset>
- <tileset firstgid="426" name="zemin" tilewidth="32" tileheight="32">
+ <tileset firstgid="426" name="agacalti" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/kaldirimlar.png"/>
  </tileset>
  <tileset firstgid="468" name="agac" tilewidth="32" tileheight="32">
@@ -53,7 +53,7 @@
  </layer>
  <layer name="Collision" width="61" height="46">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+2TbQrAIAhAu/+lutp+DcaYQy2nrSc82Kf6ynprrQMAAAAsxhn3e29o683KN+L8VsvyXlPP8jzaczdnadYjnC0R6e7px9Pj7HxVnDXffD3bOD/3OnKeZ0aEq9TrLOfRNajurN33jNmWHCICZ9//lZ21s+3J+eX+V+uxmrMln7ZedWdLaGtmOHfheiSeakp9ZMy3xTlibrLPecYZ+ZOz5bvVnT1rswI447yj89VlF+cd9xnn/zgDAAAAHExVhiDYKwAA
+   H4sIAAAAAAAAC+2TbQrAIAhAu/+lutp+DcaYQy2nqyc82Kf6ynprrQMAAAD8jDPu997Q1puVb8T5rZblvaae5Xm0527O0qxHOFsi0t3Tj6fH2fmqOGu++Xq2cX7udeQ8z4wIV6nXWc6ja1DdWbvvGbMtOUQEzr7/KztrZ9uT88v9r9ZjNWdLPm296s6W0NbMcO7C9Ug81ZT6yJhvi3PE3GSf84wzsoqzZW1WcLbOQ5azd41wxnkn56vLLs477jPO6zgDAAAAHNGSDPLYKwAA
   </data>
  </layer>
  <layer name="Objects" width="61" height="46">

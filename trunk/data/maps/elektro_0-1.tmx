@@ -21,7 +21,7 @@
  <tileset firstgid="124" name="agac" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/agacuzun.png"/>
  </tileset>
- <tileset firstgid="160" name="agac_pembe" tilewidth="32" tileheight="32">
+ <tileset firstgid="160" name="agac" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/agacpembe.png"/>
  </tileset>
  <tileset firstgid="187" name="tas" tilewidth="32" tileheight="32">
@@ -30,7 +30,7 @@
  <tileset firstgid="191" name="tabela" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/ttabela.png"/>
  </tileset>
- <tileset firstgid="223" name="standlar" tilewidth="32" tileheight="32">
+ <tileset firstgid="223" name="agacalti" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/elektroadd/kaldirimlar.png"/>
  </tileset>
  <tileset firstgid="265" name="agac2" tilewidth="32" tileheight="32">
@@ -53,7 +53,7 @@
  </layer>
  <layer name="Collision" width="50" height="40">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+1WWw7DIAxjN9gpuP8R99tlgdjgFDoRKVLFw7FJAq2llHr8L1xhT9Tg7avmexVvu2Y2T3fwt2fn6ehxWqWJjYWOtbB74yt6IOI6W3s2TqaOUr4xbB2iWFGc0b5g8aNx1ry+VOfh+o3oYM7Hi6fSoajzHjbSZ2w9rdLXy526pjJtJB/RXm9e0bOtuRavnXOh7HFFDISDAkOdj/frNwbLiZ1T3bnZ9200N6Jhdd94lvWWq83WqrVMHTP/GCwu6i0eO+SL1XEHn9F9Ch3eG+vlsLcO4ZWpwXJVjaG1Path5pzRdREXdV9Eeyu4DsFjuLdisH14xUHufxZT2d9ovCx+yrpCOZXSxszWwWhBaphdn6UFqbUn+FN5Hz9+/PjO/gH5sSvuQB8AAA==
+   H4sIAAAAAAAAC+1WQQ7DIAzLfrBX8P8n7tplAWxwCp2IFKmC4NgkaVvMrBz/C1fYEzVE54p7XsXbx8zW6Q7+/u4iHS1OqzSxudC1GnZrfcUM9LjO9p7Pk6nD7BvD9yGK1cszOhcsfm+dtWgu1XW4PiM6mPuJ8ql0KPoc4cXGt+5npb4IM6OnMm2kHr2z0b5iZmt7NV4710I544ocCAcFhroe79dvDpYTu6d652b2IKJrRMPquYks61uuNt+r3jJ1zPxjsLio13jsUC9Wxx18Rs8pdETf2KiGrTiEV6YGz1W1hvb2rIaZe0bjelzUc9E7W8A4BI/hXsvBzuEVB3n/s5jK+UbzZfFT9hXKyayOma2D0YL0MBufpQXptSf4U3kfP378+M7+AWe2L1BAHwAA
   </data>
  </layer>
  <objectgroup name="Object Group 1" width="0" height="0">

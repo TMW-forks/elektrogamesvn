@@ -245,7 +245,7 @@ class Component : public gcn::Window,
         double mValue;
         int mYon;
         double mCurrent;     //Nesne üzerinden geçen akım
-        char mParilti;      //lambaların parlaklıkları için
+        int mParilti;      //lambaların parlaklıkları için
 
 
         SimpleAnimation *mSelectedAnime;

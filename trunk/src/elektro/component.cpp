@@ -497,14 +497,17 @@ void Component::setCurrent(double s)
 {
     mCurrent = Round(s, 3);
     double mCur = fabs(mCurrent);
-    if(mCur>0 && mCur<1) mParilti = 0;
-    else if(mCur>=1 && mCur<2) mParilti = 1;
-    else if(mCur>=2 && mCur<4) mParilti = 2;
-    else if(mCur>=4 && mCur<7) mParilti = 3;
-    else if(mCur>=7 && mCur<11) mParilti = 4;
-    else if(mCur>=11 && mCur<16) mParilti = 5;
-    else if(mCur>=16 && mCur<22) mParilti = 6;
-    else if(mCur>=22 && mCur<29) mParilti = 7;
-    else if(mCur>=29 && mCur<37) mParilti = 8;
-    else if(mCur>=37 ) mParilti = 9;
+    if (getStatus() != BURNED && getType()==LAMP)
+    {
+        if(mCur>0.0f && mCur<0.5f) mParilti = 0;
+        else if(mCur>=0.5f && mCur<1.0f) mParilti = 1;
+        else if(mCur>=1.0f && mCur<2.0f) mParilti = 2;
+        else if(mCur>=2.0f && mCur<4.0f) mParilti = 3;
+        else if(mCur>=6.0f && mCur<8.0f) mParilti = 4;
+        else if(mCur>=8.0f && mCur<10.0f) mParilti = 5;
+        else if(mCur>=10.0f && mCur<12.0f) mParilti = 6;
+        else if(mCur>=12.0f && mCur<14.0f) mParilti = 7;
+        else if(mCur>=14.0f && mCur<16.0f) mParilti = 8;
+        else if(mCur>=16.0f ) mParilti = 9;
+    }
 }

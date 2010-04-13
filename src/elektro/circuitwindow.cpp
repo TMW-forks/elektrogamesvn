@@ -279,11 +279,9 @@ CircuitWindow::CircuitWindow():
 //******
     solveButton = new BitButton("com_close_btn.png", "Degerlendir", "solve",this);
     solveButton->setPosition(10,140);
-//    add(solveButton);
 
     clearButton = new BitButton("com_rotate_btn.png", "Degerlendir", "clear",this);
     clearButton->setPosition(10,100);
-//    add(clearButton);
 
     mSb = new BrowserBox();
     mSb->setOpaque(true);
@@ -297,15 +295,19 @@ CircuitWindow::CircuitWindow():
     mSs->setHeight(100);
     mSs->setY(getHeight()- mSs->getHeight());
     mSs->setX(getWidth()-mSs->getWidth());
-//    add(mSs);
 
     mX = new gcn::Label("X:");
     mX->setPosition(4,5);
-//    add(mX);
 
     mY = new gcn::Label("Y:");
     mY->setPosition(4,15);
+
+
+//    add(mX);
+//    add(mSs);
+//    add(clearButton);
 //    add(mY);
+//    add(solveButton);
 
 //***********/
 
@@ -556,12 +558,27 @@ Window::draw(graphics);
 //    graphics->drawRectangle(gcn::Rectangle(20,20,getWidth()-40,getHeight()-40));
     Graphics *g = static_cast<Graphics*>(graphics);
 
-//    g->drawRescaledImage(mBackgroundPattern,
-//                         0,0,120,20,
-//                         mBackgroundPattern->getWidth(),mBackgroundPattern->getHeight(),
-//                         getWidth()-130,getHeight()-35,false);
+    g->drawRescaledImage(mBackgroundPattern,
+                         0,0,120,20,
+                         mBackgroundPattern->getWidth(),mBackgroundPattern->getHeight(),
+                         getWidth()-130,getHeight()-35,false);
 
     g->drawImage(cirToolBar,10,(getHeight()-cirToolBar->getHeight())/2);
+
+     //kabloları çizdir
+     for(mTellerIter = mTeller.begin(); mTellerIter != mTeller.end(); mTellerIter++)
+     {
+//        for(mTekTelIter = (*mTellerIter).begin(); mTekTelIter != (*mTellerIter).end(); mTekTelIter++)
+        for(int z = 0;  z<(*mTellerIter).size(); z += 1)
+        {
+            mTekTelIter = (*mTellerIter).begin()+z;
+            g->drawImage(mWireImage,
+                         (*mTekTelIter)->x -3 ,
+                          (*mTekTelIter)->y -3);
+        }
+     }
+    //pencere içindeki diğer widget'leri çizdir
+    drawChildren(graphics);
 
 //    for(conLocateIter = conLocate.begin(); conLocateIter!= conLocate.end(); conLocateIter++)
 //    {
@@ -651,33 +668,25 @@ Window::draw(graphics);
             miAnim->anim->update(miAnim->v);
         }
      }
-     //kabloları çizdir
-     for(mTellerIter = mTeller.begin(); mTellerIter != mTeller.end(); mTellerIter++)
-     {
-//        for(mTekTelIter = (*mTellerIter).begin(); mTekTelIter != (*mTellerIter).end(); mTekTelIter++)
-        for(int z = 0;  z<(*mTellerIter).size(); z += 1)
-        {
-            mTekTelIter = (*mTellerIter).begin()+z;
-            g->drawImage(mWireImage,
-                         (*mTekTelIter)->x -3 ,
-                          (*mTekTelIter)->y -3);
-        }
-     }
-     g->setColor(gcn::Color(10,100,200));
+
+//     g->setColor(gcn::Color(10,100,200));
 //     if(mPopupLabel->isVisible())
 //        graphics->fillRectangle(gcn::Rectangle(mPopupLabel->getX()+3,
 //                                               mPopupLabel->getY()+20,
 //                                               mPopupLabel->getWidth(),
 //                                               mPopupLabel->getHeight()));
-     drawChildren(graphics);
+
+     //lambaların ışıklarını üzerine bas
     for(miComponent=mvComponent.begin(); miComponent<mvComponent.end(); miComponent++)
     {
-        if (isLamp((*miComponent)) && (*miComponent)->getCurrent() != 0)
-            {
-                ResourceManager *resman = ResourceManager::getInstance();
-                ImageSet *res = circuitWindow->mComponentImageSet[mHale[(*miComponent)->getValue()]];
-                g->drawImage(res->get((*miComponent)->getParilti()), (*miComponent)->getX()-8, (*miComponent)->getY()+5);
-            }
+        if (isLamp((*miComponent)) &&
+            (*miComponent)->getStatus() != PASIVE &&
+            (*miComponent)->getStatus() !=BURNED)
+        {
+            ResourceManager *resman = ResourceManager::getInstance();
+            ImageSet *res = circuitWindow->mComponentImageSet[mHale[(*miComponent)->getValue()]];
+            g->drawImage(res->get((*miComponent)->getParilti()), (*miComponent)->getX()-8, (*miComponent)->getY()+5);
+        }
     }
  }
 
@@ -1056,7 +1065,8 @@ CircuitWindow::makeMatris()
                     if (isResistance(own))
                     {
                         if (!isExistComponent(own, resistanceComp)     //Node'un sahibi dirençse ekle ->her iki node'u da listedeyse
-                            && hasDoubleNode(own, nodes))
+                            && hasDoubleNode(own, nodes)
+                            && own->getStatus() != BURNED)
                             resistanceComp.push_back(own);
                     }
                 }
@@ -1218,7 +1228,7 @@ CircuitWindow::makeMatris()
         {
             if(isNodeInMesh(*nit, miMesh->second))
             {
-                if(gsl_isinf(gsl_vector_get (x, i)) || gsl_isnan(gsl_vector_get (x, i)) )
+                if(gsl_isinf(gsl_vector_get (x, i)) || gsl_isnan(gsl_vector_get (x, i)))
                 {
                     (*nit)->setCurrent(0);
                 }
@@ -1231,7 +1241,12 @@ CircuitWindow::makeMatris()
         }
     }
     for(TmiComponent cit = mvComponent.begin(); cit != mvComponent.end(); cit++)
+    {
+        if ((*cit)->getStatus() ==BURNED || ((*cit)->getType()==SWITCH && (*cit)->getStatus() !=PASIVE ))
+            (*cit)->setCurrent(0);
+        else
             (*cit)->setCurrent((*cit)->node1->getCurrent());
+    }
 /** Yeni yöntem sonu*/
     // lambaların parlaklıklarını kontrol et ve yak
     turnonLamps();
@@ -1260,6 +1275,8 @@ CircuitWindow::calculateBatteryValue()
             for (TmiComponent matEl = temp.begin();
                   matEl != temp.end(); matEl++)
             {
+                if ((*matEl)->getStatus())
+                    continue;
                 Node *nii = (*matEl)->node1;
                 Node *nis = (*matEl)->node2;
                 int yon = elemanYonKontrol(i,nii->getId() ,nis->getId() );
@@ -1281,41 +1298,36 @@ CircuitWindow::calculateBatteryValue()
 void
 CircuitWindow::turnonLamps()
 {
-    float minCurrent=  99.9;
-    float maxCurrent= -99.9;
+//    float minCurrent=  99.9;
+//    float maxCurrent= -99.9;
+//    for (miComponent = mvComponent.begin(); miComponent != mvComponent.end(); miComponent++)
+//    {
+//        // gerekirse sadece lambalar arası karşılaştırma yapılacak
+//        if(isLamp(*miComponent))
+//        {
+//            if((*miComponent)->getCurrent() > maxCurrent)
+//                maxCurrent = (*miComponent)->getCurrent();
+//            if((*miComponent)->getCurrent() < minCurrent)
+//                minCurrent = (*miComponent)->getCurrent();
+//        }
+//    }
+//    float interval = (maxCurrent - minCurrent) / 3.0;
+//    #ifdef DEBUG
+////    mSb->addRow("minimum :"+toString(minCurrent));
+////    mSb->addRow("maximum :"+toString(maxCurrent));
+////    mSb->addRow("interval:"+toString(interval));
+//    #endif
     for (miComponent = mvComponent.begin(); miComponent != mvComponent.end(); miComponent++)
     {
         // gerekirse sadece lambalar arası karşılaştırma yapılacak
+        if((*miComponent)->getStatus() == BURNED)
+            continue;
         if(isLamp(*miComponent))
         {
-            if((*miComponent)->getCurrent() > maxCurrent)
-                maxCurrent = (*miComponent)->getCurrent();
-            if((*miComponent)->getCurrent() < minCurrent)
-                minCurrent = (*miComponent)->getCurrent();
-        }
-    }
-    float interval = (maxCurrent - minCurrent) / 3.0;
-    #ifdef DEBUG
-//    mSb->addRow("minimum :"+toString(minCurrent));
-//    mSb->addRow("maximum :"+toString(maxCurrent));
-//    mSb->addRow("interval:"+toString(interval));
-    #endif
-    for (miComponent = mvComponent.begin(); miComponent != mvComponent.end(); miComponent++)
-    {
-        // gerekirse sadece lambalar arası karşılaştırma yapılacak
-        if(isLamp(*miComponent))
-        {
-            if ((*miComponent)->getCurrent() == 0)
+            if ((*miComponent)->getCurrent() == 0.0f)
                 (*miComponent)->setStatus(PASIVE);
-            else if((*miComponent)->getCurrent() >= minCurrent &&
-                (*miComponent)->getCurrent() <= minCurrent + interval)
+            else
                 (*miComponent)->setStatus(ACTIVE);
-            else if((*miComponent)->getCurrent() >= minCurrent + interval &&
-                (*miComponent)->getCurrent() < minCurrent + 2*interval)
-                (*miComponent)->setStatus(PLUS);
-            else if((*miComponent)->getCurrent() >= minCurrent + 2*interval &&
-                (*miComponent)->getCurrent() < minCurrent + 3*interval)
-                (*miComponent)->setStatus(PLUS2);
         }
     }
 }
@@ -1535,7 +1547,7 @@ CircuitWindow::devreAnaliz()
 //        showNodeLoop();
 //        showMesh();
         winnowMesh();
-//        showMesh();
+        showMesh();
         makeMatris();
     }
 }
@@ -1629,16 +1641,34 @@ CircuitWindow::action(const gcn::ActionEvent &event)
     else if (event.getId() == "evaluate")
     {
         int cevap = 1;
+logger->log("cevap1 : %d",cevap);
         for(conLampIter = conLamp.begin(); conLampIter != conLamp.end(); conLampIter++)
         {
             Component *tmp = findComponent((*conLampIter)->compId);
-//            logger->log("kontrol :id : %d - %d, %d",(*conLampIter)->compId, a,(*conLampIter)->stat);
-            if ((tmp->getStatus() == ACTIVE || tmp->getStatus() == PLUS || tmp->getStatus() == PLUS2) &&  (*conLampIter)->stat == 1)
+            logger->log("kontrol :id : %d - status:%d - stat: %d",(*conLampIter)->compId,tmp->getStatus(), (*conLampIter)->stat);
+            if ((tmp->getStatus() == ACTIVE)) logger->log("aktif işte");
+            if ((tmp->getStatus() == ACTIVE ||
+                 tmp->getStatus() == PLUS ||
+                 tmp->getStatus() == PLUS2) &&
+                (*conLampIter)->stat == 1)
+            {
+                logger->log("cevap dogru");
                 cevap *= 1;
+                continue;
+            }
             else if (tmp->getStatus() == PASIVE &&  (*conLampIter)->stat == 0)
+            {
+                logger->log("bu da dogru");
                 cevap *= 1;
-            else cevap = 0;
+                continue;
+            }
+            else
+            {
+                logger->log("yannış");
+                cevap = 0;
+            }
         }
+logger->log("cevap2 : %d",cevap);
         for(conNodeIter = conNode.begin(); conNodeIter!= conNode.end(); conNodeIter++)
         {
             Node *tmp = findNode((*conNodeIter)->compId);
@@ -1646,6 +1676,7 @@ CircuitWindow::action(const gcn::ActionEvent &event)
                 cevap *= 1;
             else cevap = 0;
         }
+logger->log("cevap3 : %d",cevap);
         for(conLocateIter = conLocate.begin(); conLocateIter!= conLocate.end(); conLocateIter++)
         {
             Component *tmp = findComponent((*conLocateIter)->compId);
@@ -1656,7 +1687,7 @@ CircuitWindow::action(const gcn::ActionEvent &event)
                 cevap *= 1;
             else cevap = 0;
         }
-
+logger->log("cevap4 : %d",cevap);
         if (cevap == 1)
             Net::getNpcHandler()->listInput(current_npc, 2);
         else
@@ -1775,12 +1806,14 @@ CircuitWindow::action(const gcn::ActionEvent &event)
 
             creatorNode->setId(findEmptyId());                                      //eski nod'a yeni id ver
             creatorNode->setFree(true);                                             //özgürlüğüne kavuştur
+            creatorNode->setEnabled(true);
             creatorNode->setMovable(true);
             creatorNode->setToLink(true);
             creatorNode->setFromLink(true);
             creatorNode->setSelectable(true);
             creatorNode->setDeletable(true);
             creatorNode->setOwner(NULL);
+            creatorNode->setScroll(true);
             mvNode.push_back(tempNode);                                             //nod vektörüne ekle
             add(tempNode);
 //yukarda yapıldı
@@ -1916,7 +1949,7 @@ CircuitWindow::statusChanged(Component *sw , Status st)
     bool tmp;
     if (st == PASIVE || st == ACTIVE || st == PLUS || st == PLUS2)
         tmp = true;
-    else if (st==BURNED)
+    if (st==BURNED)
         tmp = false;
     if (st == PASIVE && sw->getType()==SWITCH)
         tmp = false;
@@ -2368,6 +2401,8 @@ CircuitWindow::findEmptyId()
 
 void CircuitWindow::bindingNodes()
 {
+
+    //while ile değiştirilecek
    for (int z=0; z <5; z++)
     for (conListIter=conList.begin();conListIter<conList.end();conListIter++)
         {

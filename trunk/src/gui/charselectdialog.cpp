@@ -189,8 +189,8 @@ CharSelectDialog::CharSelectDialog(LockedArray<LocalPlayer*> *charInfo,
     place(1, 4, mNewDelCharButton);
     place.getCell().matchColWidth(1, 4);
     place = getPlacer(30, 22);
-    place(0, 0, mPreviousButton);
-    place(1, 0, mNextButton);
+//    place(0, 0, mPreviousButton);
+//    place(1, 0, mNextButton);
     place(4, 0, mCancelButton);
     place(5, 0, mSelectButton);
 

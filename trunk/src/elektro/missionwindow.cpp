@@ -93,7 +93,6 @@ MissionWindow::MissionWindow():
     susle->setStep(0.01f);
     setVisible(false);
     static_cast<Window*>(getParent())->add(mPopup);
-
 }
 
 void
@@ -161,7 +160,9 @@ MissionWindow::clearMissions()
                 delete (*mSubMissionsIter)->oneExplain;
         }
         subtemp.clear();
+        delete temp->mainButton;
     }
+
     mMainMission.clear();
 }
 
@@ -293,7 +294,8 @@ MissionWindow::parse(std::string mDoc)
     susleprogress = true;
     susle->setVisible(true);
     add(susle);
-    hideSubMissions();
+//    hideSubMissions();
+clearMissions();
     xmlDocPtr mxmlDoc;
     mxmlDoc=xmlParseMemory(mDoc.c_str(),mDoc.size());
     if (!mxmlDoc)

@@ -355,7 +355,7 @@ static void initConfiguration(const Options &options)
 #else
     config.setValue("opengl", false);
 #endif
-    config.setValue("screen", false);
+    config.setValue("screen", true);
     config.setValue("sound", true);
     config.setValue("guialpha", 0.8f);
     config.setValue("remember", true);

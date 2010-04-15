@@ -207,6 +207,7 @@ CircuitWindow::CircuitWindow():
     imagesetname.push_back("graphics/elektrik/item-motor-2.png");
     imagesetname.push_back("graphics/elektrik/item-motor-3.png");
     imagesetname.push_back("graphics/elektrik/item-ampermetre.png");
+    imagesetname.push_back("graphics/elektrik/hale-beyaz.png");
     imagesetname.push_back("graphics/elektrik/hale-kirmizi.png");
     imagesetname.push_back("graphics/elektrik/hale-sari.png");
     imagesetname.push_back("graphics/elektrik/hale-mavi.png");
@@ -577,8 +578,7 @@ Window::draw(graphics);
                           (*mTekTelIter)->y -3);
         }
      }
-    //pencere içindeki diğer widget'leri çizdir
-    drawChildren(graphics);
+
 
 //    for(conLocateIter = conLocate.begin(); conLocateIter!= conLocate.end(); conLocateIter++)
 //    {
@@ -676,6 +676,9 @@ Window::draw(graphics);
 //                                               mPopupLabel->getWidth(),
 //                                               mPopupLabel->getHeight()));
 
+    //pencere içindeki diğer widget'leri çizdir
+    drawChildren(graphics);
+
      //lambaların ışıklarını üzerine bas
     for(miComponent=mvComponent.begin(); miComponent<mvComponent.end(); miComponent++)
     {
@@ -683,6 +686,7 @@ Window::draw(graphics);
             (*miComponent)->getStatus() != PASIVE &&
             (*miComponent)->getStatus() !=BURNED)
         {
+            logger->log("PARILTI : %s",mHale[(*miComponent)->getValue()].c_str());
             ResourceManager *resman = ResourceManager::getInstance();
             ImageSet *res = circuitWindow->mComponentImageSet[mHale[(*miComponent)->getValue()]];
             g->drawImage(res->get((*miComponent)->getParilti()), (*miComponent)->getX()-8, (*miComponent)->getY()+5);
@@ -702,10 +706,10 @@ CircuitWindow:: clearNodeConnection(Node *n)
             if (((*conListIter)->firstCon->getOwner() != NULL && (*conListIter)->secondCon->getOwner() != NULL))
             {
                 if ((*conListIter)->firstCon->getOwner() == (*conListIter)->secondCon->getOwner())
-                    {
-                        conListIter++;
-                        continue;
-                    }
+                {
+                    conListIter++;
+                    continue;
+                }
             }
             delete (*conListIter);
             conList.erase(conListIter);

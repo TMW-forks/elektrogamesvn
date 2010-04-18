@@ -303,7 +303,6 @@ CircuitWindow::CircuitWindow():
     mY = new gcn::Label("Y:");
     mY->setPosition(4,15);
 
-
 //    add(mX);
 //    add(mSs);
 //    add(clearButton);

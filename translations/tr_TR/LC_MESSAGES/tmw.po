@@ -1481,7 +1481,7 @@ msgstr "Sohbet"
 #: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/chat.cpp:305
 #, c-format
 msgid "Present: %s; %d players are present."
-msgstr "Present: %s; %d players are present."
+msgstr "Hediye: %s; %d oyuncu hediye."
 
 #: C:\Documents
 #: and
@@ -2187,7 +2187,7 @@ msgstr "Tecrübe Bildirimi"
 #: and
 #: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/palette.cpp:133
 msgid "Player Hits Monster"
-msgstr "Oyuncu Çılgın Robota Lazer Işını Yansıttı"
+msgstr "Oyuncu Çılgın Robota Atak Yaptı"
 
 #: C:\Documents
 #: and
@@ -2277,7 +2277,7 @@ msgstr "%s ile alış veriş"
 #: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/gui/popupmenu.cpp:162
 #, c-format
 msgid "Attack %s"
-msgstr "Lazer Işını Yansıt %s"
+msgstr "Atak %s"
 
 #: C:\Documents
 #: and
@@ -3627,21 +3627,21 @@ msgstr "T. Savunma"
 #: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/generalhandler.cpp:219
 #, c-format
 msgid "% Accuracy"
-msgstr "% Accuracy"
+msgstr "% Çeviklik"
 
 #: C:\Documents
 #: and
 #: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/generalhandler.cpp:220
 #, c-format
 msgid "% Evade"
-msgstr "% Evade"
+msgstr "% Kaçmak"
 
 #: C:\Documents
 #: and
 #: Settings\ElektroGame\Belgelerim\elektrogamesvn\src/net/ea/generalhandler.cpp:221
 #, c-format
 msgid "% Critical"
-msgstr "% Critical"
+msgstr "% Kritik"
 
 #: C:\Documents
 #: and

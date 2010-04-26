@@ -96,8 +96,8 @@ StatusWindow::StatusWindow():
     setResizable(true);
     setCloseButton(true);
     setSaveVisible(true);
-    setDefaultSize((windowContainer->getWidth() - 365) / 2,
-                   (windowContainer->getHeight() - 255) / 2, 365, 275);
+    setDefaultSize((windowContainer->getWidth() - 628) / 2,
+                   (windowContainer->getHeight() - 430) / 2, 628, 430);
 
     mHead = new ImageWidget("elektrik/karakter_head.png", false);
     add(mHead);
@@ -145,11 +145,6 @@ StatusWindow::StatusWindow():
     mMpBar = new ProgressBar((float) player_node->getMaxMP()
                              / (float) player_node->getMaxMP(),
                              80, 15, gcn::Color(26, 102, 230));
-
-   // place(0, 0, mLvlLabel, 3);
-    // 5, 0 Job Level
-//    place(8, 0, mMoneyLabel, 3);
-
 
     place(0, 1, mHpLabel).setPadding(3);
     place(1, 1, mHpBar, 4);

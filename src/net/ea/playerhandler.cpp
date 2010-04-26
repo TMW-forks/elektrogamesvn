@@ -96,44 +96,31 @@ static const char *randomDeathMessage()
 {
     static char const *const deadMsg[] =
     {
-        N_("You are dead."),
-        N_("We regret to inform you that your character was killed in "
-           "battle."),
-        N_("You are not that alive anymore."),
-        N_("The cold hands of the grim reaper are grabbing for your soul."),
-        N_("Game Over!"),
-        N_("Insert coin to continue."),
-        N_("No, kids. Your character did not really die. It... "
-           "err... went to a better place."),
-        N_("Your plan of breaking your enemies weapon by "
-           "bashing it with your throat failed."),
-        N_("I guess this did not run too well."),
+        N_("Öbür tarafa yolcusun."),
+        N_("Helvaya bayılırım."),
+        N_("Boyundan büyük bir işe kalkıştın sanki."),
+        N_("Aaa neresi burası.  Acaba neden buraya geldim."),
+        N_("Burada ders kaynadı!  Hadi başka yere gidelim"),
+        N_("Devam etmek için TAMAM düğmesine bas."),
+        N_("Bu iş ciddi. "),
+        N_("Başlangıç noktasını ziyaret etmenin vakti geldi. "),
+        N_("Yine mi başa dönüyorum?"),
         // NetHack reference:
-        N_("Do you want your possessions identified?"),
+        N_("Sanırım yanlış anladın.  Robotları geri dönüştüreksin kendini değil."),
         // Secret of Mana reference:
-        N_("Sadly, no trace of you was ever found..."),
+        N_("Cenaze marşı nasıl çalınıyordu?"),
         // Final Fantasy VI reference:
-        N_("Annihilated."),
+        N_("İzmir marşıyla gidiyorsun."),
         // Earthbound reference:
-        N_("Looks like you got your head handed to you."),
+        N_("Nede çok sevenin varmış."),
         // Leisure Suit Larry 1 reference:
-        N_("You screwed up again, dump your body down the tubes "
-           "and get you another one."),
+        N_("Sular kesikti çalışamadım.  Yemezler! Çık dışarı."),
         // Monty Python references (Dead Parrot sketch mostly):
-        N_("You're not dead yet. You're just resting."),
-        N_("You are no more."),
-        N_("You have ceased to be."),
-        N_("You've expired and gone to meet your maker."),
-        N_("You're a stiff."),
-        N_("Bereft of life, you rest in peace."),
-        N_("If you weren't so animated, you'd be pushing up the daisies."),
-        N_("Your metabolic processes are now history."),
-        N_("You're off the twig."),
-        N_("You've kicked the bucket."),
-        N_("You've shuffled off your mortal coil, run down the "
-           "curtain and joined the bleedin' choir invisibile."),
-        N_("You are an ex-player."),
-        N_("You're pining for the fjords.")
+        N_("Işığı gördün mü?"),
+        N_("Hayat ne kadarda kısa değil mi?"),
+        N_("Elbette bir gün herşey daha güzel olacak."),
+        N_("Helvanı yeriz artık."),
+        N_("Yine gel.")
     };
 
     const int random = rand() % (sizeof(deadMsg) / sizeof(deadMsg[0]));

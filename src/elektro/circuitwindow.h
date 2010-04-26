@@ -168,6 +168,7 @@ class CircuitWindow : public Window,
             FOOT_MESSAGE_STATE,
             CIRCUIT_STATE,
             TEST_STATE,
+            WAIT_STATE,
             ENDSTATE
         };
 
@@ -185,6 +186,12 @@ class CircuitWindow : public Window,
             bool stat;
         };
 
+        struct ConditionSwitch
+        {
+            int compId;
+            bool stat;
+        };
+
 
 //yanması gereken lambalar
         std::vector<ConditionLamp *> conLamp;
@@ -194,17 +201,19 @@ class CircuitWindow : public Window,
         std::vector<ConditionCurrent *> conNode;
         std::vector<ConditionCurrent *>::iterator conNodeIter;
 
+// Değerlendir düğmesine basınca açılacak ya da kapanacak olan düğmeler
+        std::vector<ConditionSwitch *> conSwitch;
+        std::vector<ConditionSwitch *>::iterator conSwitchIter;
 
-
-        //kullanılan itemları silecek vector
+//kullanılan itemları silecek vector
         std::vector < Item *> mUsedItem;
         std::vector < Item *>::iterator mIterUsedItem;
 
-        //tellerin çizilmesi için vektör
+//tellerin çizilmesi için vektör
         typedef std::vector < SmPoint *> TTekTel;
         typedef std::vector < SmPoint *>::iterator TTekTelIter;
 
-//        TTekTel mTekTel;
+//TTekTel mTekTel;
         TTekTelIter mTekTelIter;
 
         std::vector<TTekTel> mTeller;
@@ -219,6 +228,7 @@ class CircuitWindow : public Window,
         Button *mStartOk;
         Button *mStartCancel;
         Button *mFootOk;
+        Button *mWaitButton;
 
         gcn::Label *mX;
         gcn::Label *mY;
@@ -226,10 +236,13 @@ class CircuitWindow : public Window,
         int mTotalTime;
         int mPunish;
         int mAward;
+        int mGidecekCevap;
 
         bool mMessageAutoWrap;
         bool mNodeCreate;               // Pencerede yeni node oluşturulmasına izin vermek için
         bool mRefresh;                  // devrenin yeniden hesaplanması gerekince true olur
+        bool mWait;                     // kontrolsüz switch varsa cevabı göstermek için bekleyecek
+
 
         BitButton *closeButton;
         BitButton *solveButton;
@@ -255,6 +268,7 @@ class CircuitWindow : public Window,
         Image *cirSelectG;
         Image *mWireImage;
         Image *mBackgroundPattern;
+        Image *mUnControl;
 
         //imleç üzerine gelince popup hint çıkması için
         gcn::Rectangle rectRotate;

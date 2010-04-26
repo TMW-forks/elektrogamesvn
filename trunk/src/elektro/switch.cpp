@@ -12,6 +12,7 @@ Switch::Switch(gcn::ActionListener *listener, Node *n1, Node *n2):
     Component(listener, n1, n2)
 {
       setType(SWITCH);
+      mUnControl = false;
 }
 
 Switch::~Switch()
@@ -22,6 +23,8 @@ Switch::~Switch()
 void
 Switch::mousePressed(gcn::MouseEvent &event)
 {
+    if (mUnControl)
+        return;
     bool dbl_click = false;
 
     if (first_tick ==0)
@@ -63,3 +66,5 @@ Switch::draw(gcn::Graphics *graphics)
 
     Component::draw(graphics);
 }
+
+

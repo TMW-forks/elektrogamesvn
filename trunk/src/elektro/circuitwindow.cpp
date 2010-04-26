@@ -88,6 +88,7 @@ CircuitWindow::CircuitWindow():
     cirEraseG = resman->getImage("graphics/elektrik/cir_erase_g.png");
     cirSelectG = resman->getImage("graphics/elektrik/cir_sel_g.png");
     mWireImage = resman->getImage("graphics/elektrik/kablo.png");
+    mUnControl = resman->getImage("graphics/elektrik/kontrolsuz.png");
     mBackgroundPattern = resman->getImage("graphics/elektrik/backgroundpattern.png");
 
 
@@ -329,18 +330,22 @@ CircuitWindow::CircuitWindow():
     mStartOk = new Button("Hemen Başla","startok",this);
     mStartCancel = new Button("Yok Almayım","startcancel",this);
     mFootOk = new Button("Tamam","FootOk",this);
+    mWaitButton = new Button("İlerle","WaitOk",this);
 
     mStartCancel->setWidth(mStartOk->getWidth());
     mStartCancel->setHeight(mStartOk->getHeight());
     mFootOk->setWidth(150);
+    mWaitButton->setWidth(150);
 
     mStartOk->setVisible(false);
     mStartCancel->setVisible(false);
     mFootOk->setVisible(false);
+    mWaitButton->setVisible(false);
 
     add(mStartOk);
     add(mStartCancel);
     add(mFootOk);
+    add(mWaitButton);
 }
 
 CircuitWindow::~CircuitWindow()
@@ -376,6 +381,7 @@ CircuitWindow::stateCheck()
             mStartCancel->setPosition(x,getHeight()-120);
             closeButton->setVisible(false);
             mFootOk->setVisible(false);
+            mWaitButton->setVisible(false);
             if (mMessageAutoWrap)
                 mMessageText->autoWrap(mMessageScroll);
             break;
@@ -392,6 +398,7 @@ CircuitWindow::stateCheck()
             closeButton->setEnabled(false);
             if (mMessageAutoWrap)
                 mMessageText->autoWrap(mMessageScroll);
+            mWaitButton->setVisible(false);
 
             break;
         case CIRCUIT_STATE:
@@ -401,6 +408,7 @@ CircuitWindow::stateCheck()
             mStartOk->setVisible(false);
             mStartCancel->setVisible(false);
             closeButton->setVisible(true);
+            mWaitButton->setVisible(false);
             mRefresh = true;
             break;
         case TEST_STATE:
@@ -410,6 +418,18 @@ CircuitWindow::stateCheck()
             mStartCancel->setVisible(false);
             closeButton->setVisible(false);
             mFootOk->setVisible(false);
+            mWaitButton->setVisible(false);
+            break;
+        case WAIT_STATE:
+            closeButton->setEnabled(false);
+            mFootOk->setVisible(false);
+            mMessageScroll->setVisible(false);
+            mStartOk->setVisible(false);
+            mStartCancel->setVisible(false);
+            closeButton->setVisible(false);
+            mWaitButton->setPosition((getWidth()-mWaitButton->getWidth()) / 2 , getHeight()-150);
+            mWaitButton->setVisible(true);
+            mRefresh = true;
             break;
     }
 }
@@ -557,6 +577,7 @@ CircuitWindow::draw(gcn::Graphics *graphics)
 Window::draw(graphics);
 //    graphics->drawRectangle(gcn::Rectangle(20,20,getWidth()-40,getHeight()-40));
     Graphics *g = static_cast<Graphics*>(graphics);
+    ResourceManager *resman = ResourceManager::getInstance();
 
     g->drawRescaledImage(mBackgroundPattern,
                          0,0,120,20,
@@ -675,6 +696,17 @@ Window::draw(graphics);
 //                                               mPopupLabel->getWidth(),
 //                                               mPopupLabel->getHeight()));
 
+// Kontrolü bilgede olan düğmelerin altına işaret ekle
+    for (conSwitchIter = conSwitch.begin(); conSwitchIter != conSwitch.end(); conSwitchIter++ )
+    {
+        Component *tmpcmp = findComponent((*conSwitchIter)->compId);
+        if(tmpcmp)
+        {
+            g->drawImage(mUnControl, tmpcmp->getX() - 10, tmpcmp->getY() + 10);
+        }
+    }
+
+
     //pencere içindeki diğer widget'leri çizdir
     drawChildren(graphics);
 
@@ -686,7 +718,6 @@ Window::draw(graphics);
             (*miComponent)->getStatus() !=BURNED)
         {
             logger->log("PARILTI : %s",mHale[(*miComponent)->getValue()].c_str());
-            ResourceManager *resman = ResourceManager::getInstance();
             ImageSet *res = circuitWindow->mComponentImageSet[mHale[(*miComponent)->getValue()]];
             g->drawImage(res->get((*miComponent)->getParilti()), (*miComponent)->getX()-8, (*miComponent)->getY()+5);
         }
@@ -1644,34 +1675,41 @@ CircuitWindow::action(const gcn::ActionEvent &event)
     else if (event.getId() == "evaluate")
     {
         int cevap = 1;
-logger->log("cevap1 : %d",cevap);
+        for(conSwitchIter = conSwitch.begin(); conSwitchIter != conSwitch.end(); conSwitchIter++)
+        {
+            Switch *se;
+            se = dynamic_cast<Switch*> (findComponent((*conSwitchIter)->compId));
+            if (se)
+            {
+                if ((*conSwitchIter)->stat)
+                    se->setStatus(ACTIVE);
+                else
+                    se->setStatus(PASIVE);
+            }
+        }
+        devreAnaliz();
+
         for(conLampIter = conLamp.begin(); conLampIter != conLamp.end(); conLampIter++)
         {
             Component *tmp = findComponent((*conLampIter)->compId);
-            logger->log("kontrol :id : %d - status:%d - stat: %d",(*conLampIter)->compId,tmp->getStatus(), (*conLampIter)->stat);
-            if ((tmp->getStatus() == ACTIVE)) logger->log("aktif işte");
             if ((tmp->getStatus() == ACTIVE ||
                  tmp->getStatus() == PLUS ||
                  tmp->getStatus() == PLUS2) &&
                 (*conLampIter)->stat == 1)
             {
-                logger->log("cevap dogru");
                 cevap *= 1;
                 continue;
             }
             else if (tmp->getStatus() == PASIVE &&  (*conLampIter)->stat == 0)
             {
-                logger->log("bu da dogru");
                 cevap *= 1;
                 continue;
             }
             else
             {
-                logger->log("yannış");
                 cevap = 0;
             }
         }
-logger->log("cevap2 : %d",cevap);
         for(conNodeIter = conNode.begin(); conNodeIter!= conNode.end(); conNodeIter++)
         {
             Node *tmp = findNode((*conNodeIter)->compId);
@@ -1679,7 +1717,6 @@ logger->log("cevap2 : %d",cevap);
                 cevap *= 1;
             else cevap = 0;
         }
-logger->log("cevap3 : %d",cevap);
         for(conLocateIter = conLocate.begin(); conLocateIter!= conLocate.end(); conLocateIter++)
         {
             Component *tmp = findComponent((*conLocateIter)->compId);
@@ -1690,11 +1727,24 @@ logger->log("cevap3 : %d",cevap);
                 cevap *= 1;
             else cevap = 0;
         }
-logger->log("cevap4 : %d",cevap);
         if (cevap == 1)
-            Net::getNpcHandler()->listInput(current_npc, 2);
+        {
+            mGidecekCevap = 2;
+//            Net::getNpcHandler()->listInput(current_npc, 2);
+        }
+
         else
-            Net::getNpcHandler()->listInput(current_npc, 3);
+        {
+            mGidecekCevap = 3;
+  //          Net::getNpcHandler()->listInput(current_npc, 3);
+        }
+        if (mWait==false)
+            Net::getNpcHandler()->listInput(current_npc, mGidecekCevap);
+        else
+        {
+            mCircState = WAIT_STATE;
+            stateCheck();
+        }
 
 // TEMİZLİK
         for(conLampIter = conLamp.begin(); conLampIter != conLamp.end(); conLampIter++)
@@ -1709,10 +1759,14 @@ logger->log("cevap4 : %d",cevap);
         {
             delete (*conLocateIter);
         }
+        for(conSwitchIter= conSwitch.begin(); conSwitchIter!= conSwitch.end(); conSwitchIter++)
+        {
+            delete (*conSwitchIter);
+        }
         conLamp.clear();
         conNode.clear();
         conLocate.clear();
-
+        conSwitch.clear();
     }
     else if (event.getId() == "FootOk")
     {
@@ -1864,6 +1918,10 @@ logger->log("cevap4 : %d",cevap);
             }
             j++;
         }
+    }else if (event.getId() == "WaitOk")
+    {
+        Net::getNpcHandler()->listInput(current_npc, mGidecekCevap);
+        mWait = false;
     }
 }
 
@@ -2122,6 +2180,8 @@ CircuitWindow::circuitFromXML(std::string mDoc)
         {
             //şartları temizle
             conLamp.clear();
+            mWait = false;
+            mGidecekCevap  = 0;
             int w =  XML::getProperty(node, "width", 350);
             int h =  XML::getProperty(node, "height", 275);
             int l =  XML::getProperty(node, "left", (800-getWidth())/2);
@@ -2295,6 +2355,21 @@ CircuitWindow::circuitFromXML(std::string mDoc)
                 mmp->area.width = XML::getProperty(node, "w", 0);
                 mmp->area.height = XML::getProperty(node, "h", 0);
                 conLocate.push_back(mmp);
+            }
+            else if(type == "evulationswitch")
+            {
+                mWait = true;
+                Switch *se;
+                logger->log("evulationswitch");
+                ConditionSwitch *ftp = new ConditionSwitch;
+                ftp->compId = XML::getProperty(node, "componentid", 0);
+                ftp->stat = XML::getProperty(node, "status", 0);
+                conSwitch.push_back(ftp);
+                se = dynamic_cast<Switch*> (findComponent(ftp->compId));
+                if (se)
+                {
+                    se->setControl(true);
+                }
             }
         }
         else if (xmlStrEqual(node->name, BAD_CAST "connect"))

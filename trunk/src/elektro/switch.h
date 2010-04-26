@@ -15,8 +15,11 @@ class Switch : public Component
         virtual ~Switch();
         void draw(gcn::Graphics *graphics);
         void mousePressed(gcn::MouseEvent &event);
+        void setControl(bool s) { mUnControl = s;}
+        bool getControl() {return mUnControl;}
     protected:
     private:
+        bool mUnControl;
 };
 
 #endif // SWITCH_H

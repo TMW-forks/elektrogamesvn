@@ -1713,8 +1713,10 @@ CircuitWindow::action(const gcn::ActionEvent &event)
         for(conNodeIter = conNode.begin(); conNodeIter!= conNode.end(); conNodeIter++)
         {
             Node *tmp = findNode((*conNodeIter)->compId);
-            if (tmp->getCurrent() == (*conNodeIter)->compCurrent)
+            if (Round(fabs(tmp->getCurrent()),3) == Round(fabs((*conNodeIter)->compCurrent),3))
+            {
                 cevap *= 1;
+            }
             else cevap = 0;
         }
         for(conLocateIter = conLocate.begin(); conLocateIter!= conLocate.end(); conLocateIter++)

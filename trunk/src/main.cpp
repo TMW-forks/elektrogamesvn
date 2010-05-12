@@ -524,6 +524,34 @@ static void initEngine(const Options &options)
 
     // Initialise player relations
     player_relations.init();
+
+//ilk duvar kaÄŸÄ±dÄ±
+Image *first_wallpaper = NULL;
+        if (!first_wallpaper)
+        {
+            first_wallpaper = ResourceManager::getInstance()->
+                    getImage("graphics/elektrik/first_wallpaper.png");
+            if (!first_wallpaper)
+            {
+                logger->log("Couldn't load first_wallpaper.png");
+            }
+        }
+        graphics->drawImage(first_wallpaper, 0, 0);
+        graphics->updateScreen();
+SDL_Event event;
+long int ti = SDL_GetTicks();
+logger->log("tik :%d ",ti);
+        while ( SDL_GetTicks()-ti < 2000 )
+        {
+            SDL_PollEvent(&event);
+            if (event.type == SDL_KEYDOWN  || event.type == SDL_MOUSEBUTTONDOWN)
+            break;
+
+        }
+
+        first_wallpaper->decRef();
+        first_wallpaper = NULL;
+
 }
 
 /** Clear the engine */
@@ -1114,6 +1142,7 @@ int main(int argc, char *argv[])
                     break;
 
                 case STATE_LOGIN:
+
                     logger->log("State: LOGIN");
                     // Don't allow an alpha opacity
                     // lower than the default value
@@ -1139,7 +1168,6 @@ int main(int argc, char *argv[])
                             "customdata/",
                             "zip",
                             false);
-
                     // Load XML databases
                     ColorDB::load();
                     ItemDB::load();
@@ -1425,7 +1453,7 @@ int main(int argc, char *argv[])
                     SkinLoader::instance()->setMinimumOpacity(0.8f);
 
 /******************************************************************
-                        Þifreyi geç
+                        Åžifreyi geÃ§
 *******************************************************************/
 {    std::ifstream otologin;
 
@@ -1453,7 +1481,7 @@ int main(int argc, char *argv[])
     }
 }
 /******************************************************************
-                        Þifreyi geç
+                        Åžifreyi geÃ§
 *******************************************************************/
 
                     if (!loginData.password.empty())

@@ -1309,15 +1309,15 @@ CircuitWindow::calculateBatteryValue()
             for (TmiComponent matEl = temp.begin();
                   matEl != temp.end(); matEl++)
             {
-                if ((*matEl)->getStatus())
-                    continue;
+//                if ((*matEl)->getStatus() == ACTIVE)
+//                    continue;
                 Node *nii = (*matEl)->node1;
                 Node *nis = (*matEl)->node2;
                 int yon = elemanYonKontrol(i,nii->getId() ,nis->getId() );
 
                 pildeger += (*matEl)->getValue() * yon * -1;
 #ifdef DEBUG
-                mSb->addRow("    V : "+toString((*matEl)->getValue())+"    Yön : "+toString(yon));
+//                mSb->addRow("    V : "+toString((*matEl)->getValue())+"    Yön : "+toString(yon));
 #endif
             }
         }
@@ -1979,7 +1979,7 @@ CircuitWindow::distributeOlay(Item *it)
     else if (tempType=="motor") tempComponent = new Motor(this, tempNode1, tempNode2);
     else return;
 
-        tempComponent->setId(findEmptyId());
+        tempComponent->setId(tempNode1->getId());
         tempComponent->setValue(tempItem.getElektroValue());
         tempComponent->setX(150);//+QALeftPad);
         tempComponent->setY(150);//+QATopPad);
@@ -1995,8 +1995,16 @@ CircuitWindow::distributeOlay(Item *it)
         ConnectList *c=new ConnectList;
         c->firstCon = tempComponent->node1;
         c->secondCon = tempComponent->node2;
-        c->active = (tempType == "switch" ? false : true);
+        c->active = true;
         c->draw=false;
+
+        if(tempComponent->getType() == SWITCH && tempComponent->getStatus()==PASIVE) c->active=false;
+        if(tempComponent->getType() == MOTOR || tempComponent->getType() == AMPERMETRE)
+        {
+            tempComponent->setStatus(ACTIVE);
+            c->active = true;
+        }
+
         conList.push_back(c);
 
         add(tempComponent);
